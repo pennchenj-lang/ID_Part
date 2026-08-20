@@ -1,0 +1,81 @@
+{
+  "record_version": "0.1",
+  "generated_at": "2026-08-12",
+  "evidence_type": "unlabelled_edge_identity_software_regression",
+  "claim_boundary": "Execution, root routing, structural granularity, identity association, internal edge-gate diagnostics, and package validity only. The source images have no pixel-level labels, so this record does not measure semantic accuracy, Boundary F1, or amodal correctness.",
+  "inference_contract": {
+    "ground_truth_used": false,
+    "user_annotation_used": false,
+    "decomposition_mode": "automatic",
+    "root_mode": "primary",
+    "prompt_bank_sha256": "022f1c6000791aeef9de245b74cfcf0395e37fdde9d91977946ffd512920755b",
+    "grounding_models": [
+      "IDEA-Research/grounding-dino-tiny",
+      "IDEA-Research/grounding-dino-base"
+    ],
+    "segmentation_model": "facebook/sam2.1-hiera-tiny",
+    "dense_semantic_fallback": true,
+    "visual_points_per_crop": 24,
+    "visual_crop_layers": 1
+  },
+  "cases": [
+    {
+      "case_id": "aviator_character",
+      "source_sha256": "050bb853db7a32316b593ba546785a78a8c2ff9dac949ba3baebcb7ed6843450",
+      "selected_root_semantics": ["character", "container"],
+      "selected_physical_root_count": 2,
+      "selected_root_proposal_count": 3,
+      "output_part_count": 35,
+      "generic_visual_part_count": 5,
+      "nested_visual_part_count": 0,
+      "sam2_visual_proposal_count": 105,
+      "accepted_visual_candidate_count": 32,
+      "identity_hypotheses_merged": 31,
+      "mask_candidate_count": 89,
+      "grabcut_accept_count": 84,
+      "edge_guard_rejection_count": 0,
+      "package_valid": true,
+      "observation": "The weak, border-spanning furniture/platform root was rejected. Strongly contained lower-clothing support was associated with one connected garment identity, while both shoe instances remained separate."
+    },
+    {
+      "case_id": "ak_rifle",
+      "source_sha256": "88ed3c8b2fd7bbb5db7305b20ef0f938104f208561c090f815c4a94797381668",
+      "selected_root_semantics": ["device"],
+      "selected_physical_root_count": 1,
+      "selected_root_proposal_count": 2,
+      "output_part_count": 23,
+      "generic_visual_part_count": 22,
+      "nested_visual_part_count": 10,
+      "sam2_visual_proposal_count": 39,
+      "accepted_visual_candidate_count": 22,
+      "identity_hypotheses_merged": 1,
+      "mask_candidate_count": 24,
+      "grabcut_accept_count": 24,
+      "edge_guard_rejection_count": 0,
+      "package_valid": true,
+      "observation": "The structural part count and nested visual hierarchy were preserved after the identity and edge changes. The device label is not treated as semantic-accuracy evidence."
+    },
+    {
+      "case_id": "character_scene_primary",
+      "source_sha256": "a0f6f0987acd10c25cc641829f38f4fde7b04d5ba5903894548042f8461fcbfe",
+      "selected_root_semantics": ["character", "tool_prop"],
+      "selected_physical_root_count": 2,
+      "selected_root_proposal_count": 3,
+      "output_part_count": 32,
+      "generic_visual_part_count": 5,
+      "nested_visual_part_count": 1,
+      "sam2_visual_proposal_count": 117,
+      "accepted_visual_candidate_count": 19,
+      "identity_hypotheses_merged": 20,
+      "mask_candidate_count": 66,
+      "grabcut_accept_count": 66,
+      "edge_guard_rejection_count": 0,
+      "package_valid": true,
+      "observation": "The high-evidence held staff remained an attached tool root, including its spatially detached head region."
+    }
+  ],
+  "edge_diagnostic_note": "The edge gate compares image-gradient support on proposed and input mask boundaries. It is an inference safety signal, not a labelled boundary metric.",
+  "related_records": [
+    "cross_domain_structural_regression_v0.4.json"
+  ]
+}

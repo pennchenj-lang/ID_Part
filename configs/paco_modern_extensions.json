@@ -1,0 +1,527 @@
+{
+  "format": "HPID modern-object prompt extension",
+  "format_version": "0.1.0",
+  "domain_extensions": [
+    {
+      "name": "device",
+      "parts": [
+        {
+          "semantic_name": "device_chain",
+          "prompts": ["pull chain", "control chain"],
+          "dense_prompts": ["device pull chain"],
+          "semantic_parent": "device_body",
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_ring",
+          "prompts": ["seal ring", "gasket ring"],
+          "dense_prompts": ["appliance seal ring"],
+          "semantic_parent": "device_body",
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 4,
+          "detail": true
+        }
+      ],
+      "profile_parts": {
+        "controls": ["device_bezel", "device_base"],
+        "clock_watch": ["device_base", "device_logo"],
+        "fan": ["device_chain"],
+        "lamp": ["device_chain"],
+        "blender": ["device_handle", "device_ring"]
+      },
+      "subtype_parts": {
+        "controls": {
+          "remote_control": ["device_bezel", "device_base"],
+          "calculator": ["device_bezel", "device_base"],
+          "telephone": ["device_bezel", "device_base"]
+        },
+        "clock_watch": {
+          "clock": ["device_base", "device_logo"],
+          "watch": ["device_base", "device_logo"]
+        }
+      }
+    },
+    {
+      "name": "furniture",
+      "parts": [],
+      "profile_parts": {
+        "table": ["furniture_shelf"]
+      }
+    },
+    {
+      "name": "container",
+      "parts": [
+        {
+          "semantic_name": "container_bottom",
+          "prompts": ["container bottom", "inside bottom surface"],
+          "dense_prompts": ["bottom surface inside container"],
+          "semantic_parent": "container_body",
+          "maximum_parent_fraction": 0.65,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "container_pull_tab",
+          "prompts": ["can pull tab", "lid pull ring"],
+          "dense_prompts": ["pull tab on container lid"],
+          "semantic_parent": "container_lid",
+          "query_parent": "container_lid",
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 2,
+          "detail": true
+        }
+      ],
+      "profile_parts": {
+        "bottle_jar": ["container_rim", "container_pull_tab", "container_bottom"],
+        "drinkware": ["container_label", "container_bottom"],
+        "bag": ["container_inner", "container_rim", "container_label", "container_bottom"],
+        "box": ["container_inner_wall", "container_shoulder", "container_bottom"],
+        "open_container": [
+          "container_inner_wall",
+          "container_outer_side",
+          "container_label",
+          "container_bottom"
+        ],
+        "flatware": ["container_bottom"]
+      },
+      "subtype_parts": {
+        "drinkware": {
+          "cup_or_mug": ["container_label", "container_bottom"],
+          "glass": ["container_label", "container_bottom"],
+          "bowl": ["container_label", "container_bottom"]
+        },
+        "box": {
+          "box_or_carton": [
+            "container_inner_wall",
+            "container_shoulder",
+            "container_bottom"
+          ],
+          "crate": ["container_inner_wall", "container_bottom"]
+        },
+        "open_container": {
+          "basket": [
+            "container_inner_wall",
+            "container_outer_side",
+            "container_label",
+            "container_bottom"
+          ],
+          "bucket": [
+            "container_inner_wall",
+            "container_outer_side",
+            "container_label",
+            "container_bottom"
+          ],
+          "trash_can": [
+            "container_inner_wall",
+            "container_outer_side",
+            "container_label",
+            "container_bottom"
+          ]
+        },
+        "flatware": {
+          "plate": ["container_bottom"],
+          "tray": ["container_bottom"]
+        }
+      }
+    },
+    {
+      "name": "vehicle",
+      "parts": [
+        {
+          "semantic_name": "vehicle_dashboard",
+          "prompts": ["dashboard", "instrument panel"],
+          "dense_prompts": ["vehicle dashboard"],
+          "semantic_parent": "vehicle_body",
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_steering_wheel",
+          "prompts": ["steering wheel"],
+          "dense_prompts": ["vehicle steering wheel"],
+          "semantic_parent": "vehicle_body",
+          "maximum_parent_fraction": 0.28,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_basket",
+          "prompts": ["bicycle basket", "vehicle cargo basket"],
+          "dense_prompts": ["basket attached to bicycle"],
+          "semantic_parent": "vehicle_body",
+          "maximum_parent_fraction": 0.40,
+          "maximum_instances": 2
+        }
+      ],
+      "profile_parts": {
+        "road_vehicle": [
+          "vehicle_seat",
+          "vehicle_dashboard",
+          "vehicle_steering_wheel"
+        ],
+        "two_wheeler": ["vehicle_basket"]
+      }
+    },
+    {
+      "name": "daily_object",
+      "parts": [
+        {
+          "semantic_name": "daily_object_text",
+          "prompts": ["printed text", "newspaper text"],
+          "dense_prompts": ["printed text on paper"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.80,
+          "maximum_instances": 8,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_embroidery",
+          "prompts": ["embroidered pattern", "pillow embroidery"],
+          "dense_prompts": ["embroidery on fabric"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.70,
+          "maximum_instances": 8,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_rough_surface",
+          "prompts": ["rough scrub surface", "abrasive sponge surface"],
+          "dense_prompts": ["rough surface of sponge"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.90,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_eraser",
+          "prompts": ["pencil eraser", "eraser end"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.25,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_ferrule",
+          "prompts": ["pencil ferrule", "metal eraser holder"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.25,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_lead",
+          "prompts": ["pencil lead", "graphite tip"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_flap",
+          "prompts": ["wallet flap", "cover flap"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.65,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_inner",
+          "prompts": ["inner compartment", "inner surface"],
+          "semantic_parent": "daily_object_body",
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "daily_object_buckle_bar",
+          "prompts": ["buckle bar"],
+          "semantic_parent": "daily_object_buckle",
+          "query_parent": "daily_object_buckle",
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_buckle_prong",
+          "prompts": ["buckle prong", "buckle tongue pin"],
+          "semantic_parent": "daily_object_buckle",
+          "query_parent": "daily_object_buckle",
+          "maximum_parent_fraction": 0.28,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_belt_hole",
+          "prompts": ["belt hole", "strap hole"],
+          "semantic_parent": "daily_object_band",
+          "query_parent": "daily_object_band",
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 16,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_belt_loop",
+          "prompts": ["belt keeper loop", "strap loop"],
+          "semantic_parent": "daily_object_band",
+          "query_parent": "daily_object_band",
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_end_tip",
+          "prompts": ["belt end tip", "strap tip"],
+          "semantic_parent": "daily_object_band",
+          "query_parent": "daily_object_band",
+          "maximum_parent_fraction": 0.20,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_inner_lining",
+          "prompts": ["inner lining", "inside lining"],
+          "semantic_parent": "daily_object_body",
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_rim",
+          "prompts": ["hat rim", "helmet rim", "edge rim"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.30,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_logo",
+          "prompts": ["logo", "brand mark"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_pom_pom",
+          "prompts": ["hat pom pom", "decorative pom"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.28,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_face_shield",
+          "prompts": ["helmet face shield", "protective visor shield"],
+          "semantic_parent": "daily_object_shell",
+          "query_parent": "daily_object_shell",
+          "maximum_parent_fraction": 0.55,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_eyelet",
+          "prompts": ["shoe eyelet", "lace eyelet"],
+          "semantic_parent": "daily_object_upper",
+          "query_parent": "daily_object_upper",
+          "maximum_parent_fraction": 0.06,
+          "maximum_instances": 24,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_lining",
+          "prompts": ["shoe lining", "inner shoe lining"],
+          "semantic_parent": "daily_object_upper",
+          "query_parent": "daily_object_upper",
+          "maximum_parent_fraction": 0.65,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_throat",
+          "prompts": ["shoe throat", "lace opening"],
+          "semantic_parent": "daily_object_upper",
+          "query_parent": "daily_object_upper",
+          "maximum_parent_fraction": 0.30,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_insole",
+          "prompts": ["shoe insole", "footbed"],
+          "semantic_parent": "daily_object_upper",
+          "query_parent": "daily_object_upper",
+          "maximum_parent_fraction": 0.75,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_fringe",
+          "prompts": ["fabric fringe", "tassel fringe"],
+          "semantic_parent": "daily_object_panel",
+          "query_parent": "daily_object_panel",
+          "maximum_parent_fraction": 0.30,
+          "maximum_instances": 24,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_border",
+          "prompts": ["fabric border", "towel border"],
+          "semantic_parent": "daily_object_panel",
+          "query_parent": "daily_object_panel",
+          "maximum_parent_fraction": 0.30,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_terry_bar",
+          "prompts": ["towel terry bar", "woven towel band"],
+          "semantic_parent": "daily_object_panel",
+          "query_parent": "daily_object_panel",
+          "maximum_parent_fraction": 0.28,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_label",
+          "prompts": ["product label", "printed label"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_base",
+          "prompts": ["product base", "bottom base"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.40,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_top",
+          "prompts": ["product top", "top surface"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.40,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_neck",
+          "prompts": ["product neck", "narrow neck"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_shoulder",
+          "prompts": ["product shoulder", "upper shoulder"],
+          "semantic_parent": "daily_object_body",
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 1
+        }
+      ],
+      "profile_parts": {
+        "writing_tool": [
+          "daily_object_eraser",
+          "daily_object_ferrule",
+          "daily_object_lead"
+        ],
+        "book": ["daily_object_text"],
+        "wallet_belt": [
+          "daily_object_flap",
+          "daily_object_inner",
+          "daily_object_buckle_bar",
+          "daily_object_buckle_prong",
+          "daily_object_belt_hole",
+          "daily_object_belt_loop",
+          "daily_object_end_tip"
+        ],
+        "headwear": [
+          "daily_object_inner_lining",
+          "daily_object_rim",
+          "daily_object_logo",
+          "daily_object_pom_pom",
+          "daily_object_face_shield"
+        ],
+        "footwear": [
+          "daily_object_eyelet",
+          "daily_object_lining",
+          "daily_object_throat",
+          "daily_object_insole"
+        ],
+        "soft_good": [
+          "daily_object_embroidery",
+          "daily_object_rough_surface",
+          "daily_object_fringe",
+          "daily_object_border",
+          "daily_object_terry_bar",
+          "daily_object_hem"
+        ],
+        "simple_object": [
+          "daily_object_cap",
+          "daily_object_label",
+          "daily_object_base",
+          "daily_object_top",
+          "daily_object_neck",
+          "daily_object_shoulder"
+        ]
+      },
+      "subtype_parts": {
+        "wallet_belt": {
+          "wallet": ["daily_object_flap", "daily_object_inner"],
+          "belt": [
+            "daily_object_buckle_bar",
+            "daily_object_buckle_prong",
+            "daily_object_belt_hole",
+            "daily_object_belt_loop",
+            "daily_object_end_tip"
+          ]
+        }
+      }
+    },
+    {
+      "name": "tool_prop",
+      "parts": [
+        {
+          "semantic_name": "tool_prop_shank",
+          "prompts": ["screwdriver shank", "metal tool shank"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.70,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_lower_bristles",
+          "prompts": ["lower broom bristles", "bottom bristles"],
+          "semantic_parent": "tool_prop_brush",
+          "query_parent": "tool_prop_brush",
+          "maximum_parent_fraction": 0.85,
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "tool_prop_ring",
+          "prompts": ["broom retaining ring", "tool ring"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.20,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_foot",
+          "prompts": ["ladder foot", "rubber ladder foot"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_pickguard",
+          "prompts": ["guitar pickguard", "scratch plate"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_lid",
+          "prompts": ["pan lid", "cooking lid"],
+          "semantic_parent": "tool_prop_pan_body",
+          "query_parent": "tool_prop_pan_body",
+          "maximum_parent_fraction": 0.80,
+          "maximum_instances": 1
+        }
+      ],
+      "profile_parts": {
+        "screwdriver": ["tool_prop_shank"],
+        "broom": ["tool_prop_lower_bristles", "tool_prop_ring"],
+        "ladder": ["tool_prop_foot"],
+        "guitar": ["tool_prop_pickguard"],
+        "pan": ["tool_prop_lid", "tool_prop_side"]
+      }
+    }
+  ]
+}

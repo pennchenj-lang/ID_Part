@@ -1,0 +1,95 @@
+{
+  "format": "HPID-Split frozen paper result analysis",
+  "format_version": "1.0.0",
+  "release_version": "0.3.0",
+  "benchmark_sha256": "247abe29fdf2fc2f70c9e9bfa0849992e9239cab4e9a18e1ef499f29deba8b5d",
+  "manifest_sha256": "3d16426e4389d59c9fc2f820e8efd3f12c06aa6b881c28e5914479cb1f42dbcb",
+  "manifest_listed_case_count": 67,
+  "materialized_case_count": 65,
+  "evaluated_case_count": 65,
+  "incomplete_manifest_cases": [
+    "sponge",
+    "pliers"
+  ],
+  "failed_process_count": 0,
+  "domain_accuracy": 0.8461538461538461,
+  "profile_accuracy": 0.7846153846153846,
+  "zero_part_f1_case_count": 9,
+  "quality_status_counts": {
+    "ready": 15,
+    "review_recommended": 35,
+    "target_selection_required": 15
+  },
+  "quality_ready_rate": 0.23076923076923078,
+  "recorded_stage_seconds": {
+    "mean": 31.760413846153845,
+    "median": 31.0689,
+    "p90": 36.14004,
+    "minimum": 23.6597,
+    "maximum": 43.125
+  },
+  "failure_class_counts": {
+    "part_discovery_failure": 4,
+    "partial_or_strong_success": 28,
+    "root_failure": 1,
+    "routing_error": 10,
+    "semantic_assignment_failure": 17,
+    "weak_root": 5
+  },
+  "macro_metrics_with_case_bootstrap_ci95": {
+    "object_iou": {
+      "mean": 0.7367634674404908,
+      "ci95_low": 0.6690096282125321,
+      "ci95_high": 0.7991057974936466
+    },
+    "object_precision": {
+      "mean": 0.8644043671311825,
+      "ci95_low": 0.7963547972447114,
+      "ci95_high": 0.9248234246251138
+    },
+    "object_recall": {
+      "mean": 0.8180043088454046,
+      "ci95_low": 0.7566217268826568,
+      "ci95_high": 0.8725038435596324
+    },
+    "part_discovery_precision_at_025": {
+      "mean": 0.35251826353636306,
+      "ci95_low": 0.2816808248940601,
+      "ci95_high": 0.4253016001092924
+    },
+    "part_discovery_recall_at_025": {
+      "mean": 0.4098507174072785,
+      "ci95_low": 0.3426613392891673,
+      "ci95_high": 0.47829900717683516
+    },
+    "part_discovery_f1_at_025": {
+      "mean": 0.33192112279114927,
+      "ci95_low": 0.27781101297759114,
+      "ci95_high": 0.3872393386307179
+    },
+    "mean_matched_iou": {
+      "mean": 0.44951049985029756,
+      "ci95_low": 0.3932440845987354,
+      "ci95_high": 0.5026937559275674
+    },
+    "mean_matched_boundary_f1": {
+      "mean": 0.4938626369792244,
+      "ci95_low": 0.424630946929986,
+      "ci95_high": 0.5621307301607221
+    },
+    "semantic_part_recall": {
+      "mean": 0.1781807634296322,
+      "ci95_low": 0.12351465201465202,
+      "ci95_high": 0.24067519848175953
+    },
+    "oversegmentation_ratio": {
+      "mean": 1.9250842822336036,
+      "ci95_low": 1.361928786899375,
+      "ci95_high": 2.642402093381731
+    }
+  },
+  "gate_ablation_scope": "candidate-retention audit on frozen proposals; not final grouped end-to-end segmentation",
+  "gate_ablation_case_count": 65,
+  "ground_truth_usage": "ground truth is loaded by this post-inference evaluator only",
+  "inference_uses_ground_truth": false
+}

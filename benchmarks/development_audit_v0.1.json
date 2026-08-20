@@ -1,0 +1,54 @@
+{
+  "record_type": "internal_development_audit",
+  "algorithm_version": "0.1.0",
+  "generated_at": "2026-08-11",
+  "inference_uses_ground_truth": false,
+  "character_fusion": {
+    "scope": "10 internal stylized character images; not a public benchmark",
+    "candidate_sources": [
+      "IDEA-Research/grounding-dino-tiny + facebook/sam2.1-hiera-tiny",
+      "IDEA-Research/grounding-dino-base + facebook/sam2.1-hiera-tiny",
+      "CIDAS/clipseg-rd64-refined + facebook/sam2.1-hiera-tiny"
+    ],
+    "prompt_bank_sha256": "7d02c26b69291dd3e6595c67540e8e6f079bbbf5d2fa14e393d5a8994eef6f91",
+    "mean": {
+      "foreground_iou": 0.978643742344954,
+      "semantic_miou": 0.8258436321747622,
+      "boundary_f1": 0.7537296837299087,
+      "small_part_recall": 0.16731642404436523,
+      "component_f1": 0.3729280650745962,
+      "fine_semantic_miou": 0.3297192896538366,
+      "fine_boundary_f1": 0.34097135004465473,
+      "fine_small_part_recall": 0.15000292638691193,
+      "fine_component_f1": 0.2340666951766733
+    },
+    "source_files": {
+      "summary_csv_sha256": "64306abd4f40c7be477173d9f1a598500ce8a40c1e471886ec94ef4cda2d5aff",
+      "manifest_json_sha256": "4365873b8e9a63b5beec02ade343e08b4e5d311f9c3d455dd980b31b1c702deb"
+    },
+    "warning": "Ground truth was used only after inference for metric computation. Low small-part recall remains unresolved."
+  },
+  "synthetic_amodal": {
+    "scope": "10 synthetic self-occlusion cases derived from predicted visible Part-ID masks",
+    "case_count": 10,
+    "model_supported_case_count": 6,
+    "mean_visible_only_iou": 0.7191087809645543,
+    "mean_completed_iou": 0.78624693459431,
+    "mean_iou_gain": 0.06713815362975589,
+    "mean_hidden_recall": 0.3637875643951497,
+    "mean_added_precision": 0.8449648930489619,
+    "mean_false_added_ratio": 0.043507547941288124,
+    "visible_lock_minimum_recall": 1.0,
+    "source_summary_sha256": "65c44c7314d70de5f19b469d5ecc0754fedc2743d5b869e1ba8b2b9bc13cb403",
+    "warning": "This is not natural amodal ground truth, physical interior recovery, depth estimation, or 3D validation."
+  },
+  "unvalidated_domains": [
+    "vehicle",
+    "furniture",
+    "tool_prop",
+    "container",
+    "device",
+    "structure",
+    "natural_object"
+  ]
+}

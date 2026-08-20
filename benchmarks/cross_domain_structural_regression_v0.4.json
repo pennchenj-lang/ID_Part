@@ -1,0 +1,103 @@
+{
+  "record_version": "0.4",
+  "generated_at": "2026-08-12",
+  "evidence_type": "unlabelled_cross_domain_software_regression",
+  "claim_boundary": "Execution, root routing, structural granularity, hierarchy construction, and package validity only. This record does not measure semantic or boundary accuracy.",
+  "inference_contract": {
+    "ground_truth_used": false,
+    "user_annotation_used": false,
+    "ak_red_circle_reference_used": false,
+    "decomposition_mode": "automatic",
+    "root_mode": "primary unless explicitly overridden",
+    "prompt_bank_sha256": "e663cff785bfec2ba69da749f463b5e8ed0f9006ca99e5232efdd8a249362c8a",
+    "grounding_models": [
+      "IDEA-Research/grounding-dino-tiny",
+      "IDEA-Research/grounding-dino-base"
+    ],
+    "segmentation_model": "facebook/sam2.1-hiera-tiny",
+    "dense_semantic_fallback": true,
+    "visual_points_per_crop": 24,
+    "visual_crop_layers": 1
+  },
+  "source_distribution": "The source images are local user-provided regression assets and are not redistributed by this record.",
+  "cases": [
+    {
+      "case_id": "ak_rifle",
+      "source_sha256": "d3bb38c22f1a51dfb8b72033c8a5b7fcc8a1ab964287fdb946a2cfb725e475e7",
+      "selected_root_semantics": ["tool_prop"],
+      "selected_root_count": 1,
+      "output_part_count": 23,
+      "generic_visual_part_count": 22,
+      "nested_visual_part_count": 10,
+      "sam2_visual_proposal_count": 39,
+      "accepted_visual_candidate_count": 22,
+      "package_valid": true
+    },
+    {
+      "case_id": "scifi_pistol",
+      "source_sha256": "f8f7c71f1e37c8a4a1aaa184e25985043a70949334370191f313ea9abd3d718c",
+      "selected_root_semantics": ["tool_prop"],
+      "selected_root_count": 1,
+      "output_part_count": 44,
+      "generic_visual_part_count": 41,
+      "nested_visual_part_count": 6,
+      "sam2_visual_proposal_count": 79,
+      "accepted_visual_candidate_count": 42,
+      "package_valid": true
+    },
+    {
+      "case_id": "character_mint",
+      "source_sha256": "c4834b8bf707505920265055d1c976fa6aef4ec06966e0a332da7a1fc5e0f07f",
+      "selected_root_semantics": ["character"],
+      "selected_root_count": 1,
+      "output_part_count": 40,
+      "generic_visual_part_count": 2,
+      "nested_visual_part_count": 0,
+      "sam2_visual_proposal_count": 31,
+      "accepted_visual_candidate_count": 20,
+      "package_valid": true
+    },
+    {
+      "case_id": "character_scene_primary",
+      "source_sha256": "a0f6f0987acd10c25cc641829f38f4fde7b04d5ba5903894548042f8461fcbfe",
+      "selected_root_semantics": ["character", "tool_prop"],
+      "selected_root_count": 2,
+      "output_part_count": 31,
+      "generic_visual_part_count": 8,
+      "nested_visual_part_count": 1,
+      "sam2_visual_proposal_count": 117,
+      "accepted_visual_candidate_count": 19,
+      "package_valid": true,
+      "observation": "The held staff and its detached head region are retained structurally, but tool-part semantic labels remain mixed and are not treated as accuracy evidence."
+    },
+    {
+      "case_id": "character_scene_all",
+      "source_sha256": "a0f6f0987acd10c25cc641829f38f4fde7b04d5ba5903894548042f8461fcbfe",
+      "root_mode": "all",
+      "selected_root_count": 10,
+      "output_part_count": 79,
+      "generic_visual_part_count": 29,
+      "nested_visual_part_count": 5,
+      "sam2_visual_proposal_count": 117,
+      "accepted_visual_candidate_count": 53,
+      "package_valid": true,
+      "claim_boundary": "The all-assets mode includes large scene structures and does not imply object-level semantic accuracy."
+    }
+  ],
+  "prompt_guided_smoke_test": {
+    "case_id": "ak_rifle",
+    "requested_backend": "auto",
+    "resolved_backend": "grounded-sam2",
+    "production_sam3_available": false,
+    "prompt_count": 10,
+    "output_part_count": 23,
+    "retained_prompt_semantic_id_count": 0,
+    "dense_semantic_evidence_forced": true,
+    "package_valid": true,
+    "claim_boundary": "This verifies fallback execution, conservative cross-model rejection, and package validity. It does not measure production SAM3 quality."
+  },
+  "related_records": [
+    "cross_domain_structural_regression_v0.3.json",
+    "The v0.3 record contains the evidence-gated completion and prompt-guided fallback smoke tests."
+  ]
+}

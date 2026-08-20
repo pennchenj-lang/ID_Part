@@ -1,0 +1,129 @@
+{
+  "record_version": "0.5",
+  "generated_at": "2026-08-19",
+  "evidence_type": "unlabelled_cross_domain_software_regression",
+  "claim_boundary": "Execution, semantic-inventory routing, structural grouping, hierarchy construction, latency, and package validity only. These cases have no pixel ground truth and do not measure semantic or boundary accuracy.",
+  "inference_contract": {
+    "format_version": "0.3.0",
+    "ground_truth_used": false,
+    "user_annotation_used": false,
+    "decomposition_mode": "automatic",
+    "quality": "Fast",
+    "semantic_evidence_order": [
+      "routed_part_inventory",
+      "geometry_and_topology",
+      "appearance_tie_breaker"
+    ],
+    "prompt_bank_hash_policy": "Each case records the exact prompt-bank SHA-256 used by that frozen run because the regression was executed incrementally while new category inventories were added.",
+    "segmentation_model": "facebook/sam2.1-hiera-tiny",
+    "targeted_semantic_model": "IDEA-Research/grounding-dino-tiny"
+  },
+  "source_distribution": "The source images are local user-provided regression assets and are not redistributed by this record.",
+  "cases": [
+    {
+      "case_id": "humanoid",
+      "source_sha256": "55445aaa88dc07a14c288bf8a74f15fc22e2ac5d7aaa570c7b5afa6d563e23f1",
+      "prompt_bank_sha256": "67034f62a5534c1d70d527261f460ed28dcb66780009f9737d1eb0408bc90dbb",
+      "part_count": 15,
+      "group_count": 5,
+      "group_semantics": [
+        "character_body",
+        "character_hair",
+        "character_upper_garment",
+        "character_lower_clothing",
+        "character_accessory"
+      ],
+      "wall_time_seconds": 40.6,
+      "quality_status": "review_recommended",
+      "package_valid": true
+    },
+    {
+      "case_id": "knife",
+      "source_sha256": "01e3f3be63afe1a6248921c392d2b82ccf751d48d55da2c2c4c1fe550f27a886",
+      "prompt_bank_sha256": "eb354d1a03b96772a20c8bd27a3af90dc52f1aff8d55cde7e0555db206c78b2a",
+      "part_count": 16,
+      "group_count": 3,
+      "group_semantics": [
+        "tool_prop_blade",
+        "tool_prop_handle",
+        "tool_prop_wrap"
+      ],
+      "wall_time_seconds": 35.8,
+      "quality_status": "review_recommended",
+      "package_valid": true
+    },
+    {
+      "case_id": "firearm",
+      "source_sha256": "167b4eaf0d81ef8b510a68275782084fdad612a24dd659d6f372a4e7457f5c2c",
+      "prompt_bank_sha256": "67034f62a5534c1d70d527261f460ed28dcb66780009f9737d1eb0408bc90dbb",
+      "part_count": 15,
+      "group_count": 7,
+      "group_semantics": [
+        "tool_prop_muzzle",
+        "tool_prop_barrel",
+        "tool_prop_handguard",
+        "tool_prop_receiver",
+        "tool_prop_magazine",
+        "tool_prop_grip",
+        "tool_prop_stock"
+      ],
+      "physical_grouping_algorithm": "firearm-structure-seeded-inventory-v2",
+      "boundary_refinement_algorithm": "structure-seeded-lab-watershed-v1",
+      "appearance_can_create_ids": false,
+      "wall_time_seconds": 34.4,
+      "quality_status": "review_recommended",
+      "package_valid": true
+    },
+    {
+      "case_id": "globe",
+      "source_sha256": "6618a6a62e212eac89f60b2bd33fca2748409bc5a9c76cde7f71181c3544678a",
+      "prompt_bank_sha256": "eb354d1a03b96772a20c8bd27a3af90dc52f1aff8d55cde7e0555db206c78b2a",
+      "part_count": 7,
+      "group_count": 4,
+      "group_semantics": [
+        "device_globe_sphere",
+        "device_globe_meridian_ring",
+        "device_globe_stem",
+        "device_base"
+      ],
+      "wall_time_seconds": 44.7,
+      "quality_status": "review_recommended",
+      "package_valid": true
+    },
+    {
+      "case_id": "phone",
+      "source_sha256": "9756091a5d7033865693567895c81ff6febf04c44b9fac76e9e89a96208c70f5",
+      "prompt_bank_sha256": "4d7baa28f33e952f82039b5647f1233aa64cbabd4fe1b6fc1e508032ae8b2f76",
+      "part_count": 9,
+      "group_count": 7,
+      "wall_time_seconds": 27.0,
+      "quality_status": "review_recommended",
+      "package_valid": true
+    },
+    {
+      "case_id": "microwave",
+      "source_sha256": "52bf46f32109d0f089101e2a8bc66464a5b7c7692e445851a34b8802ebbca945",
+      "prompt_bank_sha256": "4d7baa28f33e952f82039b5647f1233aa64cbabd4fe1b6fc1e508032ae8b2f76",
+      "part_count": 9,
+      "group_count": 7,
+      "wall_time_seconds": 34.3,
+      "quality_status": "ready",
+      "package_valid": true
+    },
+    {
+      "case_id": "game_scene",
+      "source_sha256": "9ddf2e3ede60e1a8c766e3d69182a6193042c5afffca316314b358faad48ea09",
+      "prompt_bank_sha256": "4d7baa28f33e952f82039b5647f1233aa64cbabd4fe1b6fc1e508032ae8b2f76",
+      "root_mode": "scene",
+      "part_count": 34,
+      "group_count": 33,
+      "public_group_semantic": "scene_object",
+      "wall_time_seconds": 41.9,
+      "quality_status": "review_recommended",
+      "package_valid": true
+    }
+  ],
+  "related_records": [
+    "cross_domain_structural_regression_v0.4.json"
+  ]
+}

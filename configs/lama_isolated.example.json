@@ -1,0 +1,13 @@
+{
+  "kind": "target-package-lama",
+  "package_root": "../.runtime/lama_package",
+  "model_cache": "../.runtime/lama_model_cache",
+  "provenance": {
+    "name": "LaMa via isolated simple-lama-inpainting adapter",
+    "version": "simple-lama-inpainting 0.1.2",
+    "implementation_url": "https://github.com/enesmsahin/simple-lama-inpainting",
+    "publication_url": "https://openaccess.thecvf.com/content/WACV2022/html/Suvorov_Resolution-Robust_Large_Mask_Inpainting_With_Fourier_Convolutions_WACV_2022_paper.html",
+    "license": "Apache-2.0; verify upstream checkpoint terms",
+    "is_hpid_split_method": false
+  }
+}

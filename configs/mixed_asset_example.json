@@ -1,0 +1,35 @@
+{
+  "fine_names": [
+    "background",
+    "character_body",
+    "character_head",
+    "character_hand",
+    "prop_body",
+    "prop_handle",
+    "prop_trigger",
+    "object_body",
+    "object_door",
+    "object_wheel",
+    "scene_structure",
+    "scene_opening",
+    "scene_furniture"
+  ],
+  "parent_names": [
+    "background",
+    "character",
+    "prop",
+    "object",
+    "scene"
+  ],
+  "fine_to_parent": [0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4],
+  "detail_names": [
+    "character_head",
+    "character_hand",
+    "prop_handle",
+    "prop_trigger",
+    "object_door",
+    "object_wheel",
+    "scene_opening",
+    "scene_furniture"
+  ]
+}

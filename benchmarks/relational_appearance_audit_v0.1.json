@@ -1,0 +1,74 @@
+{
+  "record_type": "controlled_internal_ablation",
+  "algorithm_version": "0.1.0",
+  "generated_at": "2026-08-11",
+  "scope": "10 internal stylized character images; not a public benchmark",
+  "inference_uses_ground_truth": false,
+  "candidate_sources": [
+    "IDEA-Research/grounding-dino-tiny + facebook/sam2.1-hiera-tiny",
+    "IDEA-Research/grounding-dino-base + facebook/sam2.1-hiera-tiny",
+    "CIDAS/clipseg-rd64-refined + facebook/sam2.1-hiera-tiny"
+  ],
+  "controlled_change": "Enable hpid-relational-appearance-v1 after an otherwise identical first fusion pass",
+  "relational_prompt_bank_sha256": "23de1e863cff315f04390e7cb7328e4d687d42ab3ef3c028813b268df132595f",
+  "baseline_mean": {
+    "foreground_iou": 0.978643742344954,
+    "semantic_miou": 0.8258436321747622,
+    "boundary_f1": 0.7537296837299087,
+    "small_part_recall": 0.16731642404436523,
+    "component_f1": 0.3729280650745962,
+    "part_count_abs_error": 37.2,
+    "fine_semantic_miou": 0.3297192896538366,
+    "fine_boundary_f1": 0.34097135004465473,
+    "fine_small_part_recall": 0.15000292638691193,
+    "fine_component_f1": 0.2340666951766733,
+    "fine_part_count_abs_error": 82.7
+  },
+  "relational_mean": {
+    "foreground_iou": 0.978643742344954,
+    "semantic_miou": 0.8321589561875362,
+    "boundary_f1": 0.7653405482985092,
+    "small_part_recall": 0.19012985244602892,
+    "component_f1": 0.376007698607096,
+    "part_count_abs_error": 35.7,
+    "fine_semantic_miou": 0.3473012796898624,
+    "fine_boundary_f1": 0.37829252599460494,
+    "fine_small_part_recall": 0.17352249081786833,
+    "fine_component_f1": 0.2436946455765318,
+    "fine_part_count_abs_error": 79.6
+  },
+  "relational_minus_baseline": {
+    "foreground_iou": 0.0,
+    "semantic_miou": 0.006315324012774,
+    "boundary_f1": 0.0116108645686005,
+    "small_part_recall": 0.02281342840166369,
+    "component_f1": 0.0030796335324998,
+    "part_count_abs_error": -1.5,
+    "fine_semantic_miou": 0.0175819900360258,
+    "fine_boundary_f1": 0.03732117594995021,
+    "fine_small_part_recall": 0.0235195644309564,
+    "fine_component_f1": 0.0096279503998585,
+    "fine_part_count_abs_error": -3.1
+  },
+  "target_class_result": {
+    "eyebrow_final_recall_before": 0.0,
+    "eyebrow_final_recall_after": 0.21410372659541613,
+    "eyebrow_final_precision_after": 0.8301317214319284,
+    "eyelash_final_recall_before": 0.0,
+    "eyelash_final_recall_after": 0.16152773817502966,
+    "eyelash_final_precision_after": 0.4719627139013373,
+    "eye_final_recall_before": 0.920159072646294,
+    "eye_final_recall_after": 0.9038625336493009,
+    "eye_final_precision_before": 0.7039687315035147,
+    "eye_final_precision_after": 0.741403277666412
+  },
+  "source_files": {
+    "baseline_summary_csv_sha256": "64306abd4f40c7be477173d9f1a598500ce8a40c1e471886ec94ef4cda2d5aff",
+    "baseline_manifest_json_sha256": "4365873b8e9a63b5beec02ade343e08b4e5d311f9c3d455dd980b31b1c702deb",
+    "baseline_class_summary_csv_sha256": "7029a35168eb699ec6bd82820a194bb3dfadfe9ce3c245bc2b859d60164fac0f",
+    "relational_summary_csv_sha256": "df026147414b69f3ea4879e8363a2606c9489a25d35e59d81bbf8a7a5d5217d1",
+    "relational_manifest_json_sha256": "8feb99f6c8f64ff441b2db3b58ddc4ffd39daab7e1e8e4e7ebc9b536c03d495d",
+    "relational_class_summary_csv_sha256": "bdaf3f845dac6552f2716f5048028dcb6f920ce2d2f4178db7158c631aaae951"
+  },
+  "warning": "Ground truth was loaded only after every prediction for each image existed. The audit is small, internal, character-only, and does not validate props, objects, or scenes."
+}

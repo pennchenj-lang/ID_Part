@@ -1,0 +1,1475 @@
+{
+  "format": "HPID PACO Florence part proposal audit",
+  "format_version": "0.1.0",
+  "source_manifest": "paco://broad_objects_val_dev_v2/manifest.json",
+  "source_manifest_sha256": "90f6c3acc118be1d6807f0a545a35a2d80dc36f3b702ccf1936d554fe257c41e",
+  "retrieval_index": "model://hpid_paco_prototypes_v1",
+  "retrieval_index_sha256": "34661915c535e9b79fdf1a0546fe4d0c20960d02cb75c87b1164cd1bc2d5e283",
+  "condition": "prompted-category + oracle-domain + oracle-object-mask",
+  "ground_truth_object_mask_used_as_root": true,
+  "ground_truth_part_masks_used_during_inference": false,
+  "ground_truth_part_names_used_during_inference": false,
+  "ground_truth_parts_loaded_only_after_reranking": true,
+  "aggregate": {
+    "case_count": 8,
+    "successful_case_count": 8,
+    "failed_case_count": 0,
+    "raw_f1_at_025": 0.24270833333333333,
+    "raw_mean_matched_iou": 0.31462546437978745,
+    "raw_mean_matched_boundary_f1": 0.3477932456046343,
+    "reranked_f1_at_025": 0.2847222222222222,
+    "reranked_mean_matched_iou": 0.28359717316925526,
+    "reranked_mean_matched_boundary_f1": 0.3143479693868157,
+    "semantic_recall_at_025": 0.15625
+  },
+  "cases": [
+    {
+      "case_id": "cellular_telephone",
+      "object_category": "cellular_telephone",
+      "expected_domain": "device",
+      "status": "ok",
+      "retrieved_asset_label": "cellular telephone",
+      "retrieval_similarity": 0.6132442951202393,
+      "prompt_count": 4,
+      "truth_part_count": 4,
+      "raw_candidate_count": 1,
+      "reranked_candidate_count": 0,
+      "raw_f1_at_025": 0.0,
+      "raw_mean_matched_iou": 0.0,
+      "raw_mean_matched_boundary_f1": 0.0,
+      "reranked_f1_at_025": 0.0,
+      "reranked_mean_matched_iou": 0.0,
+      "reranked_mean_matched_boundary_f1": 0.0,
+      "semantic_recall_at_025": 0.0,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 4,
+        "phrase_query_count": 8,
+        "candidate_count": 1,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 0,
+          "too_large": 6,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "button",
+            "slug": "device_button",
+            "phrases": [
+              "button",
+              "button of cellular telephone",
+              "cellular telephone button"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "screen",
+            "slug": "device_screen",
+            "phrases": [
+              "screen",
+              "screen of cellular telephone",
+              "cellular telephone screen"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "bezel",
+            "slug": "device_bezel",
+            "phrases": [
+              "bezel",
+              "bezel of cellular telephone",
+              "cellular telephone bezel"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "back panel",
+            "slug": "device_back_panel",
+            "phrases": [
+              "back panel",
+              "back panel of cellular telephone",
+              "cellular telephone back panel"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 1,
+        "accepted_count": 0,
+        "rejected_count": 1,
+        "rows": [
+          {
+            "semantic_name": "device_button",
+            "visual_similarity": 0.9875582456588745,
+            "raw_visual_similarity": 0.7308233976364136,
+            "geometry_compatibility": 0.0006987651577219367,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          }
+        ]
+      },
+      "raw_matches": [
+        {
+          "truth_index": 0,
+          "prediction_index": 0,
+          "iou": 0.01466839574277401,
+          "accepted": false
+        }
+      ],
+      "reranked_matches": [],
+      "semantic_matches": [
+        {
+          "truth_part": "screen",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "button",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "bezel",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "back_panel",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        }
+      ]
+    },
+    {
+      "case_id": "watch",
+      "object_category": "watch",
+      "expected_domain": "device",
+      "status": "ok",
+      "retrieved_asset_label": "watch",
+      "retrieval_similarity": 0.42656072974205017,
+      "prompt_count": 7,
+      "truth_part_count": 4,
+      "raw_candidate_count": 0,
+      "reranked_candidate_count": 0,
+      "raw_f1_at_025": 0.0,
+      "raw_mean_matched_iou": 0.0,
+      "raw_mean_matched_boundary_f1": 0.0,
+      "reranked_f1_at_025": 0.0,
+      "reranked_mean_matched_iou": 0.0,
+      "reranked_mean_matched_boundary_f1": 0.0,
+      "semantic_recall_at_025": 0.0,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 7,
+        "phrase_query_count": 14,
+        "candidate_count": 0,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 0,
+          "too_large": 14,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "clock hand",
+            "slug": "device_clock_hand",
+            "phrases": [
+              "clock hand",
+              "clock hand of watch",
+              "watch clock hand"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "screen",
+            "slug": "device_screen",
+            "phrases": [
+              "screen",
+              "screen of watch",
+              "watch screen"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "lug",
+            "slug": "device_lug",
+            "phrases": [
+              "lug",
+              "lug of watch",
+              "watch lug"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "buckle",
+            "slug": "device_buckle",
+            "phrases": [
+              "buckle",
+              "buckle of watch",
+              "watch buckle"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "body",
+            "slug": "device_body",
+            "phrases": [
+              "body",
+              "body of watch",
+              "watch body"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "band",
+            "slug": "device_band",
+            "phrases": [
+              "band",
+              "band of watch",
+              "watch band"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "dial",
+            "slug": "device_dial",
+            "phrases": [
+              "dial",
+              "dial of watch",
+              "watch dial"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 0,
+        "accepted_count": 0,
+        "rejected_count": 0
+      },
+      "raw_matches": [],
+      "reranked_matches": [],
+      "semantic_matches": [
+        {
+          "truth_part": "lug",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "buckle",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "body",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "band",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        }
+      ]
+    },
+    {
+      "case_id": "mouse_computer_equipment",
+      "object_category": "mouse_(computer_equipment)",
+      "expected_domain": "device",
+      "status": "ok",
+      "retrieved_asset_label": "mouse (computer equipment)",
+      "retrieval_similarity": 0.7396531105041504,
+      "prompt_count": 5,
+      "truth_part_count": 6,
+      "raw_candidate_count": 0,
+      "reranked_candidate_count": 0,
+      "raw_f1_at_025": 0.0,
+      "raw_mean_matched_iou": 0.0,
+      "raw_mean_matched_boundary_f1": 0.0,
+      "reranked_f1_at_025": 0.0,
+      "reranked_mean_matched_iou": 0.0,
+      "reranked_mean_matched_boundary_f1": 0.0,
+      "semantic_recall_at_025": 0.0,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 5,
+        "phrase_query_count": 10,
+        "candidate_count": 0,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 0,
+          "too_large": 10,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "button",
+            "slug": "device_button",
+            "phrases": [
+              "button",
+              "button of mouse (computer equipment)",
+              "mouse (computer equipment) button"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "wheel",
+            "slug": "device_wheel",
+            "phrases": [
+              "wheel",
+              "wheel of mouse (computer equipment)",
+              "mouse (computer equipment) wheel"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "logo",
+            "slug": "device_logo",
+            "phrases": [
+              "logo",
+              "logo of mouse (computer equipment)",
+              "mouse (computer equipment) logo"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "body",
+            "slug": "device_body",
+            "phrases": [
+              "body",
+              "body of mouse (computer equipment)",
+              "mouse (computer equipment) body"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "cable",
+            "slug": "device_cable",
+            "phrases": [
+              "cable",
+              "cable of mouse (computer equipment)",
+              "mouse (computer equipment) cable"
+            ],
+            "proposal_count": 0,
+            "accepted_candidate_count": 0
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 0,
+        "accepted_count": 0,
+        "rejected_count": 0
+      },
+      "raw_matches": [],
+      "reranked_matches": [],
+      "semantic_matches": [
+        {
+          "truth_part": "wheel",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "logo",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "button",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "button",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "cable",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "body",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        }
+      ]
+    },
+    {
+      "case_id": "chair",
+      "object_category": "chair",
+      "expected_domain": "furniture",
+      "status": "ok",
+      "retrieved_asset_label": "chair",
+      "retrieval_similarity": 0.4554300606250763,
+      "prompt_count": 9,
+      "truth_part_count": 7,
+      "raw_candidate_count": 9,
+      "reranked_candidate_count": 2,
+      "raw_f1_at_025": 0.375,
+      "raw_mean_matched_iou": 0.427570104598999,
+      "raw_mean_matched_boundary_f1": 0.787631315041777,
+      "reranked_f1_at_025": 0.4444444444444445,
+      "reranked_mean_matched_iou": 0.4790388494729996,
+      "reranked_mean_matched_boundary_f1": 0.8714434320782432,
+      "semantic_recall_at_025": 0.0,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 9,
+        "phrase_query_count": 18,
+        "candidate_count": 9,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 1,
+          "too_large": 0,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "spindle",
+            "slug": "furniture_spindle",
+            "phrases": [
+              "spindle",
+              "spindle of chair",
+              "chair spindle"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "rail",
+            "slug": "furniture_rail",
+            "phrases": [
+              "rail",
+              "rail of chair",
+              "chair rail"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "apron",
+            "slug": "furniture_apron",
+            "phrases": [
+              "apron",
+              "apron of chair",
+              "chair apron"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "seat",
+            "slug": "furniture_seat",
+            "phrases": [
+              "seat",
+              "seat of chair",
+              "chair seat"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "leg",
+            "slug": "furniture_leg",
+            "phrases": [
+              "leg",
+              "leg of chair",
+              "chair leg"
+            ],
+            "proposal_count": 1,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "stretcher",
+            "slug": "furniture_stretcher",
+            "phrases": [
+              "stretcher",
+              "stretcher of chair",
+              "chair stretcher"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "backrest",
+            "slug": "furniture_backrest",
+            "phrases": [
+              "backrest",
+              "backrest of chair",
+              "chair backrest"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "stile",
+            "slug": "furniture_stile",
+            "phrases": [
+              "stile",
+              "stile of chair",
+              "chair stile"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "armrest",
+            "slug": "furniture_armrest",
+            "phrases": [
+              "armrest",
+              "armrest of chair",
+              "chair armrest"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 9,
+        "accepted_count": 2,
+        "rejected_count": 7,
+        "rows": [
+          {
+            "semantic_name": "furniture_spindle",
+            "visual_similarity": 0.9948067665100098,
+            "raw_visual_similarity": 0.8952893614768982,
+            "geometry_compatibility": 0.01727522909641266,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_rail",
+            "visual_similarity": 0.9938898086547852,
+            "raw_visual_similarity": 0.889741063117981,
+            "geometry_compatibility": 0.0001877041213447228,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_apron",
+            "visual_similarity": 0.9910697340965271,
+            "raw_visual_similarity": 0.8247154355049133,
+            "geometry_compatibility": 0.0001591501059010625,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_seat",
+            "visual_similarity": 0.9913669228553772,
+            "raw_visual_similarity": 0.8268277049064636,
+            "geometry_compatibility": 0.03662960231304169,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_leg",
+            "visual_similarity": 0.9911430478096008,
+            "raw_visual_similarity": 0.8334795236587524,
+            "geometry_compatibility": 0.13563397526741028,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_stretcher",
+            "visual_similarity": 0.9911419153213501,
+            "raw_visual_similarity": 0.835313081741333,
+            "geometry_compatibility": 0.005430552177131176,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_backrest",
+            "visual_similarity": 0.9930878281593323,
+            "raw_visual_similarity": 0.8710641860961914,
+            "geometry_compatibility": 0.002109791385009885,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_stile",
+            "visual_similarity": 0.9913111329078674,
+            "raw_visual_similarity": 0.8378146886825562,
+            "geometry_compatibility": 0.002149188658222556,
+            "support_count": 1,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "furniture_armrest",
+            "visual_similarity": 0.9927464723587036,
+            "raw_visual_similarity": 0.8654883503913879,
+            "geometry_compatibility": 9.379439143231139e-05,
+            "support_count": 1,
+            "accepted": true,
+            "rejection_reason": null
+          }
+        ]
+      },
+      "raw_matches": [
+        {
+          "truth_index": 0,
+          "prediction_index": 2,
+          "iou": 0.0883590430021286,
+          "accepted": false
+        },
+        {
+          "truth_index": 1,
+          "prediction_index": 0,
+          "iou": 0.5503448247909546,
+          "accepted": true
+        },
+        {
+          "truth_index": 2,
+          "prediction_index": 3,
+          "iou": 0.13481228053569794,
+          "accepted": false
+        },
+        {
+          "truth_index": 3,
+          "prediction_index": 4,
+          "iou": 0.0621669627726078,
+          "accepted": false
+        },
+        {
+          "truth_index": 4,
+          "prediction_index": 5,
+          "iou": 0.44133099913597107,
+          "accepted": true
+        },
+        {
+          "truth_index": 5,
+          "prediction_index": 7,
+          "iou": 0.20404721796512604,
+          "accepted": false
+        },
+        {
+          "truth_index": 6,
+          "prediction_index": 6,
+          "iou": 0.2910344898700714,
+          "accepted": true
+        }
+      ],
+      "reranked_matches": [
+        {
+          "truth_index": 1,
+          "prediction_index": 1,
+          "iou": 0.5503448247909546,
+          "accepted": true
+        },
+        {
+          "truth_index": 4,
+          "prediction_index": 0,
+          "iou": 0.40773287415504456,
+          "accepted": true
+        }
+      ],
+      "semantic_matches": [
+        {
+          "truth_part": "rail",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "spindle",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "seat",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "apron",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "leg",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "stretcher",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "stile",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        }
+      ]
+    },
+    {
+      "case_id": "crate",
+      "object_category": "crate",
+      "expected_domain": "container",
+      "status": "ok",
+      "retrieved_asset_label": "crate",
+      "retrieval_similarity": 0.7424724102020264,
+      "prompt_count": 3,
+      "truth_part_count": 2,
+      "raw_candidate_count": 3,
+      "reranked_candidate_count": 2,
+      "raw_f1_at_025": 0.4,
+      "raw_mean_matched_iou": 0.684958279132843,
+      "raw_mean_matched_boundary_f1": 0.71883992552051,
+      "reranked_f1_at_025": 0.5,
+      "reranked_mean_matched_iou": 0.6830995082855225,
+      "reranked_mean_matched_boundary_f1": 0.7082342016362733,
+      "semantic_recall_at_025": 0.5,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 3,
+        "phrase_query_count": 6,
+        "candidate_count": 3,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 2,
+          "too_large": 0,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "side",
+            "slug": "container_side",
+            "phrases": [
+              "side",
+              "side of crate",
+              "crate side"
+            ],
+            "proposal_count": 1,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "handle",
+            "slug": "container_handle",
+            "phrases": [
+              "handle",
+              "handle of crate",
+              "crate handle"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "bottom",
+            "slug": "container_bottom",
+            "phrases": [
+              "bottom",
+              "bottom of crate",
+              "crate bottom"
+            ],
+            "proposal_count": 1,
+            "accepted_candidate_count": 1
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 3,
+        "accepted_count": 2,
+        "rejected_count": 1,
+        "rows": [
+          {
+            "semantic_name": "container_side",
+            "visual_similarity": 0.9940901398658752,
+            "raw_visual_similarity": 0.8725273013114929,
+            "geometry_compatibility": 0.28091901540756226,
+            "support_count": 2,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_handle",
+            "visual_similarity": 0.9908351898193359,
+            "raw_visual_similarity": 0.8225451707839966,
+            "geometry_compatibility": 0.27857711911201477,
+            "support_count": 2,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_bottom",
+            "visual_similarity": 0.9926038384437561,
+            "raw_visual_similarity": 0.8450202941894531,
+            "geometry_compatibility": 0.028450394049286842,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          }
+        ]
+      },
+      "raw_matches": [
+        {
+          "truth_index": 0,
+          "prediction_index": 1,
+          "iou": 0.14873920381069183,
+          "accepted": false
+        },
+        {
+          "truth_index": 1,
+          "prediction_index": 2,
+          "iou": 0.684958279132843,
+          "accepted": true
+        }
+      ],
+      "reranked_matches": [
+        {
+          "truth_index": 0,
+          "prediction_index": 1,
+          "iou": 0.14873920381069183,
+          "accepted": false
+        },
+        {
+          "truth_index": 1,
+          "prediction_index": 0,
+          "iou": 0.6830995082855225,
+          "accepted": true
+        }
+      ],
+      "semantic_matches": [
+        {
+          "truth_part": "side",
+          "best_same_semantic_iou": 0.13160152898041969,
+          "accepted": false,
+          "prediction_index": 0
+        },
+        {
+          "truth_part": "side",
+          "best_same_semantic_iou": 0.6830995148813426,
+          "accepted": true,
+          "prediction_index": 0
+        }
+      ]
+    },
+    {
+      "case_id": "plate",
+      "object_category": "plate",
+      "expected_domain": "container",
+      "status": "ok",
+      "retrieved_asset_label": "plate",
+      "retrieval_similarity": 0.7741442918777466,
+      "prompt_count": 4,
+      "truth_part_count": 5,
+      "raw_candidate_count": 4,
+      "reranked_candidate_count": 0,
+      "raw_f1_at_025": 0.22222222222222224,
+      "raw_mean_matched_iou": 0.2955857515335083,
+      "raw_mean_matched_boundary_f1": 0.3008074044899567,
+      "reranked_f1_at_025": 0.0,
+      "reranked_mean_matched_iou": 0.0,
+      "reranked_mean_matched_boundary_f1": 0.0,
+      "semantic_recall_at_025": 0.0,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 4,
+        "phrase_query_count": 8,
+        "candidate_count": 4,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 0,
+          "too_large": 0,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "rim",
+            "slug": "container_rim",
+            "phrases": [
+              "rim",
+              "rim of plate",
+              "plate rim"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "body",
+            "slug": "container_body",
+            "phrases": [
+              "body",
+              "body of plate",
+              "plate body"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "inner wall",
+            "slug": "container_inner_wall",
+            "phrases": [
+              "inner wall",
+              "inner wall of plate",
+              "plate inner wall"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "bottom",
+            "slug": "container_bottom",
+            "phrases": [
+              "bottom",
+              "bottom of plate",
+              "plate bottom"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 4,
+        "accepted_count": 0,
+        "rejected_count": 4,
+        "rows": [
+          {
+            "semantic_name": "container_rim",
+            "visual_similarity": 0.9934525489807129,
+            "raw_visual_similarity": 0.8754478693008423,
+            "geometry_compatibility": 6.900827131950393e-10,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_body",
+            "visual_similarity": 0.9950953125953674,
+            "raw_visual_similarity": 0.9101405143737793,
+            "geometry_compatibility": 0.007564696483314037,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_inner_wall",
+            "visual_similarity": 0.9942073225975037,
+            "raw_visual_similarity": 0.8900574445724487,
+            "geometry_compatibility": 0.00029586468008346856,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_bottom",
+            "visual_similarity": 0.9915478229522705,
+            "raw_visual_similarity": 0.8335472941398621,
+            "geometry_compatibility": 7.757457870516404e-11,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          }
+        ]
+      },
+      "raw_matches": [
+        {
+          "truth_index": 0,
+          "prediction_index": 3,
+          "iou": 0.23673151433467865,
+          "accepted": false
+        },
+        {
+          "truth_index": 1,
+          "prediction_index": 1,
+          "iou": 0.16848815977573395,
+          "accepted": false
+        },
+        {
+          "truth_index": 3,
+          "prediction_index": 2,
+          "iou": 0.2955857515335083,
+          "accepted": true
+        },
+        {
+          "truth_index": 4,
+          "prediction_index": 0,
+          "iou": 0.1402294635772705,
+          "accepted": false
+        }
+      ],
+      "reranked_matches": [],
+      "semantic_matches": [
+        {
+          "truth_part": "rim",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "body",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "base",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "inner_wall",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "bottom",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        }
+      ]
+    },
+    {
+      "case_id": "tray",
+      "object_category": "tray",
+      "expected_domain": "container",
+      "status": "ok",
+      "retrieved_asset_label": "tray",
+      "retrieval_similarity": 0.43601614236831665,
+      "prompt_count": 5,
+      "truth_part_count": 4,
+      "raw_candidate_count": 5,
+      "reranked_candidate_count": 2,
+      "raw_f1_at_025": 0.4444444444444445,
+      "raw_mean_matched_iou": 0.4506872296333313,
+      "raw_mean_matched_boundary_f1": 0.32742566019230107,
+      "reranked_f1_at_025": 0.6666666666666666,
+      "reranked_mean_matched_iou": 0.4484366774559021,
+      "reranked_mean_matched_boundary_f1": 0.2874644617874794,
+      "semantic_recall_at_025": 0.25,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 5,
+        "phrase_query_count": 10,
+        "candidate_count": 5,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 0,
+          "too_large": 1,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "rim",
+            "slug": "container_rim",
+            "phrases": [
+              "rim",
+              "rim of tray",
+              "tray rim"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "inner wall",
+            "slug": "container_inner_wall",
+            "phrases": [
+              "inner wall",
+              "inner wall of tray",
+              "tray inner wall"
+            ],
+            "proposal_count": 1,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "bottom",
+            "slug": "container_bottom",
+            "phrases": [
+              "bottom",
+              "bottom of tray",
+              "tray bottom"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "outer side",
+            "slug": "container_outer_side",
+            "phrases": [
+              "outer side",
+              "outer side of tray",
+              "tray outer side"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "base",
+            "slug": "container_base",
+            "phrases": [
+              "base",
+              "base of tray",
+              "tray base"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 5,
+        "accepted_count": 2,
+        "rejected_count": 3,
+        "rows": [
+          {
+            "semantic_name": "container_rim",
+            "visual_similarity": 0.9915333986282349,
+            "raw_visual_similarity": 0.8112043738365173,
+            "geometry_compatibility": 0.0021119704470038414,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_inner_wall",
+            "visual_similarity": 0.989759087562561,
+            "raw_visual_similarity": 0.8185186386108398,
+            "geometry_compatibility": 0.254106730222702,
+            "support_count": 2,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_bottom",
+            "visual_similarity": 0.9941016435623169,
+            "raw_visual_similarity": 0.8644997477531433,
+            "geometry_compatibility": 0.10931900143623352,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_outer_side",
+            "visual_similarity": 0.9925049543380737,
+            "raw_visual_similarity": 0.836239755153656,
+            "geometry_compatibility": 0.024064423516392708,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "container_base",
+            "visual_similarity": 0.9918942451477051,
+            "raw_visual_similarity": 0.8188983798027039,
+            "geometry_compatibility": 3.308637133159209e-07,
+            "support_count": 1,
+            "accepted": true,
+            "rejection_reason": null
+          }
+        ]
+      },
+      "raw_matches": [
+        {
+          "truth_index": 0,
+          "prediction_index": 1,
+          "iou": 0.11105933785438538,
+          "accepted": false
+        },
+        {
+          "truth_index": 1,
+          "prediction_index": 4,
+          "iou": 0.5971769094467163,
+          "accepted": true
+        },
+        {
+          "truth_index": 2,
+          "prediction_index": 2,
+          "iou": 0.05158534273505211,
+          "accepted": false
+        },
+        {
+          "truth_index": 3,
+          "prediction_index": 0,
+          "iou": 0.3041975498199463,
+          "accepted": true
+        }
+      ],
+      "reranked_matches": [
+        {
+          "truth_index": 1,
+          "prediction_index": 1,
+          "iou": 0.5971769094467163,
+          "accepted": true
+        },
+        {
+          "truth_index": 3,
+          "prediction_index": 0,
+          "iou": 0.2996964454650879,
+          "accepted": true
+        }
+      ],
+      "semantic_matches": [
+        {
+          "truth_part": "rim",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "bottom",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "outer_side",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "inner_wall",
+          "best_same_semantic_iou": 0.299696451802158,
+          "accepted": true,
+          "prediction_index": 0
+        }
+      ]
+    },
+    {
+      "case_id": "drill",
+      "object_category": "drill",
+      "expected_domain": "tool_prop",
+      "status": "ok",
+      "retrieved_asset_label": "drill",
+      "retrieval_similarity": 0.6263399124145508,
+      "prompt_count": 2,
+      "truth_part_count": 2,
+      "raw_candidate_count": 2,
+      "reranked_candidate_count": 1,
+      "raw_f1_at_025": 0.5,
+      "raw_mean_matched_iou": 0.6582023501396179,
+      "raw_mean_matched_boundary_f1": 0.6476416595925297,
+      "reranked_f1_at_025": 0.6666666666666666,
+      "reranked_mean_matched_iou": 0.6582023501396179,
+      "reranked_mean_matched_boundary_f1": 0.6476416595925297,
+      "semantic_recall_at_025": 0.5,
+      "generation": {
+        "algorithm": "florence2-root-constrained-part-proposals-v1",
+        "model": "florence-community/Florence-2-base-ft",
+        "root_count": 1,
+        "prompt_count": 2,
+        "phrase_query_count": 4,
+        "candidate_count": 2,
+        "rejections": {
+          "empty_polygon": 0,
+          "outside_root": 0,
+          "too_large": 0,
+          "too_small": 0,
+          "duplicate": 0
+        },
+        "prompts": [
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "handle",
+            "slug": "tool_prop_handle",
+            "phrases": [
+              "handle",
+              "handle of drill",
+              "drill handle"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          },
+          {
+            "root_key": "paco-oracle-object-root::0",
+            "label": "body",
+            "slug": "tool_prop_body",
+            "phrases": [
+              "body",
+              "body of drill",
+              "drill body"
+            ],
+            "proposal_count": 2,
+            "accepted_candidate_count": 1
+          }
+        ],
+        "root_background_suppressed": true,
+        "ground_truth_used": false
+      },
+      "reranking": {
+        "candidate_count": 2,
+        "accepted_count": 1,
+        "rejected_count": 1,
+        "rows": [
+          {
+            "semantic_name": "tool_prop_handle",
+            "visual_similarity": 0.9887675046920776,
+            "raw_visual_similarity": 0.8120771646499634,
+            "geometry_compatibility": 4.90827062549215e-07,
+            "support_count": 2,
+            "accepted": false,
+            "rejection_reason": null
+          },
+          {
+            "semantic_name": "tool_prop_body",
+            "visual_similarity": 0.9925190210342407,
+            "raw_visual_similarity": 0.888907790184021,
+            "geometry_compatibility": 0.3927720785140991,
+            "support_count": 2,
+            "accepted": true,
+            "rejection_reason": null
+          }
+        ]
+      },
+      "raw_matches": [
+        {
+          "truth_index": 0,
+          "prediction_index": 0,
+          "iou": 0.06611789762973785,
+          "accepted": false
+        },
+        {
+          "truth_index": 1,
+          "prediction_index": 1,
+          "iou": 0.6582023501396179,
+          "accepted": true
+        }
+      ],
+      "reranked_matches": [
+        {
+          "truth_index": 1,
+          "prediction_index": 0,
+          "iou": 0.6582023501396179,
+          "accepted": true
+        }
+      ],
+      "semantic_matches": [
+        {
+          "truth_part": "handle",
+          "best_same_semantic_iou": 0.0,
+          "accepted": false,
+          "prediction_index": null
+        },
+        {
+          "truth_part": "body",
+          "best_same_semantic_iou": 0.6582023377670294,
+          "accepted": true,
+          "prediction_index": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "format": "HPID local regression suite",
+  "version": "0.1.0",
+  "notes": [
+    "Use source images only; do not list previews, masks, or annotated screenshots.",
+    "Qualitative-only cases must not be reported as labelled accuracy."
+  ],
+  "cases": [
+    {
+      "case_id": "character_example",
+      "image": "../data/regression/character_example.png",
+      "expected_domain": "character",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "multi_asset_scene_example",
+      "image": "../data/regression/scene_example.png",
+      "expected_domain": null,
+      "root_mode": "all",
+      "evidence": "qualitative_only"
+    }
+  ]
+}

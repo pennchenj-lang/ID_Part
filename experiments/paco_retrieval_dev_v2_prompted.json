@@ -1,0 +1,3815 @@
+{
+  "format": "HPID PACO prototype retrieval audit",
+  "format_version": "0.1.0",
+  "condition": "prompted",
+  "source_manifest": "paco://broad_objects_val_dev_v3/manifest.json",
+  "prototype_index": "model://hpid_paco_prototypes_v2",
+  "ground_truth_object_mask_used": true,
+  "ground_truth_part_masks_used_during_retrieval": false,
+  "ground_truth_part_names_used_only_for_post_retrieval_inventory_audit": true,
+  "expected_profile_available_to_retrieval": true,
+  "oracle_profile_condition": false,
+  "aggregate": {
+    "acceptance_rate": 1.0,
+    "accepted_label_accuracy": 1.0,
+    "correct_retrieval_coverage": 1.0,
+    "nearest_label_accuracy": 1.0,
+    "mean_top_similarity": 0.9887558612330206,
+    "mean_part_inventory_recall": 0.9767754515599344
+  },
+  "by_domain": {
+    "container": {
+      "acceptance_rate": 1.0,
+      "accepted_label_accuracy": 1.0,
+      "correct_retrieval_coverage": 1.0,
+      "nearest_label_accuracy": 1.0,
+      "mean_top_similarity": 0.9898209340042539,
+      "mean_part_inventory_recall": 0.9685185185185186
+    },
+    "daily_object": {
+      "acceptance_rate": 1.0,
+      "accepted_label_accuracy": 1.0,
+      "correct_retrieval_coverage": 1.0,
+      "nearest_label_accuracy": 1.0,
+      "mean_top_similarity": 0.9825253933668137,
+      "mean_part_inventory_recall": 1.0
+    },
+    "device": {
+      "acceptance_rate": 1.0,
+      "accepted_label_accuracy": 1.0,
+      "correct_retrieval_coverage": 1.0,
+      "nearest_label_accuracy": 1.0,
+      "mean_top_similarity": 0.9898716041019985,
+      "mean_part_inventory_recall": 0.9576530612244899
+    },
+    "furniture": {
+      "acceptance_rate": 1.0,
+      "accepted_label_accuracy": 1.0,
+      "correct_retrieval_coverage": 1.0,
+      "nearest_label_accuracy": 1.0,
+      "mean_top_similarity": 0.9892898052930832,
+      "mean_part_inventory_recall": 1.0
+    },
+    "tool_prop": {
+      "acceptance_rate": 1.0,
+      "accepted_label_accuracy": 1.0,
+      "correct_retrieval_coverage": 1.0,
+      "nearest_label_accuracy": 1.0,
+      "mean_top_similarity": 0.9932323768734932,
+      "mean_part_inventory_recall": 1.0
+    },
+    "vehicle": {
+      "acceptance_rate": 1.0,
+      "accepted_label_accuracy": 1.0,
+      "correct_retrieval_coverage": 1.0,
+      "nearest_label_accuracy": 1.0,
+      "mean_top_similarity": 0.9897688627243042,
+      "mean_part_inventory_recall": 0.90625
+    }
+  },
+  "cases": [
+    {
+      "case_id": "cellular_telephone",
+      "object_category": "cellular_telephone",
+      "expected_domain": "device",
+      "expected_profile": "phone",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9830754399299622,
+      "selected_asset_label": "cellular telephone",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "cellular telephone",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-cellular_telephone-535901",
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "similarity": 0.9830754399299622,
+          "adjusted_similarity": 0.9830754399299622,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cellular_telephone-657238",
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "similarity": 0.9807478189468384,
+          "adjusted_similarity": 0.9807478189468384,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cellular_telephone-293386",
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "similarity": 0.9767441153526306,
+          "adjusted_similarity": 0.9767441153526306,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cellular_telephone-745664",
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "similarity": 0.9763479828834534,
+          "adjusted_similarity": 0.9763479828834534,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cellular_telephone-764767",
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "similarity": 0.9763107299804688,
+          "adjusted_similarity": 0.9763107299804688,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "laptop_computer",
+      "object_category": "laptop_computer",
+      "expected_domain": "device",
+      "expected_profile": "laptop",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9879602193832397,
+      "selected_asset_label": "laptop computer",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "laptop computer",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 7,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 0.8571428571428571,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-laptop_computer-352603",
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "similarity": 0.9879602193832397,
+          "adjusted_similarity": 0.9879602193832397,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-laptop_computer-682073",
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "similarity": 0.9878199100494385,
+          "adjusted_similarity": 0.9878199100494385,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-laptop_computer-1200919",
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "similarity": 0.9845398664474487,
+          "adjusted_similarity": 0.9845398664474487,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-laptop_computer-564121",
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "similarity": 0.9813442826271057,
+          "adjusted_similarity": 0.9813442826271057,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-laptop_computer-577031",
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "similarity": 0.979526698589325,
+          "adjusted_similarity": 0.979526698589325,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "television_set",
+      "object_category": "television_set",
+      "expected_domain": "device",
+      "expected_profile": "display",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9831390380859375,
+      "selected_asset_label": "television set",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "television set",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-television_set-1131472",
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "similarity": 0.9831390380859375,
+          "adjusted_similarity": 0.9831390380859375,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-television_set-1007748",
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "similarity": 0.9818332195281982,
+          "adjusted_similarity": 0.9818332195281982,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-television_set-711649",
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "similarity": 0.9801950454711914,
+          "adjusted_similarity": 0.9801950454711914,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-television_set-786414",
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "similarity": 0.9798583388328552,
+          "adjusted_similarity": 0.9798583388328552,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-television_set-623954",
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "similarity": 0.9779938459396362,
+          "adjusted_similarity": 0.9779938459396362,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "remote_control",
+      "object_category": "remote_control",
+      "expected_domain": "device",
+      "expected_profile": "controls",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9909496903419495,
+      "selected_asset_label": "remote control",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "remote control",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 3,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-remote_control-483552",
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9909496903419495,
+          "adjusted_similarity": 0.9909496903419495,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-remote_control-378036",
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9903739094734192,
+          "adjusted_similarity": 0.9903739094734192,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-remote_control-352591",
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9856364727020264,
+          "adjusted_similarity": 0.9856364727020264,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-remote_control-303314",
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9848237037658691,
+          "adjusted_similarity": 0.9848237037658691,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-remote_control-311262",
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9834555387496948,
+          "adjusted_similarity": 0.9834555387496948,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "telephone",
+      "object_category": "telephone",
+      "expected_domain": "device",
+      "expected_profile": "controls",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9886691570281982,
+      "selected_asset_label": "telephone",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "telephone",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-telephone-640540",
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9886691570281982,
+          "adjusted_similarity": 0.9886691570281982,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-telephone-1091071",
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.988458514213562,
+          "adjusted_similarity": 0.988458514213562,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-telephone-270198",
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9879846572875977,
+          "adjusted_similarity": 0.9879846572875977,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-telephone-832893",
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.9875056743621826,
+          "adjusted_similarity": 0.9875056743621826,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-telephone-994837",
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "similarity": 0.985264778137207,
+          "adjusted_similarity": 0.985264778137207,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "clock",
+      "object_category": "clock",
+      "expected_domain": "device",
+      "expected_profile": "clock_watch",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9936271905899048,
+      "selected_asset_label": "clock",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "clock",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-clock-766956",
+          "asset_label": "clock",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9936271905899048,
+          "adjusted_similarity": 0.9936271905899048,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-clock-377161",
+          "asset_label": "clock",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9896320104598999,
+          "adjusted_similarity": 0.9896320104598999,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-clock-450755",
+          "asset_label": "clock",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9890531301498413,
+          "adjusted_similarity": 0.9890531301498413,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-clock-674270",
+          "asset_label": "clock",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9888908267021179,
+          "adjusted_similarity": 0.9888908267021179,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-clock-971125",
+          "asset_label": "clock",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.988162636756897,
+          "adjusted_similarity": 0.988162636756897,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "watch",
+      "object_category": "watch",
+      "expected_domain": "device",
+      "expected_profile": "clock_watch",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9931871294975281,
+      "selected_asset_label": "watch",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "watch",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 7,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-watch-1002686",
+          "asset_label": "watch",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9931871294975281,
+          "adjusted_similarity": 0.9931871294975281,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-watch-477068",
+          "asset_label": "watch",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9890171885490417,
+          "adjusted_similarity": 0.9890171885490417,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-watch-163676",
+          "asset_label": "watch",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.988308846950531,
+          "adjusted_similarity": 0.988308846950531,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-watch-1008054",
+          "asset_label": "watch",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9815968871116638,
+          "adjusted_similarity": 0.9815968871116638,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-watch-423890",
+          "asset_label": "watch",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "similarity": 0.9800888895988464,
+          "adjusted_similarity": 0.9800888895988464,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "earphone",
+      "object_category": "earphone",
+      "expected_domain": "device",
+      "expected_profile": "earphone",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9944208264350891,
+      "selected_asset_label": "earphone",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "earphone",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-earphone-5514",
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "similarity": 0.9944208264350891,
+          "adjusted_similarity": 0.9944208264350891,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-earphone-376401",
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "similarity": 0.99434494972229,
+          "adjusted_similarity": 0.99434494972229,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-earphone-401871",
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "similarity": 0.9937090873718262,
+          "adjusted_similarity": 0.9937090873718262,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-earphone-270743",
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "similarity": 0.991712212562561,
+          "adjusted_similarity": 0.991712212562561,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-earphone-763058",
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "similarity": 0.9862751960754395,
+          "adjusted_similarity": 0.9862751960754395,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "fan",
+      "object_category": "fan",
+      "expected_domain": "device",
+      "expected_profile": "fan",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9951186776161194,
+      "selected_asset_label": "fan",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "fan",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 6,
+      "retrieved_semantic_count": 7,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-fan-81226",
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "similarity": 0.9951186776161194,
+          "adjusted_similarity": 0.9951186776161194,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-fan-174904",
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "similarity": 0.9945553541183472,
+          "adjusted_similarity": 0.9945553541183472,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-fan-649676",
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "similarity": 0.9943515062332153,
+          "adjusted_similarity": 0.9943515062332153,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-fan-1142958",
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "similarity": 0.9925103187561035,
+          "adjusted_similarity": 0.9925103187561035,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-fan-1134958",
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "similarity": 0.9923278093338013,
+          "adjusted_similarity": 0.9923278093338013,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "lamp",
+      "object_category": "lamp",
+      "expected_domain": "device",
+      "expected_profile": "lamp",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9881396293640137,
+      "selected_asset_label": "lamp",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "lamp",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 0.75,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-lamp-263765",
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "similarity": 0.9881396293640137,
+          "adjusted_similarity": 0.9881396293640137,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-lamp-159888",
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "similarity": 0.9862163662910461,
+          "adjusted_similarity": 0.9862163662910461,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-lamp-102046",
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "similarity": 0.9853761792182922,
+          "adjusted_similarity": 0.9853761792182922,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-lamp-1129512",
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "similarity": 0.9852311015129089,
+          "adjusted_similarity": 0.9852311015129089,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-lamp-1164616",
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "similarity": 0.9849433898925781,
+          "adjusted_similarity": 0.9849433898925781,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "blender",
+      "object_category": "blender",
+      "expected_domain": "device",
+      "expected_profile": "blender",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9884048700332642,
+      "selected_asset_label": "blender",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "blender",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 7,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-blender-1225287",
+          "asset_label": "blender",
+          "asset_domain": "device",
+          "asset_profile": "blender",
+          "similarity": 0.9884048700332642,
+          "adjusted_similarity": 0.9884048700332642,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-blender-128386",
+          "asset_label": "blender",
+          "asset_domain": "device",
+          "asset_profile": "blender",
+          "similarity": 0.986884355545044,
+          "adjusted_similarity": 0.986884355545044,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-blender-385995",
+          "asset_label": "blender",
+          "asset_domain": "device",
+          "asset_profile": "blender",
+          "similarity": 0.9858725070953369,
+          "adjusted_similarity": 0.9858725070953369,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-blender-543611",
+          "asset_label": "blender",
+          "asset_domain": "device",
+          "asset_profile": "blender",
+          "similarity": 0.9820570945739746,
+          "adjusted_similarity": 0.9820570945739746,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-blender-444011",
+          "asset_label": "blender",
+          "asset_domain": "device",
+          "asset_profile": "blender",
+          "similarity": 0.9819930791854858,
+          "adjusted_similarity": 0.9819930791854858,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "microwave_oven",
+      "object_category": "microwave_oven",
+      "expected_domain": "device",
+      "expected_profile": "microwave",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9860150218009949,
+      "selected_asset_label": "microwave oven",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "microwave oven",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 0.8,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-microwave_oven-146355",
+          "asset_label": "microwave oven",
+          "asset_domain": "device",
+          "asset_profile": "microwave",
+          "similarity": 0.9860150218009949,
+          "adjusted_similarity": 0.9860150218009949,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-microwave_oven-418981",
+          "asset_label": "microwave oven",
+          "asset_domain": "device",
+          "asset_profile": "microwave",
+          "similarity": 0.9854677319526672,
+          "adjusted_similarity": 0.9854677319526672,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-microwave_oven-124537",
+          "asset_label": "microwave oven",
+          "asset_domain": "device",
+          "asset_profile": "microwave",
+          "similarity": 0.9826943874359131,
+          "adjusted_similarity": 0.9826943874359131,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-microwave_oven-354281",
+          "asset_label": "microwave oven",
+          "asset_domain": "device",
+          "asset_profile": "microwave",
+          "similarity": 0.9816672205924988,
+          "adjusted_similarity": 0.9816672205924988,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-microwave_oven-603221",
+          "asset_label": "microwave oven",
+          "asset_domain": "device",
+          "asset_profile": "microwave",
+          "similarity": 0.9813643097877502,
+          "adjusted_similarity": 0.9813643097877502,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "kettle",
+      "object_category": "kettle",
+      "expected_domain": "device",
+      "expected_profile": "kettle",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9934604167938232,
+      "selected_asset_label": "kettle",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "kettle",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-kettle-102411",
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "similarity": 0.9934604167938232,
+          "adjusted_similarity": 0.9934604167938232,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-kettle-688684",
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "similarity": 0.9917007684707642,
+          "adjusted_similarity": 0.9917007684707642,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-kettle-201277",
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "similarity": 0.9905908107757568,
+          "adjusted_similarity": 0.9905908107757568,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-kettle-980283",
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "similarity": 0.990125298500061,
+          "adjusted_similarity": 0.990125298500061,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-kettle-128068",
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "similarity": 0.9898821711540222,
+          "adjusted_similarity": 0.9898821711540222,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "mouse_computer_equipment",
+      "object_category": "mouse_(computer_equipment)",
+      "expected_domain": "device",
+      "expected_profile": "computer_peripheral",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9920351505279541,
+      "selected_asset_label": "mouse (computer equipment)",
+      "selected_asset_domain": "device",
+      "selected_label_correct": true,
+      "nearest_asset_label": "mouse (computer equipment)",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-mouse_computer_equipment-495314",
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "similarity": 0.9920351505279541,
+          "adjusted_similarity": 0.9920351505279541,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mouse_computer_equipment-925547",
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "similarity": 0.9913862943649292,
+          "adjusted_similarity": 0.9913862943649292,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mouse_computer_equipment-104926",
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "similarity": 0.9904637336730957,
+          "adjusted_similarity": 0.9904637336730957,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mouse_computer_equipment-537456",
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "similarity": 0.9893806576728821,
+          "adjusted_similarity": 0.9893806576728821,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mouse_computer_equipment-578148",
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "similarity": 0.9892602562904358,
+          "adjusted_similarity": 0.9892602562904358,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "chair",
+      "object_category": "chair",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9871276021003723,
+      "selected_asset_label": "chair",
+      "selected_asset_domain": "furniture",
+      "selected_label_correct": true,
+      "nearest_asset_label": "chair",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 7,
+      "retrieved_semantic_count": 9,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-chair-187038",
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9871276021003723,
+          "adjusted_similarity": 0.9871276021003723,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-chair-142578",
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9867215156555176,
+          "adjusted_similarity": 0.9867215156555176,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-chair-424054",
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9849047660827637,
+          "adjusted_similarity": 0.9849047660827637,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-chair-539342",
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9836598634719849,
+          "adjusted_similarity": 0.9836598634719849,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-chair-374488",
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9823529720306396,
+          "adjusted_similarity": 0.9823529720306396,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "bench",
+      "object_category": "bench",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9936529994010925,
+      "selected_asset_label": "bench",
+      "selected_asset_domain": "furniture",
+      "selected_label_correct": true,
+      "nearest_asset_label": "bench",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-bench-1085796",
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9936529994010925,
+          "adjusted_similarity": 0.9936529994010925,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bench-1179168",
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9909489154815674,
+          "adjusted_similarity": 0.9909489154815674,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bench-355874",
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9905321002006531,
+          "adjusted_similarity": 0.9905321002006531,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bench-70871",
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9880329966545105,
+          "adjusted_similarity": 0.9880329966545105,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bench-553026",
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.984200656414032,
+          "adjusted_similarity": 0.984200656414032,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "stool",
+      "object_category": "stool",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9887436032295227,
+      "selected_asset_label": "stool",
+      "selected_asset_domain": "furniture",
+      "selected_label_correct": true,
+      "nearest_asset_label": "stool",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 3,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-stool-761813",
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9887436032295227,
+          "adjusted_similarity": 0.9887436032295227,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-stool-763934",
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9875922203063965,
+          "adjusted_similarity": 0.9875922203063965,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-stool-786573",
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9871195554733276,
+          "adjusted_similarity": 0.9871195554733276,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-stool-876252",
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9870432019233704,
+          "adjusted_similarity": 0.9870432019233704,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-stool-1053837",
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "similarity": 0.9845819473266602,
+          "adjusted_similarity": 0.9845819473266602,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "table",
+      "object_category": "table",
+      "expected_domain": "furniture",
+      "expected_profile": "table",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9876350164413452,
+      "selected_asset_label": "table",
+      "selected_asset_domain": "furniture",
+      "selected_label_correct": true,
+      "nearest_asset_label": "table",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-table-797715",
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "similarity": 0.9876350164413452,
+          "adjusted_similarity": 0.9876350164413452,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-table-1004405",
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "similarity": 0.9865254163742065,
+          "adjusted_similarity": 0.9865254163742065,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-table-120714",
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "similarity": 0.9837775826454163,
+          "adjusted_similarity": 0.9837775826454163,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-table-133618",
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "similarity": 0.9835121035575867,
+          "adjusted_similarity": 0.9835121035575867,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-table-172024",
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "similarity": 0.981511652469635,
+          "adjusted_similarity": 0.981511652469635,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "bottle",
+      "object_category": "bottle",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9718568921089172,
+      "selected_asset_label": "bottle",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "bottle",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 6,
+      "retrieved_semantic_count": 8,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-bottle-206812",
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9718568921089172,
+          "adjusted_similarity": 0.9718568921089172,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bottle-770645",
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9704484343528748,
+          "adjusted_similarity": 0.9704484343528748,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bottle-352486",
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9646822810173035,
+          "adjusted_similarity": 0.9646822810173035,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bottle-165816",
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9645334482192993,
+          "adjusted_similarity": 0.9645334482192993,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bottle-790292",
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9644774198532104,
+          "adjusted_similarity": 0.9644774198532104,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "jar",
+      "object_category": "jar",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9868272542953491,
+      "selected_asset_label": "jar",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "jar",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-jar-780854",
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9868272542953491,
+          "adjusted_similarity": 0.9868272542953491,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-jar-29500",
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9856213927268982,
+          "adjusted_similarity": 0.9856213927268982,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-jar-70564",
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9844731688499451,
+          "adjusted_similarity": 0.9844731688499451,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-jar-453196",
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9796427488327026,
+          "adjusted_similarity": 0.9796427488327026,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-jar-1075358",
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9777085185050964,
+          "adjusted_similarity": 0.9777085185050964,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "can",
+      "object_category": "can",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9913251996040344,
+      "selected_asset_label": "can",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "can",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 6,
+      "retrieved_semantic_count": 7,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-can-1057289",
+          "asset_label": "can",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9913251996040344,
+          "adjusted_similarity": 0.9913251996040344,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-can-563259",
+          "asset_label": "can",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9879145622253418,
+          "adjusted_similarity": 0.9879145622253418,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-can-574539",
+          "asset_label": "can",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9866395592689514,
+          "adjusted_similarity": 0.9866395592689514,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-can-502473",
+          "asset_label": "can",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9863000512123108,
+          "adjusted_similarity": 0.9863000512123108,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-can-1140636",
+          "asset_label": "can",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9678003191947937,
+          "adjusted_similarity": 0.9678003191947937,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "cup",
+      "object_category": "cup",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9931248426437378,
+      "selected_asset_label": "cup",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "cup",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-cup-633608",
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9931248426437378,
+          "adjusted_similarity": 0.9931248426437378,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cup-64745",
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9919489622116089,
+          "adjusted_similarity": 0.9919489622116089,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cup-879384",
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9913944005966187,
+          "adjusted_similarity": 0.9913944005966187,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cup-1255563",
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9904950261116028,
+          "adjusted_similarity": 0.9904950261116028,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-cup-1242283",
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9900212287902832,
+          "adjusted_similarity": 0.9900212287902832,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "mug",
+      "object_category": "mug",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9929442405700684,
+      "selected_asset_label": "mug",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "mug",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 6,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 0.8333333333333334,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-mug-1147332",
+          "asset_label": "mug",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9929442405700684,
+          "adjusted_similarity": 0.9929442405700684,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mug-536352",
+          "asset_label": "mug",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9905649423599243,
+          "adjusted_similarity": 0.9905649423599243,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mug-6956",
+          "asset_label": "mug",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9834011197090149,
+          "adjusted_similarity": 0.9834011197090149,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mug-36054",
+          "asset_label": "mug",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9816598296165466,
+          "adjusted_similarity": 0.9816598296165466,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-mug-1191788",
+          "asset_label": "mug",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9811633825302124,
+          "adjusted_similarity": 0.9811633825302124,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "glass_drink_container",
+      "object_category": "glass_(drink_container)",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9902404546737671,
+      "selected_asset_label": "glass (drink container)",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "glass (drink container)",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-glass_drink_container-625615",
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9902404546737671,
+          "adjusted_similarity": 0.9902404546737671,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-glass_drink_container-539706",
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9888738393783569,
+          "adjusted_similarity": 0.9888738393783569,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-glass_drink_container-485413",
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9875465035438538,
+          "adjusted_similarity": 0.9875465035438538,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-glass_drink_container-74804",
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9857309460639954,
+          "adjusted_similarity": 0.9857309460639954,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-glass_drink_container-64908",
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9844819903373718,
+          "adjusted_similarity": 0.9844819903373718,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "bowl",
+      "object_category": "bowl",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9887297749519348,
+      "selected_asset_label": "bowl",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "bowl",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-bowl-1150477",
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9887297749519348,
+          "adjusted_similarity": 0.9887297749519348,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bowl-760961",
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9883040189743042,
+          "adjusted_similarity": 0.9883040189743042,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bowl-640675",
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9874960780143738,
+          "adjusted_similarity": 0.9874960780143738,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bowl-915377",
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.9869357943534851,
+          "adjusted_similarity": 0.9869357943534851,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bowl-490948",
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "similarity": 0.985822856426239,
+          "adjusted_similarity": 0.985822856426239,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "handbag",
+      "object_category": "handbag",
+      "expected_domain": "container",
+      "expected_profile": "bag",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.992559552192688,
+      "selected_asset_label": "handbag",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "handbag",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 0.8,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-handbag-1070023",
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.992559552192688,
+          "adjusted_similarity": 0.992559552192688,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-handbag-1042903",
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.9913104176521301,
+          "adjusted_similarity": 0.9913104176521301,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-handbag-1250785",
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.9870822429656982,
+          "adjusted_similarity": 0.9870822429656982,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-handbag-1146693",
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.978416383266449,
+          "adjusted_similarity": 0.978416383266449,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-handbag-451329",
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.9771708846092224,
+          "adjusted_similarity": 0.9771708846092224,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "plastic_bag",
+      "object_category": "plastic_bag",
+      "expected_domain": "container",
+      "expected_profile": "bag",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9947236776351929,
+      "selected_asset_label": "plastic bag",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "plastic bag",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-plastic_bag-1238074",
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.9947236776351929,
+          "adjusted_similarity": 0.9947236776351929,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plastic_bag-735471",
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.9916624426841736,
+          "adjusted_similarity": 0.9916624426841736,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plastic_bag-1098430",
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.990209698677063,
+          "adjusted_similarity": 0.990209698677063,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plastic_bag-157105",
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.9899806976318359,
+          "adjusted_similarity": 0.9899806976318359,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plastic_bag-213627",
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "similarity": 0.9850951433181763,
+          "adjusted_similarity": 0.9850951433181763,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "box",
+      "object_category": "box",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9901313781738281,
+      "selected_asset_label": "box",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "box",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 3,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-box-214770",
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9901313781738281,
+          "adjusted_similarity": 0.9901313781738281,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-box-1143165",
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9899721145629883,
+          "adjusted_similarity": 0.9899721145629883,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-box-982424",
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9897012710571289,
+          "adjusted_similarity": 0.9897012710571289,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-box-559316",
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9896453022956848,
+          "adjusted_similarity": 0.9896453022956848,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-box-950957",
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9894495010375977,
+          "adjusted_similarity": 0.9894495010375977,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "carton",
+      "object_category": "carton",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9826834797859192,
+      "selected_asset_label": "carton",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "carton",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-carton-897723",
+          "asset_label": "carton",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9826834797859192,
+          "adjusted_similarity": 0.9826834797859192,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-carton-992267",
+          "asset_label": "carton",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9754388928413391,
+          "adjusted_similarity": 0.9754388928413391,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-carton-492796",
+          "asset_label": "carton",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9672616124153137,
+          "adjusted_similarity": 0.9672616124153137,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-carton-7310",
+          "asset_label": "carton",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9643105268478394,
+          "adjusted_similarity": 0.9643105268478394,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-carton-998803",
+          "asset_label": "carton",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9548379778862,
+          "adjusted_similarity": 0.9548379778862,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "crate",
+      "object_category": "crate",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9940728545188904,
+      "selected_asset_label": "crate",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "crate",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 1,
+      "retrieved_semantic_count": 3,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-crate-947943",
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9940728545188904,
+          "adjusted_similarity": 0.9940728545188904,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-crate-693246",
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9929107427597046,
+          "adjusted_similarity": 0.9929107427597046,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-crate-52291",
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9926118850708008,
+          "adjusted_similarity": 0.9926118850708008,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-crate-408256",
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9905683398246765,
+          "adjusted_similarity": 0.9905683398246765,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-crate-506309",
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "similarity": 0.9900670647621155,
+          "adjusted_similarity": 0.9900670647621155,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "basket",
+      "object_category": "basket",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.989179790019989,
+      "selected_asset_label": "basket",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "basket",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-basket-487413",
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.989179790019989,
+          "adjusted_similarity": 0.989179790019989,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-basket-887011",
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9887372255325317,
+          "adjusted_similarity": 0.9887372255325317,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-basket-855561",
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9843615293502808,
+          "adjusted_similarity": 0.9843615293502808,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-basket-991760",
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9831904768943787,
+          "adjusted_similarity": 0.9831904768943787,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-basket-534179",
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9830096960067749,
+          "adjusted_similarity": 0.9830096960067749,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "bucket",
+      "object_category": "bucket",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9907289743423462,
+      "selected_asset_label": "bucket",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "bucket",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-bucket-676725",
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9907289743423462,
+          "adjusted_similarity": 0.9907289743423462,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bucket-796596",
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9889266490936279,
+          "adjusted_similarity": 0.9889266490936279,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bucket-1258269",
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.988760769367218,
+          "adjusted_similarity": 0.988760769367218,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bucket-1109860",
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9874631762504578,
+          "adjusted_similarity": 0.9874631762504578,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bucket-1211215",
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9860259890556335,
+          "adjusted_similarity": 0.9860259890556335,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "trash_can",
+      "object_category": "trash_can",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9885079860687256,
+      "selected_asset_label": "trash can",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "trash can",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-trash_can-69758",
+          "asset_label": "trash can",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9885079860687256,
+          "adjusted_similarity": 0.9885079860687256,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-trash_can-710125",
+          "asset_label": "trash can",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9884641766548157,
+          "adjusted_similarity": 0.9884641766548157,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-trash_can-87965",
+          "asset_label": "trash can",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9873436093330383,
+          "adjusted_similarity": 0.9873436093330383,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-trash_can-785834",
+          "asset_label": "trash can",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "similarity": 0.9871038198471069,
+          "adjusted_similarity": 0.9871038198471069,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-can-1057289",
+          "asset_label": "can",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9859418272972107,
+          "adjusted_similarity": 0.9859418272972107,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "plate",
+      "object_category": "plate",
+      "expected_domain": "container",
+      "expected_profile": "flatware",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9932881593704224,
+      "selected_asset_label": "plate",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "plate",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 0.8,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-plate-110962",
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9932881593704224,
+          "adjusted_similarity": 0.9932881593704224,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plate-622266",
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9922230243682861,
+          "adjusted_similarity": 0.9922230243682861,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plate-157279",
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9890261292457581,
+          "adjusted_similarity": 0.9890261292457581,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plate-925619",
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.987159788608551,
+          "adjusted_similarity": 0.987159788608551,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-plate-1179674",
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9784048199653625,
+          "adjusted_similarity": 0.9784048199653625,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "tray",
+      "object_category": "tray",
+      "expected_domain": "container",
+      "expected_profile": "flatware",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9912050366401672,
+      "selected_asset_label": "tray",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "tray",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-tray-572945",
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9912050366401672,
+          "adjusted_similarity": 0.9912050366401672,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-tray-396299",
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9898068904876709,
+          "adjusted_similarity": 0.9898068904876709,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-tray-625246",
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.989508867263794,
+          "adjusted_similarity": 0.989508867263794,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-tray-532453",
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9878493547439575,
+          "adjusted_similarity": 0.9878493547439575,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-tray-864208",
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "similarity": 0.9861767888069153,
+          "adjusted_similarity": 0.9861767888069153,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "vase",
+      "object_category": "vase",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9946472644805908,
+      "selected_asset_label": "vase",
+      "selected_asset_domain": "container",
+      "selected_label_correct": true,
+      "nearest_asset_label": "vase",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-vase-84052",
+          "asset_label": "vase",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9946472644805908,
+          "adjusted_similarity": 0.9946472644805908,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-vase-90954",
+          "asset_label": "vase",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9934417605400085,
+          "adjusted_similarity": 0.9934417605400085,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-vase-1116208",
+          "asset_label": "vase",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9907105565071106,
+          "adjusted_similarity": 0.9907105565071106,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-vase-910034",
+          "asset_label": "vase",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9863899946212769,
+          "adjusted_similarity": 0.9863899946212769,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-vase-397758",
+          "asset_label": "vase",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "similarity": 0.9838072061538696,
+          "adjusted_similarity": 0.9838072061538696,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "car_automobile",
+      "object_category": "car_(automobile)",
+      "expected_domain": "vehicle",
+      "expected_profile": "road_vehicle",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9871406555175781,
+      "selected_asset_label": "car (automobile)",
+      "selected_asset_domain": "vehicle",
+      "selected_label_correct": true,
+      "nearest_asset_label": "car (automobile)",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 16,
+      "retrieved_semantic_count": 17,
+      "part_inventory_recall": 0.8125,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-car_automobile-1267787",
+          "asset_label": "car (automobile)",
+          "asset_domain": "vehicle",
+          "asset_profile": "road_vehicle",
+          "similarity": 0.9871406555175781,
+          "adjusted_similarity": 0.9871406555175781,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-car_automobile-687036",
+          "asset_label": "car (automobile)",
+          "asset_domain": "vehicle",
+          "asset_profile": "road_vehicle",
+          "similarity": 0.9866520762443542,
+          "adjusted_similarity": 0.9866520762443542,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-car_automobile-262209",
+          "asset_label": "car (automobile)",
+          "asset_domain": "vehicle",
+          "asset_profile": "road_vehicle",
+          "similarity": 0.9849323034286499,
+          "adjusted_similarity": 0.9849323034286499,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-car_automobile-527368",
+          "asset_label": "car (automobile)",
+          "asset_domain": "vehicle",
+          "asset_profile": "road_vehicle",
+          "similarity": 0.9760351777076721,
+          "adjusted_similarity": 0.9760351777076721,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-car_automobile-315568",
+          "asset_label": "car (automobile)",
+          "asset_domain": "vehicle",
+          "asset_profile": "road_vehicle",
+          "similarity": 0.9760154485702515,
+          "adjusted_similarity": 0.9760154485702515,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "bicycle",
+      "object_category": "bicycle",
+      "expected_domain": "vehicle",
+      "expected_profile": "two_wheeler",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9923970699310303,
+      "selected_asset_label": "bicycle",
+      "selected_asset_domain": "vehicle",
+      "selected_label_correct": true,
+      "nearest_asset_label": "bicycle",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 11,
+      "retrieved_semantic_count": 13,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-bicycle-222589",
+          "asset_label": "bicycle",
+          "asset_domain": "vehicle",
+          "asset_profile": "two_wheeler",
+          "similarity": 0.9923970699310303,
+          "adjusted_similarity": 0.9923970699310303,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bicycle-1135298",
+          "asset_label": "bicycle",
+          "asset_domain": "vehicle",
+          "asset_profile": "two_wheeler",
+          "similarity": 0.9916813969612122,
+          "adjusted_similarity": 0.9916813969612122,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bicycle-1232106",
+          "asset_label": "bicycle",
+          "asset_domain": "vehicle",
+          "asset_profile": "two_wheeler",
+          "similarity": 0.9916699528694153,
+          "adjusted_similarity": 0.9916699528694153,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bicycle-1018808",
+          "asset_label": "bicycle",
+          "asset_domain": "vehicle",
+          "asset_profile": "two_wheeler",
+          "similarity": 0.9914051294326782,
+          "adjusted_similarity": 0.9914051294326782,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-bicycle-470618",
+          "asset_label": "bicycle",
+          "asset_domain": "vehicle",
+          "asset_profile": "two_wheeler",
+          "similarity": 0.9912732839584351,
+          "adjusted_similarity": 0.9912732839584351,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "book",
+      "object_category": "book",
+      "expected_domain": "daily_object",
+      "expected_profile": "book",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.8952510356903076,
+      "selected_asset_label": "book",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "book",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 2,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-book-514802",
+          "asset_label": "book",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.8952510356903076,
+          "adjusted_similarity": 0.8952510356903076,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-book-780803",
+          "asset_label": "book",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.8919625878334045,
+          "adjusted_similarity": 0.8919625878334045,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-book-342933",
+          "asset_label": "book",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.8890950083732605,
+          "adjusted_similarity": 0.8890950083732605,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-book-475265",
+          "asset_label": "book",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.8830771446228027,
+          "adjusted_similarity": 0.8830771446228027,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-book-753809",
+          "asset_label": "book",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.8688937425613403,
+          "adjusted_similarity": 0.8688937425613403,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "newspaper",
+      "object_category": "newspaper",
+      "expected_domain": "daily_object",
+      "expected_profile": "book",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9809776544570923,
+      "selected_asset_label": "newspaper",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "newspaper",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 1,
+      "retrieved_semantic_count": 1,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-newspaper-168357",
+          "asset_label": "newspaper",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.9809776544570923,
+          "adjusted_similarity": 0.9809776544570923,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-newspaper-777655",
+          "asset_label": "newspaper",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.9791597723960876,
+          "adjusted_similarity": 0.9791597723960876,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-newspaper-653710",
+          "asset_label": "newspaper",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.9790134429931641,
+          "adjusted_similarity": 0.9790134429931641,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-newspaper-532583",
+          "asset_label": "newspaper",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.9789986610412598,
+          "adjusted_similarity": 0.9789986610412598,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-newspaper-190884",
+          "asset_label": "newspaper",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "similarity": 0.9781246781349182,
+          "adjusted_similarity": 0.9781246781349182,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "wallet",
+      "object_category": "wallet",
+      "expected_domain": "daily_object",
+      "expected_profile": "wallet_belt",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9904964566230774,
+      "selected_asset_label": "wallet",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "wallet",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 2,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-wallet-795472",
+          "asset_label": "wallet",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9904964566230774,
+          "adjusted_similarity": 0.9904964566230774,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-wallet-430546",
+          "asset_label": "wallet",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.989179790019989,
+          "adjusted_similarity": 0.989179790019989,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-wallet-271132",
+          "asset_label": "wallet",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9878483414649963,
+          "adjusted_similarity": 0.9878483414649963,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-wallet-656463",
+          "asset_label": "wallet",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9853992462158203,
+          "adjusted_similarity": 0.9853992462158203,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-wallet-900712",
+          "asset_label": "wallet",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9836519956588745,
+          "adjusted_similarity": 0.9836519956588745,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "belt",
+      "object_category": "belt",
+      "expected_domain": "daily_object",
+      "expected_profile": "wallet_belt",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9917560815811157,
+      "selected_asset_label": "belt",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "belt",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-belt-346225",
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9917560815811157,
+          "adjusted_similarity": 0.9917560815811157,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-belt-211331",
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9913071990013123,
+          "adjusted_similarity": 0.9913071990013123,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-belt-1234975",
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9910839796066284,
+          "adjusted_similarity": 0.9910839796066284,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-belt-136823",
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9896633625030518,
+          "adjusted_similarity": 0.9896633625030518,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-belt-517732",
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "similarity": 0.9876521825790405,
+          "adjusted_similarity": 0.9876521825790405,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "hat",
+      "object_category": "hat",
+      "expected_domain": "daily_object",
+      "expected_profile": "headwear",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9915558099746704,
+      "selected_asset_label": "hat",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "hat",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 5,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-hat-1161198",
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9915558099746704,
+          "adjusted_similarity": 0.9915558099746704,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-hat-240910",
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9909068942070007,
+          "adjusted_similarity": 0.9909068942070007,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-hat-172236",
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.989580512046814,
+          "adjusted_similarity": 0.989580512046814,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-hat-787033",
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9853994250297546,
+          "adjusted_similarity": 0.9853994250297546,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-hat-944968",
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9836568832397461,
+          "adjusted_similarity": 0.9836568832397461,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "helmet",
+      "object_category": "helmet",
+      "expected_domain": "daily_object",
+      "expected_profile": "headwear",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9905917644500732,
+      "selected_asset_label": "helmet",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "helmet",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-helmet-66405",
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9905917644500732,
+          "adjusted_similarity": 0.9905917644500732,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-helmet-502370",
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9891366362571716,
+          "adjusted_similarity": 0.9891366362571716,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-helmet-730851",
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9879098534584045,
+          "adjusted_similarity": 0.9879098534584045,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-helmet-1202107",
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9871004819869995,
+          "adjusted_similarity": 0.9871004819869995,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-helmet-1048270",
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "similarity": 0.9868592023849487,
+          "adjusted_similarity": 0.9868592023849487,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "shoe",
+      "object_category": "shoe",
+      "expected_domain": "daily_object",
+      "expected_profile": "footwear",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9941445589065552,
+      "selected_asset_label": "shoe",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "shoe",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 5,
+      "retrieved_semantic_count": 9,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-shoe-461040",
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "similarity": 0.9941445589065552,
+          "adjusted_similarity": 0.9941445589065552,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-shoe-347964",
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "similarity": 0.9925548434257507,
+          "adjusted_similarity": 0.9925548434257507,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-shoe-839896",
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "similarity": 0.9924513101577759,
+          "adjusted_similarity": 0.9924513101577759,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-shoe-1179897",
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "similarity": 0.9838786125183105,
+          "adjusted_similarity": 0.9838786125183105,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-shoe-690744",
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "similarity": 0.9830527901649475,
+          "adjusted_similarity": 0.9830527901649475,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "scarf",
+      "object_category": "scarf",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9890791773796082,
+      "selected_asset_label": "scarf",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "scarf",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 2,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-scarf-108085",
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9890791773796082,
+          "adjusted_similarity": 0.9890791773796082,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scarf-80415",
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9890772700309753,
+          "adjusted_similarity": 0.9890772700309753,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scarf-689496",
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9883789420127869,
+          "adjusted_similarity": 0.9883789420127869,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scarf-244256",
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.986526608467102,
+          "adjusted_similarity": 0.986526608467102,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scarf-390102",
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9854491353034973,
+          "adjusted_similarity": 0.9854491353034973,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "sweater",
+      "object_category": "sweater",
+      "expected_domain": "daily_object",
+      "expected_profile": "garment",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9906604886054993,
+      "selected_asset_label": "sweater",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "sweater",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 6,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-sweater-327507",
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "similarity": 0.9906604886054993,
+          "adjusted_similarity": 0.9906604886054993,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-sweater-794474",
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "similarity": 0.9898784756660461,
+          "adjusted_similarity": 0.9898784756660461,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-sweater-1260937",
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "similarity": 0.9895904660224915,
+          "adjusted_similarity": 0.9895904660224915,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-sweater-1146406",
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "similarity": 0.9885823726654053,
+          "adjusted_similarity": 0.9885823726654053,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-sweater-723431",
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "similarity": 0.9861853718757629,
+          "adjusted_similarity": 0.9861853718757629,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "towel",
+      "object_category": "towel",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9940186738967896,
+      "selected_asset_label": "towel",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "towel",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-towel-1007733",
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9940186738967896,
+          "adjusted_similarity": 0.9940186738967896,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-towel-776190",
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9929510951042175,
+          "adjusted_similarity": 0.9929510951042175,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-towel-744968",
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9925686717033386,
+          "adjusted_similarity": 0.9925686717033386,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-towel-124855",
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9890708327293396,
+          "adjusted_similarity": 0.9890708327293396,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-towel-520568",
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9871019124984741,
+          "adjusted_similarity": 0.9871019124984741,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "pillow",
+      "object_category": "pillow",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9913864135742188,
+      "selected_asset_label": "pillow",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "pillow",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 1,
+      "retrieved_semantic_count": 1,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-pillow-1260932",
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9913864135742188,
+          "adjusted_similarity": 0.9913864135742188,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pillow-236180",
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9906138181686401,
+          "adjusted_similarity": 0.9906138181686401,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pillow-816618",
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9904001951217651,
+          "adjusted_similarity": 0.9904001951217651,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pillow-562072",
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9893317222595215,
+          "adjusted_similarity": 0.9893317222595215,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pillow-562024",
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "similarity": 0.9884868860244751,
+          "adjusted_similarity": 0.9884868860244751,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "soap",
+      "object_category": "soap",
+      "expected_domain": "daily_object",
+      "expected_profile": "simple_object",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9903866052627563,
+      "selected_asset_label": "soap",
+      "selected_asset_domain": "daily_object",
+      "selected_label_correct": true,
+      "nearest_asset_label": "soap",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 6,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-soap-1237837",
+          "asset_label": "soap",
+          "asset_domain": "daily_object",
+          "asset_profile": "simple_object",
+          "similarity": 0.9903866052627563,
+          "adjusted_similarity": 0.9903866052627563,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-soap-109007",
+          "asset_label": "soap",
+          "asset_domain": "daily_object",
+          "asset_profile": "simple_object",
+          "similarity": 0.9890114665031433,
+          "adjusted_similarity": 0.9890114665031433,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-soap-1121942",
+          "asset_label": "soap",
+          "asset_domain": "daily_object",
+          "asset_profile": "simple_object",
+          "similarity": 0.9880691766738892,
+          "adjusted_similarity": 0.9880691766738892,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-soap-183256",
+          "asset_label": "soap",
+          "asset_domain": "daily_object",
+          "asset_profile": "simple_object",
+          "similarity": 0.985491931438446,
+          "adjusted_similarity": 0.985491931438446,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-soap-287366",
+          "asset_label": "soap",
+          "asset_domain": "daily_object",
+          "asset_profile": "simple_object",
+          "similarity": 0.983015239238739,
+          "adjusted_similarity": 0.983015239238739,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "drill",
+      "object_category": "drill",
+      "expected_domain": "tool_prop",
+      "expected_profile": "drill",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.991096556186676,
+      "selected_asset_label": "drill",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "drill",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 3,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 2,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-drill-1221181",
+          "asset_label": "drill",
+          "asset_domain": "tool_prop",
+          "asset_profile": "drill",
+          "similarity": 0.991096556186676,
+          "adjusted_similarity": 0.991096556186676,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-drill-227790",
+          "asset_label": "drill",
+          "asset_domain": "tool_prop",
+          "asset_profile": "drill",
+          "similarity": 0.9865471124649048,
+          "adjusted_similarity": 0.9865471124649048,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-drill-352593",
+          "asset_label": "drill",
+          "asset_domain": "tool_prop",
+          "asset_profile": "drill",
+          "similarity": 0.9818256497383118,
+          "adjusted_similarity": 0.9818256497383118,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "hammer",
+      "object_category": "hammer",
+      "expected_domain": "tool_prop",
+      "expected_profile": "hammer",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9931527972221375,
+      "selected_asset_label": "hammer",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "hammer",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 4,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 3,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-hammer-319535",
+          "asset_label": "hammer",
+          "asset_domain": "tool_prop",
+          "asset_profile": "hammer",
+          "similarity": 0.9931527972221375,
+          "adjusted_similarity": 0.9931527972221375,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-hammer-641413",
+          "asset_label": "hammer",
+          "asset_domain": "tool_prop",
+          "asset_profile": "hammer",
+          "similarity": 0.9915083050727844,
+          "adjusted_similarity": 0.9915083050727844,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-hammer-121731",
+          "asset_label": "hammer",
+          "asset_domain": "tool_prop",
+          "asset_profile": "hammer",
+          "similarity": 0.9906070232391357,
+          "adjusted_similarity": 0.9906070232391357,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-hammer-1131729",
+          "asset_label": "hammer",
+          "asset_domain": "tool_prop",
+          "asset_profile": "hammer",
+          "similarity": 0.9895195960998535,
+          "adjusted_similarity": 0.9895195960998535,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "knife",
+      "object_category": "knife",
+      "expected_domain": "tool_prop",
+      "expected_profile": "knife",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9929298162460327,
+      "selected_asset_label": "knife",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "knife",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 2,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-knife-1003167",
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "similarity": 0.9929298162460327,
+          "adjusted_similarity": 0.9929298162460327,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-knife-1031792",
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "similarity": 0.9899123907089233,
+          "adjusted_similarity": 0.9899123907089233,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-knife-538005",
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "similarity": 0.9896201491355896,
+          "adjusted_similarity": 0.9896201491355896,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-knife-633563",
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "similarity": 0.9888065457344055,
+          "adjusted_similarity": 0.9888065457344055,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-knife-807785",
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "similarity": 0.9886593222618103,
+          "adjusted_similarity": 0.9886593222618103,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "scissors",
+      "object_category": "scissors",
+      "expected_domain": "tool_prop",
+      "expected_profile": "scissors_pliers",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9929095506668091,
+      "selected_asset_label": "scissors",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "scissors",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 4,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-scissors-402962",
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "similarity": 0.9929095506668091,
+          "adjusted_similarity": 0.9929095506668091,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scissors-649997",
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "similarity": 0.9905700087547302,
+          "adjusted_similarity": 0.9905700087547302,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scissors-1093643",
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "similarity": 0.9894096255302429,
+          "adjusted_similarity": 0.9894096255302429,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scissors-651729",
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "similarity": 0.9865683913230896,
+          "adjusted_similarity": 0.9865683913230896,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-scissors-819741",
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "similarity": 0.9827435612678528,
+          "adjusted_similarity": 0.9827435612678528,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "ladder",
+      "object_category": "ladder",
+      "expected_domain": "tool_prop",
+      "expected_profile": "ladder",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9927214980125427,
+      "selected_asset_label": "ladder",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "ladder",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-ladder-330914",
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "similarity": 0.9927214980125427,
+          "adjusted_similarity": 0.9927214980125427,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-ladder-630666",
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "similarity": 0.9863648414611816,
+          "adjusted_similarity": 0.9863648414611816,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-ladder-1033741",
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "similarity": 0.9859567284584045,
+          "adjusted_similarity": 0.9859567284584045,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-ladder-91653",
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "similarity": 0.9854981303215027,
+          "adjusted_similarity": 0.9854981303215027,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-ladder-955769",
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "similarity": 0.9829702377319336,
+          "adjusted_similarity": 0.9829702377319336,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "guitar",
+      "object_category": "guitar",
+      "expected_domain": "tool_prop",
+      "expected_profile": "guitar",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9947831034660339,
+      "selected_asset_label": "guitar",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "guitar",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 7,
+      "retrieved_semantic_count": 9,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-guitar-110715",
+          "asset_label": "guitar",
+          "asset_domain": "tool_prop",
+          "asset_profile": "guitar",
+          "similarity": 0.9947831034660339,
+          "adjusted_similarity": 0.9947831034660339,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-guitar-281476",
+          "asset_label": "guitar",
+          "asset_domain": "tool_prop",
+          "asset_profile": "guitar",
+          "similarity": 0.99451744556427,
+          "adjusted_similarity": 0.99451744556427,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-guitar-1010877",
+          "asset_label": "guitar",
+          "asset_domain": "tool_prop",
+          "asset_profile": "guitar",
+          "similarity": 0.9933128356933594,
+          "adjusted_similarity": 0.9933128356933594,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-guitar-347704",
+          "asset_label": "guitar",
+          "asset_domain": "tool_prop",
+          "asset_profile": "guitar",
+          "similarity": 0.9930799007415771,
+          "adjusted_similarity": 0.9930799007415771,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-guitar-1238614",
+          "asset_label": "guitar",
+          "asset_domain": "tool_prop",
+          "asset_profile": "guitar",
+          "similarity": 0.9928895235061646,
+          "adjusted_similarity": 0.9928895235061646,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "pan_for_cooking",
+      "object_category": "pan_(for_cooking)",
+      "expected_domain": "tool_prop",
+      "expected_profile": "pan",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.991669774055481,
+      "selected_asset_label": "pan (for cooking)",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "pan (for cooking)",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 3,
+      "retrieved_semantic_count": 4,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-pan_for_cooking-683195",
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "similarity": 0.991669774055481,
+          "adjusted_similarity": 0.991669774055481,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pan_for_cooking-596220",
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "similarity": 0.9858691096305847,
+          "adjusted_similarity": 0.9858691096305847,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pan_for_cooking-80260",
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "similarity": 0.9828348755836487,
+          "adjusted_similarity": 0.9828348755836487,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pan_for_cooking-42874",
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "similarity": 0.9800276160240173,
+          "adjusted_similarity": 0.9800276160240173,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-pan_for_cooking-719459",
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "similarity": 0.9712620377540588,
+          "adjusted_similarity": 0.9712620377540588,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    },
+    {
+      "case_id": "spoon",
+      "object_category": "spoon",
+      "expected_domain": "tool_prop",
+      "expected_profile": "spoon",
+      "accepted": true,
+      "reason": "accepted",
+      "top_similarity": 0.9965959191322327,
+      "selected_asset_label": "spoon",
+      "selected_asset_domain": "tool_prop",
+      "selected_label_correct": true,
+      "nearest_asset_label": "spoon",
+      "nearest_label_correct": true,
+      "supporting_asset_count": 6,
+      "truth_semantic_count": 2,
+      "retrieved_semantic_count": 2,
+      "part_inventory_recall": 1.0,
+      "nearest_assets": [
+        {
+          "asset_id": "paco-train-spoon-1144118",
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "similarity": 0.9965959191322327,
+          "adjusted_similarity": 0.9965959191322327,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-spoon-1049678",
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "similarity": 0.9965824484825134,
+          "adjusted_similarity": 0.9965824484825134,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-spoon-785831",
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "similarity": 0.9943822622299194,
+          "adjusted_similarity": 0.9943822622299194,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-spoon-1154602",
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "similarity": 0.991856575012207,
+          "adjusted_similarity": 0.991856575012207,
+          "selection_scope": "user_asset_hint"
+        },
+        {
+          "asset_id": "paco-train-spoon-725266",
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "similarity": 0.9910786151885986,
+          "adjusted_similarity": 0.9910786151885986,
+          "selection_scope": "user_asset_hint"
+        }
+      ]
+    }
+  ]
+}

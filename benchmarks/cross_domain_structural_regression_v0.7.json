@@ -1,0 +1,139 @@
+{
+  "record_version": "0.7",
+  "generated_at": "2026-08-20",
+  "evidence_type": "unlabelled_cross_domain_software_regression",
+  "claim_boundary": "Execution, semantic-inventory routing, structural grouping, pose-axis character grouping, recorded pipeline-stage latency, foreground conservation, and package integrity only. These cases have no pixel ground truth and do not measure semantic or boundary accuracy.",
+  "validation_policy": "Every listed package passed schema, hierarchy, foreground-conservation, byte-count, and recomputed SHA-256 validation with ground_truth_used=false. The release tree passed 486 unit tests and Ruff.",
+  "inference_contract": {
+    "format_version": "0.3.0",
+    "ground_truth_used": false,
+    "user_annotation_used": false,
+    "decomposition_mode": "automatic",
+    "quality": "Fast",
+    "semantic_evidence_order": [
+      "routed_part_inventory",
+      "geometry_and_topology",
+      "appearance_boundary_alignment_only"
+    ]
+  },
+  "source_distribution": "The source images are local user-provided regression assets and are not redistributed by this record.",
+  "cases": [
+    {
+      "case_id": "character_goggles",
+      "frozen_run_id": "run_character_goggles_poseaxis_v9_20260820",
+      "candidate_generation_run_id": "run_character_goggles_full_v8_20260820",
+      "source_sha256": "050bb853db7a32316b593ba546785a78a8c2ff9dac949ba3baebcb7ed6843450",
+      "prompt_bank_sha256": "0c90c30779b670bf17a681df74e5765e751ddb425f9d11a04b7fa2d9da2cddcf",
+      "part_count": 18,
+      "group_count": 7,
+      "group_semantics": [
+        "character_body",
+        "character_accessory",
+        "character_upper_garment",
+        "character_headwear",
+        "character_lower_garment",
+        "character_footwear",
+        "character_hair"
+      ],
+      "pipeline_stage_seconds": 34.6042,
+      "quality_status": "review_recommended",
+      "known_review_item": "The low-contrast side bag is omitted in automatic mode. It remains available through prompt-guided decomposition rather than being forced from an overbroad detector mask."
+    },
+    {
+      "case_id": "character_tpose",
+      "frozen_run_id": "run_character_tpose_poseaxis_v5_20260820",
+      "candidate_generation_run_id": "run_character_landmark_tpose_20260819",
+      "source_sha256": "55445aaa88dc07a14c288bf8a74f15fc22e2ac5d7aaa570c7b5afa6d563e23f1",
+      "part_count": 15,
+      "group_count": 6,
+      "group_semantics": [
+        "character_body",
+        "character_accessory",
+        "character_upper_garment",
+        "character_footwear",
+        "character_lower_garment",
+        "character_hair"
+      ],
+      "pipeline_stage_seconds": 36.6183,
+      "group_regeneration_only": true,
+      "character_grouping_algorithm": "character-pose-axis-surface-grouping-v2",
+      "quality_status": "review_recommended"
+    },
+    {
+      "case_id": "knife",
+      "frozen_run_id": "run_knife_crossdomain_v7_20260820",
+      "source_sha256": "01e3f3be63afe1a6248921c392d2b82ccf751d48d55da2c2c4c1fe550f27a886",
+      "part_count": 15,
+      "group_count": 3,
+      "group_semantics": [
+        "tool_prop_blade",
+        "tool_prop_handle",
+        "tool_prop_wrap"
+      ],
+      "pipeline_stage_seconds": 35.7751,
+      "group_regeneration_only": true,
+      "quality_status": "review_recommended"
+    },
+    {
+      "case_id": "firearm",
+      "frozen_run_id": "run_firearm_crossdomain_v4_20260820",
+      "source_sha256": "167b4eaf0d81ef8b510a68275782084fdad612a24dd659d6f372a4e7457f5c2c",
+      "part_count": 15,
+      "group_count": 7,
+      "group_semantics": [
+        "tool_prop_muzzle",
+        "tool_prop_barrel",
+        "tool_prop_handguard",
+        "tool_prop_receiver",
+        "tool_prop_magazine",
+        "tool_prop_grip",
+        "tool_prop_stock"
+      ],
+      "pipeline_stage_seconds": 32.2257,
+      "group_regeneration_only": true,
+      "quality_status": "review_recommended"
+    },
+    {
+      "case_id": "globe",
+      "frozen_run_id": "run_globe_crossdomain_v3_20260820",
+      "source_sha256": "6618a6a62e212eac89f60b2bd33fca2748409bc5a9c76cde7f71181c3544678a",
+      "part_count": 7,
+      "group_count": 4,
+      "group_semantics": [
+        "device_globe_sphere",
+        "device_base",
+        "device_globe_meridian_ring",
+        "device_globe_stem"
+      ],
+      "pipeline_stage_seconds": 39.4213,
+      "group_regeneration_only": true,
+      "quality_status": "review_recommended"
+    },
+    {
+      "case_id": "rock_scene",
+      "frozen_run_id": "run_scene_rocks_crossdomain_v3_20260820",
+      "source_sha256": "9ddf2e3ede60e1a8c766e3d69182a6193042c5afffca316314b358faad48ea09",
+      "part_count": 22,
+      "group_count": 22,
+      "public_group_semantic": "scene_object",
+      "pipeline_stage_seconds": 27.8467,
+      "group_regeneration_only": true,
+      "quality_status": "review_recommended"
+    },
+    {
+      "case_id": "building_scene",
+      "frozen_run_id": "run_scene_houses_crossdomain_v4_20260820",
+      "source_sha256": "944f0ad4823ff8ff6d6f0f94128310d3dd0c9768ac558a8ea178a3752494698c",
+      "part_count": 6,
+      "group_count": 6,
+      "public_group_semantic": "scene_object",
+      "pipeline_stage_seconds": 25.1708,
+      "group_regeneration_only": true,
+      "quality_status": "review_recommended",
+      "known_review_item": "A thin display platform or attached shadow can enter the left object envelope."
+    }
+  ],
+  "related_records": [
+    "cross_domain_structural_regression_v0.6.json"
+  ]
+}

@@ -1,0 +1,33 @@
+name: CI
+
+"on":
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Unit tests
+        run: python -m pytest -q
+      - name: Static checks
+        run: python -m ruff check .
+      - name: Build wheel
+        run: python -m pip wheel . --no-deps --wheel-dir dist
+      - name: Verify bundled prompt bank
+        run: >-
+          python -c "import glob,zipfile;
+          p=glob.glob('dist/hpid_split-*.whl')[0];
+          z=zipfile.ZipFile(p);
+          assert 'hpid_split/resources/general_asset_prompts.json' in z.namelist()"

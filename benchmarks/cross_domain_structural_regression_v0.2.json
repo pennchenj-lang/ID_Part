@@ -1,0 +1,70 @@
+{
+  "record_version": "0.2",
+  "generated_at": "2026-08-11",
+  "evidence_type": "unlabelled_cross_domain_software_regression",
+  "claim_boundary": "Execution, root routing, structural granularity, hierarchy construction, and package validity only. This record does not measure semantic or boundary accuracy.",
+  "inference_contract": {
+    "ground_truth_used": false,
+    "user_annotation_used": false,
+    "ak_red_circle_reference_used": false,
+    "decomposition_mode": "automatic",
+    "root_mode": "primary",
+    "grounding_model": "IDEA-Research/grounding-dino-tiny",
+    "segmentation_model": "facebook/sam2.1-hiera-tiny",
+    "dense_semantic_fallback": true,
+    "visual_points_per_crop": 20,
+    "visual_crop_layers": 1
+  },
+  "source_distribution": "The source images are local user-provided regression assets and are not redistributed by this record.",
+  "cases": [
+    {
+      "case_id": "ak_rifle",
+      "source_sha256": "d3bb38c22f1a51dfb8b72033c8a5b7fcc8a1ab964287fdb946a2cfb725e475e7",
+      "selected_root_semantic": "tool_prop",
+      "selected_root_count": 1,
+      "output_part_count": 23,
+      "generic_visual_part_count": 19,
+      "nested_visual_part_count": 9,
+      "sam2_visual_proposal_count": 37,
+      "accepted_visual_candidate_count": 22,
+      "package_valid": true
+    },
+    {
+      "case_id": "scifi_pistol",
+      "source_sha256": "f8f7c71f1e37c8a4a1aaa184e25985043a70949334370191f313ea9abd3d718c",
+      "selected_root_semantic": "tool_prop",
+      "selected_root_count": 1,
+      "output_part_count": 34,
+      "generic_visual_part_count": 30,
+      "nested_visual_part_count": 13,
+      "sam2_visual_proposal_count": 51,
+      "accepted_visual_candidate_count": 32,
+      "package_valid": true
+    },
+    {
+      "case_id": "character_mint",
+      "source_sha256": "c4834b8bf707505920265055d1c976fa6aef4ec06966e0a332da7a1fc5e0f07f",
+      "selected_root_semantic": "character",
+      "selected_root_count": 1,
+      "output_part_count": 29,
+      "generic_visual_part_count": 3,
+      "nested_visual_part_count": 2,
+      "sam2_visual_proposal_count": 25,
+      "accepted_visual_candidate_count": 15,
+      "package_valid": true
+    },
+    {
+      "case_id": "character_scene",
+      "source_sha256": "a0f6f0987acd10c25cc641829f38f4fde7b04d5ba5903894548042f8461fcbfe",
+      "selected_root_semantic": "character",
+      "selected_root_count": 1,
+      "output_part_count": 21,
+      "generic_visual_part_count": 3,
+      "nested_visual_part_count": 0,
+      "sam2_visual_proposal_count": 99,
+      "accepted_visual_candidate_count": 11,
+      "package_valid": true,
+      "known_failure": "The thin held staff was not retained as a coherent attached asset root in primary mode."
+    }
+  ]
+}

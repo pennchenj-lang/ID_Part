@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hpid-split"
+version = "0.3.0"
+description = "Hierarchy-constrained fine-part decomposition with stable Part-ID assignment."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "opencv-python>=4.9",
+  "pandas>=2.1",
+  "pillow>=10.0",
+  "scipy>=1.11",
+  "scikit-image>=0.23",
+  "torch>=2.2",
+  "torchvision>=0.17",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+foundation = ["transformers>=5.12,<5.13", "safetensors>=0.4"]
+diffusion = ["accelerate>=1.0", "diffusers>=0.35", "safetensors>=0.4"]
+ui = ["gradio>=5.0,<7.0"]
+
+[project.scripts]
+hpid-split = "hpid_split.cli:main"
+hpid-split-web = "hpid_split.webapp:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hpid_split = ["resources/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

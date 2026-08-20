@@ -1,0 +1,5258 @@
+{
+  "format": "HPID independent PACO asset-router evaluation",
+  "format_version": "0.1.0",
+  "evidence_scope": "oracle object crop/root; no category label enters inference",
+  "source_manifest": "paco://broad_objects_val_dev_v3/manifest.json",
+  "source_manifest_sha256": "849cad2dd2d09a55fad6719f8ec29718f0cee1b0d27c9e8b234ab4e85d3e133b",
+  "index": "model://hpid_siglip2_asset_router_v1",
+  "index_manifest_sha256": "1cef095933a312f09a7990296cebf59de44ed4750ca2d796070c24f4f73f8c81",
+  "model": "model://siglip2-base-patch16-224",
+  "configuration": {
+    "prototype_weight": 0.58,
+    "text_weight": 0.42000000000000004,
+    "minimum_score": 0.0,
+    "minimum_margin": 0.0
+  },
+  "aggregate": {
+    "case_count": 58,
+    "acceptance_rate": 1.0,
+    "top1_accuracy_all": 0.7413793103448276,
+    "top1_accuracy_accepted": 0.7413793103448276,
+    "top5_accuracy": 0.9482758620689655,
+    "domain_accuracy": 0.8620689655172413,
+    "profile_accuracy": 0.8448275862068966,
+    "mean_score": 0.6187078602971701,
+    "mean_margin": 0.04520429681087361
+  },
+  "by_domain": {
+    "container": {
+      "case_count": 18,
+      "acceptance_rate": 1.0,
+      "top1_accuracy_all": 0.6666666666666666,
+      "top1_accuracy_accepted": 0.6666666666666666,
+      "top5_accuracy": 1.0,
+      "domain_accuracy": 0.9444444444444444,
+      "profile_accuracy": 0.8888888888888888,
+      "mean_score": 0.6051663234498766,
+      "mean_margin": 0.034242353483482625
+    },
+    "daily_object": {
+      "case_count": 12,
+      "acceptance_rate": 1.0,
+      "top1_accuracy_all": 0.9166666666666666,
+      "top1_accuracy_accepted": 0.9166666666666666,
+      "top5_accuracy": 1.0,
+      "domain_accuracy": 1.0,
+      "profile_accuracy": 1.0,
+      "mean_score": 0.6062292005618413,
+      "mean_margin": 0.0441271678606669
+    },
+    "device": {
+      "case_count": 14,
+      "acceptance_rate": 1.0,
+      "top1_accuracy_all": 0.7857142857142857,
+      "top1_accuracy_accepted": 0.7857142857142857,
+      "top5_accuracy": 1.0,
+      "domain_accuracy": 0.7857142857142857,
+      "profile_accuracy": 0.7857142857142857,
+      "mean_score": 0.6324388425123125,
+      "mean_margin": 0.06680730059033348
+    },
+    "furniture": {
+      "case_count": 4,
+      "acceptance_rate": 1.0,
+      "top1_accuracy_all": 0.25,
+      "top1_accuracy_accepted": 0.25,
+      "top5_accuracy": 0.5,
+      "domain_accuracy": 0.5,
+      "profile_accuracy": 0.5,
+      "mean_score": 0.6195781934261322,
+      "mean_margin": 0.015964563687642402
+    },
+    "tool_prop": {
+      "case_count": 8,
+      "acceptance_rate": 1.0,
+      "top1_accuracy_all": 0.75,
+      "top1_accuracy_accepted": 0.75,
+      "top5_accuracy": 0.875,
+      "domain_accuracy": 0.75,
+      "profile_accuracy": 0.75,
+      "mean_score": 0.6517787007490794,
+      "mean_margin": 0.04730011989672979
+    },
+    "vehicle": {
+      "case_count": 2,
+      "acceptance_rate": 1.0,
+      "top1_accuracy_all": 1.0,
+      "top1_accuracy_accepted": 1.0,
+      "top5_accuracy": 1.0,
+      "domain_accuracy": 1.0,
+      "profile_accuracy": 1.0,
+      "mean_score": 0.5853127467632294,
+      "mean_margin": 0.04919970790545147
+    }
+  },
+  "cases": [
+    {
+      "case_id": "cellular_telephone",
+      "expected_label": "cellular_telephone",
+      "expected_domain": "device",
+      "expected_profile": "phone",
+      "accepted": true,
+      "asset_label": "cellular telephone",
+      "asset_domain": "device",
+      "asset_profile": "phone",
+      "score": 0.5786367360750835,
+      "margin": 0.05424586057662972,
+      "alternatives": [
+        {
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "score": 0.5786367360750835,
+          "prototype_score": 0.7962029576301575,
+          "text_score": 0.11075197160243988,
+          "nearest_asset_score": 0.7594678203264872,
+          "nearest_asset_ids": [
+            "paco-train-cellular_telephone-657238",
+            "paco-train-cellular_telephone-535901",
+            "paco-train-cellular_telephone-764767"
+          ]
+        },
+        {
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5243908754984538,
+          "prototype_score": 0.7337625026702881,
+          "text_score": 0.09420886635780334,
+          "nearest_asset_score": 0.6767247120539347,
+          "nearest_asset_ids": [
+            "paco-train-remote_control-296680",
+            "paco-train-remote_control-352591",
+            "paco-train-remote_control-483552"
+          ]
+        },
+        {
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "score": 0.5147381416956583,
+          "prototype_score": 0.7177044749259949,
+          "text_score": 0.06172160059213638,
+          "nearest_asset_score": 0.701286236445109,
+          "nearest_asset_ids": [
+            "paco-train-laptop_computer-352603",
+            "paco-train-laptop_computer-577031",
+            "paco-train-laptop_computer-1200919"
+          ]
+        },
+        {
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "score": 0.5110945701599121,
+          "prototype_score": 0.7181378602981567,
+          "text_score": 0.08015365898609161,
+          "nearest_asset_score": 0.6677205562591553,
+          "nearest_asset_ids": [
+            "paco-train-television_set-1007748",
+            "paco-train-television_set-1131472",
+            "paco-train-television_set-786414"
+          ]
+        },
+        {
+          "asset_label": "calculator",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5075126218795776,
+          "prototype_score": 0.6984025835990906,
+          "text_score": 0.08361654728651047,
+          "nearest_asset_score": 0.6806216835975647,
+          "nearest_asset_ids": [
+            "paco-train-calculator-229284",
+            "paco-train-calculator-602018",
+            "paco-train-calculator-1161060"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "laptop_computer",
+      "expected_label": "laptop_computer",
+      "expected_domain": "device",
+      "expected_profile": "laptop",
+      "accepted": true,
+      "asset_label": "laptop computer",
+      "asset_domain": "device",
+      "asset_profile": "laptop",
+      "score": 0.6383901349703471,
+      "margin": 0.0873791972796123,
+      "alternatives": [
+        {
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "score": 0.6383901349703471,
+          "prototype_score": 0.8595303893089294,
+          "text_score": 0.13637617230415344,
+          "nearest_asset_score": 0.8507503072420756,
+          "nearest_asset_ids": [
+            "paco-train-laptop_computer-1200919",
+            "paco-train-laptop_computer-682073",
+            "paco-train-laptop_computer-577031"
+          ]
+        },
+        {
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "score": 0.5510109376907348,
+          "prototype_score": 0.7771990299224854,
+          "text_score": 0.06882019340991974,
+          "nearest_asset_score": 0.734433650970459,
+          "nearest_asset_ids": [
+            "paco-train-cellular_telephone-657238",
+            "paco-train-cellular_telephone-293386",
+            "paco-train-cellular_telephone-764767"
+          ]
+        },
+        {
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "score": 0.5394281903902689,
+          "prototype_score": 0.7549572587013245,
+          "text_score": 0.0745377168059349,
+          "nearest_asset_score": 0.7200636665026346,
+          "nearest_asset_ids": [
+            "paco-train-mouse_computer_equipment-495314",
+            "paco-train-mouse_computer_equipment-104926",
+            "paco-train-mouse_computer_equipment-925547"
+          ]
+        },
+        {
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "score": 0.5134616287549336,
+          "prototype_score": 0.7317937016487122,
+          "text_score": 0.06800372153520584,
+          "nearest_asset_score": 0.6689295371373495,
+          "nearest_asset_ids": [
+            "paco-train-television_set-1131472",
+            "paco-train-television_set-1007748",
+            "paco-train-television_set-623954"
+          ]
+        },
+        {
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5051160685221354,
+          "prototype_score": 0.7109331488609314,
+          "text_score": 0.053568270057439804,
+          "nearest_asset_score": 0.6858262817064921,
+          "nearest_asset_ids": [
+            "paco-train-telephone-994837",
+            "paco-train-telephone-1091071",
+            "paco-train-telephone-640540"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "television_set",
+      "expected_label": "television_set",
+      "expected_domain": "device",
+      "expected_profile": "display",
+      "accepted": true,
+      "asset_label": "television set",
+      "asset_domain": "device",
+      "asset_profile": "display",
+      "score": 0.5729320438702901,
+      "margin": 0.03240927934646598,
+      "alternatives": [
+        {
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "score": 0.5729320438702901,
+          "prototype_score": 0.7972968220710754,
+          "text_score": 0.12194308638572693,
+          "nearest_asset_score": 0.725376029809316,
+          "nearest_asset_ids": [
+            "paco-train-television_set-623954",
+            "paco-train-television_set-1032958",
+            "paco-train-television_set-1131472"
+          ]
+        },
+        {
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "score": 0.5405227645238241,
+          "prototype_score": 0.7528092861175537,
+          "text_score": 0.07185240089893341,
+          "nearest_asset_score": 0.7300765713055929,
+          "nearest_asset_ids": [
+            "paco-train-laptop_computer-577031",
+            "paco-train-laptop_computer-352603",
+            "paco-train-laptop_computer-682073"
+          ]
+        },
+        {
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5366938718159994,
+          "prototype_score": 0.7529098987579346,
+          "text_score": 0.09289848804473877,
+          "nearest_asset_score": 0.6935221751530966,
+          "nearest_asset_ids": [
+            "paco-train-remote_control-378036",
+            "paco-train-remote_control-483552",
+            "paco-train-remote_control-303314"
+          ]
+        },
+        {
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "score": 0.4985613123575846,
+          "prototype_score": 0.7030161619186401,
+          "text_score": 0.06917870789766312,
+          "nearest_asset_score": 0.6573647658030192,
+          "nearest_asset_ids": [
+            "paco-train-cellular_telephone-764767",
+            "paco-train-cellular_telephone-657238",
+            "paco-train-cellular_telephone-293386"
+          ]
+        },
+        {
+          "asset_label": "microwave oven",
+          "asset_domain": "device",
+          "asset_profile": "microwave",
+          "score": 0.4938921888669332,
+          "prototype_score": 0.6840448975563049,
+          "text_score": 0.07798965275287628,
+          "nearest_asset_score": 0.6594677766164144,
+          "nearest_asset_ids": [
+            "paco-train-microwave_oven-354281",
+            "paco-train-microwave_oven-146355",
+            "paco-train-microwave_oven-603221"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "remote_control",
+      "expected_label": "remote_control",
+      "expected_domain": "device",
+      "expected_profile": "controls",
+      "accepted": true,
+      "asset_label": "remote control",
+      "asset_domain": "device",
+      "asset_profile": "controls",
+      "score": 0.6175835617383322,
+      "margin": 0.083952648639679,
+      "alternatives": [
+        {
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.6175835617383322,
+          "prototype_score": 0.846406102180481,
+          "text_score": 0.1599908173084259,
+          "nearest_asset_score": 0.7705112894376119,
+          "nearest_asset_ids": [
+            "paco-train-remote_control-483552",
+            "paco-train-remote_control-296680",
+            "paco-train-remote_control-378036"
+          ]
+        },
+        {
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5336309130986532,
+          "prototype_score": 0.7316001057624817,
+          "text_score": 0.10109348595142365,
+          "nearest_asset_score": 0.705514391263326,
+          "nearest_asset_ids": [
+            "paco-train-telephone-1091071",
+            "paco-train-telephone-994837",
+            "paco-train-telephone-270198"
+          ]
+        },
+        {
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "score": 0.5309246150652567,
+          "prototype_score": 0.7353999018669128,
+          "text_score": 0.1022959053516388,
+          "nearest_asset_score": 0.6888833443323771,
+          "nearest_asset_ids": [
+            "paco-train-mouse_computer_equipment-714394",
+            "paco-train-mouse_computer_equipment-925547",
+            "paco-train-mouse_computer_equipment-495314"
+          ]
+        },
+        {
+          "asset_label": "calculator",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5299758839607239,
+          "prototype_score": 0.7276168465614319,
+          "text_score": 0.0944477915763855,
+          "nearest_asset_score": 0.7055788636207581,
+          "nearest_asset_ids": [
+            "paco-train-calculator-1161060",
+            "paco-train-calculator-892955",
+            "paco-train-calculator-602018"
+          ]
+        },
+        {
+          "asset_label": "television set",
+          "asset_domain": "device",
+          "asset_profile": "display",
+          "score": 0.5221490001678467,
+          "prototype_score": 0.7194349765777588,
+          "text_score": 0.11577479541301727,
+          "nearest_asset_score": 0.6667952537536621,
+          "nearest_asset_ids": [
+            "paco-train-television_set-623954",
+            "paco-train-television_set-1007748",
+            "paco-train-television_set-1131472"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "telephone",
+      "expected_label": "telephone",
+      "expected_domain": "device",
+      "expected_profile": "controls",
+      "accepted": true,
+      "asset_label": "telephone",
+      "asset_domain": "device",
+      "asset_profile": "controls",
+      "score": 0.7006327795982361,
+      "margin": 0.07361447254816689,
+      "alternatives": [
+        {
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.7006327795982361,
+          "prototype_score": 0.9470071792602539,
+          "text_score": 0.15913888812065125,
+          "nearest_asset_score": 0.9179964661598206,
+          "nearest_asset_ids": [
+            "paco-train-telephone-640540",
+            "paco-train-telephone-270198",
+            "paco-train-telephone-1091071"
+          ]
+        },
+        {
+          "asset_label": "calculator",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.6270183070500692,
+          "prototype_score": 0.8612568974494934,
+          "text_score": 0.11952704191207886,
+          "nearest_asset_score": 0.8257588942845663,
+          "nearest_asset_ids": [
+            "paco-train-calculator-602018",
+            "paco-train-calculator-315542",
+            "paco-train-calculator-892955"
+          ]
+        },
+        {
+          "asset_label": "cellular telephone",
+          "asset_domain": "device",
+          "asset_profile": "phone",
+          "score": 0.5910434341430664,
+          "prototype_score": 0.8059338331222534,
+          "text_score": 0.12794391810894012,
+          "nearest_asset_score": 0.7706972360610962,
+          "nearest_asset_ids": [
+            "paco-train-cellular_telephone-293386",
+            "paco-train-cellular_telephone-764767",
+            "paco-train-cellular_telephone-657238"
+          ]
+        },
+        {
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "score": 0.5813941566149393,
+          "prototype_score": 0.8108290433883667,
+          "text_score": 0.08526582270860672,
+          "nearest_asset_score": 0.7750270167986552,
+          "nearest_asset_ids": [
+            "paco-train-earphone-763058",
+            "paco-train-earphone-376401",
+            "paco-train-earphone-188395"
+          ]
+        },
+        {
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "score": 0.5696270966529846,
+          "prototype_score": 0.7903910875320435,
+          "text_score": 0.09418588876724243,
+          "nearest_asset_score": 0.7538499236106873,
+          "nearest_asset_ids": [
+            "paco-train-laptop_computer-564121",
+            "paco-train-laptop_computer-1200919",
+            "paco-train-laptop_computer-682073"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "clock",
+      "expected_label": "clock",
+      "expected_domain": "device",
+      "expected_profile": "clock_watch",
+      "accepted": true,
+      "asset_label": "clock",
+      "asset_domain": "device",
+      "asset_profile": "clock_watch",
+      "score": 0.6244259770711262,
+      "margin": 0.1044530844688415,
+      "alternatives": [
+        {
+          "asset_label": "clock",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "score": 0.6244259770711262,
+          "prototype_score": 0.8522276878356934,
+          "text_score": 0.14099538326263428,
+          "nearest_asset_score": 0.806781013806661,
+          "nearest_asset_ids": [
+            "paco-train-clock-766956",
+            "paco-train-clock-450755",
+            "paco-train-clock-70036"
+          ]
+        },
+        {
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5199728926022847,
+          "prototype_score": 0.7384098768234253,
+          "text_score": 0.061770278960466385,
+          "nearest_asset_score": 0.6890485485394796,
+          "nearest_asset_ids": [
+            "paco-train-chair-374488",
+            "paco-train-chair-187038",
+            "paco-train-chair-1006037"
+          ]
+        },
+        {
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "score": 0.5075625570615132,
+          "prototype_score": 0.7307711243629456,
+          "text_score": 0.06519775092601776,
+          "nearest_asset_score": 0.6524169643719991,
+          "nearest_asset_ids": [
+            "paco-train-table-1074209",
+            "paco-train-table-133618",
+            "paco-train-table-797715"
+          ]
+        },
+        {
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5004391916592916,
+          "prototype_score": 0.7136090993881226,
+          "text_score": 0.04995940998196602,
+          "nearest_asset_score": 0.6690297325452169,
+          "nearest_asset_ids": [
+            "paco-train-bench-1179168",
+            "paco-train-bench-553026",
+            "paco-train-bench-355874"
+          ]
+        },
+        {
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "score": 0.4930868419011434,
+          "prototype_score": 0.6833437085151672,
+          "text_score": 0.06505067646503448,
+          "nearest_asset_score": 0.6716114481290182,
+          "nearest_asset_ids": [
+            "paco-train-fan-158859",
+            "paco-train-fan-1134958",
+            "paco-train-fan-1142958"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "watch",
+      "expected_label": "watch",
+      "expected_domain": "device",
+      "expected_profile": "clock_watch",
+      "accepted": true,
+      "asset_label": "belt",
+      "asset_domain": "daily_object",
+      "asset_profile": "wallet_belt",
+      "score": 0.6221576166152953,
+      "margin": 0.010908596515655455,
+      "alternatives": [
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.6221576166152953,
+          "prototype_score": 0.8646926879882812,
+          "text_score": 0.10242809355258942,
+          "nearest_asset_score": 0.8217418193817139,
+          "nearest_asset_ids": [
+            "paco-train-belt-346225",
+            "paco-train-belt-211331",
+            "paco-train-belt-517732"
+          ]
+        },
+        {
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.6112490200996399,
+          "prototype_score": 0.840771496295929,
+          "text_score": 0.12273722887039185,
+          "nearest_asset_score": 0.7965254187583923,
+          "nearest_asset_ids": [
+            "paco-train-helmet-66405",
+            "paco-train-helmet-502370",
+            "paco-train-helmet-1202107"
+          ]
+        },
+        {
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.5796963349978129,
+          "prototype_score": 0.815062940120697,
+          "text_score": 0.10633731633424759,
+          "nearest_asset_score": 0.7398917476336161,
+          "nearest_asset_ids": [
+            "paco-train-hat-240910",
+            "paco-train-hat-787033",
+            "paco-train-hat-172236"
+          ]
+        },
+        {
+          "asset_label": "watch",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "score": 0.5775123667716979,
+          "prototype_score": 0.8156047463417053,
+          "text_score": 0.09549643844366074,
+          "nearest_asset_score": 0.7429917454719543,
+          "nearest_asset_ids": [
+            "paco-train-watch-1002686",
+            "paco-train-watch-163676",
+            "paco-train-watch-1008054"
+          ]
+        },
+        {
+          "asset_label": "wrench",
+          "asset_domain": "tool_prop",
+          "asset_profile": "wrench",
+          "score": 0.5700379641850789,
+          "prototype_score": 0.8028128147125244,
+          "text_score": 0.08544078469276428,
+          "nearest_asset_score": 0.7462358077367147,
+          "nearest_asset_ids": [
+            "paco-train-wrench-864644",
+            "paco-train-wrench-1160280",
+            "paco-train-wrench-1086944"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "earphone",
+      "expected_label": "earphone",
+      "expected_domain": "device",
+      "expected_profile": "earphone",
+      "accepted": true,
+      "asset_label": "belt",
+      "asset_domain": "daily_object",
+      "asset_profile": "wallet_belt",
+      "score": 0.6263512563705445,
+      "margin": 0.011851952075958239,
+      "alternatives": [
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.6263512563705445,
+          "prototype_score": 0.8724808096885681,
+          "text_score": 0.0992729663848877,
+          "nearest_asset_score": 0.8285112380981445,
+          "nearest_asset_ids": [
+            "paco-train-belt-1234975",
+            "paco-train-belt-136823",
+            "paco-train-belt-346225"
+          ]
+        },
+        {
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "score": 0.6144993042945862,
+          "prototype_score": 0.8329871296882629,
+          "text_score": 0.13345637917518616,
+          "nearest_asset_score": 0.8081666827201843,
+          "nearest_asset_ids": [
+            "paco-train-earphone-188395",
+            "paco-train-earphone-5514",
+            "paco-train-earphone-376401"
+          ]
+        },
+        {
+          "asset_label": "wrench",
+          "asset_domain": "tool_prop",
+          "asset_profile": "wrench",
+          "score": 0.6014273738861085,
+          "prototype_score": 0.8403518199920654,
+          "text_score": 0.10509345680475235,
+          "nearest_asset_score": 0.7811292409896851,
+          "nearest_asset_ids": [
+            "paco-train-wrench-1160280",
+            "paco-train-wrench-864644",
+            "paco-train-wrench-1086944"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5989178466796875,
+          "prototype_score": 0.8305440545082092,
+          "text_score": 0.09009005129337311,
+          "nearest_asset_score": 0.8029979467391968,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-676725",
+            "paco-train-bucket-796596"
+          ]
+        },
+        {
+          "asset_label": "broom",
+          "asset_domain": "tool_prop",
+          "asset_profile": "broom",
+          "score": 0.5941660388310751,
+          "prototype_score": 0.8330569863319397,
+          "text_score": 0.07973916828632355,
+          "nearest_asset_score": 0.7934583028157552,
+          "nearest_asset_ids": [
+            "paco-train-broom-641137",
+            "paco-train-broom-960615",
+            "paco-train-broom-847057"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "fan",
+      "expected_label": "fan",
+      "expected_domain": "device",
+      "expected_profile": "fan",
+      "accepted": true,
+      "asset_label": "fan",
+      "asset_domain": "device",
+      "asset_profile": "fan",
+      "score": 0.6946672121683757,
+      "margin": 0.14872211615244546,
+      "alternatives": [
+        {
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "score": 0.6946672121683757,
+          "prototype_score": 0.9509433507919312,
+          "text_score": 0.12368974834680557,
+          "nearest_asset_score": 0.9291054407755533,
+          "nearest_asset_ids": [
+            "paco-train-fan-174904",
+            "paco-train-fan-158859",
+            "paco-train-fan-649676"
+          ]
+        },
+        {
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "score": 0.5459450960159302,
+          "prototype_score": 0.7613451480865479,
+          "text_score": 0.09317714720964432,
+          "nearest_asset_score": 0.7136806845664978,
+          "nearest_asset_ids": [
+            "paco-train-lamp-1164616",
+            "paco-train-lamp-159888",
+            "paco-train-lamp-942237"
+          ]
+        },
+        {
+          "asset_label": "guitar",
+          "asset_domain": "tool_prop",
+          "asset_profile": "guitar",
+          "score": 0.5249358161290487,
+          "prototype_score": 0.7469981908798218,
+          "text_score": 0.059834074229002,
+          "nearest_asset_score": 0.696055551369985,
+          "nearest_asset_ids": [
+            "paco-train-guitar-347704",
+            "paco-train-guitar-281476",
+            "paco-train-guitar-1238614"
+          ]
+        },
+        {
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "score": 0.5164894660313923,
+          "prototype_score": 0.7362411618232727,
+          "text_score": 0.05981975421309471,
+          "nearest_asset_score": 0.6819488604863485,
+          "nearest_asset_ids": [
+            "paco-train-kettle-980283",
+            "paco-train-kettle-201277",
+            "paco-train-kettle-102411"
+          ]
+        },
+        {
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5124411678314209,
+          "prototype_score": 0.7300897240638733,
+          "text_score": 0.05474032834172249,
+          "nearest_asset_score": 0.6821508407592773,
+          "nearest_asset_ids": [
+            "paco-train-chair-424054",
+            "paco-train-chair-187038",
+            "paco-train-chair-142578"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "lamp",
+      "expected_label": "lamp",
+      "expected_domain": "device",
+      "expected_profile": "lamp",
+      "accepted": true,
+      "asset_label": "lamp",
+      "asset_domain": "device",
+      "asset_profile": "lamp",
+      "score": 0.6329618175824483,
+      "margin": 0.018587969144185368,
+      "alternatives": [
+        {
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "score": 0.6329618175824483,
+          "prototype_score": 0.869370698928833,
+          "text_score": 0.1316991150379181,
+          "nearest_asset_score": 0.821738620599111,
+          "nearest_asset_ids": [
+            "paco-train-lamp-102046",
+            "paco-train-lamp-159888",
+            "paco-train-lamp-1129512"
+          ]
+        },
+        {
+          "asset_label": "broom",
+          "asset_domain": "tool_prop",
+          "asset_profile": "broom",
+          "score": 0.6143738484382629,
+          "prototype_score": 0.8504644632339478,
+          "text_score": 0.09503843635320663,
+          "nearest_asset_score": 0.8231437802314758,
+          "nearest_asset_ids": [
+            "paco-train-broom-641137",
+            "paco-train-broom-960615",
+            "paco-train-broom-450919"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.6014363543192546,
+          "prototype_score": 0.852295994758606,
+          "text_score": 0.07853676378726959,
+          "nearest_asset_score": 0.7920287052790324,
+          "nearest_asset_ids": [
+            "paco-train-stool-876252",
+            "paco-train-stool-1053837",
+            "paco-train-stool-786573"
+          ]
+        },
+        {
+          "asset_label": "fan",
+          "asset_domain": "device",
+          "asset_profile": "fan",
+          "score": 0.591794204711914,
+          "prototype_score": 0.8086031079292297,
+          "text_score": 0.0939749926328659,
+          "nearest_asset_score": 0.8060840368270874,
+          "nearest_asset_ids": [
+            "paco-train-fan-1142958",
+            "paco-train-fan-1134958",
+            "paco-train-fan-81226"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.5894019921620688,
+          "prototype_score": 0.8329470157623291,
+          "text_score": 0.07603330910205841,
+          "nearest_asset_score": 0.7806101640065511,
+          "nearest_asset_ids": [
+            "paco-train-belt-346225",
+            "paco-train-belt-136823",
+            "paco-train-belt-517732"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "blender",
+      "expected_label": "blender",
+      "expected_domain": "device",
+      "expected_profile": "blender",
+      "accepted": true,
+      "asset_label": "cup",
+      "asset_domain": "container",
+      "asset_profile": "drinkware",
+      "score": 0.6058473213513692,
+      "margin": 0.0021583851178487157,
+      "alternatives": [
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.6058473213513692,
+          "prototype_score": 0.8369552493095398,
+          "text_score": 0.1316307783126831,
+          "nearest_asset_score": 0.773320217927297,
+          "nearest_asset_ids": [
+            "paco-train-cup-633608",
+            "paco-train-cup-1242283",
+            "paco-train-cup-879384"
+          ]
+        },
+        {
+          "asset_label": "blender",
+          "asset_domain": "device",
+          "asset_profile": "blender",
+          "score": 0.6036889362335205,
+          "prototype_score": 0.8146684169769287,
+          "text_score": 0.15137183666229248,
+          "nearest_asset_score": 0.7775306701660156,
+          "nearest_asset_ids": [
+            "paco-train-blender-385995",
+            "paco-train-blender-1225287",
+            "paco-train-blender-444011"
+          ]
+        },
+        {
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "score": 0.5870071546236674,
+          "prototype_score": 0.8050994277000427,
+          "text_score": 0.12506595253944397,
+          "nearest_asset_score": 0.7606346408526102,
+          "nearest_asset_ids": [
+            "paco-train-kettle-688684",
+            "paco-train-kettle-102411",
+            "paco-train-kettle-201277"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.5782861169179281,
+          "prototype_score": 0.8159687519073486,
+          "text_score": 0.11470251530408859,
+          "nearest_asset_score": 0.7244697411855062,
+          "nearest_asset_ids": [
+            "paco-train-jar-70564",
+            "paco-train-jar-29500",
+            "paco-train-jar-453196"
+          ]
+        },
+        {
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5704721387227376,
+          "prototype_score": 0.7828004956245422,
+          "text_score": 0.12401364743709564,
+          "nearest_asset_score": 0.7359747489293417,
+          "nearest_asset_ids": [
+            "paco-train-glass_drink_container-625615",
+            "paco-train-glass_drink_container-539706",
+            "paco-train-glass_drink_container-74804"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "microwave_oven",
+      "expected_label": "microwave_oven",
+      "expected_domain": "device",
+      "expected_profile": "microwave",
+      "accepted": true,
+      "asset_label": "microwave oven",
+      "asset_domain": "device",
+      "asset_profile": "microwave",
+      "score": 0.6495467082659403,
+      "margin": 0.11149609168370556,
+      "alternatives": [
+        {
+          "asset_label": "microwave oven",
+          "asset_domain": "device",
+          "asset_profile": "microwave",
+          "score": 0.6495467082659403,
+          "prototype_score": 0.8796041011810303,
+          "text_score": 0.15854665637016296,
+          "nearest_asset_score": 0.8367126981417338,
+          "nearest_asset_ids": [
+            "paco-train-microwave_oven-146355",
+            "paco-train-microwave_oven-418981",
+            "paco-train-microwave_oven-603221"
+          ]
+        },
+        {
+          "asset_label": "calculator",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5380506165822347,
+          "prototype_score": 0.7490804195404053,
+          "text_score": 0.07128681987524033,
+          "nearest_asset_score": 0.7274196942647299,
+          "nearest_asset_ids": [
+            "paco-train-calculator-602018",
+            "paco-train-calculator-315542",
+            "paco-train-calculator-892955"
+          ]
+        },
+        {
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "score": 0.5374176534016928,
+          "prototype_score": 0.7546799182891846,
+          "text_score": 0.07738783955574036,
+          "nearest_asset_score": 0.7102187474568685,
+          "nearest_asset_ids": [
+            "paco-train-kettle-201277",
+            "paco-train-kettle-688684",
+            "paco-train-kettle-980283"
+          ]
+        },
+        {
+          "asset_label": "blender",
+          "asset_domain": "device",
+          "asset_profile": "blender",
+          "score": 0.5362527132034303,
+          "prototype_score": 0.750908613204956,
+          "text_score": 0.07250264286994934,
+          "nearest_asset_score": 0.7169588208198547,
+          "nearest_asset_ids": [
+            "paco-train-blender-1225287",
+            "paco-train-blender-385995",
+            "paco-train-blender-128386"
+          ]
+        },
+        {
+          "asset_label": "telephone",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5297709878285726,
+          "prototype_score": 0.7401759028434753,
+          "text_score": 0.06853536516427994,
+          "nearest_asset_score": 0.7141016324361166,
+          "nearest_asset_ids": [
+            "paco-train-telephone-994837",
+            "paco-train-telephone-1091071",
+            "paco-train-telephone-832893"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "kettle",
+      "expected_label": "kettle",
+      "expected_domain": "device",
+      "expected_profile": "kettle",
+      "accepted": true,
+      "asset_label": "kettle",
+      "asset_domain": "device",
+      "asset_profile": "kettle",
+      "score": 0.6591614365577698,
+      "margin": 0.08180996497472126,
+      "alternatives": [
+        {
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "score": 0.6591614365577698,
+          "prototype_score": 0.8958516120910645,
+          "text_score": 0.16023463010787964,
+          "nearest_asset_score": 0.8449960350990295,
+          "nearest_asset_ids": [
+            "paco-train-kettle-201277",
+            "paco-train-kettle-980283",
+            "paco-train-kettle-102411"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5773514715830486,
+          "prototype_score": 0.8139955401420593,
+          "text_score": 0.09470120072364807,
+          "nearest_asset_score": 0.7456760803858439,
+          "nearest_asset_ids": [
+            "paco-train-cup-1255563",
+            "paco-train-cup-879384",
+            "paco-train-cup-633608"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5679384048779805,
+          "prototype_score": 0.8021115660667419,
+          "text_score": 0.07176005095243454,
+          "nearest_asset_score": 0.7545585831006368,
+          "nearest_asset_ids": [
+            "paco-train-bowl-1150477",
+            "paco-train-bowl-760961",
+            "paco-train-bowl-915377"
+          ]
+        },
+        {
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "score": 0.5601074775060018,
+          "prototype_score": 0.7805309891700745,
+          "text_score": 0.09554482996463776,
+          "nearest_asset_score": 0.733089288075765,
+          "nearest_asset_ids": [
+            "paco-train-lamp-942237",
+            "paco-train-lamp-1164616",
+            "paco-train-lamp-1129512"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5538234949111939,
+          "prototype_score": 0.7864134311676025,
+          "text_score": 0.08125174045562744,
+          "nearest_asset_score": 0.7173097133636475,
+          "nearest_asset_ids": [
+            "paco-train-bucket-796596",
+            "paco-train-bucket-676725",
+            "paco-train-bucket-1109860"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "mouse_computer_equipment",
+      "expected_label": "mouse_(computer_equipment)",
+      "expected_domain": "device",
+      "expected_profile": "computer_peripheral",
+      "accepted": true,
+      "asset_label": "mouse (computer equipment)",
+      "asset_domain": "device",
+      "asset_profile": "computer_peripheral",
+      "score": 0.6308491929372152,
+      "margin": 0.11371258974075316,
+      "alternatives": [
+        {
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "score": 0.6308491929372152,
+          "prototype_score": 0.8565903902053833,
+          "text_score": 0.15005630254745483,
+          "nearest_asset_score": 0.8134287198384603,
+          "nearest_asset_ids": [
+            "paco-train-mouse_computer_equipment-104926",
+            "paco-train-mouse_computer_equipment-537456",
+            "paco-train-mouse_computer_equipment-925547"
+          ]
+        },
+        {
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.517136603196462,
+          "prototype_score": 0.738332986831665,
+          "text_score": 0.07386880367994308,
+          "nearest_asset_score": 0.6659672458966573,
+          "nearest_asset_ids": [
+            "paco-train-helmet-1048270",
+            "paco-train-helmet-730851",
+            "paco-train-helmet-66405"
+          ]
+        },
+        {
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "score": 0.5150963354110718,
+          "prototype_score": 0.7170245051383972,
+          "text_score": 0.07223435491323471,
+          "nearest_asset_score": 0.6922258138656616,
+          "nearest_asset_ids": [
+            "paco-train-earphone-376401",
+            "paco-train-earphone-401871",
+            "paco-train-earphone-188395"
+          ]
+        },
+        {
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "score": 0.5090916768709819,
+          "prototype_score": 0.7060017585754395,
+          "text_score": 0.07803858071565628,
+          "nearest_asset_score": 0.6809516946474711,
+          "nearest_asset_ids": [
+            "paco-train-laptop_computer-564121",
+            "paco-train-laptop_computer-682073",
+            "paco-train-laptop_computer-577031"
+          ]
+        },
+        {
+          "asset_label": "remote control",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.5035852678616841,
+          "prototype_score": 0.7054256200790405,
+          "text_score": 0.09041614085435867,
+          "nearest_asset_score": 0.6487775047620138,
+          "nearest_asset_ids": [
+            "paco-train-remote_control-483552",
+            "paco-train-remote_control-296680",
+            "paco-train-remote_control-378036"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "chair",
+      "expected_label": "chair",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "accepted": true,
+      "asset_label": "stool",
+      "asset_domain": "furniture",
+      "asset_profile": "chair",
+      "score": 0.6002025111516317,
+      "margin": 0.010828252633412694,
+      "alternatives": [
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.6002025111516317,
+          "prototype_score": 0.8430094718933105,
+          "text_score": 0.09224149584770203,
+          "nearest_asset_score": 0.7866712411244711,
+          "nearest_asset_ids": [
+            "paco-train-stool-1053837",
+            "paco-train-stool-876252",
+            "paco-train-stool-245456"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.589374258518219,
+          "prototype_score": 0.8147722482681274,
+          "text_score": 0.08923297375440598,
+          "nearest_asset_score": 0.7933619618415833,
+          "nearest_asset_ids": [
+            "paco-train-belt-1234975",
+            "paco-train-belt-346225",
+            "paco-train-belt-136823"
+          ]
+        },
+        {
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "score": 0.5819671495755514,
+          "prototype_score": 0.8032557368278503,
+          "text_score": 0.09911337494850159,
+          "nearest_asset_score": 0.7734132011731466,
+          "nearest_asset_ids": [
+            "paco-train-ladder-127281",
+            "paco-train-ladder-955769",
+            "paco-train-ladder-1033741"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5726152308781942,
+          "prototype_score": 0.7927051782608032,
+          "text_score": 0.0841900110244751,
+          "nearest_asset_score": 0.7718661030133566,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-676725",
+            "paco-train-bucket-796596"
+          ]
+        },
+        {
+          "asset_label": "lamp",
+          "asset_domain": "device",
+          "asset_profile": "lamp",
+          "score": 0.5676888457934062,
+          "prototype_score": 0.7853245735168457,
+          "text_score": 0.1023159772157669,
+          "nearest_asset_score": 0.7457034389177958,
+          "nearest_asset_ids": [
+            "paco-train-lamp-263765",
+            "paco-train-lamp-102046",
+            "paco-train-lamp-1129512"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": false,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "bench",
+      "expected_label": "bench",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "accepted": true,
+      "asset_label": "bench",
+      "asset_domain": "furniture",
+      "asset_profile": "chair",
+      "score": 0.6382908550898234,
+      "margin": 0.04859998623530071,
+      "alternatives": [
+        {
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.6382908550898234,
+          "prototype_score": 0.878678560256958,
+          "text_score": 0.13815487921237946,
+          "nearest_asset_score": 0.8199166456858317,
+          "nearest_asset_ids": [
+            "paco-train-bench-1085796",
+            "paco-train-bench-1179168",
+            "paco-train-bench-355874"
+          ]
+        },
+        {
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5896908688545227,
+          "prototype_score": 0.8275548815727234,
+          "text_score": 0.09770414233207703,
+          "nearest_asset_score": 0.766279399394989,
+          "nearest_asset_ids": [
+            "paco-train-chair-1006037",
+            "paco-train-chair-187038",
+            "paco-train-chair-142578"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5489959104855855,
+          "prototype_score": 0.780853271484375,
+          "text_score": 0.07263699173927307,
+          "nearest_asset_score": 0.7176648577054342,
+          "nearest_asset_ids": [
+            "paco-train-stool-1053837",
+            "paco-train-stool-763934",
+            "paco-train-stool-876252"
+          ]
+        },
+        {
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "score": 0.5408270096778869,
+          "prototype_score": 0.7705848813056946,
+          "text_score": 0.07000414282083511,
+          "nearest_asset_score": 0.7066482305526733,
+          "nearest_asset_ids": [
+            "paco-train-table-120714",
+            "paco-train-table-797715",
+            "paco-train-table-1004405"
+          ]
+        },
+        {
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "score": 0.5396100131670634,
+          "prototype_score": 0.761812686920166,
+          "text_score": 0.0659923106431961,
+          "nearest_asset_score": 0.719717780749003,
+          "nearest_asset_ids": [
+            "paco-train-ladder-330914",
+            "paco-train-ladder-127281",
+            "paco-train-ladder-91653"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "stool",
+      "expected_label": "stool",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "accepted": true,
+      "asset_label": "ladder",
+      "asset_domain": "tool_prop",
+      "asset_profile": "ladder",
+      "score": 0.6196409932772319,
+      "margin": 0.0035268433888753226,
+      "alternatives": [
+        {
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "score": 0.6196409932772319,
+          "prototype_score": 0.8526952266693115,
+          "text_score": 0.11487077176570892,
+          "nearest_asset_score": 0.8172091046969095,
+          "nearest_asset_ids": [
+            "paco-train-ladder-330914",
+            "paco-train-ladder-127281",
+            "paco-train-ladder-955769"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.6161141498883566,
+          "prototype_score": 0.8584360480308533,
+          "text_score": 0.1279471218585968,
+          "nearest_asset_score": 0.7819287975629171,
+          "nearest_asset_ids": [
+            "paco-train-stool-1053837",
+            "paco-train-stool-763934",
+            "paco-train-stool-786573"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5979121311505635,
+          "prototype_score": 0.8405933976173401,
+          "text_score": 0.09552445262670517,
+          "nearest_asset_score": 0.7785490949948629,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-676725",
+            "paco-train-bucket-796596"
+          ]
+        },
+        {
+          "asset_label": "trash can",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5854642256100973,
+          "prototype_score": 0.8132852911949158,
+          "text_score": 0.09895512461662292,
+          "nearest_asset_score": 0.7711152036984762,
+          "nearest_asset_ids": [
+            "paco-train-trash_can-69758",
+            "paco-train-trash_can-87965",
+            "paco-train-trash_can-785834"
+          ]
+        },
+        {
+          "asset_label": "sponge",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5766770434379578,
+          "prototype_score": 0.8164750337600708,
+          "text_score": 0.06123661994934082,
+          "nearest_asset_score": 0.775711178779602,
+          "nearest_asset_ids": [
+            "paco-train-sponge-387207",
+            "paco-train-sponge-81238",
+            "paco-train-sponge-23179"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "table",
+      "expected_label": "table",
+      "expected_domain": "furniture",
+      "expected_profile": "table",
+      "accepted": true,
+      "asset_label": "knife",
+      "asset_domain": "tool_prop",
+      "asset_profile": "knife",
+      "score": 0.6201784141858419,
+      "margin": 0.000903172492980886,
+      "alternatives": [
+        {
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "score": 0.6201784141858419,
+          "prototype_score": 0.8533720970153809,
+          "text_score": 0.10776466131210327,
+          "nearest_asset_score": 0.8257935245831808,
+          "nearest_asset_ids": [
+            "paco-train-knife-342816",
+            "paco-train-knife-1003167",
+            "paco-train-knife-1031792"
+          ]
+        },
+        {
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.619275241692861,
+          "prototype_score": 0.8633426427841187,
+          "text_score": 0.06806906312704086,
+          "nearest_asset_score": 0.8505687912305196,
+          "nearest_asset_ids": [
+            "paco-train-crate-693246",
+            "paco-train-crate-947943",
+            "paco-train-crate-52291"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.609778999487559,
+          "prototype_score": 0.8581423759460449,
+          "text_score": 0.0658058449625969,
+          "nearest_asset_score": 0.8268538514773051,
+          "nearest_asset_ids": [
+            "paco-train-belt-1234975",
+            "paco-train-belt-211331",
+            "paco-train-belt-346225"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.6091494679450988,
+          "prototype_score": 0.8589438796043396,
+          "text_score": 0.05769750475883484,
+          "nearest_asset_score": 0.8321672081947327,
+          "nearest_asset_ids": [
+            "paco-train-stool-876252",
+            "paco-train-stool-1053837",
+            "paco-train-stool-763934"
+          ]
+        },
+        {
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "score": 0.6058521668116251,
+          "prototype_score": 0.828693151473999,
+          "text_score": 0.09647125005722046,
+          "nearest_asset_score": 0.8236321608225504,
+          "nearest_asset_ids": [
+            "paco-train-scissors-402962",
+            "paco-train-scissors-651729",
+            "paco-train-scissors-649997"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": false,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "bottle",
+      "expected_label": "bottle",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "asset_label": "glass (drink container)",
+      "asset_domain": "container",
+      "asset_profile": "drinkware",
+      "score": 0.4791036518414815,
+      "margin": 0.005368477503458591,
+      "alternatives": [
+        {
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.4791036518414815,
+          "prototype_score": 0.6671040058135986,
+          "text_score": 0.09288886934518814,
+          "nearest_asset_score": 0.6158265670140585,
+          "nearest_asset_ids": [
+            "paco-train-glass_drink_container-74804",
+            "paco-train-glass_drink_container-64908",
+            "paco-train-glass_drink_container-625615"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.4737351743380229,
+          "prototype_score": 0.6746796369552612,
+          "text_score": 0.07640889286994934,
+          "nearest_asset_score": 0.6031532684961954,
+          "nearest_asset_ids": [
+            "paco-train-jar-70564",
+            "paco-train-jar-453196",
+            "paco-train-jar-29500"
+          ]
+        },
+        {
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.46544954776763914,
+          "prototype_score": 0.6387817859649658,
+          "text_score": 0.11078305542469025,
+          "nearest_asset_score": 0.5899767875671387,
+          "nearest_asset_ids": [
+            "paco-train-bottle-206812",
+            "paco-train-bottle-770645",
+            "paco-train-bottle-640335"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.4462998096148173,
+          "prototype_score": 0.6367655992507935,
+          "text_score": 0.04947797954082489,
+          "nearest_asset_score": 0.5908013383547465,
+          "nearest_asset_ids": [
+            "paco-train-cup-633608",
+            "paco-train-cup-1242283",
+            "paco-train-cup-1255563"
+          ]
+        },
+        {
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "score": 0.4391389791170756,
+          "prototype_score": 0.6405934691429138,
+          "text_score": 0.041784994304180145,
+          "nearest_asset_score": 0.5678263107935587,
+          "nearest_asset_ids": [
+            "paco-train-pan_for_cooking-42874",
+            "paco-train-pan_for_cooking-80260",
+            "paco-train-pan_for_cooking-719459"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": false
+    },
+    {
+      "case_id": "jar",
+      "expected_label": "jar",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "asset_label": "jar",
+      "asset_domain": "container",
+      "asset_profile": "bottle_jar",
+      "score": 0.6093457778294882,
+      "margin": 0.07156146049499512,
+      "alternatives": [
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.6093457778294882,
+          "prototype_score": 0.8341583013534546,
+          "text_score": 0.13454097509384155,
+          "nearest_asset_score": 0.7868431409200033,
+          "nearest_asset_ids": [
+            "paco-train-jar-29500",
+            "paco-train-jar-70564",
+            "paco-train-jar-780854"
+          ]
+        },
+        {
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.5377843173344931,
+          "prototype_score": 0.752142608165741,
+          "text_score": 0.08998987078666687,
+          "nearest_asset_score": 0.7017022569974264,
+          "nearest_asset_ids": [
+            "paco-train-bottle-770645",
+            "paco-train-bottle-790292",
+            "paco-train-bottle-640335"
+          ]
+        },
+        {
+          "asset_label": "soap",
+          "asset_domain": "daily_object",
+          "asset_profile": "simple_object",
+          "score": 0.5348294520378113,
+          "prototype_score": 0.7571819424629211,
+          "text_score": 0.059763357043266296,
+          "nearest_asset_score": 0.7162780165672302,
+          "nearest_asset_ids": [
+            "paco-train-soap-1237837",
+            "paco-train-soap-1121942",
+            "paco-train-soap-109007"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5183707571029663,
+          "prototype_score": 0.734548807144165,
+          "text_score": 0.07471542060375214,
+          "nearest_asset_score": 0.6751044392585754,
+          "nearest_asset_ids": [
+            "paco-train-cup-1242283",
+            "paco-train-cup-633608",
+            "paco-train-cup-879384"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5152708991368612,
+          "prototype_score": 0.7239904403686523,
+          "text_score": 0.0723760724067688,
+          "nearest_asset_score": 0.6823070247968038,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-796596",
+            "paco-train-bucket-676725"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "can",
+      "expected_label": "can",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "asset_label": "can",
+      "asset_domain": "container",
+      "asset_profile": "bottle_jar",
+      "score": 0.576173730691274,
+      "margin": 0.033024606704711856,
+      "alternatives": [
+        {
+          "asset_label": "can",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.576173730691274,
+          "prototype_score": 0.7838854789733887,
+          "text_score": 0.1415482461452484,
+          "nearest_asset_score": 0.7357820471127828,
+          "nearest_asset_ids": [
+            "paco-train-can-563259",
+            "paco-train-can-1057289",
+            "paco-train-can-574539"
+          ]
+        },
+        {
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.5431491239865621,
+          "prototype_score": 0.7605167031288147,
+          "text_score": 0.1026214212179184,
+          "nearest_asset_score": 0.6947308977444967,
+          "nearest_asset_ids": [
+            "paco-train-bottle-206812",
+            "paco-train-bottle-770645",
+            "paco-train-bottle-640335"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.5429437271753947,
+          "prototype_score": 0.7686545848846436,
+          "text_score": 0.09537404775619507,
+          "nearest_asset_score": 0.6896874109903971,
+          "nearest_asset_ids": [
+            "paco-train-jar-70564",
+            "paco-train-jar-1075358",
+            "paco-train-jar-453196"
+          ]
+        },
+        {
+          "asset_label": "trash can",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5216758942604065,
+          "prototype_score": 0.7333333492279053,
+          "text_score": 0.09523802250623703,
+          "nearest_asset_score": 0.6665568947792053,
+          "nearest_asset_ids": [
+            "paco-train-trash_can-710125",
+            "paco-train-trash_can-69758",
+            "paco-train-trash_can-87965"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5127171182632446,
+          "prototype_score": 0.7215361595153809,
+          "text_score": 0.08866685628890991,
+          "nearest_asset_score": 0.6592527627944946,
+          "nearest_asset_ids": [
+            "paco-train-cup-879384",
+            "paco-train-cup-633608",
+            "paco-train-cup-123124"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "cup",
+      "expected_label": "cup",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "asset_label": "cup",
+      "asset_domain": "container",
+      "asset_profile": "drinkware",
+      "score": 0.6342212160428365,
+      "margin": 0.03836141347885136,
+      "alternatives": [
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.6342212160428365,
+          "prototype_score": 0.8810063600540161,
+          "text_score": 0.13446182012557983,
+          "nearest_asset_score": 0.8058990438779196,
+          "nearest_asset_ids": [
+            "paco-train-cup-633608",
+            "paco-train-cup-1255563",
+            "paco-train-cup-64745"
+          ]
+        },
+        {
+          "asset_label": "mug",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5958598025639852,
+          "prototype_score": 0.8364845514297485,
+          "text_score": 0.14258652925491333,
+          "nearest_asset_score": 0.7265202601750692,
+          "nearest_asset_ids": [
+            "paco-train-mug-536352",
+            "paco-train-mug-1147332",
+            "paco-train-mug-36054"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.594870970249176,
+          "prototype_score": 0.8424005508422852,
+          "text_score": 0.08635734021663666,
+          "nearest_asset_score": 0.7748929858207703,
+          "nearest_asset_ids": [
+            "paco-train-bowl-490948",
+            "paco-train-bowl-915377",
+            "paco-train-bowl-760961"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5946600564320883,
+          "prototype_score": 0.8403328657150269,
+          "text_score": 0.09029063582420349,
+          "nearest_asset_score": 0.7729756434758505,
+          "nearest_asset_ids": [
+            "paco-train-bucket-796596",
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-1211215"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.5822609607378642,
+          "prototype_score": 0.8301213979721069,
+          "text_score": 0.0944637805223465,
+          "nearest_asset_score": 0.7394158641497294,
+          "nearest_asset_ids": [
+            "paco-train-jar-564863",
+            "paco-train-jar-1075358",
+            "paco-train-jar-70564"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "mug",
+      "expected_label": "mug",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "asset_label": "cup",
+      "asset_domain": "container",
+      "asset_profile": "drinkware",
+      "score": 0.6178760202725728,
+      "margin": 0.014714858531951869,
+      "alternatives": [
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.6178760202725728,
+          "prototype_score": 0.8454581499099731,
+          "text_score": 0.12661638855934143,
+          "nearest_asset_score": 0.8090139826138815,
+          "nearest_asset_ids": [
+            "paco-train-cup-633608",
+            "paco-train-cup-64745",
+            "paco-train-cup-1242283"
+          ]
+        },
+        {
+          "asset_label": "mug",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.603161161740621,
+          "prototype_score": 0.840222954750061,
+          "text_score": 0.13879276812076569,
+          "nearest_asset_score": 0.7511182626088461,
+          "nearest_asset_ids": [
+            "paco-train-mug-536352",
+            "paco-train-mug-1147332",
+            "paco-train-mug-36054"
+          ]
+        },
+        {
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "score": 0.556576619942983,
+          "prototype_score": 0.7820557355880737,
+          "text_score": 0.08410532772541046,
+          "nearest_asset_score": 0.7305596669514974,
+          "nearest_asset_ids": [
+            "paco-train-kettle-688684",
+            "paco-train-kettle-980283",
+            "paco-train-kettle-128068"
+          ]
+        },
+        {
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5502822057406107,
+          "prototype_score": 0.7758994698524475,
+          "text_score": 0.07860071212053299,
+          "nearest_asset_score": 0.7232062021891276,
+          "nearest_asset_ids": [
+            "paco-train-glass_drink_container-625615",
+            "paco-train-glass_drink_container-74804",
+            "paco-train-glass_drink_container-64908"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.5490981117884317,
+          "prototype_score": 0.7873603105545044,
+          "text_score": 0.06810241937637329,
+          "nearest_asset_score": 0.7132224241892496,
+          "nearest_asset_ids": [
+            "paco-train-jar-70564",
+            "paco-train-jar-29500",
+            "paco-train-jar-564863"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "glass_drink_container",
+      "expected_label": "glass_(drink_container)",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "asset_label": "cup",
+      "asset_domain": "container",
+      "asset_profile": "drinkware",
+      "score": 0.6145951175689697,
+      "margin": 0.0014123797416686346,
+      "alternatives": [
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.6145951175689697,
+          "prototype_score": 0.8603535890579224,
+          "text_score": 0.11837899684906006,
+          "nearest_asset_score": 0.7839773893356323,
+          "nearest_asset_ids": [
+            "paco-train-cup-1255563",
+            "paco-train-cup-633608",
+            "paco-train-cup-1242283"
+          ]
+        },
+        {
+          "asset_label": "glass (drink container)",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.613182737827301,
+          "prototype_score": 0.8360622525215149,
+          "text_score": 0.13414132595062256,
+          "nearest_asset_score": 0.7981385588645935,
+          "nearest_asset_ids": [
+            "paco-train-glass_drink_container-625615",
+            "paco-train-glass_drink_container-539706",
+            "paco-train-glass_drink_container-74804"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.6027671217918396,
+          "prototype_score": 0.8489718437194824,
+          "text_score": 0.11241386085748672,
+          "nearest_asset_score": 0.7651519179344177,
+          "nearest_asset_ids": [
+            "paco-train-jar-1075358",
+            "paco-train-jar-70564",
+            "paco-train-jar-29500"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5867775146166483,
+          "prototype_score": 0.8279545903205872,
+          "text_score": 0.09230364114046097,
+          "nearest_asset_score": 0.7611110011736552,
+          "nearest_asset_ids": [
+            "paco-train-bowl-490948",
+            "paco-train-bowl-1150477",
+            "paco-train-bowl-760961"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5859887345631918,
+          "prototype_score": 0.8218472599983215,
+          "text_score": 0.10275651514530182,
+          "nearest_asset_score": 0.7561133702596029,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-796596",
+            "paco-train-bucket-1211215"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "bowl",
+      "expected_label": "bowl",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "accepted": true,
+      "asset_label": "bowl",
+      "asset_domain": "container",
+      "asset_profile": "drinkware",
+      "score": 0.6357941150665283,
+      "margin": 0.03623438835144044,
+      "alternatives": [
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.6357941150665283,
+          "prototype_score": 0.8816158771514893,
+          "text_score": 0.14836978912353516,
+          "nearest_asset_score": 0.7955868244171143,
+          "nearest_asset_ids": [
+            "paco-train-bowl-1150477",
+            "paco-train-bowl-760961",
+            "paco-train-bowl-490948"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5995597267150878,
+          "prototype_score": 0.8398614525794983,
+          "text_score": 0.11066953837871552,
+          "nearest_asset_score": 0.7691683769226074,
+          "nearest_asset_ids": [
+            "paco-train-cup-64745",
+            "paco-train-cup-633608",
+            "paco-train-cup-879384"
+          ]
+        },
+        {
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.5973564171791077,
+          "prototype_score": 0.8427584767341614,
+          "text_score": 0.1152334213256836,
+          "nearest_asset_score": 0.7520496249198914,
+          "nearest_asset_ids": [
+            "paco-train-plate-157279",
+            "paco-train-plate-925619",
+            "paco-train-plate-110962"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5890644995371501,
+          "prototype_score": 0.8314184546470642,
+          "text_score": 0.09464000165462494,
+          "nearest_asset_score": 0.7615894476572672,
+          "nearest_asset_ids": [
+            "paco-train-bucket-796596",
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-1258269"
+          ]
+        },
+        {
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "score": 0.5730724851290385,
+          "prototype_score": 0.8176557421684265,
+          "text_score": 0.09589721262454987,
+          "nearest_asset_score": 0.7236434022585551,
+          "nearest_asset_ids": [
+            "paco-train-pan_for_cooking-42874",
+            "paco-train-pan_for_cooking-596220",
+            "paco-train-pan_for_cooking-683195"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "handbag",
+      "expected_label": "handbag",
+      "expected_domain": "container",
+      "expected_profile": "bag",
+      "accepted": true,
+      "asset_label": "plastic bag",
+      "asset_domain": "container",
+      "asset_profile": "bag",
+      "score": 0.5607958881060282,
+      "margin": 0.013853232860565168,
+      "alternatives": [
+        {
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "score": 0.5607958881060282,
+          "prototype_score": 0.7886605262756348,
+          "text_score": 0.10687321424484253,
+          "nearest_asset_score": 0.711188534895579,
+          "nearest_asset_ids": [
+            "paco-train-plastic_bag-1098430",
+            "paco-train-plastic_bag-1238074",
+            "paco-train-plastic_bag-157105"
+          ]
+        },
+        {
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "score": 0.546942655245463,
+          "prototype_score": 0.7684498429298401,
+          "text_score": 0.10261276364326477,
+          "nearest_asset_score": 0.6964568893114725,
+          "nearest_asset_ids": [
+            "paco-train-handbag-1042903",
+            "paco-train-handbag-1250785",
+            "paco-train-handbag-1070023"
+          ]
+        },
+        {
+          "asset_label": "slipper (footwear)",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "score": 0.5188271101315817,
+          "prototype_score": 0.7425364255905151,
+          "text_score": 0.07866793125867844,
+          "nearest_asset_score": 0.6605525811513265,
+          "nearest_asset_ids": [
+            "paco-train-slipper_footwear-563609",
+            "paco-train-slipper_footwear-1143462",
+            "paco-train-slipper_footwear-674941"
+          ]
+        },
+        {
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5134796873728434,
+          "prototype_score": 0.7334460020065308,
+          "text_score": 0.07106344401836395,
+          "nearest_asset_score": 0.6632252136866251,
+          "nearest_asset_ids": [
+            "paco-train-basket-887011",
+            "paco-train-basket-855561",
+            "paco-train-basket-487413"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5096830606460572,
+          "prototype_score": 0.7218297719955444,
+          "text_score": 0.07456902414560318,
+          "nearest_asset_score": 0.663204550743103,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1211215",
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-312750"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "plastic_bag",
+      "expected_label": "plastic_bag",
+      "expected_domain": "container",
+      "expected_profile": "bag",
+      "accepted": true,
+      "asset_label": "scarf",
+      "asset_domain": "daily_object",
+      "asset_profile": "soft_good",
+      "score": 0.621995378335317,
+      "margin": 0.0018016902605693108,
+      "alternatives": [
+        {
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.621995378335317,
+          "prototype_score": 0.8572844862937927,
+          "text_score": 0.11904022097587585,
+          "nearest_asset_score": 0.814270039399465,
+          "nearest_asset_ids": [
+            "paco-train-scarf-80415",
+            "paco-train-scarf-108085",
+            "paco-train-scarf-1158677"
+          ]
+        },
+        {
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.6201936880747477,
+          "prototype_score": 0.866694986820221,
+          "text_score": 0.11312751471996307,
+          "nearest_asset_score": 0.8001860777537028,
+          "nearest_asset_ids": [
+            "paco-train-towel-776190",
+            "paco-train-towel-1191381",
+            "paco-train-towel-1007733"
+          ]
+        },
+        {
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "score": 0.58397740761439,
+          "prototype_score": 0.8028015494346619,
+          "text_score": 0.15164536237716675,
+          "nearest_asset_score": 0.7245354453722636,
+          "nearest_asset_ids": [
+            "paco-train-plastic_bag-1238074",
+            "paco-train-plastic_bag-1098430",
+            "paco-train-plastic_bag-735471"
+          ]
+        },
+        {
+          "asset_label": "sponge",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.572225550810496,
+          "prototype_score": 0.8088139295578003,
+          "text_score": 0.07585585862398148,
+          "nearest_asset_score": 0.7554501096407572,
+          "nearest_asset_ids": [
+            "paco-train-sponge-23179",
+            "paco-train-sponge-387207",
+            "paco-train-sponge-62714"
+          ]
+        },
+        {
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "score": 0.5651751573880514,
+          "prototype_score": 0.7889226078987122,
+          "text_score": 0.08950789272785187,
+          "nearest_asset_score": 0.7451924880345663,
+          "nearest_asset_ids": [
+            "paco-train-sweater-247711",
+            "paco-train-sweater-327507",
+            "paco-train-sweater-1260937"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "box",
+      "expected_label": "box",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "accepted": true,
+      "asset_label": "box",
+      "asset_domain": "container",
+      "asset_profile": "box",
+      "score": 0.6237514170010885,
+      "margin": 0.07764753977457683,
+      "alternatives": [
+        {
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.6237514170010885,
+          "prototype_score": 0.867764949798584,
+          "text_score": 0.10981036722660065,
+          "nearest_asset_score": 0.8148790796597799,
+          "nearest_asset_ids": [
+            "paco-train-box-1143165",
+            "paco-train-box-982424",
+            "paco-train-box-559316"
+          ]
+        },
+        {
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "score": 0.5461038772265117,
+          "prototype_score": 0.7843827605247498,
+          "text_score": 0.049870677292346954,
+          "nearest_asset_score": 0.726659874121348,
+          "nearest_asset_ids": [
+            "paco-train-plastic_bag-213627",
+            "paco-train-plastic_bag-1238074",
+            "paco-train-plastic_bag-588885"
+          ]
+        },
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.5374987204869588,
+          "prototype_score": 0.7428427934646606,
+          "text_score": 0.10269181430339813,
+          "nearest_asset_score": 0.7008342345555624,
+          "nearest_asset_ids": [
+            "paco-train-tray-396299",
+            "paco-train-tray-224978",
+            "paco-train-tray-572945"
+          ]
+        },
+        {
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.5246401611963908,
+          "prototype_score": 0.7347753643989563,
+          "text_score": 0.09353895485401154,
+          "nearest_asset_score": 0.6768278280893961,
+          "nearest_asset_ids": [
+            "paco-train-crate-506309",
+            "paco-train-crate-52291",
+            "paco-train-crate-693246"
+          ]
+        },
+        {
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "score": 0.5221627108256022,
+          "prototype_score": 0.7416027784347534,
+          "text_score": 0.05820217356085777,
+          "nearest_asset_score": 0.6959609786669413,
+          "nearest_asset_ids": [
+            "paco-train-laptop_computer-564121",
+            "paco-train-laptop_computer-577031",
+            "paco-train-laptop_computer-682073"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "carton",
+      "expected_label": "carton",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "accepted": true,
+      "asset_label": "box",
+      "asset_domain": "container",
+      "asset_profile": "box",
+      "score": 0.5685210132598877,
+      "margin": 0.002338724136352499,
+      "alternatives": [
+        {
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.5685210132598877,
+          "prototype_score": 0.7901948690414429,
+          "text_score": 0.09887951612472534,
+          "nearest_asset_score": 0.7451231479644775,
+          "nearest_asset_ids": [
+            "paco-train-box-583235",
+            "paco-train-box-559316",
+            "paco-train-box-950957"
+          ]
+        },
+        {
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "score": 0.5661822891235352,
+          "prototype_score": 0.8183991312980652,
+          "text_score": 0.07485852390527725,
+          "nearest_asset_score": 0.7206486463546753,
+          "nearest_asset_ids": [
+            "paco-train-pan_for_cooking-42874",
+            "paco-train-pan_for_cooking-80260",
+            "paco-train-pan_for_cooking-719459"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5613945047060649,
+          "prototype_score": 0.7966304421424866,
+          "text_score": 0.07451535016298294,
+          "nearest_asset_score": 0.7363863984743754,
+          "nearest_asset_ids": [
+            "paco-train-cup-633608",
+            "paco-train-cup-1242283",
+            "paco-train-cup-879384"
+          ]
+        },
+        {
+          "asset_label": "carton",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.5550917601585388,
+          "prototype_score": 0.7821114659309387,
+          "text_score": 0.10877186805009842,
+          "nearest_asset_score": 0.6985335946083069,
+          "nearest_asset_ids": [
+            "paco-train-carton-992267",
+            "paco-train-carton-203500",
+            "paco-train-carton-897723"
+          ]
+        },
+        {
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5520177578926087,
+          "prototype_score": 0.7963152527809143,
+          "text_score": 0.07029323279857635,
+          "nearest_asset_score": 0.7079280018806458,
+          "nearest_asset_ids": [
+            "paco-train-basket-1002124",
+            "paco-train-basket-855561",
+            "paco-train-basket-887011"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "crate",
+      "expected_label": "crate",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "accepted": true,
+      "asset_label": "crate",
+      "asset_domain": "container",
+      "asset_profile": "box",
+      "score": 0.6376704216003418,
+      "margin": 0.005617998441060368,
+      "alternatives": [
+        {
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.6376704216003418,
+          "prototype_score": 0.8956805467605591,
+          "text_score": 0.07800045609474182,
+          "nearest_asset_score": 0.8573102951049805,
+          "nearest_asset_ids": [
+            "paco-train-crate-947943",
+            "paco-train-crate-693246",
+            "paco-train-crate-52291"
+          ]
+        },
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.6320524231592815,
+          "prototype_score": 0.8860546350479126,
+          "text_score": 0.08818528056144714,
+          "nearest_asset_score": 0.8406029144922892,
+          "nearest_asset_ids": [
+            "paco-train-tray-572945",
+            "paco-train-tray-396299",
+            "paco-train-tray-625246"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.625542844136556,
+          "prototype_score": 0.8814530372619629,
+          "text_score": 0.07354559749364853,
+          "nearest_asset_score": 0.8400281270345052,
+          "nearest_asset_ids": [
+            "paco-train-stool-1053837",
+            "paco-train-stool-763934",
+            "paco-train-stool-876252"
+          ]
+        },
+        {
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "score": 0.6230115000406901,
+          "prototype_score": 0.8727781176567078,
+          "text_score": 0.10167808830738068,
+          "nearest_asset_score": 0.8135425249735514,
+          "nearest_asset_ids": [
+            "paco-train-ladder-127281",
+            "paco-train-ladder-330914",
+            "paco-train-ladder-955769"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.6044834542274475,
+          "prototype_score": 0.8500949740409851,
+          "text_score": 0.07293002307415009,
+          "nearest_asset_score": 0.8122491240501404,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-796596",
+            "paco-train-bucket-676725"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "basket",
+      "expected_label": "basket",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "accepted": true,
+      "asset_label": "basket",
+      "asset_domain": "container",
+      "asset_profile": "open_container",
+      "score": 0.6104757944742838,
+      "margin": 0.022260371049245053,
+      "alternatives": [
+        {
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.6104757944742838,
+          "prototype_score": 0.8379138708114624,
+          "text_score": 0.15362125635147095,
+          "nearest_asset_score": 0.7646711270014445,
+          "nearest_asset_ids": [
+            "paco-train-basket-887011",
+            "paco-train-basket-487413",
+            "paco-train-basket-1002124"
+          ]
+        },
+        {
+          "asset_label": "broom",
+          "asset_domain": "tool_prop",
+          "asset_profile": "broom",
+          "score": 0.5882154234250387,
+          "prototype_score": 0.8293657898902893,
+          "text_score": 0.0839272290468216,
+          "nearest_asset_score": 0.7731882532437643,
+          "nearest_asset_ids": [
+            "paco-train-broom-960615",
+            "paco-train-broom-641137",
+            "paco-train-broom-450919"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5798407832781474,
+          "prototype_score": 0.8128155469894409,
+          "text_score": 0.11100161075592041,
+          "nearest_asset_score": 0.7387218276659647,
+          "nearest_asset_ids": [
+            "paco-train-bucket-796596",
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-1109860"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5741343474388123,
+          "prototype_score": 0.805529773235321,
+          "text_score": 0.09751790761947632,
+          "nearest_asset_score": 0.7437704205513,
+          "nearest_asset_ids": [
+            "paco-train-bowl-915377",
+            "paco-train-bowl-1150477",
+            "paco-train-bowl-760961"
+          ]
+        },
+        {
+          "asset_label": "kettle",
+          "asset_domain": "device",
+          "asset_profile": "kettle",
+          "score": 0.5662375752131145,
+          "prototype_score": 0.7877503633499146,
+          "text_score": 0.09804589301347733,
+          "nearest_asset_score": 0.7415141264597574,
+          "nearest_asset_ids": [
+            "paco-train-kettle-980283",
+            "paco-train-kettle-102411",
+            "paco-train-kettle-128068"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "bucket",
+      "expected_label": "bucket",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "accepted": true,
+      "asset_label": "bucket",
+      "asset_domain": "container",
+      "asset_profile": "open_container",
+      "score": 0.605937062104543,
+      "margin": 0.024823515415191566,
+      "alternatives": [
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.605937062104543,
+          "prototype_score": 0.848380446434021,
+          "text_score": 0.11741717159748077,
+          "nearest_asset_score": 0.771951695283254,
+          "nearest_asset_ids": [
+            "paco-train-bucket-676725",
+            "paco-train-bucket-796596",
+            "paco-train-bucket-1109860"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5811135466893514,
+          "prototype_score": 0.8104499578475952,
+          "text_score": 0.11540697515010834,
+          "nearest_asset_score": 0.7420377333958944,
+          "nearest_asset_ids": [
+            "paco-train-bowl-490948",
+            "paco-train-bowl-760961",
+            "paco-train-bowl-1150477"
+          ]
+        },
+        {
+          "asset_label": "sponge",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5809008518854777,
+          "prototype_score": 0.8175320029258728,
+          "text_score": 0.08709961175918579,
+          "nearest_asset_score": 0.7612878481547037,
+          "nearest_asset_ids": [
+            "paco-train-sponge-387207",
+            "paco-train-sponge-81238",
+            "paco-train-sponge-23179"
+          ]
+        },
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.568327206770579,
+          "prototype_score": 0.7860650420188904,
+          "text_score": 0.10609298944473267,
+          "nearest_asset_score": 0.7427997390429179,
+          "nearest_asset_ids": [
+            "paco-train-tray-396299",
+            "paco-train-tray-224978",
+            "paco-train-tray-572945"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5656209349632263,
+          "prototype_score": 0.7914993166923523,
+          "text_score": 0.10130873322486877,
+          "nearest_asset_score": 0.7301967740058899,
+          "nearest_asset_ids": [
+            "paco-train-cup-123124",
+            "paco-train-cup-879384",
+            "paco-train-cup-1242283"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "trash_can",
+      "expected_label": "trash_can",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "accepted": true,
+      "asset_label": "trash can",
+      "asset_domain": "container",
+      "asset_profile": "open_container",
+      "score": 0.6148693966865539,
+      "margin": 0.053725536664327,
+      "alternatives": [
+        {
+          "asset_label": "trash can",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.6148693966865539,
+          "prototype_score": 0.8402770757675171,
+          "text_score": 0.14845196902751923,
+          "nearest_asset_score": 0.782420814037323,
+          "nearest_asset_ids": [
+            "paco-train-trash_can-69758",
+            "paco-train-trash_can-710125",
+            "paco-train-trash_can-170508"
+          ]
+        },
+        {
+          "asset_label": "newspaper",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "score": 0.5611438600222269,
+          "prototype_score": 0.793046236038208,
+          "text_score": 0.08142393082380295,
+          "nearest_asset_score": 0.7333755890528361,
+          "nearest_asset_ids": [
+            "paco-train-newspaper-168357",
+            "paco-train-newspaper-653710",
+            "paco-train-newspaper-777655"
+          ]
+        },
+        {
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.5603461217880249,
+          "prototype_score": 0.7788013815879822,
+          "text_score": 0.11060833930969238,
+          "nearest_asset_score": 0.720252513885498,
+          "nearest_asset_ids": [
+            "paco-train-crate-693246",
+            "paco-train-crate-52291",
+            "paco-train-crate-506309"
+          ]
+        },
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.558905398050944,
+          "prototype_score": 0.7813454270362854,
+          "text_score": 0.08586575090885162,
+          "nearest_asset_score": 0.7380348245302836,
+          "nearest_asset_ids": [
+            "paco-train-tray-396299",
+            "paco-train-tray-572945",
+            "paco-train-tray-532453"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5583913040161133,
+          "prototype_score": 0.7843974828720093,
+          "text_score": 0.07497647404670715,
+          "nearest_asset_score": 0.7434072494506836,
+          "nearest_asset_ids": [
+            "paco-train-stool-763934",
+            "paco-train-stool-876252",
+            "paco-train-stool-1053837"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "plate",
+      "expected_label": "plate",
+      "expected_domain": "container",
+      "expected_profile": "flatware",
+      "accepted": true,
+      "asset_label": "plate",
+      "asset_domain": "container",
+      "asset_profile": "flatware",
+      "score": 0.6169556482632955,
+      "margin": 0.016536372502644947,
+      "alternatives": [
+        {
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.6169556482632955,
+          "prototype_score": 0.8535155057907104,
+          "text_score": 0.11043227463960648,
+          "nearest_asset_score": 0.8111888368924459,
+          "nearest_asset_ids": [
+            "paco-train-plate-110962",
+            "paco-train-plate-622266",
+            "paco-train-plate-157279"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.6004192757606506,
+          "prototype_score": 0.8301511406898499,
+          "text_score": 0.09503055363893509,
+          "nearest_asset_score": 0.8036103844642639,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-676725",
+            "paco-train-bucket-796596"
+          ]
+        },
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.5995060809453329,
+          "prototype_score": 0.8355675935745239,
+          "text_score": 0.10320647805929184,
+          "nearest_asset_score": 0.7834407885869344,
+          "nearest_asset_ids": [
+            "paco-train-tray-396299",
+            "paco-train-tray-224978",
+            "paco-train-tray-864208"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5891849533716838,
+          "prototype_score": 0.8210383653640747,
+          "text_score": 0.12098853290081024,
+          "nearest_asset_score": 0.7490443388621012,
+          "nearest_asset_ids": [
+            "paco-train-bowl-490948",
+            "paco-train-bowl-1150477",
+            "paco-train-bowl-760961"
+          ]
+        },
+        {
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.5851745708783468,
+          "prototype_score": 0.8253819942474365,
+          "text_score": 0.06081397831439972,
+          "nearest_asset_score": 0.7932318647702535,
+          "nearest_asset_ids": [
+            "paco-train-crate-693246",
+            "paco-train-crate-52291",
+            "paco-train-crate-947943"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "tray",
+      "expected_label": "tray",
+      "expected_domain": "container",
+      "expected_profile": "flatware",
+      "accepted": true,
+      "asset_label": "tray",
+      "asset_domain": "container",
+      "asset_profile": "flatware",
+      "score": 0.5948133007685343,
+      "margin": 0.0059268776575723825,
+      "alternatives": [
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.5948133007685343,
+          "prototype_score": 0.8323029279708862,
+          "text_score": 0.07592107355594635,
+          "nearest_asset_score": 0.8010180393854777,
+          "nearest_asset_ids": [
+            "paco-train-tray-396299",
+            "paco-train-tray-572945",
+            "paco-train-tray-864208"
+          ]
+        },
+        {
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "score": 0.588886423110962,
+          "prototype_score": 0.8155196905136108,
+          "text_score": 0.08920419216156006,
+          "nearest_asset_score": 0.7905359268188477,
+          "nearest_asset_ids": [
+            "paco-train-knife-1003167",
+            "paco-train-knife-538005",
+            "paco-train-knife-342816"
+          ]
+        },
+        {
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.5796575323740641,
+          "prototype_score": 0.813984215259552,
+          "text_score": 0.09016396105289459,
+          "nearest_asset_score": 0.7588290373484293,
+          "nearest_asset_ids": [
+            "paco-train-plate-110962",
+            "paco-train-plate-925619",
+            "paco-train-plate-622266"
+          ]
+        },
+        {
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "score": 0.5790866168340048,
+          "prototype_score": 0.8110141754150391,
+          "text_score": 0.07422512769699097,
+          "nearest_asset_score": 0.778433640797933,
+          "nearest_asset_ids": [
+            "paco-train-spoon-785831",
+            "paco-train-spoon-406500",
+            "paco-train-spoon-1154602"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.579058313369751,
+          "prototype_score": 0.8041029572486877,
+          "text_score": 0.07924456894397736,
+          "nearest_asset_score": 0.7832191586494446,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-676725",
+            "paco-train-bucket-796596"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "vase",
+      "expected_label": "vase",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "accepted": true,
+      "asset_label": "vase",
+      "asset_domain": "container",
+      "asset_profile": "bottle_jar",
+      "score": 0.6700988721847534,
+      "margin": 0.19115291913350424,
+      "alternatives": [
+        {
+          "asset_label": "vase",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.6700988721847534,
+          "prototype_score": 0.9117147326469421,
+          "text_score": 0.12710995972156525,
+          "nearest_asset_score": 0.8961740732192993,
+          "nearest_asset_ids": [
+            "paco-train-vase-90954",
+            "paco-train-vase-84052",
+            "paco-train-vase-1116208"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.47894595305124915,
+          "prototype_score": 0.6711075305938721,
+          "text_score": 0.08001356571912766,
+          "nearest_asset_score": 0.6231977144877116,
+          "nearest_asset_ids": [
+            "paco-train-bowl-915377",
+            "paco-train-bowl-640675",
+            "paco-train-bowl-1150477"
+          ]
+        },
+        {
+          "asset_label": "clock",
+          "asset_domain": "device",
+          "asset_profile": "clock_watch",
+          "score": 0.4781093732515971,
+          "prototype_score": 0.6742790937423706,
+          "text_score": 0.05402860790491104,
+          "nearest_asset_score": 0.6435434619585673,
+          "nearest_asset_ids": [
+            "paco-train-clock-766956",
+            "paco-train-clock-450755",
+            "paco-train-clock-70036"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.4707363573710124,
+          "prototype_score": 0.6562085151672363,
+          "text_score": 0.1091550886631012,
+          "nearest_asset_score": 0.5846256415049235,
+          "nearest_asset_ids": [
+            "paco-train-jar-564863",
+            "paco-train-jar-453196",
+            "paco-train-jar-29500"
+          ]
+        },
+        {
+          "asset_label": "table",
+          "asset_domain": "furniture",
+          "asset_profile": "table",
+          "score": 0.4658655667304993,
+          "prototype_score": 0.6610308289527893,
+          "text_score": 0.07223160564899445,
+          "nearest_asset_score": 0.5999152064323425,
+          "nearest_asset_ids": [
+            "paco-train-table-1074209",
+            "paco-train-table-120714",
+            "paco-train-table-797715"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "car_automobile",
+      "expected_label": "car_(automobile)",
+      "expected_domain": "vehicle",
+      "expected_profile": "road_vehicle",
+      "accepted": true,
+      "asset_label": "car (automobile)",
+      "asset_domain": "vehicle",
+      "asset_profile": "road_vehicle",
+      "score": 0.5339588038126628,
+      "margin": 0.01692205588022866,
+      "alternatives": [
+        {
+          "asset_label": "car (automobile)",
+          "asset_domain": "vehicle",
+          "asset_profile": "road_vehicle",
+          "score": 0.5339588038126628,
+          "prototype_score": 0.7462008595466614,
+          "text_score": 0.1131681352853775,
+          "nearest_asset_score": 0.671868900458018,
+          "nearest_asset_ids": [
+            "paco-train-car_automobile-262209",
+            "paco-train-car_automobile-687036",
+            "paco-train-car_automobile-1267787"
+          ]
+        },
+        {
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.5170367479324341,
+          "prototype_score": 0.7317448854446411,
+          "text_score": 0.04650183022022247,
+          "nearest_asset_score": 0.7049926519393921,
+          "nearest_asset_ids": [
+            "paco-train-helmet-1202107",
+            "paco-train-helmet-66405",
+            "paco-train-helmet-502370"
+          ]
+        },
+        {
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "score": 0.5097625724474588,
+          "prototype_score": 0.7390305995941162,
+          "text_score": 0.03693672642111778,
+          "nearest_asset_score": 0.6784776250521342,
+          "nearest_asset_ids": [
+            "paco-train-sweater-1260937",
+            "paco-train-sweater-1146406",
+            "paco-train-sweater-327507"
+          ]
+        },
+        {
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.5073782809575399,
+          "prototype_score": 0.7259913682937622,
+          "text_score": 0.019089780747890472,
+          "nearest_asset_score": 0.7086840470631918,
+          "nearest_asset_ids": [
+            "paco-train-crate-693246",
+            "paco-train-crate-52291",
+            "paco-train-crate-947943"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.498072829246521,
+          "prototype_score": 0.7148727178573608,
+          "text_score": 0.026288136839866638,
+          "nearest_asset_score": 0.6842588186264038,
+          "nearest_asset_ids": [
+            "paco-train-stool-876252",
+            "paco-train-stool-763934",
+            "paco-train-stool-1053837"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "bicycle",
+      "expected_label": "bicycle",
+      "expected_domain": "vehicle",
+      "expected_profile": "two_wheeler",
+      "accepted": true,
+      "asset_label": "bicycle",
+      "asset_domain": "vehicle",
+      "asset_profile": "two_wheeler",
+      "score": 0.636666689713796,
+      "margin": 0.08147735993067429,
+      "alternatives": [
+        {
+          "asset_label": "bicycle",
+          "asset_domain": "vehicle",
+          "asset_profile": "two_wheeler",
+          "score": 0.636666689713796,
+          "prototype_score": 0.879216730594635,
+          "text_score": 0.13548758625984192,
+          "nearest_asset_score": 0.8161940773328146,
+          "nearest_asset_ids": [
+            "paco-train-bicycle-1135298",
+            "paco-train-bicycle-1018808",
+            "paco-train-bicycle-1232106"
+          ]
+        },
+        {
+          "asset_label": "basket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5551893297831217,
+          "prototype_score": 0.7862141132354736,
+          "text_score": 0.10644139349460602,
+          "nearest_asset_score": 0.6952802340189616,
+          "nearest_asset_ids": [
+            "paco-train-basket-887011",
+            "paco-train-basket-487413",
+            "paco-train-basket-1002124"
+          ]
+        },
+        {
+          "asset_label": "bench",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.523102388381958,
+          "prototype_score": 0.7436832189559937,
+          "text_score": 0.06267613172531128,
+          "nearest_asset_score": 0.6913822293281555,
+          "nearest_asset_ids": [
+            "paco-train-bench-1179168",
+            "paco-train-bench-1085796",
+            "paco-train-bench-355874"
+          ]
+        },
+        {
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5208664441108704,
+          "prototype_score": 0.7411853671073914,
+          "text_score": 0.06663273274898529,
+          "nearest_asset_score": 0.6828489303588867,
+          "nearest_asset_ids": [
+            "paco-train-chair-424054",
+            "paco-train-chair-1006037",
+            "paco-train-chair-539342"
+          ]
+        },
+        {
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "score": 0.5099991861979166,
+          "prototype_score": 0.7273542284965515,
+          "text_score": 0.059552356600761414,
+          "nearest_asset_score": 0.6723122994105021,
+          "nearest_asset_ids": [
+            "paco-train-ladder-330914",
+            "paco-train-ladder-630666",
+            "paco-train-ladder-127281"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "book",
+      "expected_label": "book",
+      "expected_domain": "daily_object",
+      "expected_profile": "book",
+      "accepted": true,
+      "asset_label": "book",
+      "asset_domain": "daily_object",
+      "asset_profile": "book",
+      "score": 0.46655079682668055,
+      "margin": 0.0341660857200623,
+      "alternatives": [
+        {
+          "asset_label": "book",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "score": 0.46655079682668055,
+          "prototype_score": 0.6499865651130676,
+          "text_score": 0.13118726015090942,
+          "nearest_asset_score": 0.5551620920499166,
+          "nearest_asset_ids": [
+            "paco-train-book-780803",
+            "paco-train-book-475265",
+            "paco-train-book-514802"
+          ]
+        },
+        {
+          "asset_label": "laptop computer",
+          "asset_domain": "device",
+          "asset_profile": "laptop",
+          "score": 0.43238471110661825,
+          "prototype_score": 0.5806192755699158,
+          "text_score": 0.10851547122001648,
+          "nearest_asset_score": 0.5610822637875875,
+          "nearest_asset_ids": [
+            "paco-train-laptop_computer-682073",
+            "paco-train-laptop_computer-577031",
+            "paco-train-laptop_computer-564121"
+          ]
+        },
+        {
+          "asset_label": "mouse (computer equipment)",
+          "asset_domain": "device",
+          "asset_profile": "computer_peripheral",
+          "score": 0.4122611260414123,
+          "prototype_score": 0.5696742534637451,
+          "text_score": 0.08035796135663986,
+          "nearest_asset_score": 0.5359461307525635,
+          "nearest_asset_ids": [
+            "paco-train-mouse_computer_equipment-104926",
+            "paco-train-mouse_computer_equipment-495314",
+            "paco-train-mouse_computer_equipment-537456"
+          ]
+        },
+        {
+          "asset_label": "calculator",
+          "asset_domain": "device",
+          "asset_profile": "controls",
+          "score": 0.402292218208313,
+          "prototype_score": 0.5565522909164429,
+          "text_score": 0.06952179968357086,
+          "nearest_asset_score": 0.5316164493560791,
+          "nearest_asset_ids": [
+            "paco-train-calculator-315542",
+            "paco-train-calculator-892955",
+            "paco-train-calculator-229284"
+          ]
+        },
+        {
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "score": 0.4020694478352865,
+          "prototype_score": 0.5624188184738159,
+          "text_score": 0.05228612571954727,
+          "nearest_asset_score": 0.5406858523686727,
+          "nearest_asset_ids": [
+            "paco-train-earphone-5514",
+            "paco-train-earphone-376401",
+            "paco-train-earphone-270743"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "newspaper",
+      "expected_label": "newspaper",
+      "expected_domain": "daily_object",
+      "expected_profile": "book",
+      "accepted": true,
+      "asset_label": "newspaper",
+      "asset_domain": "daily_object",
+      "asset_profile": "book",
+      "score": 0.5373684088389079,
+      "margin": 0.028584232330322257,
+      "alternatives": [
+        {
+          "asset_label": "newspaper",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "score": 0.5373684088389079,
+          "prototype_score": 0.7299544811248779,
+          "text_score": 0.14103630185127258,
+          "nearest_asset_score": 0.6781787673632304,
+          "nearest_asset_ids": [
+            "paco-train-newspaper-532583",
+            "paco-train-newspaper-168357",
+            "paco-train-newspaper-777655"
+          ]
+        },
+        {
+          "asset_label": "plastic bag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "score": 0.5087841765085857,
+          "prototype_score": 0.730525016784668,
+          "text_score": 0.06708171963691711,
+          "nearest_asset_score": 0.6551122466723124,
+          "nearest_asset_ids": [
+            "paco-train-plastic_bag-213627",
+            "paco-train-plastic_bag-735471",
+            "paco-train-plastic_bag-588885"
+          ]
+        },
+        {
+          "asset_label": "book",
+          "asset_domain": "daily_object",
+          "asset_profile": "book",
+          "score": 0.5042409610748291,
+          "prototype_score": 0.7140519022941589,
+          "text_score": 0.0943978801369667,
+          "nearest_asset_score": 0.6339535117149353,
+          "nearest_asset_ids": [
+            "paco-train-book-780803",
+            "paco-train-book-475265",
+            "paco-train-book-753809"
+          ]
+        },
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.48903915723164876,
+          "prototype_score": 0.6767151951789856,
+          "text_score": 0.07792817056179047,
+          "nearest_asset_score": 0.6531336506207784,
+          "nearest_asset_ids": [
+            "paco-train-tray-224978",
+            "paco-train-tray-625246",
+            "paco-train-tray-396299"
+          ]
+        },
+        {
+          "asset_label": "box",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.48738765557607017,
+          "prototype_score": 0.6836521029472351,
+          "text_score": 0.06994958221912384,
+          "nearest_asset_score": 0.6455064018567404,
+          "nearest_asset_ids": [
+            "paco-train-box-559316",
+            "paco-train-box-583235",
+            "paco-train-box-950957"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "wallet",
+      "expected_label": "wallet",
+      "expected_domain": "daily_object",
+      "expected_profile": "wallet_belt",
+      "accepted": true,
+      "asset_label": "wallet",
+      "asset_domain": "daily_object",
+      "asset_profile": "wallet_belt",
+      "score": 0.6041104324658711,
+      "margin": 0.024665617148081465,
+      "alternatives": [
+        {
+          "asset_label": "wallet",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.6041104324658711,
+          "prototype_score": 0.8435860276222229,
+          "text_score": 0.10868746042251587,
+          "nearest_asset_score": 0.7820065220197042,
+          "nearest_asset_ids": [
+            "paco-train-wallet-795472",
+            "paco-train-wallet-271132",
+            "paco-train-wallet-900712"
+          ]
+        },
+        {
+          "asset_label": "sponge",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5794448153177897,
+          "prototype_score": 0.8085052967071533,
+          "text_score": 0.08198912441730499,
+          "nearest_asset_score": 0.7750696341196696,
+          "nearest_asset_ids": [
+            "paco-train-sponge-387207",
+            "paco-train-sponge-81238",
+            "paco-train-sponge-62714"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.5760247961680094,
+          "prototype_score": 0.7902512550354004,
+          "text_score": 0.10182702541351318,
+          "nearest_asset_score": 0.768654982248942,
+          "nearest_asset_ids": [
+            "paco-train-belt-136823",
+            "paco-train-belt-1234975",
+            "paco-train-belt-352064"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5698188519477845,
+          "prototype_score": 0.8085179924964905,
+          "text_score": 0.07702460885047913,
+          "nearest_asset_score": 0.7460338473320007,
+          "nearest_asset_ids": [
+            "paco-train-bucket-796596",
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-676725"
+          ]
+        },
+        {
+          "asset_label": "pen",
+          "asset_domain": "daily_object",
+          "asset_profile": "writing_tool",
+          "score": 0.5682861558596293,
+          "prototype_score": 0.7960234880447388,
+          "text_score": 0.07966054975986481,
+          "nearest_asset_score": 0.7563478748003641,
+          "nearest_asset_ids": [
+            "paco-train-pen-10203",
+            "paco-train-pen-1109804",
+            "paco-train-pen-944257"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "belt",
+      "expected_label": "belt",
+      "expected_domain": "daily_object",
+      "expected_profile": "wallet_belt",
+      "accepted": true,
+      "asset_label": "belt",
+      "asset_domain": "daily_object",
+      "asset_profile": "wallet_belt",
+      "score": 0.6563379875818888,
+      "margin": 0.025686964988708483,
+      "alternatives": [
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.6563379875818888,
+          "prototype_score": 0.9116483926773071,
+          "text_score": 0.0997963696718216,
+          "nearest_asset_score": 0.8766256968180338,
+          "nearest_asset_ids": [
+            "paco-train-belt-211331",
+            "paco-train-belt-1234975",
+            "paco-train-belt-346225"
+          ]
+        },
+        {
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "score": 0.6306510225931803,
+          "prototype_score": 0.8543382287025452,
+          "text_score": 0.13825246691703796,
+          "nearest_asset_score": 0.8288280169169108,
+          "nearest_asset_ids": [
+            "paco-train-knife-1003167",
+            "paco-train-knife-342816",
+            "paco-train-knife-1031792"
+          ]
+        },
+        {
+          "asset_label": "wrench",
+          "asset_domain": "tool_prop",
+          "asset_profile": "wrench",
+          "score": 0.5912580919265746,
+          "prototype_score": 0.8313882350921631,
+          "text_score": 0.09155786782503128,
+          "nearest_asset_score": 0.7727974653244019,
+          "nearest_asset_ids": [
+            "paco-train-wrench-1160280",
+            "paco-train-wrench-864644",
+            "paco-train-wrench-1086944"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5908616042137146,
+          "prototype_score": 0.8385603427886963,
+          "text_score": 0.06492345780134201,
+          "nearest_asset_score": 0.7894498705863953,
+          "nearest_asset_ids": [
+            "paco-train-stool-1053837",
+            "paco-train-stool-876252",
+            "paco-train-stool-763934"
+          ]
+        },
+        {
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "score": 0.5908548863728842,
+          "prototype_score": 0.812895655632019,
+          "text_score": 0.10360997170209885,
+          "nearest_asset_score": 0.7859215339024862,
+          "nearest_asset_ids": [
+            "paco-train-scissors-402962",
+            "paco-train-scissors-651729",
+            "paco-train-scissors-649997"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "hat",
+      "expected_label": "hat",
+      "expected_domain": "daily_object",
+      "expected_profile": "headwear",
+      "accepted": true,
+      "asset_label": "hat",
+      "asset_domain": "daily_object",
+      "asset_profile": "headwear",
+      "score": 0.6077521244684855,
+      "margin": 0.0665868115425109,
+      "alternatives": [
+        {
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.6077521244684855,
+          "prototype_score": 0.8340346217155457,
+          "text_score": 0.1420276015996933,
+          "nearest_asset_score": 0.7732505003611246,
+          "nearest_asset_ids": [
+            "paco-train-hat-240910",
+            "paco-train-hat-172236",
+            "paco-train-hat-1161198"
+          ]
+        },
+        {
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5411653129259746,
+          "prototype_score": 0.7671129703521729,
+          "text_score": 0.08645487576723099,
+          "nearest_asset_score": 0.6952677766482035,
+          "nearest_asset_ids": [
+            "paco-train-scarf-108085",
+            "paco-train-scarf-80415",
+            "paco-train-scarf-1158677"
+          ]
+        },
+        {
+          "asset_label": "slipper (footwear)",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "score": 0.5404914402961731,
+          "prototype_score": 0.7790627479553223,
+          "text_score": 0.06764993816614151,
+          "nearest_asset_score": 0.6953482627868652,
+          "nearest_asset_ids": [
+            "paco-train-slipper_footwear-674941",
+            "paco-train-slipper_footwear-1143462",
+            "paco-train-slipper_footwear-31692"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5379701638221741,
+          "prototype_score": 0.7661409378051758,
+          "text_score": 0.06498603522777557,
+          "nearest_asset_score": 0.7084926962852478,
+          "nearest_asset_ids": [
+            "paco-train-cup-64745",
+            "paco-train-cup-633608",
+            "paco-train-cup-879384"
+          ]
+        },
+        {
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "score": 0.5349433787663778,
+          "prototype_score": 0.7690389156341553,
+          "text_score": 0.06698541343212128,
+          "nearest_asset_score": 0.6912012298901876,
+          "nearest_asset_ids": [
+            "paco-train-handbag-1250785",
+            "paco-train-handbag-1070023",
+            "paco-train-handbag-1042903"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "helmet",
+      "expected_label": "helmet",
+      "expected_domain": "daily_object",
+      "expected_profile": "headwear",
+      "accepted": true,
+      "asset_label": "helmet",
+      "asset_domain": "daily_object",
+      "asset_profile": "headwear",
+      "score": 0.6381775379180908,
+      "margin": 0.06546561320622768,
+      "alternatives": [
+        {
+          "asset_label": "helmet",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.6381775379180908,
+          "prototype_score": 0.8848803043365479,
+          "text_score": 0.14694711565971375,
+          "nearest_asset_score": 0.8007668256759644,
+          "nearest_asset_ids": [
+            "paco-train-helmet-66405",
+            "paco-train-helmet-730851",
+            "paco-train-helmet-1048270"
+          ]
+        },
+        {
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.5727119247118632,
+          "prototype_score": 0.798253059387207,
+          "text_score": 0.10245996713638306,
+          "nearest_asset_score": 0.7442055741945902,
+          "nearest_asset_ids": [
+            "paco-train-hat-240910",
+            "paco-train-hat-172236",
+            "paco-train-hat-1161198"
+          ]
+        },
+        {
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "score": 0.5675704987843831,
+          "prototype_score": 0.805801510810852,
+          "text_score": 0.06448989361524582,
+          "nearest_asset_score": 0.7555930217107137,
+          "nearest_asset_ids": [
+            "paco-train-shoe-347964",
+            "paco-train-shoe-461040",
+            "paco-train-shoe-839896"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5591271400451661,
+          "prototype_score": 0.7935303449630737,
+          "text_score": 0.07738247513771057,
+          "nearest_asset_score": 0.7298158407211304,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-796596",
+            "paco-train-bucket-676725"
+          ]
+        },
+        {
+          "asset_label": "pencil",
+          "asset_domain": "daily_object",
+          "asset_profile": "writing_tool",
+          "score": 0.5583642252286276,
+          "prototype_score": 0.7961893677711487,
+          "text_score": 0.05164249613881111,
+          "nearest_asset_score": 0.7509244879086813,
+          "nearest_asset_ids": [
+            "paco-train-pencil-1233704",
+            "paco-train-pencil-1063176",
+            "paco-train-pencil-1184404"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "shoe",
+      "expected_label": "shoe",
+      "expected_domain": "daily_object",
+      "expected_profile": "footwear",
+      "accepted": true,
+      "asset_label": "shoe",
+      "asset_domain": "daily_object",
+      "asset_profile": "footwear",
+      "score": 0.6088434259096782,
+      "margin": 0.04916499773661298,
+      "alternatives": [
+        {
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "score": 0.6088434259096782,
+          "prototype_score": 0.8342024087905884,
+          "text_score": 0.14261005818843842,
+          "nearest_asset_score": 0.7762687007586161,
+          "nearest_asset_ids": [
+            "paco-train-shoe-461040",
+            "paco-train-shoe-347964",
+            "paco-train-shoe-839896"
+          ]
+        },
+        {
+          "asset_label": "slipper (footwear)",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "score": 0.5596784281730652,
+          "prototype_score": 0.7723838686943054,
+          "text_score": 0.11498826742172241,
+          "nearest_asset_score": 0.7227088212966919,
+          "nearest_asset_ids": [
+            "paco-train-slipper_footwear-1143462",
+            "paco-train-slipper_footwear-444724",
+            "paco-train-slipper_footwear-133914"
+          ]
+        },
+        {
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.5225516708691915,
+          "prototype_score": 0.7484706044197083,
+          "text_score": 0.0631786584854126,
+          "nearest_asset_score": 0.6817326148351034,
+          "nearest_asset_ids": [
+            "paco-train-hat-172236",
+            "paco-train-hat-1161198",
+            "paco-train-hat-787033"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.5160761260986328,
+          "prototype_score": 0.7273925542831421,
+          "text_score": 0.06740312278270721,
+          "nearest_asset_score": 0.6854796409606934,
+          "nearest_asset_ids": [
+            "paco-train-belt-352064",
+            "paco-train-belt-211331",
+            "paco-train-belt-136823"
+          ]
+        },
+        {
+          "asset_label": "hammer",
+          "asset_domain": "tool_prop",
+          "asset_profile": "hammer",
+          "score": 0.510065704981486,
+          "prototype_score": 0.7185707688331604,
+          "text_score": 0.06285637617111206,
+          "nearest_asset_score": 0.6820814410845438,
+          "nearest_asset_ids": [
+            "paco-train-hammer-641413",
+            "paco-train-hammer-1131729",
+            "paco-train-hammer-319535"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "scarf",
+      "expected_label": "scarf",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "accepted": true,
+      "asset_label": "scarf",
+      "asset_domain": "daily_object",
+      "asset_profile": "soft_good",
+      "score": 0.6384302632013956,
+      "margin": 0.03871680021286006,
+      "alternatives": [
+        {
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.6384302632013956,
+          "prototype_score": 0.8781377077102661,
+          "text_score": 0.15847525000572205,
+          "nearest_asset_score": 0.7992751995722452,
+          "nearest_asset_ids": [
+            "paco-train-scarf-108085",
+            "paco-train-scarf-80415",
+            "paco-train-scarf-689496"
+          ]
+        },
+        {
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "score": 0.5997134629885356,
+          "prototype_score": 0.8334566950798035,
+          "text_score": 0.11437422037124634,
+          "nearest_asset_score": 0.775268534819285,
+          "nearest_asset_ids": [
+            "paco-train-sweater-794474",
+            "paco-train-sweater-327507",
+            "paco-train-sweater-247711"
+          ]
+        },
+        {
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.578055342833201,
+          "prototype_score": 0.8232495784759521,
+          "text_score": 0.07768301665782928,
+          "nearest_asset_score": 0.7527679006258646,
+          "nearest_asset_ids": [
+            "paco-train-pillow-562072",
+            "paco-train-pillow-236180",
+            "paco-train-pillow-816618"
+          ]
+        },
+        {
+          "asset_label": "hat",
+          "asset_domain": "daily_object",
+          "asset_profile": "headwear",
+          "score": 0.5772223162651062,
+          "prototype_score": 0.8144837617874146,
+          "text_score": 0.09956197440624237,
+          "nearest_asset_score": 0.7392370104789734,
+          "nearest_asset_ids": [
+            "paco-train-hat-213089",
+            "paco-train-hat-1161198",
+            "paco-train-hat-172236"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.5755735596021017,
+          "prototype_score": 0.8036667108535767,
+          "text_score": 0.08475995808839798,
+          "nearest_asset_score": 0.7654676636060079,
+          "nearest_asset_ids": [
+            "paco-train-belt-211331",
+            "paco-train-belt-352064",
+            "paco-train-belt-1234975"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "sweater",
+      "expected_label": "sweater",
+      "expected_domain": "daily_object",
+      "expected_profile": "garment",
+      "accepted": true,
+      "asset_label": "sweater",
+      "asset_domain": "daily_object",
+      "asset_profile": "garment",
+      "score": 0.5895979086558024,
+      "margin": 0.06909801244735714,
+      "alternatives": [
+        {
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "score": 0.5895979086558024,
+          "prototype_score": 0.795683741569519,
+          "text_score": 0.15040059387683868,
+          "nearest_asset_score": 0.756568710009257,
+          "nearest_asset_ids": [
+            "paco-train-sweater-794474",
+            "paco-train-sweater-327507",
+            "paco-train-sweater-1146406"
+          ]
+        },
+        {
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5204998962084453,
+          "prototype_score": 0.7448402047157288,
+          "text_score": 0.04839958995580673,
+          "nearest_asset_score": 0.6957806746164957,
+          "nearest_asset_ids": [
+            "paco-train-towel-124855",
+            "paco-train-towel-744968",
+            "paco-train-towel-776190"
+          ]
+        },
+        {
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5139811674753825,
+          "prototype_score": 0.7358524203300476,
+          "text_score": 0.06060216575860977,
+          "nearest_asset_score": 0.6727254192034403,
+          "nearest_asset_ids": [
+            "paco-train-pillow-562072",
+            "paco-train-pillow-562024",
+            "paco-train-pillow-1260932"
+          ]
+        },
+        {
+          "asset_label": "slipper (footwear)",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "score": 0.5130152249336243,
+          "prototype_score": 0.7392274141311646,
+          "text_score": 0.053628236055374146,
+          "nearest_asset_score": 0.6717739105224609,
+          "nearest_asset_ids": [
+            "paco-train-slipper_footwear-31692",
+            "paco-train-slipper_footwear-444724",
+            "paco-train-slipper_footwear-563609"
+          ]
+        },
+        {
+          "asset_label": "handbag",
+          "asset_domain": "container",
+          "asset_profile": "bag",
+          "score": 0.5094941353797913,
+          "prototype_score": 0.7515272498130798,
+          "text_score": 0.038885168731212616,
+          "nearest_asset_score": 0.6567767858505249,
+          "nearest_asset_ids": [
+            "paco-train-handbag-1146693",
+            "paco-train-handbag-1070023",
+            "paco-train-handbag-1042903"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "towel",
+      "expected_label": "towel",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "accepted": true,
+      "asset_label": "towel",
+      "asset_domain": "daily_object",
+      "asset_profile": "soft_good",
+      "score": 0.6588778813680013,
+      "margin": 0.06876969496409091,
+      "alternatives": [
+        {
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.6588778813680013,
+          "prototype_score": 0.9051364660263062,
+          "text_score": 0.14002257585525513,
+          "nearest_asset_score": 0.8519646724065145,
+          "nearest_asset_ids": [
+            "paco-train-towel-1007733",
+            "paco-train-towel-776190",
+            "paco-train-towel-744968"
+          ]
+        },
+        {
+          "asset_label": "sweater",
+          "asset_domain": "daily_object",
+          "asset_profile": "garment",
+          "score": 0.5901081864039104,
+          "prototype_score": 0.8143455386161804,
+          "text_score": 0.12179668992757797,
+          "nearest_asset_score": 0.7614506880442301,
+          "nearest_asset_ids": [
+            "paco-train-sweater-794474",
+            "paco-train-sweater-247711",
+            "paco-train-sweater-327507"
+          ]
+        },
+        {
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5881986244519551,
+          "prototype_score": 0.8215591907501221,
+          "text_score": 0.12498168647289276,
+          "nearest_asset_score": 0.7404322822888693,
+          "nearest_asset_ids": [
+            "paco-train-scarf-108085",
+            "paco-train-scarf-244256",
+            "paco-train-scarf-80415"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.5854553890228271,
+          "prototype_score": 0.8250784277915955,
+          "text_score": 0.06987494975328445,
+          "nearest_asset_score": 0.7849016189575195,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1109860",
+            "paco-train-bucket-676725",
+            "paco-train-bucket-796596"
+          ]
+        },
+        {
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "score": 0.5839395165443421,
+          "prototype_score": 0.8154945373535156,
+          "text_score": 0.08335426449775696,
+          "nearest_asset_score": 0.7792238593101501,
+          "nearest_asset_ids": [
+            "paco-train-ladder-955769",
+            "paco-train-ladder-127281",
+            "paco-train-ladder-330914"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "pillow",
+      "expected_label": "pillow",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "accepted": true,
+      "asset_label": "towel",
+      "asset_domain": "daily_object",
+      "asset_profile": "soft_good",
+      "score": 0.6101434342066447,
+      "margin": 0.002577679157257151,
+      "alternatives": [
+        {
+          "asset_label": "towel",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.6101434342066447,
+          "prototype_score": 0.8547956347465515,
+          "text_score": 0.10170888155698776,
+          "nearest_asset_score": 0.7943715254465739,
+          "nearest_asset_ids": [
+            "paco-train-towel-1191381",
+            "paco-train-towel-776190",
+            "paco-train-towel-520568"
+          ]
+        },
+        {
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "score": 0.6075657550493876,
+          "prototype_score": 0.8296046257019043,
+          "text_score": 0.09683853387832642,
+          "nearest_asset_score": 0.8279961148897806,
+          "nearest_asset_ids": [
+            "paco-train-knife-1003167",
+            "paco-train-knife-342816",
+            "paco-train-knife-1031792"
+          ]
+        },
+        {
+          "asset_label": "scarf",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.6027116886774699,
+          "prototype_score": 0.8376495838165283,
+          "text_score": 0.0958297997713089,
+          "nearest_asset_score": 0.799751083056132,
+          "nearest_asset_ids": [
+            "paco-train-scarf-80415",
+            "paco-train-scarf-1158677",
+            "paco-train-scarf-108085"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.5987996220588684,
+          "prototype_score": 0.8393419981002808,
+          "text_score": 0.07948054373264313,
+          "nearest_asset_score": 0.8009124398231506,
+          "nearest_asset_ids": [
+            "paco-train-belt-1234975",
+            "paco-train-belt-352064",
+            "paco-train-belt-211331"
+          ]
+        },
+        {
+          "asset_label": "pillow",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5973680178324382,
+          "prototype_score": 0.8416011929512024,
+          "text_score": 0.09351105988025665,
+          "nearest_asset_score": 0.7772771517435709,
+          "nearest_asset_ids": [
+            "paco-train-pillow-1260932",
+            "paco-train-pillow-236180",
+            "paco-train-pillow-562024"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "soap",
+      "expected_label": "soap",
+      "expected_domain": "daily_object",
+      "expected_profile": "simple_object",
+      "accepted": true,
+      "asset_label": "soap",
+      "asset_domain": "daily_object",
+      "asset_profile": "simple_object",
+      "score": 0.658560205300649,
+      "margin": 0.05604350487391152,
+      "alternatives": [
+        {
+          "asset_label": "soap",
+          "asset_domain": "daily_object",
+          "asset_profile": "simple_object",
+          "score": 0.658560205300649,
+          "prototype_score": 0.8991382122039795,
+          "text_score": 0.1323332041501999,
+          "nearest_asset_score": 0.8680803974469503,
+          "nearest_asset_ids": [
+            "paco-train-soap-1237837",
+            "paco-train-soap-1121942",
+            "paco-train-soap-287366"
+          ]
+        },
+        {
+          "asset_label": "bottle",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.6025167004267374,
+          "prototype_score": 0.8331582546234131,
+          "text_score": 0.1304110288619995,
+          "nearest_asset_score": 0.7684054772059122,
+          "nearest_asset_ids": [
+            "paco-train-bottle-790292",
+            "paco-train-bottle-770645",
+            "paco-train-bottle-640335"
+          ]
+        },
+        {
+          "asset_label": "sponge",
+          "asset_domain": "daily_object",
+          "asset_profile": "soft_good",
+          "score": 0.5782105930646261,
+          "prototype_score": 0.8098446726799011,
+          "text_score": 0.09212983399629593,
+          "nearest_asset_score": 0.7577121456464132,
+          "nearest_asset_ids": [
+            "paco-train-sponge-81238",
+            "paco-train-sponge-387207",
+            "paco-train-sponge-23179"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5726555649439494,
+          "prototype_score": 0.8118018507957458,
+          "text_score": 0.08391466736793518,
+          "nearest_asset_score": 0.7438261906305949,
+          "nearest_asset_ids": [
+            "paco-train-cup-123124",
+            "paco-train-cup-879384",
+            "paco-train-cup-633608"
+          ]
+        },
+        {
+          "asset_label": "jar",
+          "asset_domain": "container",
+          "asset_profile": "bottle_jar",
+          "score": 0.570627342859904,
+          "prototype_score": 0.7974932193756104,
+          "text_score": 0.10315608233213425,
+          "nearest_asset_score": 0.7371421257654825,
+          "nearest_asset_ids": [
+            "paco-train-jar-70564",
+            "paco-train-jar-29500",
+            "paco-train-jar-1075358"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "drill",
+      "expected_label": "drill",
+      "expected_domain": "tool_prop",
+      "expected_profile": "drill",
+      "accepted": true,
+      "asset_label": "pen",
+      "asset_domain": "daily_object",
+      "asset_profile": "writing_tool",
+      "score": 0.6035271763801575,
+      "margin": 0.021067905426025435,
+      "alternatives": [
+        {
+          "asset_label": "pen",
+          "asset_domain": "daily_object",
+          "asset_profile": "writing_tool",
+          "score": 0.6035271763801575,
+          "prototype_score": 0.8299826979637146,
+          "text_score": 0.10978423058986664,
+          "nearest_asset_score": 0.7990273833274841,
+          "nearest_asset_ids": [
+            "paco-train-pen-10203",
+            "paco-train-pen-219639",
+            "paco-train-pen-851737"
+          ]
+        },
+        {
+          "asset_label": "pencil",
+          "asset_domain": "daily_object",
+          "asset_profile": "writing_tool",
+          "score": 0.5824592709541321,
+          "prototype_score": 0.8080694675445557,
+          "text_score": 0.09652793407440186,
+          "nearest_asset_score": 0.7707836031913757,
+          "nearest_asset_ids": [
+            "paco-train-pencil-1233704",
+            "paco-train-pencil-1063176",
+            "paco-train-pencil-914434"
+          ]
+        },
+        {
+          "asset_label": "drill",
+          "asset_domain": "tool_prop",
+          "asset_profile": "drill",
+          "score": 0.5815965557098389,
+          "prototype_score": 0.7974751591682434,
+          "text_score": 0.12680292129516602,
+          "nearest_asset_score": 0.7508060932159424,
+          "nearest_asset_ids": [
+            "paco-train-drill-1221181",
+            "paco-train-drill-227790",
+            "paco-train-drill-352593"
+          ]
+        },
+        {
+          "asset_label": "screwdriver",
+          "asset_domain": "tool_prop",
+          "asset_profile": "screwdriver",
+          "score": 0.5791650795936585,
+          "prototype_score": 0.7937141060829163,
+          "text_score": 0.12657634913921356,
+          "nearest_asset_score": 0.7479763627052307,
+          "nearest_asset_ids": [
+            "paco-train-screwdriver-1202775",
+            "paco-train-screwdriver-380576"
+          ]
+        },
+        {
+          "asset_label": "wrench",
+          "asset_domain": "tool_prop",
+          "asset_profile": "wrench",
+          "score": 0.5768116116523743,
+          "prototype_score": 0.8073260188102722,
+          "text_score": 0.09772348403930664,
+          "nearest_asset_score": 0.7504310011863708,
+          "nearest_asset_ids": [
+            "paco-train-wrench-1160280",
+            "paco-train-wrench-864644",
+            "paco-train-wrench-1086944"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": true,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "hammer",
+      "expected_label": "hammer",
+      "expected_domain": "tool_prop",
+      "expected_profile": "hammer",
+      "accepted": true,
+      "asset_label": "hammer",
+      "asset_domain": "tool_prop",
+      "asset_profile": "hammer",
+      "score": 0.6835846590995789,
+      "margin": 0.052473200162251876,
+      "alternatives": [
+        {
+          "asset_label": "hammer",
+          "asset_domain": "tool_prop",
+          "asset_profile": "hammer",
+          "score": 0.6835846590995789,
+          "prototype_score": 0.929129421710968,
+          "text_score": 0.15272241830825806,
+          "nearest_asset_score": 0.8907033801078796,
+          "nearest_asset_ids": [
+            "paco-train-hammer-319535",
+            "paco-train-hammer-1131729",
+            "paco-train-hammer-641413"
+          ]
+        },
+        {
+          "asset_label": "wrench",
+          "asset_domain": "tool_prop",
+          "asset_profile": "wrench",
+          "score": 0.631111458937327,
+          "prototype_score": 0.8796054124832153,
+          "text_score": 0.1152632012963295,
+          "nearest_asset_score": 0.8176166812578837,
+          "nearest_asset_ids": [
+            "paco-train-wrench-1160280",
+            "paco-train-wrench-864644",
+            "paco-train-wrench-1086944"
+          ]
+        },
+        {
+          "asset_label": "pliers",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "score": 0.6012943323453268,
+          "prototype_score": 0.8275763392448425,
+          "text_score": 0.11218979209661484,
+          "nearest_asset_score": 0.7920438249905905,
+          "nearest_asset_ids": [
+            "paco-train-pliers-1187777",
+            "paco-train-pliers-30004",
+            "paco-train-pliers-601232"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.6006590342521667,
+          "prototype_score": 0.8496384620666504,
+          "text_score": 0.0661218911409378,
+          "nearest_asset_score": 0.8066242337226868,
+          "nearest_asset_ids": [
+            "paco-train-belt-1234975",
+            "paco-train-belt-211331",
+            "paco-train-belt-346225"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5974159590403239,
+          "prototype_score": 0.8386600613594055,
+          "text_score": 0.08349519968032837,
+          "nearest_asset_score": 0.7926520506540934,
+          "nearest_asset_ids": [
+            "paco-train-stool-1053837",
+            "paco-train-stool-876252",
+            "paco-train-stool-786573"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "knife",
+      "expected_label": "knife",
+      "expected_domain": "tool_prop",
+      "expected_profile": "knife",
+      "accepted": true,
+      "asset_label": "knife",
+      "asset_domain": "tool_prop",
+      "asset_profile": "knife",
+      "score": 0.6730118052164713,
+      "margin": 0.04380727767944337,
+      "alternatives": [
+        {
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "score": 0.6730118052164713,
+          "prototype_score": 0.9185296893119812,
+          "text_score": 0.1343460977077484,
+          "nearest_asset_score": 0.8885984818140665,
+          "nearest_asset_ids": [
+            "paco-train-knife-342816",
+            "paco-train-knife-1031792",
+            "paco-train-knife-538005"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.6292045275370279,
+          "prototype_score": 0.8878037929534912,
+          "text_score": 0.05576971173286438,
+          "nearest_asset_score": 0.8628318707148234,
+          "nearest_asset_ids": [
+            "paco-train-belt-211331",
+            "paco-train-belt-517732",
+            "paco-train-belt-1234975"
+          ]
+        },
+        {
+          "asset_label": "pencil",
+          "asset_domain": "daily_object",
+          "asset_profile": "writing_tool",
+          "score": 0.6287871336936951,
+          "prototype_score": 0.8794266581535339,
+          "text_score": 0.08634693920612335,
+          "nearest_asset_score": 0.840811550617218,
+          "nearest_asset_ids": [
+            "paco-train-pencil-1063176",
+            "paco-train-pencil-1233704",
+            "paco-train-pencil-914434"
+          ]
+        },
+        {
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "score": 0.6239567057291666,
+          "prototype_score": 0.8603376150131226,
+          "text_score": 0.09275578707456589,
+          "nearest_asset_score": 0.845108429590861,
+          "nearest_asset_ids": [
+            "paco-train-scissors-402962",
+            "paco-train-scissors-651729",
+            "paco-train-scissors-649997"
+          ]
+        },
+        {
+          "asset_label": "pen",
+          "asset_domain": "daily_object",
+          "asset_profile": "writing_tool",
+          "score": 0.6130865454673767,
+          "prototype_score": 0.8482580184936523,
+          "text_score": 0.09652591496706009,
+          "nearest_asset_score": 0.8202305436134338,
+          "nearest_asset_ids": [
+            "paco-train-pen-10203",
+            "paco-train-pen-944257",
+            "paco-train-pen-219639"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "scissors",
+      "expected_label": "scissors",
+      "expected_domain": "tool_prop",
+      "expected_profile": "scissors_pliers",
+      "accepted": true,
+      "asset_label": "scissors",
+      "asset_domain": "tool_prop",
+      "asset_profile": "scissors_pliers",
+      "score": 0.6062847916285197,
+      "margin": 0.04161273320515946,
+      "alternatives": [
+        {
+          "asset_label": "scissors",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "score": 0.6062847916285197,
+          "prototype_score": 0.8128551244735718,
+          "text_score": 0.14995670318603516,
+          "nearest_asset_score": 0.7910342613855997,
+          "nearest_asset_ids": [
+            "paco-train-scissors-402962",
+            "paco-train-scissors-649997",
+            "paco-train-scissors-651729"
+          ]
+        },
+        {
+          "asset_label": "pliers",
+          "asset_domain": "tool_prop",
+          "asset_profile": "scissors_pliers",
+          "score": 0.5646720584233602,
+          "prototype_score": 0.7641592621803284,
+          "text_score": 0.12757275998592377,
+          "nearest_asset_score": 0.7392184336980184,
+          "nearest_asset_ids": [
+            "paco-train-pliers-30004",
+            "paco-train-pliers-1187777",
+            "paco-train-pliers-601232"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.5363304789861043,
+          "prototype_score": 0.7497212886810303,
+          "text_score": 0.06706683337688446,
+          "nearest_asset_score": 0.7248780926068624,
+          "nearest_asset_ids": [
+            "paco-train-belt-211331",
+            "paco-train-belt-1234975",
+            "paco-train-belt-517732"
+          ]
+        },
+        {
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "score": 0.5288515830039978,
+          "prototype_score": 0.719724714756012,
+          "text_score": 0.11280284076929092,
+          "nearest_asset_score": 0.6935105919837952,
+          "nearest_asset_ids": [
+            "paco-train-knife-1031792",
+            "paco-train-knife-538005",
+            "paco-train-knife-1003167"
+          ]
+        },
+        {
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "score": 0.5230193098386129,
+          "prototype_score": 0.71833336353302,
+          "text_score": 0.09670351445674896,
+          "nearest_asset_score": 0.692143460114797,
+          "nearest_asset_ids": [
+            "paco-train-spoon-406500",
+            "paco-train-spoon-1144118",
+            "paco-train-spoon-785831"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "ladder",
+      "expected_label": "ladder",
+      "expected_domain": "tool_prop",
+      "expected_profile": "ladder",
+      "accepted": true,
+      "asset_label": "ladder",
+      "asset_domain": "tool_prop",
+      "asset_profile": "ladder",
+      "score": 0.6736389716466268,
+      "margin": 0.03931829055150349,
+      "alternatives": [
+        {
+          "asset_label": "ladder",
+          "asset_domain": "tool_prop",
+          "asset_profile": "ladder",
+          "score": 0.6736389716466268,
+          "prototype_score": 0.9104875326156616,
+          "text_score": 0.16812410950660706,
+          "nearest_asset_score": 0.866352399190267,
+          "nearest_asset_ids": [
+            "paco-train-ladder-330914",
+            "paco-train-ladder-955769",
+            "paco-train-ladder-127281"
+          ]
+        },
+        {
+          "asset_label": "stool",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.6343206810951233,
+          "prototype_score": 0.8981858491897583,
+          "text_score": 0.09348344802856445,
+          "nearest_asset_score": 0.8248888850212097,
+          "nearest_asset_ids": [
+            "paco-train-stool-1053837",
+            "paco-train-stool-763934",
+            "paco-train-stool-876252"
+          ]
+        },
+        {
+          "asset_label": "crate",
+          "asset_domain": "container",
+          "asset_profile": "box",
+          "score": 0.6013628307978311,
+          "prototype_score": 0.8444442749023438,
+          "text_score": 0.07837074995040894,
+          "nearest_asset_score": 0.8036556641260783,
+          "nearest_asset_ids": [
+            "paco-train-crate-947943",
+            "paco-train-crate-52291",
+            "paco-train-crate-506309"
+          ]
+        },
+        {
+          "asset_label": "belt",
+          "asset_domain": "daily_object",
+          "asset_profile": "wallet_belt",
+          "score": 0.5913048219680785,
+          "prototype_score": 0.8328194618225098,
+          "text_score": 0.06941211223602295,
+          "nearest_asset_score": 0.7947471141815186,
+          "nearest_asset_ids": [
+            "paco-train-belt-1234975",
+            "paco-train-belt-136823",
+            "paco-train-belt-352064"
+          ]
+        },
+        {
+          "asset_label": "chair",
+          "asset_domain": "furniture",
+          "asset_profile": "chair",
+          "score": 0.5900046428044637,
+          "prototype_score": 0.8276204466819763,
+          "text_score": 0.08976275473833084,
+          "nearest_asset_score": 0.7758788665135702,
+          "nearest_asset_ids": [
+            "paco-train-chair-142578",
+            "paco-train-chair-1006037",
+            "paco-train-chair-424054"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "guitar",
+      "expected_label": "guitar",
+      "expected_domain": "tool_prop",
+      "expected_profile": "guitar",
+      "accepted": true,
+      "asset_label": "guitar",
+      "asset_domain": "tool_prop",
+      "asset_profile": "guitar",
+      "score": 0.6683717648188273,
+      "margin": 0.08692875623703,
+      "alternatives": [
+        {
+          "asset_label": "guitar",
+          "asset_domain": "tool_prop",
+          "asset_profile": "guitar",
+          "score": 0.6683717648188273,
+          "prototype_score": 0.9117348194122314,
+          "text_score": 0.1471220850944519,
+          "nearest_asset_score": 0.8683627049128214,
+          "nearest_asset_ids": [
+            "paco-train-guitar-281476",
+            "paco-train-guitar-1010877",
+            "paco-train-guitar-1238614"
+          ]
+        },
+        {
+          "asset_label": "earphone",
+          "asset_domain": "device",
+          "asset_profile": "earphone",
+          "score": 0.5814430085817973,
+          "prototype_score": 0.8186487555503845,
+          "text_score": 0.06825171411037445,
+          "nearest_asset_score": 0.781914214293162,
+          "nearest_asset_ids": [
+            "paco-train-earphone-376401",
+            "paco-train-earphone-188395",
+            "paco-train-earphone-401871"
+          ]
+        },
+        {
+          "asset_label": "broom",
+          "asset_domain": "tool_prop",
+          "asset_profile": "broom",
+          "score": 0.5655325984954834,
+          "prototype_score": 0.803080677986145,
+          "text_score": 0.06063702329993248,
+          "nearest_asset_score": 0.7565338611602783,
+          "nearest_asset_ids": [
+            "paco-train-broom-960615",
+            "paco-train-broom-641137",
+            "paco-train-broom-450919"
+          ]
+        },
+        {
+          "asset_label": "drill",
+          "asset_domain": "tool_prop",
+          "asset_profile": "drill",
+          "score": 0.5601351022720337,
+          "prototype_score": 0.7936997413635254,
+          "text_score": 0.06433741003274918,
+          "nearest_asset_score": 0.7472516894340515,
+          "nearest_asset_ids": [
+            "paco-train-drill-227790",
+            "paco-train-drill-1221181",
+            "paco-train-drill-352593"
+          ]
+        },
+        {
+          "asset_label": "shoe",
+          "asset_domain": "daily_object",
+          "asset_profile": "footwear",
+          "score": 0.556859056154887,
+          "prototype_score": 0.7969536185264587,
+          "text_score": 0.06929001212120056,
+          "nearest_asset_score": 0.7253497044245402,
+          "nearest_asset_ids": [
+            "paco-train-shoe-1179897",
+            "paco-train-shoe-461040",
+            "paco-train-shoe-839896"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    },
+    {
+      "case_id": "pan_for_cooking",
+      "expected_label": "pan_(for_cooking)",
+      "expected_domain": "tool_prop",
+      "expected_profile": "pan",
+      "accepted": true,
+      "asset_label": "tray",
+      "asset_domain": "container",
+      "asset_profile": "flatware",
+      "score": 0.6262469657262166,
+      "margin": 0.012114973862965894,
+      "alternatives": [
+        {
+          "asset_label": "tray",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.6262469657262166,
+          "prototype_score": 0.8657352924346924,
+          "text_score": 0.10382029414176941,
+          "nearest_asset_score": 0.8332881530125936,
+          "nearest_asset_ids": [
+            "paco-train-tray-396299",
+            "paco-train-tray-572945",
+            "paco-train-tray-864208"
+          ]
+        },
+        {
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.6141319918632507,
+          "prototype_score": 0.850382924079895,
+          "text_score": 0.12224388867616653,
+          "nearest_asset_score": 0.793019711971283,
+          "nearest_asset_ids": [
+            "paco-train-plate-110962",
+            "paco-train-plate-925619",
+            "paco-train-plate-157279"
+          ]
+        },
+        {
+          "asset_label": "bucket",
+          "asset_domain": "container",
+          "asset_profile": "open_container",
+          "score": 0.6101573133468627,
+          "prototype_score": 0.8408695459365845,
+          "text_score": 0.09348682314157486,
+          "nearest_asset_score": 0.8240706920623779,
+          "nearest_asset_ids": [
+            "paco-train-bucket-1258269",
+            "paco-train-bucket-796596",
+            "paco-train-bucket-676725"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.6049363207817078,
+          "prototype_score": 0.8498454093933105,
+          "text_score": 0.11120641976594925,
+          "nearest_asset_score": 0.7729002833366394,
+          "nearest_asset_ids": [
+            "paco-train-bowl-640675",
+            "paco-train-bowl-760961",
+            "paco-train-bowl-1150477"
+          ]
+        },
+        {
+          "asset_label": "knife",
+          "asset_domain": "tool_prop",
+          "asset_profile": "knife",
+          "score": 0.5995006934801738,
+          "prototype_score": 0.8256815671920776,
+          "text_score": 0.09620436280965805,
+          "nearest_asset_score": 0.8057281772295634,
+          "nearest_asset_ids": [
+            "paco-train-knife-1003167",
+            "paco-train-knife-1031792",
+            "paco-train-knife-538005"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": false,
+      "top5_correct": false,
+      "domain_correct": false,
+      "profile_correct": false
+    },
+    {
+      "case_id": "spoon",
+      "expected_label": "spoon",
+      "expected_domain": "tool_prop",
+      "expected_profile": "spoon",
+      "accepted": true,
+      "asset_label": "spoon",
+      "asset_domain": "tool_prop",
+      "asset_profile": "spoon",
+      "score": 0.679563471476237,
+      "margin": 0.08107782204945879,
+      "alternatives": [
+        {
+          "asset_label": "spoon",
+          "asset_domain": "tool_prop",
+          "asset_profile": "spoon",
+          "score": 0.679563471476237,
+          "prototype_score": 0.9263246059417725,
+          "text_score": 0.15427076816558838,
+          "nearest_asset_score": 0.8788530031840006,
+          "nearest_asset_ids": [
+            "paco-train-spoon-1144118",
+            "paco-train-spoon-1154602",
+            "paco-train-spoon-1049678"
+          ]
+        },
+        {
+          "asset_label": "pan (for cooking)",
+          "asset_domain": "tool_prop",
+          "asset_profile": "pan",
+          "score": 0.5984856494267782,
+          "prototype_score": 0.8522399067878723,
+          "text_score": 0.08268444985151291,
+          "nearest_asset_score": 0.777094562848409,
+          "nearest_asset_ids": [
+            "paco-train-pan_for_cooking-42874",
+            "paco-train-pan_for_cooking-80260",
+            "paco-train-pan_for_cooking-683195"
+          ]
+        },
+        {
+          "asset_label": "cup",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.592033036549886,
+          "prototype_score": 0.8435025215148926,
+          "text_score": 0.08581923693418503,
+          "nearest_asset_score": 0.7636952002843221,
+          "nearest_asset_ids": [
+            "paco-train-cup-633608",
+            "paco-train-cup-64745",
+            "paco-train-cup-1255563"
+          ]
+        },
+        {
+          "asset_label": "plate",
+          "asset_domain": "container",
+          "asset_profile": "flatware",
+          "score": 0.589616470336914,
+          "prototype_score": 0.8383561968803406,
+          "text_score": 0.08276251703500748,
+          "nearest_asset_score": 0.7660412788391113,
+          "nearest_asset_ids": [
+            "paco-train-plate-925619",
+            "paco-train-plate-157279",
+            "paco-train-plate-622266"
+          ]
+        },
+        {
+          "asset_label": "bowl",
+          "asset_domain": "container",
+          "asset_profile": "drinkware",
+          "score": 0.5808178718884787,
+          "prototype_score": 0.8237707614898682,
+          "text_score": 0.08107157051563263,
+          "nearest_asset_score": 0.7581970890363058,
+          "nearest_asset_ids": [
+            "paco-train-bowl-1150477",
+            "paco-train-bowl-672552",
+            "paco-train-bowl-760961"
+          ]
+        }
+      ],
+      "reason": "accepted",
+      "top1_correct": true,
+      "top5_correct": true,
+      "domain_correct": true,
+      "profile_correct": true
+    }
+  ]
+}

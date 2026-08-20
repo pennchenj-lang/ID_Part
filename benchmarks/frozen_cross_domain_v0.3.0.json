@@ -1,0 +1,93 @@
+{
+  "format": "HPID-Split frozen cross-domain baseline",
+  "format_version": "1.0.0",
+  "release_version": "0.3.0",
+  "freeze_date": "2026-08-20",
+  "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+  "package_format": "0.3.0",
+  "verification": {
+    "pytest_passed": 493,
+    "pytest_failed": 0,
+    "ruff_passed": true,
+    "package_validator_passed": 7,
+    "ground_truth_used_in_inference": false
+  },
+  "evidence_scope": {
+    "purpose": "cross-domain regression, qualitative audit, and runtime trace",
+    "dense_ground_truth_available": false,
+    "segmentation_accuracy_claim_permitted": false,
+    "package_validation_meaning": "schema, integrity, ID-map, and relationship consistency"
+  },
+  "runs": [
+    {
+      "case": "phone",
+      "parts": 10,
+      "editable_groups": 2,
+      "quality_status": "review_recommended",
+      "evidence_grade": "B",
+      "recorded_stage_seconds": 22.3008,
+      "source_sha256": "9756091a5d7033865693567895c81ff6febf04c44b9fac76e9e89a96208c70f5",
+      "package_manifest_sha256": "40e616000fa971db6f282ab9a41431175bda06a1c03a8ce305952b0f286c9e3e"
+    },
+    {
+      "case": "microwave",
+      "parts": 9,
+      "editable_groups": 7,
+      "quality_status": "ready",
+      "evidence_grade": "A",
+      "recorded_stage_seconds": 30.4521,
+      "source_sha256": "52bf46f32109d0f089101e2a8bc66464a5b7c7692e445851a34b8802ebbca945",
+      "package_manifest_sha256": "58787dacc4ba11b0125f8d54c5309f6c3c50c9b775d43b6ce91f8d9b2d451d20"
+    },
+    {
+      "case": "firearm",
+      "parts": 14,
+      "editable_groups": 7,
+      "quality_status": "review_recommended",
+      "evidence_grade": "B",
+      "recorded_stage_seconds": 31.6488,
+      "source_sha256": "167b4eaf0d81ef8b510a68275782084fdad612a24dd659d6f372a4e7457f5c2c",
+      "package_manifest_sha256": "4128369bfef0fd0edef690a7e5b230e47bd7891555f254c814310832a20c6f7f"
+    },
+    {
+      "case": "knife",
+      "parts": 15,
+      "editable_groups": 3,
+      "quality_status": "review_recommended",
+      "evidence_grade": "B",
+      "recorded_stage_seconds": 35.7751,
+      "source_sha256": "01e3f3be63afe1a6248921c392d2b82ccf751d48d55da2c2c4c1fe550f27a886",
+      "package_manifest_sha256": "8cc9f9307cb8823be89bb3bfe2fcff829ebcffdc5de59b15029c475aab0809af"
+    },
+    {
+      "case": "globe",
+      "parts": 7,
+      "editable_groups": 4,
+      "quality_status": "review_recommended",
+      "evidence_grade": "B",
+      "recorded_stage_seconds": 39.4213,
+      "source_sha256": "6618a6a62e212eac89f60b2bd33fca2748409bc5a9c76cde7f71181c3544678a",
+      "package_manifest_sha256": "df60339bbc7a14d99e8b4804406883cb1afb70c818f0d33a4a4eaecc6e8a789f"
+    },
+    {
+      "case": "character",
+      "parts": 17,
+      "editable_groups": 6,
+      "quality_status": "review_recommended",
+      "evidence_grade": "B",
+      "recorded_stage_seconds": 37.1006,
+      "source_sha256": "55445aaa88dc07a14c288bf8a74f15fc22e2ac5d7aaa570c7b5afa6d563e23f1",
+      "package_manifest_sha256": "8e893f0031680d3b9f1f2d8db5f3111e2666db06675ae48bf3ffa1a4c4f53b4f"
+    },
+    {
+      "case": "rock_scene",
+      "parts": 22,
+      "editable_groups": 22,
+      "quality_status": "review_recommended",
+      "evidence_grade": "B",
+      "recorded_stage_seconds": 27.8467,
+      "source_sha256": "9ddf2e3ede60e1a8c766e3d69182a6193042c5afffca316314b358faad48ea09",
+      "package_manifest_sha256": "7c51438d83cbcd798e151879f6de8a2e7db090fc3c0d78414925ba32696edd19"
+    }
+  ]
+}
