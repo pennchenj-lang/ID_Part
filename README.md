@@ -369,6 +369,6 @@ model weights.
 
 ## Repository license
 
-A repository-level license has not yet been selected by the copyright owner.
-Until a `LICENSE` file is added, do not assume permission to redistribute this
-repository. Model and checkpoint terms remain separate in all cases.
+The original HPID-Split code in this repository is released under the
+[Apache License 2.0](LICENSE). Third-party code, models, and checkpoints remain
+subject to their own licenses and are not relicensed by this repository.
