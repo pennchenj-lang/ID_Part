@@ -47,6 +47,6 @@ open-world segmentation.
 - `paper_facts/`: manuscript fact bundle and source hashes.
 - `paper_figures/`: PNG/SVG figures generated from the stored tables.
 
-`SHA256SUMS.txt` binds every file in this directory. The v0.3.0 tag identifies
-the algorithm release; evaluation scripts and this evidence package are tracked
-by the later evaluation commit.
+`SHA256SUMS.txt` binds every evidence file in this directory. The v0.3.0 tag
+identifies the algorithm release; evaluation scripts and this evidence package
+were first frozen in commit `2d538397674c890aeef5889a7ff21a0075235dce`.
