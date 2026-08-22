@@ -1,0 +1,7 @@
+﻿case_count,exclusive_ownership_case_rate,mean_overlap_excess_root_fraction,mean_unassigned_root_fraction,method,native_group_metadata,native_hierarchy_metadata,native_persistent_part_ids,native_versioned_package
+226,0.27876106194690264,0.1024631803657404,0.43874241833786937,sam2_raw,False,False,False,False
+226,0.6194690265486725,0.003941121749099042,0.515129792259699,sam2_nms,False,False,False,False
+226,1.0,0.0,0.515129792259699,sam2_max_ownership,False,False,False,False
+226,1.0,0.0,0.6345883255904843,grounded_sam2_same_inventory,False,False,False,False
+226,0.11946902654867257,1.427237869135787,0.3661215321187854,clipseg_ovparts_style,False,False,False,False
+226,1.0,0.0,0.24973043022771674,hpid_split_a3,True,True,True,True

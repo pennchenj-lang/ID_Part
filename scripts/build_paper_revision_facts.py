@@ -23,6 +23,7 @@ EXPECTED_BASELINES = {
     "grounded_sam2_same_inventory",
     "hpid_split_a3",
 }
+EXPECTED_IDENTITY_METHODS = EXPECTED_BASELINES | {"clipseg_ovparts_style"}
 PRIMARY_METRICS = (
     "part_precision_at_025",
     "part_recall_at_025",
@@ -102,6 +103,8 @@ def main() -> int:
     parser.add_argument("--quality-dir", type=Path, required=True)
     parser.add_argument("--sensitivity-dir", type=Path, required=True)
     parser.add_argument("--runtime-report", type=Path, required=True)
+    parser.add_argument("--external-paired-dir", type=Path, required=True)
+    parser.add_argument("--identity-audit-dir", type=Path, required=True)
     parser.add_argument("--dev-ablation-dir", type=Path, required=True)
     parser.add_argument("--dev-gate-dir", type=Path, required=True)
     parser.add_argument("--parameter-dir", type=Path, required=True)
@@ -231,6 +234,43 @@ def main() -> int:
     if int(runtime["successful_case_count"]) != EXPECTED_TEST_CASES:
         raise RuntimeError("runtime audit does not cover all 226 cases")
 
+    external_paired_rows = _read_csv(
+        args.external_paired_dir / "external_paired_differences.csv"
+    )
+    external_paired_report = json.loads(
+        (
+            args.external_paired_dir
+            / "external_paired_bootstrap_report.json"
+        ).read_text(encoding="utf-8")
+    )
+    if int(external_paired_report["case_count"]) != EXPECTED_TEST_CASES:
+        raise RuntimeError("external paired bootstrap does not cover all 226 cases")
+    paired_case_counts = {
+        int(float(row["case_count"])) for row in external_paired_rows
+    }
+    if paired_case_counts != {EXPECTED_TEST_CASES}:
+        raise RuntimeError("external paired bootstrap case counts are inconsistent")
+
+    identity_rows = _read_csv(
+        args.identity_audit_dir / "identity_representation_summary.csv"
+    )
+    _validate_case_count(identity_rows, "identity representation")
+    identity_methods = {row["method"] for row in identity_rows}
+    if identity_methods != EXPECTED_IDENTITY_METHODS:
+        raise RuntimeError(
+            "identity methods differ from the prespecified external comparison"
+        )
+    identity_report = json.loads(
+        (args.identity_audit_dir / "identity_layer_audit_report.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    if int(identity_report["case_count"]) != EXPECTED_TEST_CASES:
+        raise RuntimeError("identity audit does not cover all 226 cases")
+    package_audit = dict(identity_report["package_audit"])
+    if int(package_audit["export_payload_valid_count"]) != EXPECTED_TEST_CASES:
+        raise RuntimeError("one or more HPID export payloads fail validation")
+
     dev_ablation_report = json.loads(
         (args.dev_ablation_dir / "fusion_ablation_report.json").read_text(
             encoding="utf-8"
@@ -247,7 +287,7 @@ def main() -> int:
 
     payload = {
         "format": "HPID-Split manuscript fact inventory",
-        "format_version": "1.0.0",
+        "format_version": "1.1.0",
         "evaluation_scope": (
             "Object-conditioned part decomposition with oracle ground-truth object "
             "box/root; no test part mask, part name, or part count is used in prediction."
@@ -281,6 +321,43 @@ def main() -> int:
             "metrics": clipseg_metrics,
             "evaluation_sha256": _sha256(args.clipseg_evaluation),
             "interpretation": clipseg["baseline_interpretation"],
+        },
+        "external_paired_bootstrap": {
+            "rows": external_paired_rows,
+            "report": external_paired_report,
+        },
+        "identity_layer_audit": {
+            "methods": {
+                row["method"]: {
+                    "case_count": int(float(row["case_count"])),
+                    "mean_overlap_excess_root_fraction": float(
+                        row["mean_overlap_excess_root_fraction"]
+                    ),
+                    "mean_unassigned_root_fraction": float(
+                        row["mean_unassigned_root_fraction"]
+                    ),
+                    "exclusive_ownership_case_rate": float(
+                        row["exclusive_ownership_case_rate"]
+                    ),
+                    "native_persistent_part_ids": (
+                        row["native_persistent_part_ids"] == "True"
+                    ),
+                    "native_hierarchy_metadata": (
+                        row["native_hierarchy_metadata"] == "True"
+                    ),
+                    "native_group_metadata": (
+                        row["native_group_metadata"] == "True"
+                    ),
+                    "native_versioned_package": (
+                        row["native_versioned_package"] == "True"
+                    ),
+                }
+                for row in identity_rows
+            },
+            "package_audit": package_audit,
+            "report_sha256": _sha256(
+                args.identity_audit_dir / "identity_layer_audit_report.json"
+            ),
         },
         "fusion_ablation": {
             "variants": ablations,
@@ -320,6 +397,13 @@ def main() -> int:
                 args.sensitivity_dir / "fusion_sensitivity_report.json"
             ),
             "runtime_report_sha256": _sha256(args.runtime_report),
+            "external_paired_report_sha256": _sha256(
+                args.external_paired_dir
+                / "external_paired_bootstrap_report.json"
+            ),
+            "identity_audit_report_sha256": _sha256(
+                args.identity_audit_dir / "identity_layer_audit_report.json"
+            ),
         },
     }
 

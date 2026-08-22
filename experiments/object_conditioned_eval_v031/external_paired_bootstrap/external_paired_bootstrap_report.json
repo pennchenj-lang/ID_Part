@@ -1,0 +1,28 @@
+{
+  "format": "HPID-Split external case-paired bootstrap audit",
+  "format_version": "1.0.0",
+  "case_count": 226,
+  "methods": [
+    "grounded_sam2_same_inventory",
+    "sam2_max_ownership",
+    "sam2_nms",
+    "sam2_raw",
+    "clipseg_ovparts_style"
+  ],
+  "metrics": [
+    "part_f1_at_025",
+    "part_f1_at_050",
+    "part_f1_at_075",
+    "part_f1_mean_025_075",
+    "mean_matched_boundary_f1_at_050",
+    "semantic_f1_at_025",
+    "object_iou"
+  ],
+  "bootstrap_iterations": 20000,
+  "seed": 20260822,
+  "unit_of_resampling": "independent object case",
+  "interpretation": "Intervals estimate HPID-Split A3 minus each baseline. An interval including zero is reported as statistical comparability, not superiority.",
+  "baseline_cases_sha256": "103e1f673441d0602bfff7059d43f076bfb03a68eb0f049516f6ca5c528bae5d",
+  "clipseg_evaluation_sha256": "76928f1796098754ce284d42bebd4217b1468cf8f003963e2826d167bbdd7600",
+  "output_csv_sha256": "c493e2b73b28ad96f9e78a2d65e76f8229a516e611ab71aa7c1ddce52586b1f5"
+}

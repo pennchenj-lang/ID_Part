@@ -33,11 +33,26 @@ The paired A3-A0 change is +0.1622 [0.1325, 0.1913] for Part F1@0.25 and
 modest; this package does not support a claim of error-free or unrestricted
 open-world segmentation.
 
+The case-paired HPID-Split minus CLIPSeg differences are +0.0074
+[-0.0263, 0.0414] for Part F1@0.25, +0.0077 [-0.0176, 0.0326] for mean
+Part F1, and +0.0381 [-0.0234, 0.0999] for Boundary F1@0.50. All three 95%
+bootstrap intervals include zero, so these mask-quality results support
+statistical comparability rather than segmentation superiority.
+
+The separate identity-layer audit records zero repeated ownership for
+HPID-Split, a 0.2497 mean unassigned-root fraction, 226/226 valid
+algorithm-authored export payloads, zero duplicate Part/Group IDs, zero invalid
+parent/group references, and exact ID-map reproduction in all 678 fixed
+candidate-order permutation trials. These are representation and
+implementation-invariance results, not perceptual-quality scores.
+
 ## Contents
 
 - `manifests/`: the exact 65-case development and 226-case test manifests.
 - `test226_public_baselines/`: SAM2 and Grounded-SAM2 summaries.
 - `test226_clipseg_ovparts/`: CLIPSeg object-part prompting baseline.
+- `external_paired_bootstrap/`: case-paired external-baseline differences.
+- `identity_layer_audit/`: ownership, identity, package, and order-invariance audit.
 - `test226_fusion_strict/`: A0-A3 case, domain, summary, and paired-effect data.
 - `test226_quality_exit/`: operational review-state audit.
 - `test226_sensitivity/`: frozen one-factor sensitivity audit.

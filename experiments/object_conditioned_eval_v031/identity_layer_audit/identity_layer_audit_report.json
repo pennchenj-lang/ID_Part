@@ -1,0 +1,43 @@
+{
+  "format": "HPID-Split identity representation and export audit",
+  "format_version": "1.0.0",
+  "case_count": 226,
+  "methods": [
+    "sam2_raw",
+    "sam2_nms",
+    "sam2_max_ownership",
+    "grounded_sam2_same_inventory",
+    "clipseg_ovparts_style",
+    "hpid_split_a3"
+  ],
+  "package_audit": {
+    "case_count": 226,
+    "raw_directory_valid_count": 0,
+    "export_payload_valid_count": 226,
+    "export_payload_valid_rate": 1.0,
+    "total_raw_directory_validation_errors": 226,
+    "total_export_payload_errors": 0,
+    "posthoc_evaluation_sidecar_count": 226,
+    "total_duplicate_part_ids": 0,
+    "total_duplicate_group_ids": 0,
+    "total_invalid_parent_references": 0,
+    "total_unresolved_part_groups": 0,
+    "total_invalid_group_memberships": 0,
+    "canonical_rerun_exact_map_rate": 1.0,
+    "candidate_order_exact_map_rate": 1.0,
+    "candidate_order_foreground_rate": 1.0
+  },
+  "permutation_count_per_case": 3,
+  "elapsed_seconds": 67.55099270000028,
+  "metric_scope": {
+    "overlap_excess_root_fraction": "Repeated mask ownership divided by supplied-root pixels.",
+    "unassigned_root_fraction": "Supplied-root pixels not covered by any public prediction mask.",
+    "native_capabilities": "A dash must be reported for baselines that do not emit a persistent identity package; absence is not scored as segmentation failure.",
+    "candidate_order_consistency": "Exact reruns after fixed candidate-list permutations; this is an implementation-invariance audit, not stochastic model determinism.",
+    "export_payload_validation": "The algorithm-authored manifest payload is validated separately from paco_evaluation.json, a post-inference evaluator sidecar added to every case directory and intentionally absent from that manifest."
+  },
+  "ground_truth_used_in_prediction": false,
+  "manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+  "baseline_cases_sha256": "103e1f673441d0602bfff7059d43f076bfb03a68eb0f049516f6ca5c528bae5d",
+  "clipseg_evaluation_sha256": "76928f1796098754ce284d42bebd4217b1468cf8f003963e2826d167bbdd7600"
+}

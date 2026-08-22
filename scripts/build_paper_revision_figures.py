@@ -75,7 +75,15 @@ def _read_csv(path: Path) -> list[dict[str, str]]:
 def _save(fig: plt.Figure, output: Path, name: str) -> None:
     output.mkdir(parents=True, exist_ok=True)
     fig.savefig(output / f"{name}.png", dpi=300, bbox_inches="tight", facecolor="white")
-    fig.savefig(output / f"{name}.svg", bbox_inches="tight", facecolor="white")
+    svg_path = output / f"{name}.svg"
+    fig.savefig(svg_path, bbox_inches="tight", facecolor="white")
+    # Matplotlib emits trailing spaces in multi-line SVG path data. Normalizing
+    # them keeps the publication evidence clean under `git diff --check`.
+    svg_text = svg_path.read_text(encoding="utf-8")
+    svg_path.write_text(
+        "\n".join(line.rstrip() for line in svg_text.splitlines()) + "\n",
+        encoding="utf-8",
+    )
     fig.savefig(
         output / f"{name}.tiff",
         dpi=600,
@@ -133,25 +141,38 @@ def build_external_baselines(facts: dict[str, object], output: Path) -> None:
         "clipseg_ovparts_style",
         "hpid_split_a3",
     ]
-    metrics = [
-        ("part_f1_at_025", "Part F1@.25"),
-        ("part_f1_at_050", "Part F1@.50"),
-        ("part_f1_at_075", "Part F1@.75"),
-        ("semantic_f1_at_025", "Semantic F1@.25"),
-        ("mean_matched_boundary_f1_at_050", "Boundary F1@.50"),
-        ("object_iou", "Object IoU"),
-    ]
-    fig, axes = plt.subplots(2, 3, figsize=(WIDTH_IN, 4.25), constrained_layout=True)
+    short_labels = ["Raw", "NMS", "Max-own.", "Grounded", "CLIPSeg", "HPID"]
+    fig, axes = plt.subplots(2, 2, figsize=(WIDTH_IN, 4.6), constrained_layout=True)
     x = np.arange(len(order))
     colors = [COLORS["gray"], COLORS["blue"], COLORS["teal"], COLORS["orange"], COLORS["purple"], COLORS["red"]]
-    for ax, (metric, title) in zip(axes.flat, metrics, strict=True):
+
+    for metric, label, color in (
+        ("part_f1_at_025", "F1@.25", COLORS["blue"]),
+        ("part_f1_at_050", "F1@.50", COLORS["orange"]),
+        ("part_f1_at_075", "F1@.75", COLORS["red"]),
+    ):
+        values = [float(external[key]["metrics"].get(metric, 0.0)) for key in order]
+        axes[0, 0].plot(x, values, marker="o", linewidth=1.8, label=label, color=color)
+    axes[0, 0].set_title("Part F1 across overlap thresholds", fontweight="bold")
+    axes[0, 0].set_xticks(x, short_labels, rotation=22, ha="right")
+    axes[0, 0].legend(frameon=False, ncol=3)
+    _style_axis(axes[0, 0])
+
+    metrics = [
+        ("part_f1_mean_025_075", "Mean Part F1"),
+        ("semantic_f1_at_025", "Semantic F1@.25"),
+        ("object_iou", "Object IoU"),
+    ]
+    for ax, (metric, title) in zip(
+        (axes[0, 1], axes[1, 0], axes[1, 1]), metrics, strict=True
+    ):
         values = [float(external[key]["metrics"].get(metric, 0.0)) for key in order]
         ax.bar(x, values, color=colors, edgecolor="white", linewidth=0.5)
         ax.set_title(title, fontweight="bold")
         ax.set_ylim(0, max(0.1, min(1.0, max(values) * 1.22)))
-        ax.set_xticks(x, [METHOD_LABELS[key] for key in order], rotation=34, ha="right")
+        ax.set_xticks(x, short_labels, rotation=22, ha="right")
         for index, value in enumerate(values):
-            ax.text(index, value + ax.get_ylim()[1] * 0.025, f"{value:.3f}", ha="center", va="bottom", fontsize=6.1)
+            ax.text(index, value + ax.get_ylim()[1] * 0.025, f"{value:.3f}", ha="center", va="bottom", fontsize=6.4)
         _style_axis(ax)
     fig.suptitle(
         "Object-conditioned comparison on 226 frozen test cases",
@@ -234,7 +255,7 @@ def build_qualitative(
     fig, axes = plt.subplots(
         len(domains),
         4,
-        figsize=(WIDTH_IN, 1.55 * len(domains)),
+        figsize=(WIDTH_IN, 6.2),
         constrained_layout=True,
     )
     titles = ["Source crop", "PACO part masks", "Fine Part IDs", "Editable Group IDs"]
@@ -259,12 +280,15 @@ def build_qualitative(
             axes[row_index, column].set_yticks([])
             for spine in axes[row_index, column].spines.values():
                 spine.set_visible(False)
-        label = (
-            f"{DOMAIN_LABELS[domain]} | {row['object_category'].replace('_', ' ')}\n"
-            f"F1@.25={float(row['part_f1_at_025']):.3f}; "
-            f"SemF1={float(row['semantic_f1_at_025']):.3f}"
+        axes[row_index, 0].set_ylabel(
+            DOMAIN_LABELS[domain],
+            rotation=0,
+            ha="right",
+            va="center",
+            labelpad=7,
+            fontsize=7.2,
+            fontweight="bold",
         )
-        axes[row_index, 0].set_ylabel(label, rotation=0, ha="right", va="center", labelpad=8, fontsize=6.6)
     _save(fig, output, "Fig6_domain_median_examples")
     return selected_ids
 
@@ -277,7 +301,7 @@ def build_quality(facts: dict[str, object], output: Path) -> None:
 
     status_order = ["ready", "review_recommended", "target_selection_required"]
     status_rows = {row["quality_status"]: row for row in statuses}
-    labels = ["Ready", "Review recommended", "Target selection required"]
+    labels = ["No review trigger", "Review recommended", "Target selection required"]
     x = np.arange(3)
     for metric, label, color in (
         ("mean_part_f1_at_050", "Part F1@.50", COLORS["blue"]),
@@ -302,8 +326,8 @@ def build_quality(facts: dict[str, object], output: Path) -> None:
     axes[1].plot(xs, ys, color=COLORS["red"], marker="o", linewidth=1.8)
     for key, x_value, y_value in zip(policy_order, xs, ys, strict=True):
         label = {
-            "original_ready_only": "Ready only",
-            "original_ready_plus_review": "Ready + review",
+            "original_ready_only": "No-trigger only",
+            "original_ready_plus_review": "No-trigger + review",
             "all_outputs": "All outputs",
         }[key]
         axes[1].annotate(label, (x_value, y_value), xytext=(4, 4), textcoords="offset points", fontsize=6.8)
