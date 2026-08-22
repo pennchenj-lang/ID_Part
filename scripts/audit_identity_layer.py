@@ -149,6 +149,8 @@ def main() -> int:
         manifest_case = manifest_cases[case_id]
         expected_domain = str(manifest_case["expected_domain"])
         case_path = Path(str(manifest_case["case_path"]))
+        case = json.loads(case_path.read_text(encoding="utf-8"))
+        object_category = str(case["object_category"])
         root = _load_mask(case_path.parent / "object_mask_crop.png")
         package_dir = args.benchmark_root / case_id
 
@@ -170,6 +172,7 @@ def main() -> int:
         grounded_masks, _grounded_semantics = _grounded_predictions(
             package_dir,
             expected_domain,
+            object_category,
             nms_iou=args.nms_iou,
             nms_containment=args.nms_containment,
         )

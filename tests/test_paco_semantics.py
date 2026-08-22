@@ -54,3 +54,14 @@ def test_category_alias_overrides_ambiguous_domain_alias() -> None:
         == "shoulder"
     )
     assert canonical_part_token("shoulder", "daily_object") == "panel"
+
+
+def test_category_alias_is_applied_symmetrically_to_basket_side() -> None:
+    assert (
+        canonical_part_token(
+            "side",
+            "container",
+            object_category="basket",
+        )
+        == "outer_side"
+    )

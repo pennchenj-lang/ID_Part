@@ -22,7 +22,7 @@
   "seed": 20260822,
   "unit_of_resampling": "independent object case",
   "interpretation": "Intervals estimate HPID-Split A3 minus each baseline. An interval including zero is reported as statistical comparability, not superiority.",
-  "baseline_cases_sha256": "103e1f673441d0602bfff7059d43f076bfb03a68eb0f049516f6ca5c528bae5d",
+  "baseline_cases_sha256": "91b5e3a4b587b203b12db1294ae47f227c97b73b26ceebae5700861d83afc057",
   "clipseg_evaluation_sha256": "76928f1796098754ce284d42bebd4217b1468cf8f003963e2826d167bbdd7600",
-  "output_csv_sha256": "c493e2b73b28ad96f9e78a2d65e76f8229a516e611ab71aa7c1ddce52586b1f5"
+  "output_csv_sha256": "9c9b616260fa73e6c8a48977a8c9c534b521437c152e40bf0d95d7cbff52b5d5"
 }

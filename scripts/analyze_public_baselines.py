@@ -131,14 +131,24 @@ def _truth(
     return case, masks, semantics, _load_mask(case_path.parent / "object_mask_crop.png")
 
 
-def _predicted_token(value: str, expected_domain: str) -> str:
+def _predicted_token(
+    value: str,
+    expected_domain: str,
+    *,
+    object_category: str,
+) -> str:
     normalized = normalize_paco_name(value).removeprefix(f"{expected_domain}_")
-    return canonical_part_token(normalized, expected_domain)
+    return canonical_part_token(
+        normalized,
+        expected_domain,
+        object_category=object_category,
+    )
 
 
 def _grounded_predictions(
     package_dir: Path,
     expected_domain: str,
+    object_category: str,
     *,
     nms_iou: float,
     nms_containment: float,
@@ -156,7 +166,11 @@ def _grounded_predictions(
         for row in selected
     ]
     semantics: list[str | None] = [
-        _predicted_token(str(row["semantic_name"]), expected_domain)
+        _predicted_token(
+            str(row["semantic_name"]),
+            expected_domain,
+            object_category=object_category,
+        )
         for row in selected
     ]
     masks, scores, semantics = _nms(
@@ -173,6 +187,7 @@ def _grounded_predictions(
 def _hpid_predictions(
     package_dir: Path,
     expected_domain: str,
+    object_category: str,
     truth_semantics: list[str],
 ) -> tuple[list[np.ndarray], list[str | None]]:
     rows = json.loads((package_dir / "parts.json").read_text(encoding="utf-8"))
@@ -187,7 +202,11 @@ def _hpid_predictions(
         (
             "body"
             if str(row["semantic_name"]) == expected_domain
-            else _predicted_token(str(row["semantic_name"]), expected_domain)
+            else _predicted_token(
+                str(row["semantic_name"]),
+                expected_domain,
+                object_category=object_category,
+            )
         )
         for row in selected
     ]
@@ -247,6 +266,7 @@ def main() -> int:
         case, truth_masks, truth_semantics, truth_object = _truth(
             case_path, expected_domain
         )
+        object_category = str(case["object_category"])
         package_dir = args.benchmark_root / case_id
         raw_masks, raw_scores = _load_sam_cache(
             args.sam_cache / "cases" / f"{case_id}.npz"
@@ -266,11 +286,15 @@ def main() -> int:
         grounded_masks, grounded_semantics = _grounded_predictions(
             package_dir,
             expected_domain,
+            object_category,
             nms_iou=args.nms_iou,
             nms_containment=args.nms_containment,
         )
         hpid_masks, hpid_semantics = _hpid_predictions(
-            package_dir, expected_domain, truth_semantics
+            package_dir,
+            expected_domain,
+            object_category,
+            truth_semantics,
         )
         predictions = {
             "sam2_raw": (raw_masks, raw_semantics),

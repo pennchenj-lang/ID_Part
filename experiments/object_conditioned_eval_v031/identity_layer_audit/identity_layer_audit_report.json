@@ -28,7 +28,7 @@
     "candidate_order_foreground_rate": 1.0
   },
   "permutation_count_per_case": 3,
-  "elapsed_seconds": 67.55099270000028,
+  "elapsed_seconds": 96.58524840000064,
   "metric_scope": {
     "overlap_excess_root_fraction": "Repeated mask ownership divided by supplied-root pixels.",
     "unassigned_root_fraction": "Supplied-root pixels not covered by any public prediction mask.",
@@ -38,6 +38,6 @@
   },
   "ground_truth_used_in_prediction": false,
   "manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
-  "baseline_cases_sha256": "103e1f673441d0602bfff7059d43f076bfb03a68eb0f049516f6ca5c528bae5d",
+  "baseline_cases_sha256": "91b5e3a4b587b203b12db1294ae47f227c97b73b26ceebae5700861d83afc057",
   "clipseg_evaluation_sha256": "76928f1796098754ce284d42bebd4217b1468cf8f003963e2826d167bbdd7600"
 }

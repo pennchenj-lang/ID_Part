@@ -347,7 +347,10 @@ def main() -> int:
             case_path, expected_domain
         )
         prediction_masks, prediction_semantics = _hpid_predictions(
-            package_dir, expected_domain, truth_semantics
+            package_dir,
+            expected_domain,
+            str(case["object_category"]),
+            truth_semantics,
         )
         metrics = evaluate_part_predictions(
             truth_masks=truth_masks,
