@@ -16,7 +16,7 @@
     "object_category_count": 60,
     "unique_image_count": 226,
     "unique_object_count": 226,
-    "manifest": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\manifest.json",
+    "manifest": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\experiments\\object_conditioned_eval_v031\\manifests\\independent_test_226_manifest.json",
     "manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
     "benchmark_sha256": "c7a9e99241b80359f40f6f309dd1aae93252e879c794c810c2a11da7e541e464"
   },
@@ -374,10 +374,10 @@
         "part_f1_mean_025_075": 0.16772852073654212,
         "mean_matched_iou_at_050": 0.31580138095272675,
         "mean_matched_boundary_f1_at_050": 0.31883880161055805,
-        "semantic_precision_at_025": 0.1614823966593878,
-        "semantic_recall_at_025": 0.0812352817233088,
-        "semantic_f1_at_025": 0.0983257892549928,
-        "semantic_f1_mean_025_075": 0.07631435338595435,
+        "semantic_precision_at_025": 0.16369478603991877,
+        "semantic_recall_at_025": 0.08234147641357427,
+        "semantic_f1_at_025": 0.09980071550868011,
+        "semantic_f1_mean_025_075": 0.077252942820119,
         "object_iou": 0.3375152045626746,
         "oversegmentation_ratio": 0.4182596489923403,
         "predicted_part_count": 1.7566371681415929,
@@ -433,20 +433,20 @@
           0.3714729402746845
         ],
         "semantic_precision_at_025": [
-          0.12334355725395549,
-          0.20245426770869246
+          0.12510348427383824,
+          0.20445873079722635
         ],
         "semantic_recall_at_025": [
-          0.06289151003321683,
-          0.10000125492674947
+          0.06389648945861531,
+          0.10107163385265608
         ],
         "semantic_f1_at_025": [
-          0.07657032556921937,
-          0.1211409092382544
+          0.07800299933596394,
+          0.12257754536515598
         ],
         "semantic_f1_mean_025_075": [
-          0.05839018366321263,
-          0.09515624510244379
+          0.059306914536701345,
+          0.09612427501657188
         ],
         "object_iou": [
           0.2943131051469587,
@@ -481,10 +481,10 @@
         "part_f1_mean_025_075": 0.1711017867209613,
         "mean_matched_iou_at_050": 0.33788566372651263,
         "mean_matched_boundary_f1_at_050": 0.3475095658424148,
-        "semantic_precision_at_025": 0.14777342863626047,
-        "semantic_recall_at_025": 0.1567625058873107,
-        "semantic_f1_at_025": 0.13849842471523888,
-        "semantic_f1_mean_025_075": 0.08057213762965974,
+        "semantic_precision_at_025": 0.14887962332652596,
+        "semantic_recall_at_025": 0.15786870057757618,
+        "semantic_f1_at_025": 0.13960461940550434,
+        "semantic_f1_mean_025_075": 0.08067270078332026,
         "object_iou": 0.5179669348931618,
         "oversegmentation_ratio": 1.5390060670285812,
         "predicted_part_count": 5.650442477876106,
@@ -540,20 +540,20 @@
           0.3989687560633075
         ],
         "semantic_precision_at_025": [
-          0.1212952945530379,
-          0.17533457324386528
+          0.12269068351756403,
+          0.17636869982279277
         ],
         "semantic_recall_at_025": [
-          0.13155721691331398,
-          0.18315198479834413
+          0.13275000154929228,
+          0.18394072562653377
         ],
         "semantic_f1_at_025": [
-          0.11691144020679418,
-          0.16134191265551884
+          0.11814312612985181,
+          0.1624261422779122
         ],
         "semantic_f1_mean_025_075": [
-          0.06503196252140339,
-          0.09714700914122677
+          0.06511955583375535,
+          0.09725410389534483
         ],
         "object_iou": [
           0.4754104152746722,
@@ -659,9 +659,9 @@
         "baseline": "grounded_sam2_same_inventory",
         "metric": "semantic_f1_at_025",
         "case_count": "226",
-        "mean_paired_difference": "0.040172635460246076",
-        "ci95_low": "0.020339716474119127",
-        "ci95_high": "0.06079354714033916",
+        "mean_paired_difference": "0.039803903896824255",
+        "ci95_low": "0.019919953694289973",
+        "ci95_high": "0.06046251701837985",
         "ci95_includes_zero": "False"
       },
       {
@@ -729,9 +729,9 @@
         "baseline": "sam2_max_ownership",
         "metric": "semantic_f1_at_025",
         "case_count": "226",
-        "mean_paired_difference": "0.13849842471523888",
-        "ci95_low": "0.11653369174663424",
-        "ci95_high": "0.16120576680366502",
+        "mean_paired_difference": "0.13960461940550437",
+        "ci95_low": "0.11746844363437284",
+        "ci95_high": "0.16217847403743416",
         "ci95_includes_zero": "False"
       },
       {
@@ -799,9 +799,9 @@
         "baseline": "sam2_nms",
         "metric": "semantic_f1_at_025",
         "case_count": "226",
-        "mean_paired_difference": "0.13849842471523888",
-        "ci95_low": "0.11637293675678632",
-        "ci95_high": "0.16064933611946888",
+        "mean_paired_difference": "0.13960461940550437",
+        "ci95_low": "0.1176629591729149",
+        "ci95_high": "0.16178657568259333",
         "ci95_includes_zero": "False"
       },
       {
@@ -869,9 +869,9 @@
         "baseline": "sam2_raw",
         "metric": "semantic_f1_at_025",
         "case_count": "226",
-        "mean_paired_difference": "0.13849842471523888",
-        "ci95_low": "0.11647070644858255",
-        "ci95_high": "0.16120542166781107",
+        "mean_paired_difference": "0.13960461940550437",
+        "ci95_low": "0.11758755240171168",
+        "ci95_high": "0.1622010266036815",
         "ci95_includes_zero": "False"
       },
       {
@@ -939,9 +939,9 @@
         "baseline": "clipseg_ovparts_style",
         "metric": "semantic_f1_at_025",
         "case_count": "226",
-        "mean_paired_difference": "-0.0968696487113702",
-        "ci95_low": "-0.12944681500044744",
-        "ci95_high": "-0.06535615356282375",
+        "mean_paired_difference": "-0.09576345402110471",
+        "ci95_low": "-0.12830357050299102",
+        "ci95_high": "-0.06443020086882145",
         "ci95_includes_zero": "False"
       },
       {
@@ -979,9 +979,9 @@
       "seed": 20260822,
       "unit_of_resampling": "independent object case",
       "interpretation": "Intervals estimate HPID-Split A3 minus each baseline. An interval including zero is reported as statistical comparability, not superiority.",
-      "baseline_cases_sha256": "103e1f673441d0602bfff7059d43f076bfb03a68eb0f049516f6ca5c528bae5d",
+      "baseline_cases_sha256": "91b5e3a4b587b203b12db1294ae47f227c97b73b26ceebae5700861d83afc057",
       "clipseg_evaluation_sha256": "76928f1796098754ce284d42bebd4217b1468cf8f003963e2826d167bbdd7600",
-      "output_csv_sha256": "c493e2b73b28ad96f9e78a2d65e76f8229a516e611ab71aa7c1ddce52586b1f5"
+      "output_csv_sha256": "9c9b616260fa73e6c8a48977a8c9c534b521437c152e40bf0d95d7cbff52b5d5"
     }
   },
   "identity_layer_audit": {
@@ -1064,7 +1064,7 @@
       "candidate_order_exact_map_rate": 1.0,
       "candidate_order_foreground_rate": 1.0
     },
-    "report_sha256": "55468e47c42724e6bf682ebe238eb6de8f3827edc4b07fc891b8ba14ee95000a"
+    "report_sha256": "3e11f501d7996f7144b332a5f7eb78716e144e60a365e3dd0c8f5501d02ef9ee"
   },
   "fusion_ablation": {
     "variants": {
@@ -2538,9 +2538,9 @@
         "mean_part_f1_at_050": "0.12205829221005983",
         "mean_part_f1_at_075": "0.03487524380381523",
         "mean_part_f1_mean_025_075": "0.14624734929329047",
-        "mean_semantic_f1_at_025": "0.1255582540065299",
-        "mean_semantic_f1_mean_025_075": "0.0651761530875951",
-        "mean_semantic_recall_at_025": "0.15597290640394088",
+        "mean_semantic_f1_at_025": "0.127713426420323",
+        "mean_semantic_f1_mean_025_075": "0.06537207785248537",
+        "mean_semantic_recall_at_025": "0.15812807881773397",
         "quality_status": "review_recommended"
       },
       {
@@ -2608,9 +2608,9 @@
         "mean_part_f1_at_050": "0.15297434618780106",
         "mean_part_f1_at_075": "0.06335730181431175",
         "mean_part_f1_mean_025_075": "0.17664453234780303",
-        "mean_semantic_f1_at_025": "0.16033621222886763",
-        "mean_semantic_f1_mean_025_075": "0.0954394420470435",
-        "mean_semantic_recall_at_025": "0.18122003038503537"
+        "mean_semantic_f1_at_025": "0.16174864160739869",
+        "mean_semantic_f1_mean_025_075": "0.09556784471781905",
+        "mean_semantic_recall_at_025": "0.18263245976356646"
       },
       {
         "acceptance_policy": "all_outputs",
@@ -2625,9 +2625,9 @@
         "mean_part_f1_at_050": "0.15087917078528368",
         "mean_part_f1_at_075": "0.0645068967276523",
         "mean_part_f1_mean_025_075": "0.1711017867209613",
-        "mean_semantic_f1_at_025": "0.13849842471523888",
-        "mean_semantic_f1_mean_025_075": "0.08057213762965974",
-        "mean_semantic_recall_at_025": "0.1567625058873107"
+        "mean_semantic_f1_at_025": "0.13960461940550434",
+        "mean_semantic_f1_mean_025_075": "0.08067270078332026",
+        "mean_semantic_recall_at_025": "0.15786870057757618"
       }
     ],
     "error_impact": [
@@ -2639,26 +2639,26 @@
         "affected_mean_semantic_recall_at_025": "0.0",
         "affected_minus_unaffected_mean_matched_boundary_f1_at_050": "-0.15456749466802017",
         "affected_minus_unaffected_part_f1_at_050": "-0.062444846378642116",
-        "affected_minus_unaffected_semantic_f1_at_025": "-0.16561187293991528",
-        "affected_minus_unaffected_semantic_recall_at_025": "-0.18745146206630803",
+        "affected_minus_unaffected_semantic_f1_at_025": "-0.1669346242626666",
+        "affected_minus_unaffected_semantic_recall_at_025": "-0.18877421338905934",
         "error_type": "routing_error",
         "review_capture_rate": "0.9459459459459459",
         "unaffected_count": "189",
         "unaffected_mean_mean_matched_boundary_f1_at_050": "0.37281486364204647",
         "unaffected_mean_part_f1_at_050": "0.16110244209506136",
-        "unaffected_mean_semantic_f1_at_025": "0.16561187293991528",
-        "unaffected_mean_semantic_recall_at_025": "0.18745146206630803"
+        "unaffected_mean_semantic_f1_at_025": "0.1669346242626666",
+        "unaffected_mean_semantic_recall_at_025": "0.18877421338905934"
       },
       {
         "affected_count": "59",
         "affected_mean_mean_matched_boundary_f1_at_050": "0.18225036683645268",
         "affected_mean_part_f1_at_050": "0.08757623234193523",
-        "affected_mean_semantic_f1_at_025": "0.0157678479712378",
-        "affected_mean_semantic_recall_at_025": "0.027118644067796613",
+        "affected_mean_semantic_f1_at_025": "0.02000513610683102",
+        "affected_mean_semantic_recall_at_025": "0.03135593220338983",
         "affected_minus_unaffected_mean_matched_boundary_f1_at_050": "-0.22364418548112242",
         "affected_minus_unaffected_part_f1_at_050": "-0.08566744962992065",
-        "affected_minus_unaffected_semantic_f1_at_025": "-0.16609048110266017",
-        "affected_minus_unaffected_semantic_recall_at_025": "-0.1754461842587436",
+        "affected_minus_unaffected_semantic_f1_at_025": "-0.16185319296706693",
+        "affected_minus_unaffected_semantic_recall_at_025": "-0.17120889612315038",
         "error_type": "profile_error",
         "review_capture_rate": "0.9491525423728814",
         "unaffected_count": "167",
@@ -2671,12 +2671,12 @@
         "affected_count": "109",
         "affected_mean_mean_matched_boundary_f1_at_050": "0.25647216718397997",
         "affected_mean_part_f1_at_050": "0.09772258147287058",
-        "affected_mean_semantic_f1_at_025": "0.06228040562902948",
-        "affected_mean_semantic_recall_at_025": "0.0656181738750546",
+        "affected_mean_semantic_f1_at_025": "0.06457398361068085",
+        "affected_mean_semantic_recall_at_025": "0.06791175185670598",
         "affected_minus_unaffected_mean_matched_boundary_f1_at_050": "-0.17585001792142124",
         "affected_minus_unaffected_part_f1_at_050": "-0.10267854003936203",
-        "affected_minus_unaffected_semantic_f1_at_025": "-0.14722454968789164",
-        "affected_minus_unaffected_semantic_recall_at_025": "-0.17605657294675103",
+        "affected_minus_unaffected_semantic_f1_at_025": "-0.14493097170624025",
+        "affected_minus_unaffected_semantic_recall_at_025": "-0.17376299496509967",
         "error_type": "weak_root",
         "review_capture_rate": "0.8073394495412844",
         "unaffected_count": "117",
@@ -2689,12 +2689,12 @@
         "affected_count": "144",
         "affected_mean_mean_matched_boundary_f1_at_050": "0.12402377233805141",
         "affected_mean_part_f1_at_050": "0.02623573053282437",
-        "affected_mean_semantic_f1_at_025": "0.09493337295420629",
-        "affected_mean_semantic_recall_at_025": "0.12171986850295674",
+        "affected_mean_semantic_f1_at_025": "0.09666948406531739",
+        "affected_mean_semantic_recall_at_025": "0.12345597961406786",
         "affected_minus_unaffected_mean_matched_boundary_f1_at_050": "-0.615948650390075",
         "affected_minus_unaffected_part_f1_at_050": "-0.34352948167141223",
-        "affected_minus_unaffected_semantic_f1_at_025": "-0.12006953290235811",
-        "affected_minus_unaffected_semantic_recall_at_025": "-0.09658092742517063",
+        "affected_minus_unaffected_semantic_f1_at_025": "-0.118333421791247",
+        "affected_minus_unaffected_semantic_recall_at_025": "-0.09484481631405951",
         "error_type": "part_discovery_failure",
         "review_capture_rate": "0.7916666666666666",
         "unaffected_count": "82",
@@ -2704,22 +2704,22 @@
         "unaffected_mean_semantic_recall_at_025": "0.21830079592812737"
       },
       {
-        "affected_count": "145",
-        "affected_mean_mean_matched_boundary_f1_at_050": "0.26353858680003184",
-        "affected_mean_part_f1_at_050": "0.11292827347159426",
-        "affected_mean_semantic_f1_at_025": "0.02670603343017136",
-        "affected_mean_semantic_recall_at_025": "0.04008210180623974",
-        "affected_minus_unaffected_mean_matched_boundary_f1_at_050": "-0.23428939831578477",
-        "affected_minus_unaffected_part_f1_at_050": "-0.10588768880115815",
-        "affected_minus_unaffected_semantic_f1_at_025": "-0.31191457321512667",
-        "affected_minus_unaffected_semantic_recall_at_025": "-0.32555273237434607",
+        "affected_count": "144",
+        "affected_mean_mean_matched_boundary_f1_at_050": "0.265368715875032",
+        "affected_mean_part_f1_at_050": "0.11371249759292477",
+        "affected_mean_semantic_f1_at_025": "0.02689149199565866",
+        "affected_mean_semantic_recall_at_025": "0.040360449735449735",
+        "affected_minus_unaffected_mean_matched_boundary_f1_at_050": "-0.2263881962515673",
+        "affected_minus_unaffected_part_f1_at_050": "-0.10243497733503794",
+        "affected_minus_unaffected_semantic_f1_at_025": "-0.31064837554420893",
+        "affected_minus_unaffected_semantic_recall_at_025": "-0.32386420354049483",
         "error_type": "semantic_assignment_failure",
-        "review_capture_rate": "0.8068965517241379",
-        "unaffected_count": "81",
-        "unaffected_mean_mean_matched_boundary_f1_at_050": "0.4978279851158166",
-        "unaffected_mean_part_f1_at_050": "0.2188159622727524",
-        "unaffected_mean_semantic_f1_at_025": "0.33862060664529803",
-        "unaffected_mean_semantic_recall_at_025": "0.3656348341805858"
+        "review_capture_rate": "0.8055555555555556",
+        "unaffected_count": "82",
+        "unaffected_mean_mean_matched_boundary_f1_at_050": "0.49175691212659933",
+        "unaffected_mean_part_f1_at_050": "0.2161474749279627",
+        "unaffected_mean_semantic_f1_at_025": "0.3375398675398676",
+        "unaffected_mean_semantic_recall_at_025": "0.36422465327594455"
       }
     ]
   },
@@ -8238,7 +8238,7 @@
   },
   "code": {
     "repository": "https://github.com/pennchenj-lang/ID_Part",
-    "head_commit": "77be4ec0e9ab26f44c55cba29b136ccf99a0662c",
+    "head_commit": "2d0e54534f4664163bdb6e6d45a651c7ef0c1208",
     "release_tag": "v0.3.0",
     "release_tag_commit": "c0f15f72842d7b9239f39c7dcac2f08c95d4923f",
     "working_tree_clean": true
@@ -8249,7 +8249,7 @@
     "quality_report_sha256": "fb51f7d386715918a08128b6e340e6ff78461468d10ca6ea472b93bc58400108",
     "sensitivity_report_sha256": "1e500996d301c26f104dcd74358a1cd5ee90420196b84f86bef8f16472567c20",
     "runtime_report_sha256": "0034abd55a84acbeb3b507d629fa82b5350928e82743a9be2ead4a385900a210",
-    "external_paired_report_sha256": "aad8b3ca13c8ec60547457e5e36dcfbc436e99fc60655480bb4e47dd4aa5516e",
-    "identity_audit_report_sha256": "55468e47c42724e6bf682ebe238eb6de8f3827edc4b07fc891b8ba14ee95000a"
+    "external_paired_report_sha256": "b1d4f17ae1ce1dec111b66dffe4624239a4472bd45785206f6f1fea2404ec182",
+    "identity_audit_report_sha256": "3e11f501d7996f7144b332a5f7eb78716e144e60a365e3dd0c8f5501d02ef9ee"
   }
 }
