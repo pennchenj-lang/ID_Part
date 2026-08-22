@@ -300,8 +300,18 @@ The targeted edge, identity, and root-routing regression is
   algorithmic limitation.
 - The synthetic amodal audit tests self-occlusion recovery of predicted masks;
   it is not natural amodal ground truth.
-- Labelled non-character evaluation still awaits a distributable prop/object
-  dataset and annotations.
+- The public non-character study uses 65 PACO-LVIS oracle-crop cases for
+  development and 226 independent object instances for testing.  The test set
+  covers 60 categories across devices, furniture, containers, vehicles, daily
+  objects, and tools/props, with no source-image or object-instance overlap with
+  development.  Categories are shared, so this is independent-instance rather
+  than unseen-category generalization.
+- On the 226 frozen-candidate test cases, the A0-to-A3 fusion ablation raises
+  Part F1@0.25 from 0.1511 to 0.3133 and recall from 0.1101 to 0.3656.  The
+  absolute strict-overlap and semantic scores remain modest.  Every variant is
+  predicted before test part labels or masks are loaded, but all methods receive
+  the ground-truth object crop/root and category; this is not a full-image
+  detection result.
 - The current local reviewed-prototype seed contains ten stylized characters.
   It retrieved an unseen character while rejecting the tested rifle as
   out-of-index. This is an execution and rejection check, not a cross-domain

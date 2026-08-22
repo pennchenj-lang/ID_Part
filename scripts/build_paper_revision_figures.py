@@ -1,0 +1,467 @@
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+from collections import defaultdict
+from pathlib import Path
+
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+from PIL import Image, ImageOps
+
+WIDTH_IN = 7.16
+COLORS = {
+    "blue": "#4E79A7",
+    "orange": "#F28E2B",
+    "green": "#59A14F",
+    "red": "#E15759",
+    "teal": "#2A9D8F",
+    "purple": "#8064A2",
+    "gray": "#7A828C",
+    "ink": "#20262E",
+    "grid": "#D9DEE5",
+}
+METHOD_LABELS = {
+    "sam2_raw": "SAM2 raw",
+    "sam2_nms": "SAM2 + NMS",
+    "sam2_max_ownership": "SAM2 + max ownership",
+    "grounded_sam2_same_inventory": "Grounded-SAM2",
+    "clipseg_ovparts_style": "CLIPSeg object-part",
+    "hpid_split_a3": "HPID-Split A3",
+}
+VARIANT_LABELS = {
+    "A0_independent_max": "A0\nindependent max",
+    "A1_cross_source_consensus": "A1\nconsensus",
+    "A2_consensus_hierarchy": "A2\n+ hierarchy",
+    "A3_full_fusion": "A3\n+ ownership",
+}
+DOMAIN_LABELS = {
+    "container": "Container",
+    "daily_object": "Daily object",
+    "device": "Device",
+    "furniture": "Furniture",
+    "tool_prop": "Tool / prop",
+    "vehicle": "Vehicle",
+}
+ID_COLORS = [mpl.colors.to_hex(color) for color in mpl.colormaps["tab20"].colors]
+
+mpl.rcParams.update(
+    {
+        "font.family": "sans-serif",
+        "font.sans-serif": ["Arial", "DejaVu Sans"],
+        "font.size": 7.5,
+        "axes.titlesize": 8.5,
+        "axes.labelsize": 8,
+        "xtick.labelsize": 7,
+        "ytick.labelsize": 7,
+        "legend.fontsize": 7,
+        "svg.fonttype": "none",
+        "axes.edgecolor": COLORS["ink"],
+        "axes.labelcolor": COLORS["ink"],
+        "text.color": COLORS["ink"],
+        "xtick.color": COLORS["ink"],
+        "ytick.color": COLORS["ink"],
+    }
+)
+
+
+def _read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def _save(fig: plt.Figure, output: Path, name: str) -> None:
+    output.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output / f"{name}.png", dpi=300, bbox_inches="tight", facecolor="white")
+    fig.savefig(output / f"{name}.svg", bbox_inches="tight", facecolor="white")
+    fig.savefig(
+        output / f"{name}.tiff",
+        dpi=600,
+        bbox_inches="tight",
+        facecolor="white",
+        pil_kwargs={"compression": "tiff_lzw"},
+    )
+    plt.close(fig)
+
+
+def _style_axis(ax: plt.Axes, *, y_grid: bool = True) -> None:
+    ax.spines[["top", "right"]].set_visible(False)
+    if y_grid:
+        ax.grid(axis="y", color=COLORS["grid"], linewidth=0.7)
+        ax.set_axisbelow(True)
+
+
+def _fit(image: Image.Image, size: tuple[int, int], fill: str = "white") -> Image.Image:
+    image = image.convert("RGB")
+    fitted = ImageOps.contain(image, size, Image.Resampling.LANCZOS)
+    canvas = Image.new("RGB", size, fill)
+    canvas.paste(fitted, ((size[0] - fitted.width) // 2, (size[1] - fitted.height) // 2))
+    return canvas
+
+
+def _colorize_id_map(id_map: np.ndarray) -> Image.Image:
+    canvas = np.zeros((*id_map.shape, 3), dtype=np.uint8)
+    for value in sorted(int(item) for item in np.unique(id_map) if int(item) > 0):
+        color = np.asarray(mpl.colors.to_rgb(ID_COLORS[(value - 1) % len(ID_COLORS)]))
+        canvas[id_map == value] = np.round(color * 255).astype(np.uint8)
+    return Image.fromarray(canvas)
+
+
+def _truth_map(case_path: Path) -> Image.Image:
+    case = json.loads(case_path.read_text(encoding="utf-8"))
+    case_dir = case_path.parent
+    with Image.open(case_dir / "source_crop.png") as source:
+        shape = (source.height, source.width)
+    canvas = np.zeros((*shape, 3), dtype=np.uint8)
+    for index, part in enumerate(case["parts"], start=1):
+        mask = np.asarray(Image.open(case_dir / str(part["mask_crop"])).convert("L")) >= 128
+        color = np.asarray(mpl.colors.to_rgb(ID_COLORS[(index - 1) % len(ID_COLORS)]))
+        canvas[mask] = np.round(color * 255).astype(np.uint8)
+    return Image.fromarray(canvas)
+
+
+def build_external_baselines(facts: dict[str, object], output: Path) -> None:
+    external = dict(facts["external_baselines"])
+    external["clipseg_ovparts_style"] = facts["clipseg_ovparts_style"]
+    order = [
+        "sam2_raw",
+        "sam2_nms",
+        "sam2_max_ownership",
+        "grounded_sam2_same_inventory",
+        "clipseg_ovparts_style",
+        "hpid_split_a3",
+    ]
+    metrics = [
+        ("part_f1_at_025", "Part F1@.25"),
+        ("part_f1_at_050", "Part F1@.50"),
+        ("part_f1_at_075", "Part F1@.75"),
+        ("semantic_f1_at_025", "Semantic F1@.25"),
+        ("mean_matched_boundary_f1_at_050", "Boundary F1@.50"),
+        ("object_iou", "Object IoU"),
+    ]
+    fig, axes = plt.subplots(2, 3, figsize=(WIDTH_IN, 4.25), constrained_layout=True)
+    x = np.arange(len(order))
+    colors = [COLORS["gray"], COLORS["blue"], COLORS["teal"], COLORS["orange"], COLORS["purple"], COLORS["red"]]
+    for ax, (metric, title) in zip(axes.flat, metrics, strict=True):
+        values = [float(external[key]["metrics"].get(metric, 0.0)) for key in order]
+        ax.bar(x, values, color=colors, edgecolor="white", linewidth=0.5)
+        ax.set_title(title, fontweight="bold")
+        ax.set_ylim(0, max(0.1, min(1.0, max(values) * 1.22)))
+        ax.set_xticks(x, [METHOD_LABELS[key] for key in order], rotation=34, ha="right")
+        for index, value in enumerate(values):
+            ax.text(index, value + ax.get_ylim()[1] * 0.025, f"{value:.3f}", ha="center", va="bottom", fontsize=6.1)
+        _style_axis(ax)
+    fig.suptitle(
+        "Object-conditioned comparison on 226 frozen test cases",
+        fontsize=10,
+        fontweight="bold",
+    )
+    _save(fig, output, "Fig4_external_baselines")
+
+
+def build_ablation(facts: dict[str, object], output: Path) -> None:
+    variants = dict(facts["fusion_ablation"])["variants"]
+    order = list(VARIANT_LABELS)
+    x = np.arange(len(order))
+    fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 2.75), constrained_layout=True)
+    for metric, label, color in (
+        ("part_f1_at_025", "F1@.25", COLORS["blue"]),
+        ("part_f1_at_050", "F1@.50", COLORS["orange"]),
+        ("part_f1_at_075", "F1@.75", COLORS["red"]),
+        ("part_f1_mean_025_075", "Mean F1", COLORS["green"]),
+    ):
+        values = [float(variants[key]["metrics"][metric]) for key in order]
+        axes[0].plot(x, values, marker="o", linewidth=1.8, label=label, color=color)
+    axes[0].set_xticks(x, [VARIANT_LABELS[key] for key in order])
+    axes[0].set_ylabel("Case-macro score")
+    axes[0].set_title("Strict Part-ID matching", fontweight="bold")
+    axes[0].legend(frameon=False, ncol=2)
+    _style_axis(axes[0])
+
+    for metric, label, color in (
+        ("object_iou", "Object IoU", COLORS["gray"]),
+        ("mean_matched_iou_at_050", "Matched IoU@.50", COLORS["purple"]),
+        ("mean_matched_boundary_f1_at_050", "Boundary F1@.50", COLORS["teal"]),
+        ("semantic_f1_at_025", "Semantic F1@.25", COLORS["red"]),
+    ):
+        values = [float(variants[key]["metrics"][metric]) for key in order]
+        axes[1].plot(x, values, marker="o", linewidth=1.8, label=label, color=color)
+    axes[1].set_xticks(x, [VARIANT_LABELS[key] for key in order])
+    axes[1].set_title("Boundary, semantics, and root support", fontweight="bold")
+    axes[1].legend(frameon=False, ncol=2)
+    _style_axis(axes[1])
+    _save(fig, output, "Fig5_fusion_ablation")
+
+
+def _select_domain_medians(
+    cases_csv: Path,
+) -> dict[str, dict[str, str]]:
+    rows = [
+        row
+        for row in _read_csv(cases_csv)
+        if row["method"] == "hpid_split_a3"
+    ]
+    by_domain: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        by_domain[row["expected_domain"]].append(row)
+    selected: dict[str, dict[str, str]] = {}
+    for domain, domain_rows in by_domain.items():
+        ordered = sorted(
+            domain_rows,
+            key=lambda row: (float(row["part_f1_at_025"]), row["case_id"]),
+        )
+        selected[domain] = ordered[(len(ordered) - 1) // 2]
+    return selected
+
+
+def build_qualitative(
+    *,
+    cases_csv: Path,
+    manifest: Path,
+    benchmark_root: Path,
+    output: Path,
+) -> dict[str, str]:
+    manifest_payload = json.loads(manifest.read_text(encoding="utf-8-sig"))
+    case_paths = {
+        str(row["case_id"]): Path(str(row["case_path"]))
+        for row in manifest_payload["cases"]
+        if row.get("case_path")
+    }
+    selected = _select_domain_medians(cases_csv)
+    domains = [key for key in DOMAIN_LABELS if key in selected]
+    fig, axes = plt.subplots(
+        len(domains),
+        4,
+        figsize=(WIDTH_IN, 1.55 * len(domains)),
+        constrained_layout=True,
+    )
+    titles = ["Source crop", "PACO part masks", "Fine Part IDs", "Editable Group IDs"]
+    for column, title in enumerate(titles):
+        axes[0, column].set_title(title, fontweight="bold")
+    selected_ids: dict[str, str] = {}
+    for row_index, domain in enumerate(domains):
+        row = selected[domain]
+        case_id = row["case_id"]
+        selected_ids[domain] = case_id
+        case_path = case_paths[case_id]
+        package = benchmark_root / case_id
+        panels = [
+            Image.open(case_path.parent / "source_crop.png").convert("RGB"),
+            _truth_map(case_path),
+            _colorize_id_map(np.asarray(Image.open(package / "part_id_map.tiff"))),
+            _colorize_id_map(np.asarray(Image.open(package / "group_id_map.tiff"))),
+        ]
+        for column, panel in enumerate(panels):
+            axes[row_index, column].imshow(_fit(panel, (360, 270), "black"))
+            axes[row_index, column].set_xticks([])
+            axes[row_index, column].set_yticks([])
+            for spine in axes[row_index, column].spines.values():
+                spine.set_visible(False)
+        label = (
+            f"{DOMAIN_LABELS[domain]} | {row['object_category'].replace('_', ' ')}\n"
+            f"F1@.25={float(row['part_f1_at_025']):.3f}; "
+            f"SemF1={float(row['semantic_f1_at_025']):.3f}"
+        )
+        axes[row_index, 0].set_ylabel(label, rotation=0, ha="right", va="center", labelpad=8, fontsize=6.6)
+    _save(fig, output, "Fig6_domain_median_examples")
+    return selected_ids
+
+
+def build_quality(facts: dict[str, object], output: Path) -> None:
+    quality = dict(facts["quality_exit"])
+    statuses = list(quality["by_status"])
+    coverage = list(quality["coverage"])
+    fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 2.85), constrained_layout=True)
+
+    status_order = ["ready", "review_recommended", "target_selection_required"]
+    status_rows = {row["quality_status"]: row for row in statuses}
+    labels = ["Ready", "Review recommended", "Target selection required"]
+    x = np.arange(3)
+    for metric, label, color in (
+        ("mean_part_f1_at_050", "Part F1@.50", COLORS["blue"]),
+        ("mean_semantic_f1_at_025", "Semantic F1@.25", COLORS["orange"]),
+        ("mean_mean_matched_boundary_f1_at_050", "Boundary F1@.50", COLORS["teal"]),
+    ):
+        values = [float(status_rows[key][metric]) for key in status_order]
+        axes[0].plot(x, values, marker="o", linewidth=1.8, label=label, color=color)
+    axes[0].set_xticks(x, labels, rotation=18, ha="right")
+    axes[0].set_title("Quality-exit strata", fontweight="bold")
+    axes[0].legend(frameon=False)
+    _style_axis(axes[0])
+
+    policy_order = [
+        "original_ready_only",
+        "original_ready_plus_review",
+        "all_outputs",
+    ]
+    policy_rows = {row["acceptance_policy"]: row for row in coverage}
+    xs = [float(policy_rows[key]["coverage"]) for key in policy_order]
+    ys = [1.0 - float(policy_rows[key]["failure_rate"]) for key in policy_order]
+    axes[1].plot(xs, ys, color=COLORS["red"], marker="o", linewidth=1.8)
+    for key, x_value, y_value in zip(policy_order, xs, ys, strict=True):
+        label = {
+            "original_ready_only": "Ready only",
+            "original_ready_plus_review": "Ready + review",
+            "all_outputs": "All outputs",
+        }[key]
+        axes[1].annotate(label, (x_value, y_value), xytext=(4, 4), textcoords="offset points", fontsize=6.8)
+    axes[1].set_xlabel("Coverage")
+    axes[1].set_ylabel("1 - operational failure rate")
+    axes[1].set_xlim(0, 1.04)
+    axes[1].set_ylim(0, 1.04)
+    axes[1].set_title("Coverage-accuracy trade-off", fontweight="bold")
+    _style_axis(axes[1])
+    _save(fig, output, "Fig7_quality_exit")
+
+
+def build_sensitivity(facts: dict[str, object], output: Path) -> None:
+    rows = list(dict(facts["sensitivity"])["rows"])
+    parameters = list(dict(facts["sensitivity"])["report"]["parameters"])
+    short = {
+        "full_agreement_overlap": "agreement overlap",
+        "specificity_minimum_containment": "minimum containment",
+        "specificity_root_minimum_candidate_score": "root candidate score",
+        "specificity_host_suppression": "host suppression",
+        "remainder_merge_distance_ratio": "remainder distance",
+    }
+    fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 2.95), constrained_layout=True)
+    colors = mpl.colormaps["tab10"].colors[: len(parameters)]
+    for parameter, color in zip(parameters, colors, strict=True):
+        selected = sorted(
+            [row for row in rows if row["parameter"] == parameter],
+            key=lambda row: float(row["factor"]),
+        )
+        factors = [(float(row["factor"]) - 1.0) * 100 for row in selected]
+        baseline = next(row for row in selected if abs(float(row["factor"]) - 1.0) < 1e-9)
+        for ax, metric in zip(
+            axes,
+            ("mean_part_f1_at_025", "mean_semantic_f1_at_025"),
+            strict=True,
+        ):
+            base_value = float(baseline[metric])
+            delta = [float(row[metric]) - base_value for row in selected]
+            ax.plot(factors, delta, marker="o", linewidth=1.4, color=color, label=short[parameter])
+    axes[0].set_title("Part F1@.25 change", fontweight="bold")
+    axes[1].set_title("Semantic F1@.25 change", fontweight="bold")
+    for ax in axes:
+        ax.axhline(0, color=COLORS["gray"], linewidth=0.8)
+        ax.set_xlabel("One-factor perturbation (%)")
+        ax.set_ylabel("Delta from frozen setting")
+        ax.set_xticks([-20, -10, 0, 10, 20])
+        _style_axis(ax)
+    axes[1].legend(frameon=False, loc="best")
+    _save(fig, output, "Fig8_parameter_sensitivity")
+
+
+def build_runtime(facts: dict[str, object], output: Path) -> None:
+    runtime = dict(facts["runtime"])
+    stages = dict(runtime["stage_runtime_seconds"])
+    labels = list(stages)
+    medians = [float(stages[label]["median"]) for label in labels]
+    p95s = [float(stages[label]["p95"]) for label in labels]
+    order = np.argsort(medians)[::-1]
+    labels = [labels[index].replace("_", " ") for index in order]
+    medians = [medians[index] for index in order]
+    p95s = [p95s[index] for index in order]
+    y = np.arange(len(labels))
+    fig, ax = plt.subplots(figsize=(WIDTH_IN, max(2.5, 0.33 * len(labels) + 0.9)), constrained_layout=True)
+    ax.barh(y, p95s, color="#D9DEE5", label="p95")
+    ax.barh(y, medians, color=COLORS["blue"], label="median")
+    ax.set_yticks(y, labels)
+    ax.invert_yaxis()
+    ax.set_xlabel("Recorded seconds per isolated case")
+    ax.set_title("Stage timing includes per-case process and model loading", fontweight="bold")
+    ax.legend(frameon=False)
+    _style_axis(ax, y_grid=False)
+    ax.grid(axis="x", color=COLORS["grid"], linewidth=0.7)
+    _save(fig, output, "Fig9_runtime_breakdown")
+
+
+def build_gate_link(dev_gate_dir: Path, output: Path) -> None:
+    rows = _read_csv(dev_gate_dir / "gate_summary.csv")
+    x = np.arange(len(rows))
+    fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 2.75), constrained_layout=True)
+    axes[0].bar(x, [float(row["mean_candidate_count"]) for row in rows], color=[COLORS["orange"], COLORS["teal"], COLORS["purple"]])
+    axes[0].set_xticks(x, ["C1 semantics", "C2 structure", "C3 appearance"])
+    axes[0].set_ylabel("Mean retained candidates")
+    axes[0].set_title("Serial gate retention", fontweight="bold")
+    _style_axis(axes[0])
+    for metric, label, color in (
+        ("mean_candidate_precision_at_050", "Precision@.50", COLORS["blue"]),
+        ("mean_candidate_recall_at_050", "Recall@.50", COLORS["orange"]),
+        ("mean_candidate_f1_at_050", "F1@.50", COLORS["green"]),
+    ):
+        axes[1].plot(x, [float(row[metric]) for row in rows], marker="o", label=label, color=color)
+    axes[1].set_xticks(x, ["C1", "C2", "C3"])
+    axes[1].set_title("Candidate gate trade-off (development)", fontweight="bold")
+    axes[1].legend(frameon=False)
+    _style_axis(axes[1])
+    _save(fig, output, "FigS1_gate_to_final_link")
+
+
+def build_error_impact(facts: dict[str, object], output: Path) -> None:
+    rows = list(dict(facts["quality_exit"])["error_impact"])
+    labels = [row["error_type"].replace("_", " ") for row in rows]
+    x = np.arange(len(rows))
+    width = 0.25
+    fig, ax = plt.subplots(figsize=(WIDTH_IN, 2.9), constrained_layout=True)
+    metrics = [
+        ("affected_minus_unaffected_part_f1_at_050", "Part F1@.50", COLORS["blue"]),
+        ("affected_minus_unaffected_mean_matched_boundary_f1_at_050", "Boundary F1@.50", COLORS["teal"]),
+        ("affected_minus_unaffected_semantic_f1_at_025", "Semantic F1@.25", COLORS["orange"]),
+    ]
+    for offset, (metric, label, color) in enumerate(metrics):
+        ax.bar(x + (offset - 1) * width, [float(row[metric]) for row in rows], width=width, label=label, color=color)
+    ax.axhline(0, color=COLORS["gray"], linewidth=0.8)
+    ax.set_xticks(x, labels, rotation=20, ha="right")
+    ax.set_ylabel("Affected minus unaffected mean")
+    ax.set_title("Metric impact of audited failure types", fontweight="bold")
+    ax.legend(frameon=False, ncol=3)
+    _style_axis(ax)
+    _save(fig, output, "FigS2_error_type_impact")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Build data-linked manuscript figures.")
+    parser.add_argument("--facts", type=Path, required=True)
+    parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--benchmark-root", type=Path, required=True)
+    parser.add_argument("--baseline-dir", type=Path, required=True)
+    parser.add_argument("--dev-gate-dir", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    facts = json.loads(args.facts.read_text(encoding="utf-8"))
+
+    build_external_baselines(facts, args.output)
+    build_ablation(facts, args.output)
+    selected = build_qualitative(
+        cases_csv=args.baseline_dir / "baseline_cases.csv",
+        manifest=args.manifest,
+        benchmark_root=args.benchmark_root,
+        output=args.output,
+    )
+    build_quality(facts, args.output)
+    build_sensitivity(facts, args.output)
+    build_runtime(facts, args.output)
+    build_gate_link(args.dev_gate_dir, args.output)
+    build_error_impact(facts, args.output)
+    (args.output / "qualitative_selection.json").write_text(
+        json.dumps(
+            {
+                "selection_rule": (
+                    "For each domain, select the lower median HPID-Split A3 "
+                    "case by Part F1@.25, breaking ties by case_id."
+                ),
+                "cases": selected,
+            },
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,13 @@
+{
+  "format": "HPID-Split candidate-gate to final-output linkage audit",
+  "format_version": "1.0.0",
+  "case_count": 65,
+  "gate_conditions": [
+    "C1_semantic",
+    "C2_semantic_structure",
+    "C3_full_serial_gate"
+  ],
+  "gate_cases_sha256": "4dea487442da81a2c6e33c36aad673a7a0f4aca0892fe8dc3dd7f56e4baadac8",
+  "fusion_cases_sha256": "ca737487bfcc867f47cdbdff82efcdba3a8699ffe4d508d366735bd18ee30cab",
+  "interpretation": "C1-C3 measure candidate retention before fusion. A0-A3 use the same frozen C3 candidate set and measure final identity fusion. Correlations describe propagation, not an additional causal ablation of the appearance gate."
+}

@@ -15,6 +15,7 @@ from hpid_split.dense_semantic import DenseSemanticProposer
 from hpid_split.fusion import MaskCandidate
 from hpid_split.metrics import binary_iou, boundary_f1
 from hpid_split.paco_semantics import canonical_part_token, normalize_paco_name
+from hpid_split.paper_eval import evaluate_part_predictions
 from hpid_split.retrieval import (
     CLIPSegEmbeddingEncoder,
     PrototypeIndex,
@@ -98,6 +99,50 @@ def _truth_by_semantic(
         mask = _load_mask(case_dir / str(row["mask_crop"]))
         grouped[token] = grouped.get(token, np.zeros(mask.shape, dtype=bool)) | mask
     return grouped
+
+
+def _truth_instances(
+    case: dict[str, object],
+    *,
+    case_dir: Path,
+    expected_domain: str,
+    object_category: str,
+) -> tuple[list[np.ndarray], list[str]]:
+    masks: list[np.ndarray] = []
+    semantics: list[str] = []
+    for row in case.get("parts", []):
+        masks.append(_load_mask(case_dir / str(row["mask_crop"])))
+        semantics.append(
+            canonical_part_token(
+                str(row["part_name"]),
+                expected_domain,
+                object_category=object_category,
+            )
+        )
+    return masks, semantics
+
+
+def _prediction_instances(
+    predicted: dict[str, np.ndarray],
+) -> tuple[list[np.ndarray], list[str]]:
+    masks: list[np.ndarray] = []
+    semantics: list[str] = []
+    for semantic_name, semantic_mask in sorted(predicted.items()):
+        count, labels, stats, _ = cv2.connectedComponentsWithStats(
+            np.asarray(semantic_mask, dtype=np.uint8), 8
+        )
+        components = sorted(
+            (
+                (int(stats[index, cv2.CC_STAT_AREA]), index)
+                for index in range(1, count)
+                if int(stats[index, cv2.CC_STAT_AREA]) >= 6
+            ),
+            reverse=True,
+        )
+        for _area, component_id in components:
+            masks.append(labels == component_id)
+            semantics.append(semantic_name)
+    return masks, semantics
 
 
 def _measure(
@@ -287,7 +332,7 @@ def _predict_case(
 
 def _aggregate(rows: list[dict[str, object]]) -> dict[str, object]:
     successful = [row for row in rows if row.get("status") == "ok"]
-    metric_names = (
+    legacy_metric_names = (
         "query_recall",
         "mean_iou_all_truth",
         "mean_boundary_f1_all_truth",
@@ -296,6 +341,29 @@ def _aggregate(rows: list[dict[str, object]]) -> dict[str, object]:
         "f1_at_025",
         "predicted_union_root_fraction",
         "overlap_root_fraction",
+    )
+    strict_prefixes = (
+        "truth_part_count",
+        "predicted_part_count",
+        "oversegmentation_ratio",
+        "object_",
+        "part_",
+        "mean_matched_",
+        "semantic_",
+    )
+    metric_names = tuple(
+        dict.fromkeys(
+            [*legacy_metric_names]
+            + sorted(
+                {
+                    key
+                    for row in successful
+                    for key, value in row.items()
+                    if isinstance(value, (int, float))
+                    and key.startswith(strict_prefixes)
+                }
+            )
+        )
     )
     return {
         "case_count": len(rows),
@@ -459,6 +527,12 @@ def main() -> int:
                 expected_domain=expected_domain,
                 object_category=str(case["object_category"]),
             )
+            truth_masks, truth_semantics = _truth_instances(
+                item["case_payload"],
+                case_dir=item["case_dir"],
+                expected_domain=expected_domain,
+                object_category=str(case["object_category"]),
+            )
             predicted, probabilities, queried, prompt_diagnostics = _predict_case(
                 proposer,
                 item["image"],
@@ -517,6 +591,16 @@ def main() -> int:
                 root=item["root"],
                 queried=queried,
             )
+            prediction_masks, prediction_semantics = _prediction_instances(
+                selected
+            )
+            strict_metrics = evaluate_part_predictions(
+                truth_masks=truth_masks,
+                truth_semantics=truth_semantics,
+                prediction_masks=prediction_masks,
+                prediction_semantics=prediction_semantics,
+                truth_object_mask=item["root"],
+            )
             row = {
                 "case_id": case_id,
                 "object_category": case["object_category"],
@@ -526,6 +610,7 @@ def main() -> int:
                 "retrieval_similarity": plan.top_similarity,
                 "threshold": threshold,
                 **metrics,
+                **strict_metrics,
                 "prompt_diagnostics": prompt_diagnostics,
                 "refinement": refinement,
             }
@@ -539,16 +624,22 @@ def main() -> int:
                 )
         summary = _aggregate(rows)
         payload = {
-            "format": "HPID PACO conditional-part development evaluation",
-            "format_version": "0.1.0",
+            "format": "HPID PACO object-conditioned part baseline evaluation",
+            "format_version": "0.2.0",
             "evidence_scope": (
-                "Independent development images with oracle object crop/root. "
-                "Part names and masks are unavailable during inference."
+                "Object-conditioned images with oracle object crop/root. Part "
+                "names and masks are unavailable during inference; the "
+                "retrieved object-part inventory supplies text prompts."
+            ),
+            "baseline_interpretation": (
+                "CLIPSeg object-part prompting in the one-stage open-vocabulary "
+                "part-segmentation style used by OV-PARTS baselines. Connected "
+                "components are evaluated as part instances."
             ),
             "not_claimed": [
                 "full-image object detection quality",
                 "amodal or hidden-region completion quality",
-                "sealed holdout performance",
+                "state-of-the-art open-vocabulary part segmentation",
             ],
             "sam2_refinement_enabled": args.sam_refine,
             "output_masks_are_sibling_exclusive": args.sam_refine,

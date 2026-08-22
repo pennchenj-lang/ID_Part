@@ -1,0 +1,11 @@
+{
+  "selection_rule": "For each domain, select the lower median HPID-Split A3 case by Part F1@.25, breaking ties by case_id.",
+  "cases": {
+    "container": "plate__04",
+    "daily_object": "helmet__01",
+    "device": "clock__02",
+    "furniture": "bench__04",
+    "tool_prop": "broom__01",
+    "vehicle": "bicycle__01"
+  }
+}

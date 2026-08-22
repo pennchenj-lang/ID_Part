@@ -1,0 +1,12 @@
+{
+  "format": "HPID-Split review-rule registry",
+  "format_version": "1.0.0",
+  "development_manifest_sha256": null,
+  "base_rule": "quality_status != ready",
+  "additional_review_rules": [],
+  "failure_definition": {
+    "part_f1_at_050_below": 0.2,
+    "or_semantic_f1_at_025_below": 0.2
+  },
+  "selection_note": "At most two observable additions were selected greedily on the development set, each requiring at least +0.02 absolute failure-detection F1. The rule is frozen before test evaluation."
+}

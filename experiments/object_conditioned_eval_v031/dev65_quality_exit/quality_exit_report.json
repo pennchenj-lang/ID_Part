@@ -1,0 +1,31 @@
+{
+  "format": "HPID-Split quality-exit evaluation",
+  "format_version": "1.0.0",
+  "case_count": 65,
+  "manifest_sha256": "3d16426e4389d59c9fc2f820e8efd3f12c06aa6b881c28e5914479cb1f42dbcb",
+  "benchmark_sha256": "247abe29fdf2fc2f70c9e9bfa0849992e9239cab4e9a18e1ef499f29deba8b5d",
+  "rule_source": "derived_once_on_this_development_set",
+  "additional_review_rules": [],
+  "original_review_detection": {
+    "true_positive": 43.0,
+    "false_positive": 7.0,
+    "false_negative": 5.0,
+    "true_negative": 10.0,
+    "precision": 0.86,
+    "recall": 0.8958333333333334,
+    "f1": 0.8775510204081632,
+    "review_rate": 0.7692307692307693
+  },
+  "revised_review_detection": {
+    "true_positive": 43.0,
+    "false_positive": 7.0,
+    "false_negative": 5.0,
+    "true_negative": 10.0,
+    "precision": 0.86,
+    "recall": 0.8958333333333334,
+    "f1": 0.8775510204081632,
+    "review_rate": 0.7692307692307693
+  },
+  "ready_semantic_failure_count": 3,
+  "ground_truth_usage": "Quality features and review flags are produced without labels; PACO labels are read afterward to score failure detection."
+}

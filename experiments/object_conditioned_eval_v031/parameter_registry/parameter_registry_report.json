@@ -1,0 +1,13 @@
+{
+  "format": "HPID-Split frozen parameter registry",
+  "format_version": "1.0.0",
+  "global_parameter_count": 460,
+  "inventory_rule_count": 1515,
+  "prompt_bank": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\configs\\general_asset_prompts.json",
+  "prompt_bank_sha256": "0c90c30779b670bf17a681df74e5765e751ddb425f9d11a04b7fa2d9da2cddcf",
+  "development_manifest_sha256": "3d16426e4389d59c9fc2f820e8efd3f12c06aa6b881c28e5914479cb1f42dbcb",
+  "test_manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+  "git_commit_at_export": "c0f15f72842d7b9239f39c7dcac2f08c95d4923f",
+  "benchmark_isolation": "Release defaults and the manually specified inventory were frozen before the independent test manifest was evaluated. Inventory development could use public PACO train/development taxonomy and the old development cases; this is disclosed rather than treated as zero-shot taxonomy discovery. Independent-test part labels and masks are never read by inference and are opened only for scoring.",
+  "parameter_origin_note": "Values are hand-engineered release constants or manual inventory rules, not estimates fitted on the independent test labels."
+}

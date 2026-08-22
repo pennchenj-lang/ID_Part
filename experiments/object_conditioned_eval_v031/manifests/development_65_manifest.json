@@ -1,0 +1,4454 @@
+{
+  "format": "HPID PACO modern-object subset",
+  "format_version": "0.1.0",
+  "source_annotations": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\annotations\\paco_lvis_v1_test.json",
+  "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+  "selection_uses_ground_truth_metadata": true,
+  "selection_metadata_is_not_available_to_hpid_inference": true,
+  "case_count": 65,
+  "cases": [
+    {
+      "case_id": "cellular_telephone",
+      "expected_domain": "device",
+      "expected_profile": "phone",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\cellular_telephone\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm1.staticflickr.com/22/96513286_6d266a2e61_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm1.staticflickr.com/22/96513286_6d266a2e61_z.jpg",
+        "http://images.cocodataset.org/train2017/000000191403.jpg"
+      ],
+      "source_image_sha256": "f40f038b964a0afb33992311e681b30674149a503f88d203dfd535f5fe128afc",
+      "image_id": 191403,
+      "object_annotation_id": 183575,
+      "object_category": "cellular_telephone",
+      "crop_box_xyxy": [
+        137,
+        4,
+        466,
+        480
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1716974,
+          "category": "cellular_telephone:screen",
+          "part_name": "screen",
+          "area_px": 14457,
+          "mask_full": "parts_full/001_screen.png",
+          "mask_crop": "parts_crop/001_screen.png"
+        },
+        {
+          "annotation_id": 1716975,
+          "category": "cellular_telephone:button",
+          "part_name": "button",
+          "area_px": 44587,
+          "mask_full": "parts_full/002_button.png",
+          "mask_crop": "parts_crop/002_button.png"
+        },
+        {
+          "annotation_id": 1716976,
+          "category": "cellular_telephone:bezel",
+          "part_name": "bezel",
+          "area_px": 9410,
+          "mask_full": "parts_full/003_bezel.png",
+          "mask_crop": "parts_crop/003_bezel.png"
+        },
+        {
+          "annotation_id": 1716977,
+          "category": "cellular_telephone:back_cover",
+          "part_name": "back_cover",
+          "area_px": 29085,
+          "mask_full": "parts_full/004_back_cover.png",
+          "mask_crop": "parts_crop/004_back_cover.png"
+        }
+      ]
+    },
+    {
+      "case_id": "laptop_computer",
+      "expected_domain": "device",
+      "expected_profile": "laptop",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\laptop_computer\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2550/3728951244_f7df6b91ba_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2550/3728951244_f7df6b91ba_z.jpg",
+        "http://images.cocodataset.org/val2017/000000215778.jpg"
+      ],
+      "source_image_sha256": "e5bcdf2da708356bb1f7c6838fa5923bb53687dc3a5c22789086223f026f342c",
+      "image_id": 215778,
+      "object_annotation_id": 17168,
+      "object_category": "laptop_computer",
+      "crop_box_xyxy": [
+        94,
+        0,
+        588,
+        427
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 7,
+      "parts": [
+        {
+          "annotation_id": 1712840,
+          "category": "laptop_computer:touchpad",
+          "part_name": "touchpad",
+          "area_px": 3557,
+          "mask_full": "parts_full/001_touchpad.png",
+          "mask_crop": "parts_crop/001_touchpad.png"
+        },
+        {
+          "annotation_id": 1712841,
+          "category": "laptop_computer:keyboard",
+          "part_name": "keyboard",
+          "area_px": 15207,
+          "mask_full": "parts_full/002_keyboard.png",
+          "mask_crop": "parts_crop/002_keyboard.png"
+        },
+        {
+          "annotation_id": 1712842,
+          "category": "laptop_computer:logo",
+          "part_name": "logo",
+          "area_px": 136,
+          "mask_full": "parts_full/003_logo.png",
+          "mask_crop": "parts_crop/003_logo.png"
+        },
+        {
+          "annotation_id": 1712843,
+          "category": "laptop_computer:screen",
+          "part_name": "screen",
+          "area_px": 25850,
+          "mask_full": "parts_full/004_screen.png",
+          "mask_crop": "parts_crop/004_screen.png"
+        },
+        {
+          "annotation_id": 1712844,
+          "category": "laptop_computer:camera",
+          "part_name": "camera",
+          "area_px": 72,
+          "mask_full": "parts_full/005_camera.png",
+          "mask_crop": "parts_crop/005_camera.png"
+        },
+        {
+          "annotation_id": 1712845,
+          "category": "laptop_computer:base_panel",
+          "part_name": "base_panel",
+          "area_px": 28310,
+          "mask_full": "parts_full/006_base_panel.png",
+          "mask_crop": "parts_crop/006_base_panel.png"
+        },
+        {
+          "annotation_id": 1712846,
+          "category": "laptop_computer:cable",
+          "part_name": "cable",
+          "area_px": 2,
+          "mask_full": "parts_full/007_cable.png",
+          "mask_crop": "parts_crop/007_cable.png"
+        }
+      ]
+    },
+    {
+      "case_id": "television_set",
+      "expected_domain": "device",
+      "expected_profile": "display",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\television_set\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2055/2149667542_c7a4880e39_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2055/2149667542_c7a4880e39_z.jpg",
+        "http://images.cocodataset.org/val2017/000000166521.jpg"
+      ],
+      "source_image_sha256": "28edfe282032acaae652d446253e3d0eb09d73e2b7a2f83ce2b41574e4b98b84",
+      "image_id": 166521,
+      "object_annotation_id": 8161,
+      "object_category": "television_set",
+      "crop_box_xyxy": [
+        171,
+        119,
+        380,
+        304
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1764415,
+          "category": "television_set:base",
+          "part_name": "base",
+          "area_px": 849,
+          "mask_full": "parts_full/001_base.png",
+          "mask_crop": "parts_crop/001_base.png"
+        },
+        {
+          "annotation_id": 1764416,
+          "category": "television_set:button",
+          "part_name": "button",
+          "area_px": 28,
+          "mask_full": "parts_full/002_button.png",
+          "mask_crop": "parts_crop/002_button.png"
+        },
+        {
+          "annotation_id": 1764417,
+          "category": "television_set:top",
+          "part_name": "top",
+          "area_px": 1616,
+          "mask_full": "parts_full/003_top.png",
+          "mask_crop": "parts_crop/003_top.png"
+        },
+        {
+          "annotation_id": 1764418,
+          "category": "television_set:bottom",
+          "part_name": "bottom",
+          "area_px": 3556,
+          "mask_full": "parts_full/004_bottom.png",
+          "mask_crop": "parts_crop/004_bottom.png"
+        },
+        {
+          "annotation_id": 1764419,
+          "category": "television_set:side",
+          "part_name": "side",
+          "area_px": 2550,
+          "mask_full": "parts_full/005_side.png",
+          "mask_crop": "parts_crop/005_side.png"
+        }
+      ]
+    },
+    {
+      "case_id": "remote_control",
+      "expected_domain": "device",
+      "expected_profile": "controls",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\remote_control\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7302/8862091965_a16b74295e_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7302/8862091965_a16b74295e_z.jpg",
+        "http://images.cocodataset.org/train2017/000000382309.jpg"
+      ],
+      "source_image_sha256": "0070ab966b6ca747ba5aa0cfecff68c08f99397cc6f1aaad2c244ad5f5457f94",
+      "image_id": 382309,
+      "object_annotation_id": 65689,
+      "object_category": "remote_control",
+      "crop_box_xyxy": [
+        430,
+        14,
+        608,
+        242
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1757722,
+          "category": "remote_control:logo",
+          "part_name": "logo",
+          "area_px": 370,
+          "mask_full": "parts_full/001_logo.png",
+          "mask_crop": "parts_crop/001_logo.png"
+        },
+        {
+          "annotation_id": 1757723,
+          "category": "remote_control:button",
+          "part_name": "button",
+          "area_px": 5983,
+          "mask_full": "parts_full/002_button.png",
+          "mask_crop": "parts_crop/002_button.png"
+        },
+        {
+          "annotation_id": 1757724,
+          "category": "remote_control:back",
+          "part_name": "back",
+          "area_px": 2640,
+          "mask_full": "parts_full/003_back.png",
+          "mask_crop": "parts_crop/003_back.png"
+        }
+      ]
+    },
+    {
+      "case_id": "calculator",
+      "expected_domain": "device",
+      "expected_profile": "controls",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\calculator\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm7.staticflickr.com/6121/5988601905_8701be67c0_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm7.staticflickr.com/6121/5988601905_8701be67c0_z.jpg",
+        "http://images.cocodataset.org/train2017/000000152070.jpg"
+      ],
+      "source_image_sha256": "5bb87cc585737f61def128c344ef3759ca3ca55fcd8e7d0c3258f03873e39f68",
+      "image_id": 152070,
+      "object_annotation_id": 153046,
+      "object_category": "calculator",
+      "crop_box_xyxy": [
+        45,
+        315,
+        207,
+        586
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 2,
+      "parts": [
+        {
+          "annotation_id": 1706000,
+          "category": "calculator:key",
+          "part_name": "key",
+          "area_px": 19122,
+          "mask_full": "parts_full/001_key.png",
+          "mask_crop": "parts_crop/001_key.png"
+        },
+        {
+          "annotation_id": 1706001,
+          "category": "calculator:body",
+          "part_name": "body",
+          "area_px": 7898,
+          "mask_full": "parts_full/002_body.png",
+          "mask_crop": "parts_crop/002_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "telephone",
+      "expected_domain": "device",
+      "expected_profile": "controls",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\telephone\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm1.staticflickr.com/140/405913199_4356ca1e8f_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm1.staticflickr.com/140/405913199_4356ca1e8f_z.jpg",
+        "http://images.cocodataset.org/train2017/000000450391.jpg"
+      ],
+      "source_image_sha256": "8f8fae9c34dd62e536df9711f7c853e68e7458f110edd177ed4728a59c5a6174",
+      "image_id": 450391,
+      "object_annotation_id": 64672,
+      "object_category": "telephone",
+      "crop_box_xyxy": [
+        211,
+        190,
+        481,
+        401
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1757317,
+          "category": "telephone:screen",
+          "part_name": "screen",
+          "area_px": 1124,
+          "mask_full": "parts_full/001_screen.png",
+          "mask_crop": "parts_crop/001_screen.png"
+        },
+        {
+          "annotation_id": 1757318,
+          "category": "telephone:button",
+          "part_name": "button",
+          "area_px": 2096,
+          "mask_full": "parts_full/002_button.png",
+          "mask_crop": "parts_crop/002_button.png"
+        },
+        {
+          "annotation_id": 1757319,
+          "category": "telephone:back_cover",
+          "part_name": "back_cover",
+          "area_px": 4008,
+          "mask_full": "parts_full/003_back_cover.png",
+          "mask_crop": "parts_crop/003_back_cover.png"
+        },
+        {
+          "annotation_id": 1757320,
+          "category": "telephone:bezel",
+          "part_name": "bezel",
+          "area_px": 9119,
+          "mask_full": "parts_full/004_bezel.png",
+          "mask_crop": "parts_crop/004_bezel.png"
+        }
+      ]
+    },
+    {
+      "case_id": "clock",
+      "expected_domain": "device",
+      "expected_profile": "clock_watch",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\clock\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm6.staticflickr.com/5060/5549231454_2ca042ce2f_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm6.staticflickr.com/5060/5549231454_2ca042ce2f_z.jpg",
+        "http://images.cocodataset.org/train2017/000000387431.jpg"
+      ],
+      "source_image_sha256": "5fb9710d25578090111caa945ca1220c4cd329c53eda17ff2fa1dc193dc4479d",
+      "image_id": 387431,
+      "object_annotation_id": 75711,
+      "object_category": "clock",
+      "crop_box_xyxy": [
+        151,
+        0,
+        307,
+        640
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1762325,
+          "category": "clock:hand",
+          "part_name": "hand",
+          "area_px": 368,
+          "mask_full": "parts_full/001_hand.png",
+          "mask_crop": "parts_crop/001_hand.png"
+        },
+        {
+          "annotation_id": 1762326,
+          "category": "clock:pediment",
+          "part_name": "pediment",
+          "area_px": 107,
+          "mask_full": "parts_full/002_pediment.png",
+          "mask_crop": "parts_crop/002_pediment.png"
+        },
+        {
+          "annotation_id": 1762327,
+          "category": "clock:case",
+          "part_name": "case",
+          "area_px": 8173,
+          "mask_full": "parts_full/003_case.png",
+          "mask_crop": "parts_crop/003_case.png"
+        },
+        {
+          "annotation_id": 1762328,
+          "category": "clock:base",
+          "part_name": "base",
+          "area_px": 714,
+          "mask_full": "parts_full/004_base.png",
+          "mask_crop": "parts_crop/004_base.png"
+        }
+      ]
+    },
+    {
+      "case_id": "watch",
+      "expected_domain": "device",
+      "expected_profile": "clock_watch",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\watch\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm7.staticflickr.com/6084/6117668267_151e35fc30_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm7.staticflickr.com/6084/6117668267_151e35fc30_z.jpg",
+        "http://images.cocodataset.org/train2017/000000080725.jpg"
+      ],
+      "source_image_sha256": "37cc8fc2a4620079ddfaaafc38e90712244addbc642bc45ffe543aa64c1eabf3",
+      "image_id": 80725,
+      "object_annotation_id": 109398,
+      "object_category": "watch",
+      "crop_box_xyxy": [
+        15,
+        343,
+        232,
+        635
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1689592,
+          "category": "watch:dial",
+          "part_name": "dial",
+          "area_px": 5273,
+          "mask_full": "parts_full/001_dial.png",
+          "mask_crop": "parts_crop/001_dial.png"
+        },
+        {
+          "annotation_id": 1689593,
+          "category": "watch:case",
+          "part_name": "case",
+          "area_px": 12917,
+          "mask_full": "parts_full/002_case.png",
+          "mask_crop": "parts_crop/002_case.png"
+        },
+        {
+          "annotation_id": 1689594,
+          "category": "watch:strap",
+          "part_name": "strap",
+          "area_px": 7531,
+          "mask_full": "parts_full/003_strap.png",
+          "mask_crop": "parts_crop/003_strap.png"
+        }
+      ]
+    },
+    {
+      "case_id": "earphone",
+      "expected_domain": "device",
+      "expected_profile": "earphone",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\earphone\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2406/3530871505_b2708e825a_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2406/3530871505_b2708e825a_z.jpg",
+        "http://images.cocodataset.org/train2017/000000551031.jpg"
+      ],
+      "source_image_sha256": "51780b0286623a572981ff85245d5c4480168dd00e7d97289360f42d043684a2",
+      "image_id": 551031,
+      "object_annotation_id": 216140,
+      "object_category": "earphone",
+      "crop_box_xyxy": [
+        128,
+        272,
+        259,
+        354
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1728862,
+          "category": "earphone:ear_pads",
+          "part_name": "ear_pads",
+          "area_px": 2082,
+          "mask_full": "parts_full/001_ear_pads.png",
+          "mask_crop": "parts_crop/001_ear_pads.png"
+        },
+        {
+          "annotation_id": 1728863,
+          "category": "earphone:housing",
+          "part_name": "housing",
+          "area_px": 330,
+          "mask_full": "parts_full/002_housing.png",
+          "mask_crop": "parts_crop/002_housing.png"
+        },
+        {
+          "annotation_id": 1728864,
+          "category": "earphone:cable",
+          "part_name": "cable",
+          "area_px": 3,
+          "mask_full": "parts_full/003_cable.png",
+          "mask_crop": "parts_crop/003_cable.png"
+        },
+        {
+          "annotation_id": 1728865,
+          "category": "earphone:slider",
+          "part_name": "slider",
+          "area_px": 29,
+          "mask_full": "parts_full/004_slider.png",
+          "mask_crop": "parts_crop/004_slider.png"
+        },
+        {
+          "annotation_id": 1728866,
+          "category": "earphone:headband",
+          "part_name": "headband",
+          "area_px": 1576,
+          "mask_full": "parts_full/005_headband.png",
+          "mask_crop": "parts_crop/005_headband.png"
+        }
+      ]
+    },
+    {
+      "case_id": "fan",
+      "expected_domain": "device",
+      "expected_profile": "fan",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\fan\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7177/6950128446_053533a19b_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7177/6950128446_053533a19b_z.jpg",
+        "http://images.cocodataset.org/train2017/000000385326.jpg"
+      ],
+      "source_image_sha256": "974448b7ce56202b6b271e9f13acf381b998c8ef85ce000c6f2bbc3233e383c2",
+      "image_id": 385326,
+      "object_annotation_id": 146650,
+      "object_category": "fan",
+      "crop_box_xyxy": [
+        150,
+        57,
+        270,
+        137
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 6,
+      "parts": [
+        {
+          "annotation_id": 1703677,
+          "category": "fan:light",
+          "part_name": "light",
+          "area_px": 466,
+          "mask_full": "parts_full/001_light.png",
+          "mask_crop": "parts_crop/001_light.png"
+        },
+        {
+          "annotation_id": 1703678,
+          "category": "fan:string",
+          "part_name": "string",
+          "area_px": 10,
+          "mask_full": "parts_full/002_string.png",
+          "mask_crop": "parts_crop/002_string.png"
+        },
+        {
+          "annotation_id": 1703679,
+          "category": "fan:blade",
+          "part_name": "blade",
+          "area_px": 312,
+          "mask_full": "parts_full/003_blade.png",
+          "mask_crop": "parts_crop/003_blade.png"
+        },
+        {
+          "annotation_id": 1703680,
+          "category": "fan:bracket",
+          "part_name": "bracket",
+          "area_px": 132,
+          "mask_full": "parts_full/004_bracket.png",
+          "mask_crop": "parts_crop/004_bracket.png"
+        },
+        {
+          "annotation_id": 1703681,
+          "category": "fan:motor",
+          "part_name": "motor",
+          "area_px": 164,
+          "mask_full": "parts_full/005_motor.png",
+          "mask_crop": "parts_crop/005_motor.png"
+        },
+        {
+          "annotation_id": 1703682,
+          "category": "fan:canopy",
+          "part_name": "canopy",
+          "area_px": 172,
+          "mask_full": "parts_full/006_canopy.png",
+          "mask_crop": "parts_crop/006_canopy.png"
+        }
+      ]
+    },
+    {
+      "case_id": "lamp",
+      "expected_domain": "device",
+      "expected_profile": "lamp",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\lamp\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8322/8026605380_57d3d9bc0c_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8322/8026605380_57d3d9bc0c_z.jpg",
+        "http://images.cocodataset.org/train2017/000000379522.jpg"
+      ],
+      "source_image_sha256": "4abf5ba0c6f125ddd50b48ad26ea1f053b77f8bfa033666fdfff546709feef47",
+      "image_id": 379522,
+      "object_annotation_id": 222777,
+      "object_category": "lamp",
+      "crop_box_xyxy": [
+        1,
+        215,
+        86,
+        346
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1731759,
+          "category": "lamp:bulb",
+          "part_name": "bulb",
+          "area_px": 22,
+          "mask_full": "parts_full/001_bulb.png",
+          "mask_crop": "parts_crop/001_bulb.png"
+        },
+        {
+          "annotation_id": 1731760,
+          "category": "lamp:shade_inner_side",
+          "part_name": "shade_inner_side",
+          "area_px": 429,
+          "mask_full": "parts_full/002_shade_inner_side.png",
+          "mask_crop": "parts_crop/002_shade_inner_side.png"
+        },
+        {
+          "annotation_id": 1731761,
+          "category": "lamp:shade",
+          "part_name": "shade",
+          "area_px": 1445,
+          "mask_full": "parts_full/003_shade.png",
+          "mask_crop": "parts_crop/003_shade.png"
+        },
+        {
+          "annotation_id": 1731762,
+          "category": "lamp:base",
+          "part_name": "base",
+          "area_px": 923,
+          "mask_full": "parts_full/004_base.png",
+          "mask_crop": "parts_crop/004_base.png"
+        },
+        {
+          "annotation_id": 1731763,
+          "category": "lamp:pipe",
+          "part_name": "pipe",
+          "area_px": 424,
+          "mask_full": "parts_full/005_pipe.png",
+          "mask_crop": "parts_crop/005_pipe.png"
+        }
+      ]
+    },
+    {
+      "case_id": "blender",
+      "expected_domain": "device",
+      "expected_profile": "blender",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\blender\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3704/9230486888_3ef94029c8_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3704/9230486888_3ef94029c8_z.jpg",
+        "http://images.cocodataset.org/train2017/000000058554.jpg"
+      ],
+      "source_image_sha256": "d0fab974cc3a9c71b0a97fa59cf0a359847303d2da202b5fd6afde6c2a30e739",
+      "image_id": 58554,
+      "object_annotation_id": 186601,
+      "object_category": "blender",
+      "crop_box_xyxy": [
+        111,
+        0,
+        477,
+        640
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 7,
+      "parts": [
+        {
+          "annotation_id": 1717841,
+          "category": "blender:handle",
+          "part_name": "handle",
+          "area_px": 6571,
+          "mask_full": "parts_full/001_handle.png",
+          "mask_crop": "parts_crop/001_handle.png"
+        },
+        {
+          "annotation_id": 1717842,
+          "category": "blender:seal_ring",
+          "part_name": "seal_ring",
+          "area_px": 10291,
+          "mask_full": "parts_full/002_seal_ring.png",
+          "mask_crop": "parts_crop/002_seal_ring.png"
+        },
+        {
+          "annotation_id": 1717843,
+          "category": "blender:spout",
+          "part_name": "spout",
+          "area_px": 689,
+          "mask_full": "parts_full/003_spout.png",
+          "mask_crop": "parts_crop/003_spout.png"
+        },
+        {
+          "annotation_id": 1717844,
+          "category": "blender:cover",
+          "part_name": "cover",
+          "area_px": 5067,
+          "mask_full": "parts_full/004_cover.png",
+          "mask_crop": "parts_crop/004_cover.png"
+        },
+        {
+          "annotation_id": 1717845,
+          "category": "blender:food_cup",
+          "part_name": "food_cup",
+          "area_px": 43894,
+          "mask_full": "parts_full/005_food_cup.png",
+          "mask_crop": "parts_crop/005_food_cup.png"
+        },
+        {
+          "annotation_id": 1717846,
+          "category": "blender:switch",
+          "part_name": "switch",
+          "area_px": 241,
+          "mask_full": "parts_full/006_switch.png",
+          "mask_crop": "parts_crop/006_switch.png"
+        },
+        {
+          "annotation_id": 1717847,
+          "category": "blender:base",
+          "part_name": "base",
+          "area_px": 69484,
+          "mask_full": "parts_full/007_base.png",
+          "mask_crop": "parts_crop/007_base.png"
+        }
+      ]
+    },
+    {
+      "case_id": "microwave_oven",
+      "expected_domain": "device",
+      "expected_profile": "microwave",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\microwave_oven\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2450/3926917024_967b3c9e6e_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2450/3926917024_967b3c9e6e_z.jpg",
+        "http://images.cocodataset.org/val2017/000000199681.jpg"
+      ],
+      "source_image_sha256": "fcc9e5b4ccf2528d9835f1accdff3e1ef87df1440099a32a7bb9e75cc439f149",
+      "image_id": 199681,
+      "object_annotation_id": 39007,
+      "object_category": "microwave_oven",
+      "crop_box_xyxy": [
+        0,
+        0,
+        640,
+        480
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1747092,
+          "category": "microwave_oven:time_display",
+          "part_name": "time_display",
+          "area_px": 39010,
+          "mask_full": "parts_full/001_time_display.png",
+          "mask_crop": "parts_crop/001_time_display.png"
+        },
+        {
+          "annotation_id": 1747093,
+          "category": "microwave_oven:inner_side",
+          "part_name": "inner_side",
+          "area_px": 29770,
+          "mask_full": "parts_full/002_inner_side.png",
+          "mask_crop": "parts_crop/002_inner_side.png"
+        },
+        {
+          "annotation_id": 1747094,
+          "category": "microwave_oven:top",
+          "part_name": "top",
+          "area_px": 1268,
+          "mask_full": "parts_full/003_top.png",
+          "mask_crop": "parts_crop/003_top.png"
+        },
+        {
+          "annotation_id": 1747095,
+          "category": "microwave_oven:side",
+          "part_name": "side",
+          "area_px": 3140,
+          "mask_full": "parts_full/004_side.png",
+          "mask_crop": "parts_crop/004_side.png"
+        },
+        {
+          "annotation_id": 1747096,
+          "category": "microwave_oven:control_panel",
+          "part_name": "control_panel",
+          "area_px": 55282,
+          "mask_full": "parts_full/005_control_panel.png",
+          "mask_crop": "parts_crop/005_control_panel.png"
+        }
+      ]
+    },
+    {
+      "case_id": "kettle",
+      "expected_domain": "device",
+      "expected_profile": "kettle",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\kettle\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8201/8198054938_ab22b15d68_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8201/8198054938_ab22b15d68_z.jpg",
+        "http://images.cocodataset.org/train2017/000000193594.jpg"
+      ],
+      "source_image_sha256": "400fd393d81ed6d7d29995be43a4ee4816c6c85109589500562a411f8c85e3e3",
+      "image_id": 193594,
+      "object_annotation_id": 174156,
+      "object_category": "kettle",
+      "crop_box_xyxy": [
+        420,
+        178,
+        577,
+        417
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1713741,
+          "category": "kettle:spout",
+          "part_name": "spout",
+          "area_px": 1324,
+          "mask_full": "parts_full/001_spout.png",
+          "mask_crop": "parts_crop/001_spout.png"
+        },
+        {
+          "annotation_id": 1713742,
+          "category": "kettle:handle",
+          "part_name": "handle",
+          "area_px": 162,
+          "mask_full": "parts_full/002_handle.png",
+          "mask_crop": "parts_crop/002_handle.png"
+        },
+        {
+          "annotation_id": 1713743,
+          "category": "kettle:lid",
+          "part_name": "lid",
+          "area_px": 1818,
+          "mask_full": "parts_full/003_lid.png",
+          "mask_crop": "parts_crop/003_lid.png"
+        },
+        {
+          "annotation_id": 1713744,
+          "category": "kettle:base",
+          "part_name": "base",
+          "area_px": 1759,
+          "mask_full": "parts_full/004_base.png",
+          "mask_crop": "parts_crop/004_base.png"
+        },
+        {
+          "annotation_id": 1713745,
+          "category": "kettle:body",
+          "part_name": "body",
+          "area_px": 8832,
+          "mask_full": "parts_full/005_body.png",
+          "mask_crop": "parts_crop/005_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "mouse_computer_equipment",
+      "expected_domain": "device",
+      "expected_profile": "computer_peripheral",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\mouse_computer_equipment\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8083/8315859567_fbacdce033_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8083/8315859567_fbacdce033_z.jpg",
+        "http://images.cocodataset.org/train2017/000000193798.jpg"
+      ],
+      "source_image_sha256": "f85c4ae7e082b71902455937c684b0582c89898f9867f9be153c40c4a08f3b20",
+      "image_id": 193798,
+      "object_annotation_id": 52229,
+      "object_category": "mouse_(computer_equipment)",
+      "crop_box_xyxy": [
+        156,
+        299,
+        455,
+        604
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1752451,
+          "category": "mouse_(computer_equipment):scroll_wheel",
+          "part_name": "scroll_wheel",
+          "area_px": 231,
+          "mask_full": "parts_full/001_scroll_wheel.png",
+          "mask_crop": "parts_crop/001_scroll_wheel.png"
+        },
+        {
+          "annotation_id": 1752452,
+          "category": "mouse_(computer_equipment):side_button",
+          "part_name": "side_button",
+          "area_px": 701,
+          "mask_full": "parts_full/002_side_button.png",
+          "mask_crop": "parts_crop/002_side_button.png"
+        },
+        {
+          "annotation_id": 1752453,
+          "category": "mouse_(computer_equipment):left_button",
+          "part_name": "left_button",
+          "area_px": 2453,
+          "mask_full": "parts_full/003_left_button.png",
+          "mask_crop": "parts_crop/003_left_button.png"
+        },
+        {
+          "annotation_id": 1752454,
+          "category": "mouse_(computer_equipment):right_button",
+          "part_name": "right_button",
+          "area_px": 793,
+          "mask_full": "parts_full/004_right_button.png",
+          "mask_crop": "parts_crop/004_right_button.png"
+        },
+        {
+          "annotation_id": 1752455,
+          "category": "mouse_(computer_equipment):body",
+          "part_name": "body",
+          "area_px": 40325,
+          "mask_full": "parts_full/005_body.png",
+          "mask_crop": "parts_crop/005_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "chair",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\chair\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm6.staticflickr.com/5085/5314870798_c4e569905c_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm6.staticflickr.com/5085/5314870798_c4e569905c_z.jpg",
+        "http://images.cocodataset.org/val2017/000000082180.jpg"
+      ],
+      "source_image_sha256": "ddc882b8e183f7c726ede0483a3bee168b843eda01aa18c1dd053adc075878da",
+      "image_id": 82180,
+      "object_annotation_id": 49059,
+      "object_category": "chair",
+      "crop_box_xyxy": [
+        0,
+        0,
+        640,
+        425
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 7,
+      "parts": [
+        {
+          "annotation_id": 1751410,
+          "category": "chair:arm",
+          "part_name": "arm",
+          "area_px": 35030,
+          "mask_full": "parts_full/001_arm.png",
+          "mask_crop": "parts_crop/001_arm.png"
+        },
+        {
+          "annotation_id": 1751411,
+          "category": "chair:stile",
+          "part_name": "stile",
+          "area_px": 10278,
+          "mask_full": "parts_full/002_stile.png",
+          "mask_crop": "parts_crop/002_stile.png"
+        },
+        {
+          "annotation_id": 1751412,
+          "category": "chair:back",
+          "part_name": "back",
+          "area_px": 5675,
+          "mask_full": "parts_full/003_back.png",
+          "mask_crop": "parts_crop/003_back.png"
+        },
+        {
+          "annotation_id": 1751413,
+          "category": "chair:spindle",
+          "part_name": "spindle",
+          "area_px": 36883,
+          "mask_full": "parts_full/004_spindle.png",
+          "mask_crop": "parts_crop/004_spindle.png"
+        },
+        {
+          "annotation_id": 1751414,
+          "category": "chair:apron",
+          "part_name": "apron",
+          "area_px": 28931,
+          "mask_full": "parts_full/005_apron.png",
+          "mask_crop": "parts_crop/005_apron.png"
+        },
+        {
+          "annotation_id": 1751415,
+          "category": "chair:leg",
+          "part_name": "leg",
+          "area_px": 22563,
+          "mask_full": "parts_full/006_leg.png",
+          "mask_crop": "parts_crop/006_leg.png"
+        },
+        {
+          "annotation_id": 1751416,
+          "category": "chair:seat",
+          "part_name": "seat",
+          "area_px": 35097,
+          "mask_full": "parts_full/007_seat.png",
+          "mask_crop": "parts_crop/007_seat.png"
+        }
+      ]
+    },
+    {
+      "case_id": "bench",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\bench\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm5.staticflickr.com/4122/4765126307_3175461af0_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm5.staticflickr.com/4122/4765126307_3175461af0_z.jpg",
+        "http://images.cocodataset.org/train2017/000000146981.jpg"
+      ],
+      "source_image_sha256": "76c3679b0cb0bd97df24d74ed6be0866f815ab95257ad3fdcb915f65fc29797f",
+      "image_id": 146981,
+      "object_annotation_id": 65896,
+      "object_category": "bench",
+      "crop_box_xyxy": [
+        110,
+        0,
+        640,
+        427
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1757840,
+          "category": "bench:stretcher",
+          "part_name": "stretcher",
+          "area_px": 2515,
+          "mask_full": "parts_full/001_stretcher.png",
+          "mask_crop": "parts_crop/001_stretcher.png"
+        },
+        {
+          "annotation_id": 1757841,
+          "category": "bench:leg",
+          "part_name": "leg",
+          "area_px": 14155,
+          "mask_full": "parts_full/002_leg.png",
+          "mask_crop": "parts_crop/002_leg.png"
+        },
+        {
+          "annotation_id": 1757842,
+          "category": "bench:seat",
+          "part_name": "seat",
+          "area_px": 25769,
+          "mask_full": "parts_full/003_seat.png",
+          "mask_crop": "parts_crop/003_seat.png"
+        },
+        {
+          "annotation_id": 1757843,
+          "category": "bench:arm",
+          "part_name": "arm",
+          "area_px": 7019,
+          "mask_full": "parts_full/004_arm.png",
+          "mask_crop": "parts_crop/004_arm.png"
+        },
+        {
+          "annotation_id": 1757844,
+          "category": "bench:back",
+          "part_name": "back",
+          "area_px": 55995,
+          "mask_full": "parts_full/005_back.png",
+          "mask_crop": "parts_crop/005_back.png"
+        }
+      ]
+    },
+    {
+      "case_id": "stool",
+      "expected_domain": "furniture",
+      "expected_profile": "chair",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\stool\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm2.staticflickr.com/1205/1407766703_1047d1f355_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm2.staticflickr.com/1205/1407766703_1047d1f355_z.jpg",
+        "http://images.cocodataset.org/train2017/000000561411.jpg"
+      ],
+      "source_image_sha256": "7e6d72f8e7eafac6a7dfd721332327aa509846d2230d9c39907fbc127ae837b3",
+      "image_id": 561411,
+      "object_annotation_id": 67859,
+      "object_category": "stool",
+      "crop_box_xyxy": [
+        147,
+        139,
+        337,
+        407
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1759076,
+          "category": "stool:seat",
+          "part_name": "seat",
+          "area_px": 7263,
+          "mask_full": "parts_full/001_seat.png",
+          "mask_crop": "parts_crop/001_seat.png"
+        },
+        {
+          "annotation_id": 1759077,
+          "category": "stool:leg",
+          "part_name": "leg",
+          "area_px": 3457,
+          "mask_full": "parts_full/002_leg.png",
+          "mask_crop": "parts_crop/002_leg.png"
+        },
+        {
+          "annotation_id": 1759078,
+          "category": "stool:footrest",
+          "part_name": "footrest",
+          "area_px": 132,
+          "mask_full": "parts_full/003_footrest.png",
+          "mask_crop": "parts_crop/003_footrest.png"
+        }
+      ]
+    },
+    {
+      "case_id": "table",
+      "expected_domain": "furniture",
+      "expected_profile": "table",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\table\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7191/6887749977_7d810a60b8_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7191/6887749977_7d810a60b8_z.jpg",
+        "http://images.cocodataset.org/train2017/000000343169.jpg"
+      ],
+      "source_image_sha256": "6b3c58fbb2dba719379108564fd7d118af5bddcedd74a415cc454e323d1483c0",
+      "image_id": 343169,
+      "object_annotation_id": 122633,
+      "object_category": "table",
+      "crop_box_xyxy": [
+        265,
+        269,
+        640,
+        397
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1694934,
+          "category": "table:top",
+          "part_name": "top",
+          "area_px": 9630,
+          "mask_full": "parts_full/001_top.png",
+          "mask_crop": "parts_crop/001_top.png"
+        },
+        {
+          "annotation_id": 1694935,
+          "category": "table:drawer",
+          "part_name": "drawer",
+          "area_px": 197,
+          "mask_full": "parts_full/002_drawer.png",
+          "mask_crop": "parts_crop/002_drawer.png"
+        },
+        {
+          "annotation_id": 1694936,
+          "category": "table:apron",
+          "part_name": "apron",
+          "area_px": 59,
+          "mask_full": "parts_full/003_apron.png",
+          "mask_crop": "parts_crop/003_apron.png"
+        },
+        {
+          "annotation_id": 1694937,
+          "category": "table:leg",
+          "part_name": "leg",
+          "area_px": 11,
+          "mask_full": "parts_full/004_leg.png",
+          "mask_crop": "parts_crop/004_leg.png"
+        }
+      ]
+    },
+    {
+      "case_id": "bottle",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\bottle\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3695/9672006132_b0fe21a284_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3695/9672006132_b0fe21a284_z.jpg",
+        "http://images.cocodataset.org/val2017/000000233238.jpg"
+      ],
+      "source_image_sha256": "cfe2825a311fbab9e1f7c2bc5764b5007b5d66ebba26eb51d90f04bb07cfd858",
+      "image_id": 233238,
+      "object_annotation_id": 35914,
+      "object_category": "bottle",
+      "crop_box_xyxy": [
+        228,
+        477,
+        311,
+        640
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 7,
+      "parts": [
+        {
+          "annotation_id": 1745862,
+          "category": "bottle:cap",
+          "part_name": "cap",
+          "area_px": 1271,
+          "mask_full": "parts_full/001_cap.png",
+          "mask_crop": "parts_crop/001_cap.png"
+        },
+        {
+          "annotation_id": 1745863,
+          "category": "bottle:ring",
+          "part_name": "ring",
+          "area_px": 207,
+          "mask_full": "parts_full/002_ring.png",
+          "mask_crop": "parts_crop/002_ring.png"
+        },
+        {
+          "annotation_id": 1745864,
+          "category": "bottle:label",
+          "part_name": "label",
+          "area_px": 3031,
+          "mask_full": "parts_full/003_label.png",
+          "mask_crop": "parts_crop/003_label.png"
+        },
+        {
+          "annotation_id": 1745865,
+          "category": "bottle:neck",
+          "part_name": "neck",
+          "area_px": 247,
+          "mask_full": "parts_full/004_neck.png",
+          "mask_crop": "parts_crop/004_neck.png"
+        },
+        {
+          "annotation_id": 1745866,
+          "category": "bottle:shoulder",
+          "part_name": "shoulder",
+          "area_px": 163,
+          "mask_full": "parts_full/005_shoulder.png",
+          "mask_crop": "parts_crop/005_shoulder.png"
+        },
+        {
+          "annotation_id": 1745867,
+          "category": "bottle:base",
+          "part_name": "base",
+          "area_px": 286,
+          "mask_full": "parts_full/006_base.png",
+          "mask_crop": "parts_crop/006_base.png"
+        },
+        {
+          "annotation_id": 1745868,
+          "category": "bottle:body",
+          "part_name": "body",
+          "area_px": 1259,
+          "mask_full": "parts_full/007_body.png",
+          "mask_crop": "parts_crop/007_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "jar",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\jar\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3115/2895312682_4425d69739_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3115/2895312682_4425d69739_z.jpg",
+        "http://images.cocodataset.org/train2017/000000418394.jpg"
+      ],
+      "source_image_sha256": "88eabf8d949379197db12412ca6aa0a4005a37a44bea386faba2f10fbce06d75",
+      "image_id": 418394,
+      "object_annotation_id": 218778,
+      "object_category": "jar",
+      "crop_box_xyxy": [
+        37,
+        175,
+        153,
+        376
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1730164,
+          "category": "jar:lid",
+          "part_name": "lid",
+          "area_px": 3664,
+          "mask_full": "parts_full/001_lid.png",
+          "mask_crop": "parts_crop/001_lid.png"
+        },
+        {
+          "annotation_id": 1730165,
+          "category": "jar:sticker",
+          "part_name": "sticker",
+          "area_px": 1843,
+          "mask_full": "parts_full/002_sticker.png",
+          "mask_crop": "parts_crop/002_sticker.png"
+        },
+        {
+          "annotation_id": 1730166,
+          "category": "jar:base",
+          "part_name": "base",
+          "area_px": 475,
+          "mask_full": "parts_full/003_base.png",
+          "mask_crop": "parts_crop/003_base.png"
+        },
+        {
+          "annotation_id": 1730167,
+          "category": "jar:body",
+          "part_name": "body",
+          "area_px": 9400,
+          "mask_full": "parts_full/004_body.png",
+          "mask_crop": "parts_crop/004_body.png"
+        },
+        {
+          "annotation_id": 1730168,
+          "category": "jar:text",
+          "part_name": "text",
+          "area_px": 313,
+          "mask_full": "parts_full/005_text.png",
+          "mask_crop": "parts_crop/005_text.png"
+        }
+      ]
+    },
+    {
+      "case_id": "can",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\can\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3168/3104048321_dd7ffceca1_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3168/3104048321_dd7ffceca1_z.jpg",
+        "http://images.cocodataset.org/train2017/000000296635.jpg"
+      ],
+      "source_image_sha256": "0613ea709bc990f797c31f2d841df07f921914c00fdb7603e8584b7a45702ccd",
+      "image_id": 296635,
+      "object_annotation_id": 112497,
+      "object_category": "can",
+      "crop_box_xyxy": [
+        276,
+        316,
+        531,
+        480
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 6,
+      "parts": [
+        {
+          "annotation_id": 1691166,
+          "category": "can:inner_body",
+          "part_name": "inner_body",
+          "area_px": 132,
+          "mask_full": "parts_full/001_inner_body.png",
+          "mask_crop": "parts_crop/001_inner_body.png"
+        },
+        {
+          "annotation_id": 1691167,
+          "category": "can:lid",
+          "part_name": "lid",
+          "area_px": 11378,
+          "mask_full": "parts_full/002_lid.png",
+          "mask_crop": "parts_crop/002_lid.png"
+        },
+        {
+          "annotation_id": 1691168,
+          "category": "can:pull_tab",
+          "part_name": "pull_tab",
+          "area_px": 1814,
+          "mask_full": "parts_full/003_pull_tab.png",
+          "mask_crop": "parts_crop/003_pull_tab.png"
+        },
+        {
+          "annotation_id": 1691169,
+          "category": "can:text",
+          "part_name": "text",
+          "area_px": 1145,
+          "mask_full": "parts_full/004_text.png",
+          "mask_crop": "parts_crop/004_text.png"
+        },
+        {
+          "annotation_id": 1691170,
+          "category": "can:body",
+          "part_name": "body",
+          "area_px": 7192,
+          "mask_full": "parts_full/005_body.png",
+          "mask_crop": "parts_crop/005_body.png"
+        },
+        {
+          "annotation_id": 1691171,
+          "category": "can:rim",
+          "part_name": "rim",
+          "area_px": 4672,
+          "mask_full": "parts_full/006_rim.png",
+          "mask_crop": "parts_crop/006_rim.png"
+        }
+      ]
+    },
+    {
+      "case_id": "cup",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\cup\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7266/8163182303_954c21d3b6_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7266/8163182303_954c21d3b6_z.jpg",
+        "http://images.cocodataset.org/train2017/000000126719.jpg"
+      ],
+      "source_image_sha256": "cce078ccca772ae446eb2d54cf2f9a5bd6c88a242693bd61e4f519db448d8768",
+      "image_id": 126719,
+      "object_annotation_id": 118219,
+      "object_category": "cup",
+      "crop_box_xyxy": [
+        261,
+        73,
+        612,
+        508
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1693360,
+          "category": "cup:rim",
+          "part_name": "rim",
+          "area_px": 5546,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1693361,
+          "category": "cup:inner_body",
+          "part_name": "inner_body",
+          "area_px": 24114,
+          "mask_full": "parts_full/002_inner_body.png",
+          "mask_crop": "parts_crop/002_inner_body.png"
+        },
+        {
+          "annotation_id": 1693362,
+          "category": "cup:handle",
+          "part_name": "handle",
+          "area_px": 1779,
+          "mask_full": "parts_full/003_handle.png",
+          "mask_crop": "parts_crop/003_handle.png"
+        }
+      ]
+    },
+    {
+      "case_id": "mug",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\mug\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm1.staticflickr.com/74/209765872_f9a6b58d2b_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm1.staticflickr.com/74/209765872_f9a6b58d2b_z.jpg",
+        "http://images.cocodataset.org/train2017/000000563279.jpg"
+      ],
+      "source_image_sha256": "f1d7c25e953cfd636141b68cb30f783a8892685d7073b5b9319a1e284ee3e144",
+      "image_id": 563279,
+      "object_annotation_id": 110555,
+      "object_category": "mug",
+      "crop_box_xyxy": [
+        264,
+        289,
+        438,
+        458
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 6,
+      "parts": [
+        {
+          "annotation_id": 1690201,
+          "category": "mug:rim",
+          "part_name": "rim",
+          "area_px": 1197,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1690202,
+          "category": "mug:handle",
+          "part_name": "handle",
+          "area_px": 1329,
+          "mask_full": "parts_full/002_handle.png",
+          "mask_crop": "parts_crop/002_handle.png"
+        },
+        {
+          "annotation_id": 1690203,
+          "category": "mug:inner_body",
+          "part_name": "inner_body",
+          "area_px": 2310,
+          "mask_full": "parts_full/003_inner_body.png",
+          "mask_crop": "parts_crop/003_inner_body.png"
+        },
+        {
+          "annotation_id": 1690204,
+          "category": "mug:body",
+          "part_name": "body",
+          "area_px": 5895,
+          "mask_full": "parts_full/004_body.png",
+          "mask_crop": "parts_crop/004_body.png"
+        },
+        {
+          "annotation_id": 1690205,
+          "category": "mug:drawing",
+          "part_name": "drawing",
+          "area_px": 3137,
+          "mask_full": "parts_full/005_drawing.png",
+          "mask_crop": "parts_crop/005_drawing.png"
+        },
+        {
+          "annotation_id": 1690206,
+          "category": "mug:text",
+          "part_name": "text",
+          "area_px": 138,
+          "mask_full": "parts_full/006_text.png",
+          "mask_crop": "parts_crop/006_text.png"
+        }
+      ]
+    },
+    {
+      "case_id": "glass_drink_container",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\glass_drink_container\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm5.staticflickr.com/4119/5411356346_970580c917_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm5.staticflickr.com/4119/5411356346_970580c917_z.jpg",
+        "http://images.cocodataset.org/train2017/000000112836.jpg"
+      ],
+      "source_image_sha256": "f566b98a2f84e354919fba99fef687737e4b810b2151cf9e549ab0f0c924d3c4",
+      "image_id": 112836,
+      "object_annotation_id": 160021,
+      "object_category": "glass_(drink_container)",
+      "crop_box_xyxy": [
+        235,
+        6,
+        489,
+        215
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1708664,
+          "category": "glass_(drink_container):inner_body",
+          "part_name": "inner_body",
+          "area_px": 9824,
+          "mask_full": "parts_full/001_inner_body.png",
+          "mask_crop": "parts_crop/001_inner_body.png"
+        },
+        {
+          "annotation_id": 1708665,
+          "category": "glass_(drink_container):bottom",
+          "part_name": "bottom",
+          "area_px": 6752,
+          "mask_full": "parts_full/002_bottom.png",
+          "mask_crop": "parts_crop/002_bottom.png"
+        },
+        {
+          "annotation_id": 1708666,
+          "category": "glass_(drink_container):body",
+          "part_name": "body",
+          "area_px": 4587,
+          "mask_full": "parts_full/003_body.png",
+          "mask_crop": "parts_crop/003_body.png"
+        },
+        {
+          "annotation_id": 1708667,
+          "category": "glass_(drink_container):base",
+          "part_name": "base",
+          "area_px": 2664,
+          "mask_full": "parts_full/004_base.png",
+          "mask_crop": "parts_crop/004_base.png"
+        },
+        {
+          "annotation_id": 1708668,
+          "category": "glass_(drink_container):rim",
+          "part_name": "rim",
+          "area_px": 2030,
+          "mask_full": "parts_full/005_rim.png",
+          "mask_crop": "parts_crop/005_rim.png"
+        }
+      ]
+    },
+    {
+      "case_id": "bowl",
+      "expected_domain": "container",
+      "expected_profile": "drinkware",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\bowl\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3461/3860118099_dfb677bae7_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3461/3860118099_dfb677bae7_z.jpg",
+        "http://images.cocodataset.org/train2017/000000171099.jpg"
+      ],
+      "source_image_sha256": "20efd39d7efc31cdd2f380694cff3e20839100afc992e4067710e8fed2d433d1",
+      "image_id": 171099,
+      "object_annotation_id": 199145,
+      "object_category": "bowl",
+      "crop_box_xyxy": [
+        515,
+        150,
+        640,
+        461
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1722903,
+          "category": "bowl:rim",
+          "part_name": "rim",
+          "area_px": 1401,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1722904,
+          "category": "bowl:inner_body",
+          "part_name": "inner_body",
+          "area_px": 2217,
+          "mask_full": "parts_full/002_inner_body.png",
+          "mask_crop": "parts_crop/002_inner_body.png"
+        },
+        {
+          "annotation_id": 1722905,
+          "category": "bowl:body",
+          "part_name": "body",
+          "area_px": 5827,
+          "mask_full": "parts_full/003_body.png",
+          "mask_crop": "parts_crop/003_body.png"
+        },
+        {
+          "annotation_id": 1722906,
+          "category": "bowl:base",
+          "part_name": "base",
+          "area_px": 147,
+          "mask_full": "parts_full/004_base.png",
+          "mask_crop": "parts_crop/004_base.png"
+        },
+        {
+          "annotation_id": 1722907,
+          "category": "bowl:bottom",
+          "part_name": "bottom",
+          "area_px": 252,
+          "mask_full": "parts_full/005_bottom.png",
+          "mask_crop": "parts_crop/005_bottom.png"
+        }
+      ]
+    },
+    {
+      "case_id": "handbag",
+      "expected_domain": "container",
+      "expected_profile": "bag",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\handbag\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8306/7826931242_8ab21d4f2d_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8306/7826931242_8ab21d4f2d_z.jpg",
+        "http://images.cocodataset.org/train2017/000000078803.jpg"
+      ],
+      "source_image_sha256": "5a48e93488474b3031321cf6665ae1d9abe6d615a74b1f68b3c66eef96166df6",
+      "image_id": 78803,
+      "object_annotation_id": 122257,
+      "object_category": "handbag",
+      "crop_box_xyxy": [
+        294,
+        329,
+        402,
+        549
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1694762,
+          "category": "handbag:rim",
+          "part_name": "rim",
+          "area_px": 5,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1694763,
+          "category": "handbag:handle",
+          "part_name": "handle",
+          "area_px": 1371,
+          "mask_full": "parts_full/002_handle.png",
+          "mask_crop": "parts_crop/002_handle.png"
+        },
+        {
+          "annotation_id": 1694764,
+          "category": "handbag:base",
+          "part_name": "base",
+          "area_px": 432,
+          "mask_full": "parts_full/003_base.png",
+          "mask_crop": "parts_crop/003_base.png"
+        },
+        {
+          "annotation_id": 1694765,
+          "category": "handbag:body",
+          "part_name": "body",
+          "area_px": 7154,
+          "mask_full": "parts_full/004_body.png",
+          "mask_crop": "parts_crop/004_body.png"
+        },
+        {
+          "annotation_id": 1694766,
+          "category": "handbag:zip",
+          "part_name": "zip",
+          "area_px": 96,
+          "mask_full": "parts_full/005_zip.png",
+          "mask_crop": "parts_crop/005_zip.png"
+        }
+      ]
+    },
+    {
+      "case_id": "plastic_bag",
+      "expected_domain": "container",
+      "expected_profile": "bag",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\plastic_bag\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7459/8727145795_519ebbf336_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7459/8727145795_519ebbf336_z.jpg",
+        "http://images.cocodataset.org/train2017/000000325548.jpg"
+      ],
+      "source_image_sha256": "08bbefe7c0315bed64e83776acf26a99822fb8ed4ad15c504a55b1c2a4789b13",
+      "image_id": 325548,
+      "object_annotation_id": 135120,
+      "object_category": "plastic_bag",
+      "crop_box_xyxy": [
+        249,
+        38,
+        637,
+        428
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1699448,
+          "category": "plastic_bag:text",
+          "part_name": "text",
+          "area_px": 2978,
+          "mask_full": "parts_full/001_text.png",
+          "mask_crop": "parts_crop/001_text.png"
+        },
+        {
+          "annotation_id": 1699449,
+          "category": "plastic_bag:inner_body",
+          "part_name": "inner_body",
+          "area_px": 9943,
+          "mask_full": "parts_full/002_inner_body.png",
+          "mask_crop": "parts_crop/002_inner_body.png"
+        },
+        {
+          "annotation_id": 1699450,
+          "category": "plastic_bag:body",
+          "part_name": "body",
+          "area_px": 39254,
+          "mask_full": "parts_full/003_body.png",
+          "mask_crop": "parts_crop/003_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "box",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\box\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3554/3386433011_c2ebc79112_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3554/3386433011_c2ebc79112_z.jpg",
+        "http://images.cocodataset.org/train2017/000000211983.jpg"
+      ],
+      "source_image_sha256": "b882924b0d4f8590cdc7a600a3140c6994a919638402cb58925e2adfeb5dd438",
+      "image_id": 211983,
+      "object_annotation_id": 159189,
+      "object_category": "box",
+      "crop_box_xyxy": [
+        0,
+        20,
+        640,
+        456
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1708431,
+          "category": "box:lid",
+          "part_name": "lid",
+          "area_px": 58418,
+          "mask_full": "parts_full/001_lid.png",
+          "mask_crop": "parts_crop/001_lid.png"
+        },
+        {
+          "annotation_id": 1708432,
+          "category": "box:side",
+          "part_name": "side",
+          "area_px": 23358,
+          "mask_full": "parts_full/002_side.png",
+          "mask_crop": "parts_crop/002_side.png"
+        },
+        {
+          "annotation_id": 1708433,
+          "category": "box:inner_side",
+          "part_name": "inner_side",
+          "area_px": 23534,
+          "mask_full": "parts_full/003_inner_side.png",
+          "mask_crop": "parts_crop/003_inner_side.png"
+        },
+        {
+          "annotation_id": 1708434,
+          "category": "box:bottom",
+          "part_name": "bottom",
+          "area_px": 28512,
+          "mask_full": "parts_full/004_bottom.png",
+          "mask_crop": "parts_crop/004_bottom.png"
+        }
+      ]
+    },
+    {
+      "case_id": "carton",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\carton\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3098/2852057907_29f1f35ff7_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3098/2852057907_29f1f35ff7_z.jpg",
+        "http://images.cocodataset.org/train2017/000000163185.jpg"
+      ],
+      "source_image_sha256": "7cacdf539de10d8ef15ba6b022c4f5355830c926c7e0476bd12de8e5ae3c638c",
+      "image_id": 163185,
+      "object_annotation_id": 175392,
+      "object_category": "carton",
+      "crop_box_xyxy": [
+        136,
+        53,
+        254,
+        311
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1714384,
+          "category": "carton:cap",
+          "part_name": "cap",
+          "area_px": 542,
+          "mask_full": "parts_full/001_cap.png",
+          "mask_crop": "parts_crop/001_cap.png"
+        },
+        {
+          "annotation_id": 1714385,
+          "category": "carton:tapering_top",
+          "part_name": "tapering_top",
+          "area_px": 1771,
+          "mask_full": "parts_full/002_tapering_top.png",
+          "mask_crop": "parts_crop/002_tapering_top.png"
+        },
+        {
+          "annotation_id": 1714386,
+          "category": "carton:text",
+          "part_name": "text",
+          "area_px": 832,
+          "mask_full": "parts_full/003_text.png",
+          "mask_crop": "parts_crop/003_text.png"
+        },
+        {
+          "annotation_id": 1714387,
+          "category": "carton:side",
+          "part_name": "side",
+          "area_px": 13557,
+          "mask_full": "parts_full/004_side.png",
+          "mask_crop": "parts_crop/004_side.png"
+        }
+      ]
+    },
+    {
+      "case_id": "crate",
+      "expected_domain": "container",
+      "expected_profile": "box",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\crate\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm2.staticflickr.com/1006/856509194_4586e90e15_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm2.staticflickr.com/1006/856509194_4586e90e15_z.jpg",
+        "http://images.cocodataset.org/train2017/000000405662.jpg"
+      ],
+      "source_image_sha256": "35253efcafb9129e9b58a999dbd576cca6f261095a92a6cf60142e259a674dd3",
+      "image_id": 405662,
+      "object_annotation_id": 224014,
+      "object_category": "crate",
+      "crop_box_xyxy": [
+        35,
+        267,
+        427,
+        606
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1732314,
+          "category": "crate:bottom",
+          "part_name": "bottom",
+          "area_px": 969,
+          "mask_full": "parts_full/001_bottom.png",
+          "mask_crop": "parts_crop/001_bottom.png"
+        },
+        {
+          "annotation_id": 1732315,
+          "category": "crate:inner_side",
+          "part_name": "inner_side",
+          "area_px": 3409,
+          "mask_full": "parts_full/002_inner_side.png",
+          "mask_crop": "parts_crop/002_inner_side.png"
+        },
+        {
+          "annotation_id": 1732316,
+          "category": "crate:side",
+          "part_name": "side",
+          "area_px": 58540,
+          "mask_full": "parts_full/003_side.png",
+          "mask_crop": "parts_crop/003_side.png"
+        }
+      ]
+    },
+    {
+      "case_id": "basket",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\basket\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm5.staticflickr.com/4042/4551169640_a8d9d37306_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm5.staticflickr.com/4042/4551169640_a8d9d37306_z.jpg",
+        "http://images.cocodataset.org/val2017/000000378515.jpg"
+      ],
+      "source_image_sha256": "a5f4912fc127f7cf8f21883d9ad1243c5acf97471f48dc820ba7e5a39cc67ad3",
+      "image_id": 378515,
+      "object_annotation_id": 15312,
+      "object_category": "basket",
+      "crop_box_xyxy": [
+        200,
+        233,
+        278,
+        337
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1706077,
+          "category": "basket:handle",
+          "part_name": "handle",
+          "area_px": 121,
+          "mask_full": "parts_full/001_handle.png",
+          "mask_crop": "parts_crop/001_handle.png"
+        },
+        {
+          "annotation_id": 1706078,
+          "category": "basket:rim",
+          "part_name": "rim",
+          "area_px": 385,
+          "mask_full": "parts_full/002_rim.png",
+          "mask_crop": "parts_crop/002_rim.png"
+        },
+        {
+          "annotation_id": 1706079,
+          "category": "basket:inner_side",
+          "part_name": "inner_side",
+          "area_px": 247,
+          "mask_full": "parts_full/003_inner_side.png",
+          "mask_crop": "parts_crop/003_inner_side.png"
+        },
+        {
+          "annotation_id": 1706080,
+          "category": "basket:base",
+          "part_name": "base",
+          "area_px": 46,
+          "mask_full": "parts_full/004_base.png",
+          "mask_crop": "parts_crop/004_base.png"
+        },
+        {
+          "annotation_id": 1706081,
+          "category": "basket:side",
+          "part_name": "side",
+          "area_px": 2323,
+          "mask_full": "parts_full/005_side.png",
+          "mask_crop": "parts_crop/005_side.png"
+        }
+      ]
+    },
+    {
+      "case_id": "bucket",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\bucket\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8323/8101670444_f435d6fe93_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8323/8101670444_f435d6fe93_z.jpg",
+        "http://images.cocodataset.org/train2017/000000090429.jpg"
+      ],
+      "source_image_sha256": "a80196bb8a555b2661fee8b9f05f6dacadf127f8a13ed6c67a0397be4b036210",
+      "image_id": 90429,
+      "object_annotation_id": 77643,
+      "object_category": "bucket",
+      "crop_box_xyxy": [
+        13,
+        253,
+        282,
+        596
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1763105,
+          "category": "bucket:body",
+          "part_name": "body",
+          "area_px": 22563,
+          "mask_full": "parts_full/001_body.png",
+          "mask_crop": "parts_crop/001_body.png"
+        },
+        {
+          "annotation_id": 1763106,
+          "category": "bucket:rim",
+          "part_name": "rim",
+          "area_px": 1158,
+          "mask_full": "parts_full/002_rim.png",
+          "mask_crop": "parts_crop/002_rim.png"
+        },
+        {
+          "annotation_id": 1763107,
+          "category": "bucket:handle",
+          "part_name": "handle",
+          "area_px": 2031,
+          "mask_full": "parts_full/003_handle.png",
+          "mask_crop": "parts_crop/003_handle.png"
+        },
+        {
+          "annotation_id": 1763108,
+          "category": "bucket:inner_body",
+          "part_name": "inner_body",
+          "area_px": 1549,
+          "mask_full": "parts_full/004_inner_body.png",
+          "mask_crop": "parts_crop/004_inner_body.png"
+        },
+        {
+          "annotation_id": 1763109,
+          "category": "bucket:base",
+          "part_name": "base",
+          "area_px": 2741,
+          "mask_full": "parts_full/005_base.png",
+          "mask_crop": "parts_crop/005_base.png"
+        }
+      ]
+    },
+    {
+      "case_id": "trash_can",
+      "expected_domain": "container",
+      "expected_profile": "open_container",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\trash_can\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2741/4174274263_55c852a6f5_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2741/4174274263_55c852a6f5_z.jpg",
+        "http://images.cocodataset.org/train2017/000000557848.jpg"
+      ],
+      "source_image_sha256": "d67eaef28265f431910145ba5507fbe8324b05e20b0aff04070220a0bf73fa58",
+      "image_id": 557848,
+      "object_annotation_id": 147207,
+      "object_category": "trash_can",
+      "crop_box_xyxy": [
+        260,
+        273,
+        454,
+        616
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1703951,
+          "category": "trash_can:hole",
+          "part_name": "hole",
+          "area_px": 2355,
+          "mask_full": "parts_full/001_hole.png",
+          "mask_crop": "parts_crop/001_hole.png"
+        },
+        {
+          "annotation_id": 1703952,
+          "category": "trash_can:lid",
+          "part_name": "lid",
+          "area_px": 9481,
+          "mask_full": "parts_full/002_lid.png",
+          "mask_crop": "parts_crop/002_lid.png"
+        },
+        {
+          "annotation_id": 1703953,
+          "category": "trash_can:body",
+          "part_name": "body",
+          "area_px": 19344,
+          "mask_full": "parts_full/003_body.png",
+          "mask_crop": "parts_crop/003_body.png"
+        },
+        {
+          "annotation_id": 1703954,
+          "category": "trash_can:label",
+          "part_name": "label",
+          "area_px": 2110,
+          "mask_full": "parts_full/004_label.png",
+          "mask_crop": "parts_crop/004_label.png"
+        }
+      ]
+    },
+    {
+      "case_id": "plate",
+      "expected_domain": "container",
+      "expected_profile": "flatware",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\plate\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm5.staticflickr.com/4072/4440872984_28bfb6bd5b_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm5.staticflickr.com/4072/4440872984_28bfb6bd5b_z.jpg",
+        "http://images.cocodataset.org/val2017/000000234779.jpg"
+      ],
+      "source_image_sha256": "8d77cb1cbf4e5e58367c089fc09070876369da382c15d1d9e2a84eea37bb72a4",
+      "image_id": 234779,
+      "object_annotation_id": 23224,
+      "object_category": "plate",
+      "crop_box_xyxy": [
+        0,
+        155,
+        298,
+        277
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1735156,
+          "category": "plate:rim",
+          "part_name": "rim",
+          "area_px": 4228,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1735157,
+          "category": "plate:inner_wall",
+          "part_name": "inner_wall",
+          "area_px": 2493,
+          "mask_full": "parts_full/002_inner_wall.png",
+          "mask_crop": "parts_crop/002_inner_wall.png"
+        },
+        {
+          "annotation_id": 1735158,
+          "category": "plate:body",
+          "part_name": "body",
+          "area_px": 653,
+          "mask_full": "parts_full/003_body.png",
+          "mask_crop": "parts_crop/003_body.png"
+        },
+        {
+          "annotation_id": 1735159,
+          "category": "plate:bottom",
+          "part_name": "bottom",
+          "area_px": 602,
+          "mask_full": "parts_full/004_bottom.png",
+          "mask_crop": "parts_crop/004_bottom.png"
+        },
+        {
+          "annotation_id": 1735160,
+          "category": "plate:base",
+          "part_name": "base",
+          "area_px": 491,
+          "mask_full": "parts_full/005_base.png",
+          "mask_crop": "parts_crop/005_base.png"
+        }
+      ]
+    },
+    {
+      "case_id": "tray",
+      "expected_domain": "container",
+      "expected_profile": "flatware",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\tray\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2396/2474466225_f5c9efe29e_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2396/2474466225_f5c9efe29e_z.jpg",
+        "http://images.cocodataset.org/train2017/000000310450.jpg"
+      ],
+      "source_image_sha256": "75a2749baafdbfc14934960ef8c8c1ef3b7fbea51ffacf39d6b2b2692d5dd929",
+      "image_id": 310450,
+      "object_annotation_id": 99739,
+      "object_category": "tray",
+      "crop_box_xyxy": [
+        0,
+        0,
+        640,
+        480
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1772132,
+          "category": "tray:rim",
+          "part_name": "rim",
+          "area_px": 3985,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1772133,
+          "category": "tray:inner_side",
+          "part_name": "inner_side",
+          "area_px": 10893,
+          "mask_full": "parts_full/002_inner_side.png",
+          "mask_crop": "parts_crop/002_inner_side.png"
+        },
+        {
+          "annotation_id": 1772134,
+          "category": "tray:outer_side",
+          "part_name": "outer_side",
+          "area_px": 3466,
+          "mask_full": "parts_full/003_outer_side.png",
+          "mask_crop": "parts_crop/003_outer_side.png"
+        },
+        {
+          "annotation_id": 1772135,
+          "category": "tray:bottom",
+          "part_name": "bottom",
+          "area_px": 5604,
+          "mask_full": "parts_full/004_bottom.png",
+          "mask_crop": "parts_crop/004_bottom.png"
+        }
+      ]
+    },
+    {
+      "case_id": "vase",
+      "expected_domain": "container",
+      "expected_profile": "bottle_jar",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\vase\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7213/7030077557_f3953fcf89_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7213/7030077557_f3953fcf89_z.jpg",
+        "http://images.cocodataset.org/train2017/000000248019.jpg"
+      ],
+      "source_image_sha256": "97da8a3f280dff2004b7708a621037a8e3574ceb0dd421c88aac3984a8f1b7e4",
+      "image_id": 248019,
+      "object_annotation_id": 95055,
+      "object_category": "vase",
+      "crop_box_xyxy": [
+        144,
+        19,
+        316,
+        408
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 5,
+      "parts": [
+        {
+          "annotation_id": 1769847,
+          "category": "vase:handle",
+          "part_name": "handle",
+          "area_px": 2782,
+          "mask_full": "parts_full/001_handle.png",
+          "mask_crop": "parts_crop/001_handle.png"
+        },
+        {
+          "annotation_id": 1769848,
+          "category": "vase:foot",
+          "part_name": "foot",
+          "area_px": 2567,
+          "mask_full": "parts_full/002_foot.png",
+          "mask_crop": "parts_crop/002_foot.png"
+        },
+        {
+          "annotation_id": 1769849,
+          "category": "vase:mouth",
+          "part_name": "mouth",
+          "area_px": 2245,
+          "mask_full": "parts_full/003_mouth.png",
+          "mask_crop": "parts_crop/003_mouth.png"
+        },
+        {
+          "annotation_id": 1769850,
+          "category": "vase:neck",
+          "part_name": "neck",
+          "area_px": 3345,
+          "mask_full": "parts_full/004_neck.png",
+          "mask_crop": "parts_crop/004_neck.png"
+        },
+        {
+          "annotation_id": 1769851,
+          "category": "vase:body",
+          "part_name": "body",
+          "area_px": 19446,
+          "mask_full": "parts_full/005_body.png",
+          "mask_crop": "parts_crop/005_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "car_automobile",
+      "expected_domain": "vehicle",
+      "expected_profile": "road_vehicle",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\car_automobile\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7255/7638769432_b6b951b63d_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7255/7638769432_b6b951b63d_z.jpg",
+        "http://images.cocodataset.org/train2017/000000138022.jpg"
+      ],
+      "source_image_sha256": "2e8d77ccfe4f729b6b00a8553f7294f868f0adb709812c503ef5dec8ffb79348",
+      "image_id": 138022,
+      "object_annotation_id": 72818,
+      "object_category": "car_(automobile)",
+      "crop_box_xyxy": [
+        10,
+        218,
+        570,
+        603
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 17,
+      "parts": [
+        {
+          "annotation_id": 1761080,
+          "category": "car_(automobile):mirror",
+          "part_name": "mirror",
+          "area_px": 279,
+          "mask_full": "parts_full/001_mirror.png",
+          "mask_crop": "parts_crop/001_mirror.png"
+        },
+        {
+          "annotation_id": 1761081,
+          "category": "car_(automobile):window",
+          "part_name": "window",
+          "area_px": 10683,
+          "mask_full": "parts_full/002_window.png",
+          "mask_crop": "parts_crop/002_window.png"
+        },
+        {
+          "annotation_id": 1761082,
+          "category": "car_(automobile):windshield",
+          "part_name": "windshield",
+          "area_px": 1444,
+          "mask_full": "parts_full/003_windshield.png",
+          "mask_crop": "parts_crop/003_windshield.png"
+        },
+        {
+          "annotation_id": 1761083,
+          "category": "car_(automobile):wiper",
+          "part_name": "wiper",
+          "area_px": 186,
+          "mask_full": "parts_full/004_wiper.png",
+          "mask_crop": "parts_crop/004_wiper.png"
+        },
+        {
+          "annotation_id": 1761084,
+          "category": "car_(automobile):taillight",
+          "part_name": "taillight",
+          "area_px": 1105,
+          "mask_full": "parts_full/005_taillight.png",
+          "mask_crop": "parts_crop/005_taillight.png"
+        },
+        {
+          "annotation_id": 1761085,
+          "category": "car_(automobile):rim",
+          "part_name": "rim",
+          "area_px": 2785,
+          "mask_full": "parts_full/006_rim.png",
+          "mask_crop": "parts_crop/006_rim.png"
+        },
+        {
+          "annotation_id": 1761086,
+          "category": "car_(automobile):wheel",
+          "part_name": "wheel",
+          "area_px": 4372,
+          "mask_full": "parts_full/007_wheel.png",
+          "mask_crop": "parts_crop/007_wheel.png"
+        },
+        {
+          "annotation_id": 1761087,
+          "category": "car_(automobile):bumper",
+          "part_name": "bumper",
+          "area_px": 4198,
+          "mask_full": "parts_full/008_bumper.png",
+          "mask_crop": "parts_crop/008_bumper.png"
+        },
+        {
+          "annotation_id": 1761088,
+          "category": "car_(automobile):sign",
+          "part_name": "sign",
+          "area_px": 684,
+          "mask_full": "parts_full/009_sign.png",
+          "mask_crop": "parts_crop/009_sign.png"
+        },
+        {
+          "annotation_id": 1761089,
+          "category": "car_(automobile):headlight",
+          "part_name": "headlight",
+          "area_px": 74,
+          "mask_full": "parts_full/010_headlight.png",
+          "mask_crop": "parts_crop/010_headlight.png"
+        },
+        {
+          "annotation_id": 1761090,
+          "category": "car_(automobile):trunk",
+          "part_name": "trunk",
+          "area_px": 8931,
+          "mask_full": "parts_full/011_trunk.png",
+          "mask_crop": "parts_crop/011_trunk.png"
+        },
+        {
+          "annotation_id": 1761091,
+          "category": "car_(automobile):splashboard",
+          "part_name": "splashboard",
+          "area_px": 543,
+          "mask_full": "parts_full/012_splashboard.png",
+          "mask_crop": "parts_crop/012_splashboard.png"
+        },
+        {
+          "annotation_id": 1761092,
+          "category": "car_(automobile):hood",
+          "part_name": "hood",
+          "area_px": 185,
+          "mask_full": "parts_full/013_hood.png",
+          "mask_crop": "parts_crop/013_hood.png"
+        },
+        {
+          "annotation_id": 1761093,
+          "category": "car_(automobile):roof",
+          "part_name": "roof",
+          "area_px": 7440,
+          "mask_full": "parts_full/014_roof.png",
+          "mask_crop": "parts_crop/014_roof.png"
+        },
+        {
+          "annotation_id": 1761094,
+          "category": "car_(automobile):fender",
+          "part_name": "fender",
+          "area_px": 18473,
+          "mask_full": "parts_full/015_fender.png",
+          "mask_crop": "parts_crop/015_fender.png"
+        },
+        {
+          "annotation_id": 1761095,
+          "category": "car_(automobile):handle",
+          "part_name": "handle",
+          "area_px": 290,
+          "mask_full": "parts_full/016_handle.png",
+          "mask_crop": "parts_crop/016_handle.png"
+        },
+        {
+          "annotation_id": 1761096,
+          "category": "car_(automobile):logo",
+          "part_name": "logo",
+          "area_px": 121,
+          "mask_full": "parts_full/017_logo.png",
+          "mask_crop": "parts_crop/017_logo.png"
+        }
+      ]
+    },
+    {
+      "case_id": "bicycle",
+      "expected_domain": "vehicle",
+      "expected_profile": "two_wheeler",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\bicycle\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm2.staticflickr.com/1301/5182275061_afa240859d_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm2.staticflickr.com/1301/5182275061_afa240859d_z.jpg",
+        "http://images.cocodataset.org/train2017/000000322391.jpg"
+      ],
+      "source_image_sha256": "87006a907dd08ddc5ece4fc3411b2a609d0b65076c14fbceb24cce0c48e7a150",
+      "image_id": 322391,
+      "object_annotation_id": 124362,
+      "object_category": "bicycle",
+      "crop_box_xyxy": [
+        188,
+        476,
+        389,
+        626
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 13,
+      "parts": [
+        {
+          "annotation_id": 1695484,
+          "category": "bicycle:basket",
+          "part_name": "basket",
+          "area_px": 689,
+          "mask_full": "parts_full/001_basket.png",
+          "mask_crop": "parts_crop/001_basket.png"
+        },
+        {
+          "annotation_id": 1695485,
+          "category": "bicycle:gear",
+          "part_name": "gear",
+          "area_px": 82,
+          "mask_full": "parts_full/002_gear.png",
+          "mask_crop": "parts_crop/002_gear.png"
+        },
+        {
+          "annotation_id": 1695486,
+          "category": "bicycle:handlebar",
+          "part_name": "handlebar",
+          "area_px": 187,
+          "mask_full": "parts_full/003_handlebar.png",
+          "mask_crop": "parts_crop/003_handlebar.png"
+        },
+        {
+          "annotation_id": 1695487,
+          "category": "bicycle:stem",
+          "part_name": "stem",
+          "area_px": 23,
+          "mask_full": "parts_full/004_stem.png",
+          "mask_crop": "parts_crop/004_stem.png"
+        },
+        {
+          "annotation_id": 1695488,
+          "category": "bicycle:head_tube",
+          "part_name": "head_tube",
+          "area_px": 100,
+          "mask_full": "parts_full/005_head_tube.png",
+          "mask_crop": "parts_crop/005_head_tube.png"
+        },
+        {
+          "annotation_id": 1695489,
+          "category": "bicycle:fork",
+          "part_name": "fork",
+          "area_px": 249,
+          "mask_full": "parts_full/006_fork.png",
+          "mask_crop": "parts_crop/006_fork.png"
+        },
+        {
+          "annotation_id": 1695490,
+          "category": "bicycle:top_tube",
+          "part_name": "top_tube",
+          "area_px": 219,
+          "mask_full": "parts_full/007_top_tube.png",
+          "mask_crop": "parts_crop/007_top_tube.png"
+        },
+        {
+          "annotation_id": 1695491,
+          "category": "bicycle:down_tube",
+          "part_name": "down_tube",
+          "area_px": 314,
+          "mask_full": "parts_full/008_down_tube.png",
+          "mask_crop": "parts_crop/008_down_tube.png"
+        },
+        {
+          "annotation_id": 1695492,
+          "category": "bicycle:seat_tube",
+          "part_name": "seat_tube",
+          "area_px": 206,
+          "mask_full": "parts_full/009_seat_tube.png",
+          "mask_crop": "parts_crop/009_seat_tube.png"
+        },
+        {
+          "annotation_id": 1695493,
+          "category": "bicycle:seat_stay",
+          "part_name": "seat_stay",
+          "area_px": 190,
+          "mask_full": "parts_full/010_seat_stay.png",
+          "mask_crop": "parts_crop/010_seat_stay.png"
+        },
+        {
+          "annotation_id": 1695494,
+          "category": "bicycle:saddle",
+          "part_name": "saddle",
+          "area_px": 150,
+          "mask_full": "parts_full/011_saddle.png",
+          "mask_crop": "parts_crop/011_saddle.png"
+        },
+        {
+          "annotation_id": 1695495,
+          "category": "bicycle:pedal",
+          "part_name": "pedal",
+          "area_px": 92,
+          "mask_full": "parts_full/012_pedal.png",
+          "mask_crop": "parts_crop/012_pedal.png"
+        },
+        {
+          "annotation_id": 1695496,
+          "category": "bicycle:wheel",
+          "part_name": "wheel",
+          "area_px": 5297,
+          "mask_full": "parts_full/013_wheel.png",
+          "mask_crop": "parts_crop/013_wheel.png"
+        }
+      ]
+    },
+    {
+      "case_id": "book",
+      "expected_domain": "daily_object",
+      "expected_profile": "book",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\book\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8201/8162763378_e83b475dae_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8201/8162763378_e83b475dae_z.jpg",
+        "http://images.cocodataset.org/train2017/000000414577.jpg"
+      ],
+      "source_image_sha256": "d244302b4a386353e498ec16306f8c2f0e3d4dc0ba23a0d9319f0a3918412481",
+      "image_id": 414577,
+      "object_annotation_id": 206495,
+      "object_category": "book",
+      "crop_box_xyxy": [
+        9,
+        5,
+        573,
+        480
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 2,
+      "parts": [
+        {
+          "annotation_id": 1725299,
+          "category": "book:cover",
+          "part_name": "cover",
+          "area_px": 115287,
+          "mask_full": "parts_full/001_cover.png",
+          "mask_crop": "parts_crop/001_cover.png"
+        },
+        {
+          "annotation_id": 1725300,
+          "category": "book:page",
+          "part_name": "page",
+          "area_px": 9152,
+          "mask_full": "parts_full/002_page.png",
+          "mask_crop": "parts_crop/002_page.png"
+        }
+      ]
+    },
+    {
+      "case_id": "newspaper",
+      "expected_domain": "daily_object",
+      "expected_profile": "book",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\newspaper\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm6.staticflickr.com/5261/5603588748_b043740af2_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm6.staticflickr.com/5261/5603588748_b043740af2_z.jpg",
+        "http://images.cocodataset.org/train2017/000000462589.jpg"
+      ],
+      "source_image_sha256": "344db39354fbc983308285c5a6b68f91ce0164cd2d963a2b0456258fd00956b3",
+      "image_id": 462589,
+      "object_annotation_id": 236485,
+      "object_category": "newspaper",
+      "crop_box_xyxy": [
+        0,
+        17,
+        640,
+        480
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 1,
+      "parts": [
+        {
+          "annotation_id": 1737234,
+          "category": "newspaper:text",
+          "part_name": "text",
+          "area_px": 17913,
+          "mask_full": "parts_full/001_text.png",
+          "mask_crop": "parts_crop/001_text.png"
+        }
+      ]
+    },
+    {
+      "case_id": "pen",
+      "expected_domain": "daily_object",
+      "expected_profile": "writing_tool",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\pen\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3368/3176308857_fed535385d_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3368/3176308857_fed535385d_z.jpg",
+        "http://images.cocodataset.org/val2017/000000076731.jpg"
+      ],
+      "source_image_sha256": "1d8e8969ebbe9cc2e7d77c579551de9236716cc5031b8e19c11e85e73b851497",
+      "image_id": 76731,
+      "object_annotation_id": 27399,
+      "object_category": "pen",
+      "crop_box_xyxy": [
+        175,
+        151,
+        506,
+        248
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1742041,
+          "category": "pen:cap",
+          "part_name": "cap",
+          "area_px": 1720,
+          "mask_full": "parts_full/001_cap.png",
+          "mask_crop": "parts_crop/001_cap.png"
+        },
+        {
+          "annotation_id": 1742042,
+          "category": "pen:clip",
+          "part_name": "clip",
+          "area_px": 607,
+          "mask_full": "parts_full/002_clip.png",
+          "mask_crop": "parts_crop/002_clip.png"
+        },
+        {
+          "annotation_id": 1742043,
+          "category": "pen:barrel",
+          "part_name": "barrel",
+          "area_px": 4282,
+          "mask_full": "parts_full/003_barrel.png",
+          "mask_crop": "parts_crop/003_barrel.png"
+        },
+        {
+          "annotation_id": 1742044,
+          "category": "pen:tip",
+          "part_name": "tip",
+          "area_px": 172,
+          "mask_full": "parts_full/004_tip.png",
+          "mask_crop": "parts_crop/004_tip.png"
+        }
+      ]
+    },
+    {
+      "case_id": "pencil",
+      "expected_domain": "daily_object",
+      "expected_profile": "writing_tool",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\pencil\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm7.staticflickr.com/6208/6087807890_6b334013aa_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm7.staticflickr.com/6208/6087807890_6b334013aa_z.jpg",
+        "http://images.cocodataset.org/train2017/000000227453.jpg"
+      ],
+      "source_image_sha256": "032cbaa725d8e4808a46115edc63851ce12db8826b8c3754fba322b85e92da6e",
+      "image_id": 227453,
+      "object_annotation_id": 173524,
+      "object_category": "pencil",
+      "crop_box_xyxy": [
+        304,
+        29,
+        480,
+        264
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1713488,
+          "category": "pencil:body",
+          "part_name": "body",
+          "area_px": 3642,
+          "mask_full": "parts_full/001_body.png",
+          "mask_crop": "parts_crop/001_body.png"
+        },
+        {
+          "annotation_id": 1713489,
+          "category": "pencil:ferrule",
+          "part_name": "ferrule",
+          "area_px": 884,
+          "mask_full": "parts_full/002_ferrule.png",
+          "mask_crop": "parts_crop/002_ferrule.png"
+        },
+        {
+          "annotation_id": 1713490,
+          "category": "pencil:eraser",
+          "part_name": "eraser",
+          "area_px": 432,
+          "mask_full": "parts_full/003_eraser.png",
+          "mask_crop": "parts_crop/003_eraser.png"
+        }
+      ]
+    },
+    {
+      "case_id": "wallet",
+      "expected_domain": "daily_object",
+      "expected_profile": "wallet_belt",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\wallet\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8401/8694297517_587aaaed72_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8401/8694297517_587aaaed72_z.jpg",
+        "http://images.cocodataset.org/train2017/000000211905.jpg"
+      ],
+      "source_image_sha256": "a27d745a780a8fa8beb999d3a84761a4c4869b851802fae590cf38a9fd42cd2e",
+      "image_id": 211905,
+      "object_annotation_id": 236571,
+      "object_category": "wallet",
+      "crop_box_xyxy": [
+        305,
+        218,
+        612,
+        329
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 2,
+      "parts": [
+        {
+          "annotation_id": 1737265,
+          "category": "wallet:flap",
+          "part_name": "flap",
+          "area_px": 5944,
+          "mask_full": "parts_full/001_flap.png",
+          "mask_crop": "parts_crop/001_flap.png"
+        },
+        {
+          "annotation_id": 1737266,
+          "category": "wallet:inner_body",
+          "part_name": "inner_body",
+          "area_px": 2299,
+          "mask_full": "parts_full/002_inner_body.png",
+          "mask_crop": "parts_crop/002_inner_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "belt",
+      "expected_domain": "daily_object",
+      "expected_profile": "wallet_belt",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\belt\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm7.staticflickr.com/6030/6020755708_beee85bd5d_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm7.staticflickr.com/6030/6020755708_beee85bd5d_z.jpg",
+        "http://images.cocodataset.org/train2017/000000156045.jpg"
+      ],
+      "source_image_sha256": "f75f33f08e4db0f8d87d473a21a90e93a7e4df998fa4f5770f25bc9d9e8c1768",
+      "image_id": 156045,
+      "object_annotation_id": 67555,
+      "object_category": "belt",
+      "crop_box_xyxy": [
+        89,
+        441,
+        276,
+        523
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 6,
+      "parts": [
+        {
+          "annotation_id": 1758882,
+          "category": "belt:hole",
+          "part_name": "hole",
+          "area_px": 14,
+          "mask_full": "parts_full/001_hole.png",
+          "mask_crop": "parts_crop/001_hole.png"
+        },
+        {
+          "annotation_id": 1758883,
+          "category": "belt:prong",
+          "part_name": "prong",
+          "area_px": 31,
+          "mask_full": "parts_full/002_prong.png",
+          "mask_crop": "parts_crop/002_prong.png"
+        },
+        {
+          "annotation_id": 1758884,
+          "category": "belt:buckle",
+          "part_name": "buckle",
+          "area_px": 142,
+          "mask_full": "parts_full/003_buckle.png",
+          "mask_crop": "parts_crop/003_buckle.png"
+        },
+        {
+          "annotation_id": 1758885,
+          "category": "belt:loop",
+          "part_name": "loop",
+          "area_px": 203,
+          "mask_full": "parts_full/004_loop.png",
+          "mask_crop": "parts_crop/004_loop.png"
+        },
+        {
+          "annotation_id": 1758886,
+          "category": "belt:strap",
+          "part_name": "strap",
+          "area_px": 1358,
+          "mask_full": "parts_full/005_strap.png",
+          "mask_crop": "parts_crop/005_strap.png"
+        },
+        {
+          "annotation_id": 1758887,
+          "category": "belt:end_tip",
+          "part_name": "end_tip",
+          "area_px": 106,
+          "mask_full": "parts_full/006_end_tip.png",
+          "mask_crop": "parts_crop/006_end_tip.png"
+        }
+      ]
+    },
+    {
+      "case_id": "hat",
+      "expected_domain": "daily_object",
+      "expected_profile": "headwear",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\hat\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2010/2389904851_cf54f342a5_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2010/2389904851_cf54f342a5_z.jpg",
+        "http://images.cocodataset.org/train2017/000000433398.jpg"
+      ],
+      "source_image_sha256": "f0303cb2c23611e06fccec741c2f16a683be5a920292dc5c51f314a48ebaa2fe",
+      "image_id": 433398,
+      "object_annotation_id": 212812,
+      "object_category": "hat",
+      "crop_box_xyxy": [
+        303,
+        12,
+        640,
+        193
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1727600,
+          "category": "hat:rim",
+          "part_name": "rim",
+          "area_px": 1327,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1727601,
+          "category": "hat:strap",
+          "part_name": "strap",
+          "area_px": 79,
+          "mask_full": "parts_full/002_strap.png",
+          "mask_crop": "parts_crop/002_strap.png"
+        },
+        {
+          "annotation_id": 1727602,
+          "category": "hat:inner_side",
+          "part_name": "inner_side",
+          "area_px": 23164,
+          "mask_full": "parts_full/003_inner_side.png",
+          "mask_crop": "parts_crop/003_inner_side.png"
+        }
+      ]
+    },
+    {
+      "case_id": "helmet",
+      "expected_domain": "daily_object",
+      "expected_profile": "headwear",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\helmet\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7290/8738791171_17594ebcb5_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7290/8738791171_17594ebcb5_z.jpg",
+        "http://images.cocodataset.org/val2017/000000308545.jpg"
+      ],
+      "source_image_sha256": "31beaa8ea1591bd457df5e08cc4b70b0685dbde8f58874622c4548249b2879a3",
+      "image_id": 308545,
+      "object_annotation_id": 14943,
+      "object_category": "helmet",
+      "crop_box_xyxy": [
+        225,
+        21,
+        370,
+        131
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1704788,
+          "category": "helmet:visor",
+          "part_name": "visor",
+          "area_px": 943,
+          "mask_full": "parts_full/001_visor.png",
+          "mask_crop": "parts_crop/001_visor.png"
+        },
+        {
+          "annotation_id": 1704789,
+          "category": "helmet:rim",
+          "part_name": "rim",
+          "area_px": 139,
+          "mask_full": "parts_full/002_rim.png",
+          "mask_crop": "parts_crop/002_rim.png"
+        },
+        {
+          "annotation_id": 1704790,
+          "category": "helmet:strap",
+          "part_name": "strap",
+          "area_px": 20,
+          "mask_full": "parts_full/003_strap.png",
+          "mask_crop": "parts_crop/003_strap.png"
+        }
+      ]
+    },
+    {
+      "case_id": "shoe",
+      "expected_domain": "daily_object",
+      "expected_profile": "footwear",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\shoe\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm5.staticflickr.com/4132/5072452539_0296388dbe_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm5.staticflickr.com/4132/5072452539_0296388dbe_z.jpg",
+        "http://images.cocodataset.org/train2017/000000480116.jpg"
+      ],
+      "source_image_sha256": "773d304d7075155644c44c0e2c0883f02dfcb01e5788c90be64b976169c812d3",
+      "image_id": 480116,
+      "object_annotation_id": 201072,
+      "object_category": "shoe",
+      "crop_box_xyxy": [
+        298,
+        315,
+        404,
+        406
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 8,
+      "parts": [
+        {
+          "annotation_id": 1723573,
+          "category": "shoe:outsole",
+          "part_name": "outsole",
+          "area_px": 564,
+          "mask_full": "parts_full/001_outsole.png",
+          "mask_crop": "parts_crop/001_outsole.png"
+        },
+        {
+          "annotation_id": 1723574,
+          "category": "shoe:lace",
+          "part_name": "lace",
+          "area_px": 464,
+          "mask_full": "parts_full/002_lace.png",
+          "mask_crop": "parts_crop/002_lace.png"
+        },
+        {
+          "annotation_id": 1723575,
+          "category": "shoe:tongue",
+          "part_name": "tongue",
+          "area_px": 477,
+          "mask_full": "parts_full/003_tongue.png",
+          "mask_crop": "parts_crop/003_tongue.png"
+        },
+        {
+          "annotation_id": 1723576,
+          "category": "shoe:toe_box",
+          "part_name": "toe_box",
+          "area_px": 292,
+          "mask_full": "parts_full/004_toe_box.png",
+          "mask_crop": "parts_crop/004_toe_box.png"
+        },
+        {
+          "annotation_id": 1723577,
+          "category": "shoe:vamp",
+          "part_name": "vamp",
+          "area_px": 421,
+          "mask_full": "parts_full/005_vamp.png",
+          "mask_crop": "parts_crop/005_vamp.png"
+        },
+        {
+          "annotation_id": 1723578,
+          "category": "shoe:lining",
+          "part_name": "lining",
+          "area_px": 234,
+          "mask_full": "parts_full/006_lining.png",
+          "mask_crop": "parts_crop/006_lining.png"
+        },
+        {
+          "annotation_id": 1723579,
+          "category": "shoe:quarter",
+          "part_name": "quarter",
+          "area_px": 955,
+          "mask_full": "parts_full/007_quarter.png",
+          "mask_crop": "parts_crop/007_quarter.png"
+        },
+        {
+          "annotation_id": 1723580,
+          "category": "shoe:heel",
+          "part_name": "heel",
+          "area_px": 124,
+          "mask_full": "parts_full/008_heel.png",
+          "mask_crop": "parts_crop/008_heel.png"
+        }
+      ]
+    },
+    {
+      "case_id": "slipper_footwear",
+      "expected_domain": "daily_object",
+      "expected_profile": "footwear",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\slipper_footwear\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3158/3116460759_4366991e50_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3158/3116460759_4366991e50_z.jpg",
+        "http://images.cocodataset.org/train2017/000000237897.jpg"
+      ],
+      "source_image_sha256": "fbaa0da0a3cab0729e62b5936b008ed0fbdb66f8194c85912ec56f84168f9eeb",
+      "image_id": 237897,
+      "object_annotation_id": 126990,
+      "object_category": "slipper_(footwear)",
+      "crop_box_xyxy": [
+        343,
+        258,
+        500,
+        380
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1696628,
+          "category": "slipper_(footwear):lining",
+          "part_name": "lining",
+          "area_px": 1192,
+          "mask_full": "parts_full/001_lining.png",
+          "mask_crop": "parts_crop/001_lining.png"
+        },
+        {
+          "annotation_id": 1696629,
+          "category": "slipper_(footwear):toe_box",
+          "part_name": "toe_box",
+          "area_px": 3187,
+          "mask_full": "parts_full/002_toe_box.png",
+          "mask_crop": "parts_crop/002_toe_box.png"
+        },
+        {
+          "annotation_id": 1696630,
+          "category": "slipper_(footwear):vamp",
+          "part_name": "vamp",
+          "area_px": 3469,
+          "mask_full": "parts_full/003_vamp.png",
+          "mask_crop": "parts_crop/003_vamp.png"
+        },
+        {
+          "annotation_id": 1696631,
+          "category": "slipper_(footwear):outsole",
+          "part_name": "outsole",
+          "area_px": 27,
+          "mask_full": "parts_full/004_outsole.png",
+          "mask_crop": "parts_crop/004_outsole.png"
+        }
+      ]
+    },
+    {
+      "case_id": "scarf",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\scarf\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm2.staticflickr.com/1320/571506963_39b7c34d99_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm2.staticflickr.com/1320/571506963_39b7c34d99_z.jpg",
+        "http://images.cocodataset.org/train2017/000000065601.jpg"
+      ],
+      "source_image_sha256": "6cada681abfe283cc697e6cc9e499eab2e5e88bcea8f03cb2064df69e4fd0921",
+      "image_id": 65601,
+      "object_annotation_id": 150502,
+      "object_category": "scarf",
+      "crop_box_xyxy": [
+        216,
+        4,
+        640,
+        208
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 2,
+      "parts": [
+        {
+          "annotation_id": 1705141,
+          "category": "scarf:fringes",
+          "part_name": "fringes",
+          "area_px": 16120,
+          "mask_full": "parts_full/001_fringes.png",
+          "mask_crop": "parts_crop/001_fringes.png"
+        },
+        {
+          "annotation_id": 1705142,
+          "category": "scarf:body",
+          "part_name": "body",
+          "area_px": 25159,
+          "mask_full": "parts_full/002_body.png",
+          "mask_crop": "parts_crop/002_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "sweater",
+      "expected_domain": "daily_object",
+      "expected_profile": "garment",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\sweater\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm1.staticflickr.com/108/271658164_61e5a2d56a_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm1.staticflickr.com/108/271658164_61e5a2d56a_z.jpg",
+        "http://images.cocodataset.org/val2017/000000482319.jpg"
+      ],
+      "source_image_sha256": "ccc3bd4d4fadee5f2dcdd521553483e04238ab7e1d170816c059293e32655e58",
+      "image_id": 482319,
+      "object_annotation_id": 40180,
+      "object_category": "sweater",
+      "crop_box_xyxy": [
+        1,
+        85,
+        319,
+        457
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 7,
+      "parts": [
+        {
+          "annotation_id": 1747497,
+          "category": "sweater:cuff",
+          "part_name": "cuff",
+          "area_px": 1994,
+          "mask_full": "parts_full/001_cuff.png",
+          "mask_crop": "parts_crop/001_cuff.png"
+        },
+        {
+          "annotation_id": 1747498,
+          "category": "sweater:sleeve",
+          "part_name": "sleeve",
+          "area_px": 14189,
+          "mask_full": "parts_full/002_sleeve.png",
+          "mask_crop": "parts_crop/002_sleeve.png"
+        },
+        {
+          "annotation_id": 1747499,
+          "category": "sweater:shoulder",
+          "part_name": "shoulder",
+          "area_px": 858,
+          "mask_full": "parts_full/003_shoulder.png",
+          "mask_crop": "parts_crop/003_shoulder.png"
+        },
+        {
+          "annotation_id": 1747500,
+          "category": "sweater:yoke",
+          "part_name": "yoke",
+          "area_px": 5149,
+          "mask_full": "parts_full/004_yoke.png",
+          "mask_crop": "parts_crop/004_yoke.png"
+        },
+        {
+          "annotation_id": 1747501,
+          "category": "sweater:hem",
+          "part_name": "hem",
+          "area_px": 465,
+          "mask_full": "parts_full/005_hem.png",
+          "mask_crop": "parts_crop/005_hem.png"
+        },
+        {
+          "annotation_id": 1747502,
+          "category": "sweater:body",
+          "part_name": "body",
+          "area_px": 14097,
+          "mask_full": "parts_full/006_body.png",
+          "mask_crop": "parts_crop/006_body.png"
+        },
+        {
+          "annotation_id": 1747503,
+          "category": "sweater:neckband",
+          "part_name": "neckband",
+          "area_px": 1544,
+          "mask_full": "parts_full/007_neckband.png",
+          "mask_crop": "parts_crop/007_neckband.png"
+        }
+      ]
+    },
+    {
+      "case_id": "towel",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\towel\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm6.staticflickr.com/5117/6908233010_b3e53e55bd_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm6.staticflickr.com/5117/6908233010_b3e53e55bd_z.jpg",
+        "http://images.cocodataset.org/val2017/000000257169.jpg"
+      ],
+      "source_image_sha256": "d7350936a580dca3b8f065f84d7179053dcf96e3d2c3e546d678769825549409",
+      "image_id": 257169,
+      "object_annotation_id": 16685,
+      "object_category": "towel",
+      "crop_box_xyxy": [
+        329,
+        0,
+        480,
+        380
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1711151,
+          "category": "towel:hem",
+          "part_name": "hem",
+          "area_px": 363,
+          "mask_full": "parts_full/001_hem.png",
+          "mask_crop": "parts_crop/001_hem.png"
+        },
+        {
+          "annotation_id": 1711152,
+          "category": "towel:border",
+          "part_name": "border",
+          "area_px": 1067,
+          "mask_full": "parts_full/002_border.png",
+          "mask_crop": "parts_crop/002_border.png"
+        },
+        {
+          "annotation_id": 1711153,
+          "category": "towel:terry_bar",
+          "part_name": "terry_bar",
+          "area_px": 2019,
+          "mask_full": "parts_full/003_terry_bar.png",
+          "mask_crop": "parts_crop/003_terry_bar.png"
+        },
+        {
+          "annotation_id": 1711154,
+          "category": "towel:body",
+          "part_name": "body",
+          "area_px": 26594,
+          "mask_full": "parts_full/004_body.png",
+          "mask_crop": "parts_crop/004_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "pillow",
+      "expected_domain": "daily_object",
+      "expected_profile": "soft_good",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\pillow\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm5.staticflickr.com/4066/4705721976_a7c6bc8e97_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm5.staticflickr.com/4066/4705721976_a7c6bc8e97_z.jpg",
+        "http://images.cocodataset.org/val2017/000000040757.jpg"
+      ],
+      "source_image_sha256": "e0492a859b25268268182d2f86da6c251a5a081d1947bc487c96e596e6e7aac1",
+      "image_id": 40757,
+      "object_annotation_id": 49378,
+      "object_category": "pillow",
+      "crop_box_xyxy": [
+        167,
+        232,
+        425,
+        614
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 1,
+      "parts": [
+        {
+          "annotation_id": 1751538,
+          "category": "pillow:embroidery",
+          "part_name": "embroidery",
+          "area_px": 28363,
+          "mask_full": "parts_full/001_embroidery.png",
+          "mask_crop": "parts_crop/001_embroidery.png"
+        }
+      ]
+    },
+    {
+      "case_id": "sponge",
+      "object_category": "sponge",
+      "status": "not_materialized",
+      "errors": [
+        "no eligible annotation"
+      ]
+    },
+    {
+      "case_id": "soap",
+      "expected_domain": "daily_object",
+      "expected_profile": "simple_object",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\soap\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2366/2120032404_e952360121_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2366/2120032404_e952360121_z.jpg",
+        "http://images.cocodataset.org/val2017/000000501523.jpg"
+      ],
+      "source_image_sha256": "c16907561d95f4f8e59b26c537abda6f85210837babd0fdc011916ad3e4935b1",
+      "image_id": 501523,
+      "object_annotation_id": 10009,
+      "object_category": "soap",
+      "crop_box_xyxy": [
+        452,
+        0,
+        553,
+        160
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 6,
+      "parts": [
+        {
+          "annotation_id": 1686176,
+          "category": "soap:closure",
+          "part_name": "closure",
+          "area_px": 482,
+          "mask_full": "parts_full/001_closure.png",
+          "mask_crop": "parts_crop/001_closure.png"
+        },
+        {
+          "annotation_id": 1686177,
+          "category": "soap:sipper",
+          "part_name": "sipper",
+          "area_px": 66,
+          "mask_full": "parts_full/002_sipper.png",
+          "mask_crop": "parts_crop/002_sipper.png"
+        },
+        {
+          "annotation_id": 1686178,
+          "category": "soap:push_pull_cap",
+          "part_name": "push_pull_cap",
+          "area_px": 554,
+          "mask_full": "parts_full/003_push_pull_cap.png",
+          "mask_crop": "parts_crop/003_push_pull_cap.png"
+        },
+        {
+          "annotation_id": 1686179,
+          "category": "soap:shoulder",
+          "part_name": "shoulder",
+          "area_px": 2476,
+          "mask_full": "parts_full/004_shoulder.png",
+          "mask_crop": "parts_crop/004_shoulder.png"
+        },
+        {
+          "annotation_id": 1686180,
+          "category": "soap:label",
+          "part_name": "label",
+          "area_px": 1032,
+          "mask_full": "parts_full/005_label.png",
+          "mask_crop": "parts_crop/005_label.png"
+        },
+        {
+          "annotation_id": 1686181,
+          "category": "soap:body",
+          "part_name": "body",
+          "area_px": 5205,
+          "mask_full": "parts_full/006_body.png",
+          "mask_crop": "parts_crop/006_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "drill",
+      "expected_domain": "tool_prop",
+      "expected_profile": "drill",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\drill\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7278/7537506094_d397a06594_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7278/7537506094_d397a06594_z.jpg",
+        "http://images.cocodataset.org/train2017/000000170513.jpg"
+      ],
+      "source_image_sha256": "5b90ed76aae5d4b5bf78abf550bb35d34e4324621bdec02c256eb031b0354abc",
+      "image_id": 170513,
+      "object_annotation_id": 175563,
+      "object_category": "drill",
+      "crop_box_xyxy": [
+        162,
+        231,
+        286,
+        313
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 2,
+      "parts": [
+        {
+          "annotation_id": 1714428,
+          "category": "drill:handle",
+          "part_name": "handle",
+          "area_px": 217,
+          "mask_full": "parts_full/001_handle.png",
+          "mask_crop": "parts_crop/001_handle.png"
+        },
+        {
+          "annotation_id": 1714429,
+          "category": "drill:body",
+          "part_name": "body",
+          "area_px": 1934,
+          "mask_full": "parts_full/002_body.png",
+          "mask_crop": "parts_crop/002_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "screwdriver",
+      "expected_domain": "tool_prop",
+      "expected_profile": "screwdriver",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\screwdriver\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3457/3348615080_aa12300aac_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3457/3348615080_aa12300aac_z.jpg",
+        "http://images.cocodataset.org/train2017/000000395761.jpg"
+      ],
+      "source_image_sha256": "00d631b1c8b35f0098ae2c69d1ac7951f850fb9ac0c696d96bb4352cdafd4e52",
+      "image_id": 395761,
+      "object_annotation_id": 233641,
+      "object_category": "screwdriver",
+      "crop_box_xyxy": [
+        85,
+        23,
+        296,
+        115
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 3,
+      "parts": [
+        {
+          "annotation_id": 1735839,
+          "category": "screwdriver:handle",
+          "part_name": "handle",
+          "area_px": 1792,
+          "mask_full": "parts_full/001_handle.png",
+          "mask_crop": "parts_crop/001_handle.png"
+        },
+        {
+          "annotation_id": 1735840,
+          "category": "screwdriver:shank",
+          "part_name": "shank",
+          "area_px": 330,
+          "mask_full": "parts_full/002_shank.png",
+          "mask_crop": "parts_crop/002_shank.png"
+        },
+        {
+          "annotation_id": 1735841,
+          "category": "screwdriver:tip",
+          "part_name": "tip",
+          "area_px": 32,
+          "mask_full": "parts_full/003_tip.png",
+          "mask_crop": "parts_crop/003_tip.png"
+        }
+      ]
+    },
+    {
+      "case_id": "wrench",
+      "expected_domain": "tool_prop",
+      "expected_profile": "wrench",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\wrench\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8350/8168105747_b1582e8f7e_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8350/8168105747_b1582e8f7e_z.jpg",
+        "http://images.cocodataset.org/train2017/000000120905.jpg"
+      ],
+      "source_image_sha256": "4be5c3002f0d37b91e822c7a3ccc233b362edf17b68beb64cb1755d47d5887cc",
+      "image_id": 120905,
+      "object_annotation_id": 64580,
+      "object_category": "wrench",
+      "crop_box_xyxy": [
+        371,
+        29,
+        558,
+        131
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 2,
+      "parts": [
+        {
+          "annotation_id": 1757279,
+          "category": "wrench:head",
+          "part_name": "head",
+          "area_px": 1121,
+          "mask_full": "parts_full/001_head.png",
+          "mask_crop": "parts_crop/001_head.png"
+        },
+        {
+          "annotation_id": 1757280,
+          "category": "wrench:handle",
+          "part_name": "handle",
+          "area_px": 1198,
+          "mask_full": "parts_full/002_handle.png",
+          "mask_crop": "parts_crop/002_handle.png"
+        }
+      ]
+    },
+    {
+      "case_id": "broom",
+      "expected_domain": "tool_prop",
+      "expected_profile": "broom",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\broom\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3421/3358021664_b6f4693f76_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3421/3358021664_b6f4693f76_z.jpg",
+        "http://images.cocodataset.org/train2017/000000017580.jpg"
+      ],
+      "source_image_sha256": "a0ac7714c39d327cc63373d2570627cc9827504b0960c87df00b9a4b15714041",
+      "image_id": 17580,
+      "object_annotation_id": 169972,
+      "object_category": "broom",
+      "crop_box_xyxy": [
+        318,
+        0,
+        412,
+        383
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1712191,
+          "category": "broom:handle",
+          "part_name": "handle",
+          "area_px": 82,
+          "mask_full": "parts_full/001_handle.png",
+          "mask_crop": "parts_crop/001_handle.png"
+        },
+        {
+          "annotation_id": 1712192,
+          "category": "broom:shaft",
+          "part_name": "shaft",
+          "area_px": 1233,
+          "mask_full": "parts_full/002_shaft.png",
+          "mask_crop": "parts_crop/002_shaft.png"
+        },
+        {
+          "annotation_id": 1712193,
+          "category": "broom:brush_cap",
+          "part_name": "brush_cap",
+          "area_px": 274,
+          "mask_full": "parts_full/003_brush_cap.png",
+          "mask_crop": "parts_crop/003_brush_cap.png"
+        },
+        {
+          "annotation_id": 1712194,
+          "category": "broom:brush",
+          "part_name": "brush",
+          "area_px": 1143,
+          "mask_full": "parts_full/004_brush.png",
+          "mask_crop": "parts_crop/004_brush.png"
+        }
+      ]
+    },
+    {
+      "case_id": "hammer",
+      "expected_domain": "tool_prop",
+      "expected_profile": "hammer",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\hammer\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3471/3317690407_c9db613c4d_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3471/3317690407_c9db613c4d_z.jpg",
+        "http://images.cocodataset.org/train2017/000000510150.jpg"
+      ],
+      "source_image_sha256": "d5e8d98faa9bbcd80c67d5e00b300430a9c59eddd0704ff9cb7651f55626dd10",
+      "image_id": 510150,
+      "object_annotation_id": 80111,
+      "object_category": "hammer",
+      "crop_box_xyxy": [
+        11,
+        141,
+        137,
+        464
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1763927,
+          "category": "hammer:face",
+          "part_name": "face",
+          "area_px": 1166,
+          "mask_full": "parts_full/001_face.png",
+          "mask_crop": "parts_crop/001_face.png"
+        },
+        {
+          "annotation_id": 1763928,
+          "category": "hammer:head",
+          "part_name": "head",
+          "area_px": 1477,
+          "mask_full": "parts_full/002_head.png",
+          "mask_crop": "parts_crop/002_head.png"
+        },
+        {
+          "annotation_id": 1763929,
+          "category": "hammer:handle",
+          "part_name": "handle",
+          "area_px": 2002,
+          "mask_full": "parts_full/003_handle.png",
+          "mask_crop": "parts_crop/003_handle.png"
+        },
+        {
+          "annotation_id": 1763930,
+          "category": "hammer:grip",
+          "part_name": "grip",
+          "area_px": 3720,
+          "mask_full": "parts_full/004_grip.png",
+          "mask_crop": "parts_crop/004_grip.png"
+        }
+      ]
+    },
+    {
+      "case_id": "knife",
+      "expected_domain": "tool_prop",
+      "expected_profile": "knife",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\knife\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm3.staticflickr.com/2416/2552714629_7be76c1f49_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm3.staticflickr.com/2416/2552714629_7be76c1f49_z.jpg",
+        "http://images.cocodataset.org/train2017/000000121249.jpg"
+      ],
+      "source_image_sha256": "31225c20391fcfc37df5f772f9d0e50d64f826118c078aae675381ced8c74dc6",
+      "image_id": 121249,
+      "object_annotation_id": 176115,
+      "object_category": "knife",
+      "crop_box_xyxy": [
+        0,
+        63,
+        383,
+        478
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 2,
+      "parts": [
+        {
+          "annotation_id": 1714514,
+          "category": "knife:handle",
+          "part_name": "handle",
+          "area_px": 15770,
+          "mask_full": "parts_full/001_handle.png",
+          "mask_crop": "parts_crop/001_handle.png"
+        },
+        {
+          "annotation_id": 1714515,
+          "category": "knife:blade",
+          "part_name": "blade",
+          "area_px": 28129,
+          "mask_full": "parts_full/002_blade.png",
+          "mask_crop": "parts_crop/002_blade.png"
+        }
+      ]
+    },
+    {
+      "case_id": "scissors",
+      "expected_domain": "tool_prop",
+      "expected_profile": "scissors_pliers",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\scissors\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm4.staticflickr.com/3463/3258760025_be62a85dc5_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm4.staticflickr.com/3463/3258760025_be62a85dc5_z.jpg",
+        "http://images.cocodataset.org/val2017/000000161008.jpg"
+      ],
+      "source_image_sha256": "c54b7481d43cfd0b3883e7133f4de1d863bf11e6e068110c0a227c42fa9e358e",
+      "image_id": 161008,
+      "object_annotation_id": 14720,
+      "object_category": "scissors",
+      "crop_box_xyxy": [
+        40,
+        0,
+        622,
+        480
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1703940,
+          "category": "scissors:screw",
+          "part_name": "screw",
+          "area_px": 177,
+          "mask_full": "parts_full/001_screw.png",
+          "mask_crop": "parts_crop/001_screw.png"
+        },
+        {
+          "annotation_id": 1703941,
+          "category": "scissors:blade",
+          "part_name": "blade",
+          "area_px": 20308,
+          "mask_full": "parts_full/002_blade.png",
+          "mask_crop": "parts_crop/002_blade.png"
+        },
+        {
+          "annotation_id": 1703942,
+          "category": "scissors:handle",
+          "part_name": "handle",
+          "area_px": 4072,
+          "mask_full": "parts_full/003_handle.png",
+          "mask_crop": "parts_crop/003_handle.png"
+        },
+        {
+          "annotation_id": 1703943,
+          "category": "scissors:finger_hole",
+          "part_name": "finger_hole",
+          "area_px": 13178,
+          "mask_full": "parts_full/004_finger_hole.png",
+          "mask_crop": "parts_crop/004_finger_hole.png"
+        }
+      ]
+    },
+    {
+      "case_id": "pliers",
+      "object_category": "pliers",
+      "status": "not_materialized",
+      "errors": [
+        "object_annotation_id=161597: downloaded image size (427, 639) differs from (428, 640)",
+        "object_annotation_id=87783: downloaded image size (640, 480) differs from (500, 375)",
+        "object_annotation_id=87782: downloaded image size (640, 480) differs from (500, 375)",
+        "object_annotation_id=38418: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>",
+        "object_annotation_id=161598: downloaded image size (427, 639) differs from (428, 640)"
+      ]
+    },
+    {
+      "case_id": "ladder",
+      "expected_domain": "tool_prop",
+      "expected_profile": "ladder",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\ladder\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm8.staticflickr.com/7289/9325578876_3f2d756da7_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm8.staticflickr.com/7289/9325578876_3f2d756da7_z.jpg",
+        "http://images.cocodataset.org/train2017/000000361221.jpg"
+      ],
+      "source_image_sha256": "1b5a550111ae91b98cb114912de8898810dbee89c1b65bc6bf13d59457b3ed1a",
+      "image_id": 361221,
+      "object_annotation_id": 63591,
+      "object_category": "ladder",
+      "crop_box_xyxy": [
+        0,
+        40,
+        83,
+        414
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1756987,
+          "category": "ladder:rail",
+          "part_name": "rail",
+          "area_px": 2028,
+          "mask_full": "parts_full/001_rail.png",
+          "mask_crop": "parts_crop/001_rail.png"
+        },
+        {
+          "annotation_id": 1756988,
+          "category": "ladder:step",
+          "part_name": "step",
+          "area_px": 226,
+          "mask_full": "parts_full/002_step.png",
+          "mask_crop": "parts_crop/002_step.png"
+        },
+        {
+          "annotation_id": 1756989,
+          "category": "ladder:top_cap",
+          "part_name": "top_cap",
+          "area_px": 18,
+          "mask_full": "parts_full/003_top_cap.png",
+          "mask_crop": "parts_crop/003_top_cap.png"
+        },
+        {
+          "annotation_id": 1756990,
+          "category": "ladder:foot",
+          "part_name": "foot",
+          "area_px": 13,
+          "mask_full": "parts_full/004_foot.png",
+          "mask_crop": "parts_crop/004_foot.png"
+        }
+      ]
+    },
+    {
+      "case_id": "guitar",
+      "expected_domain": "tool_prop",
+      "expected_profile": "guitar",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\guitar\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8543/8625076987_d28419d26b_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8543/8625076987_d28419d26b_z.jpg",
+        "http://images.cocodataset.org/train2017/000000018809.jpg"
+      ],
+      "source_image_sha256": "0e4cd522a51a675a0764484e143308f89c14e232b4b57c1758c681d1aa4f651f",
+      "image_id": 18809,
+      "object_annotation_id": 172221,
+      "object_category": "guitar",
+      "crop_box_xyxy": [
+        0,
+        150,
+        420,
+        296
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 9,
+      "parts": [
+        {
+          "annotation_id": 1713186,
+          "category": "guitar:key",
+          "part_name": "key",
+          "area_px": 202,
+          "mask_full": "parts_full/001_key.png",
+          "mask_crop": "parts_crop/001_key.png"
+        },
+        {
+          "annotation_id": 1713187,
+          "category": "guitar:headstock",
+          "part_name": "headstock",
+          "area_px": 1541,
+          "mask_full": "parts_full/002_headstock.png",
+          "mask_crop": "parts_crop/002_headstock.png"
+        },
+        {
+          "annotation_id": 1713188,
+          "category": "guitar:fingerboard",
+          "part_name": "fingerboard",
+          "area_px": 2215,
+          "mask_full": "parts_full/003_fingerboard.png",
+          "mask_crop": "parts_crop/003_fingerboard.png"
+        },
+        {
+          "annotation_id": 1713189,
+          "category": "guitar:string",
+          "part_name": "string",
+          "area_px": 736,
+          "mask_full": "parts_full/004_string.png",
+          "mask_crop": "parts_crop/004_string.png"
+        },
+        {
+          "annotation_id": 1713190,
+          "category": "guitar:hole",
+          "part_name": "hole",
+          "area_px": 325,
+          "mask_full": "parts_full/005_hole.png",
+          "mask_crop": "parts_crop/005_hole.png"
+        },
+        {
+          "annotation_id": 1713191,
+          "category": "guitar:pickguard",
+          "part_name": "pickguard",
+          "area_px": 661,
+          "mask_full": "parts_full/006_pickguard.png",
+          "mask_crop": "parts_crop/006_pickguard.png"
+        },
+        {
+          "annotation_id": 1713192,
+          "category": "guitar:bridge",
+          "part_name": "bridge",
+          "area_px": 260,
+          "mask_full": "parts_full/007_bridge.png",
+          "mask_crop": "parts_crop/007_bridge.png"
+        },
+        {
+          "annotation_id": 1713193,
+          "category": "guitar:side",
+          "part_name": "side",
+          "area_px": 1117,
+          "mask_full": "parts_full/008_side.png",
+          "mask_crop": "parts_crop/008_side.png"
+        },
+        {
+          "annotation_id": 1713194,
+          "category": "guitar:body",
+          "part_name": "body",
+          "area_px": 5619,
+          "mask_full": "parts_full/009_body.png",
+          "mask_crop": "parts_crop/009_body.png"
+        }
+      ]
+    },
+    {
+      "case_id": "pan_for_cooking",
+      "expected_domain": "tool_prop",
+      "expected_profile": "pan",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\pan_for_cooking\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm5.staticflickr.com/4078/4747856468_396f910f4b_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm5.staticflickr.com/4078/4747856468_396f910f4b_z.jpg",
+        "http://images.cocodataset.org/train2017/000000408906.jpg"
+      ],
+      "source_image_sha256": "e99ccc836e74ee01e97d91d8978b48be82a6e4dbd2d4e83b743af171217a04d6",
+      "image_id": 408906,
+      "object_annotation_id": 75358,
+      "object_category": "pan_(for_cooking)",
+      "crop_box_xyxy": [
+        0,
+        37,
+        640,
+        427
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1762214,
+          "category": "pan_(for_cooking):rim",
+          "part_name": "rim",
+          "area_px": 5265,
+          "mask_full": "parts_full/001_rim.png",
+          "mask_crop": "parts_crop/001_rim.png"
+        },
+        {
+          "annotation_id": 1762215,
+          "category": "pan_(for_cooking):side",
+          "part_name": "side",
+          "area_px": 271,
+          "mask_full": "parts_full/002_side.png",
+          "mask_crop": "parts_crop/002_side.png"
+        },
+        {
+          "annotation_id": 1762216,
+          "category": "pan_(for_cooking):inner_side",
+          "part_name": "inner_side",
+          "area_px": 12423,
+          "mask_full": "parts_full/003_inner_side.png",
+          "mask_crop": "parts_crop/003_inner_side.png"
+        },
+        {
+          "annotation_id": 1762217,
+          "category": "pan_(for_cooking):base",
+          "part_name": "base",
+          "area_px": 97643,
+          "mask_full": "parts_full/004_base.png",
+          "mask_crop": "parts_crop/004_base.png"
+        }
+      ]
+    },
+    {
+      "case_id": "spoon",
+      "expected_domain": "tool_prop",
+      "expected_profile": "spoon",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\datasets\\paco\\broad_objects_test_holdout_v2\\spoon\\case.json",
+      "format": "HPID PACO benchmark case",
+      "format_version": "0.1.0",
+      "dataset": "PACO-LVIS v1 test",
+      "dataset_repository": "https://github.com/facebookresearch/paco",
+      "source_annotation_sha256": "8d061428b86dc9a0e5c206f330ed579c61319c7d6884402e540ac33faed3d2a6",
+      "source_image_url": "https://farm9.staticflickr.com/8328/8092393214_78629af5af_z.jpg",
+      "source_image_urls_from_annotation": [
+        "http://farm9.staticflickr.com/8328/8092393214_78629af5af_z.jpg",
+        "http://images.cocodataset.org/val2017/000000335427.jpg"
+      ],
+      "source_image_sha256": "487efc388087ce95c898db5293f0ac9cb3adc470fd002ffad9e57064e76ac3d5",
+      "image_id": 335427,
+      "object_annotation_id": 3926,
+      "object_category": "spoon",
+      "crop_box_xyxy": [
+        0,
+        113,
+        267,
+        448
+      ],
+      "crop_uses_ground_truth_bbox": true,
+      "full_image_uses_ground_truth_at_inference": false,
+      "part_count": 4,
+      "parts": [
+        {
+          "annotation_id": 1747267,
+          "category": "spoon:tip",
+          "part_name": "tip",
+          "area_px": 742,
+          "mask_full": "parts_full/001_tip.png",
+          "mask_crop": "parts_crop/001_tip.png"
+        },
+        {
+          "annotation_id": 1747268,
+          "category": "spoon:bowl",
+          "part_name": "bowl",
+          "area_px": 9863,
+          "mask_full": "parts_full/002_bowl.png",
+          "mask_crop": "parts_crop/002_bowl.png"
+        },
+        {
+          "annotation_id": 1747269,
+          "category": "spoon:neck",
+          "part_name": "neck",
+          "area_px": 840,
+          "mask_full": "parts_full/003_neck.png",
+          "mask_crop": "parts_crop/003_neck.png"
+        },
+        {
+          "annotation_id": 1747270,
+          "category": "spoon:handle",
+          "part_name": "handle",
+          "area_px": 2747,
+          "mask_full": "parts_full/004_handle.png",
+          "mask_crop": "parts_crop/004_handle.png"
+        }
+      ]
+    }
+  ]
+}

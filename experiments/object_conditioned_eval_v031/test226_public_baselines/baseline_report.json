@@ -1,0 +1,34 @@
+{
+  "format": "HPID-Split public object-conditioned baseline evaluation",
+  "format_version": "1.0.0",
+  "case_count": 226,
+  "methods": [
+    "sam2_raw",
+    "sam2_nms",
+    "sam2_max_ownership",
+    "grounded_sam2_same_inventory",
+    "hpid_split_a3"
+  ],
+  "iou_thresholds": [
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75
+  ],
+  "nms_iou": 0.8,
+  "nms_containment": 0.92,
+  "manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+  "benchmark_summary_sha256": "c7a9e99241b80359f40f6f309dd1aae93252e879c794c810c2a11da7e541e464",
+  "sam_cache_manifest_sha256": "c3b8390f793404e68dc420b2c945a7d2ef4826c24f83ac19e06a2cc7a311d966",
+  "scope": "object-conditioned PACO-LVIS ground-truth bounding-box crops",
+  "ground_truth_usage": "Predictions are loaded or generated before PACO part masks are read. The crop itself is derived from the ground-truth object box.",
+  "grounded_baseline_note": "Grounded-SAM2 uses the same category-conditioned semantic inventory and exported pre-fusion grounded candidates, followed only by NMS and score-max ownership.",
+  "seed": 20260822
+}

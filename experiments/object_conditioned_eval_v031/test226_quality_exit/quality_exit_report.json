@@ -1,0 +1,31 @@
+{
+  "format": "HPID-Split quality-exit evaluation",
+  "format_version": "1.0.0",
+  "case_count": 226,
+  "manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+  "benchmark_sha256": "c7a9e99241b80359f40f6f309dd1aae93252e879c794c810c2a11da7e541e464",
+  "rule_source": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031\\dev65_quality_exit\\review_rule.json",
+  "additional_review_rules": [],
+  "original_review_detection": {
+    "true_positive": 144.0,
+    "false_positive": 21.0,
+    "false_negative": 38.0,
+    "true_negative": 23.0,
+    "precision": 0.8727272727272727,
+    "recall": 0.7912087912087912,
+    "f1": 0.8299711815561959,
+    "review_rate": 0.7300884955752213
+  },
+  "revised_review_detection": {
+    "true_positive": 144.0,
+    "false_positive": 21.0,
+    "false_negative": 38.0,
+    "true_negative": 23.0,
+    "precision": 0.8727272727272727,
+    "recall": 0.7912087912087912,
+    "f1": 0.8299711815561959,
+    "review_rate": 0.7300884955752213
+  },
+  "ready_semantic_failure_count": 28,
+  "ground_truth_usage": "Quality features and review flags are produced without labels; PACO labels are read afterward to score failure detection."
+}
