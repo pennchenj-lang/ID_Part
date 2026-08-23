@@ -40,19 +40,11 @@ def _load_candidates(package: Path) -> list[MaskCandidate]:
     return candidates
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(
-        description=(
-            "Rebuild editable physical groups from a frozen HPID Part-ID package "
-            "without rerunning candidate generation or ownership fusion."
-        )
-    )
-    parser.add_argument("--package", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args()
+def regroup_package(package: Path, output: Path) -> dict[str, object]:
+    """Rebuild only the editable-group layer of one frozen package."""
 
-    package = args.package.resolve()
-    output = args.output.resolve()
+    package = package.resolve()
+    output = output.resolve()
     if output.exists() and any(output.iterdir()):
         raise ValueError(f"output directory is not empty: {output}")
 
@@ -94,7 +86,7 @@ def main() -> int:
         image=image,
     )
     diagnostics["physical_grouping"] = physical_groups.diagnostics
-    manifest = export_prediction(
+    return export_prediction(
         image,
         prediction,
         taxonomy,
@@ -104,6 +96,21 @@ def main() -> int:
         candidates=candidates,
         physical_groups=physical_groups,
     )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Rebuild editable physical groups from a frozen HPID Part-ID package "
+            "without rerunning candidate generation or ownership fusion."
+        )
+    )
+    parser.add_argument("--package", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+
+    output = args.output.resolve()
+    manifest = regroup_package(args.package, output)
     print(
         f"parts={manifest['part_count']} groups={manifest['group_count']} "
         f"output={output}"

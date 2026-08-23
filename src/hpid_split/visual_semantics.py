@@ -53,6 +53,10 @@ class VisualSemanticConfig:
     within_root_maximum_area_ratio: float = 4.0
     within_root_confusion_maximum_similarity_drop: float = 0.035
     within_root_source_reliability: float = 0.61
+    within_root_macro_minimum_independent_cues: int = 2
+    within_root_macro_minimum_boundary_closure: float = 0.64
+    within_root_macro_maximum_shading_penalty: float = 0.40
+    within_root_macro_maximum_area_ratio: float = 2.6
     axis_similarity_bonus: float = 0.032
     axis_mismatch_penalty: float = 0.045
     minimum_axis_anchor_position: float = 0.55
@@ -734,6 +738,32 @@ def _appearance_structure(candidate: MaskCandidate) -> dict[str, float | int | b
             )
         ),
     }
+
+
+def _supports_repeated_macro_component(
+    candidate: MaskCandidate,
+    config: VisualSemanticConfig,
+) -> bool:
+    """Require independent structure before cloning a repeated macro semantic."""
+
+    if str(candidate.metadata.get("visual_region_kind", "panel")) not in {
+        "panel",
+        "strip",
+    }:
+        return False
+    structure = _appearance_structure(candidate)
+    return bool(
+        int(structure["cue_count"])
+        >= config.within_root_macro_minimum_independent_cues
+        and float(structure["closure"])
+        >= config.within_root_macro_minimum_boundary_closure
+        and float(structure["shading_penalty"])
+        <= config.within_root_macro_maximum_shading_penalty
+        and (
+            bool(structure["multi_view"])
+            or float(structure["boundary_alignment"]) >= 0.60
+        )
+    )
 
 
 def _supports_inventory_evidence_rescue(
@@ -2222,16 +2252,23 @@ def rerank_visual_candidates(
                 anchors = anchors_by_semantic.get(part.semantic_name, [])
                 confusion_reassigned_from: str | None = None
                 confusion_evidence: dict[str, float] | None = None
-                if (
-                    not anchors
-                    and selected_profile_definition is not None
-                    and part.detail
+                repeated_macro_supported = _supports_repeated_macro_component(
+                    candidate,
+                    config,
+                )
+                if not anchors and selected_profile_definition is not None and (
+                    part.detail or repeated_macro_supported
                 ):
-                    confusion_group = (
+                    confusion_group = set(
                         selected_profile_definition.confusion_group_for(
                             part.semantic_name
                         )
                     )
+                    if (
+                        part.semantic_parent is not None
+                        and part.semantic_parent in part_by_name
+                    ):
+                        confusion_group.add(part.semantic_parent)
                     alternatives: list[
                         tuple[
                             int,
@@ -2241,7 +2278,7 @@ def rerank_visual_candidates(
                             dict[str, float],
                         ]
                     ] = []
-                    for semantic_name in confusion_group:
+                    for semantic_name in sorted(confusion_group):
                         alternative = part_by_name.get(semantic_name)
                         alternative_anchors = anchors_by_semantic.get(
                             semantic_name, []
@@ -2249,10 +2286,13 @@ def rerank_visual_candidates(
                         if (
                             alternative is None
                             or alternative.semantic_name == part.semantic_name
-                            or not alternative.detail
                             or alternative.maximum_instances
                             < config.within_root_minimum_capacity
                             or not alternative_anchors
+                            or (
+                                not alternative.detail
+                                and not repeated_macro_supported
+                            )
                         ):
                             continue
                         route_evidence = [
@@ -2316,12 +2356,18 @@ def rerank_visual_candidates(
                         confusion_reassigned_from = part.semantic_name
                         part = alternative
                         anchors = alternative_anchors
+                repeated_detail = bool(
+                    part.detail
+                    and candidate.metadata.get("visual_region_kind") == "detail"
+                )
+                repeated_macro = bool(
+                    not part.detail and repeated_macro_supported
+                )
                 if (
                     not bool(current.metadata.get("generic_visual_region"))
                     or selected_profile is None
-                    or not part.detail
                     or part.maximum_instances < config.within_root_minimum_capacity
-                    or candidate.metadata.get("visual_region_kind") != "detail"
+                    or not (repeated_detail or repeated_macro)
                     or not anchors
                     or float(proposal["probability"])
                     < float(proposal["probability_floor"])
@@ -2339,7 +2385,12 @@ def rerank_visual_candidates(
                     candidate_area / median_anchor_area,
                     median_anchor_area / candidate_area,
                 )
-                if area_ratio > config.within_root_maximum_area_ratio:
+                maximum_area_ratio = (
+                    config.within_root_macro_maximum_area_ratio
+                    if repeated_macro
+                    else config.within_root_maximum_area_ratio
+                )
+                if area_ratio > maximum_area_ratio:
                     continue
                 current_count = accepted_by_name.get(part.semantic_name, 0)
                 existing_count = len(existing_by_name.get(part.semantic_name, []))
@@ -2371,6 +2422,9 @@ def rerank_visual_candidates(
                     "semantic_confusion_evidence": confusion_evidence,
                     "semantic_repetition_anchor_count": len(anchors),
                     "semantic_repetition_area_ratio": float(area_ratio),
+                    "semantic_repetition_kind": (
+                        "macro_component" if repeated_macro else "detail"
+                    ),
                     "semantic_rerank_probability": float(proposal["probability"]),
                     "semantic_rerank_similarity": float(proposal["similarity"]),
                     "semantic_rerank_margin": float(proposal["margin"]),
@@ -2429,6 +2483,9 @@ def rerank_visual_candidates(
                         "confusion_reassigned_from": confusion_reassigned_from,
                         "anchor_count": len(anchors),
                         "area_ratio": float(area_ratio),
+                        "repetition_kind": (
+                            "macro_component" if repeated_macro else "detail"
+                        ),
                         "probability": float(proposal["probability"]),
                         "probability_floor": float(proposal["probability_floor"]),
                     }

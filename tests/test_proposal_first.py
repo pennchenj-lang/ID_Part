@@ -4,8 +4,10 @@ from PIL import Image
 from hpid_split.prompt_bank import DomainPrompt, PromptBank
 from hpid_split.proposal_first import (
     ProposalFirstConfig,
+    _primary_root_quality,
     _prune_duplicate_scene_object_envelopes,
     generate_proposal_first_roots,
+    route_proposal_first_execution,
 )
 from hpid_split.visual_regions import VisualMaskProposal
 
@@ -67,6 +69,111 @@ def _proposals() -> list[VisualMaskProposal]:
             boundary_alignment=0.80,
         ),
     ]
+
+
+def _quality_for(
+    *,
+    fraction: float,
+    estimated_foreground: float,
+    dominant_component: float = 0.90,
+    border_touches: int = 0,
+) -> dict[str, object]:
+    row = {
+        "area_fraction": fraction,
+        "saliency_contrast": 0.70,
+        "boundary_alignment": 0.85,
+        "border_touches": border_touches,
+        "rejection": None,
+    }
+    return _primary_root_quality(
+        [(0.8, None, row, "daily_object", 0.8, 0.1)],  # type: ignore[arg-type]
+        [row],
+        {
+            "foreground_fraction": estimated_foreground,
+            "dominant_component_fraction": dominant_component,
+            "uniform_border": False,
+        },
+    )
+
+
+def test_primary_quality_requests_fallback_for_incomplete_tight_crop_root() -> None:
+    quality = _quality_for(fraction=0.22, estimated_foreground=0.47)
+
+    assert quality["fallback_recommended"] is True
+    assert "selected_root_under_covers_foreground_envelope" in quality["reasons"]
+
+
+def test_primary_quality_accepts_complete_nonuniform_border_root() -> None:
+    quality = _quality_for(fraction=0.27, estimated_foreground=0.29)
+
+    assert quality["fallback_recommended"] is False
+
+
+def test_primary_quality_requests_fallback_for_background_overcoverage() -> None:
+    quality = _quality_for(
+        fraction=0.40,
+        estimated_foreground=0.14,
+        border_touches=2,
+    )
+
+    assert quality["fallback_recommended"] is True
+    assert "selected_root_over_covers_foreground_envelope" in quality["reasons"]
+
+
+def test_adaptive_root_backend_uses_proposals_for_isolated_asset() -> None:
+    image = np.full((120, 160, 3), 235, dtype=np.uint8)
+    image[30:92, 42:118] = (70, 95, 130)
+
+    enabled, diagnostics = route_proposal_first_execution(
+        Image.fromarray(image),
+        requested=True,
+        root_mode="primary",
+    )
+
+    assert enabled is True
+    assert diagnostics["selected_backend"] == "proposal_first"
+
+
+def test_adaptive_root_backend_uses_detector_for_tight_crop() -> None:
+    image = np.zeros((120, 160, 3), dtype=np.uint8)
+    image[:, :80] = (55, 80, 110)
+    image[:, 80:] = (150, 95, 60)
+
+    enabled, diagnostics = route_proposal_first_execution(
+        Image.fromarray(image),
+        requested=True,
+        root_mode="primary",
+    )
+
+    assert enabled is False
+    assert diagnostics["selected_backend"] == "detector_first"
+
+
+def test_adaptive_root_backend_uses_detector_for_tiny_isolated_asset() -> None:
+    image = np.full((120, 160, 3), 235, dtype=np.uint8)
+    image[50:70, 54:106] = (70, 95, 130)
+
+    enabled, diagnostics = route_proposal_first_execution(
+        Image.fromarray(image),
+        requested=True,
+        root_mode="primary",
+    )
+
+    assert enabled is False
+    assert diagnostics["reason"] == "nonisolated_or_tight_crop"
+
+
+def test_adaptive_root_backend_keeps_scene_proposal_reuse() -> None:
+    image = Image.fromarray(np.zeros((100, 100, 3), dtype=np.uint8))
+
+    enabled, diagnostics = route_proposal_first_execution(
+        image,
+        requested=True,
+        root_mode="scene",
+    )
+
+    assert enabled is True
+    assert diagnostics["reason"] == "scene_reuses_global_proposals"
 
 
 def test_primary_proposal_first_prefers_complete_root_over_nested_panel() -> None:

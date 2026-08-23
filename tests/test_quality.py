@@ -170,6 +170,24 @@ def test_dominant_root_residual_requires_review_for_confirmed_profile() -> None:
     assert report["part_structure"]["dominant_root_residual"] is True
 
 
+def test_single_tiny_child_does_not_clear_dominant_root_residual_review() -> None:
+    records = [
+        _record(1, "tool_prop", semantic_parent="tool_prop", area_px=3900),
+        _record(2, "tool_prop_step", semantic_parent="tool_prop", area_px=196),
+    ]
+    diagnostics = {
+        "root_routing": {"mode": "primary", "physical_groups": []},
+        "profile_root_resolution": {"selected_profiles": ["ladder"]},
+    }
+
+    report = assess_product_quality(
+        np.ones((64, 64), dtype=np.uint16), records, diagnostics
+    )
+
+    assert report["status"] == "review_recommended"
+    assert "dominant_unassigned_root_residual" in report["review_reasons"]
+
+
 def test_many_generic_regions_are_exported_with_review_status() -> None:
     records = [_record(1, "asset", semantic_parent="asset")]
     records.extend(
@@ -579,6 +597,151 @@ def test_frame_filling_low_evidence_singleton_requires_target_selection() -> Non
     assert report["evidence_grade"] == "C"
     assert "coherent_wrong_target_risk" in report["review_reasons"]
     assert report["target_selection"]["ambiguous"] is True
+
+
+def test_exact_global_asset_conflicting_with_selected_root_requires_target() -> None:
+    diagnostics = {
+        "global_asset_proposal": {
+            "route": {
+                "accepted": True,
+                "reason": "accepted_exact_label",
+                "asset_label": "knife",
+                "asset_domain": "tool_prop",
+            }
+        },
+        "initial_root_routing": {
+            "mode": "primary",
+            "selected_semantic": "natural_object",
+            "physical_groups": [
+                {
+                    "physical_group_id": "physical:01",
+                    "selected_semantic": "natural_object",
+                    "group_score": 0.72,
+                    "selected_as_primary": True,
+                }
+            ],
+        },
+        "root_routing": {
+            "mode": "primary",
+            "physical_groups": [
+                {
+                    "physical_group_id": "physical:01",
+                    "selected_semantic": "tool_prop",
+                    "group_score": 0.72,
+                    "selected_as_primary": True,
+                }
+            ],
+            "target_point_routing": {"requested": False},
+        },
+    }
+
+    report = assess_product_quality(
+        np.ones((64, 64), dtype=np.uint16),
+        [
+            _record(1, "tool_prop", semantic_parent="tool_prop"),
+            _record(2, "tool_prop_blade", semantic_parent="tool_prop"),
+        ],
+        diagnostics,
+    )
+
+    assert report["status"] == "target_selection_required"
+    assert "global_asset_root_conflict" in report["review_reasons"]
+    assert report["target_selection"]["global_asset_root_conflict"] is True
+
+
+def test_exact_global_profile_conflict_requires_target_selection() -> None:
+    diagnostics = {
+        "global_asset_proposal": {
+            "route": {
+                "accepted": True,
+                "reason": "accepted_exact_label",
+                "asset_label": "watch",
+                "asset_domain": "device",
+                "asset_profile": "clock_watch",
+            }
+        },
+        "initial_root_routing": {
+            "mode": "primary",
+            "selected_semantic": "device",
+            "physical_groups": [],
+        },
+        "root_routing": {
+            "mode": "primary",
+            "root_scores": [
+                {
+                    "selected": True,
+                    "selected_part_profile": "tablet",
+                    "semantic_mask_probability": 0.65,
+                }
+            ],
+            "physical_groups": [],
+            "target_point_routing": {"requested": False},
+        },
+    }
+
+    report = assess_product_quality(
+        np.ones((64, 64), dtype=np.uint16),
+        [
+            _record(1, "device", semantic_parent="device"),
+            _record(2, "device_screen", semantic_parent="device"),
+        ],
+        diagnostics,
+    )
+
+    assert report["status"] == "target_selection_required"
+    assert "global_asset_profile_conflict" in report["review_reasons"]
+    assert report["target_selection"]["global_asset_profile_conflict"] is True
+
+
+def test_exact_global_and_local_label_conflict_requires_target_selection() -> None:
+    diagnostics = {
+        "global_asset_proposal": {
+            "route": {
+                "accepted": True,
+                "reason": "accepted_exact_label",
+                "asset_label": "shoe",
+                "asset_domain": "daily_object",
+                "asset_profile": "footwear",
+            }
+        },
+        "initial_root_routing": {
+            "mode": "primary",
+            "selected_semantic": "daily_object",
+            "physical_groups": [],
+        },
+        "root_routing": {
+            "mode": "primary",
+            "physical_groups": [],
+            "target_point_routing": {"requested": False},
+        },
+        "asset_domain_routing": {
+            "rows": [
+                {
+                    "root_crop_asset_route": {
+                        "accepted": True,
+                        "reason": "accepted_exact_label",
+                        "asset_label": "knife",
+                    },
+                    "cross_view_consensus": {
+                        "accepted": False,
+                        "status": "cross_view_label_conflict",
+                    },
+                }
+            ]
+        },
+    }
+
+    report = assess_product_quality(
+        np.ones((64, 64), dtype=np.uint16),
+        [_record(1, "daily_object", semantic_parent="daily_object")],
+        diagnostics,
+    )
+
+    assert report["status"] == "target_selection_required"
+    assert "global_asset_local_route_conflict" in report["review_reasons"]
+    assert (
+        report["target_selection"]["global_asset_local_route_conflict"] is True
+    )
 
 
 def test_heterogeneous_high_scoring_roots_require_target_selection() -> None:

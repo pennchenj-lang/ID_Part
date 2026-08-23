@@ -110,6 +110,49 @@ class RetrievalResult:
     diagnostics: dict[str, object]
 
 
+def _merge_hierarchical_part_priors(
+    profile_priors: Sequence[RetrievedPartPrior],
+    inventory_priors: Sequence[RetrievedPartPrior],
+) -> tuple[RetrievedPartPrior, ...]:
+    """Keep subtype semantics while adding geometry modes from nearby assets."""
+
+    merged = {prior.output_semantic_name: prior for prior in profile_priors}
+    for fallback in inventory_priors:
+        primary = merged.get(fallback.output_semantic_name)
+        if primary is None:
+            merged[fallback.output_semantic_name] = fallback
+            continue
+        geometry_samples = tuple(
+            dict.fromkeys((*primary.geometry_samples, *fallback.geometry_samples))
+        )
+        geometry = np.asarray(geometry_samples, dtype=np.float32)
+        geometry_std = np.maximum(geometry.std(axis=0), 0.04)
+        merged[fallback.output_semantic_name] = replace(
+            primary,
+            phrases=tuple(dict.fromkeys((*primary.phrases, *fallback.phrases)))[:8],
+            support_count=max(primary.support_count, fallback.support_count),
+            prevalence=max(primary.prevalence, fallback.prevalence),
+            retrieval_score=max(primary.retrieval_score, fallback.retrieval_score),
+            prototype_indices=tuple(
+                dict.fromkeys((*primary.prototype_indices, *fallback.prototype_indices))
+            ),
+            geometry_mean=tuple(float(value) for value in geometry.mean(axis=0)),
+            geometry_std=tuple(float(value) for value in geometry_std),
+            geometry_samples=geometry_samples,
+        )
+    return tuple(
+        sorted(
+            merged.values(),
+            key=lambda prior: (
+                prior.retrieval_score,
+                prior.support_count,
+                len(prior.prototype_indices),
+            ),
+            reverse=True,
+        )
+    )
+
+
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
@@ -842,6 +885,7 @@ class PrototypeRetriever:
         *,
         asset_hint: str | None = None,
         asset_candidates_by_root: dict[str, Sequence[str]] | None = None,
+        allowed_part_semantics_by_root: dict[str, Sequence[str]] | None = None,
     ) -> RetrievalResult:
         if not roots:
             return RetrievalResult((), {"root_count": 0, "accepted_root_count": 0})
@@ -854,25 +898,39 @@ class PrototypeRetriever:
         indexed = _apply_metric(
             self.index.asset_embeddings, self.index.asset_metric_weights
         )
-        plans = tuple(
-            self._plan_for_root(
-                root,
-                queries[index] @ indexed.T,
-                asset_hint=asset_hint,
-                asset_candidates=(
-                    tuple(
-                        str(value)
-                        for value in (asset_candidates_by_root or {}).get(
-                            self._root_key(root), ()
-                        )
-                        if str(value).strip()
-                    )
-                ),
+        plans: list[RootRetrievalPlan] = []
+        for index, root in enumerate(roots):
+            root_key = self._root_key(root)
+            allowed_inventory = allowed_part_semantics_by_root or {}
+            allowed_semantics = (
+                frozenset(
+                    str(value)
+                    for value in allowed_inventory[root_key]
+                    if str(value).strip()
+                )
+                if root_key in allowed_inventory
+                else None
             )
-            for index, root in enumerate(roots)
-        )
+            plans.append(
+                self._plan_for_root(
+                    root,
+                    queries[index] @ indexed.T,
+                    asset_hint=asset_hint,
+                    asset_candidates=(
+                        tuple(
+                            str(value)
+                            for value in (asset_candidates_by_root or {}).get(
+                                root_key, ()
+                            )
+                            if str(value).strip()
+                        )
+                    ),
+                    allowed_output_semantics=allowed_semantics,
+                )
+            )
+        resolved_plans = tuple(plans)
         return RetrievalResult(
-            plans,
+            resolved_plans,
             {
                 "algorithm": "hpid-reviewed-prototype-retrieval-v1",
                 "index_path": str(self.index.root.resolve()),
@@ -885,13 +943,17 @@ class PrototypeRetriever:
                     str(key): [str(value) for value in values]
                     for key, values in (asset_candidates_by_root or {}).items()
                 },
+                "allowed_part_semantics_by_root": {
+                    str(key): [str(value) for value in values]
+                    for key, values in (allowed_part_semantics_by_root or {}).items()
+                },
                 "ground_truth_used_during_query_inference": False,
                 "plans": [
                     {
                         **asdict(plan),
                         "part_priors": [asdict(prior) for prior in plan.part_priors],
                     }
-                    for plan in plans
+                    for plan in resolved_plans
                 ],
             },
         )
@@ -903,6 +965,7 @@ class PrototypeRetriever:
         *,
         asset_hint: str | None,
         asset_candidates: Sequence[str] = (),
+        allowed_output_semantics: frozenset[str] | None = None,
     ) -> RootRetrievalPlan:
         all_indices = np.arange(len(self.index.assets), dtype=np.int64)
         root_domain = root.semantic_name
@@ -932,10 +995,13 @@ class PrototypeRetriever:
                 )
             )
         )
+        resolved_profile_pool = np.asarray([], dtype=np.int64)
+        candidate_inventory_pool = np.asarray([], dtype=np.int64)
 
         cleaned_hint = str(asset_hint or "").strip()
         hint_matched = False
         candidate_set_mode = False
+        candidate_inventory_mode = False
         if cleaned_hint:
             hinted = np.asarray(
                 [
@@ -1010,6 +1076,8 @@ class PrototypeRetriever:
                 }
                 hint_matched = True
                 candidate_set_mode = len(resolved_labels) > 1
+                candidate_inventory_mode = candidate_set_mode
+                candidate_inventory_pool = pool.copy()
                 selection_scope = (
                     "automatic_asset_candidate_set"
                     if candidate_set_mode
@@ -1026,6 +1094,7 @@ class PrototypeRetriever:
                 ],
                 dtype=np.int64,
             )
+            resolved_profile_pool = profile_pool
             if not len(profile_pool):
                 fallback_order = np.argsort(-similarities[pool])[
                     : self.config.top_k_assets
@@ -1125,7 +1194,7 @@ class PrototypeRetriever:
                 nearest,
                 (),
             )
-        if candidate_set_mode:
+        if candidate_set_mode or candidate_inventory_mode:
             supporting = [int(index) for index in pool]
             top_adjusted = float(adjusted[top_index])
             weights = {
@@ -1149,7 +1218,49 @@ class PrototypeRetriever:
                 output_domain=output_domain,
                 asset_label="candidate object",
                 top_similarity=top_similarity,
+                allowed_output_semantics=allowed_output_semantics,
             )
+            supporting_count = len(supporting)
+            if (
+                profile_is_resolved
+                and candidate_inventory_mode
+                and allowed_output_semantics is not None
+                and len(candidate_inventory_pool)
+            ):
+                inventory_supporting = [
+                    int(index) for index in candidate_inventory_pool
+                ]
+                inventory_top_adjusted = max(
+                    float(adjusted[index]) for index in inventory_supporting
+                )
+                inventory_weights = {
+                    index: math.exp(
+                        max(
+                            -8.0,
+                            (float(adjusted[index]) - inventory_top_adjusted) / 0.055,
+                        )
+                    )
+                    for index in inventory_supporting
+                }
+                inventory_domains = Counter(
+                    str(self.index.assets[index]["asset_domain"])
+                    for index in inventory_supporting
+                )
+                inventory_domain = (
+                    root_domain
+                    if root_domain in inventory_domains
+                    else inventory_domains.most_common(1)[0][0]
+                )
+                inventory_priors = self._aggregate_part_priors(
+                    inventory_supporting,
+                    inventory_weights,
+                    output_domain=inventory_domain,
+                    asset_label="candidate object",
+                    top_similarity=top_similarity,
+                    allowed_output_semantics=allowed_output_semantics,
+                )
+                priors = _merge_hierarchical_part_priors(priors, inventory_priors)
+                supporting_count = len({*supporting, *inventory_supporting})
             return RootRetrievalPlan(
                 self._root_key(root),
                 root.semantic_name,
@@ -1163,7 +1274,7 @@ class PrototypeRetriever:
                 None,
                 output_domain,
                 0.0,
-                len(supporting),
+                supporting_count,
                 nearest,
                 priors,
             )
@@ -1202,11 +1313,17 @@ class PrototypeRetriever:
                 nearest,
                 (),
             )
-        supporting = [
-            int(index)
-            for index in pool
-            if str(self.index.assets[index]["asset_label"]) == asset_label
-        ]
+        supporting = (
+            [int(index) for index in resolved_profile_pool]
+            if profile_is_resolved
+            and allowed_output_semantics is not None
+            and len(resolved_profile_pool)
+            else [
+                int(index)
+                for index in pool
+                if str(self.index.assets[index]["asset_label"]) == asset_label
+            ]
+        )
         for index in supporting:
             weights.setdefault(
                 index,
@@ -1226,6 +1343,7 @@ class PrototypeRetriever:
             output_domain=domain,
             asset_label=asset_label,
             top_similarity=top_similarity,
+            allowed_output_semantics=allowed_output_semantics,
         )
         return RootRetrievalPlan(
             self._root_key(root),
@@ -1270,6 +1388,7 @@ class PrototypeRetriever:
         output_domain: str,
         asset_label: str,
         top_similarity: float,
+        allowed_output_semantics: frozenset[str] | None = None,
     ) -> tuple[RetrievedPartPrior, ...]:
         selected = set(asset_indices)
         by_semantic: dict[str, list[int]] = defaultdict(list)
@@ -1318,6 +1437,11 @@ class PrototypeRetriever:
             output_name = semantic
             if not output_name.startswith(f"{output_domain}_"):
                 output_name = f"{output_domain}_{output_name}"
+            if (
+                allowed_output_semantics is not None
+                and output_name not in allowed_output_semantics
+            ):
+                continue
             observed_by_asset: dict[int, int] = defaultdict(int)
             for row in rows:
                 observed_by_asset[int(row["asset_index"])] += int(

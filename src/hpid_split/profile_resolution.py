@@ -46,6 +46,16 @@ def _profile_name(candidate: MaskCandidate) -> str | None:
     return str(value) if value is not None and str(value).strip() else None
 
 
+def _trusted_global_asset_profile(candidate: MaskCandidate) -> bool:
+    """Return whether whole-image routing and the selected root agree exactly."""
+
+    return bool(
+        candidate.metadata.get("global_asset_proposal_accepted", False)
+        and candidate.metadata.get("global_asset_proposal_rank") == 1
+        and candidate.metadata.get("root_query_mode") == "global_asset_proposal"
+    )
+
+
 def _profile_hint_conflict(
     candidate: MaskCandidate,
     profile: str,
@@ -211,17 +221,24 @@ def resolve_profile_roots(
                 broad_profile = inferred_profile
                 broad_profile_score = inferred_score
         profile_source = str(broad_root.metadata.get("profile_hint_source") or "")
+        trusted_global_profile = _trusted_global_asset_profile(broad_root)
         if (
             broad_profile is not None
             and broad_profile_score >= config.minimum_specific_root_profile_score
-            and profile_source != "isolated_profile_query"
+            and (
+                profile_source != "isolated_profile_query" or trusted_global_profile
+            )
         ):
             metadata = {
                 **broad_root.metadata,
                 "selected_part_profile": broad_profile,
                 "part_profile_specificity": broad_profile_score,
                 "profile_resolution_status": "accepted",
-                "profile_hint_source": "specific_root_label",
+                "profile_hint_source": (
+                    "accepted_global_asset_profile"
+                    if trusted_global_profile
+                    else "specific_root_label"
+                ),
                 "ground_truth_used": False,
             }
             resolved.append(replace(broad_root, metadata=metadata))
@@ -231,7 +248,11 @@ def resolve_profile_roots(
                     "root_semantic": broad_root.semantic_name,
                     "status": "accepted",
                     "selected_profile": broad_profile,
-                    "resolution_source": "specific_root_label",
+                    "resolution_source": (
+                        "accepted_global_asset_profile"
+                        if trusted_global_profile
+                        else "specific_root_label"
+                    ),
                     "root_profile_specificity": broad_profile_score,
                     "root_label_profile": broad_profile,
                     "root_label_support": True,

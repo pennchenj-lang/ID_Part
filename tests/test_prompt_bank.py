@@ -59,14 +59,10 @@ def test_globe_inventory_requires_targeted_semantic_mask_discovery() -> None:
         "device_globe_stem",
         "device_base",
     }
-    microwave = next(
-        item for item in domain.part_profiles if item.name == "microwave"
-    )
+    microwave = next(item for item in domain.part_profiles if item.name == "microwave")
     assert microwave.requires_grounded_refinement is True
     character = next(item for item in bank.domains if item.name == "character")
-    humanoid = next(
-        item for item in character.part_profiles if item.name == "humanoid"
-    )
+    humanoid = next(item for item in character.part_profiles if item.name == "humanoid")
     assert humanoid.requires_grounded_refinement is True
     assert "character_upper_clothing" in humanoid.part_semantics
     assert "character_bag" not in humanoid.part_semantics
@@ -116,9 +112,7 @@ def test_knife_profile_exposes_one_ordered_blade_and_handle() -> None:
     assert by_name["tool_prop_blade"].axis_position == -0.55
     assert by_name["tool_prop_handle"].axis_position == 0.85
     assert by_name["tool_prop_handle"].topology_anchor == "tool_prop_blade"
-    assert (
-        by_name["tool_prop_handle"].topology_relation == "terminal_complement"
-    )
+    assert by_name["tool_prop_handle"].topology_relation == "terminal_complement"
     assert by_name["tool_prop_guard"].detail is True
 
 
@@ -139,9 +133,7 @@ def test_laptop_keyboard_explicitly_opts_into_dense_region_recovery() -> None:
     bank = PromptBank.from_json(REPOSITORY_PROMPT_BANK)
     domain = next(item for item in bank.domains if item.name == "device")
     parts, profile, _ = domain.select_parts("laptop computer")
-    keyboard = next(
-        part for part in parts if part.semantic_name == "device_keyboard"
-    )
+    keyboard = next(part for part in parts if part.semantic_name == "device_keyboard")
 
     assert profile == "laptop"
     assert keyboard.dense_fallback is True
@@ -187,9 +179,7 @@ def test_profile_override_rejects_an_invalid_effective_interval() -> None:
                 ("microwave",),
                 ("device_screen",),
                 part_overrides=(
-                    PartProfileOverride(
-                        "device_screen", maximum_parent_fraction=0.05
-                    ),
+                    PartProfileOverride("device_screen", maximum_parent_fraction=0.05),
                 ),
             ),
         ),
@@ -489,14 +479,14 @@ def test_profile_extension_does_not_pollute_narrow_subtype_inventory(
                             }
                         ],
                         "part_profiles": [
-                                {
-                                    "name": "phone",
-                                    "root_hints": ["phone", "mobile handset"],
+                            {
+                                "name": "phone",
+                                "root_hints": ["phone", "mobile handset"],
                                 "parts": ["device_body"],
                                 "subtypes": [
-                                        {
-                                            "name": "mobile",
-                                            "root_hints": ["mobile handset"],
+                                    {
+                                        "name": "mobile",
+                                        "root_hints": ["mobile handset"],
                                         "parts": ["device_body"],
                                     }
                                 ],
@@ -533,6 +523,21 @@ def test_crate_subtype_excludes_carton_shoulder_extension() -> None:
     assert "container_inner_wall" in names
     assert "container_bottom" in names
     assert "container_shoulder" not in names
+    assert "container_outer_side" not in names
+
+
+def test_carton_subtype_keeps_physical_outer_side_without_crate_handle() -> None:
+    bank = PromptBank.from_json(REPOSITORY_PROMPT_BANK)
+    domain = next(item for item in bank.domains if item.name == "container")
+
+    parts, profile, diagnostics = domain.select_parts("carton")
+    names = {part.semantic_name for part in parts}
+
+    assert profile == "box"
+    assert diagnostics["selected_subtype"] == "box_or_carton"
+    assert "container_outer_side" in names
+    assert "container_bottom" in names
+    assert "container_handle" not in names
 
 
 def test_plastic_bag_subtype_excludes_hard_bag_hardware() -> None:
@@ -658,6 +663,14 @@ def test_generic_root_prompt_has_lower_specificity_than_named_category() -> None
 
     assert domain.root_label_specificity("cell phone") == 1.0
     assert domain.root_label_specificity("electronic device") == 0.35
+
+
+def test_profile_matching_does_not_find_car_inside_scarf() -> None:
+    road_vehicle = PartProfile("road_vehicle", ("car", "automobile"), ())
+    soft_good = PartProfile("soft_good", ("scarf", "towel"), ())
+
+    assert road_vehicle.match_score("scarf") == 0.0
+    assert soft_good.match_score("red scarf") == pytest.approx(0.88)
 
 
 def test_profile_query_groups_separate_objects_sharing_one_part_template() -> None:

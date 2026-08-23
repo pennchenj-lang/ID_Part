@@ -207,6 +207,104 @@ def _semantic_union_metrics(
     }
 
 
+def _evaluate_prediction_layer(
+    truth_rows: list[dict[str, object]],
+    truth_masks: list[np.ndarray],
+    predicted_rows: list[dict[str, object]],
+    predicted_masks: list[np.ndarray],
+    *,
+    expected_domain: str,
+    object_category: str,
+    match_iou_threshold: float,
+    boundary_tolerance: int,
+) -> dict[str, object]:
+    """Evaluate one exported ownership layer without changing another layer."""
+
+    matches = _hungarian_matches(truth_masks, predicted_masks)
+    accepted_matches = [match for match in matches if match[2] >= match_iou_threshold]
+    precision = len(accepted_matches) / len(predicted_masks) if predicted_masks else 0.0
+    recall = len(accepted_matches) / len(truth_masks) if truth_masks else 0.0
+    f1 = 2.0 * precision * recall / (precision + recall) if precision + recall else 0.0
+
+    matched_boundaries: list[float] = []
+    match_rows: list[dict[str, object]] = []
+    for truth_index, prediction_index, overlap in matches:
+        truth_name = _normalize(
+            str(truth_rows[truth_index]["part_name"]),
+            expected_domain,
+            object_category=object_category,
+        )
+        prediction_semantic = str(predicted_rows[prediction_index]["semantic_name"])
+        prediction_name = (
+            "body"
+            if prediction_semantic == expected_domain
+            else _predicted_part_token(prediction_semantic, expected_domain)
+        )
+        accepted = overlap >= match_iou_threshold
+        if accepted:
+            matched_boundaries.append(
+                boundary_f1(
+                    predicted_masks[prediction_index],
+                    truth_masks[truth_index],
+                    tolerance=boundary_tolerance,
+                )
+            )
+        match_rows.append(
+            {
+                "truth_part": truth_name,
+                "predicted_semantic": prediction_semantic,
+                "predicted_part": prediction_name,
+                "iou": overlap,
+                "accepted": accepted,
+                "semantic_match": truth_name == prediction_name,
+            }
+        )
+
+    semantic_recall, semantic_rows = _semantic_recall(
+        truth_rows,
+        truth_masks,
+        predicted_rows,
+        predicted_masks,
+        expected_domain=expected_domain,
+        object_category=object_category,
+        threshold=match_iou_threshold,
+    )
+    semantic_union = _semantic_union_metrics(
+        truth_rows,
+        truth_masks,
+        predicted_rows,
+        predicted_masks,
+        expected_domain=expected_domain,
+        object_category=object_category,
+        threshold=match_iou_threshold,
+        boundary_tolerance=boundary_tolerance,
+    )
+    return {
+        "predicted_part_count": len(predicted_masks),
+        "generic_predicted_part_count": sum(
+            "_visual_" in str(row.get("semantic_name", ""))
+            for row in predicted_rows
+        ),
+        "matched_part_count": len(accepted_matches),
+        "part_discovery_precision_at_025": precision,
+        "part_discovery_recall_at_025": recall,
+        "part_discovery_f1_at_025": f1,
+        "mean_matched_iou": (
+            float(np.mean([match[2] for match in accepted_matches]))
+            if accepted_matches
+            else 0.0
+        ),
+        "mean_matched_boundary_f1": (
+            float(np.mean(matched_boundaries)) if matched_boundaries else 0.0
+        ),
+        "semantic_part_recall": semantic_recall,
+        "semantic_matches": semantic_rows,
+        **semantic_union,
+        "oversegmentation_ratio": len(predicted_masks) / max(1, len(truth_masks)),
+        "matches": match_rows,
+    }
+
+
 def evaluate_paco_package(
     package_dir: Path,
     case_path: Path,
@@ -275,6 +373,32 @@ def evaluate_paco_package(
         _load_mask(package_dir / str(row["mask_visible_path"]))
         for row in predicted_rows
     ]
+
+    editable_group_metrics: dict[str, object] | None = None
+    groups_path = package_dir / "groups.json"
+    group_map_path = package_dir / "group_id_map.tiff"
+    if groups_path.is_file() and group_map_path.is_file():
+        all_group_rows = json.loads(groups_path.read_text(encoding="utf-8"))
+        group_map = np.asarray(Image.open(group_map_path))
+        predicted_group_rows = [
+            row
+            for row in all_group_rows
+            if str(row.get("semantic_name", "")) != expected_domain
+            or include_root_body
+        ]
+        predicted_group_masks = [
+            group_map == int(row["group_index"]) for row in predicted_group_rows
+        ]
+        editable_group_metrics = _evaluate_prediction_layer(
+            truth_rows,
+            truth_masks,
+            predicted_group_rows,
+            predicted_group_masks,
+            expected_domain=expected_domain,
+            object_category=object_category,
+            match_iou_threshold=match_iou_threshold,
+            boundary_tolerance=boundary_tolerance,
+        )
 
     matches = _hungarian_matches(truth_masks, predicted_masks)
     accepted_matches = [match for match in matches if match[2] >= match_iou_threshold]
@@ -394,6 +518,7 @@ def evaluate_paco_package(
         **semantic_union,
         "oversegmentation_ratio": len(predicted_masks) / max(1, len(truth_masks)),
         "matches": match_rows,
+        "editable_group_metrics": editable_group_metrics,
         "evaluation_reads_ground_truth_after_inference": True,
         "inference_uses_ground_truth": False,
     }

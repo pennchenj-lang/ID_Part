@@ -119,6 +119,89 @@ def test_paco_evaluator_matches_parts_without_leaking_truth_into_inference(
     assert result["inference_uses_ground_truth"] is False
 
 
+def test_paco_evaluator_reports_fine_and_editable_group_layers_separately(
+    tmp_path: Path,
+) -> None:
+    case_dir = tmp_path / "case"
+    package = tmp_path / "package"
+    blade = np.zeros((36, 64), dtype=bool)
+    blade[10:26, 4:34] = True
+    handle = np.zeros((36, 64), dtype=bool)
+    handle[13:23, 34:60] = True
+    _save_mask(case_dir / "blade.png", blade)
+    _save_mask(case_dir / "handle.png", handle)
+    _save_mask(case_dir / "object_mask_crop.png", blade | handle)
+    (case_dir / "case.json").write_text(
+        json.dumps(
+            {
+                "object_category": "knife",
+                "parts": [
+                    {"part_name": "blade", "mask_crop": "blade.png"},
+                    {"part_name": "handle", "mask_crop": "handle.png"},
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    tiny_blade = np.zeros_like(blade)
+    tiny_blade[14:18, 12:18] = True
+    tiny_handle = np.zeros_like(handle)
+    tiny_handle[16:20, 46:52] = True
+    _save_mask(package / "masks" / "blade.png", tiny_blade)
+    _save_mask(package / "masks" / "handle.png", tiny_handle)
+    (package / "parts.json").write_text(
+        json.dumps(
+            [
+                {
+                    "semantic_name": "tool_prop_blade",
+                    "mask_visible_path": "masks/blade.png",
+                },
+                {
+                    "semantic_name": "tool_prop_handle",
+                    "mask_visible_path": "masks/handle.png",
+                },
+            ]
+        ),
+        encoding="utf-8",
+    )
+    group_map = np.zeros(blade.shape, dtype=np.uint16)
+    group_map[blade] = 1
+    group_map[handle] = 2
+    Image.fromarray(group_map).save(package / "group_id_map.tiff")
+    (package / "groups.json").write_text(
+        json.dumps(
+            [
+                {"group_index": 1, "semantic_name": "tool_prop_blade"},
+                {"group_index": 2, "semantic_name": "tool_prop_handle"},
+            ]
+        ),
+        encoding="utf-8",
+    )
+    (package / "inference_diagnostics.json").write_text(
+        json.dumps(
+            {
+                "root_routing": {"selected_semantic": "tool_prop"},
+                "profile_root_resolution": {"selected_profiles": ["knife"]},
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = evaluate_paco_package(
+        package,
+        case_dir / "case.json",
+        expected_domain="tool_prop",
+        expected_profile="knife",
+    )
+
+    assert result["part_discovery_f1_at_025"] == 0.0
+    groups = result["editable_group_metrics"]
+    assert isinstance(groups, dict)
+    assert groups["part_discovery_f1_at_025"] == 1.0
+    assert groups["semantic_part_recall"] == 1.0
+    assert groups["oversegmentation_ratio"] == 1.0
+
+
 def test_semantic_recall_is_not_lost_to_class_agnostic_assignment(
     tmp_path: Path,
 ) -> None:

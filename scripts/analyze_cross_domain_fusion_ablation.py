@@ -12,6 +12,7 @@ import numpy as np
 from PIL import Image
 
 from hpid_split.fusion import FusionConfig, MaskCandidate, fuse_candidates
+from hpid_split.metrics import binary_iou
 from hpid_split.paco_eval import (
     _normalize,
 )
@@ -22,9 +23,12 @@ from hpid_split.paper_eval import (
 
 SEED = 20260821
 METRICS = (
-    "object_iou",
-    "object_precision",
-    "object_recall",
+    "root_foreground_iou",
+    "root_foreground_precision",
+    "root_foreground_recall",
+    "editable_part_coverage_iou",
+    "editable_part_coverage_precision",
+    "editable_part_coverage_recall",
     "part_precision_at_025",
     "part_recall_at_025",
     "part_f1_at_025",
@@ -115,6 +119,24 @@ def _load_candidates(package_dir: Path) -> list[MaskCandidate]:
     ]
 
 
+def _coverage_metrics(
+    masks: list[np.ndarray],
+    truth_object: np.ndarray,
+) -> tuple[float, float, float]:
+    if masks:
+        prediction_union = np.logical_or.reduce(masks)
+    else:
+        prediction_union = np.zeros(truth_object.shape, dtype=bool)
+    inside = int(np.count_nonzero(prediction_union & truth_object))
+    predicted = int(np.count_nonzero(prediction_union))
+    truth = int(np.count_nonzero(truth_object))
+    return (
+        binary_iou(prediction_union, truth_object),
+        inside / max(1, predicted),
+        inside / max(1, truth),
+    )
+
+
 def _evaluate_result(
     *,
     result,
@@ -180,6 +202,23 @@ def _evaluate_result(
         prediction_semantics=prediction_semantics,
         truth_object_mask=truth_object,
         thresholds=DEFAULT_IOU_THRESHOLDS,
+    )
+    part_iou = metrics.pop("object_iou")
+    part_precision = metrics.pop("object_precision")
+    part_recall = metrics.pop("object_recall")
+    root_iou, root_precision, root_recall = _coverage_metrics(
+        all_prediction_masks,
+        truth_object,
+    )
+    metrics.update(
+        {
+            "root_foreground_iou": root_iou,
+            "root_foreground_precision": root_precision,
+            "root_foreground_recall": root_recall,
+            "editable_part_coverage_iou": part_iou,
+            "editable_part_coverage_precision": part_precision,
+            "editable_part_coverage_recall": part_recall,
+        }
     )
     return {key: float(value) for key, value in metrics.items()}
 
@@ -420,6 +459,15 @@ def main() -> int:
             "end-to-end fusion and Part-ID assignment after frozen proposal "
             "generation; not a proposal-generator ablation"
         ),
+        "coverage_metric_definitions": {
+            "root_foreground": (
+                "union of every exported ID, including root residuals, "
+                "against the object mask"
+            ),
+            "editable_part_coverage": (
+                "union of non-root editable part IDs against the object mask"
+            ),
+        },
         "ground_truth_usage": (
             "all four predictions are completed before labels are loaded"
         ),

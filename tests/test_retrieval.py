@@ -13,6 +13,8 @@ from hpid_split.retrieval import (
     PrototypeIndex,
     PrototypeRetriever,
     RetrievalConfig,
+    RetrievedPartPrior,
+    _merge_hierarchical_part_priors,
     apply_retrieval_domain_corrections,
     build_retrieval_index,
 )
@@ -34,6 +36,71 @@ class _MeanColorEncoder:
                 ]
             )
         return np.asarray(rows, dtype=np.float32)
+
+
+def _prior(
+    semantic: str,
+    *,
+    score: float,
+    samples: tuple[tuple[float, float, float, float, float], ...],
+    support: int,
+) -> RetrievedPartPrior:
+    geometry = np.asarray(samples, dtype=np.float32)
+    return RetrievedPartPrior(
+        semantic_name=semantic.removeprefix("container_"),
+        output_semantic_name=semantic,
+        display_name=semantic.removeprefix("container_"),
+        phrases=(semantic.replace("_", " "),),
+        semantic_parent="container_body",
+        assembly_parent_semantic="container_body",
+        maximum_instances=1,
+        support_count=support,
+        prevalence=score,
+        retrieval_score=score,
+        prototype_indices=tuple(range(support)),
+        geometry_mean=tuple(float(value) for value in geometry.mean(axis=0)),
+        geometry_std=tuple(
+            float(value) for value in np.maximum(geometry.std(axis=0), 0.04)
+        ),
+        geometry_samples=samples,
+    )
+
+
+def test_hierarchical_priors_keep_subtype_inventory_and_add_geometry_modes() -> None:
+    profile_bottom = _prior(
+        "container_bottom",
+        score=0.70,
+        support=3,
+        samples=((0.5, 0.7, 0.8, 0.4, 0.2),),
+    )
+    inventory_bottom = _prior(
+        "container_bottom",
+        score=0.82,
+        support=8,
+        samples=((0.5, 0.6, 0.9, 0.6, 0.7),),
+    )
+    inventory_outer = _prior(
+        "container_outer_side",
+        score=0.32,
+        support=4,
+        samples=((0.5, 0.8, 0.8, 0.3, 0.2),),
+    )
+
+    merged = _merge_hierarchical_part_priors(
+        (profile_bottom,),
+        (inventory_bottom, inventory_outer),
+    )
+
+    assert {prior.output_semantic_name for prior in merged} == {
+        "container_bottom",
+        "container_outer_side",
+    }
+    bottom = next(
+        prior for prior in merged if prior.output_semantic_name == "container_bottom"
+    )
+    assert len(bottom.geometry_samples) == 2
+    assert bottom.retrieval_score == inventory_bottom.retrieval_score
+    assert bottom.support_count == inventory_bottom.support_count
 
 
 def _write_reference(
@@ -496,6 +563,30 @@ def test_root_domain_filters_an_ambiguous_route_before_inventory_fusion(
     assert {prior.output_semantic_name for prior in plan.part_priors} == {
         "tool_prop_stock",
         "tool_prop_magazine",
+    }
+
+
+def test_resolved_subtype_inventory_filters_retrieved_parent_profile_parts(
+    tmp_path: Path,
+) -> None:
+    index, _ = _build_test_index(tmp_path)
+    image, root = _root(tmp_path / "rifle_1.png", semantic="tool_prop")
+    retriever = PrototypeRetriever(
+        index,
+        _MeanColorEncoder(),
+        config=RetrievalConfig(minimum_prompted_asset_similarity=-1.0),
+    )
+
+    plan = retriever.query(
+        image,
+        [root],
+        asset_candidates_by_root={"test::1": ("rifle",)},
+        allowed_part_semantics_by_root={"test::1": ("tool_prop_stock",)},
+    ).plans[0]
+
+    assert plan.accepted
+    assert {prior.output_semantic_name for prior in plan.part_priors} == {
+        "tool_prop_stock"
     }
 
 

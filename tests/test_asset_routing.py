@@ -14,12 +14,35 @@ from hpid_split.asset_routing import (
     masked_asset_view,
     reconcile_asset_routes,
     resolve_asset_domain,
+    resolve_explicit_asset_prompt,
+    resolve_full_image_domain_prior,
     route_profile_text_inventories,
     route_profile_text_inventory,
 )
 from hpid_split.cli import _apply_asset_domain_routes
 from hpid_split.fusion import MaskCandidate
 from hpid_split.prompt_bank import DomainPrompt, PartProfile, PromptBank
+
+
+def _domain_prior_root(
+    semantic_name: str,
+    physical_domains: tuple[str, ...],
+) -> MaskCandidate:
+    return MaskCandidate(
+        semantic_name,
+        semantic_name,
+        np.ones((24, 24), dtype=bool),
+        0.56,
+        "root",
+        prompt=semantic_name,
+        metadata={
+            "root_origin": "test",
+            "root_index": 1,
+            "candidate_key": "root:1",
+            "parent_candidate_key": None,
+            "physical_group_semantic_names": list(physical_domains),
+        },
+    )
 
 
 class _FakeEncoder:
@@ -44,10 +67,7 @@ class _ProfileEncoder:
 
     def encode_texts(self, texts: list[str]) -> np.ndarray:
         return np.asarray(
-            [
-                [0.14, 0.0] if "firearm" in text else [0.06, 0.0]
-                for text in texts
-            ],
+            [[0.14, 0.0] if "firearm" in text else [0.06, 0.0] for text in texts],
             dtype=np.float32,
         )
 
@@ -70,6 +90,32 @@ def _ambiguous_route(
         ),
         reason="ambiguous_candidate_set",
     )
+
+
+def test_explicit_prompt_uses_token_boundaries_and_not_word_substrings() -> None:
+    index = SimpleNamespace(
+        labels=("car", "scarf"),
+        label_metadata={
+            "car": {
+                "asset_domain": "vehicle",
+                "asset_profile": "road_vehicle",
+                "aliases": ["car", "automobile"],
+            },
+            "scarf": {
+                "asset_domain": "daily_object",
+                "asset_profile": "soft_good",
+                "aliases": ["scarf"],
+            },
+        },
+    )
+
+    route = resolve_explicit_asset_prompt(index, "red scarf")
+
+    assert route.accepted is True
+    assert route.asset_label == "scarf"
+    assert route.asset_domain == "daily_object"
+    assert route.asset_profile == "soft_good"
+    assert all(row["asset_label"] != "car" for row in route.alternatives)
 
 
 def test_cross_view_top_label_consensus_promotes_an_exact_asset() -> None:
@@ -402,6 +448,82 @@ def test_ambiguous_router_cannot_replace_a_specific_detected_profile() -> None:
     assert diagnostics["rows"][0]["specific_root_domain_preserved"] is True
 
 
+def test_cross_view_exact_label_corrects_a_conflicting_specific_root() -> None:
+    mask = np.ones((24, 24), dtype=bool)
+    root = MaskCandidate(
+        "tool_prop",
+        "tool_prop",
+        mask,
+        0.43,
+        "root",
+        prompt="pan",
+        metadata={
+            "root_origin": "test",
+            "root_index": 1,
+            "candidate_key": "root:1",
+            "parent_candidate_key": None,
+            "root_model_label": "pan",
+            "selected_part_profile": "pan",
+            "part_profile_specificity": 1.0,
+            "profile_hint_source": "specific_root_label",
+        },
+    )
+    plate_route = AssetRoute(
+        accepted=True,
+        asset_label="plate",
+        asset_domain="container",
+        asset_profile="flatware",
+        score=0.31,
+        margin=0.07,
+        alternatives=(
+            {
+                "asset_label": "plate",
+                "asset_domain": "container",
+                "asset_profile": "flatware",
+                "score": 0.31,
+            },
+        ),
+        candidate_labels=("plate",),
+        candidate_domains=("container",),
+        reason="accepted_exact_label",
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt(
+                "tool_prop",
+                ("tool",),
+                (),
+                part_profiles=(PartProfile("pan", ("pan",), ()),),
+            ),
+            DomainPrompt(
+                "container",
+                ("container",),
+                (),
+                part_profiles=(PartProfile("flatware", ("plate",), ()),),
+            ),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": plate_route},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"tool_prop", "container"},
+        full_image_route=plate_route,
+    )
+
+    routed_root = candidates[0]
+    assert routed_root.semantic_name == "container"
+    assert routed_root.metadata["selected_part_profile"] == "flatware"
+    assert routed_root.metadata["resolved_object_label"] == "plate"
+    row = diagnostics["rows"][0]
+    assert row["cross_view_exact_domain"] is True
+    assert row["specific_root_domain_preserved"] is False
+    assert diagnostics["corrected_domain_count"] == 1
+
+
 def test_cross_view_consensus_cannot_override_domain_missing_from_inventory() -> None:
     mask = np.ones((20, 20), dtype=bool)
     root = MaskCandidate(
@@ -459,8 +581,7 @@ def test_cross_view_consensus_cannot_override_domain_missing_from_inventory() ->
     assert row["routing_applicable"] is False
     assert row["independently_accepted_exact_route"] is False
     assert (
-        row["domain_resolution"]["reason"]
-        == "current_domain_outside_router_inventory"
+        row["domain_resolution"]["reason"] == "current_domain_outside_router_inventory"
     )
 
 
@@ -599,6 +720,244 @@ def test_exact_full_and_crop_asset_agreement_can_lock_a_profile() -> None:
     assert diagnostics["rows"][0]["cross_view_exact_profile"] is True
 
 
+def test_exact_full_image_profile_locks_its_single_selected_global_root() -> None:
+    mask = np.ones((20, 20), dtype=bool)
+    root = MaskCandidate(
+        "tool_prop",
+        "tool_prop",
+        mask,
+        0.9,
+        "root",
+        prompt="pan",
+        metadata={
+            "root_origin": "test",
+            "root_index": 1,
+            "candidate_key": "root:1",
+            "parent_candidate_key": None,
+            "root_query_mode": "global_asset_proposal",
+            "root_model_label": "pan",
+            "selected_part_profile": "pan",
+            "part_profile_specificity": 1.0,
+            "global_asset_proposal_accepted": True,
+            "global_asset_proposal_rank": 1,
+        },
+    )
+    full = AssetRoute(
+        accepted=True,
+        asset_label="pan (for cooking)",
+        asset_domain="tool_prop",
+        asset_profile="pan",
+        score=0.28,
+        margin=0.04,
+        alternatives=(),
+        candidate_labels=("pan (for cooking)",),
+        candidate_domains=("tool_prop",),
+        reason="accepted_exact_label",
+    )
+    local = _ambiguous_route(
+        (
+            {
+                "asset_label": "spoon",
+                "asset_domain": "tool_prop",
+                "asset_profile": "spoon",
+                "score": 0.25,
+            },
+            {
+                "asset_label": "pan (for cooking)",
+                "asset_domain": "tool_prop",
+                "asset_profile": "pan",
+                "score": 0.24,
+            },
+        )
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt(
+                "tool_prop",
+                ("tool",),
+                (),
+                part_profiles=(
+                    PartProfile("pan", ("pan",), ()),
+                    PartProfile("spoon", ("spoon",), ()),
+                ),
+            ),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"tool_prop"},
+        full_image_route=full,
+    )
+
+    assert candidates[0].metadata["selected_part_profile"] == "pan"
+    assert (
+        candidates[0].metadata["profile_hint_source"]
+        == "accepted_global_asset_profile"
+    )
+    assert diagnostics["rows"][0]["exact_global_root_profile_lock"] is True
+
+
+def test_exact_global_profile_lock_moves_profile_and_root_to_same_domain() -> None:
+    mask = np.ones((20, 20), dtype=bool)
+    root = MaskCandidate(
+        "tool_prop",
+        "tool_prop",
+        mask,
+        0.9,
+        "root",
+        prompt="shoe",
+        metadata={
+            "root_origin": "test",
+            "root_index": 1,
+            "candidate_key": "root:1",
+            "parent_candidate_key": None,
+            "root_query_mode": "global_asset_proposal",
+            "root_model_label": "shoe",
+            "selected_part_profile": "footwear",
+            "part_profile_specificity": 1.0,
+            "global_asset_proposal_accepted": True,
+            "global_asset_proposal_rank": 1,
+        },
+    )
+    full = AssetRoute(
+        accepted=True,
+        asset_label="shoe",
+        asset_domain="daily_object",
+        asset_profile="footwear",
+        score=0.29,
+        margin=0.04,
+        alternatives=(),
+        candidate_labels=("shoe",),
+        candidate_domains=("daily_object",),
+        reason="accepted_exact_label",
+    )
+    local = _ambiguous_route(
+        (
+            {
+                "asset_label": "knife",
+                "asset_domain": "tool_prop",
+                "asset_profile": "knife",
+                "score": 0.25,
+            },
+            {
+                "asset_label": "screwdriver",
+                "asset_domain": "tool_prop",
+                "asset_profile": "screwdriver",
+                "score": 0.24,
+            },
+        )
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt("tool_prop", ("tool",), ()),
+            DomainPrompt(
+                "daily_object",
+                ("object",),
+                (),
+                part_profiles=(PartProfile("footwear", ("shoe",), ()),),
+            ),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"tool_prop", "daily_object"},
+        full_image_route=full,
+    )
+
+    assert candidates[0].semantic_name == "daily_object"
+    assert candidates[0].metadata["selected_part_profile"] == "footwear"
+    assert candidates[0].metadata["resolved_object_label"] == "shoe"
+    assert diagnostics["rows"][0]["resolved_domain"] == "daily_object"
+
+
+def test_exact_global_identity_is_not_renamed_by_conflicting_local_crop() -> None:
+    root = MaskCandidate(
+        "daily_object",
+        "daily_object",
+        np.ones((20, 20), dtype=bool),
+        0.9,
+        "root",
+        prompt="shoe",
+        metadata={
+            "root_origin": "test",
+            "root_index": 1,
+            "candidate_key": "root:1",
+            "parent_candidate_key": None,
+            "root_query_mode": "global_asset_proposal",
+            "root_model_label": "shoe",
+            "selected_part_profile": "footwear",
+            "part_profile_specificity": 1.0,
+            "global_asset_proposal_accepted": True,
+            "global_asset_proposal_rank": 1,
+        },
+    )
+    full = AssetRoute(
+        accepted=True,
+        asset_label="shoe",
+        asset_domain="daily_object",
+        asset_profile="footwear",
+        score=0.30,
+        margin=0.05,
+        alternatives=(),
+        candidate_labels=("shoe",),
+        candidate_domains=("daily_object",),
+        reason="accepted_exact_label",
+    )
+    local = AssetRoute(
+        accepted=True,
+        asset_label="knife",
+        asset_domain="tool_prop",
+        asset_profile="knife",
+        score=0.31,
+        margin=0.04,
+        alternatives=(),
+        candidate_labels=("knife",),
+        candidate_domains=("tool_prop",),
+        reason="accepted_exact_label",
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt(
+                "daily_object",
+                ("object",),
+                (),
+                part_profiles=(PartProfile("footwear", ("shoe",), ()),),
+            ),
+            DomainPrompt(
+                "tool_prop",
+                ("tool",),
+                (),
+                part_profiles=(PartProfile("knife", ("knife",), ()),),
+            ),
+        )
+    )
+
+    candidates, _ = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"daily_object", "tool_prop"},
+        full_image_route=full,
+    )
+
+    routed_root = candidates[0]
+    assert routed_root.semantic_name == "daily_object"
+    assert routed_root.metadata["selected_part_profile"] == "footwear"
+    assert routed_root.metadata["resolved_object_label"] == "shoe"
+
+
 def test_physical_inventory_overrides_conflicting_cross_view_shape_match() -> None:
     mask = np.ones((20, 20), dtype=bool)
     root = MaskCandidate(
@@ -669,6 +1028,378 @@ def test_physical_inventory_overrides_conflicting_cross_view_shape_match() -> No
         "lightweight_profile_text_router"
     )
     assert diagnostics["rows"][0]["cross_view_exact_profile"] is True
+
+
+def test_full_image_exact_domain_can_relabel_a_structurally_supported_root() -> None:
+    root = _domain_prior_root("character", ("character", "device"))
+    local = _ambiguous_route(
+        (
+            {"asset_label": "hat", "asset_domain": "daily_object", "score": 0.24},
+            {"asset_label": "belt", "asset_domain": "daily_object", "score": 0.23},
+        )
+    )
+    full = AssetRoute(
+        accepted=True,
+        asset_label="calculator",
+        asset_domain="device",
+        asset_profile="controls",
+        score=0.29,
+        margin=0.05,
+        alternatives=(
+            {"asset_label": "calculator", "asset_domain": "device", "score": 0.29},
+            {"asset_label": "telephone", "asset_domain": "device", "score": 0.23},
+            {"asset_label": "hat", "asset_domain": "daily_object", "score": 0.20},
+        ),
+        candidate_labels=("calculator",),
+        candidate_domains=("device",),
+        reason="accepted_exact_label",
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt("character", ("person",), ()),
+            DomainPrompt("device", ("device",), ()),
+            DomainPrompt("daily_object", ("object",), ()),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"device", "daily_object"},
+        full_image_route=full,
+    )
+
+    assert candidates[0].semantic_name == "device"
+    row = diagnostics["rows"][0]
+    assert row["full_image_domain_prior_applied"] is True
+    assert row["full_image_domain_structural_support"] is True
+    assert row["domain_resolution"]["reason"] == (
+        "accepted_full_image_exact_domain_with_cross_source_support"
+    )
+
+
+def test_full_image_exact_identity_locks_inventory_when_geometry_is_generic() -> None:
+    root = _domain_prior_root("terrain", ("daily_object",))
+    local = _ambiguous_route(
+        (
+            {
+                "asset_label": "newspaper",
+                "asset_domain": "daily_object",
+                "asset_profile": "book",
+                "score": 0.25,
+            },
+            {
+                "asset_label": "hat",
+                "asset_domain": "daily_object",
+                "asset_profile": "hat",
+                "score": 0.24,
+            },
+        )
+    )
+    full = AssetRoute(
+        accepted=True,
+        asset_label="belt",
+        asset_domain="daily_object",
+        asset_profile="wallet_belt",
+        score=0.30,
+        margin=0.05,
+        alternatives=(
+            {
+                "asset_label": "belt",
+                "asset_domain": "daily_object",
+                "asset_profile": "wallet_belt",
+                "score": 0.30,
+            },
+            {
+                "asset_label": "hat",
+                "asset_domain": "daily_object",
+                "asset_profile": "hat",
+                "score": 0.22,
+            },
+        ),
+        candidate_labels=("belt",),
+        candidate_domains=("daily_object",),
+        reason="accepted_exact_label",
+    )
+    misleading_inventory = ProfileTextRoute(
+        accepted=True,
+        profile="book",
+        score=0.16,
+        margin=0.05,
+        alternatives=(),
+        reason="accepted_profile_inventory",
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt("terrain", ("terrain",), ()),
+            DomainPrompt(
+                "daily_object",
+                ("object",),
+                (),
+                part_profiles=(
+                    PartProfile("wallet_belt", ("belt",), ()),
+                    PartProfile("book", ("book",), ()),
+                    PartProfile("hat", ("hat",), ()),
+                ),
+            ),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"daily_object"},
+        full_image_route=full,
+        profile_text_routes_by_root={
+            "test::1": {"daily_object": misleading_inventory}
+        },
+    )
+
+    routed_root = candidates[0]
+    assert routed_root.semantic_name == "daily_object"
+    assert routed_root.metadata["selected_part_profile"] == "wallet_belt"
+    assert routed_root.metadata["resolved_object_label"] == "belt"
+    assert routed_root.metadata["profile_hint_source"] == (
+        "accepted_full_image_asset_profile"
+    )
+    row = diagnostics["rows"][0]
+    assert row["full_image_exact_profile_lock"] is True
+    assert row["profile_text_route"]["profile"] == "book"
+
+
+def test_local_exact_asset_route_has_priority_over_full_image_prior() -> None:
+    root = _domain_prior_root("character", ("character", "container"))
+    local = AssetRoute(
+        accepted=True,
+        asset_label="sweater",
+        asset_domain="daily_object",
+        asset_profile="garment",
+        score=0.31,
+        margin=0.06,
+        alternatives=(
+            {"asset_label": "sweater", "asset_domain": "daily_object", "score": 0.31},
+        ),
+        candidate_labels=("sweater",),
+        candidate_domains=("daily_object",),
+        reason="accepted_exact_label",
+    )
+    full = AssetRoute(
+        accepted=True,
+        asset_label="cup",
+        asset_domain="container",
+        asset_profile="drinkware",
+        score=0.28,
+        margin=0.04,
+        alternatives=(
+            {"asset_label": "cup", "asset_domain": "container", "score": 0.28},
+        ),
+        candidate_labels=("cup",),
+        candidate_domains=("container",),
+        reason="accepted_exact_label",
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt("character", ("person",), ()),
+            DomainPrompt("container", ("container",), ()),
+            DomainPrompt("daily_object", ("object",), ()),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"container", "daily_object"},
+        full_image_route=full,
+    )
+
+    assert candidates[0].semantic_name == "daily_object"
+    assert diagnostics["rows"][0]["full_image_domain_prior_applied"] is False
+
+
+def test_explicit_asset_prompt_cannot_be_relabelled_by_visual_router() -> None:
+    root = MaskCandidate(
+        "daily_object",
+        "daily_object",
+        np.ones((24, 24), dtype=bool),
+        0.61,
+        "root",
+        prompt="scarf",
+        metadata={
+            "root_origin": "test",
+            "root_index": 1,
+            "candidate_key": "root:1",
+            "parent_candidate_key": None,
+            "root_query_mode": "user_asset_prompt",
+            "root_model_label": "scarf",
+            "selected_part_profile": "scarf",
+            "part_profile_specificity": 1.0,
+            "profile_hint_source": "user_asset_prompt",
+            "profile_resolution_status": "accepted",
+        },
+    )
+    visual_route = AssetRoute(
+        accepted=True,
+        asset_label="bicycle",
+        asset_domain="vehicle",
+        asset_profile="bicycle",
+        score=0.31,
+        margin=0.06,
+        alternatives=(
+            {"asset_label": "bicycle", "asset_domain": "vehicle", "score": 0.31},
+        ),
+        candidate_labels=("bicycle",),
+        candidate_domains=("vehicle",),
+        reason="accepted_exact_label",
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt(
+                "daily_object",
+                ("object",),
+                (),
+                part_profiles=(PartProfile("scarf", ("scarf",), ()),),
+            ),
+            DomainPrompt(
+                "vehicle",
+                ("vehicle",),
+                (),
+                part_profiles=(PartProfile("bicycle", ("bicycle",), ()),),
+            ),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": visual_route},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"daily_object", "vehicle"},
+        full_image_route=visual_route,
+    )
+
+    routed_root = candidates[0]
+    assert routed_root.semantic_name == "daily_object"
+    assert routed_root.metadata["selected_part_profile"] == "scarf"
+    assert routed_root.metadata["profile_hint_source"] == "user_asset_prompt"
+    row = diagnostics["rows"][0]
+    assert row["explicit_user_prompt_lock"] is True
+    assert row["domain_resolution"]["reason"] == (
+        "explicit_user_prompt_domain_profile_lock"
+    )
+
+
+def test_near_threshold_full_image_domain_needs_structural_consensus() -> None:
+    root = _domain_prior_root("character", ("character", "device"))
+    local = _ambiguous_route(
+        (
+            {"asset_label": "hat", "asset_domain": "daily_object", "score": 0.24},
+            {"asset_label": "belt", "asset_domain": "daily_object", "score": 0.23},
+        )
+    )
+    alternatives = (
+        {"asset_label": "calculator", "asset_domain": "device", "score": 0.242},
+        {"asset_label": "mouse", "asset_domain": "device", "score": 0.231},
+        {"asset_label": "telephone", "asset_domain": "device", "score": 0.228},
+        {"asset_label": "laptop", "asset_domain": "device", "score": 0.224},
+        {"asset_label": "pen", "asset_domain": "daily_object", "score": 0.220},
+    )
+    full = AssetRoute(
+        accepted=False,
+        asset_label=None,
+        asset_domain=None,
+        asset_profile=None,
+        score=0.242,
+        margin=0.016,
+        alternatives=alternatives,
+        candidate_labels=tuple(str(row["asset_label"]) for row in alternatives),
+        candidate_domains=("device", "daily_object"),
+        reason="ambiguous_candidate_set",
+    )
+
+    prior = resolve_full_image_domain_prior(full)
+    assert prior.accepted is True
+    assert prior.domain == "device"
+    assert prior.exact_label_accepted is False
+    assert prior.support_ratio == 0.8
+
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt("character", ("person",), ()),
+            DomainPrompt("device", ("device",), ()),
+            DomainPrompt("daily_object", ("object",), ()),
+        )
+    )
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"device", "daily_object"},
+        full_image_route=full,
+    )
+
+    assert candidates[0].semantic_name == "device"
+    assert diagnostics["rows"][0]["full_image_domain_prior_applied"] is True
+
+
+def test_full_image_exact_label_cannot_relabel_without_independent_support() -> None:
+    root = _domain_prior_root("character", ("character",))
+    local = _ambiguous_route(
+        (
+            {"asset_label": "hat", "asset_domain": "daily_object", "score": 0.24},
+            {"asset_label": "belt", "asset_domain": "daily_object", "score": 0.23},
+        )
+    )
+    full = AssetRoute(
+        accepted=True,
+        asset_label="hammer",
+        asset_domain="tool_prop",
+        asset_profile="hammer",
+        score=0.25,
+        margin=0.03,
+        alternatives=(
+            {"asset_label": "hammer", "asset_domain": "tool_prop", "score": 0.25},
+            {"asset_label": "box", "asset_domain": "container", "score": 0.22},
+            {"asset_label": "can", "asset_domain": "container", "score": 0.21},
+            {"asset_label": "plate", "asset_domain": "container", "score": 0.20},
+            {"asset_label": "book", "asset_domain": "daily_object", "score": 0.19},
+        ),
+        candidate_labels=("hammer",),
+        candidate_domains=("tool_prop",),
+        reason="accepted_exact_label",
+    )
+    prompt_bank = PromptBank(
+        (
+            DomainPrompt("character", ("person",), ()),
+            DomainPrompt("daily_object", ("object",), ()),
+            DomainPrompt("tool_prop", ("tool",), ()),
+            DomainPrompt("container", ("container",), ()),
+        )
+    )
+
+    candidates, diagnostics = _apply_asset_domain_routes(
+        [root],
+        [root],
+        {"test::1": local},
+        prompt_bank,
+        config=AssetRouterConfig(),
+        supported_domains={"daily_object", "tool_prop", "container"},
+        full_image_route=full,
+    )
+
+    assert candidates[0].semantic_name == "character"
+    assert diagnostics["rows"][0]["full_image_domain_prior_applied"] is False
 
 
 def _index() -> SimpleNamespace:
@@ -934,8 +1665,7 @@ def test_ambiguous_router_retains_supported_current_domain_over_label_count() ->
     assert resolution.resolved_profile is None
     assert resolution.resolved_asset_label is None
     assert (
-        resolution.asset_label_reason
-        == "ambiguous_route_not_promoted_to_exact_label"
+        resolution.asset_label_reason == "ambiguous_route_not_promoted_to_exact_label"
     )
     assert resolution.reason == "retained_current_domain_under_ambiguity"
 
@@ -974,6 +1704,5 @@ def test_retained_domain_does_not_reuse_cross_domain_top_label() -> None:
     assert resolution.resolved_profile is None
     assert resolution.resolved_asset_label is None
     assert (
-        resolution.asset_label_reason
-        == "ambiguous_route_not_promoted_to_exact_label"
+        resolution.asset_label_reason == "ambiguous_route_not_promoted_to_exact_label"
     )

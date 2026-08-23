@@ -460,6 +460,51 @@ def test_self_classified_isolated_candidate_can_replace_wrong_broad_root() -> No
     assert result.diagnostics["roots"][0]["isolated_root_replacement"] is True
 
 
+def test_exact_global_asset_profile_cannot_be_replaced_by_local_distractor() -> None:
+    broad_mask = np.zeros((100, 100), dtype=bool)
+    broad_mask[10:85, 8:92] = True
+    distractor_mask = np.zeros((100, 100), dtype=bool)
+    distractor_mask[15:80, 35:58] = True
+    broad = _root(broad_mask, index=1, score=0.58, profile="pan")
+    broad = MaskCandidate(
+        broad.semantic_name,
+        broad.semantic_parent,
+        broad.mask,
+        broad.score,
+        broad.source,
+        prompt="pan",
+        metadata={
+            **broad.metadata,
+            "part_profile_specificity": 1.0,
+            "root_model_label": "pan",
+            "root_query_mode": "global_asset_proposal",
+            "global_asset_proposal_accepted": True,
+            "global_asset_proposal_rank": 1,
+        },
+    )
+    spoon = _root(
+        distractor_mask,
+        index=2,
+        score=0.62,
+        profile="spoon",
+        consensus=0.76,
+        classifier_rank=1,
+        classifier_probability=0.25,
+        self_classified=True,
+        classifier_probability_ratio=1.9,
+        classifier_similarity_margin=0.03,
+    )
+
+    result = resolve_profile_roots([broad], [spoon], image_shape=broad_mask.shape)
+
+    assert np.array_equal(result.roots[0].mask, broad_mask)
+    assert result.roots[0].metadata["selected_part_profile"] == "pan"
+    assert (
+        result.diagnostics["roots"][0]["resolution_source"]
+        == "accepted_global_asset_profile"
+    )
+
+
 def test_low_affinity_candidate_without_self_support_is_ignored() -> None:
     broad_mask = np.zeros((100, 100), dtype=bool)
     broad_mask[5:35, 5:35] = True

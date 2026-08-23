@@ -8,6 +8,7 @@ from hpid_split.physical_groups import (
     _candidate_three_stage_verification,
     _firearm_handguard_from_structure_and_material,
     _refine_inventory_boundaries,
+    _semantic_seeded_profile_masks,
     build_physical_groups,
 )
 
@@ -933,6 +934,255 @@ def test_three_stage_gate_rejects_shading_after_semantic_and_structure_pass() ->
     assert verification["accepted"] is False
 
 
+def test_three_stage_gate_accepts_inventory_label_with_closed_multi_cue_boundary() -> None:
+    mask = np.zeros((100, 160), dtype=bool)
+    mask[22:78, 35:125] = True
+    candidate = MaskCandidate(
+        semantic_name="vehicle_wheel",
+        semantic_parent="vehicle",
+        mask=mask,
+        score=0.78,
+        source="sam2-amg/test/semantic-rerank",
+        metadata={
+            "selected_part_profile": "two_wheeler",
+            "visual_region": True,
+            "semantic_reranked": True,
+            "semantic_rerank_route": "semantic_inventory_evidence_rescue",
+            "semantic_rerank_probability": 0.16,
+            "semantic_rerank_margin": 0.02,
+            "proposal_boundary_alignment": 0.92,
+            "geometric_support": 0.0,
+            "root_area_fraction": 0.28,
+            "axis_consistency_gate": {"accepted": True},
+            "appearance_graph_evidence": {
+                "boundary_closure": 0.82,
+                "independent_cue_count": 3,
+                "shading_only_penalty": 0.03,
+            },
+        },
+    )
+
+    verification = _candidate_three_stage_verification(candidate)
+
+    assert verification["stage_1_semantic"]["verified"] is True
+    assert verification["stage_2_structure"]["verified"] is True
+    assert verification["stage_2_structure"]["reason"] == "closed_boundary_structure"
+    assert verification["stage_3_appearance"]["verified"] is True
+    assert verification["accepted"] is True
+
+
+def test_three_stage_gate_accepts_semantic_part_with_strong_closed_boundary() -> None:
+    mask = np.zeros((100, 160), dtype=bool)
+    mask[22:48, 35:105] = True
+    candidate = MaskCandidate(
+        semantic_name="container_lid",
+        semantic_parent="container_body",
+        mask=mask,
+        score=0.55,
+        source="sam2-amg/test/semantic-rerank",
+        metadata={
+            "selected_part_profile": "box",
+            "visual_region": True,
+            "semantic_reranked": True,
+            "semantic_rerank_route": "base",
+            "semantic_rerank_probability": 0.17,
+            "semantic_rerank_margin": 0.007,
+            "proposal_boundary_alignment": 0.70,
+            "geometric_support": 0.0,
+            "root_area_fraction": 0.08,
+            "axis_consistency_gate": {"accepted": True},
+            "appearance_graph_evidence": {
+                "boundary_closure": 0.88,
+                "independent_cue_count": 1,
+                "shading_only_penalty": 0.0,
+            },
+        },
+    )
+
+    verification = _candidate_three_stage_verification(candidate)
+
+    assert verification["stage_1_semantic"]["verified"] is True
+    assert verification["stage_2_structure"]["reason"] == "closed_boundary_structure"
+    assert verification["stage_2_structure"]["verified"] is True
+    assert verification["stage_3_appearance"]["verified"] is True
+    assert verification["accepted"] is True
+
+
+def test_three_stage_gate_accepts_inventory_topology_complement() -> None:
+    mask = np.zeros((80, 180), dtype=bool)
+    mask[28:54, 112:168] = True
+    candidate = MaskCandidate(
+        semantic_name="tool_prop_handle",
+        semantic_parent="tool_prop_body",
+        mask=mask,
+        score=0.31,
+        source="hpid-topology-v2/terminal_complement",
+        metadata={
+            "selected_part_profile": "knife",
+            "topology_refinement": True,
+            "topology_dense_gate": True,
+            "topology_diagnostics": {"selected_component": 1},
+            "root_area_fraction": 0.24,
+            "axis_consistency_gate": {"accepted": True},
+        },
+    )
+
+    verification = _candidate_three_stage_verification(candidate)
+
+    assert verification["stage_1_semantic"]["verified"] is True
+    assert verification["stage_2_structure"]["reason"] == (
+        "inventory_topology_complement"
+    )
+    assert verification["stage_2_structure"]["verified"] is True
+    assert verification["stage_3_appearance"]["verified"] is True
+    assert verification["accepted"] is True
+
+
+def _semantic_partition_candidates(
+    root: np.ndarray,
+    blade: np.ndarray,
+    handle: np.ndarray,
+) -> tuple[MaskCandidate, ...]:
+    return (
+        MaskCandidate(
+            "tool_prop",
+            "tool_prop",
+            root,
+            0.94,
+            "test/root",
+            metadata={
+                "root_origin": "test",
+                "root_index": 1,
+                "selected_part_profile": "knife",
+            },
+        ),
+        MaskCandidate(
+            "tool_prop_blade",
+            "tool_prop_body",
+            blade,
+            0.58,
+            "grounded-sam2/test/profile-refine",
+            metadata={
+                "root_origin": "test",
+                "root_index": 1,
+                "selected_part_profile": "knife",
+                "maximum_instances": 1,
+                "root_area_fraction": float(blade.sum() / root.sum()),
+                "axis_consistency_gate": {"accepted": True},
+            },
+        ),
+        MaskCandidate(
+            "tool_prop_handle",
+            "tool_prop_body",
+            handle,
+            0.52,
+            "hpid-topology-v2/terminal_complement",
+            metadata={
+                "root_origin": "test",
+                "root_index": 1,
+                "selected_part_profile": "knife",
+                "maximum_instances": 1,
+                "topology_refinement": True,
+                "topology_dense_gate": True,
+                "topology_diagnostics": {"selected_component": 1},
+                "root_area_fraction": float(handle.sum() / root.sum()),
+                "axis_consistency_gate": {"accepted": True},
+            },
+        ),
+    )
+
+
+def test_semantic_seeded_partition_completes_root_without_visual_ids() -> None:
+    shape = (90, 240)
+    root = np.zeros(shape, dtype=bool)
+    root[24:66, 12:226] = True
+    blade = np.zeros(shape, dtype=bool)
+    blade[28:62, 16:92] = True
+    handle = np.zeros(shape, dtype=bool)
+    handle[30:60, 154:220] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    image = np.full((*shape, 3), 24, dtype=np.uint8)
+    image[root] = (130, 145, 162)
+    image[root & (np.indices(shape)[1] >= 128)] = (128, 78, 42)
+    candidates = _semantic_partition_candidates(root, blade, handle)
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        Image.fromarray(image),
+        profile="knife",
+    )
+
+    assert masks is not None
+    assert set(masks) == {"tool_prop_blade", "tool_prop_handle"}
+    assert np.array_equal(np.logical_or.reduce(list(masks.values())), root)
+    assert not np.any(masks["tool_prop_blade"] & masks["tool_prop_handle"])
+    assert np.all(masks["tool_prop_blade"][blade])
+    assert np.all(masks["tool_prop_handle"][handle])
+    assert diagnostics["evidence_order"] == [
+        "semantic",
+        "structure",
+        "appearance",
+    ]
+    assert diagnostics["appearance_can_create_ids"] is False
+    assert diagnostics["ground_truth_used"] is False
+
+
+def test_semantic_seeded_partition_is_candidate_order_invariant() -> None:
+    shape = (72, 180)
+    root = np.zeros(shape, dtype=bool)
+    root[18:54, 8:172] = True
+    blade = np.zeros(shape, dtype=bool)
+    blade[21:51, 12:70] = True
+    handle = np.zeros(shape, dtype=bool)
+    handle[22:50, 116:168] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    candidates = _semantic_partition_candidates(root, blade, handle)
+
+    first, _ = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        None,
+        profile="knife",
+    )
+    second, _ = _semantic_seeded_profile_masks(
+        instance_map,
+        tuple(reversed(candidates)),
+        None,
+        profile="knife",
+    )
+
+    assert first is not None and second is not None
+    assert all(np.array_equal(first[name], second[name]) for name in first)
+
+
+def test_semantic_seeded_partition_refuses_one_weak_seed() -> None:
+    shape = (70, 170)
+    root = np.zeros(shape, dtype=bool)
+    root[16:54, 8:162] = True
+    blade = np.zeros(shape, dtype=bool)
+    blade[20:50, 12:58] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    candidates = _semantic_partition_candidates(
+        root,
+        blade,
+        np.zeros(shape, dtype=bool),
+    )[:2]
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        None,
+        profile="knife",
+    )
+
+    assert masks is None
+    assert diagnostics["status"] == "insufficient_verified_macro_seeds"
+
+
 def test_firearm_handguard_uses_material_only_after_structural_seeding() -> None:
     shape = (100, 180)
     fore_end = np.zeros(shape, dtype=bool)
@@ -985,6 +1235,7 @@ def test_inventory_boundary_refinement_moves_a_coarse_cut_to_the_visible_seam() 
     assert np.array_equal(refined["left_part"] | refined["right_part"], root)
     assert not np.any(refined["left_part"] & refined["right_part"])
     assert diagnostics["status"] == "completed"
+    assert diagnostics["elevation_quantization_levels"] == 4096
     assert diagnostics["reassigned_pixel_count"] > 0
     assert diagnostics["appearance_can_create_ids"] is False
 
@@ -1332,3 +1583,272 @@ def test_knife_structural_fusion_uses_shape_and_relative_material_not_red() -> N
     assert 215 <= wrap.centroid_xy[0] <= 255
     assert blade.centroid_xy[0] < wrap.centroid_xy[0]
     assert np.array_equal(result.group_map > 0, root)
+
+
+def _geometry_record(
+    instance_map: np.ndarray,
+    index: int,
+    semantic: str,
+    parent: str,
+) -> PartInstance:
+    mask = instance_map == index
+    ys, xs = np.nonzero(mask)
+    return PartInstance(
+        part_id=f"{parent}/{semantic}/center/{index:02d}",
+        semantic_name=semantic,
+        semantic_parent=parent,
+        instance_index=index,
+        side="center",
+        bbox_xyxy=(
+            int(xs.min()),
+            int(ys.min()),
+            int(xs.max() + 1),
+            int(ys.max() + 1),
+        ),
+        centroid_xy=(float(xs.mean()), float(ys.mean())),
+        area_px=len(xs),
+    )
+
+
+def _profile_candidate(
+    semantic: str,
+    parent: str,
+    mask: np.ndarray,
+    *,
+    profile: str,
+    maximum_instances: int,
+) -> MaskCandidate:
+    return MaskCandidate(
+        semantic,
+        parent,
+        mask,
+        0.72,
+        "grounded-sam2/test/profile-refine",
+        metadata={
+            "candidate_key": f"root:1/{semantic}",
+            "selected_part_profile": profile,
+            "maximum_instances": maximum_instances,
+            "root_area_fraction": float(mask.mean()),
+        },
+    )
+
+
+def test_large_outer_surface_cannot_be_exported_as_container_inner() -> None:
+    shape = (100, 100)
+    root = np.zeros(shape, dtype=bool)
+    root[10:90, 10:90] = True
+    false_inner = np.zeros(shape, dtype=bool)
+    false_inner[10:88, 18:82] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    instance_map[false_inner] = 2
+    records = [
+        _geometry_record(instance_map, 1, "container", "container"),
+        _geometry_record(instance_map, 2, "container_inner", "container_body"),
+    ]
+    candidates = [
+        MaskCandidate(
+            "container",
+            "container",
+            root,
+            0.9,
+            "test/root",
+            metadata={"selected_part_profile": "bottle_jar"},
+        ),
+        _profile_candidate(
+            "container_inner",
+            "container_body",
+            false_inner,
+            profile="bottle_jar",
+            maximum_instances=2,
+        ),
+    ]
+
+    result = build_physical_groups(instance_map, records, candidates=candidates)
+
+    assert {group.semantic_name for group in result.groups} == {"container_body"}
+    rows = result.diagnostics["three_stage_candidate_verification"]["candidates"]
+    inner = next(row for row in rows if row["semantic_name"] == "container_inner")
+    assert inner["stage_2_structure"]["verified"] is False
+    assert inner["stage_2_structure"]["reason"] == "internal_part_consumes_root"
+
+
+def test_open_container_can_keep_a_large_visible_inner_surface() -> None:
+    shape = (120, 160)
+    root = np.zeros(shape, dtype=bool)
+    root[10:110, 12:148] = True
+    inner = np.zeros(shape, dtype=bool)
+    inner[18:102, 24:136] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    instance_map[inner] = 2
+    records = [
+        _geometry_record(instance_map, 1, "container", "container"),
+        _geometry_record(instance_map, 2, "container_inner", "container_body"),
+    ]
+    candidates = [
+        MaskCandidate(
+            "container",
+            "container",
+            root,
+            0.9,
+            "test/root",
+            metadata={"selected_part_profile": "open_container"},
+        ),
+        _profile_candidate(
+            "container_inner",
+            "container_body",
+            inner,
+            profile="open_container",
+            maximum_instances=1,
+        ),
+    ]
+
+    result = build_physical_groups(instance_map, records, candidates=candidates)
+
+    assert any(group.semantic_name == "container_inner" for group in result.groups)
+    rows = result.diagnostics["three_stage_candidate_verification"]["candidates"]
+    verified = next(row for row in rows if row["semantic_name"] == "container_inner")
+    assert verified["stage_2_structure"]["semantic_shape_consistency"][
+        "accepted"
+    ] is True
+
+
+def test_round_region_mislabeled_as_fork_recovers_as_second_wheel() -> None:
+    shape = (120, 260)
+    yy, xx = np.indices(shape)
+    left = (xx - 62) ** 2 + (yy - 72) ** 2 <= 34**2
+    right = (xx - 198) ** 2 + (yy - 72) ** 2 <= 34**2
+    bridge = (yy >= 48) & (yy < 63) & (xx >= 62) & (xx <= 198)
+    root = left | right | bridge
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    instance_map[left] = 2
+    instance_map[right] = 3
+    records = [
+        _geometry_record(instance_map, 1, "vehicle", "vehicle"),
+        _geometry_record(instance_map, 2, "vehicle_wheel", "vehicle_body"),
+        _geometry_record(instance_map, 3, "vehicle_fork", "vehicle_frame"),
+    ]
+    candidates = [
+        MaskCandidate(
+            "vehicle",
+            "vehicle",
+            root,
+            0.9,
+            "test/root",
+            metadata={"selected_part_profile": "two_wheeler"},
+        ),
+        _profile_candidate(
+            "vehicle_wheel",
+            "vehicle_body",
+            left,
+            profile="two_wheeler",
+            maximum_instances=8,
+        ),
+        _profile_candidate(
+            "vehicle_fork",
+            "vehicle_frame",
+            right,
+            profile="two_wheeler",
+            maximum_instances=1,
+        ),
+    ]
+
+    result = build_physical_groups(instance_map, records, candidates=candidates)
+
+    wheel_groups = [
+        group for group in result.groups if group.semantic_name == "vehicle_wheel"
+    ]
+    assert len(wheel_groups) == 2
+    assert all(group.group_id != wheel_groups[0].group_id for group in wheel_groups[1:])
+    assert not any(group.semantic_name == "vehicle_fork" for group in result.groups)
+    recovery = result.diagnostics["repeated_semantic_shape_recovery"]
+    assert recovery["recovered_count"] == 1
+
+
+def test_disconnected_repeated_part_mask_exports_independent_group_ids() -> None:
+    shape = (120, 260)
+    yy, xx = np.indices(shape)
+    left = (xx - 62) ** 2 + (yy - 72) ** 2 <= 34**2
+    right = (xx - 198) ** 2 + (yy - 72) ** 2 <= 34**2
+    bridge = (yy >= 48) & (yy < 63) & (xx >= 62) & (xx <= 198)
+    root = left | right | bridge
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    instance_map[left | right] = 2
+    records = [
+        _geometry_record(instance_map, 1, "vehicle", "vehicle"),
+        _geometry_record(instance_map, 2, "vehicle_wheel", "vehicle_body"),
+    ]
+    candidates = [
+        MaskCandidate(
+            "vehicle",
+            "vehicle",
+            root,
+            0.9,
+            "test/root",
+            metadata={"selected_part_profile": "two_wheeler"},
+        ),
+        _profile_candidate(
+            "vehicle_wheel",
+            "vehicle_body",
+            left,
+            profile="two_wheeler",
+            maximum_instances=8,
+        ),
+    ]
+
+    result = build_physical_groups(instance_map, records, candidates=candidates)
+
+    wheel_groups = [
+        group for group in result.groups if group.semantic_name == "vehicle_wheel"
+    ]
+    assert len(wheel_groups) == 2
+    assert len({group.group_id for group in wheel_groups}) == 2
+    split = result.diagnostics["repeated_instance_component_split"]
+    assert split["split_group_count"] == 1
+
+
+def test_fragmented_label_does_not_create_repeated_editable_groups() -> None:
+    shape = (100, 180)
+    root = np.zeros(shape, dtype=bool)
+    root[12:88, 12:168] = True
+    left = np.zeros(shape, dtype=bool)
+    left[34:66, 42:70] = True
+    right = np.zeros(shape, dtype=bool)
+    right[34:66, 110:138] = True
+    label = left | right
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    instance_map[label] = 2
+    records = [
+        _geometry_record(instance_map, 1, "container", "container"),
+        _geometry_record(instance_map, 2, "container_label", "container_body"),
+    ]
+    candidates = [
+        MaskCandidate(
+            "container",
+            "container",
+            root,
+            0.9,
+            "test/root",
+            metadata={"selected_part_profile": "bottle_jar"},
+        ),
+        _profile_candidate(
+            "container_label",
+            "container_body",
+            label,
+            profile="bottle_jar",
+            maximum_instances=4,
+        ),
+    ]
+
+    result = build_physical_groups(instance_map, records, candidates=candidates)
+
+    label_groups = [
+        group for group in result.groups if group.semantic_name == "container_label"
+    ]
+    assert len(label_groups) == 1
+    split = result.diagnostics["repeated_instance_component_split"]
+    assert split["split_group_count"] == 0

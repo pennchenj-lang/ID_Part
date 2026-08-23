@@ -75,7 +75,12 @@
         "bottle_jar": ["container_rim", "container_pull_tab", "container_bottom"],
         "drinkware": ["container_label", "container_bottom"],
         "bag": ["container_inner", "container_rim", "container_label", "container_bottom"],
-        "box": ["container_inner_wall", "container_shoulder", "container_bottom"],
+        "box": [
+          "container_inner_wall",
+          "container_outer_side",
+          "container_shoulder",
+          "container_bottom"
+        ],
         "open_container": [
           "container_inner_wall",
           "container_outer_side",
@@ -93,6 +98,7 @@
         "box": {
           "box_or_carton": [
             "container_inner_wall",
+            "container_outer_side",
             "container_shoulder",
             "container_bottom"
           ],

@@ -12,7 +12,7 @@ regression has been run on two character layouts, a knife, a firearm, a globe,
 a repeated-rock game scene, and a two-building scene. These are unlabelled
 software and structural checks, not a cross-domain accuracy benchmark.
 
-## Frozen research release
+## Research releases
 
 Version `0.3.0` is the frozen research-preview baseline. See
 [FROZEN_RELEASE.md](FROZEN_RELEASE.md) for its evidence boundary and
@@ -23,6 +23,15 @@ PACO-LVIS oracle-crop holdout cases in
 condition reaches object IoU 0.7368 but Part-F1@0.25 only 0.3319 and semantic
 part recall 0.1782; these negative results are intentionally retained. This
 release is not advertised as error-free universal part segmentation.
+
+Version `0.3.1` keeps package format `0.3.0` and revises the physical-group
+layer. It adds semantic-shape rejection, repeated-part shape recovery,
+open-versus-narrow-container interior rules, conservative repeated-instance
+splitting, and quantized boundary refinement for deterministic export. The
+fine Part-ID maps and proposal candidates used for the 226-case regroup audit
+were frozen; only editable groups were regenerated. Because these cases were
+inspected while the grouping rules were debugged, they are now a regression
+set rather than an untouched independent test set.
 
 ## What is implemented
 
@@ -300,12 +309,23 @@ The targeted edge, identity, and root-routing regression is
   algorithmic limitation.
 - The synthetic amodal audit tests self-occlusion recovery of predicted masks;
   it is not natural amodal ground truth.
-- The public non-character study uses 65 PACO-LVIS oracle-crop cases for
-  development and 226 independent object instances for testing.  The test set
-  covers 60 categories across devices, furniture, containers, vehicles, daily
-  objects, and tools/props, with no source-image or object-instance overlap with
-  development.  Categories are shared, so this is independent-instance rather
-  than unseen-category generalization.
+- The public non-character study originally separated 65 PACO-LVIS oracle-crop
+  development cases from 226 object instances with no source-image or
+  object-instance overlap. The 226 cases cover 60 categories across devices,
+  furniture, containers, vehicles, daily objects, and tools/props. They were
+  subsequently inspected during physical-group debugging and must therefore be
+  reported as a cross-category regression set, not an untouched independent
+  test set or unseen-category generalization.
+- On the frozen 226-case candidates, the `0.3.1` editable-group pass reports
+  precision 0.4602, recall 0.4149, Part F1@0.25 0.4043, matched IoU 0.4669,
+  boundary F1 0.4938, semantic recall 0.2107, and oversegmentation ratio 1.1523.
+  Relative to the preceding physical-group pass, five cases improved and none
+  regressed in Part F1@0.25, while the mean improvement was small. All 226
+  packages passed manifest and structural validation. A second run under a
+  different Python hash seed reproduced 1,356 core output files byte for byte.
+  These results support deterministic packaging and a narrower fusion repair;
+  the absolute F1 remains modest and does not establish error-free automatic
+  decomposition.
 - On the 226 frozen-candidate test cases, the A0-to-A3 fusion ablation raises
   Part F1@0.25 from 0.1511 to 0.3133 and recall from 0.1101 to 0.3656.  The
   absolute strict-overlap and semantic scores remain modest.  Every variant is

@@ -11,6 +11,24 @@ def _normalize(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
 
 
+def _contains_token_phrase(container: str, phrase: str) -> bool:
+    """Match a normalized phrase without accepting substrings inside words."""
+
+    container_tokens = container.split()
+    phrase_tokens = phrase.split()
+    if not container_tokens or not phrase_tokens:
+        return False
+    width = len(phrase_tokens)
+    return any(
+        container_tokens[index : index + width] == phrase_tokens
+        for index in range(len(container_tokens) - width + 1)
+    )
+
+
+def _phrases_nested(left: str, right: str) -> bool:
+    return _contains_token_phrase(left, right) or _contains_token_phrase(right, left)
+
+
 def _merge_extension(
     payload: dict[str, object],
     extension: dict[str, object],
@@ -311,9 +329,7 @@ class PartProfileOverride:
     priority: float | None = None
 
     @classmethod
-    def from_dict(
-        cls, semantic_name: str, payload: object
-    ) -> PartProfileOverride:
+    def from_dict(cls, semantic_name: str, payload: object) -> PartProfileOverride:
         if not isinstance(payload, dict):
             raise TypeError("profile part override must be an object")
 
@@ -344,9 +360,7 @@ class PartProfileOverride:
             ),
             topology_scale=optional_float("topology_scale"),
             detail=(
-                bool(payload["detail"])
-                if payload.get("detail") is not None
-                else None
+                bool(payload["detail"]) if payload.get("detail") is not None else None
             ),
             priority=optional_float("priority"),
         )
@@ -414,7 +428,7 @@ class PartProfile:
                 continue
             if label == normalized:
                 candidate = 1.0
-            elif normalized in label or label in normalized:
+            elif _phrases_nested(label, normalized):
                 candidate = 0.88
             else:
                 tokens = set(normalized.split())
@@ -464,9 +478,7 @@ class PartProfile:
             return self.part_semantics, None, score
         return subtype.part_semantics, subtype, score
 
-    def apply_overrides(
-        self, parts: tuple[PartPrompt, ...]
-    ) -> tuple[PartPrompt, ...]:
+    def apply_overrides(self, parts: tuple[PartPrompt, ...]) -> tuple[PartPrompt, ...]:
         by_name = {override.semantic_name: override for override in self.part_overrides}
         return tuple(
             by_name[part.semantic_name].apply(part)
@@ -507,7 +519,7 @@ class DomainPrompt:
                 continue
             if label == normalized:
                 candidate = 1.0
-            elif normalized in label or label in normalized:
+            elif _phrases_nested(label, normalized):
                 candidate = 0.88
             else:
                 tokens = set(normalized.split())
@@ -537,7 +549,7 @@ class DomainPrompt:
                     continue
                 if label == normalized:
                     score = 1.0
-                elif normalized in label or label in normalized:
+                elif _phrases_nested(label, normalized):
                     score = 0.86
                 else:
                     tokens = set(normalized.split())
@@ -803,9 +815,7 @@ class PromptBank:
                         f"part profile {profile.name!r} overrides parts outside the "
                         f"profile: {sorted(unknown_overrides)}"
                     )
-                base_by_name = {
-                    part.semantic_name: part for part in domain.parts
-                }
+                base_by_name = {part.semantic_name: part for part in domain.parts}
                 for override in profile.part_overrides:
                     effective = override.apply(base_by_name[override.semantic_name])
                     if (
@@ -1137,15 +1147,11 @@ class PromptBank:
                             ),
                             confusion_groups=tuple(
                                 tuple(str(value) for value in group)
-                                for group in raw_profile.get(
-                                    "confusion_groups", ()
-                                )
+                                for group in raw_profile.get("confusion_groups", ())
                                 if isinstance(group, list)
                             ),
                             requires_grounded_refinement=bool(
-                                raw_profile.get(
-                                    "requires_grounded_refinement", False
-                                )
+                                raw_profile.get("requires_grounded_refinement", False)
                             ),
                             part_subtypes=tuple(
                                 PartSubtype(

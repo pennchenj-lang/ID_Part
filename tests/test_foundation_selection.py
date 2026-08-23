@@ -8,6 +8,7 @@ from hpid_split.foundation import (
     FoundationCandidateGenerator,
     FoundationConfig,
     SegmentProposal,
+    _effective_maximum_parent_fraction,
     _profile_confusion_reassignment,
     _remove_ambiguous_guided_candidates,
     _select_child_detections,
@@ -210,6 +211,79 @@ def test_ambiguity_filter_rejects_same_scale_competing_semantics() -> None:
     assert rejected == 2
 
 
+def test_ambiguity_filter_collapses_nested_labels_to_physical_anchor() -> None:
+    metadata = {"root_origin": "test", "root_index": 1}
+    left = _mask(10, 40, 10, 40)
+    right = _mask(55, 85, 10, 40)
+    candidates = [
+        MaskCandidate(
+            "vehicle_wheel",
+            "vehicle_body",
+            left,
+            0.62,
+            "test",
+            metadata=metadata,
+        ),
+        MaskCandidate(
+            "vehicle_tire",
+            "vehicle_wheel",
+            left,
+            0.60,
+            "test",
+            metadata=metadata,
+        ),
+        MaskCandidate(
+            "vehicle_wheel",
+            "vehicle_body",
+            right,
+            0.59,
+            "test",
+            metadata=metadata,
+        ),
+        MaskCandidate(
+            "vehicle_tire",
+            "vehicle_wheel",
+            right,
+            0.57,
+            "test",
+            metadata=metadata,
+        ),
+    ]
+
+    retained, rejected = _remove_ambiguous_guided_candidates(candidates)
+
+    assert [item.semantic_name for item in retained] == [
+        "vehicle_wheel",
+        "vehicle_wheel",
+    ]
+    assert rejected == 2
+    assert all(
+        item.metadata["hierarchical_ambiguity_collapsed"] for item in retained
+    )
+
+
+def test_repeated_macro_parts_receive_bounded_sam_area_slack() -> None:
+    config = FoundationConfig(
+        repeated_part_maximum_fraction_relative_slack=0.10,
+        repeated_part_maximum_fraction_absolute_slack=0.02,
+    )
+    repeated = PartPrompt(
+        "vehicle_wheel",
+        ("wheel",),
+        maximum_parent_fraction=0.30,
+        maximum_instances=2,
+    )
+    unique = PartPrompt(
+        "vehicle_body",
+        ("body",),
+        maximum_parent_fraction=0.30,
+        maximum_instances=1,
+    )
+
+    assert np.isclose(_effective_maximum_parent_fraction(repeated, config), 0.33)
+    assert _effective_maximum_parent_fraction(unique, config) == 0.30
+
+
 def test_semantic_quota_prevents_one_class_from_consuming_budget() -> None:
     arm = _part("arm")
     eye = _part("eye")
@@ -298,6 +372,73 @@ def test_scene_root_discovery_runs_declared_profile_query_groups() -> None:
 
     assert ("tree", "pine tree") in generator.queries
     assert len(roots) == 2
+
+
+def test_explicit_prompt_uses_matching_inventory_support_when_direct_query_is_empty() -> (
+    None
+):
+    class PromptSupportGenerator(FoundationCandidateGenerator):
+        def __init__(self) -> None:
+            self.config = FoundationConfig(
+                asset_prompt="calculator",
+                asset_prompt_domain="device",
+                asset_prompt_profile="controls",
+                asset_prompt_label="calculator",
+                asset_prompt_resolution_reason="exact_alias",
+                maximum_roots_per_domain=4,
+                maximum_total_roots=4,
+            )
+            self.prompt_bank = PromptBank(
+                (
+                    DomainPrompt(
+                        name="device",
+                        root_prompts=("generic device", "calculator", "laptop"),
+                        parts=(),
+                        part_profiles=(
+                            PartProfile("controls", ("calculator",), ()),
+                            PartProfile("laptop", ("laptop",), ()),
+                        ),
+                    ),
+                    DomainPrompt(
+                        name="container",
+                        root_prompts=("box",),
+                        parts=(),
+                    ),
+                )
+            )
+            self.queries: list[tuple[str, ...]] = []
+            self._asset_prompt_diagnostics = None
+
+        def _ground(self, image: Image.Image, phrases: list[str]) -> list[Detection]:
+            self.queries.append(tuple(phrases))
+            if phrases == ["calculator"]:
+                return []
+            if "generic device" in phrases:
+                return [Detection("calculator", 0.72, (4, 4, 28, 28))]
+            return []
+
+        def _segment_boxes(
+            self, image: Image.Image, detections: list[Detection]
+        ) -> list[SegmentProposal]:
+            output = []
+            for detection in detections:
+                mask = np.zeros((image.height, image.width), dtype=bool)
+                x0, y0, x1, y1 = detection.box_xyxy
+                mask[y0:y1, x0:x1] = True
+                output.append(SegmentProposal(mask, 0.9))
+            return output
+
+    generator = PromptSupportGenerator()
+    roots = generator._root_candidates(Image.new("RGB", (32, 32)))
+
+    assert len(roots) == 1
+    assert roots[0].domain.name == "device"
+    assert roots[0].profile_hint == "controls"
+    assert roots[0].query_mode == "user_asset_prompt_support"
+    assert ("box",) not in generator.queries
+    assert generator._asset_prompt_diagnostics["status"] == (
+        "resolved_with_inventory_support"
+    )
 
 
 def test_full_image_asset_proposal_adds_an_isolated_root_query() -> None:
@@ -710,9 +851,7 @@ def test_routed_profile_refinement_uses_isolated_canonical_queries() -> None:
     assert result.diagnostics["ground_truth_used"] is False
 
 
-def test_profile_refinement_keeps_alternative_boxes_until_geometry_validation() -> (
-    None
-):
+def test_profile_refinement_keeps_alternative_boxes_until_geometry_validation() -> None:
     class HypothesisGenerator(FoundationCandidateGenerator):
         def __init__(self) -> None:
             self.config = FoundationConfig(
@@ -752,9 +891,7 @@ def test_profile_refinement_keeps_alternative_boxes_until_geometry_validation() 
         name="tool_prop",
         root_prompts=("knife",),
         parts=(blade,),
-        part_profiles=(
-            PartProfile("knife", ("knife",), ("tool_prop_blade",)),
-        ),
+        part_profiles=(PartProfile("knife", ("knife",), ("tool_prop_blade",)),),
     )
     root = MaskCandidate(
         semantic_name="tool_prop",
@@ -815,7 +952,9 @@ def test_profile_refinement_reassigns_only_unique_geometry_compatible_role() -> 
 
     parts = (
         PartPrompt("device_door", ("door",), semantic_parent="device"),
-        PartPrompt("device_control_panel", ("control panel",), semantic_parent="device"),
+        PartPrompt(
+            "device_control_panel", ("control panel",), semantic_parent="device"
+        ),
         PartPrompt("device_screen", ("screen",), semantic_parent="device"),
     )
     profile = PartProfile(
@@ -839,11 +978,13 @@ def test_profile_refinement_reassigns_only_unique_geometry_compatible_role() -> 
                 maximum_parent_fraction=0.10,
             ),
         ),
-        confusion_groups=((
-            "device_door",
-            "device_control_panel",
-            "device_screen",
-        ),),
+        confusion_groups=(
+            (
+                "device_door",
+                "device_control_panel",
+                "device_screen",
+            ),
+        ),
     )
     domain = DomainPrompt(
         name="device",
@@ -905,11 +1046,13 @@ def test_profile_confusion_reassignment_stays_unresolved_with_two_valid_roles() 
         "appliance",
         ("appliance",),
         ("device_screen", "device_door", "device_control_panel"),
-        confusion_groups=((
-            "device_screen",
-            "device_door",
-            "device_control_panel",
-        ),),
+        confusion_groups=(
+            (
+                "device_screen",
+                "device_door",
+                "device_control_panel",
+            ),
+        ),
     )
 
     assert (
@@ -960,9 +1103,7 @@ def test_profile_refinement_confines_sam_object_leakage_to_part_box() -> None:
                 maximum_parent_fraction=0.25,
             ),
         ),
-        part_profiles=(
-            PartProfile("phone", ("phone",), ("device_screen",)),
-        ),
+        part_profiles=(PartProfile("phone", ("phone",), ("device_screen",)),),
     )
     root = MaskCandidate(
         "device",

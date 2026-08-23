@@ -133,6 +133,153 @@ def _mask_containment(first: np.ndarray, second: np.ndarray) -> float:
     return intersection / smaller if smaller else 0.0
 
 
+def reconcile_prompt_root_escalations(
+    candidates: list[MaskCandidate],
+    escalated_roots: list[MaskCandidate],
+    *,
+    equivalent_iou: float = 0.90,
+    equivalent_containment: float = 0.97,
+    minimum_equivalent_area_ratio: float = 0.84,
+) -> tuple[list[MaskCandidate], dict[str, object]]:
+    """Keep useful root geometry while transferring prompt semantics.
+
+    A larger grounding model can return almost the same root mask as the
+    proposal-first path. Replacing the proposal root in that case discards its
+    proposal-pool context and can make later physical-part discovery much
+    poorer. Geometrically equivalent escalations therefore contribute semantic
+    profile evidence to the existing root instead of replacing its geometry.
+    Materially different escalations remain independent routing candidates.
+    """
+
+    updated = list(candidates)
+    root_indices = [
+        index
+        for index, candidate in enumerate(updated)
+        if candidate.semantic_name == candidate.semantic_parent
+        and candidate.metadata.get("parent_candidate_key") is None
+    ]
+    rows: list[dict[str, object]] = []
+    retained: list[MaskCandidate] = []
+    semantic_fields = (
+        "selected_part_profile",
+        "part_profile_specificity",
+        "part_profile_selection",
+        "root_label_specificity",
+        "root_model_label",
+        "profile_resolution_status",
+    )
+
+    def stable_key(candidate: MaskCandidate) -> tuple[str, int, str]:
+        return (
+            _root_origin(candidate),
+            int(candidate.metadata.get("root_index") or 0),
+            candidate.semantic_name,
+        )
+
+    for escalated in sorted(escalated_roots, key=stable_key):
+        escalated_area = max(1, int(np.count_nonzero(escalated.mask)))
+        matches: list[tuple[float, float, float, int]] = []
+        for index in root_indices:
+            existing = updated[index]
+            if existing.semantic_name != escalated.semantic_name:
+                continue
+            existing_area = max(1, int(np.count_nonzero(existing.mask)))
+            overlap = mask_iou(existing.mask, escalated.mask)
+            containment = _mask_containment(existing.mask, escalated.mask)
+            area_ratio = min(existing_area, escalated_area) / max(
+                existing_area, escalated_area
+            )
+            equivalent = bool(
+                overlap >= equivalent_iou
+                or (
+                    containment >= equivalent_containment
+                    and area_ratio >= minimum_equivalent_area_ratio
+                )
+            )
+            if equivalent:
+                matches.append((overlap, containment, area_ratio, index))
+        if not matches:
+            retained.append(escalated)
+            rows.append(
+                {
+                    "escalated_root_key": candidate_root_key(escalated),
+                    "action": "retained_distinct_geometry",
+                    "matched_root_key": None,
+                    "iou": 0.0,
+                    "containment": 0.0,
+                    "area_ratio": 0.0,
+                }
+            )
+            continue
+
+        overlap, containment, area_ratio, index = max(
+            matches,
+            key=lambda item: (
+                item[0],
+                item[1],
+                item[2],
+                stable_key(updated[item[3]]),
+            ),
+        )
+        existing = updated[index]
+        metadata = dict(existing.metadata)
+        for field_name in semantic_fields:
+            value = escalated.metadata.get(field_name)
+            if value is not None and value != "":
+                metadata[field_name] = value
+        escalation_key = candidate_root_key(escalated)
+        metadata.update(
+            {
+                "root_query_mode": "user_asset_prompt_equivalent_geometry",
+                "profile_hint_source": "user_asset_prompt_equivalent_root",
+                "prompt_root_geometry_preserved": True,
+                "prompt_root_semantic_evidence_key": escalation_key,
+                "prompt_root_semantic_evidence_source": escalated.source,
+                "prompt_root_semantic_evidence_score": float(escalated.score),
+                "prompt_root_equivalent_iou": float(overlap),
+                "prompt_root_equivalent_containment": float(containment),
+                "prompt_root_equivalent_area_ratio": float(area_ratio),
+                "ground_truth_used": False,
+            }
+        )
+        updated[index] = replace(
+            existing,
+            prompt=escalated.prompt or existing.prompt,
+            source_reliability=max(
+                existing.source_reliability, escalated.source_reliability
+            ),
+            metadata=metadata,
+        )
+        rows.append(
+            {
+                "escalated_root_key": escalation_key,
+                "action": "semantic_evidence_merged_geometry_preserved",
+                "matched_root_key": candidate_root_key(existing),
+                "iou": float(overlap),
+                "containment": float(containment),
+                "area_ratio": float(area_ratio),
+                "selected_part_profile": metadata.get("selected_part_profile"),
+            }
+        )
+
+    updated.extend(retained)
+    merged_count = sum(
+        row["action"] == "semantic_evidence_merged_geometry_preserved"
+        for row in rows
+    )
+    return updated, {
+        "algorithm": "hpid-prompt-root-geometry-reconciliation-v1",
+        "generated_escalated_root_count": len(escalated_roots),
+        "retained_distinct_root_count": len(retained),
+        "merged_equivalent_root_count": int(merged_count),
+        "equivalent_iou": equivalent_iou,
+        "equivalent_containment": equivalent_containment,
+        "minimum_equivalent_area_ratio": minimum_equivalent_area_ratio,
+        "rows": rows,
+        "ground_truth_used": False,
+    }
+
+
 def _box_iou(
     first: tuple[int, int, int, int], second: tuple[int, int, int, int]
 ) -> float:
@@ -658,6 +805,97 @@ def _semantic_arbitration(
         ),
         reverse=True,
     )
+    # A rank-1 global proposal is an independent whole-image hypothesis.  It may
+    # name a foreground asset more precisely than a broad context category (for
+    # example, a garment inside a person crop).  Let it override only when its
+    # mask is also materially stronger; the semantic proposal alone is never
+    # enough to replace the default physical root.
+    default_winner = semantic_representatives[0]
+    default_metrics = dict(default_winner["metrics"])
+    proposal_overrides = []
+    for row in scored:
+        candidate = row["candidate"]
+        metrics = row["metrics"]
+        assert isinstance(candidate, MaskCandidate)
+        assert isinstance(metrics, dict)
+        relative_coverage = float(row.get("physical_group_relative_coverage", 0.0))
+        proposal_accepted = bool(metrics.get("global_asset_proposal_accepted", False))
+        accepted_proposal_supported = bool(
+            proposal_accepted
+            and float(metrics["area_fraction"]) >= 0.10
+            and float(metrics["detector_score"]) >= 0.58
+            and float(metrics["sam_score"]) >= 0.60
+            and float(metrics["physical_salience_score"])
+            >= max(
+                0.48,
+                float(default_metrics["physical_salience_score"]) - 0.12,
+            )
+            and float(row["geometry_representative_score"])
+            >= float(default_winner["geometry_representative_score"]) - 0.08
+            and relative_coverage >= 0.20
+        )
+        unaccepted_proposal_supported = bool(
+            not proposal_accepted
+            and float(metrics["physical_salience_score"])
+            >= max(
+                0.68,
+                float(default_metrics["physical_salience_score"]) + 0.04,
+            )
+            and float(row["geometry_representative_score"])
+            >= float(default_winner["geometry_representative_score"]) + 0.015
+            and relative_coverage >= 0.45
+        )
+        if (
+            candidate.metadata.get("root_query_mode") == "global_asset_proposal"
+            and metrics.get("global_asset_proposal_rank") == 1
+            and float(metrics.get("global_asset_proposal_priority", 0.0)) >= 0.95
+            and float(row.get("part_profile_specificity", 0.0)) >= 0.80
+            and (accepted_proposal_supported or unaccepted_proposal_supported)
+            and float(metrics["area_fraction"]) <= 0.85
+            and (
+                int(metrics["touched_sides"]) <= 2
+                or float(metrics["border_fraction"]) < 0.05
+            )
+        ):
+            proposal_overrides.append(row)
+    proposal_override: dict[str, object] | None = None
+    if proposal_overrides:
+        proposal_override = max(
+            proposal_overrides,
+            key=lambda row: (
+                bool(dict(row["metrics"]).get("global_asset_proposal_accepted", False)),
+                float(dict(row["metrics"])["physical_salience_score"]),
+                float(row["geometry_representative_score"]),
+                float(dict(row["metrics"])["detector_score"]),
+            ),
+        )
+        proposal_override_reason = (
+            "accepted_global_proposal_with_structural_support"
+            if bool(
+                dict(proposal_override["metrics"]).get(
+                    "global_asset_proposal_accepted", False
+                )
+            )
+            else "unaccepted_global_proposal_with_geometric_margin"
+        )
+        proposal_override["semantic_arbitration_override"] = proposal_override_reason
+        override_candidate = proposal_override["candidate"]
+        assert isinstance(override_candidate, MaskCandidate)
+        proposal_override["candidate"] = replace(
+            override_candidate,
+            metadata={
+                **override_candidate.metadata,
+                "semantic_arbitration_override": proposal_override_reason,
+                "global_proposal_physical_margin": float(
+                    dict(proposal_override["metrics"])["physical_salience_score"]
+                    - float(default_metrics["physical_salience_score"])
+                ),
+                "global_proposal_geometry_margin": float(
+                    proposal_override["geometry_representative_score"]
+                    - float(default_winner["geometry_representative_score"])
+                ),
+            },
+        )
     # Crop classifiers are vulnerable to context when the target is small.  If
     # two category hypotheses describe the same physical mask and one has a
     # substantially stronger, specific detector match, let that direct evidence
@@ -677,10 +915,7 @@ def _semantic_arbitration(
             key=lambda row: float(dict(row["metrics"])["detector_score"]),
             reverse=True,
         )
-        default_winner = semantic_representatives[0]
-        default_detector = float(
-            dict(default_winner["metrics"])["detector_score"]
-        )
+        default_detector = float(dict(default_winner["metrics"])["detector_score"])
         detector_margin = float(
             dict(detector_ranked[0]["metrics"])["detector_score"]
             - (
@@ -693,17 +928,13 @@ def _semantic_arbitration(
             default_winner.get("part_profile_specificity", 0.0)
         )
         direct_over_unspecific_margin = float(
-            dict(detector_ranked[0]["metrics"])["detector_score"]
-            - default_detector
+            dict(detector_ranked[0]["metrics"])["detector_score"] - default_detector
         )
-        if (
-            float(dict(detector_ranked[0]["metrics"])["detector_score"]) >= 0.58
-            and (
-                detector_margin >= 0.22
-                or (
-                    default_profile_specificity < 0.80
-                    and direct_over_unspecific_margin >= 0.18
-                )
+        if float(dict(detector_ranked[0]["metrics"])["detector_score"]) >= 0.58 and (
+            detector_margin >= 0.22
+            or (
+                default_profile_specificity < 0.80
+                and direct_over_unspecific_margin >= 0.18
             )
         ):
             winning_semantic = str(detector_ranked[0]["semantic_name"])
@@ -721,9 +952,7 @@ def _semantic_arbitration(
                 override_candidate,
                 metadata={
                     **override_candidate.metadata,
-                    "semantic_arbitration_override": (
-                        "specific_detector_margin"
-                    ),
+                    "semantic_arbitration_override": ("specific_detector_margin"),
                     "semantic_detector_margin": detector_margin,
                     "semantic_detector_margin_over_default": (
                         direct_over_unspecific_margin
@@ -743,6 +972,12 @@ def _semantic_arbitration(
         ),
         reverse=True,
     )
+    if proposal_override is not None:
+        proposal_margin = float(
+            proposal_override["geometry_representative_score"]
+            - float(default_winner["geometry_representative_score"])
+        )
+        return proposal_override, scored, max(0.0, proposal_margin)
     if detector_override is not None:
         return detector_override, scored, detector_margin
     return semantic_representatives[0], scored, margin
@@ -876,21 +1111,84 @@ def _select_salient_group(
     mask. The tolerance is absolute and does not inspect evaluation labels.
     """
 
-    best_group_score = max(float(group["group_score"]) for group in groups)
+    def best_global_row(group: dict[str, object]) -> dict[str, object] | None:
+        rows = []
+        candidate_rows = group.get("rows")
+        if not isinstance(candidate_rows, list):
+            candidate_rows = [group["winner"]]
+        for row in candidate_rows:
+            metrics = dict(row["metrics"])
+            if (
+                metrics.get("global_asset_proposal_rank") == 1
+                and float(metrics.get("global_asset_proposal_priority", 0.0)) >= 0.65
+            ):
+                rows.append(row)
+        return max(
+            rows,
+            default=None,
+            key=lambda row: (
+                bool(dict(row["metrics"]).get("global_asset_proposal_accepted", False)),
+                float(dict(row["metrics"]).get("global_asset_proposal_priority", 0.0)),
+                float(dict(row["metrics"])["physical_salience_score"]),
+                float(row["routing_score"]),
+            ),
+        )
+
+    def is_small_global_subobject(group: dict[str, object]) -> bool:
+        global_row = best_global_row(group)
+        if global_row is None:
+            return False
+        metrics = dict(global_row["metrics"])
+        area_fraction = float(metrics.get("area_fraction", 1.0))
+        if area_fraction > 0.18:
+            return False
+        if (
+            bool(metrics.get("global_asset_proposal_accepted", False))
+            and area_fraction >= 0.10
+            and float(metrics.get("physical_salience_score", 0.0)) >= 0.55
+        ):
+            return False
+        for other in groups:
+            if other is group:
+                continue
+            other_winner = dict(other["winner"])
+            other_metrics = dict(other_winner["metrics"])
+            other_area = float(other_metrics.get("area_fraction", 0.0))
+            if (
+                other_area >= max(0.30, 2.5 * area_fraction)
+                and float(
+                    other.get(
+                        "physical_score",
+                        other_metrics.get("physical_salience_score", 0.0),
+                    )
+                )
+                >= 0.72
+                and float(other["group_score"]) >= float(group["group_score"]) - 0.12
+                and float(other_metrics.get("frame_extent", 0.0)) >= 0.55
+            ):
+                return True
+        return False
+
+    eligible_groups = [
+        group for group in groups if not is_small_global_subobject(group)
+    ]
+    if not eligible_groups:
+        eligible_groups = groups
+    best_group_score = max(float(group["group_score"]) for group in eligible_groups)
     competitive = [
         group
-        for group in groups
+        for group in eligible_groups
         if best_group_score - float(group["group_score"]) <= score_tolerance
     ]
     globally_owned: list[dict[str, object]] = []
-    for group in groups:
-        winner = dict(group["winner"])
-        metrics = dict(winner["metrics"])
+    for group in eligible_groups:
+        global_row = best_global_row(group)
+        if global_row is None:
+            continue
+        metrics = dict(global_row["metrics"])
         proposal_rank = metrics.get("global_asset_proposal_rank")
         proposal_priority = float(metrics.get("global_asset_proposal_priority", 0.0))
-        proposal_accepted = bool(
-            metrics.get("global_asset_proposal_accepted", False)
-        )
+        proposal_accepted = bool(metrics.get("global_asset_proposal_accepted", False))
         frame_extent = float(metrics.get("frame_extent", 0.0))
         bbox_salience = float(metrics.get("bbox_salience", 0.0))
         area_salience = float(metrics.get("area_salience", 0.0))
@@ -917,25 +1215,419 @@ def _select_salient_group(
         ):
             globally_owned.append(group)
     if globally_owned:
+        degenerate_geometry_substitutes: list[
+            tuple[float, dict[str, object], dict[str, object], dict[str, object]]
+        ] = []
+        for global_group in globally_owned:
+            global_row = best_global_row(global_group)
+            if global_row is None:
+                continue
+            global_candidate = global_row.get("candidate")
+            if not isinstance(global_candidate, MaskCandidate):
+                continue
+            global_metrics = dict(global_row["metrics"])
+            degenerate_global_geometry = bool(
+                global_metrics.get("global_asset_proposal_accepted", False)
+                and float(global_metrics.get("frame_extent", 0.0)) >= 0.95
+                and int(global_metrics.get("touched_sides", 0)) >= 3
+                and float(global_metrics.get("boundary_alignment", 1.0)) < 0.30
+                and float(
+                    global_metrics.get("semantic_mask_probability", 1.0) or 0.0
+                )
+                < 0.35
+            )
+            if not degenerate_global_geometry:
+                continue
+            for other in eligible_groups:
+                if other is global_group:
+                    continue
+                candidate_rows = other.get("rows")
+                if not isinstance(candidate_rows, list):
+                    candidate_rows = [other["winner"]]
+                for other_row in candidate_rows:
+                    other_candidate = other_row.get("candidate")
+                    if not isinstance(other_candidate, MaskCandidate):
+                        continue
+                    if other_candidate.semantic_name != global_candidate.semantic_name:
+                        continue
+                    other_metrics = dict(other_row["metrics"])
+                    boundary_gain = float(
+                        other_metrics.get("boundary_alignment", 0.0)
+                    ) - float(global_metrics.get("boundary_alignment", 0.0))
+                    area_fraction = float(other_metrics.get("area_fraction", 0.0))
+                    frame_extent = float(other_metrics.get("frame_extent", 1.0))
+                    if not (
+                        0.01 <= area_fraction <= 0.65
+                        and frame_extent <= 0.93
+                        and int(other_metrics.get("touched_sides", 4)) <= 2
+                        and float(other_metrics.get("detector_score", 0.0)) >= 0.32
+                        and float(other_metrics.get("sam_score", 0.0)) >= 0.65
+                        and float(
+                            other_metrics.get("physical_salience_score", 0.0)
+                        )
+                        >= 0.40
+                        and boundary_gain >= 0.15
+                        and float(global_group["group_score"])
+                        - float(other["group_score"])
+                        <= 0.30
+                    ):
+                        continue
+                    area_completeness = min(1.0, area_fraction / 0.35)
+                    extent_completeness = min(1.0, frame_extent / 0.85)
+                    substitution_score = float(
+                        0.24 * float(other_metrics["boundary_alignment"])
+                        + 0.20 * float(other_metrics["physical_salience_score"])
+                        + 0.14 * float(other_metrics["detector_score"])
+                        + 0.10 * float(other_metrics["sam_score"])
+                        + 0.14 * area_completeness
+                        + 0.10 * extent_completeness
+                        + 0.08 * float(other_metrics.get("coherence", 0.0))
+                        + 0.00
+                        * float(
+                            other_metrics.get("semantic_mask_probability", 0.0)
+                            or 0.0
+                        )
+                    )
+                    degenerate_geometry_substitutes.append(
+                        (substitution_score, other, other_row, global_row)
+                    )
+        if degenerate_geometry_substitutes:
+            _, selected_group, geometry_row, global_row = max(
+                degenerate_geometry_substitutes,
+                key=lambda item: (
+                    item[0],
+                    float(item[1]["group_score"]),
+                ),
+            )
+            geometry_candidate = geometry_row["candidate"]
+            global_candidate = global_row["candidate"]
+            assert isinstance(geometry_candidate, MaskCandidate)
+            assert isinstance(global_candidate, MaskCandidate)
+            inherited_profile = global_candidate.metadata.get(
+                "selected_part_profile"
+            )
+            inherited_label = (
+                global_candidate.metadata.get("root_model_label")
+                or global_candidate.metadata.get("resolved_object_label")
+                or global_candidate.prompt
+                or global_candidate.semantic_name.replace("_", " ")
+            )
+            inherited_candidate = replace(
+                geometry_candidate,
+                score=max(geometry_candidate.score, global_candidate.score),
+                prompt=global_candidate.prompt,
+                source_reliability=max(
+                    geometry_candidate.source_reliability,
+                    global_candidate.source_reliability,
+                ),
+                metadata={
+                    **geometry_candidate.metadata,
+                    "selected_part_profile": inherited_profile,
+                    "part_profile_specificity": 1.0,
+                    "profile_hint_source": "accepted_global_geometry_fallback",
+                    "profile_resolution_status": "accepted",
+                    "root_model_label": inherited_label,
+                    "resolved_object_label": inherited_label,
+                    "root_query_mode": "global_asset_proposal",
+                    "global_asset_proposal_rank": 1,
+                    "global_asset_proposal_score": global_candidate.metadata.get(
+                        "global_asset_proposal_score", 0.0
+                    ),
+                    "global_asset_proposal_accepted": True,
+                    "global_geometry_source_root_key": str(
+                        geometry_row.get("root_key", "")
+                    ),
+                    "global_identity_source_root_key": str(
+                        global_row.get("root_key", "")
+                    ),
+                },
+            )
+            inherited_row = {**geometry_row, "candidate": inherited_candidate}
+            selected_rows = []
+            for row in selected_group.get("rows", [selected_group["winner"]]):
+                selected_rows.append(
+                    inherited_row
+                    if str(row.get("root_key"))
+                    == str(geometry_row.get("root_key"))
+                    else row
+                )
+            selected = {
+                **selected_group,
+                "rows": selected_rows,
+                "winner": inherited_row,
+                "selection_reason": "degenerate_global_geometry_substitution",
+                "replaced_global_group_id": next(
+                    group.get("physical_group_id")
+                    for group in globally_owned
+                    if best_global_row(group) is global_row
+                ),
+            }
+            return selected, max(len(competitive), len(globally_owned))
+        consensus_geometry_substitutes: list[
+            tuple[float, dict[str, object], dict[str, object], dict[str, object]]
+        ] = []
+        for global_group in globally_owned:
+            global_row = best_global_row(global_group)
+            if global_row is None:
+                continue
+            global_candidate = global_row.get("candidate")
+            if not isinstance(global_candidate, MaskCandidate):
+                continue
+            global_metrics = dict(global_row["metrics"])
+            global_physical = float(
+                global_group.get(
+                    "physical_score",
+                    global_metrics.get("physical_salience_score", 0.0),
+                )
+            )
+            global_consensus = float(global_group.get("consensus_support", 0.0))
+            unreliable_global_geometry = bool(
+                global_metrics.get("global_asset_proposal_accepted", False)
+                and float(
+                    global_metrics.get("semantic_mask_probability", 1.0) or 0.0
+                )
+                < 0.18
+                and float(global_metrics.get("boundary_alignment", 1.0)) < 0.60
+                and global_consensus < 0.50
+            )
+            if not unreliable_global_geometry:
+                continue
+            _, _, global_area, global_box = _geometry(global_candidate.mask)
+            for other in eligible_groups:
+                if other is global_group:
+                    continue
+                other_row = dict(other["winner"])
+                other_candidate = other_row.get("candidate")
+                if not isinstance(other_candidate, MaskCandidate):
+                    continue
+                other_metrics = dict(other_row["metrics"])
+                other_physical = float(
+                    other.get(
+                        "physical_score",
+                        other_metrics.get("physical_salience_score", 0.0),
+                    )
+                )
+                other_consensus = float(other.get("consensus_support", 0.0))
+                semantic_support = {
+                    str(row["candidate"].semantic_name)
+                    for row in other.get("rows", [other_row])
+                    if isinstance(row.get("candidate"), MaskCandidate)
+                }
+                _, _, other_area, other_box = _geometry(other_candidate.mask)
+                area_ratio = min(global_area, other_area) / max(
+                    1, global_area, other_area
+                )
+                box_overlap = _box_iou(global_box, other_box)
+                boundary_gain = float(
+                    other_metrics.get("boundary_alignment", 0.0)
+                ) - float(global_metrics.get("boundary_alignment", 0.0))
+                if not (
+                    len(semantic_support) >= 2
+                    and other_consensus >= 0.50
+                    and float(other["group_score"])
+                    >= float(global_group["group_score"]) + 0.08
+                    and other_physical >= global_physical + 0.12
+                    and float(other_metrics.get("sam_score", 0.0)) >= 0.88
+                    and float(other_metrics.get("boundary_alignment", 0.0)) >= 0.78
+                    and boundary_gain >= 0.25
+                    and int(other_metrics.get("touched_sides", 4)) <= 2
+                    and float(other_metrics.get("frame_extent", 1.0)) <= 0.95
+                    and area_ratio >= 0.70
+                    and box_overlap >= 0.35
+                ):
+                    continue
+                substitution_score = float(
+                    0.28 * float(other["group_score"])
+                    + 0.24 * other_physical
+                    + 0.18 * other_consensus
+                    + 0.14 * min(1.0, boundary_gain)
+                    + 0.08 * area_ratio
+                    + 0.08 * box_overlap
+                )
+                consensus_geometry_substitutes.append(
+                    (substitution_score, other, other_row, global_row)
+                )
+        if consensus_geometry_substitutes:
+            _, selected_group, geometry_row, global_row = max(
+                consensus_geometry_substitutes,
+                key=lambda item: (item[0], float(item[1]["group_score"])),
+            )
+            geometry_candidate = geometry_row["candidate"]
+            global_candidate = global_row["candidate"]
+            assert isinstance(geometry_candidate, MaskCandidate)
+            assert isinstance(global_candidate, MaskCandidate)
+            inherited_profile = global_candidate.metadata.get("selected_part_profile")
+            inherited_label = (
+                global_candidate.metadata.get("root_model_label")
+                or global_candidate.metadata.get("resolved_object_label")
+                or global_candidate.prompt
+                or global_candidate.semantic_name.replace("_", " ")
+            )
+            inherited_candidate = replace(
+                geometry_candidate,
+                semantic_name=global_candidate.semantic_name,
+                semantic_parent=global_candidate.semantic_parent,
+                score=max(geometry_candidate.score, global_candidate.score),
+                prompt=global_candidate.prompt,
+                source_reliability=max(
+                    geometry_candidate.source_reliability,
+                    global_candidate.source_reliability,
+                ),
+                metadata={
+                    **geometry_candidate.metadata,
+                    "selected_part_profile": inherited_profile,
+                    "part_profile_specificity": 1.0,
+                    "profile_hint_source": "accepted_global_consensus_geometry",
+                    "profile_resolution_status": "accepted",
+                    "root_model_label": inherited_label,
+                    "resolved_object_label": inherited_label,
+                    "root_query_mode": "global_asset_proposal",
+                    "global_asset_proposal_rank": 1,
+                    "global_asset_proposal_score": global_candidate.metadata.get(
+                        "global_asset_proposal_score", 0.0
+                    ),
+                    "global_asset_proposal_accepted": True,
+                    "global_geometry_source_root_key": str(
+                        geometry_row.get("root_key", "")
+                    ),
+                    "global_identity_source_root_key": str(
+                        global_row.get("root_key", "")
+                    ),
+                    "cross_domain_consensus_geometry": True,
+                },
+            )
+            inherited_row = {**geometry_row, "candidate": inherited_candidate}
+            selected_rows = []
+            for row in selected_group.get("rows", [selected_group["winner"]]):
+                selected_rows.append(
+                    inherited_row
+                    if str(row.get("root_key")) == str(geometry_row.get("root_key"))
+                    else row
+                )
+            selected = {
+                **selected_group,
+                "rows": selected_rows,
+                "winner": inherited_row,
+                "selection_reason": "cross_domain_consensus_geometry_substitution",
+                "replaced_global_group_id": next(
+                    group.get("physical_group_id")
+                    for group in globally_owned
+                    if best_global_row(group) is global_row
+                ),
+            }
+            return selected, max(len(competitive), len(globally_owned))
+        geometry_substitutes: list[tuple[dict[str, object], dict[str, object]]] = []
+        for global_group in globally_owned:
+            global_row = best_global_row(global_group)
+            if global_row is None:
+                continue
+            global_candidate = global_row.get("candidate")
+            if not isinstance(global_candidate, MaskCandidate):
+                continue
+            global_profile = str(
+                global_candidate.metadata.get("selected_part_profile", "")
+            ).strip()
+            if not global_profile:
+                continue
+            global_metrics = dict(global_row["metrics"])
+            global_physical = float(
+                global_group.get(
+                    "physical_score",
+                    global_metrics.get("physical_salience_score", 0.0),
+                )
+            )
+            for other in eligible_groups:
+                if other is global_group:
+                    continue
+                other_row = dict(other["winner"])
+                other_candidate = other_row.get("candidate")
+                if not isinstance(other_candidate, MaskCandidate):
+                    continue
+                if other_candidate.semantic_name != global_candidate.semantic_name:
+                    continue
+                if (
+                    str(
+                        other_candidate.metadata.get("selected_part_profile", "")
+                    ).strip()
+                    != global_profile
+                ):
+                    continue
+                other_metrics = dict(other_row["metrics"])
+                other_physical = float(
+                    other.get(
+                        "physical_score",
+                        other_metrics.get("physical_salience_score", 0.0),
+                    )
+                )
+                geometry_overlap = mask_iou(
+                    global_candidate.mask, other_candidate.mask
+                )
+                geometry_containment = _mask_containment(
+                    global_candidate.mask, other_candidate.mask
+                )
+                global_area_fraction = float(
+                    global_metrics.get("area_fraction", 0.0)
+                )
+                other_area_fraction = float(
+                    other_metrics.get("area_fraction", 0.0)
+                )
+                trusted_complete_replacement = bool(
+                    global_metrics.get("global_asset_proposal_accepted", False)
+                    and other_area_fraction >= 1.50 * global_area_fraction
+                    and float(other_metrics.get("frame_extent", 0.0))
+                    >= float(global_metrics.get("frame_extent", 0.0)) + 0.10
+                    and float(other_metrics.get("boundary_alignment", 0.0))
+                    >= float(global_metrics.get("boundary_alignment", 0.0)) + 0.15
+                )
+                same_asset_geometry = bool(
+                    geometry_overlap >= 0.35
+                    or geometry_containment >= 0.55
+                    or trusted_complete_replacement
+                )
+                group_margin = float(other["group_score"]) - float(
+                    global_group["group_score"]
+                )
+                semantic_margin = float(
+                    other_metrics.get("semantic_mask_probability", 0.0) or 0.0
+                ) - float(
+                    global_metrics.get("semantic_mask_probability", 0.0) or 0.0
+                )
+                if (
+                    same_asset_geometry
+                    and group_margin >= 0.025
+                    and other_physical >= global_physical + 0.06
+                    and (
+                        semantic_margin >= 0.10
+                        or float(other_row.get("geometry_representative_score", 0.0))
+                        >= float(global_row.get("geometry_representative_score", 0.0))
+                        + 0.025
+                    )
+                ):
+                    geometry_substitutes.append((other, global_group))
+        if geometry_substitutes:
+            selected, replaced_global = max(
+                geometry_substitutes,
+                key=lambda pair: (
+                    float(pair[0]["group_score"]),
+                    float(pair[0].get("physical_score", 0.0)),
+                ),
+            )
+            selected["selection_reason"] = "same_profile_geometry_substitution"
+            selected["replaced_global_group_id"] = replaced_global.get(
+                "physical_group_id"
+            )
+            return selected, max(len(competitive), len(globally_owned))
         nondegenerate_owned = [
             group
             for group in globally_owned
             if not (
-                float(
-                    dict(dict(group["winner"])["metrics"]).get(
-                        "area_fraction", 0.0
-                    )
-                )
+                float(dict(dict(group["winner"])["metrics"]).get("area_fraction", 0.0))
                 >= 0.90
-                and int(
-                    dict(dict(group["winner"])["metrics"]).get(
-                        "touched_sides", 0
-                    )
-                )
-                    >= 3
-                    and any(
-                        str(other["winner"]["semantic_name"])
-                        == str(group["winner"]["semantic_name"])
+                and int(dict(dict(group["winner"])["metrics"]).get("touched_sides", 0))
+                >= 3
+                and any(
+                    str(other["winner"]["semantic_name"])
+                    == str(group["winner"]["semantic_name"])
                     and float(
                         dict(dict(other["winner"])["metrics"])[
                             "physical_salience_score"
@@ -948,9 +1640,7 @@ def _select_salient_group(
                     )
                     + 0.08
                     and float(
-                        dict(dict(other["winner"])["metrics"]).get(
-                            "area_fraction", 1.0
-                        )
+                        dict(dict(other["winner"])["metrics"]).get("area_fraction", 1.0)
                     )
                     <= 0.80
                     for other in globally_owned
@@ -964,16 +1654,18 @@ def _select_salient_group(
             globally_owned,
             key=lambda group: (
                 bool(
-                    dict(dict(group["winner"])["metrics"]).get(
+                    dict(best_global_row(group)["metrics"]).get(
                         "global_asset_proposal_accepted", False
                     )
                 ),
                 float(
-                    dict(dict(group["winner"])["metrics"]).get(
+                    dict(best_global_row(group)["metrics"]).get(
                         "global_asset_proposal_priority", 0.0
                     )
                 ),
-                float(dict(group["winner"]).get("semantic_category_score", 0.0)),
+                float(
+                    dict(best_global_row(group)["metrics"])["physical_salience_score"]
+                ),
                 float(group["group_score"]),
             ),
         )
@@ -987,8 +1679,7 @@ def _select_salient_group(
             + 0.13
             * float(dict(dict(group["winner"])["metrics"])["physical_salience_score"])
             + 0.08 * float(dict(dict(group["winner"])["metrics"])["sam_score"])
-            + 0.05
-            * float(dict(dict(group["winner"])["metrics"])["detector_score"])
+            + 0.05 * float(dict(dict(group["winner"])["metrics"])["detector_score"])
             + 0.15
             * float(
                 dict(dict(group["winner"])["metrics"]).get(
@@ -1012,8 +1703,9 @@ def _select_prompt_consensus_group(
         direct_rows = [
             row
             for row in group["rows"]
-            if dict(row["candidate"].metadata).get("root_query_mode")
-            == "user_asset_prompt"
+            if str(
+                dict(row["candidate"].metadata).get("root_query_mode", "")
+            ).startswith("user_asset_prompt")
         ]
         if not direct_rows:
             continue
@@ -1026,9 +1718,7 @@ def _select_prompt_consensus_group(
         )
         representatives.append((group, representative))
 
-    scored: list[
-        tuple[int, float, float, dict[str, object], dict[str, object]]
-    ] = []
+    scored: list[tuple[int, float, float, dict[str, object], dict[str, object]]] = []
     public_rows: list[dict[str, object]] = []
 
     def eligible_metrics(metrics: dict[str, object]) -> bool:
@@ -1490,9 +2180,7 @@ def route_asset_roots(
             for row in physical_group
         )
         group_score = (
-            0.86 * physical_score
-            + 0.06 * consensus_support
-            + 0.08 * proposal_priority
+            0.86 * physical_score + 0.06 * consensus_support + 0.08 * proposal_priority
         )
         group_id = str(physical_group[0]["physical_group_id"])
         for row in physical_group:
@@ -1537,7 +2225,7 @@ def route_asset_roots(
     }
     seed_group: dict[str, object]
     salience_tie_candidate_count = 1
-    prompt_owned_groups = [
+    direct_prompt_groups = [
         group
         for group in physical_group_rows
         if any(
@@ -1546,6 +2234,17 @@ def route_asset_roots(
             for row in group["rows"]
         )
     ]
+    prompt_support_groups = [
+        group
+        for group in physical_group_rows
+        if any(
+            str(dict(row["candidate"].metadata).get("root_query_mode", "")).startswith(
+                "user_asset_prompt"
+            )
+            for row in group["rows"]
+        )
+    ]
+    prompt_owned_groups = direct_prompt_groups or prompt_support_groups
     prompt_ownership_enforced = bool(
         config.target_point_xy is None and prompt_owned_groups
     )
@@ -1676,17 +2375,13 @@ def route_asset_roots(
     geometry_rows_by_key = {
         str(row["root_key"]): row for row in list(seed_group["rows"])
     }
-    geometry_rows_by_key.update(
-        {str(row["root_key"]): row for row in selected_rows}
-    )
+    geometry_rows_by_key.update({str(row["root_key"]): row for row in selected_rows})
     resolved_seed = _resolve_profile_geometry(seed, list(geometry_rows_by_key.values()))
     resolved_seed_key = str(resolved_seed["root_key"])
     if resolved_seed_key != str(seed["root_key"]):
         selection_roles[str(seed["root_key"])] = "profile_geometry_evidence"
         selection_roles[resolved_seed_key] = "primary"
-        selected_rows_by_key = {
-            str(row["root_key"]): row for row in selected_rows
-        }
+        selected_rows_by_key = {str(row["root_key"]): row for row in selected_rows}
         selected_rows_by_key[resolved_seed_key] = resolved_seed
         selected_rows = list(selected_rows_by_key.values())
         seed = resolved_seed
@@ -1796,6 +2491,18 @@ def route_asset_roots(
     canonical_root_key = str(seed["root_key"])
     canonical_root = seed["candidate"]
     assert isinstance(canonical_root, MaskCandidate)
+    canonical_root = replace(
+        canonical_root,
+        metadata={
+            **canonical_root.metadata,
+            "physical_group_id": str(seed_group["physical_group_id"]),
+            "physical_group_semantic_names": list(seed_group["semantic_names"]),
+            "physical_group_semantic_margin": float(seed_group["semantic_margin"]),
+            "physical_group_consensus_support": float(seed_group["consensus_support"]),
+        },
+    )
+    seed_candidate = canonical_root
+    selected_root_candidates[canonical_root_key] = canonical_root
     selected_semantic = seed_candidate.semantic_name
     routed: list[MaskCandidate] = []
     for candidate in candidates:
@@ -1885,12 +2592,8 @@ def route_asset_roots(
             "profile_classifier": dict(row["candidate"].metadata).get(
                 "profile_classifier"
             ),
-            "root_model_label": dict(row["candidate"].metadata).get(
-                "root_model_label"
-            ),
-            "root_query_mode": dict(row["candidate"].metadata).get(
-                "root_query_mode"
-            ),
+            "root_model_label": dict(row["candidate"].metadata).get("root_model_label"),
+            "root_query_mode": dict(row["candidate"].metadata).get("root_query_mode"),
             "semantic_winner": bool(row.get("semantic_winner", False)),
             **dict(row["metrics"]),
             "selected": str(row["root_key"]) in selected_keys,

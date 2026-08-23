@@ -85,6 +85,21 @@ def test_parse_plan_rejects_ambiguous_coordinate_system() -> None:
     assert parsed.diagnostics["status"] == "invalid_coordinate_system"
 
 
+def test_parse_plan_can_apply_the_prompt_declared_coordinate_system() -> None:
+    seat = _part("furniture_seat", maximum_instances=1)
+    parsed = parse_part_plan(
+        '{"parts":[{"semantic_name":"furniture_seat",'
+        '"bbox_2d":[100,200,900,600],"confidence":0.9}]}',
+        image_size=(200, 100),
+        allowed_parts={seat.semantic_name: seat},
+        expected_coordinate_system="normalized_1000",
+    )
+
+    assert len(parsed.parts) == 1
+    assert parsed.parts[0].box_xyxy == (20, 20, 180, 60)
+    assert parsed.diagnostics["coordinate_system_recovered"] is True
+
+
 def test_dynamic_inventory_rejects_synonyms_and_incidental_surface_labels() -> None:
     existing = _part("device_button", semantic_parent="device")
     response = json.dumps(
@@ -488,6 +503,35 @@ def test_region_batch_prompt_image_and_parser_are_closed_world() -> None:
     assert diagnostics["unknown_region_id_count"] == 1
 
 
+def test_region_batch_parser_recovers_semantic_name_in_kind_field() -> None:
+    wheel = _part("vehicle_wheel", semantic_parent="vehicle")
+    response = json.dumps(
+        {
+            "regions": [
+                {
+                    "region_id": "R1",
+                    "semantic_name": "vehicle_wheel",
+                    "region_kind": "vehicle_wheel",
+                    "confidence": 0.95,
+                    "matches_target_region": True,
+                }
+            ]
+        }
+    )
+
+    parsed, diagnostics = parse_region_batch_label_plan(
+        response,
+        region_ids=("R1",),
+        allowed_parts={wheel.semantic_name: wheel},
+        minimum_confidence=0.65,
+    )
+
+    assert parsed["R1"].semantic_name == "vehicle_wheel"
+    assert parsed["R1"].entity_kind == "physical_component"
+    assert parsed["R1"].diagnostics["region_kind_recovered"] is True
+    assert diagnostics["accepted_region_count"] == 1
+
+
 def test_global_assignment_prevents_one_region_from_receiving_two_labels() -> None:
     shape = (100, 100)
     root = np.ones(shape, dtype=bool)
@@ -625,6 +669,21 @@ class _FakePlanner:
         )
 
 
+class _CountingBoxPlanner:
+    backend_id = "counting-vlm"
+
+    def __init__(self) -> None:
+        self.box_query_prompts: list[str] = []
+
+    def generate_response(self, image: Image.Image, prompt: str) -> str:
+        if "Return JSON only, using exactly this schema" in prompt:
+            self.box_query_prompts.append(prompt)
+            return json.dumps(
+                {"coordinate_system": "normalized_1000", "parts": []}
+            )
+        return json.dumps({"regions": []})
+
+
 def _box_segmenter(
     image: Image.Image, detections: list[object]
 ) -> list[SegmentProposal]:
@@ -687,6 +746,51 @@ def test_vlm_boxes_become_root_constrained_nonfinal_candidates() -> None:
     assert all(item.metadata["ground_truth_used"] is False for item in result.candidates)
     assert result.diagnostics["final_part_ids_assigned_by_backend"] is False
     assert result.diagnostics["ground_truth_used"] is False
+
+
+def test_bulk_box_planning_uses_bounded_semantic_batches() -> None:
+    root_mask = np.ones((100, 100), dtype=bool)
+    root = MaskCandidate(
+        "tool",
+        "tool",
+        root_mask,
+        0.98,
+        "root",
+        prompt="multi-part tool",
+        metadata={
+            "root_origin": "test",
+            "root_index": 1,
+            "candidate_key": "root:1",
+        },
+    )
+    parts = tuple(_part(f"tool_part_{index}") for index in range(7))
+    domain = DomainPrompt("tool", ("multi-part tool",), parts)
+    planner = _CountingBoxPlanner()
+    generator = VlmPartGenerator(
+        planner,
+        _box_segmenter,
+        config=VlmPartConfig(
+            use_region_label_queries=False,
+            use_box_planner_queries=True,
+            use_per_semantic_queries=False,
+            query_established_semantics=True,
+            planner_batch_size=3,
+            maximum_planner_queries=3,
+            maximum_total_planner_queries=3,
+        ),
+    )
+
+    result = generator.generate(
+        Image.new("RGB", (100, 100), "white"),
+        [root],
+        {"tool": domain},
+    )
+
+    assert len(planner.box_query_prompts) == 3
+    assert [
+        len(row["requested_semantics"])
+        for row in result.diagnostics["roots"][0]["plan_queries"]
+    ] == [3, 3, 1]
 
 
 def test_vlm_can_name_generic_visual_panels_without_overwriting_semantics() -> None:

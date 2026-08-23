@@ -5,6 +5,7 @@ import pytest
 from hpid_split.webapp import (
     _build_auto_command,
     _default_asset_router_index,
+    _default_conditional_part_model,
     _default_retrieval_index,
     _default_vlm_4bit,
     _default_vlm_model,
@@ -199,6 +200,21 @@ def test_default_retrieval_discovers_index_beside_runtime(
     assert _default_retrieval_index() == index
 
 
+def test_default_conditional_model_discovers_checkpoint_beside_runtime(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    runtime = tmp_path / "runtime"
+    model = runtime / "models" / "hpid_conditional_parts_v1" / "model"
+    model.mkdir(parents=True)
+    (model / "config.json").write_text("{}", encoding="utf-8")
+    monkeypatch.delenv("HPID_CONDITIONAL_PART_MODEL", raising=False)
+    monkeypatch.delenv("HPID_RUNTIME_ROOT", raising=False)
+    monkeypatch.setenv("HPID_HOME", str(tmp_path / "empty-home"))
+    monkeypatch.setattr("hpid_split.webapp.sys.prefix", str(runtime / ".venv"))
+
+    assert _default_conditional_part_model() == model
+
+
 def test_default_vlm_model_prefers_explicit_environment(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -326,11 +342,14 @@ def test_web_heavy_ensemble_automatic_mode_loads_existing_retrieval_index(
     assert "--retrieval-index" not in guided
 
 
-def test_web_fast_automatic_reuses_proposals_without_prototype_queries(
+def test_web_fast_automatic_uses_unified_retrieval_and_conditional_fusion(
     tmp_path: Path,
 ) -> None:
     index = tmp_path / "index.json"
     index.write_text("{}", encoding="utf-8")
+    conditional_model = tmp_path / "conditional-model"
+    conditional_model.mkdir()
+    (conditional_model / "config.json").write_text("{}", encoding="utf-8")
 
     automatic = _build_auto_command(
         tmp_path / "input.png",
@@ -339,6 +358,7 @@ def test_web_fast_automatic_reuses_proposals_without_prototype_queries(
         quality="Fast",
         complete_hidden_regions=False,
         retrieval_index=index,
+        conditional_part_model=conditional_model,
     )
     guided = _build_auto_command(
         tmp_path / "input.png",
@@ -349,11 +369,18 @@ def test_web_fast_automatic_reuses_proposals_without_prototype_queries(
         decomposition_mode="Prompt-guided",
         part_prompts="stock",
         retrieval_index=index,
+        conditional_part_model=conditional_model,
     )
 
     assert "--proposal-first-fast" in automatic
-    assert "--retrieval-index" not in automatic
+    assert automatic[automatic.index("--retrieval-index") + 1] == str(index)
+    assert automatic[automatic.index("--conditional-part-model") + 1] == str(
+        conditional_model
+    )
+    assert "--conditional-direct-masks" in automatic
     assert "--proposal-first-fast" not in guided
+    assert "--retrieval-index" not in guided
+    assert "--conditional-direct-masks" not in guided
 
 
 def test_web_automatic_mode_exposes_asset_router_without_retrieval(
@@ -381,6 +408,9 @@ def test_web_automatic_mode_exposes_asset_router_without_retrieval(
 def test_web_scene_mode_skips_object_prototype_retrieval(tmp_path: Path) -> None:
     index = tmp_path / "index.json"
     index.write_text("{}", encoding="utf-8")
+    conditional_model = tmp_path / "conditional-model"
+    conditional_model.mkdir()
+    (conditional_model / "config.json").write_text("{}", encoding="utf-8")
 
     command = _build_auto_command(
         tmp_path / "input.png",
@@ -390,11 +420,13 @@ def test_web_scene_mode_skips_object_prototype_retrieval(tmp_path: Path) -> None
         quality="Fast",
         complete_hidden_regions=False,
         retrieval_index=index,
+        conditional_part_model=conditional_model,
     )
 
     assert "--root-mode" in command
     assert command[command.index("--root-mode") + 1] == "scene"
     assert "--retrieval-index" not in command
+    assert "--conditional-direct-masks" not in command
 
 
 def test_web_launch_allows_only_configured_output_root(

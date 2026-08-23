@@ -1,6 +1,11 @@
 import numpy as np
 
-from hpid_split.dense_semantic import parent_envelope, select_dense_regions
+from hpid_split.dense_semantic import (
+    DenseMaskQuery,
+    parent_envelope,
+    select_dense_regions,
+    select_direct_mask_components,
+)
 
 
 def test_parent_envelope_fills_child_hole_and_expands_visible_support() -> None:
@@ -55,3 +60,56 @@ def test_dense_regions_reject_flat_low_contrast_response() -> None:
     )
 
     assert regions == []
+
+
+def test_direct_mask_components_require_train_geometry_support() -> None:
+    root = np.zeros((100, 100), dtype=bool)
+    root[10:90, 10:90] = True
+    probability = np.zeros(root.shape, dtype=np.float32)
+    probability[36:64, 16:38] = 0.85
+    query = DenseMaskQuery(
+        semantic_name="tool_prop_handle",
+        prompts=("handle",),
+        maximum_instances=1,
+        geometry_mean=(0.20, 0.50, 0.28, 0.35, 0.12),
+        geometry_std=(0.08, 0.08, 0.08, 0.08, 0.04),
+        geometry_samples=((0.20, 0.50, 0.28, 0.35, 0.12),),
+    )
+
+    components, rejected = select_direct_mask_components(
+        probability,
+        root,
+        query,
+        threshold=0.30,
+        minimum_geometry_compatibility=0.16,
+    )
+
+    assert len(components) == 1
+    assert rejected == 0
+    assert components[0][1] > 0.50
+
+
+def test_direct_mask_components_reject_semantic_heatmap_in_wrong_location() -> None:
+    root = np.zeros((100, 100), dtype=bool)
+    root[10:90, 10:90] = True
+    probability = np.zeros(root.shape, dtype=np.float32)
+    probability[14:35, 42:70] = 0.90
+    query = DenseMaskQuery(
+        semantic_name="tool_prop_handle",
+        prompts=("handle",),
+        maximum_instances=1,
+        geometry_mean=(0.20, 0.75, 0.28, 0.30, 0.10),
+        geometry_std=(0.05, 0.05, 0.06, 0.06, 0.03),
+        geometry_samples=((0.20, 0.75, 0.28, 0.30, 0.10),),
+    )
+
+    components, rejected = select_direct_mask_components(
+        probability,
+        root,
+        query,
+        threshold=0.30,
+        minimum_geometry_compatibility=0.16,
+    )
+
+    assert components == []
+    assert rejected == 1

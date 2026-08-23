@@ -778,6 +778,81 @@ class Sam2VisualRegionProposer:
             "ground_truth_used": False,
         }
 
+    def augment_with_isolated_root_crops(
+        self,
+        image: Image.Image,
+        base_proposals: list[VisualMaskProposal] | tuple[VisualMaskProposal, ...],
+        roots: list[MaskCandidate] | tuple[MaskCandidate, ...],
+        *,
+        maximum_roots: int = 1,
+    ) -> tuple[list[VisualMaskProposal], dict[str, object]]:
+        """Add one density-adaptive root crop without repeating the global pass."""
+
+        proposals = list(base_proposals)
+        image_area = max(1, image.width * image.height)
+        eligible_roots = [
+            root
+            for root in roots
+            if _area(root.mask) >= self.config.minimum_isolated_root_area_px
+            and _area(root.mask) / image_area
+            <= self.config.maximum_isolated_root_image_fraction
+            and root.metadata.get("scene_role") != "scene_layer"
+        ]
+        eligible_roots.sort(
+            key=lambda root: (-_area(root.mask), _box(root.mask), _root_key(root))
+        )
+        crop_rows: list[dict[str, object]] = []
+        isolated_root_points = max(8, self.config.isolated_root_points_per_crop)
+        for root in eligible_roots[: max(0, maximum_roots)]:
+            rx0, ry0, rx1, ry1 = _box(root.mask)
+            width = max(1, rx1 - rx0)
+            height = max(1, ry1 - ry0)
+            padding_x = max(2, round(width * self.config.isolated_root_crop_padding))
+            padding_y = max(2, round(height * self.config.isolated_root_crop_padding))
+            x0 = max(0, rx0 - padding_x)
+            y0 = max(0, ry0 - padding_y)
+            x1 = min(image.width, rx1 + padding_x)
+            y1 = min(image.height, ry1 + padding_y)
+            if x1 <= x0 or y1 <= y0:
+                continue
+            root_key = _root_key(root)
+            before = len(proposals)
+            proposals.extend(
+                self._pipeline_proposals(
+                    image.crop((x0, y0, x1, y1)),
+                    points_per_crop=isolated_root_points,
+                    offset_xy=(x0, y0),
+                    output_shape=(image.height, image.width),
+                    scale_level=1,
+                    view_id=f"adaptive-isolated-root-{root_key}",
+                    target_root_key=root_key,
+                )
+            )
+            crop_rows.append(
+                {
+                    "root_key": root_key,
+                    "crop_box_xyxy": [x0, y0, x1, y1],
+                    "root_image_fraction": _area(root.mask) / image_area,
+                    "generated_proposal_count": len(proposals) - before,
+                }
+            )
+        consolidated, consensus = _consolidate_multiview_proposals(
+            image,
+            proposals,
+            self.config,
+        )
+        return consolidated, {
+            "algorithm": "sam2-density-adaptive-root-rescan-v1",
+            "base_proposal_count": len(base_proposals),
+            "eligible_root_count": len(eligible_roots),
+            "isolated_root_crop_count": len(crop_rows),
+            "isolated_root_points_per_crop": isolated_root_points,
+            "crop_rows": crop_rows,
+            "consolidated_proposal_count": len(consolidated),
+            "multi_view_consensus": consensus,
+            "ground_truth_used": False,
+        }
+
     def _pipeline_proposals(
         self,
         image: Image.Image,

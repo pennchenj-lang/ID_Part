@@ -49,6 +49,8 @@ class FoundationConfig:
     isolate_semantic_prompts: bool = False
     crop_padding: float = 0.12
     part_box_padding_ratio: float = 0.16
+    repeated_part_maximum_fraction_relative_slack: float = 0.12
+    repeated_part_maximum_fraction_absolute_slack: float = 0.02
     use_dense_semantic_fallback: bool = False
     use_root_domain_arbitration: bool = True
     use_scene_profile_root_queries: bool = False
@@ -69,6 +71,10 @@ class FoundationConfig:
     maximum_profile_queries_per_domain: int = 8
     maximum_profile_roots_per_profile: int = 4
     asset_prompt: str = ""
+    asset_prompt_domain: str = ""
+    asset_prompt_profile: str = ""
+    asset_prompt_label: str = ""
+    asset_prompt_resolution_reason: str = ""
     automatic_asset_queries: tuple[AutomaticAssetQuery, ...] = ()
     local_files_only: bool = False
     use_semantic_root_multimask_selection: bool = True
@@ -147,7 +153,9 @@ def _select_semantic_multimask_index(
             and int(areas[index]) >= round(baseline_area * minimum_area_ratio)
         )
     selectable = [index for index, allowed in enumerate(eligible) if allowed]
-    selected = max(selectable, key=lambda index: scores[index]) if selectable else baseline
+    selected = (
+        max(selectable, key=lambda index: scores[index]) if selectable else baseline
+    )
     if (
         selected != baseline
         and scores[selected] < scores[baseline] + minimum_score_gain
@@ -327,11 +335,13 @@ def _terminal_complement_mask(
 
     yy, xx = np.indices(root_mask.shape)
     pixel_points = np.stack((xx - center[0], yy - center[1]), axis=-1)
-    normalized = orientation_sign * (
-        pixel_points @ direction - midpoint
-    ) / half_extent
+    normalized = orientation_sign * (pixel_points @ direction - midpoint) / half_extent
     split = 0.5 * (expected_anchor + expected_target)
-    target_side = normalized >= split if expected_target >= expected_anchor else normalized <= split
+    target_side = (
+        normalized >= split
+        if expected_target >= expected_anchor
+        else normalized <= split
+    )
     residual = root_mask & ~anchor_mask & target_side
 
     count, components, stats, _ = cv2.connectedComponentsWithStats(
@@ -348,9 +358,7 @@ def _terminal_complement_mask(
         cv2.MORPH_ELLIPSE,
         (2 * adjacency_radius + 1, 2 * adjacency_radius + 1),
     )
-    anchor_neighborhood = cv2.dilate(
-        anchor_mask.astype(np.uint8), kernel
-    ).astype(bool)
+    anchor_neighborhood = cv2.dilate(anchor_mask.astype(np.uint8), kernel).astype(bool)
     ranked: list[tuple[float, int]] = []
     for component_id in range(1, count):
         component = components == component_id
@@ -393,6 +401,7 @@ def _remove_ambiguous_guided_candidates(
     """Reject same-scale duplicate masks while preserving nested parts."""
 
     rejected: set[int] = set()
+    replacements: dict[int, MaskCandidate] = {}
     for index, candidate in enumerate(candidates):
         conflicts = [
             other_index
@@ -409,6 +418,42 @@ def _remove_ambiguous_guided_candidates(
         if not conflicts:
             continue
         group = [index, *conflicts]
+        hierarchy_anchors = [
+            item
+            for item in group
+            if all(
+                other == item
+                or candidates[other].semantic_parent
+                == candidates[item].semantic_name
+                for other in group
+            )
+        ]
+        if hierarchy_anchors:
+            # A detector commonly returns the same physical component as, for
+            # example, wheel, tire and rim.  The masks are not contradictory:
+            # they are unresolved levels of one known hierarchy.  Preserve the
+            # broad physical anchor and collapse its child labels instead of
+            # deleting the complete component.
+            retained = max(
+                hierarchy_anchors,
+                key=lambda item: candidates[item].score,
+            )
+            rejected.update(item for item in group if item != retained)
+            replacements[retained] = replace(
+                candidates[retained],
+                metadata={
+                    **candidates[retained].metadata,
+                    "hierarchical_ambiguity_collapsed": True,
+                    "collapsed_semantics": sorted(
+                        {
+                            candidates[item].semantic_name
+                            for item in group
+                            if item != retained
+                        }
+                    ),
+                },
+            )
+            continue
         ranked = sorted(group, key=lambda item: candidates[item].score, reverse=True)
         if (
             candidates[ranked[0]].score - candidates[ranked[1]].score
@@ -417,12 +462,28 @@ def _remove_ambiguous_guided_candidates(
             rejected.update(group)
     return (
         [
-            candidate
+            replacements.get(index, candidate)
             for index, candidate in enumerate(candidates)
             if index not in rejected
         ],
         len(rejected),
     )
+
+
+def _effective_maximum_parent_fraction(
+    part: PartPrompt,
+    config: FoundationConfig,
+) -> float:
+    """Allow modest SAM-boundary slack for repeated physical components."""
+
+    maximum = float(part.maximum_parent_fraction)
+    if part.maximum_instances <= 1 or part.detail:
+        return maximum
+    slack = max(
+        float(config.repeated_part_maximum_fraction_absolute_slack),
+        maximum * float(config.repeated_part_maximum_fraction_relative_slack),
+    )
+    return min(1.0, maximum + slack)
 
 
 def _nms_detections(
@@ -593,12 +654,10 @@ class FoundationCandidateGenerator:
                 self.config.grounding_model,
                 local_files_only=self.config.local_files_only,
             )
-            self.grounding_model = (
-                AutoModelForZeroShotObjectDetection.from_pretrained(
-                    self.config.grounding_model,
-                    local_files_only=self.config.local_files_only,
-                ).to(device)
-            )
+            self.grounding_model = AutoModelForZeroShotObjectDetection.from_pretrained(
+                self.config.grounding_model,
+                local_files_only=self.config.local_files_only,
+            ).to(device)
         if (sam_processor is None) != (sam_model is None):
             raise ValueError("sam_processor and sam_model must be shared together")
         if sam_processor is None:
@@ -669,19 +728,16 @@ class FoundationCandidateGenerator:
                 )
             except ImportError as error:
                 raise RuntimeError(
-                    "Install the foundation extra: "
-                    "pip install 'hpid-split[foundation]'"
+                    "Install the foundation extra: pip install 'hpid-split[foundation]'"
                 ) from error
             self.grounding_processor = AutoProcessor.from_pretrained(
                 self.config.grounding_model,
                 local_files_only=self.config.local_files_only,
             )
-            self.grounding_model = (
-                AutoModelForZeroShotObjectDetection.from_pretrained(
-                    self.config.grounding_model,
-                    local_files_only=self.config.local_files_only,
-                ).to(self.device)
-            )
+            self.grounding_model = AutoModelForZeroShotObjectDetection.from_pretrained(
+                self.config.grounding_model,
+                local_files_only=self.config.local_files_only,
+            ).to(self.device)
         self.grounding_model.to(self.device)
         self.grounding_model.eval()
         self._grounding_model_active = True
@@ -1606,12 +1662,16 @@ class FoundationCandidateGenerator:
                     if part.minimum_parent_containment is not None
                     else max(0.48, self.config.minimum_parent_containment)
                 )
+                maximum_parent_fraction = _effective_maximum_parent_fraction(
+                    part,
+                    self.config,
+                )
                 rejection_reasons = []
                 if area < 12:
                     rejection_reasons.append("minimum_area")
                 if fraction < part.minimum_parent_fraction:
                     rejection_reasons.append("minimum_parent_fraction")
-                if fraction > part.maximum_parent_fraction:
+                if fraction > maximum_parent_fraction:
                     rejection_reasons.append("maximum_parent_fraction")
                 if containment < minimum_containment:
                     rejection_reasons.append("minimum_parent_containment")
@@ -1620,10 +1680,7 @@ class FoundationCandidateGenerator:
                     "minimum_parent_fraction",
                     "maximum_parent_fraction",
                 }
-                if (
-                    rejection_reasons
-                    and set(rejection_reasons).issubset(area_reasons)
-                ):
+                if rejection_reasons and set(rejection_reasons).issubset(area_reasons):
                     reassigned = _profile_confusion_reassignment(
                         part,
                         selected_parts,
@@ -1676,13 +1733,11 @@ class FoundationCandidateGenerator:
                             "minimum_parent_fraction": float(
                                 part.minimum_parent_fraction
                             ),
-                            "maximum_parent_fraction": float(
-                                part.maximum_parent_fraction
-                            ),
+                                "maximum_parent_fraction": float(
+                                    maximum_parent_fraction
+                                ),
                             "root_containment": float(containment),
-                            "minimum_parent_containment": float(
-                                minimum_containment
-                            ),
+                            "minimum_parent_containment": float(minimum_containment),
                             "reasons": rejection_reasons,
                         }
                     )
@@ -1836,16 +1891,12 @@ class FoundationCandidateGenerator:
                         minimum_peak_probability=(
                             self.config.dense_minimum_peak_probability
                         ),
-                        minimum_peak_contrast=(
-                            self.config.dense_minimum_peak_contrast
-                        ),
+                        minimum_peak_contrast=(self.config.dense_minimum_peak_contrast),
                         activation_quantile=self.config.dense_activation_quantile,
                         peak_ratio=self.config.dense_peak_ratio,
                         box_padding_ratio=self.config.dense_box_padding_ratio,
                     )
-                    part_lookup = {
-                        part.semantic_name: part for part in dense_parts
-                    }
+                    part_lookup = {part.semantic_name: part for part in dense_parts}
                     dense_regions.sort(
                         key=lambda item: (
                             item.score * part_lookup[item.semantic_name].priority
@@ -1872,22 +1923,13 @@ class FoundationCandidateGenerator:
                     ):
                         part = part_lookup[region.semantic_name]
                         rejection_reasons: list[str] = []
-                        if (
-                            segmentation.quality
-                            < self.config.dense_minimum_sam_quality
-                        ):
+                        if segmentation.quality < self.config.dense_minimum_sam_quality:
                             rejection_reasons.append("minimum_sam_quality")
-                        local_region = np.zeros(
-                            (crop.height, crop.width), dtype=bool
-                        )
+                        local_region = np.zeros((crop.height, crop.width), dtype=bool)
                         rx0, ry0, rx1, ry1 = region.box_xyxy
                         local_region[ry0:ry1, rx0:rx1] = True
-                        local_mask = (
-                            segmentation.mask & local_region & local_allowed
-                        )
-                        full_mask = np.zeros(
-                            (image.height, image.width), dtype=bool
-                        )
+                        local_mask = segmentation.mask & local_region & local_allowed
+                        full_mask = np.zeros((image.height, image.width), dtype=bool)
                         full_mask[y0:y1, x0:x1] = local_mask
                         area = int(np.count_nonzero(full_mask))
                         fraction = area / root_area
@@ -1899,11 +1941,14 @@ class FoundationCandidateGenerator:
                             if part.minimum_parent_containment is not None
                             else max(0.48, self.config.minimum_parent_containment)
                         )
+                        maximum_parent_fraction = (
+                            _effective_maximum_parent_fraction(part, self.config)
+                        )
                         if area < 12:
                             rejection_reasons.append("minimum_area")
                         if fraction < part.minimum_parent_fraction:
                             rejection_reasons.append("minimum_parent_fraction")
-                        if fraction > part.maximum_parent_fraction:
+                        if fraction > maximum_parent_fraction:
                             rejection_reasons.append("maximum_parent_fraction")
                         if containment < minimum_containment:
                             rejection_reasons.append("minimum_parent_containment")
@@ -1916,6 +1961,9 @@ class FoundationCandidateGenerator:
                                 "box_xyxy_local": list(region.box_xyxy),
                                 "area_px": area,
                                 "root_area_fraction": float(fraction),
+                                "maximum_parent_fraction": float(
+                                    maximum_parent_fraction
+                                ),
                                 "root_containment": float(containment),
                                 "sam_quality": float(segmentation.quality),
                                 "accepted": not rejection_reasons,
@@ -1935,14 +1983,10 @@ class FoundationCandidateGenerator:
                         dense_supplement_candidates.append(
                             MaskCandidate(
                                 semantic_name=part.semantic_name,
-                                semantic_parent=(
-                                    part.semantic_parent or domain.name
-                                ),
+                                semantic_parent=(part.semantic_parent or domain.name),
                                 mask=full_mask,
                                 score=region.score,
-                                source=self._dense_source(
-                                    "profile-dense-supplement"
-                                ),
+                                source=self._dense_source("profile-dense-supplement"),
                                 prompt=region.prompt,
                                 source_reliability=(
                                     self.config.dense_source_reliability
@@ -1954,9 +1998,7 @@ class FoundationCandidateGenerator:
                                     "source_family": (
                                         f"{self._root_origin()}/profile-dense"
                                     ),
-                                    "root_origin": root.metadata.get(
-                                        "root_origin"
-                                    ),
+                                    "root_origin": root.metadata.get("root_origin"),
                                     "root_index": root.metadata.get("root_index"),
                                     "candidate_key": candidate_key,
                                     "parent_candidate_key": root_candidate_key,
@@ -1974,9 +2016,7 @@ class FoundationCandidateGenerator:
                                     "profile_dense_supplement": True,
                                     "selected_part_profile": selected_profile,
                                     "dense_score": float(region.score),
-                                    "dense_peak_contrast": float(
-                                        region.peak_contrast
-                                    ),
+                                    "dense_peak_contrast": float(region.peak_contrast),
                                     "sam_quality": float(segmentation.quality),
                                     "root_containment": float(containment),
                                     "root_area_fraction": float(fraction),
@@ -1992,9 +2032,7 @@ class FoundationCandidateGenerator:
                             part.semantic_name for part in dense_parts
                         ],
                         "proposed_region_count": len(dense_regions),
-                        "accepted_candidate_count": len(
-                            dense_supplement_candidates
-                        ),
+                        "accepted_candidate_count": len(dense_supplement_candidates),
                         "proposal_diagnostics": {
                             "queried_semantics": list(
                                 proposal_diagnostics.queried_semantics
@@ -2074,9 +2112,7 @@ class FoundationCandidateGenerator:
                             semantic_parent=part.semantic_parent or domain.name,
                             mask=mask,
                             score=float(np.clip(anchor.score * 0.94, 0.0, 1.0)),
-                            source=(
-                                f"hpid-topology-v2/{part.topology_relation}"
-                            ),
+                            source=(f"hpid-topology-v2/{part.topology_relation}"),
                             prompt=part.prompts[0],
                             source_reliability=0.82 * part.priority,
                             metadata={
@@ -2175,9 +2211,7 @@ class FoundationCandidateGenerator:
                     "profile_semantic_reassignment_count": len(
                         semantic_reassignment_rows
                     ),
-                    "profile_semantic_reassignment_rows": (
-                        semantic_reassignment_rows
-                    ),
+                    "profile_semantic_reassignment_rows": (semantic_reassignment_rows),
                     "dense_semantic_gate_rejection_count": dense_rejections,
                     "ambiguous_semantic_mask_rejection_count": ambiguous_rejections,
                     "dense_semantic_gate_rows": dense_rows,
@@ -2327,9 +2361,7 @@ class FoundationCandidateGenerator:
         for detection_index in range(len(detections)):
             available = np.flatnonzero(mask_areas[detection_index] > 0)
             best_indices[detection_index] = int(
-                available[
-                    np.argmax(score_array[detection_index, available])
-                ]
+                available[np.argmax(score_array[detection_index, available])]
                 if len(available)
                 else np.argmax(score_array[detection_index])
             )
@@ -2353,8 +2385,7 @@ class FoundationCandidateGenerator:
             competitor_labels = [
                 (
                     f"competitor_{domain.name}",
-                    domain.classifier_prompt
-                    or domain.name.replace("_", " "),
+                    domain.classifier_prompt or domain.name.replace("_", " "),
                 )
                 for domain in self.prompt_bank.domains
                 if domain.name != semantic_domain_name
@@ -2420,9 +2451,7 @@ class FoundationCandidateGenerator:
                     score_array[detection_index, available_indices],
                     areas,
                     target_rows,
-                    quality_weight=(
-                        self.config.semantic_multimask_quality_weight
-                    ),
+                    quality_weight=(self.config.semantic_multimask_quality_weight),
                     minimum_target_probability=(
                         self.config.semantic_multimask_minimum_target_probability
                     ),
@@ -2502,8 +2531,8 @@ class FoundationCandidateGenerator:
 
     def _root_candidates(self, image: Image.Image) -> list[RootProposal]:
         prompted: list[RootProposal] = []
-        prompted_domain: str | None = None
-        prompted_profile: str | None = None
+        prompted_domain: str | None = self.config.asset_prompt_domain.strip() or None
+        prompted_profile: str | None = self.config.asset_prompt_profile.strip() or None
         asset_prompt = self.config.asset_prompt.strip()
         if asset_prompt:
             prompted = self._asset_prompt_root_candidates(image, asset_prompt)
@@ -2542,6 +2571,24 @@ class FoundationCandidateGenerator:
                 strict=True,
             ):
                 if np.count_nonzero(segmentation.mask) >= 20:
+                    prompt_label_score = (
+                        PartProfile._match_phrases(
+                            detection.label,
+                            tuple(
+                                value
+                                for value in (
+                                    asset_prompt,
+                                    self.config.asset_prompt_label.strip(),
+                                )
+                                if value
+                            ),
+                        )
+                        if asset_prompt and prompted_domain is not None
+                        else 0.0
+                    )
+                    prompt_support = bool(prompt_label_score >= 0.50)
+                    if self.config.asset_prompt_domain.strip() and not prompt_support:
+                        continue
                     roots.append(
                         RootProposal(
                             domain=domain,
@@ -2550,18 +2597,26 @@ class FoundationCandidateGenerator:
                             sam_quality=segmentation.quality,
                             query_mode=(
                                 "user_asset_prompt_support"
-                                if prompted_domain is not None
+                                if prompt_support
                                 else "domain_inventory"
                             ),
-                            profile_hint=(
-                                prompted_profile
-                                if prompted_domain is not None
-                                else None
-                            ),
+                            profile_hint=(prompted_profile if prompt_support else None),
                             model_label=detection.label,
                             sam_selection=segmentation.metadata,
                         )
                     )
+
+        if asset_prompt and self._asset_prompt_diagnostics is not None:
+            support_count = sum(
+                root.query_mode == "user_asset_prompt_support" for root in roots
+            )
+            self._asset_prompt_diagnostics["inventory_support_candidate_count"] = (
+                support_count
+            )
+            if not prompted and support_count:
+                self._asset_prompt_diagnostics["status"] = (
+                    "resolved_with_inventory_support"
+                )
 
         if prompted:
             prompt_keys = {
@@ -2665,9 +2720,7 @@ class FoundationCandidateGenerator:
             for phrase in query_phrases:
                 queried = self._ground(image, [phrase])
                 raw_detections.extend(queried)
-                phrase_rows.append(
-                    {"phrase": phrase, "detection_count": len(queried)}
-                )
+                phrase_rows.append({"phrase": phrase, "detection_count": len(queried)})
             detections = _select_root_detections(
                 raw_detections,
                 self.config.root_nms_iou,
@@ -2680,9 +2733,7 @@ class FoundationCandidateGenerator:
                 semantic_domain_name=domain.name,
             )
             accepted_count = 0
-            for detection, segmentation in zip(
-                detections, segmentations, strict=True
-            ):
+            for detection, segmentation in zip(detections, segmentations, strict=True):
                 if np.count_nonzero(segmentation.mask) < 20:
                     continue
                 roots.append(
@@ -2729,45 +2780,81 @@ class FoundationCandidateGenerator:
     def _asset_prompt_root_candidates(
         self, image: Image.Image, asset_prompt: str
     ) -> list[RootProposal]:
-        scored_domains: list[tuple[float, float, DomainPrompt, str | None]] = []
-        for domain in self.prompt_bank.domains:
-            profile_scores = [
-                (profile.match_score(asset_prompt), profile.name)
-                for profile in domain.part_profiles
-            ]
-            best_profile_score, best_profile = max(
-                profile_scores,
-                default=(0.0, None),
-                key=lambda item: item[0],
-            )
-            domain_score = domain.root_label_specificity(asset_prompt)
-            scored_domains.append(
+        configured_domain = self.config.asset_prompt_domain.strip()
+        configured_profile = self.config.asset_prompt_profile.strip() or None
+        configured_label = self.config.asset_prompt_label.strip() or None
+        configured_route = bool(configured_domain)
+        if configured_route:
+            domain = next(
                 (
-                    max(domain_score, best_profile_score),
-                    best_profile_score,
-                    domain,
-                    best_profile if best_profile_score >= 0.50 else None,
-                )
+                    item
+                    for item in self.prompt_bank.domains
+                    if item.name == configured_domain
+                ),
+                None,
             )
-        scored_domains.sort(key=lambda item: (item[0], item[1]), reverse=True)
-        best_score, best_profile_score, domain, profile_hint = scored_domains[0]
-        runner_up = scored_domains[1][0] if len(scored_domains) > 1 else 0.0
-        domain_forced = len(self.prompt_bank.domains) == 1
-        resolved = bool(
-            domain_forced
-            or best_score >= 0.50
-            and (best_score - runner_up >= 0.08 or best_score >= 0.86)
-        )
+            if domain is None:
+                raise ValueError(
+                    f"asset prompt resolved to unavailable domain {configured_domain!r}"
+                )
+            if configured_profile is not None and configured_profile not in {
+                profile.name for profile in domain.part_profiles
+            }:
+                raise ValueError(
+                    "asset prompt resolved to unavailable profile "
+                    f"{configured_profile!r} in {configured_domain!r}"
+                )
+            profile_hint = configured_profile
+            best_score = 1.0
+            best_profile_score = 1.0 if configured_profile is not None else 0.0
+            runner_up = 0.0
+            domain_forced = True
+            resolved = True
+        else:
+            scored_domains: list[tuple[float, float, DomainPrompt, str | None]] = []
+            for domain in self.prompt_bank.domains:
+                profile_scores = [
+                    (profile.match_score(asset_prompt), profile.name)
+                    for profile in domain.part_profiles
+                ]
+                best_profile_score, best_profile = max(
+                    profile_scores,
+                    default=(0.0, None),
+                    key=lambda item: item[0],
+                )
+                domain_score = domain.root_label_specificity(asset_prompt)
+                scored_domains.append(
+                    (
+                        max(domain_score, best_profile_score),
+                        best_profile_score,
+                        domain,
+                        best_profile if best_profile_score >= 0.50 else None,
+                    )
+                )
+            scored_domains.sort(key=lambda item: (item[0], item[1]), reverse=True)
+            best_score, best_profile_score, domain, profile_hint = scored_domains[0]
+            runner_up = scored_domains[1][0] if len(scored_domains) > 1 else 0.0
+            domain_forced = len(self.prompt_bank.domains) == 1
+            resolved = bool(
+                domain_forced
+                or best_score >= 0.50
+                and (best_score - runner_up >= 0.08 or best_score >= 0.86)
+            )
         self._asset_prompt_diagnostics = {
-            "algorithm": "user-asset-prompt-root-retrieval-v1",
+            "algorithm": "user-asset-prompt-root-retrieval-v2",
             "asset_prompt": asset_prompt,
             "status": "resolved" if resolved else "automatic_fallback",
             "selected_domain": domain.name if resolved else None,
             "selected_profile": profile_hint if resolved else None,
+            "selected_asset_label": configured_label if resolved else None,
             "domain_score": float(best_score),
             "profile_score": float(best_profile_score),
             "domain_margin": float(best_score - runner_up),
             "domain_forced_by_filter": domain_forced,
+            "taxonomy_route_applied": configured_route,
+            "taxonomy_route_reason": (
+                self.config.asset_prompt_resolution_reason or None
+            ),
             "ground_truth_used": False,
         }
         if not resolved:
@@ -2778,7 +2865,7 @@ class FoundationCandidateGenerator:
                 (item for item in domain.part_profiles if item.name == profile_hint),
                 None,
             )
-            if profile is not None:
+            if profile is not None and profile.match_score(asset_prompt) > 0.0:
                 query_phrases.extend(profile.query_hints(asset_prompt))
         unique_queries = list(
             dict.fromkeys(phrase.strip() for phrase in query_phrases if phrase.strip())
@@ -2825,7 +2912,11 @@ class FoundationCandidateGenerator:
         self._asset_prompt_diagnostics["resolved_query_hints"] = unique_queries
         self._asset_prompt_diagnostics["accepted_root_count"] = len(roots)
         if not roots:
-            self._asset_prompt_diagnostics["status"] = "automatic_fallback"
+            self._asset_prompt_diagnostics["status"] = (
+                "resolved_without_direct_detection"
+                if configured_route
+                else "automatic_fallback"
+            )
         return roots
 
     def _child_candidates(
@@ -3369,12 +3460,8 @@ class FoundationCandidateGenerator:
                         "part_profile_selection": profile_diagnostics,
                         "root_query_mode": root.query_mode,
                         "root_model_label": root.model_label,
-                        "global_asset_proposal_score": (
-                            root.automatic_proposal_score
-                        ),
-                        "global_asset_proposal_rank": (
-                            root.automatic_proposal_rank
-                        ),
+                        "global_asset_proposal_score": (root.automatic_proposal_score),
+                        "global_asset_proposal_rank": (root.automatic_proposal_rank),
                         "global_asset_proposal_accepted": (
                             root.automatic_proposal_accepted
                         ),
@@ -3468,9 +3555,7 @@ class FoundationCandidateGenerator:
             ),
             "models": asdict(self.config),
             "asset_prompt_resolution": self._asset_prompt_diagnostics,
-            "automatic_asset_proposal_grounding": (
-                self._automatic_asset_diagnostics
-            ),
+            "automatic_asset_proposal_grounding": (self._automatic_asset_diagnostics),
             "ground_truth_used": False,
         }
         return CandidateGeneration(tuple(candidates), diagnostics)

@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from time import perf_counter
 
+import cv2
 import numpy as np
 import torch
 from PIL import Image
@@ -20,6 +21,7 @@ from .appearance_proposals import (
     propose_appearance_regions,
 )
 from .asset_routing import (
+    AssetDomainResolution,
     AssetRoute,
     AssetRouter,
     AssetRouterConfig,
@@ -29,10 +31,17 @@ from .asset_routing import (
     profile_text_route_to_dict,
     reconcile_asset_routes,
     resolve_asset_domain,
+    resolve_explicit_asset_prompt,
+    resolve_full_image_domain_prior,
     route_profile_text_inventories,
     route_to_dict,
 )
 from .candidate_backends import Sam2AutomaticMaskBackend
+from .dense_semantic import DenseMaskQuery, DenseSemanticProposer
+from .embedding_ranker import (
+    ConsensusRegionLabelRanker,
+    EmbeddingRegionLabelRanker,
+)
 from .ensemble_gate import filter_unresolved_ensemble_regions
 from .export import export_prediction, load_previous_package
 from .florence_parts import FlorencePartConfig, FlorencePartGenerator
@@ -42,7 +51,13 @@ from .foundation import (
     FoundationCandidateGenerator,
     FoundationConfig,
 )
-from .fusion import FusionConfig, MaskCandidate, fuse_candidates
+from .fusion import (
+    FusionConfig,
+    MaskCandidate,
+    fuse_candidates,
+    mask_iou,
+    suppress_correlated_semantic_hypotheses,
+)
 from .guided_prompts import parse_guided_prompts
 from .inference import predict
 from .mask_refinement import MaskRefinementConfig, refine_candidate_masks
@@ -54,7 +69,11 @@ from .physical_region_audit import (
 )
 from .profile_resolution import resolve_profile_roots
 from .prompt_bank import DomainPrompt, PromptBank
-from .proposal_first import ProposalFirstConfig, generate_proposal_first_roots
+from .proposal_first import (
+    ProposalFirstConfig,
+    generate_proposal_first_roots,
+    route_proposal_first_execution,
+)
 from .registry import preserve_part_ids
 from .relational import propose_relational_candidates
 from .resource_paths import DEFAULT_PROMPT_BANK
@@ -77,6 +96,7 @@ from .root_routing import (
     RootRoutingConfig,
     candidate_root_key,
     propagate_scene_object_identity,
+    reconcile_prompt_root_escalations,
     route_asset_roots,
 )
 from .scene_root_audit import (
@@ -131,6 +151,42 @@ def _sha256(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def _conditional_mask_root_gate(mask: np.ndarray) -> dict[str, object]:
+    """Reject direct dense masks on structurally ambiguous open-form roots."""
+
+    ys, xs = np.nonzero(mask)
+    if not len(xs):
+        return {
+            "accepted": False,
+            "reason": "empty_root",
+            "bbox_fill": 0.0,
+            "bbox_aspect": 0.0,
+        }
+    height = int(ys.max() - ys.min() + 1)
+    width = int(xs.max() - xs.min() + 1)
+    bbox_fill = int(np.count_nonzero(mask)) / max(1, height * width)
+    bbox_aspect = min(height, width) / max(1, max(height, width))
+    contours, _ = cv2.findContours(
+        mask.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE
+    )
+    largest = max(contours, key=cv2.contourArea)
+    contour_area = float(cv2.contourArea(largest))
+    perimeter = float(cv2.arcLength(largest, True))
+    compactness = float(4.0 * np.pi * contour_area / max(1.0, perimeter * perimeter))
+    ambiguous_open_form = (
+        bbox_fill < 0.62 and bbox_aspect >= 0.55 and compactness < 0.40
+    )
+    return {
+        "accepted": not ambiguous_open_form,
+        "reason": (
+            "ambiguous_open_form" if ambiguous_open_form else "root_geometry_supported"
+        ),
+        "bbox_fill": bbox_fill,
+        "bbox_aspect": bbox_aspect,
+        "compactness": compactness,
+    }
 
 
 def _combine_profile_refinements(
@@ -205,9 +261,7 @@ def _apply_asset_domain_routes(
         local_route = routes_by_root[root_key]
         proposal_rank_value = root.metadata.get("global_asset_proposal_rank")
         proposal_rank = (
-            int(proposal_rank_value)
-            if isinstance(proposal_rank_value, int)
-            else None
+            int(proposal_rank_value) if isinstance(proposal_rank_value, int) else None
         )
         route, cross_view_consensus = reconcile_asset_routes(
             full_image_route,
@@ -218,16 +272,98 @@ def _apply_asset_domain_routes(
         independently_accepted_exact_route = bool(
             route.accepted and route.reason == "accepted_exact_label"
         )
+        cross_view_exact_domain = bool(
+            route.accepted
+            and cross_view_consensus.get("status") == "accepted_top_label_agreement"
+            and cross_view_consensus.get("exact_top_agreement") is True
+            and route.asset_domain is not None
+        )
+        trusted_exact_route = bool(
+            independently_accepted_exact_route or cross_view_exact_domain
+        )
+        full_domain_prior = resolve_full_image_domain_prior(
+            full_image_route,
+            config=config,
+        )
+        physical_domains = {
+            str(value)
+            for value in root.metadata.get("physical_group_semantic_names", ())
+            if str(value).strip()
+        }
+        local_exact_route = bool(
+            local_route.accepted
+            and local_route.reason == "accepted_exact_label"
+            and local_route.asset_domain is not None
+        )
+        full_domain_structural_support = bool(
+            full_domain_prior.domain is not None
+            and full_domain_prior.domain in physical_domains
+        )
+        full_domain_local_support = bool(
+            full_domain_prior.domain is not None
+            and full_domain_prior.domain in local_route.candidate_domains
+        )
+        full_domain_self_consensus = bool(
+            full_domain_prior.support_ratio
+            >= config.minimum_full_image_domain_support_ratio
+        )
+        trusted_full_domain_prior = bool(
+            full_domain_prior.accepted
+            and full_domain_prior.domain is not None
+            and not trusted_exact_route
+            and not local_exact_route
+            and (
+                full_domain_prior.exact_label_accepted
+                and (
+                    full_domain_structural_support
+                    or full_domain_local_support
+                    or full_domain_self_consensus
+                )
+                or not full_domain_prior.exact_label_accepted
+                and full_domain_structural_support
+            )
+        )
         routing_applicable = bool(
             supported_domains is None
             or root.semantic_name in supported_domains
-            or independently_accepted_exact_route
+            or trusted_exact_route
+            or trusted_full_domain_prior
         )
         resolution = resolve_asset_domain(
             route,
             root.semantic_name,
             config=config,
         )
+        if trusted_full_domain_prior:
+            assert full_domain_prior.domain is not None
+            resolution = AssetDomainResolution(
+                accepted=True,
+                resolved_domain=full_domain_prior.domain,
+                resolved_profile=None,
+                reason=(
+                    "accepted_full_image_exact_domain_with_cross_source_support"
+                    if full_domain_prior.exact_label_accepted
+                    else "accepted_full_image_domain_with_structural_support"
+                ),
+                support_count=full_domain_prior.support_count,
+                candidate_count=full_domain_prior.candidate_count,
+                support_ratio=full_domain_prior.support_ratio,
+                vote_margin=max(
+                    0,
+                    2 * full_domain_prior.support_count
+                    - full_domain_prior.candidate_count,
+                ),
+                domain_votes=(
+                    {
+                        "asset_domain": full_domain_prior.domain,
+                        "count": full_domain_prior.support_count,
+                        "score_sum": full_domain_prior.score,
+                        "best_score": full_domain_prior.score,
+                    },
+                ),
+                resolved_asset_label=None,
+                asset_label_reason=("full_image_label_used_as_domain_evidence_only"),
+            )
         resolved_domain = resolution.resolved_domain
         existing_profile_value = root.metadata.get("selected_part_profile")
         existing_profile = (
@@ -236,21 +372,69 @@ def _apply_asset_domain_routes(
             and str(existing_profile_value).strip()
             else None
         )
+        root_query_mode = str(root.metadata.get("root_query_mode", ""))
+        exact_global_root_profile_lock = bool(
+            len(roots) == 1
+            and full_image_route is not None
+            and full_image_route.accepted
+            and full_image_route.reason == "accepted_exact_label"
+            and full_image_route.asset_domain is not None
+            and full_image_route.asset_profile is not None
+            and root_query_mode == "global_asset_proposal"
+            and root.metadata.get("global_asset_proposal_accepted", False)
+            and root.metadata.get("global_asset_proposal_rank") == 1
+            and existing_profile == full_image_route.asset_profile
+        )
+        if exact_global_root_profile_lock:
+            assert full_image_route is not None
+            assert full_image_route.asset_domain is not None
+            resolved_domain = full_image_route.asset_domain
+        full_image_exact_profile_lock = bool(
+            len(roots) == 1
+            and full_image_route is not None
+            and full_image_route.accepted
+            and full_image_route.reason == "accepted_exact_label"
+            and full_image_route.asset_label is not None
+            and full_image_route.asset_domain is not None
+            and full_image_route.asset_profile is not None
+            and trusted_full_domain_prior
+            and resolved_domain == full_image_route.asset_domain
+            and not local_exact_route
+            and full_image_route.asset_profile
+            in {
+                profile.name
+                for profile in domains[full_image_route.asset_domain].part_profiles
+            }
+        )
+        explicit_prompt_lock = bool(
+            root_query_mode.startswith("user_asset_prompt")
+            and existing_profile is not None
+            and root.semantic_name in domains
+            and existing_profile
+            in {profile.name for profile in domains[root.semantic_name].part_profiles}
+            and root.metadata.get("profile_hint_source") == "user_asset_prompt"
+            and root.metadata.get("profile_resolution_status") == "accepted"
+        )
         preserve_specific_root_domain = bool(
             resolution.accepted
             and resolved_domain is not None
             and resolved_domain != root.semantic_name
-            and not independently_accepted_exact_route
+            and not exact_global_root_profile_lock
+            and not full_image_exact_profile_lock
+            and not trusted_exact_route
+            and not trusted_full_domain_prior
             and existing_profile is not None
             and float(root.metadata.get("part_profile_specificity", 0.0)) >= 0.80
             and float(np.clip(root.score / 0.65, 0.0, 1.0)) >= 0.58
         )
-        if preserve_specific_root_domain:
+        if explicit_prompt_lock or preserve_specific_root_domain:
             resolved_domain = root.semantic_name
         accepted = bool(
-            routing_applicable
-            and
-            resolution.accepted
+            explicit_prompt_lock
+            or exact_global_root_profile_lock
+            or full_image_exact_profile_lock
+            or routing_applicable
+            and resolution.accepted
             and resolved_domain is not None
             and resolved_domain in domains
         )
@@ -261,8 +445,7 @@ def _apply_asset_domain_routes(
         cross_view_exact_profile = bool(
             route.accepted
             and proposed_profile is not None
-            and cross_view_consensus.get("status")
-            == "accepted_top_label_agreement"
+            and cross_view_consensus.get("status") == "accepted_top_label_agreement"
             and cross_view_consensus.get("exact_top_agreement") is True
         )
         profile_text_route_entry = (
@@ -282,15 +465,25 @@ def _apply_asset_domain_routes(
         # it is not independent evidence for an exact part template.  Keeping the
         # profile unresolved here prevents two weak views from locking a rifle to
         # a visually similar screwdriver (or analogous same-domain mistakes).
-        if preserve_specific_root_domain and existing_profile is not None:
+        if explicit_prompt_lock and existing_profile is not None:
+            selected_profile = existing_profile
+            profile_hint_source = "user_asset_prompt"
+        elif exact_global_root_profile_lock and existing_profile is not None:
+            selected_profile = existing_profile
+            profile_hint_source = "accepted_global_asset_profile"
+        elif full_image_exact_profile_lock:
+            assert full_image_route is not None
+            assert full_image_route.asset_profile is not None
+            selected_profile = full_image_route.asset_profile
+            profile_hint_source = "accepted_full_image_asset_profile"
+        elif preserve_specific_root_domain and existing_profile is not None:
             available_profiles = {
                 profile.name for profile in domains[resolved_domain].part_profiles
             }
             if existing_profile in available_profiles:
                 selected_profile = existing_profile
                 profile_hint_source = str(
-                    root.metadata.get("profile_hint_source")
-                    or "specific_root_label"
+                    root.metadata.get("profile_hint_source") or "specific_root_label"
                 )
         elif (
             accepted
@@ -343,19 +536,36 @@ def _apply_asset_domain_routes(
             "domain_accepted": accepted,
             "domain_corrected": corrected,
             "routing_applicable": routing_applicable,
-            "independently_accepted_exact_route": (
-                independently_accepted_exact_route
-            ),
+            "independently_accepted_exact_route": (independently_accepted_exact_route),
+            "cross_view_exact_domain": cross_view_exact_domain,
             "cross_view_exact_profile": cross_view_exact_profile,
+            "full_image_domain_prior_applied": trusted_full_domain_prior,
+            "full_image_domain_structural_support": (full_domain_structural_support),
+            "full_image_domain_local_support": full_domain_local_support,
+            "full_image_domain_self_consensus": full_domain_self_consensus,
+            "full_image_domain_prior": {
+                "accepted": full_domain_prior.accepted,
+                "domain": full_domain_prior.domain,
+                "score": full_domain_prior.score,
+                "margin": full_domain_prior.margin,
+                "support_count": full_domain_prior.support_count,
+                "candidate_count": full_domain_prior.candidate_count,
+                "support_ratio": full_domain_prior.support_ratio,
+                "exact_label_accepted": (full_domain_prior.exact_label_accepted),
+                "reason": full_domain_prior.reason,
+            },
             "specific_root_domain_preserved": preserve_specific_root_domain,
+            "explicit_user_prompt_lock": explicit_prompt_lock,
+            "exact_global_root_profile_lock": exact_global_root_profile_lock,
+            "full_image_exact_profile_lock": full_image_exact_profile_lock,
             "router_supported_domains": (
-                sorted(supported_domains)
-                if supported_domains is not None
-                else None
+                sorted(supported_domains) if supported_domains is not None else None
             ),
             "domain_resolution": {
                 "reason": (
-                    "preserved_specific_root_domain_over_ambiguous_router"
+                    "explicit_user_prompt_domain_profile_lock"
+                    if explicit_prompt_lock
+                    else "preserved_specific_root_domain_over_ambiguous_router"
                     if preserve_specific_root_domain
                     else resolution.reason
                     if routing_applicable
@@ -379,13 +589,19 @@ def _apply_asset_domain_routes(
             "cross_view_consensus": cross_view_consensus,
         }
         rows.append(row)
-        route_requires_audit = bool(routing_applicable and not route.accepted)
+        route_requires_audit = bool(
+            not explicit_prompt_lock
+            and not exact_global_root_profile_lock
+            and not full_image_exact_profile_lock
+            and routing_applicable
+            and not route.accepted
+        )
         if not accepted:
             metadata = dict(root.metadata)
             metadata.update(
                 {
                     "asset_domain_routing_algorithm": (
-                        "hpid-siglip2-preprofile-domain-consensus-v1"
+                        "hpid-three-view-domain-consensus-v2"
                     ),
                     "asset_domain_routing_reason": resolution.reason,
                     "asset_domain_routing_original_domain": root.semantic_name,
@@ -422,7 +638,19 @@ def _apply_asset_domain_routes(
         ):
             metadata.pop(key, None)
         object_label = (
-            str(selected_profile).replace("_", " ")
+            str(
+                root.metadata.get("root_model_label") or root.prompt or existing_profile
+            )
+            if explicit_prompt_lock
+            else str(full_image_route.asset_label)
+            if exact_global_root_profile_lock
+            and full_image_route is not None
+            and full_image_route.asset_label is not None
+            else str(resolution.resolved_asset_label)
+            if trusted_exact_route and resolution.resolved_asset_label is not None
+            else str(full_image_route.asset_label)
+            if full_image_exact_profile_lock and full_image_route is not None
+            else str(selected_profile).replace("_", " ")
             if selected_profile is not None
             else str(
                 root.metadata.get("root_model_label")
@@ -431,17 +659,23 @@ def _apply_asset_domain_routes(
             )
             if preserve_specific_root_domain
             else str(resolution.resolved_asset_label)
-            if (independently_accepted_exact_route or cross_view_exact_profile)
+            if (trusted_exact_route or cross_view_exact_profile)
             and resolution.resolved_asset_label is not None
             else str(resolved_domain).replace("_", " ")
         )
         metadata.update(
             {
                 "asset_domain_routing_algorithm": (
-                    "hpid-siglip2-preprofile-domain-consensus-v1"
+                    "hpid-three-view-domain-consensus-v2"
                 ),
                 "asset_domain_routing_reason": (
-                    "preserved_specific_root_domain_over_ambiguous_router"
+                    "explicit_user_prompt_domain_profile_lock"
+                    if explicit_prompt_lock
+                    else "accepted_global_asset_profile_lock"
+                    if exact_global_root_profile_lock
+                    else "accepted_full_image_asset_profile_lock"
+                    if full_image_exact_profile_lock
+                    else "preserved_specific_root_domain_over_ambiguous_router"
                     if preserve_specific_root_domain
                     else resolution.reason
                 ),
@@ -453,9 +687,7 @@ def _apply_asset_domain_routes(
                 "asset_router_exact_label_accepted": (
                     independently_accepted_exact_route
                 ),
-                "asset_router_cross_view_exact_profile": (
-                    cross_view_exact_profile
-                ),
+                "asset_router_cross_view_exact_profile": (cross_view_exact_profile),
                 "asset_router_candidate_labels": list(route.candidate_labels),
                 "asset_router_candidate_domains": list(route.candidate_domains),
                 "asset_domain_audit_required": route_requires_audit,
@@ -472,10 +704,9 @@ def _apply_asset_domain_routes(
                 ),
                 "root_label_specificity": (
                     1.0
-                    if (
-                        independently_accepted_exact_route
-                        or cross_view_exact_profile
-                    )
+                    if exact_global_root_profile_lock
+                    or full_image_exact_profile_lock
+                    or (trusted_exact_route or cross_view_exact_profile)
                     and resolution.resolved_asset_label is not None
                     else 0.0
                 ),
@@ -517,7 +748,7 @@ def _apply_asset_domain_routes(
                 replaced.append(candidate)
         candidates = replaced
     return candidates, {
-        "algorithm": "hpid-siglip2-preprofile-domain-consensus-v1",
+        "algorithm": "hpid-three-view-domain-consensus-v2",
         "root_count": len(roots),
         "route_count": len(rows),
         "accepted_domain_count": sum(bool(row["domain_accepted"]) for row in rows),
@@ -728,9 +959,7 @@ def _global_asset_proposals(
     router = AssetRouter(index, encoder, config=config)
     full_image = np.ones((image.height, image.width), dtype=bool)
     route = router.route(image, full_image)
-    alternatives = {
-        str(row["asset_label"]): row for row in route.alternatives
-    }
+    alternatives = {str(row["asset_label"]): row for row in route.alternatives}
     supported_domains = {domain.name for domain in prompt_bank.domains}
     queries: list[AutomaticAssetQuery] = []
     ordered_alternatives = list(route.alternatives)
@@ -759,9 +988,7 @@ def _global_asset_proposals(
     diagnostics = {
         "algorithm": "hpid-global-asset-proposal-router-v1",
         "index": str(args.asset_router_index.resolve()),
-        "index_manifest_sha256": _sha256(
-            args.asset_router_index / "index.json"
-        ),
+        "index_manifest_sha256": _sha256(args.asset_router_index / "index.json"),
         "model": model_name,
         "route": route_to_dict(route),
         "queries": [
@@ -824,12 +1051,26 @@ def command_auto(args: argparse.Namespace) -> int:
         raise ValueError(
             "proposal-first fast path cannot be combined with detector ensemble"
         )
+    if args.prompt_root_model.strip() and not args.asset_prompt.strip():
+        raise ValueError("--prompt-root-model requires --asset-prompt")
     if args.florence_parts and (
         args.decomposition_mode != "automatic" or args.retrieval_index is None
     ):
         raise ValueError(
             "--florence-parts requires automatic mode and --retrieval-index"
         )
+    if args.conditional_direct_masks and args.retrieval_index is None:
+        raise ValueError("--conditional-direct-masks requires --retrieval-index")
+    if args.conditional_direct_masks and not (
+        args.conditional_part_model.strip() or args.dense_semantic_model.strip()
+    ):
+        raise ValueError("conditional direct masks require a model checkpoint")
+    if args.conditional_mask_phrases < 1 or args.conditional_mask_batch_size < 1:
+        raise ValueError("conditional-mask phrase and batch counts must be positive")
+    if not 0.0 <= args.conditional_mask_minimum_geometry <= 1.0:
+        raise ValueError("conditional-mask geometry threshold must be in [0, 1]")
+    if not 0.0 <= args.conditional_mask_minimum_prior <= 1.0:
+        raise ValueError("conditional-mask prior threshold must be in [0, 1]")
     use_dense_semantic = args.dense_semantic_fallback or bool(guided_prompts)
     prompt_bank = PromptBank.from_json(args.prompt_bank)
     if args.domains:
@@ -842,6 +1083,44 @@ def command_auto(args: argparse.Namespace) -> int:
             raise ValueError(f"unknown prompt-bank domains: {sorted(missing)}")
     image = Image.open(args.image).convert("RGB")
     scene_mode = args.root_mode == "scene"
+    proposal_first_enabled, proposal_first_route_diagnostics = (
+        route_proposal_first_execution(
+            image,
+            requested=bool(args.proposal_first_fast),
+            root_mode=args.root_mode,
+            target_point_xy=(
+                tuple(float(value) for value in args.target_point)
+                if args.target_point is not None
+                else None
+            ),
+        )
+    )
+    isolated_profile_resolution_disabled = bool(
+        args.no_isolated_profile_resolution and proposal_first_enabled
+    )
+    profile_refinement_disabled = bool(
+        args.no_profile_refinement and proposal_first_enabled
+    )
+    adaptive_profile_refinement_enabled = bool(
+        args.adaptive_profile_refinement and proposal_first_enabled
+    )
+    effective_grabcut_iterations = (
+        args.grabcut_iterations
+        if proposal_first_enabled
+        else max(3, args.grabcut_iterations)
+    )
+    proposal_first_route_diagnostics.update(
+        {
+            "isolated_profile_resolution_disabled": (
+                isolated_profile_resolution_disabled
+            ),
+            "profile_refinement_disabled": profile_refinement_disabled,
+            "adaptive_profile_refinement_enabled": (
+                adaptive_profile_refinement_enabled
+            ),
+            "effective_grabcut_iterations": effective_grabcut_iterations,
+        }
+    )
     maximum_roots_per_domain = (
         args.maximum_roots_per_domain
         if args.maximum_roots_per_domain is not None
@@ -854,13 +1133,34 @@ def command_auto(args: argparse.Namespace) -> int:
     )
     if maximum_roots_per_domain < 1 or maximum_total_roots < 1:
         raise ValueError("root candidate limits must be positive")
+    explicit_asset_prompt_route = None
+    if args.asset_prompt.strip() and args.asset_router_index is not None:
+        prompt_routing_index = AssetRoutingIndex.load(args.asset_router_index)
+        candidate_route = resolve_explicit_asset_prompt(
+            prompt_routing_index,
+            args.asset_prompt,
+        )
+        if candidate_route.accepted and candidate_route.asset_domain in {
+            domain.name for domain in prompt_bank.domains
+        }:
+            resolved_domain = next(
+                domain
+                for domain in prompt_bank.domains
+                if domain.name == candidate_route.asset_domain
+            )
+            available_profiles = {
+                profile.name for profile in resolved_domain.part_profiles
+            }
+            if (
+                candidate_route.asset_profile is None
+                or candidate_route.asset_profile in available_profiles
+            ):
+                explicit_asset_prompt_route = candidate_route
     (
         automatic_asset_queries,
         global_asset_proposal_diagnostics,
         global_asset_route,
-    ) = (
-        _global_asset_proposals(args, image, prompt_bank)
-    )
+    ) = _global_asset_proposals(args, image, prompt_bank)
     generator = FoundationCandidateGenerator(
         prompt_bank,
         device=device,
@@ -879,16 +1179,37 @@ def command_auto(args: argparse.Namespace) -> int:
             maximum_total_roots=maximum_total_roots,
             local_files_only=args.local_files_only,
             asset_prompt=args.asset_prompt,
-            automatic_asset_queries=automatic_asset_queries,
-            use_semantic_part_multimask_selection=(
-                args.semantic_part_multimask
+            asset_prompt_domain=(
+                str(explicit_asset_prompt_route.asset_domain)
+                if explicit_asset_prompt_route is not None
+                and explicit_asset_prompt_route.asset_domain is not None
+                else ""
             ),
-            lazy_grounding_model=args.proposal_first_fast,
+            asset_prompt_profile=(
+                str(explicit_asset_prompt_route.asset_profile)
+                if explicit_asset_prompt_route is not None
+                and explicit_asset_prompt_route.asset_profile is not None
+                else ""
+            ),
+            asset_prompt_label=(
+                str(explicit_asset_prompt_route.asset_label)
+                if explicit_asset_prompt_route is not None
+                and explicit_asset_prompt_route.asset_label is not None
+                else ""
+            ),
+            asset_prompt_resolution_reason=(
+                explicit_asset_prompt_route.reason
+                if explicit_asset_prompt_route is not None
+                else ""
+            ),
+            automatic_asset_queries=automatic_asset_queries,
+            use_semantic_part_multimask_selection=(args.semantic_part_multimask),
+            lazy_grounding_model=proposal_first_enabled,
         ),
     )
     proposal_first_proposals: tuple[VisualMaskProposal, ...] | None = None
     proposal_first_diagnostics: dict[str, object] | None = None
-    if args.proposal_first_fast:
+    if proposal_first_enabled:
         proposal_first_backend = Sam2VisualRegionProposer(
             generator.sam_processor,
             generator.sam_model,
@@ -899,8 +1220,8 @@ def command_auto(args: argparse.Namespace) -> int:
                 crops_n_layers=0,
             ),
         )
-        raw_proposals, raw_proposal_diagnostics = (
-            proposal_first_backend.propose_global(image)
+        raw_proposals, raw_proposal_diagnostics = proposal_first_backend.propose_global(
+            image
         )
         proposal_first = generate_proposal_first_roots(
             image,
@@ -978,6 +1299,7 @@ def command_auto(args: argparse.Namespace) -> int:
         )
         proposal_first_diagnostics = {
             **proposal_first.diagnostics,
+            "execution_route": proposal_first_route_diagnostics,
             "proposal_generation": raw_proposal_diagnostics,
             "shape_proposal_generation": shape_proposals.diagnostics,
             "appearance_proposal_generation": (
@@ -992,9 +1314,7 @@ def command_auto(args: argparse.Namespace) -> int:
             ),
             "combined_proposal_count": len(proposal_first_proposals),
             "detector_fallback": (
-                detector_fallback.diagnostics
-                if detector_fallback is not None
-                else None
+                detector_fallback.diagnostics if detector_fallback is not None else None
             ),
         }
         if detector_fallback is not None:
@@ -1033,6 +1353,16 @@ def command_auto(args: argparse.Namespace) -> int:
             )
     else:
         generated = generator.generate(image)
+        if args.proposal_first_fast:
+            generated = CandidateGeneration(
+                generated.candidates,
+                {
+                    **generated.diagnostics,
+                    "proposal_first_execution_route": (
+                        proposal_first_route_diagnostics
+                    ),
+                },
+            )
     finish_stage("proposal_and_root_generation")
     candidates = list(generated.candidates)
     candidate_generations = [generated.diagnostics]
@@ -1061,9 +1391,7 @@ def command_auto(args: argparse.Namespace) -> int:
                 local_files_only=args.local_files_only,
                 asset_prompt=args.asset_prompt,
                 automatic_asset_queries=automatic_asset_queries,
-                use_semantic_part_multimask_selection=(
-                    args.semantic_part_multimask
-                ),
+                use_semantic_part_multimask_selection=(args.semantic_part_multimask),
                 lazy_grounding_model=False,
             ),
             sam_processor=generator.sam_processor,
@@ -1109,6 +1437,86 @@ def command_auto(args: argparse.Namespace) -> int:
             ),
             "ground_truth_used": False,
         }
+    prompt_root_escalation_diagnostics: dict[str, object] | None = None
+    prompt_root_model = args.prompt_root_model.strip()
+    if prompt_root_model and prompt_root_model != args.grounding_model:
+        generator.release_grounding_model()
+        prompt_root_generator = FoundationCandidateGenerator(
+            prompt_bank,
+            device=device,
+            config=FoundationConfig(
+                grounding_model=prompt_root_model,
+                segmentation_model=args.segmentation_model,
+                dense_semantic_model=args.dense_semantic_model,
+                box_threshold=args.box_threshold,
+                text_threshold=args.text_threshold,
+                use_dense_semantic_fallback=use_dense_semantic,
+                use_root_domain_arbitration=not args.no_root_domain_arbitration,
+                maximum_roots_per_domain=maximum_roots_per_domain,
+                maximum_total_roots=maximum_total_roots,
+                local_files_only=args.local_files_only,
+                asset_prompt=args.asset_prompt,
+                asset_prompt_domain=(
+                    str(explicit_asset_prompt_route.asset_domain)
+                    if explicit_asset_prompt_route is not None
+                    and explicit_asset_prompt_route.asset_domain is not None
+                    else ""
+                ),
+                asset_prompt_profile=(
+                    str(explicit_asset_prompt_route.asset_profile)
+                    if explicit_asset_prompt_route is not None
+                    and explicit_asset_prompt_route.asset_profile is not None
+                    else ""
+                ),
+                asset_prompt_label=(
+                    str(explicit_asset_prompt_route.asset_label)
+                    if explicit_asset_prompt_route is not None
+                    and explicit_asset_prompt_route.asset_label is not None
+                    else ""
+                ),
+                asset_prompt_resolution_reason=(
+                    explicit_asset_prompt_route.reason
+                    if explicit_asset_prompt_route is not None
+                    else ""
+                ),
+                use_semantic_part_multimask_selection=False,
+                lazy_grounding_model=False,
+            ),
+            sam_processor=generator.sam_processor,
+            sam_model=generator.sam_model,
+            dense_proposer=generator.dense_proposer,
+        )
+        escalated = prompt_root_generator.generate(image)
+        escalated_roots = [
+            candidate
+            for candidate in escalated.candidates
+            if candidate.semantic_name == candidate.semantic_parent
+            and candidate.metadata.get("parent_candidate_key") is None
+        ]
+        candidates, escalation_reconciliation = reconcile_prompt_root_escalations(
+            candidates,
+            escalated_roots,
+        )
+        prompt_root_escalation_diagnostics = {
+            "algorithm": "hpid-explicit-prompt-root-escalation-v1",
+            "model": prompt_root_model,
+            "generated_candidate_count": len(escalated_roots),
+            "candidate_count": int(
+                escalation_reconciliation["retained_distinct_root_count"]
+            ),
+            "semantic_merge_count": int(
+                escalation_reconciliation["merged_equivalent_root_count"]
+            ),
+            "root_reconciliation": escalation_reconciliation,
+            "candidate_generation": escalated.diagnostics,
+            "parts_generated_by_escalation": False,
+            "ground_truth_used": False,
+        }
+        candidate_generations.append(prompt_root_escalation_diagnostics)
+        prompt_root_generator.release_grounding_model()
+        del prompt_root_generator
+        if device == "cuda":
+            torch.cuda.empty_cache()
     if not candidates:
         raise RuntimeError(
             "No asset candidate was found. Extend the prompt bank or lower the "
@@ -1116,6 +1524,13 @@ def command_auto(args: argparse.Namespace) -> int:
         )
     candidates, root_domain_diagnostics = generator.attach_root_domain_evidence(
         image, candidates
+    )
+    initial_root_hypotheses = tuple(
+        candidate
+        for candidate in candidates
+        if candidate.semantic_name == candidate.semantic_parent
+        and candidate.metadata.get("root_index") is not None
+        and candidate.metadata.get("parent_candidate_key") is None
     )
     routed = route_asset_roots(
         candidates,
@@ -1136,9 +1551,7 @@ def command_auto(args: argparse.Namespace) -> int:
     early_asset_router_diagnostics: dict[str, object] | None = None
     early_automatic_asset_candidates: dict[str, tuple[str, ...]] = {}
     early_asset_routes_by_key: dict[str, AssetRoute] = {}
-    early_profile_text_routes_by_key: dict[
-        str, dict[str, ProfileTextRoute]
-    ] = {}
+    early_profile_text_routes_by_key: dict[str, dict[str, ProfileTextRoute]] = {}
     early_router_supported_domains: set[str] = set()
     if (
         args.decomposition_mode == "automatic"
@@ -1202,12 +1615,9 @@ def command_auto(args: argparse.Namespace) -> int:
             early_profile_text_routes_by_key[root_key] = profile_text_routes
             profile_text_route = profile_text_routes.get(profile_domain_name)
             if (
-                (
-                    root.semantic_name in early_router_supported_domains
-                    or asset_route.accepted
-                )
-                and asset_route.candidate_labels
-            ):
+                root.semantic_name in early_router_supported_domains
+                or asset_route.accepted
+            ) and asset_route.candidate_labels:
                 early_automatic_asset_candidates[root_key] = (
                     asset_route.candidate_labels
                 )
@@ -1252,9 +1662,7 @@ def command_auto(args: argparse.Namespace) -> int:
             "algorithm": "hpid-siglip2-asset-router-v1",
             "stage": "preprofile-domain-routing",
             "index": str(args.asset_router_index.resolve()),
-            "index_manifest_sha256": _sha256(
-                args.asset_router_index / "index.json"
-            ),
+            "index_manifest_sha256": _sha256(args.asset_router_index / "index.json"),
             "model": router_model,
             "root_count": len(initial_asset_roots),
             "exact_route_count": sum(bool(row["accepted"]) for row in route_rows),
@@ -1268,7 +1676,7 @@ def command_auto(args: argparse.Namespace) -> int:
         del asset_router, router_encoder
         if router_device == "cuda":
             torch.cuda.empty_cache()
-        if not args.proposal_first_fast:
+        if not proposal_first_enabled:
             generator.activate_grounding_model()
     profile_root_resolution_diagnostics: dict[str, object] | None = None
     if args.decomposition_mode in {"automatic", "prompt-guided"}:
@@ -1298,7 +1706,7 @@ def command_auto(args: argparse.Namespace) -> int:
                 for root in broad_roots
             )
         )
-        profile_resolution_bypassed = bool(args.no_isolated_profile_resolution)
+        profile_resolution_bypassed = isolated_profile_resolution_disabled
         profile_lock_resolved = user_prompt_resolved or asset_router_profile_resolved
         if profile_resolution_bypassed:
             profile_lock_resolved = True
@@ -1477,13 +1885,13 @@ def command_auto(args: argparse.Namespace) -> int:
             }
     profile_refinement_diagnostics: dict[str, object] | None = None
     if args.decomposition_mode in {"automatic", "prompt-guided"} and (
-        not args.no_profile_refinement or args.adaptive_profile_refinement
+        not profile_refinement_disabled or adaptive_profile_refinement_enabled
     ):
         profile_roots = _routed_roots(candidates, routed.diagnostics, args.root_mode)
         profile_refinement_runs: list[CandidateGeneration] = []
         domain_lookup = {domain.name: domain for domain in prompt_bank.domains}
         refinement_mode = "full"
-        if args.no_profile_refinement:
+        if profile_refinement_disabled:
             refinement_mode = "adaptive"
             profile_roots = [
                 root
@@ -1501,9 +1909,7 @@ def command_auto(args: argparse.Namespace) -> int:
                     )
                 )
                 refinement_generator.release_grounding_model()
-            profile_refinement = _combine_profile_refinements(
-                profile_refinement_runs
-            )
+            profile_refinement = _combine_profile_refinements(profile_refinement_runs)
             candidates.extend(profile_refinement.candidates)
             profile_refinement_diagnostics = {
                 **profile_refinement.diagnostics,
@@ -1584,6 +1990,42 @@ def command_auto(args: argparse.Namespace) -> int:
             for key, values in early_automatic_asset_candidates.items()
             if key in eligible_retrieval_keys
         }
+        allowed_retrieval_part_semantics: dict[str, tuple[str, ...]] = {}
+        retrieval_domain_lookup = {
+            domain.name: domain for domain in prompt_bank.domains
+        }
+        for root in initial_roots:
+            selected_profile = str(
+                root.metadata.get("selected_part_profile", "")
+            ).strip()
+            if (
+                not selected_profile
+                or str(root.metadata.get("profile_resolution_status", ""))
+                != "accepted"
+            ):
+                continue
+            domain = retrieval_domain_lookup.get(root.semantic_name)
+            if domain is None:
+                continue
+            root_label = str(
+                root.metadata.get("resolved_object_label")
+                or root.metadata.get("root_model_label")
+                or root.prompt
+                or root.semantic_name
+            ).strip()
+            try:
+                selected_parts, resolved_profile, _ = domain.select_parts(
+                    root_label,
+                    profile_hint=selected_profile,
+                    profile_hint_source="resolved_retrieval_inventory",
+                )
+            except ValueError:
+                continue
+            if resolved_profile != selected_profile:
+                continue
+            allowed_retrieval_part_semantics[
+                PrototypeRetriever._root_key(root)
+            ] = tuple(part.semantic_name for part in selected_parts)
         if (
             args.asset_router_index is not None
             and not args.asset_prompt.strip()
@@ -1620,12 +2062,9 @@ def command_auto(args: argparse.Namespace) -> int:
                 asset_route = asset_router.route(image, root.mask.astype(bool))
                 root_key = PrototypeRetriever._root_key(root)
                 if (
-                    (
-                        root.semantic_name in router_supported_domains
-                        or asset_route.accepted
-                    )
-                    and asset_route.candidate_labels
-                ):
+                    root.semantic_name in router_supported_domains
+                    or asset_route.accepted
+                ) and asset_route.candidate_labels:
                     automatic_asset_candidates[root_key] = asset_route.candidate_labels
                 route_rows.append(
                     {
@@ -1656,6 +2095,7 @@ def command_auto(args: argparse.Namespace) -> int:
             initial_roots,
             asset_hint=args.asset_prompt.strip() or None,
             asset_candidates_by_root=automatic_asset_candidates,
+            allowed_part_semantics_by_root=allowed_retrieval_part_semantics,
         )
         prototype_result = retrieval_result
         candidates, domain_corrections = apply_retrieval_domain_corrections(
@@ -1674,6 +2114,12 @@ def command_auto(args: argparse.Namespace) -> int:
         }
         retrieval_runs: list[dict[str, object]] = []
         retrieval_candidate_count = 0
+        conditional_mask_candidate_count = 0
+        conditional_dense_proposer: DenseSemanticProposer | None = None
+        conditional_model_name = (
+            args.conditional_part_model.strip() or args.dense_semantic_model
+        )
+        conditional_dense_is_shared = False
         florence_generator: FlorencePartGenerator | None = None
         for plan in retrieval_result.plans:
             root = root_by_key.get(plan.root_key)
@@ -1727,6 +2173,227 @@ def command_auto(args: argparse.Namespace) -> int:
             )
             candidates.extend(reranked)
             retrieval_candidate_count += len(reranked)
+            conditional_mask_diagnostics: dict[str, object] | None = None
+            conditional_root_gate = _conditional_mask_root_gate(root.mask)
+            if args.conditional_direct_masks and conditional_root_gate["accepted"]:
+                if conditional_dense_proposer is None:
+                    shared_dense = getattr(generator, "dense_proposer", None)
+                    if conditional_model_name == args.dense_semantic_model:
+                        if shared_dense is None:
+                            raise ValueError(
+                                "shared conditional masks require "
+                                "--dense-semantic-fallback"
+                            )
+                        conditional_dense_proposer = shared_dense
+                        conditional_dense_is_shared = True
+                    else:
+                        generator.release_grounding_model()
+                        conditional_dense_proposer = DenseSemanticProposer(
+                            conditional_model_name,
+                            device=device,
+                            local_files_only=args.local_files_only,
+                        )
+                queries = [
+                    DenseMaskQuery(
+                        semantic_name=prior.output_semantic_name,
+                        prompts=prior.phrases,
+                        maximum_instances=prior.maximum_instances,
+                        geometry_mean=prior.geometry_mean,
+                        geometry_std=prior.geometry_std,
+                        geometry_samples=prior.geometry_samples,
+                    )
+                    for prior in plan.part_priors
+                    if not prior.output_semantic_name.endswith("_body")
+                ]
+                direct_regions, direct_diagnostics = (
+                    conditional_dense_proposer.propose_direct_masks(
+                        image,
+                        root.mask.astype(bool),
+                        queries,
+                        phrases_per_query=args.conditional_mask_phrases,
+                        batch_size=args.conditional_mask_batch_size,
+                        minimum_geometry_compatibility=(
+                            args.conditional_mask_minimum_geometry
+                        ),
+                    )
+                )
+                prior_by_semantic = {
+                    prior.output_semantic_name: prior for prior in plan.part_priors
+                }
+                direct_candidates: list[MaskCandidate] = []
+                large_unconfirmed_rejections = 0
+                weak_unconfirmed_geometry_rejections = 0
+                weak_unconfirmed_prior_rejections = 0
+                root_candidate_key = str(
+                    root.metadata.get("candidate_key") or plan.root_key
+                )
+                for region in direct_regions:
+                    prior = prior_by_semantic[region.semantic_name]
+                    existing_iou = max(
+                        (
+                            mask_iou(region.mask, candidate.mask)
+                            for candidate in [*candidates, *reranked]
+                            if candidate.semantic_name == region.semantic_name
+                        ),
+                        default=0.0,
+                    )
+                    root_fraction = int(np.count_nonzero(region.mask)) / max(
+                        1, int(np.count_nonzero(root.mask))
+                    )
+                    if existing_iou < 0.12 and region.geometry_compatibility < 0.40:
+                        weak_unconfirmed_geometry_rejections += 1
+                        continue
+                    if (
+                        existing_iou < 0.12
+                        and prior.retrieval_score < args.conditional_mask_minimum_prior
+                    ):
+                        weak_unconfirmed_prior_rejections += 1
+                        continue
+                    broad_physical_role = region.semantic_name.endswith(
+                        (
+                            "_surface",
+                            "_panel",
+                            "_screen",
+                            "_dial",
+                            "_blade",
+                            "_shaft",
+                            "_bristles",
+                            "_wheel",
+                            "_tire",
+                            "_rim",
+                            "_bottom",
+                            "_base",
+                            "_seat",
+                            "_backrest",
+                            "_shell",
+                            "_visor",
+                            "_band",
+                            "_handle",
+                            "_inner",
+                            "_lining",
+                            "_sole",
+                            "_upper",
+                            "_cap",
+                            "_opening",
+                        )
+                    )
+                    if (
+                        root_fraction > 0.35
+                        and existing_iou < 0.12
+                        and not broad_physical_role
+                    ):
+                        large_unconfirmed_rejections += 1
+                        continue
+                    direct_candidates.append(
+                        MaskCandidate(
+                            semantic_name=region.semantic_name,
+                            semantic_parent=prior.semantic_parent,
+                            mask=region.mask,
+                            score=region.score,
+                            source=(
+                                "conditional-part["
+                                f"{Path(conditional_model_name).name}"
+                                "]/direct-calibrated-mask"
+                            ),
+                            prompt=region.prompt,
+                            source_reliability=float(
+                                np.clip(
+                                    0.72
+                                    + 0.12 * region.geometry_compatibility
+                                    + 0.08 * prior.retrieval_score,
+                                    0.0,
+                                    0.92,
+                                )
+                            ),
+                            metadata={
+                                "root_origin": root.metadata.get("root_origin"),
+                                "root_index": root.metadata.get("root_index"),
+                                "candidate_key": (
+                                    f"{root_candidate_key}/{region.semantic_name}:"
+                                    f"conditional:{region.component_index:02d}"
+                                ),
+                                "parent_candidate_key": root_candidate_key,
+                                "query_parent_semantic": root.semantic_name,
+                                "assembly_parent_semantic": (
+                                    prior.assembly_parent_semantic
+                                    or prior.semantic_parent
+                                ),
+                                "selected_part_profile": root.metadata.get(
+                                    "selected_part_profile"
+                                ),
+                                "part_profile_specificity": root.metadata.get(
+                                    "part_profile_specificity", 0.0
+                                ),
+                                "maximum_instances": prior.maximum_instances,
+                                "retrieval_prior": True,
+                                "retrieval_prior_score": prior.retrieval_score,
+                                "retrieval_support_count": prior.support_count,
+                                "direct_conditional_mask": True,
+                                "conditional_mask_model": conditional_model_name,
+                                "conditional_mask_threshold": (
+                                    direct_diagnostics.threshold
+                                ),
+                                "conditional_peak_probability": (
+                                    region.peak_probability
+                                ),
+                                "conditional_mean_probability": (
+                                    region.mean_probability
+                                ),
+                                "retrieval_geometry_compatibility": (
+                                    region.geometry_compatibility
+                                ),
+                                "geometric_support": (region.geometry_compatibility),
+                                "root_area_fraction": root_fraction,
+                                "parent_area_fraction": root_fraction,
+                                "parent_containment": 1.0,
+                                "cross_source_confirmed": existing_iou >= 0.12,
+                                "cross_source_best_iou": existing_iou,
+                                "ground_truth_used": False,
+                            },
+                        )
+                    )
+                direct_candidates, duplicate_suppression_rows = (
+                    suppress_correlated_semantic_hypotheses(direct_candidates)
+                )
+                candidates.extend(direct_candidates)
+                conditional_mask_candidate_count += len(direct_candidates)
+                conditional_mask_diagnostics = {
+                    "algorithm": "hpid-calibrated-conditional-mask-evidence-v1",
+                    "model": conditional_model_name,
+                    "queried_semantics": list(direct_diagnostics.queried_semantics),
+                    "threshold": direct_diagnostics.threshold,
+                    "root_gate": conditional_root_gate,
+                    "minimum_unconfirmed_prior": (args.conditional_mask_minimum_prior),
+                    "candidate_count": len(direct_candidates),
+                    "rejected_empty_count": (direct_diagnostics.rejected_empty_count),
+                    "rejected_geometry_count": (
+                        direct_diagnostics.rejected_geometry_count
+                    ),
+                    "rejected_large_unconfirmed_count": (large_unconfirmed_rejections),
+                    "rejected_weak_unconfirmed_geometry_count": (
+                        weak_unconfirmed_geometry_rejections
+                    ),
+                    "rejected_weak_unconfirmed_prior_count": (
+                        weak_unconfirmed_prior_rejections
+                    ),
+                    "rejected_correlated_semantic_count": len(
+                        duplicate_suppression_rows
+                    ),
+                    "correlated_semantic_suppressions": list(
+                        duplicate_suppression_rows
+                    ),
+                    "ground_truth_used": False,
+                }
+            elif args.conditional_direct_masks:
+                conditional_mask_diagnostics = {
+                    "algorithm": "hpid-calibrated-conditional-mask-evidence-v1",
+                    "model": conditional_model_name,
+                    "skipped": True,
+                    "skip_reason": conditional_root_gate["reason"],
+                    "root_gate": conditional_root_gate,
+                    "candidate_count": 0,
+                    "ground_truth_used": False,
+                }
             retrieval_runs.append(
                 {
                     "root_key": plan.root_key,
@@ -1735,8 +2402,14 @@ def command_auto(args: argparse.Namespace) -> int:
                     "prompt_count": len(prompt_specs),
                     "model_runs": model_rows,
                     "reranking": rerank_diagnostics,
+                    "conditional_masks": conditional_mask_diagnostics,
                 }
             )
+        if conditional_dense_proposer is not None and not conditional_dense_is_shared:
+            conditional_dense_proposer.model.to("cpu")
+            del conditional_dense_proposer
+            if device.startswith("cuda"):
+                torch.cuda.empty_cache()
         retrieval_diagnostics = {
             **retrieval_result.diagnostics,
             "supported_domains": sorted(retrieval_supported_domains),
@@ -1745,6 +2418,7 @@ def command_auto(args: argparse.Namespace) -> int:
             "automatic_asset_router": asset_router_diagnostics,
             "domain_corrections": domain_corrections,
             "retrieved_candidate_count": retrieval_candidate_count,
+            "conditional_mask_candidate_count": conditional_mask_candidate_count,
             "candidate_generation_runs": retrieval_runs,
         }
     guided_diagnostics: dict[str, object] | None = None
@@ -1809,24 +2483,34 @@ def command_auto(args: argparse.Namespace) -> int:
             points_per_crop=args.visual_points_per_crop,
             crops_n_layers=args.visual_crop_layers,
             crop_n_points_downscale_factor=args.visual_crop_downscale,
-            use_isolated_root_crops=scene_mode,
+            use_isolated_root_crops=(scene_mode or args.root_mode == "primary"),
         )
         appearance_supplement = None
         if proposal_first_proposals is not None:
+            adaptive_proposals, adaptive_root_scan_diagnostics = (
+                proposal_first_backend.augment_with_isolated_root_crops(
+                    image,
+                    proposal_first_proposals,
+                    visual_roots,
+                    maximum_roots=(1 if args.root_mode == "primary" else 0),
+                )
+            )
             visual_regions = visual_region_candidates_from_masks(
-                list(proposal_first_proposals),
+                adaptive_proposals,
                 visual_roots,
                 candidates,
                 config=visual_config,
                 source=(
-                    f"sam2-amg[{generator.config.segmentation_model}]"
-                    "/proposal-first"
+                    f"sam2-amg[{generator.config.segmentation_model}]/proposal-first"
                 ),
             )
             visual_region_base_diagnostics = {
                 **visual_regions.diagnostics,
                 "proposal_first_reuse": proposal_first_diagnostics,
-                "model_rerun_count": 0,
+                "adaptive_root_scan": adaptive_root_scan_diagnostics,
+                "model_rerun_count": int(
+                    adaptive_root_scan_diagnostics["isolated_root_crop_count"]
+                ),
             }
         else:
             visual_backend = Sam2AutomaticMaskBackend(
@@ -1906,20 +2590,43 @@ def command_auto(args: argparse.Namespace) -> int:
             for plan in (prototype_result.plans if prototype_result is not None else ())
             if plan.accepted and plan.part_priors
         }
-        semantic_rerank = rerank_visual_candidates(
-            image,
-            visual_candidates,
-            visual_roots,
-            candidates,
-            {domain.name: domain for domain in prompt_bank.domains},
-            getattr(generator, "dense_proposer", None),
-            config=(
-                VisualSemanticConfig(minimum_probability=0.12)
-                if additional_models
-                else None
-            ),
-            semantic_constraints=prototype_semantic_constraints,
-        )
+        semantic_ranker = getattr(generator, "dense_proposer", None)
+        embedding_region_encoder: Siglip2AssetEncoder | None = None
+        if args.region_semantic_model.strip():
+            generator.release_grounding_model()
+            embedding_region_encoder = Siglip2AssetEncoder(
+                args.region_semantic_model.strip(),
+                device=device,
+                local_files_only=args.local_files_only,
+                batch_size=args.region_semantic_batch_size,
+            )
+            embedding_ranker = EmbeddingRegionLabelRanker(embedding_region_encoder)
+            semantic_ranker = (
+                ConsensusRegionLabelRanker(semantic_ranker, embedding_ranker)
+                if args.region_semantic_consensus and semantic_ranker is not None
+                else embedding_ranker
+            )
+        try:
+            semantic_rerank = rerank_visual_candidates(
+                image,
+                visual_candidates,
+                visual_roots,
+                candidates,
+                {domain.name: domain for domain in prompt_bank.domains},
+                semantic_ranker,
+                config=(
+                    VisualSemanticConfig(minimum_probability=0.12)
+                    if additional_models
+                    else None
+                ),
+                semantic_constraints=prototype_semantic_constraints,
+            )
+        finally:
+            if embedding_region_encoder is not None:
+                embedding_region_encoder.release()
+                del embedding_region_encoder
+                if device.startswith("cuda"):
+                    torch.cuda.empty_cache()
         visual_candidates = list(semantic_rerank.candidates)
         structural_fusion_diagnostics: dict[str, object] | None = None
         if not args.no_structural_fusion:
@@ -1958,10 +2665,7 @@ def command_auto(args: argparse.Namespace) -> int:
         )
         domains_by_name = {domain.name: domain for domain in prompt_bank.domains}
         root_audit_query_count = 0
-        if (
-            args.root_mode in {"primary", "scene"}
-            and args.vlm_maximum_root_audits > 0
-        ):
+        if args.root_mode in {"primary", "scene"} and args.vlm_maximum_root_audits > 0:
             audit_roots = _routed_roots(candidates, routed.diagnostics, args.root_mode)
             root_auditor = SceneRootAuditor(
                 vlm_planner,
@@ -2012,10 +2716,7 @@ def command_auto(args: argparse.Namespace) -> int:
             args.vlm_maximum_total_queries - root_audit_query_count,
         )
         semantic_audit_query_count = 0
-        if (
-            args.vlm_maximum_semantic_audits > 0
-            and remaining_after_root_audit > 0
-        ):
+        if args.vlm_maximum_semantic_audits > 0 and remaining_after_root_audit > 0:
             semantic_roots = _routed_roots(
                 candidates, routed.diagnostics, args.root_mode
             )
@@ -2035,9 +2736,7 @@ def command_auto(args: argparse.Namespace) -> int:
                 domains_by_name,
             )
             candidates = list(semantic_audit.candidates)
-            semantic_audit_query_count = int(
-                semantic_audit.diagnostics["query_count"]
-            )
+            semantic_audit_query_count = int(semantic_audit.diagnostics["query_count"])
             vlm_semantic_audit_diagnostics = semantic_audit.diagnostics
         remaining_after_semantic_audit = max(
             0,
@@ -2085,9 +2784,7 @@ def command_auto(args: argparse.Namespace) -> int:
                 use_batched_region_label_queries=True,
                 use_box_planner_queries=args.vlm_box_planner,
                 use_per_semantic_queries=args.vlm_query_mode == "per-semantic",
-                query_established_semantics=(
-                    args.vlm_query_established_semantics
-                ),
+                query_established_semantics=(args.vlm_query_established_semantics),
                 allow_direct_sam_regions=args.vlm_allow_direct_sam_regions,
                 use_dynamic_inventory=args.vlm_dynamic_inventory,
             ),
@@ -2113,13 +2810,9 @@ def command_auto(args: argparse.Namespace) -> int:
         vlm_part_diagnostics = {
             **vlm_run.diagnostics,
             "object_identity_application": profile_correction.diagnostics,
-            "planner_query_budget_before_root_audit": (
-                args.vlm_maximum_total_queries
-            ),
+            "planner_query_budget_before_root_audit": (args.vlm_maximum_total_queries),
             "root_audit_query_count": root_audit_query_count,
-            "semantic_candidate_audit_query_count": (
-                semantic_audit_query_count
-            ),
+            "semantic_candidate_audit_query_count": (semantic_audit_query_count),
             "physicality_audit_query_count": physicality_audit_query_count,
             "remaining_part_query_budget": remaining_vlm_queries,
             "combined_planner_query_count": (
@@ -2150,7 +2843,7 @@ def command_auto(args: argparse.Namespace) -> int:
             image,
             candidates,
             config=MaskRefinementConfig(
-                grabcut_iterations=args.grabcut_iterations,
+                grabcut_iterations=effective_grabcut_iterations,
                 maximum_grabcut_candidates=args.maximum_grabcut_candidates,
             ),
         )
@@ -2160,6 +2853,9 @@ def command_auto(args: argparse.Namespace) -> int:
     root_cleanup = clean_primary_roots(
         candidates,
         cleanup_roots,
+        competing_roots=(
+            initial_root_hypotheses if args.root_mode == "primary" else ()
+        ),
         target_point_xy=(
             tuple(float(value) for value in args.target_point)
             if args.target_point is not None
@@ -2219,7 +2915,7 @@ def command_auto(args: argparse.Namespace) -> int:
                 image,
                 relational_candidates,
                 config=MaskRefinementConfig(
-                    grabcut_iterations=args.grabcut_iterations,
+                    grabcut_iterations=effective_grabcut_iterations,
                     maximum_grabcut_candidates=args.maximum_grabcut_candidates,
                 ),
             )
@@ -2261,9 +2957,7 @@ def command_auto(args: argparse.Namespace) -> int:
         records,
         candidates=fused.accepted_candidates,
         image=image,
-        provisional_scene_labels=(
-            scene_mode and args.no_ontology_scene_consensus
-        ),
+        provisional_scene_labels=(scene_mode and args.no_ontology_scene_consensus),
     )
     records = list(physical_groups.records)
     finish_stage("root_cleanup_and_physical_fusion")
@@ -2543,6 +3237,15 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     auto_parser.add_argument(
+        "--prompt-root-model",
+        default="",
+        help=(
+            "Optional second GroundingDINO checkpoint used only to locate an "
+            "explicitly prompted root; child-part queries stay on the primary "
+            "model."
+        ),
+    )
+    auto_parser.add_argument(
         "--segmentation-model",
         default="facebook/sam2.1-hiera-tiny",
         help="Hugging Face SAM2 model used to turn boxes into masks.",
@@ -2559,6 +3262,59 @@ def build_parser() -> argparse.ArgumentParser:
         "--dense-semantic-fallback",
         action="store_true",
         help="Use CLIPSeg heatmaps to recover detail IDs missed by box grounding.",
+    )
+    auto_parser.add_argument(
+        "--conditional-direct-masks",
+        action="store_true",
+        help=(
+            "Add calibrated masks from a train-only conditional part checkpoint "
+            "as semantic evidence before structural and ownership fusion."
+        ),
+    )
+    auto_parser.add_argument(
+        "--conditional-part-model",
+        default="",
+        help=(
+            "Optional calibrated conditional-part checkpoint used only for "
+            "direct semantic masks. The general dense model remains unchanged."
+        ),
+    )
+    auto_parser.add_argument("--conditional-mask-phrases", type=int, default=2)
+    auto_parser.add_argument("--conditional-mask-batch-size", type=int, default=8)
+    auto_parser.add_argument(
+        "--conditional-mask-minimum-geometry",
+        type=float,
+        default=0.16,
+    )
+    auto_parser.add_argument(
+        "--conditional-mask-minimum-prior",
+        type=float,
+        default=0.25,
+        help=(
+            "Minimum train-only retrieval prior for an uncorroborated direct "
+            "semantic mask. Cross-source-confirmed masks are exempt."
+        ),
+    )
+    auto_parser.add_argument(
+        "--region-semantic-model",
+        default="",
+        help=(
+            "Optional SigLIP 2 model used to verify the semantic identity of "
+            "SAM2 regions. CLIPSeg remains responsible for dense proposals."
+        ),
+    )
+    auto_parser.add_argument(
+        "--region-semantic-batch-size",
+        type=int,
+        default=12,
+    )
+    auto_parser.add_argument(
+        "--region-semantic-consensus",
+        action="store_true",
+        help=(
+            "Use CLIPSeg nomination followed by independent SigLIP 2 semantic "
+            "verification instead of replacing the nomination model."
+        ),
     )
     auto_parser.add_argument(
         "--semantic-part-multimask",

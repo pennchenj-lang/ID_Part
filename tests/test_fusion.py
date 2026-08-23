@@ -8,6 +8,7 @@ from hpid_split.fusion import (
     _hierarchical_part_ids,
     _is_identity_visibility_sliver,
     fuse_candidates,
+    suppress_correlated_semantic_hypotheses,
     taxonomy_from_candidates,
 )
 
@@ -17,6 +18,129 @@ def _mask(shape: tuple[int, int], box: tuple[int, int, int, int]) -> np.ndarray:
     x0, y0, x1, y1 = box
     output[y0:y1, x0:x1] = True
     return output
+
+
+def _conditional_candidate(
+    semantic_name: str,
+    semantic_parent: str,
+    mask: np.ndarray,
+    score: float,
+    *,
+    geometry: float,
+    confirmed: bool,
+    corroboration: float = 0.0,
+) -> MaskCandidate:
+    return MaskCandidate(
+        semantic_name,
+        semantic_parent,
+        mask,
+        score,
+        "conditional-part/model",
+        source_reliability=0.86,
+        metadata={
+            "root_origin": "root-model",
+            "root_index": 0,
+            "retrieval_geometry_compatibility": geometry,
+            "cross_source_confirmed": confirmed,
+            "cross_source_best_iou": corroboration,
+        },
+    )
+
+
+def test_correlated_semantic_suppression_keeps_stronger_physical_label() -> None:
+    shape = (64, 64)
+    broad = _mask(shape, (12, 18, 48, 42))
+    alternate = _mask(shape, (14, 18, 49, 43))
+    candidates = [
+        _conditional_candidate(
+            "vehicle_head_tube",
+            "vehicle_frame",
+            broad,
+            0.65,
+            geometry=0.38,
+            confirmed=True,
+            corroboration=0.69,
+        ),
+        _conditional_candidate(
+            "vehicle_handlebar",
+            "vehicle_frame",
+            alternate,
+            0.80,
+            geometry=0.62,
+            confirmed=True,
+            corroboration=0.42,
+        ),
+    ]
+
+    kept, rows = suppress_correlated_semantic_hypotheses(candidates)
+
+    assert [candidate.semantic_name for candidate in kept] == ["vehicle_handlebar"]
+    assert rows[0]["dropped_semantic"] == "vehicle_head_tube"
+
+
+def test_correlated_semantic_suppression_preserves_true_nested_part() -> None:
+    shape = (80, 80)
+    housing = _mask(shape, (8, 8, 72, 72))
+    screen = _mask(shape, (24, 24, 56, 50))
+    candidates = [
+        _conditional_candidate(
+            "device_housing",
+            "device_body",
+            housing,
+            0.82,
+            geometry=0.80,
+            confirmed=True,
+            corroboration=0.55,
+        ),
+        _conditional_candidate(
+            "device_screen",
+            "device_housing",
+            screen,
+            0.78,
+            geometry=0.84,
+            confirmed=True,
+            corroboration=0.48,
+        ),
+    ]
+
+    kept, rows = suppress_correlated_semantic_hypotheses(candidates)
+
+    assert {candidate.semantic_name for candidate in kept} == {
+        "device_housing",
+        "device_screen",
+    }
+    assert rows == ()
+
+
+def test_correlated_semantic_suppression_rejects_unlocalized_child() -> None:
+    shape = (72, 72)
+    parent = _mask(shape, (12, 18, 58, 56))
+    child = _mask(shape, (10, 16, 60, 58))
+    candidates = [
+        _conditional_candidate(
+            "tool_prop_brush",
+            "tool_prop_shaft",
+            parent,
+            0.91,
+            geometry=0.81,
+            confirmed=True,
+            corroboration=0.76,
+        ),
+        _conditional_candidate(
+            "tool_prop_lower_bristles",
+            "tool_prop_brush",
+            child,
+            0.74,
+            geometry=0.63,
+            confirmed=True,
+            corroboration=0.66,
+        ),
+    ]
+
+    kept, rows = suppress_correlated_semantic_hypotheses(candidates)
+
+    assert [candidate.semantic_name for candidate in kept] == ["tool_prop_brush"]
+    assert rows[0]["dropped_semantic"] == "tool_prop_lower_bristles"
 
 
 def test_fusion_has_no_ground_truth_argument() -> None:

@@ -87,6 +87,20 @@ def _default_asset_router_index() -> Path | None:
 DEFAULT_ASSET_ROUTER_INDEX = _default_asset_router_index()
 
 
+def _default_conditional_part_model() -> Path | None:
+    configured = _optional_path_from_environment("HPID_CONDITIONAL_PART_MODEL")
+    if configured is not None:
+        return configured
+    for model_root in _runtime_model_roots():
+        candidate = model_root / "hpid_conditional_parts_v1" / "model"
+        if candidate.is_dir() and (candidate / "config.json").is_file():
+            return candidate
+    return None
+
+
+DEFAULT_CONDITIONAL_PART_MODEL = _default_conditional_part_model()
+
+
 def _default_vlm_model() -> Path | None:
     configured = _optional_path_from_environment("HPID_VLM_MODEL")
     if configured is not None:
@@ -179,6 +193,7 @@ def _build_auto_command(
     completion_config: Path = DEFAULT_COMPLETION_CONFIG,
     retrieval_index: Path = DEFAULT_RETRIEVAL_INDEX,
     asset_router_index: Path | None = DEFAULT_ASSET_ROUTER_INDEX,
+    conditional_part_model: Path | None = DEFAULT_CONDITIONAL_PART_MODEL,
     dense_semantic_model: str = DEFAULT_DENSE_SEMANTIC_MODEL,
     vlm_model: Path | None = DEFAULT_VLM_MODEL,
     vlm_load_in_4bit: bool = DEFAULT_VLM_4BIT,
@@ -260,13 +275,35 @@ def _build_auto_command(
         command.extend(["--decomposition-mode", "automatic"])
         if asset_router_index is not None and asset_router_index.is_dir():
             command.extend(["--asset-router-index", str(asset_router_index)])
-        if (
-            quality == "Ensemble"
-            and heavy_ensemble
-            and scope == "Primary asset"
-            and retrieval_index.is_file()
-        ):
+        retrieval_available = bool(
+            retrieval_index.is_file()
+            or (
+                retrieval_index.is_dir()
+                and (retrieval_index / "index.json").is_file()
+            )
+        )
+        if scope == "Primary asset" and retrieval_available:
             command.extend(["--retrieval-index", str(retrieval_index)])
+            if (
+                conditional_part_model is not None
+                and conditional_part_model.is_dir()
+                and (conditional_part_model / "config.json").is_file()
+            ):
+                command.extend(
+                    [
+                        "--conditional-direct-masks",
+                        "--conditional-part-model",
+                        str(conditional_part_model),
+                        "--conditional-mask-phrases",
+                        "2",
+                        "--conditional-mask-batch-size",
+                        "8",
+                        "--conditional-mask-minimum-geometry",
+                        "0.16",
+                        "--conditional-mask-minimum-prior",
+                        "0.25",
+                    ]
+                )
     elif decomposition_mode == "Prompt-guided":
         if not part_prompts.strip():
             raise ValueError("Enter at least one part prompt.")

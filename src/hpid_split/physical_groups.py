@@ -81,6 +81,26 @@ _OPEN_SET_PHYSICAL_DOMAINS = {
     "vehicle",
 }
 _PROFILE_PRIMARY_SURFACE_TOKENS = {"sphere", "shell", "canopy", "jar"}
+_ROUND_PART_TOKENS = {"wheel", "tire", "rim", "dial", "knob", "lens"}
+_SLENDER_PART_TOKENS = {
+    "antenna",
+    "barrel",
+    "fork",
+    "mast",
+    "pole",
+    "spoke",
+    "stem",
+}
+_INTERNAL_PART_TOKENS = {"hole", "inner", "inside", "lining", "opening"}
+_OPEN_INTERIOR_PROFILES = {"drinkware", "flatware", "open_container"}
+_DISCRETE_REPEATED_PART_TOKENS = {
+    "boulder",
+    "rim",
+    "rock",
+    "tire",
+    "tree",
+    "wheel",
+}
 
 
 def _words(value: str) -> set[str]:
@@ -232,8 +252,139 @@ def _selected_profile(candidates: tuple[MaskCandidate, ...]) -> str | None:
     return next(iter(profiles)) if len(profiles) == 1 else None
 
 
+def _mask_shape_descriptor(mask: np.ndarray) -> dict[str, float] | None:
+    """Return scale-free geometry used to reject gross semantic mismatches."""
+
+    region = np.asarray(mask, dtype=bool)
+    area = int(np.count_nonzero(region))
+    if area < 8:
+        return None
+    ys, xs = np.nonzero(region)
+    width = max(1, int(xs.max() - xs.min() + 1))
+    height = max(1, int(ys.max() - ys.min() + 1))
+    points = np.column_stack((xs, ys)).astype(np.float64)
+    covariance = np.cov((points - points.mean(axis=0)).T)
+    eigenvalues = np.maximum(np.linalg.eigvalsh(covariance), 1e-6)
+    elongation = float(np.sqrt(eigenvalues[-1] / eigenvalues[0]))
+    contours, _ = cv2.findContours(
+        region.astype(np.uint8),
+        cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_SIMPLE,
+    )
+    perimeter = float(sum(cv2.arcLength(contour, True) for contour in contours))
+    circularity = float(
+        np.clip(4.0 * np.pi * area / max(1e-6, perimeter * perimeter), 0.0, 1.0)
+    )
+    return {
+        "area_px": float(area),
+        "bbox_fill_ratio": float(area / max(1, width * height)),
+        "aspect_ratio": float(width / max(1, height)),
+        "elongation": elongation,
+        "circularity": circularity,
+        "centroid_x": float(xs.mean()),
+        "centroid_y": float(ys.mean()),
+    }
+
+
+def _semantic_shape_family(semantic_name: str) -> str | None:
+    words = _words(semantic_name)
+    if words & _ROUND_PART_TOKENS:
+        return "round"
+    if words & _SLENDER_PART_TOKENS:
+        return "slender"
+    return None
+
+
+def _shape_family_matches(
+    family: str | None,
+    descriptor: dict[str, float] | None,
+) -> bool:
+    if family is None or descriptor is None:
+        return True
+    if family == "round":
+        return bool(
+            descriptor["elongation"] <= 1.55
+            and descriptor["circularity"] >= 0.30
+            and descriptor["bbox_fill_ratio"] >= 0.42
+        )
+    if family == "slender":
+        return bool(
+            descriptor["elongation"] >= 1.45
+            or descriptor["bbox_fill_ratio"] <= 0.38
+        )
+    return True
+
+
+def _semantic_shape_consistency(
+    candidate: MaskCandidate,
+    root: np.ndarray | None,
+) -> dict[str, object]:
+    """Check semantic size and shape without using appearance to name a part."""
+
+    clipped = np.asarray(candidate.mask, dtype=bool)
+    geometry = None
+    if root is not None and root.shape == clipped.shape and np.any(root):
+        geometry = _mask_geometry_against_root(clipped, root)
+        if geometry is not None:
+            clipped = np.asarray(geometry["mask"], dtype=bool)
+    descriptor = _mask_shape_descriptor(clipped)
+    fraction = float(
+        geometry["root_area_fraction"]
+        if geometry is not None
+        else candidate.metadata.get("root_area_fraction", 0.0)
+    )
+    outer_contact = float(
+        geometry["outer_boundary_contact"] if geometry is not None else 0.0
+    )
+    words = _words(candidate.semantic_name)
+    family = _semantic_shape_family(candidate.semantic_name)
+    profile = str(
+        candidate.metadata.get("selected_part_profile")
+        or candidate.metadata.get("semantic_rerank_profile")
+        or candidate.metadata.get("structural_profile")
+        or ""
+    ).strip()
+    accepted = True
+    reason = "shape_not_contradicted"
+    if words & _INTERNAL_PART_TOKENS:
+        open_interior = profile in _OPEN_INTERIOR_PROFILES
+        if open_interior and (
+            fraction > 0.92 or (fraction > 0.80 and outer_contact > 0.80)
+        ):
+            accepted = False
+            reason = "open_container_inner_consumes_root"
+        elif not open_interior and fraction > 0.45:
+            accepted = False
+            reason = "internal_part_consumes_root"
+        elif (
+            not open_interior
+            and fraction > 0.25
+            and outer_contact > 0.22
+        ):
+            accepted = False
+            reason = "internal_part_follows_outer_silhouette"
+    if (
+        accepted
+        and family == "slender"
+        and fraction >= 0.08
+        and not _shape_family_matches(family, descriptor)
+    ):
+        accepted = False
+        reason = f"{family}_part_shape_contradiction"
+    return {
+        "accepted": accepted,
+        "reason": reason,
+        "shape_family": family,
+        "root_area_fraction": fraction,
+        "outer_boundary_contact": outer_contact,
+        "descriptor": descriptor,
+        "ground_truth_used": False,
+    }
+
+
 def _candidate_three_stage_verification(
     candidate: MaskCandidate,
+    root: np.ndarray | None = None,
 ) -> dict[str, object]:
     """Audit a proposed semantic part without letting appearance name it.
 
@@ -271,6 +422,7 @@ def _candidate_three_stage_verification(
             "grounded-sam",
             "grounding-dino",
             "prototype-retrieval",
+            "conditional-part",
         )
     ) and "semantic-rerank" not in source
     inventory_supported = bool(profile)
@@ -332,31 +484,75 @@ def _candidate_three_stage_verification(
     axis_not_rejected = axis_gate.get("accepted") is not False
     structural_route = bool(metadata.get("structural_fusion"))
     structural_residual = float(metadata.get("structural_axis_residual", 1.0))
+    topology_route = bool(metadata.get("topology_refinement"))
+    topology_diagnostics = metadata.get("topology_diagnostics")
+    topology_diagnostics = (
+        topology_diagnostics if isinstance(topology_diagnostics, dict) else {}
+    )
+    topology_structure = bool(
+        topology_route
+        and axis_not_rejected
+        and 0.005 <= float(metadata.get("root_area_fraction", 0.0)) <= 0.82
+        and (
+            bool(metadata.get("topology_dense_gate"))
+            or topology_diagnostics.get("selected_component") is not None
+        )
+    )
+    physical_gate = metadata.get("physical_region_gate")
+    physical_gate = physical_gate if isinstance(physical_gate, dict) else {}
+    root_area_fraction = float(metadata.get("root_area_fraction", 0.0))
+    semantic_shape = _semantic_shape_consistency(candidate, root)
     shape_structure = bool(
         source.startswith("hpid-shape-bottleneck/")
         and geometric_support >= 0.50
     )
+    strong_closed_boundary = bool(
+        boundary_alignment >= 0.68
+        and boundary_closure >= 0.78
+        and cue_count >= 1
+    )
+    multi_cue_closed_boundary = bool(
+        boundary_alignment >= 0.78
+        and boundary_closure >= 0.62
+        and cue_count >= 2
+    )
+    closed_boundary_structure = bool(
+        0.005 <= root_area_fraction <= 0.55
+        and (strong_closed_boundary or multi_cue_closed_boundary)
+        and shading_penalty <= 0.35
+        and not bool(physical_gate.get("nested_surface_texture"))
+        and not bool(physical_gate.get("laminar_surface_strip"))
+    )
     raw_structure_verified = bool(
         axis_not_rejected
+        and semantic_shape["accepted"]
         and (
             direct_semantic
             or cross_source
             or shape_structure
+            or closed_boundary_structure
             or geometric_support >= 0.55
             or (structural_route and structural_residual <= 0.24)
+            or topology_structure
         )
     )
     raw_structure_reason = (
-        "direct_semantic_mask"
+        str(semantic_shape["reason"])
+        if not semantic_shape["accepted"]
+        else "direct_semantic_mask"
         if direct_semantic
         else "cross_source_structure"
         if cross_source
         else "shape_bottleneck"
         if shape_structure
+        else "closed_boundary_structure"
+        if closed_boundary_structure
         else "boundary_aligned_region"
         if geometric_support >= 0.55
         else "structural_axis_route"
         if structural_route and structural_residual <= 0.24
+        else "inventory_topology_complement"
+        if topology_structure
         else "insufficient_structure"
     )
 
@@ -421,6 +617,9 @@ def _candidate_three_stage_verification(
             "geometric_support": geometric_support,
             "axis_not_rejected": axis_not_rejected,
             "cross_source": cross_source,
+            "closed_boundary_structure": closed_boundary_structure,
+            "root_area_fraction": root_area_fraction,
+            "semantic_shape_consistency": semantic_shape,
         },
         "stage_3_appearance": {
             "order": 3,
@@ -670,6 +869,7 @@ def _phone_structural_masks(
 def _profile_candidate_verification(
     candidates: tuple[MaskCandidate, ...],
     profile: str | None,
+    root: np.ndarray | None = None,
 ) -> tuple[set[str], set[str], list[dict[str, object]]]:
     if profile is None:
         return set(), set(), []
@@ -690,7 +890,7 @@ def _profile_candidate_verification(
         if candidate_profile != profile:
             continue
         proposed.add(candidate.semantic_name)
-        verification = _candidate_three_stage_verification(candidate)
+        verification = _candidate_three_stage_verification(candidate, root)
         if bool(verification["accepted"]):
             accepted.add(candidate.semantic_name)
         rows.append(
@@ -1190,7 +1390,7 @@ def _refine_inventory_boundaries(
     if image is None:
         return fallback, {
             "status": "skipped_no_image",
-            "algorithm": "structure-seeded-lab-watershed-v1",
+            "algorithm": "structure-seeded-lab-watershed-v2",
             "appearance_can_create_ids": False,
             "ground_truth_used": False,
         }
@@ -1206,7 +1406,7 @@ def _refine_inventory_boundaries(
     if rgb.shape[:2] != root_mask.shape or rgb.ndim != 3 or rgb.shape[2] != 3:
         return fallback, {
             "status": "skipped_image_shape_mismatch",
-            "algorithm": "structure-seeded-lab-watershed-v1",
+            "algorithm": "structure-seeded-lab-watershed-v2",
             "appearance_can_create_ids": False,
             "ground_truth_used": False,
         }
@@ -1218,7 +1418,7 @@ def _refine_inventory_boundaries(
     if not np.array_equal(coarse_map > 0, root_mask):
         return fallback, {
             "status": "skipped_incomplete_coarse_partition",
-            "algorithm": "structure-seeded-lab-watershed-v1",
+            "algorithm": "structure-seeded-lab-watershed-v2",
             "appearance_can_create_ids": False,
             "ground_truth_used": False,
         }
@@ -1248,7 +1448,11 @@ def _refine_inventory_boundaries(
     gradient = np.maximum.reduce(channel_gradients)
     root_values = gradient[root_mask]
     reference = float(np.quantile(root_values, 0.90)) if root_values.size else 1.0
-    elevation = np.clip(gradient / max(1.0, reference), 0.0, 2.0)
+    elevation_levels = 4096
+    elevation = np.rint(
+        np.clip(gradient / max(1.0, reference), 0.0, 2.0)
+        * elevation_levels
+    ).astype(np.uint16)
 
     markers = np.zeros(root_mask.shape, dtype=np.int32)
     seed_rows: list[dict[str, object]] = []
@@ -1296,8 +1500,9 @@ def _refine_inventory_boundaries(
     ):
         return fallback, {
             "status": "rejected_unstable_refinement",
-            "algorithm": "structure-seeded-lab-watershed-v1",
+            "algorithm": "structure-seeded-lab-watershed-v2",
             "analysis_scale": analysis_scale,
+            "elevation_quantization_levels": elevation_levels,
             "area_ratios": area_ratios,
             "appearance_can_create_ids": False,
             "ground_truth_used": False,
@@ -1309,14 +1514,271 @@ def _refine_inventory_boundaries(
     }
     return refined, {
         "status": "completed",
-        "algorithm": "structure-seeded-lab-watershed-v1",
+        "algorithm": "structure-seeded-lab-watershed-v2",
         "analysis_scale": analysis_scale,
         "analysis_size": [analysis_width, analysis_height],
+        "elevation_quantization_levels": elevation_levels,
         "seed_rows": seed_rows,
         "area_ratios": area_ratios,
         "reassigned_pixel_count": int(np.count_nonzero(refined_map != coarse_map)),
         "appearance_role": "boundary_alignment_only",
         "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
+def _canonical_profile_group_semantic(
+    semantic_name: str,
+    profile: str,
+) -> str:
+    """Map inventory labels to the physical group exposed by the profile."""
+
+    if profile != "knife":
+        return semantic_name
+    words = _words(semantic_name)
+    if "blade" in words:
+        return "tool_prop_blade"
+    if words & {"wrap", "wrapping", "cloth"}:
+        return "tool_prop_wrap"
+    if words & _KNIFE_HANDLE_TOKENS or semantic_name == "tool_prop":
+        return "tool_prop_handle"
+    return semantic_name
+
+
+def _semantic_seeded_profile_masks(
+    instance_map: np.ndarray,
+    candidates: tuple[MaskCandidate, ...],
+    image: Image.Image | np.ndarray | None,
+    *,
+    profile: str | None,
+) -> tuple[dict[str, np.ndarray] | None, dict[str, object]]:
+    """Complete a physical partition from verified semantic part seeds.
+
+    Semantic evidence determines the allowed IDs. Root-constrained spatial
+    propagation assigns only the still-unowned pixels, and appearance has a
+    low-weight boundary role. It can refine a seam but cannot name or create a
+    part. Repeated-instance slots stay on the normal instance path because one
+    semantic marker must not merge separate wheels, legs, or similar parts.
+    """
+
+    root = instance_map > 0
+    root_area = int(np.count_nonzero(root))
+    if profile is None or root_area < 96:
+        return None, {
+            "status": "inactive",
+            "selected_profile": profile,
+            "ground_truth_used": False,
+        }
+
+    rows: list[dict[str, object]] = []
+    grouped: dict[str, list[MaskCandidate]] = {}
+    repeated_semantics: set[str] = set()
+    for candidate in candidates:
+        if candidate.semantic_name == candidate.semantic_parent or _is_visual_semantic(
+            candidate.semantic_name
+        ):
+            continue
+        candidate_profile = str(
+            candidate.metadata.get("selected_part_profile")
+            or candidate.metadata.get("semantic_rerank_profile")
+            or candidate.metadata.get("structural_profile")
+            or ""
+        ).strip()
+        if candidate_profile != profile or candidate.mask.shape != root.shape:
+            continue
+        verification = _candidate_three_stage_verification(candidate)
+        canonical = _canonical_profile_group_semantic(
+            candidate.semantic_name,
+            profile,
+        )
+        maximum_instances = int(candidate.metadata.get("maximum_instances", 1))
+        if maximum_instances > 1:
+            repeated_semantics.add(canonical)
+        clipped = np.asarray(candidate.mask, dtype=bool) & root
+        containment = float(
+            np.count_nonzero(clipped)
+            / max(1, np.count_nonzero(candidate.mask))
+        )
+        fraction = float(np.count_nonzero(clipped) / root_area)
+        accepted = bool(
+            verification["accepted"]
+            and containment >= 0.80
+            and 0.004 <= fraction <= 0.88
+        )
+        rows.append(
+            {
+                "candidate_key": candidate.metadata.get("candidate_key"),
+                "semantic_name": candidate.semantic_name,
+                "canonical_group": canonical,
+                "maximum_instances": maximum_instances,
+                "root_containment": containment,
+                "root_area_fraction": fraction,
+                "accepted_seed": accepted,
+                "verification": verification,
+            }
+        )
+        if accepted:
+            grouped.setdefault(canonical, []).append(candidate)
+
+    if repeated_semantics:
+        return None, {
+            "status": "repeated_instance_inventory_deferred",
+            "selected_profile": profile,
+            "repeated_semantics": sorted(repeated_semantics),
+            "candidates": rows,
+            "ground_truth_used": False,
+        }
+    if len(grouped) < 2:
+        return None, {
+            "status": "insufficient_verified_macro_seeds",
+            "selected_profile": profile,
+            "verified_group_count": len(grouped),
+            "candidates": rows,
+            "ground_truth_used": False,
+        }
+
+    semantics = tuple(sorted(grouped))
+    seed_masks: dict[str, np.ndarray] = {}
+    seed_confidences: dict[str, float] = {}
+    for semantic in semantics:
+        members = grouped[semantic]
+        seed_masks[semantic] = np.logical_or.reduce(
+            [np.asarray(candidate.mask, dtype=bool) & root for candidate in members]
+        )
+        seed_confidences[semantic] = max(
+            float(candidate.score * candidate.source_reliability)
+            for candidate in members
+        )
+
+    seed_union = np.logical_or.reduce(list(seed_masks.values()))
+    seed_coverage = float(np.count_nonzero(seed_union) / root_area)
+    if seed_coverage < 0.12:
+        return None, {
+            "status": "verified_seed_coverage_too_low",
+            "selected_profile": profile,
+            "seed_coverage": seed_coverage,
+            "candidates": rows,
+            "ground_truth_used": False,
+        }
+
+    lab: np.ndarray | None = None
+    if image is not None:
+        rgb = (
+            np.asarray(image.convert("RGB"), dtype=np.uint8)
+            if isinstance(image, Image.Image)
+            else np.asarray(image, dtype=np.uint8)
+        )
+        if rgb.ndim == 3 and rgb.shape[2] == 4:
+            rgb = rgb[:, :, :3]
+        if rgb.shape[:2] == root.shape and rgb.ndim == 3 and rgb.shape[2] == 3:
+            scale = min(1.0, 640.0 / max(rgb.shape[:2]))
+            width = max(32, round(rgb.shape[1] * scale))
+            height = max(32, round(rgb.shape[0] * scale))
+            reduced = cv2.resize(rgb, (width, height), interpolation=cv2.INTER_AREA)
+            reduced = cv2.bilateralFilter(reduced, 9, 42, 42)
+            smoothed = cv2.resize(
+                reduced,
+                (rgb.shape[1], rgb.shape[0]),
+                interpolation=cv2.INTER_LINEAR,
+            )
+            lab = cv2.cvtColor(smoothed, cv2.COLOR_RGB2LAB).astype(np.float32)
+
+    diagonal = max(1.0, float(np.hypot(*root.shape)))
+    costs: list[np.ndarray] = []
+    for semantic in semantics:
+        seed = seed_masks[semantic]
+        spatial = cv2.distanceTransform(
+            (~seed).astype(np.uint8),
+            cv2.DIST_L2,
+            5,
+        ).astype(np.float32)
+        cost = spatial / diagonal
+        if lab is not None:
+            distance = cv2.distanceTransform(seed.astype(np.uint8), cv2.DIST_L2, 5)
+            core = seed & (distance >= max(1.0, float(distance.max()) * 0.18))
+            if np.count_nonzero(core) < 16:
+                core = seed
+            # Lightness is downweighted so highlights and shadows cannot split
+            # a material. Appearance only breaks geometric ties near a seam.
+            weighted_lab = lab * np.asarray((0.25, 1.0, 1.0), dtype=np.float32)
+            reference = np.median(weighted_lab[core], axis=0)
+            appearance = np.linalg.norm(weighted_lab - reference, axis=2) / 255.0
+            cost = cost + 0.10 * appearance.astype(np.float32)
+        cost = cost + 0.015 * (1.0 - seed_confidences[semantic])
+        costs.append(cost)
+
+    ownership = np.stack(costs, axis=0).argmin(axis=0)
+    # Exclusive verified proposal pixels remain hard semantic seeds.
+    stack = np.stack([seed_masks[name] for name in semantics], axis=0)
+    exclusive_count = stack.sum(axis=0)
+    for index, semantic in enumerate(semantics):
+        ownership[(exclusive_count == 1) & seed_masks[semantic]] = index
+
+    coarse = {
+        semantic: root & (ownership == index)
+        for index, semantic in enumerate(semantics)
+    }
+    refined, boundary_diagnostics = _refine_inventory_boundaries(
+        image,
+        root,
+        coarse,
+    )
+    area_rows: list[dict[str, object]] = []
+    stable = True
+    for semantic in semantics:
+        seed_area = max(1, int(np.count_nonzero(seed_masks[semantic])))
+        final_area = int(np.count_nonzero(refined[semantic]))
+        root_fraction = final_area / root_area
+        seed_retention = final_area / seed_area
+        accepted = bool(
+            final_area >= 24
+            and root_fraction >= 0.008
+            and root_fraction <= 0.95
+            and seed_retention >= 0.55
+        )
+        stable &= accepted
+        area_rows.append(
+            {
+                "semantic_name": semantic,
+                "seed_area_px": seed_area,
+                "final_area_px": final_area,
+                "root_fraction": root_fraction,
+                "seed_retention_ratio": seed_retention,
+                "accepted": accepted,
+            }
+        )
+    complete = np.array_equal(
+        np.logical_or.reduce(list(refined.values())),
+        root,
+    )
+    disjoint = int(np.stack(list(refined.values()), axis=0).sum(axis=0).max()) <= 1
+    if not (stable and complete and disjoint):
+        return None, {
+            "status": "partition_stability_gate_failed",
+            "selected_profile": profile,
+            "seed_coverage": seed_coverage,
+            "complete_root_coverage": complete,
+            "disjoint_ownership": disjoint,
+            "areas": area_rows,
+            "boundary_refinement": boundary_diagnostics,
+            "candidates": rows,
+            "ground_truth_used": False,
+        }
+
+    return refined, {
+        "status": "completed",
+        "algorithm": "hpid-semantic-seeded-physical-ownership-v1",
+        "selected_profile": profile,
+        "evidence_order": ["semantic", "structure", "appearance"],
+        "verified_semantics": list(semantics),
+        "seed_coverage": seed_coverage,
+        "areas": area_rows,
+        "boundary_refinement": boundary_diagnostics,
+        "appearance_role": "boundary_tie_break_and_refinement_only",
+        "appearance_can_create_ids": False,
+        "complete_root_coverage": True,
+        "disjoint_ownership": True,
+        "candidates": rows,
         "ground_truth_used": False,
     }
 
@@ -2340,6 +2802,300 @@ def _group_assignment(
     ):
         return f"{domain}_body", True, "conservative_visual_merge"
     return record.semantic_name, False, "semantic_part"
+
+
+def _repeated_semantic_shape_recovery(
+    instance_map: np.ndarray,
+    records: list[PartInstance] | tuple[PartInstance, ...],
+    candidates: tuple[MaskCandidate, ...],
+    *,
+    profile: str | None,
+    verified_semantics: set[str],
+    rejected_semantics: set[str],
+) -> tuple[dict[str, tuple[str, int, str]], dict[str, object]]:
+    """Recover a mislabeled sibling only from a verified repeated-part prototype."""
+
+    if profile is None or not rejected_semantics:
+        return {}, {"status": "inactive", "ground_truth_used": False}
+    root = instance_map > 0
+    diagonal = max(1.0, float(np.hypot(*root.shape)))
+    prototypes: list[dict[str, object]] = []
+    for candidate in candidates:
+        candidate_profile = str(
+            candidate.metadata.get("selected_part_profile")
+            or candidate.metadata.get("semantic_rerank_profile")
+            or candidate.metadata.get("structural_profile")
+            or ""
+        ).strip()
+        maximum_instances = int(candidate.metadata.get("maximum_instances", 1))
+        family = _semantic_shape_family(candidate.semantic_name)
+        if (
+            candidate_profile != profile
+            or candidate.semantic_name not in verified_semantics
+            or maximum_instances <= 1
+            or family is None
+        ):
+            continue
+        mask = np.asarray(candidate.mask, dtype=bool) & root
+        descriptor = _mask_shape_descriptor(mask)
+        if not _shape_family_matches(family, descriptor):
+            continue
+        prototypes.append(
+            {
+                "semantic_name": candidate.semantic_name,
+                "family": family,
+                "mask": mask,
+                "descriptor": descriptor,
+                "maximum_instances": maximum_instances,
+                "candidate_key": candidate.metadata.get("candidate_key"),
+            }
+        )
+
+    overrides: dict[str, tuple[str, int, str]] = {}
+    rows: list[dict[str, object]] = []
+    for record in records:
+        if record.semantic_name not in rejected_semantics:
+            continue
+        record_mask = instance_map == record.instance_index
+        descriptor = _mask_shape_descriptor(record_mask)
+        source_family = _semantic_shape_family(record.semantic_name)
+        if descriptor is None or _shape_family_matches(source_family, descriptor):
+            continue
+        accepted: list[tuple[float, dict[str, object]]] = []
+        for prototype in prototypes:
+            family = str(prototype["family"])
+            prototype_descriptor = prototype["descriptor"]
+            if (
+                family == source_family
+                or not isinstance(prototype_descriptor, dict)
+                or not _shape_family_matches(family, descriptor)
+            ):
+                continue
+            prototype_mask = np.asarray(prototype["mask"], dtype=bool)
+            overlap = float(
+                np.count_nonzero(record_mask & prototype_mask)
+                / max(1, np.count_nonzero(record_mask))
+            )
+            area_ratio = float(
+                descriptor["area_px"] / max(1.0, prototype_descriptor["area_px"])
+            )
+            centroid_gap = float(
+                np.hypot(
+                    descriptor["centroid_x"] - prototype_descriptor["centroid_x"],
+                    descriptor["centroid_y"] - prototype_descriptor["centroid_y"],
+                )
+                / diagonal
+            )
+            shape_distance = float(
+                abs(
+                    descriptor["elongation"]
+                    - prototype_descriptor["elongation"]
+                )
+                + abs(
+                    descriptor["circularity"]
+                    - prototype_descriptor["circularity"]
+                )
+                + abs(
+                    descriptor["bbox_fill_ratio"]
+                    - prototype_descriptor["bbox_fill_ratio"]
+                )
+            )
+            valid = bool(
+                overlap <= 0.12
+                and 0.45 <= area_ratio <= 2.20
+                and centroid_gap >= 0.08
+                and shape_distance <= 0.72
+            )
+            if valid:
+                score = 1.0 - min(1.0, shape_distance / 0.72)
+                accepted.append((score, prototype))
+        if not accepted:
+            continue
+        score, selected = max(
+            accepted,
+            key=lambda row: (row[0], str(row[1]["semantic_name"])),
+        )
+        semantic_name = str(selected["semantic_name"])
+        overrides[record.part_id] = (
+            semantic_name,
+            record.instance_index,
+            "repeated_semantic_shape_recovery",
+        )
+        rows.append(
+            {
+                "part_id": record.part_id,
+                "rejected_semantic": record.semantic_name,
+                "recovered_semantic": semantic_name,
+                "score": score,
+                "prototype_candidate_key": selected["candidate_key"],
+                "ground_truth_used": False,
+            }
+        )
+    return overrides, {
+        "status": "completed" if rows else "no_recovery",
+        "algorithm": "repeated-semantic-shape-recovery-v1",
+        "recovered_count": len(rows),
+        "rows": rows,
+        "ground_truth_used": False,
+    }
+
+
+def _repeated_semantic_limits(
+    candidates: tuple[MaskCandidate, ...],
+) -> dict[str, int]:
+    limits: dict[str, int] = {}
+    for candidate in candidates:
+        maximum = int(candidate.metadata.get("maximum_instances", 1))
+        if maximum > 1 and not _is_visual_semantic(candidate.semantic_name):
+            limits[candidate.semantic_name] = max(
+                limits.get(candidate.semantic_name, 1),
+                maximum,
+            )
+    return limits
+
+
+def _split_repeated_group_components(
+    group_map: np.ndarray,
+    groups: list[PhysicalGroup] | tuple[PhysicalGroup, ...],
+    candidates: tuple[MaskCandidate, ...],
+) -> tuple[np.ndarray, tuple[PhysicalGroup, ...], dict[str, object]]:
+    """Split only disconnected regions that plausibly denote repeated objects."""
+
+    limits = _repeated_semantic_limits(candidates)
+    if not limits:
+        return group_map, tuple(groups), {
+            "status": "inactive",
+            "ground_truth_used": False,
+        }
+    output = np.zeros_like(group_map)
+    output_groups: list[PhysicalGroup] = []
+    rows: list[dict[str, object]] = []
+    next_index = 1
+    for group in groups:
+        mask = group_map == group.group_index
+        maximum = limits.get(group.semantic_name, 1)
+        words = _words(group.semantic_name)
+        discrete_semantic = bool(words & _DISCRETE_REPEATED_PART_TOKENS)
+        count, labels, stats, _ = cv2.connectedComponentsWithStats(
+            mask.astype(np.uint8), connectivity=8
+        )
+        components = sorted(
+            (
+                (int(stats[index, cv2.CC_STAT_AREA]), index)
+                for index in range(1, count)
+            ),
+            reverse=True,
+        )
+        minimum = max(32, round(max(1, group.area_px) * 0.15))
+        major = [index for area, index in components if area >= minimum][:maximum]
+        major_areas = [
+            int(stats[index, cv2.CC_STAT_AREA]) for index in major
+        ]
+        balanced_components = bool(
+            len(major_areas) >= 2
+            and major_areas[1] / max(1, major_areas[0]) >= 0.25
+        )
+        descriptors = [
+            _mask_shape_descriptor(labels == component_index)
+            for component_index in major
+        ]
+        family = _semantic_shape_family(group.semantic_name)
+        shape_consistent = bool(
+            descriptors
+            and all(
+                descriptor is not None
+                and _shape_family_matches(family, descriptor)
+                for descriptor in descriptors
+            )
+        )
+        diagonal = max(1.0, float(np.hypot(*mask.shape)))
+        centroid_separation = min(
+            (
+                float(
+                    np.hypot(
+                        left["centroid_x"] - right["centroid_x"],
+                        left["centroid_y"] - right["centroid_y"],
+                    )
+                    / diagonal
+                )
+                for left_index, left in enumerate(descriptors)
+                if left is not None
+                for right in descriptors[left_index + 1 :]
+                if right is not None
+            ),
+            default=0.0,
+        )
+        well_separated = centroid_separation >= 0.05
+        if (
+            maximum <= 1
+            or not discrete_semantic
+            or len(major) < 2
+            or not balanced_components
+            or not shape_consistent
+            or not well_separated
+        ):
+            output[mask] = next_index
+            output_groups.append(replace(group, group_index=next_index))
+            next_index += 1
+            continue
+
+        unresolved = mask & ~np.isin(labels, major)
+        ownership_masks = [labels == component_index for component_index in major]
+        if np.any(unresolved):
+            distances = np.stack(
+                [
+                    cv2.distanceTransform((~member).astype(np.uint8), cv2.DIST_L2, 5)
+                    for member in ownership_masks
+                ],
+                axis=0,
+            )
+            nearest = distances.argmin(axis=0)
+            ownership_masks = [
+                member | (unresolved & (nearest == index))
+                for index, member in enumerate(ownership_masks)
+            ]
+        for slot, member in enumerate(ownership_masks, start=1):
+            ys, xs = np.nonzero(member)
+            if len(xs) == 0:
+                continue
+            output[member] = next_index
+            output_groups.append(
+                replace(
+                    group,
+                    group_id=f"{group.group_id}/component_{slot:02d}",
+                    group_index=next_index,
+                    bbox_xyxy=(
+                        int(xs.min()),
+                        int(ys.min()),
+                        int(xs.max() + 1),
+                        int(ys.max() + 1),
+                    ),
+                    centroid_xy=(float(xs.mean()), float(ys.mean())),
+                    area_px=len(xs),
+                    evidence=f"{group.evidence}/disconnected_repeated_instance",
+                )
+            )
+            next_index += 1
+        rows.append(
+            {
+                "source_group_id": group.group_id,
+                "semantic_name": group.semantic_name,
+                "component_count": len(ownership_masks),
+                "maximum_instances": maximum,
+                "second_to_largest_area_ratio": (
+                    major_areas[1] / max(1, major_areas[0])
+                ),
+                "minimum_centroid_separation": centroid_separation,
+                "ground_truth_used": False,
+            }
+        )
+    return output, tuple(output_groups), {
+        "status": "completed" if rows else "no_split",
+        "algorithm": "disconnected-repeated-instance-split-v2",
+        "split_group_count": len(rows),
+        "rows": rows,
+        "ground_truth_used": False,
+    }
 
 
 def _has_independent_part_support(
@@ -3990,7 +4746,11 @@ def build_physical_groups(
         verified_profile_semantics,
         rejected_profile_semantics,
         profile_verification_rows,
-    ) = _profile_candidate_verification(candidate_tuple, selected_profile)
+    ) = _profile_candidate_verification(
+        candidate_tuple,
+        selected_profile,
+        instance_map > 0,
+    )
     knife_inventory = _knife_inventory_active(candidate_tuple)
     promoted_visuals = _promotable_visual_semantics(candidate_tuple)
     profile_group_overrides, profile_grouping_diagnostics = (
@@ -4116,6 +4876,35 @@ def build_physical_groups(
                     },
                 },
             )
+    semantic_partition_masks, semantic_partition_diagnostics = (
+        _semantic_seeded_profile_masks(
+            instance_map,
+            candidate_tuple,
+            image,
+            profile=selected_profile,
+        )
+    )
+    if semantic_partition_masks is not None and asset_ids == {"object_001"}:
+        return _verified_profile_mask_groups(
+            instance_map,
+            records,
+            semantic_partition_masks,
+            profile=selected_profile or "resolved_profile",
+            diagnostics={
+                **semantic_partition_diagnostics,
+                "knife_structural_fallback": knife_structural_diagnostics,
+            },
+        )
+    shape_recovery_overrides, shape_recovery_diagnostics = (
+        _repeated_semantic_shape_recovery(
+            instance_map,
+            records,
+            candidate_tuple,
+            profile=selected_profile,
+            verified_semantics=verified_profile_semantics,
+            rejected_semantics=rejected_profile_semantics,
+        )
+    )
     assignments: dict[tuple[str, str, int | None], list[PartInstance]] = {}
     assignment_meta: dict[tuple[str, str, int | None], tuple[str, str]] = {}
     for record in records:
@@ -4125,18 +4914,20 @@ def build_physical_groups(
             and record.semantic_name in rejected_profile_semantics
             and record.semantic_name not in verified_profile_semantics
         )
-        override = (
-            (
-                f"{_root_domain(record)}_body",
-                None,
-                "three_stage_semantic_rejection_merge",
+        override = shape_recovery_overrides.get(record.part_id)
+        if override is None:
+            override = (
+                (
+                    f"{_root_domain(record)}_body",
+                    None,
+                    "three_stage_semantic_rejection_merge",
+                )
+                if rejected_profile_record
+                else character_group_overrides.get(
+                    record.part_id,
+                    profile_group_overrides.get(record.part_id),
+                )
             )
-            if rejected_profile_record
-            else character_group_overrides.get(
-                record.part_id,
-                profile_group_overrides.get(record.part_id),
-            )
-        )
         if override is not None:
             semantic, unique_index, evidence = override
         else:
@@ -4220,6 +5011,13 @@ def build_physical_groups(
         instance_map,
         records,
     )
+    group_map, cleaned_groups, repeated_split_diagnostics = (
+        _split_repeated_group_components(
+            group_map,
+            cleaned_groups,
+            candidate_tuple,
+        )
+    )
     cleaned_groups, updated_records, membership_diagnostics = (
         _rebind_group_memberships(
             group_map,
@@ -4267,6 +5065,11 @@ def build_physical_groups(
             "promoted_visual_region_count": len(promoted_visuals),
             "promoted_visual_regions": promoted_visuals,
             "profile_semantic_grouping": profile_grouping_diagnostics,
+            "semantic_seeded_physical_ownership": (
+                semantic_partition_diagnostics
+            ),
+            "repeated_semantic_shape_recovery": shape_recovery_diagnostics,
+            "repeated_instance_component_split": repeated_split_diagnostics,
             "three_stage_candidate_verification": {
                 "algorithm": (
                     "hpid-semantic-structure-appearance-verification-v1"

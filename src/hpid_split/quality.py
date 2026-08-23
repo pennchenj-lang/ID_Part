@@ -261,15 +261,51 @@ def assess_product_quality(
     global_asset_route = _mapping(
         _mapping(diagnostics.get("global_asset_proposal")).get("route")
     )
+    global_route_domain = str(global_asset_route.get("asset_domain", "")).strip()
+    initial_selected_domain = str(
+        initial_root_routing.get("selected_semantic", "")
+    ).strip()
+    global_asset_root_conflict = bool(
+        not point_requested
+        and bool(global_asset_route.get("accepted", False))
+        and global_route_domain
+        and initial_selected_domain
+        and global_route_domain != initial_selected_domain
+    )
     selected_root_scores = [
         row
         for row in _rows(root_routing.get("root_scores"))
         if bool(row.get("selected", False))
     ]
+    global_route_profile = str(global_asset_route.get("asset_profile", "")).strip()
+    selected_root_profiles = {
+        str(row.get("selected_part_profile", "")).strip()
+        for row in selected_root_scores
+        if str(row.get("selected_part_profile", "")).strip()
+    }
+    global_asset_profile_conflict = bool(
+        not point_requested
+        and bool(global_asset_route.get("accepted", False))
+        and str(global_asset_route.get("reason", "")) == "accepted_exact_label"
+        and global_route_profile
+        and len(selected_root_scores) == 1
+        and selected_root_profiles
+        and global_route_profile not in selected_root_profiles
+    )
+    global_asset_local_route_conflict = False
     weak_cross_view_consensus_count = 0
     for row in routing_rows:
         consensus = _mapping(row.get("cross_view_consensus"))
         crop_route = _mapping(row.get("root_crop_asset_route"))
+        if (
+            not point_requested
+            and bool(global_asset_route.get("accepted", False))
+            and str(global_asset_route.get("reason", "")) == "accepted_exact_label"
+            and bool(crop_route.get("accepted", False))
+            and str(crop_route.get("reason", "")) == "accepted_exact_label"
+            and str(consensus.get("status", "")) == "cross_view_label_conflict"
+        ):
+            global_asset_local_route_conflict = True
         if (
             bool(consensus.get("accepted", False))
             and not bool(global_asset_route.get("accepted", False))
@@ -307,6 +343,12 @@ def assess_product_quality(
             and child_count == 0
             and part_count == 1
         )
+    coherent_wrong_target_risk = bool(
+        coherent_wrong_target_risk
+        or global_asset_root_conflict
+        or global_asset_profile_conflict
+        or global_asset_local_route_conflict
+    )
     profile_resolution = _mapping(diagnostics.get("profile_root_resolution"))
     profile_consensus = _mapping(profile_resolution.get("profile_consensus"))
     accepted_profile_rows = [
@@ -346,8 +388,12 @@ def assess_product_quality(
         root_routing.get("mode") == "primary"
         and confirmed_profiles
         and root_count == 1
-        and child_count >= 3
-        and root_residual_ratio > 0.55
+        and (
+            child_count >= 3
+            and root_residual_ratio > 0.55
+            or child_count >= 1
+            and root_residual_ratio > 0.85
+        )
     )
     root_domain_evidence = {
         str(row.get("root_key", "")): (
@@ -403,7 +449,14 @@ def assess_product_quality(
         review_reasons.append("weak_root_mask_evidence")
         recommended_actions.append("inspect_root_mask_or_select_target_point")
     if coherent_wrong_target_risk:
-        review_reasons.append("coherent_wrong_target_risk")
+        if global_asset_root_conflict:
+            review_reasons.append("global_asset_root_conflict")
+        elif global_asset_profile_conflict:
+            review_reasons.append("global_asset_profile_conflict")
+        elif global_asset_local_route_conflict:
+            review_reasons.append("global_asset_local_route_conflict")
+        else:
+            review_reasons.append("coherent_wrong_target_risk")
         recommended_actions.append("select_target_point")
     if missing_parent_count:
         review_reasons.append("missing_assembly_parent")
@@ -483,6 +536,11 @@ def assess_product_quality(
             "close_physical_target_ambiguity": close_physical_target_ambiguity,
             "heterogeneous_target_ambiguity": heterogeneous_target_ambiguity,
             "coherent_wrong_target_risk": coherent_wrong_target_risk,
+            "global_asset_root_conflict": global_asset_root_conflict,
+            "global_asset_profile_conflict": global_asset_profile_conflict,
+            "global_asset_local_route_conflict": (
+                global_asset_local_route_conflict
+            ),
             "target_point_requested": point_requested,
             "physical_group_count": len(groups),
             "salience_tie_candidate_count": salience_ties,

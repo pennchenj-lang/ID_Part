@@ -1185,6 +1185,102 @@ def test_within_root_consensus_reassigns_capacity_exhausted_confusion() -> None:
     )
 
 
+def test_within_root_consensus_propagates_verified_repeated_macro_part() -> None:
+    original_root = _root()
+    root = replace(
+        original_root,
+        prompt="wheeled device",
+        metadata={
+            **original_root.metadata,
+            "selected_part_profile": "rolling_device",
+        },
+    )
+    parts = (
+        PartPrompt(
+            "device_wheel",
+            ("wheel",),
+            semantic_parent="device",
+            maximum_parent_fraction=0.35,
+            maximum_instances=8,
+        ),
+        PartPrompt(
+            "device_tire",
+            ("tire",),
+            semantic_parent="device_wheel",
+            maximum_parent_fraction=0.35,
+            maximum_instances=8,
+        ),
+    )
+    domain = DomainPrompt(
+        name="device",
+        root_prompts=("wheeled device",),
+        parts=parts,
+        part_profiles=(
+            PartProfile(
+                "rolling_device",
+                ("wheeled device",),
+                tuple(part.semantic_name for part in parts),
+            ),
+        ),
+    )
+    first = _visual(
+        "root:1/visual-region:01",
+        _mask(20, 50, 10, 40),
+        kind="panel",
+        fraction=0.11,
+    )
+    second = _visual(
+        "root:1/visual-region:02",
+        _mask(55, 85, 60, 90),
+        kind="panel",
+        fraction=0.11,
+    )
+    physical_evidence = {
+        "independent_cue_count": 3,
+        "boundary_closure": 0.82,
+        "shading_only_penalty": 0.08,
+        "boundary_alignment": 0.84,
+        "multi_view_confirmed": True,
+    }
+    first = replace(
+        first,
+        metadata={**first.metadata, "appearance_graph_evidence": physical_evidence},
+    )
+    second = replace(
+        second,
+        metadata={**second.metadata, "appearance_graph_evidence": physical_evidence},
+    )
+    result = rerank_visual_candidates(
+        Image.new("RGB", (100, 100), "white"),
+        [first, second],
+        [root],
+        [root],
+        {"device": domain},
+        _Ranker(
+            {
+                "root:1/visual-region:01": {
+                    "device_wheel": (0.62, 0.80),
+                    "device_tire": (0.20, 0.20),
+                },
+                "root:1/visual-region:02": {
+                    "device_tire": (0.411, 0.13),
+                    "device_wheel": (0.410, 0.12),
+                },
+            }
+        ),
+        config=VisualSemanticConfig(uniform_probability_multiplier=0.32),
+    )
+
+    assert [candidate.semantic_name for candidate in result.candidates] == [
+        "device_wheel",
+        "device_wheel",
+    ]
+    assert result.candidates[1].metadata["semantic_repetition_kind"] == (
+        "macro_component"
+    )
+    assert result.diagnostics["within_root_repetition_consensus_count"] == 1
+
+
 def test_repeated_instance_consensus_rescues_near_threshold_part() -> None:
     roots = []
     visuals = []

@@ -65,6 +65,35 @@ class AssetDomainResolution:
 
 
 @dataclass(frozen=True)
+class FullImageDomainPrior:
+    """Auditable broad-domain evidence from the uncropped source image."""
+
+    accepted: bool
+    domain: str | None
+    score: float
+    margin: float
+    support_count: int
+    candidate_count: int
+    support_ratio: float
+    exact_label_accepted: bool
+    reason: str
+
+
+@dataclass(frozen=True)
+class ExplicitAssetPromptResolution:
+    """Taxonomy route obtained only from an explicit user asset prompt."""
+
+    accepted: bool
+    asset_label: str | None
+    asset_domain: str | None
+    asset_profile: str | None
+    matched_alias: str | None
+    score: float
+    alternatives: tuple[dict[str, object], ...]
+    reason: str
+
+
+@dataclass(frozen=True)
 class AssetRouterConfig:
     prototype_weight: float = 0.20
     text_weight: float = 0.80
@@ -80,6 +109,9 @@ class AssetRouterConfig:
     minimum_domain_vote_margin: int = 1
     maximum_current_domain_score_gap: float = 0.020
     maximum_cross_view_label_score_gap: float = 0.015
+    minimum_full_image_domain_score: float = 0.220
+    minimum_full_image_domain_margin: float = 0.015
+    minimum_full_image_domain_support_ratio: float = 0.80
 
 
 class ImageTextEncoder(Protocol):
@@ -156,6 +188,131 @@ def _label_prompts(label: str, aliases: Sequence[str]) -> tuple[str, ...]:
             )
         )
     return tuple(dict.fromkeys(prompts))
+
+
+def _normalize_asset_phrase(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
+
+
+def _contains_asset_phrase(container: str, phrase: str) -> bool:
+    container_tokens = container.split()
+    phrase_tokens = phrase.split()
+    if not container_tokens or not phrase_tokens:
+        return False
+    width = len(phrase_tokens)
+    return any(
+        container_tokens[index : index + width] == phrase_tokens
+        for index in range(len(container_tokens) - width + 1)
+    )
+
+
+def resolve_explicit_asset_prompt(
+    index: AssetRoutingIndex,
+    asset_prompt: str,
+) -> ExplicitAssetPromptResolution:
+    """Resolve a user-supplied object name through exact token boundaries.
+
+    This route is deliberately lexical rather than visual: an explicit target
+    such as ``scarf`` may constrain the object inventory, while the image models
+    remain responsible for locating its pixels. Substrings inside another word
+    (for example ``car`` inside ``scarf``) never count as evidence.
+    """
+
+    normalized_prompt = _normalize_asset_phrase(asset_prompt)
+    if not normalized_prompt:
+        return ExplicitAssetPromptResolution(
+            False, None, None, None, None, 0.0, (), "empty_asset_prompt"
+        )
+    rows: list[dict[str, object]] = []
+    for label in index.labels:
+        metadata = index.label_metadata[label]
+        aliases = tuple(
+            dict.fromkeys(
+                str(value)
+                for value in (label, *metadata.get("aliases", ()))
+                if str(value).strip()
+            )
+        )
+        best: tuple[float, str, str] | None = None
+        for alias in aliases:
+            normalized_alias = _normalize_asset_phrase(alias)
+            if not normalized_alias:
+                continue
+            if normalized_prompt == normalized_alias:
+                candidate = (1.0, "exact_alias", alias)
+            elif _contains_asset_phrase(normalized_prompt, normalized_alias):
+                coverage = len(normalized_alias.split()) / max(
+                    1, len(normalized_prompt.split())
+                )
+                candidate = (0.84 + 0.08 * coverage, "contained_alias", alias)
+            else:
+                continue
+            if best is None or candidate[0] > best[0]:
+                best = candidate
+        if best is None:
+            continue
+        rows.append(
+            {
+                "asset_label": label,
+                "asset_domain": str(metadata.get("asset_domain", "")),
+                "asset_profile": (
+                    str(metadata["asset_profile"])
+                    if metadata.get("asset_profile")
+                    else None
+                ),
+                "matched_alias": best[2],
+                "match_type": best[1],
+                "score": float(best[0]),
+            }
+        )
+    rows.sort(
+        key=lambda row: (
+            float(row["score"]),
+            len(_normalize_asset_phrase(str(row["matched_alias"])).split()),
+            str(row["asset_label"]),
+        ),
+        reverse=True,
+    )
+    alternatives = tuple(rows[:5])
+    if not rows:
+        return ExplicitAssetPromptResolution(
+            False,
+            None,
+            None,
+            None,
+            None,
+            0.0,
+            alternatives,
+            "prompt_not_in_asset_taxonomy",
+        )
+    best_score = float(rows[0]["score"])
+    best_rows = [row for row in rows if abs(float(row["score"]) - best_score) < 1e-9]
+    routes = {
+        (str(row["asset_domain"]), str(row.get("asset_profile") or ""))
+        for row in best_rows
+    }
+    if len(routes) != 1:
+        return ExplicitAssetPromptResolution(
+            False,
+            None,
+            None,
+            None,
+            None,
+            best_score,
+            alternatives,
+            "ambiguous_prompt_taxonomy_route",
+        )
+    best = best_rows[0]
+    return ExplicitAssetPromptResolution(
+        True,
+        str(best["asset_label"]),
+        str(best["asset_domain"]),
+        str(best["asset_profile"]) if best.get("asset_profile") else None,
+        str(best["matched_alias"]),
+        best_score,
+        alternatives,
+        str(best["match_type"]),
+    )
 
 
 class Siglip2AssetEncoder:
@@ -607,7 +764,9 @@ def route_profile_text_inventories(
         indices = [index for index, row in enumerate(rows) if row[0] == domain.name]
         if not indices:
             continue
-        local_order = sorted(indices, key=lambda index: float(scores[index]), reverse=True)
+        local_order = sorted(
+            indices, key=lambda index: float(scores[index]), reverse=True
+        )
         alternatives = tuple(
             {
                 "profile": rows[index][1],
@@ -780,6 +939,85 @@ def resolve_asset_domain(
     )
 
 
+def resolve_full_image_domain_prior(
+    route: AssetRoute | None,
+    *,
+    config: AssetRouterConfig | None = None,
+) -> FullImageDomainPrior:
+    """Resolve a domain prior without promoting an ambiguous asset label.
+
+    Exact router acceptance is retained as category evidence.  A rejected exact
+    label may still provide a broad-domain prior only when its top score is near
+    the router threshold, its margin is non-trivial, and at least four fifths of
+    the returned alternatives agree on the same domain.  A later structural or
+    local-view check is still required before this prior can relabel a root.
+    """
+
+    config = config or AssetRouterConfig()
+    if route is None or not route.alternatives:
+        return FullImageDomainPrior(
+            accepted=False,
+            domain=None,
+            score=0.0,
+            margin=0.0,
+            support_count=0,
+            candidate_count=0,
+            support_ratio=0.0,
+            exact_label_accepted=False,
+            reason="missing_full_image_evidence",
+        )
+    rows = [
+        row
+        for row in route.alternatives[: config.maximum_alternatives]
+        if str(row.get("asset_domain", "")).strip()
+    ]
+    if not rows:
+        return FullImageDomainPrior(
+            accepted=False,
+            domain=None,
+            score=float(route.score),
+            margin=float(route.margin),
+            support_count=0,
+            candidate_count=0,
+            support_ratio=0.0,
+            exact_label_accepted=False,
+            reason="missing_full_image_domain",
+        )
+    top = rows[0]
+    top_domain = str(top["asset_domain"])
+    support_count = sum(str(row["asset_domain"]) == top_domain for row in rows)
+    candidate_count = len(rows)
+    support_ratio = support_count / candidate_count
+    exact_label_accepted = bool(
+        route.accepted
+        and route.asset_domain is not None
+        and str(route.asset_domain) == top_domain
+    )
+    near_threshold_consensus = bool(
+        float(top.get("score", route.score)) >= config.minimum_full_image_domain_score
+        and float(route.margin) >= config.minimum_full_image_domain_margin
+        and support_ratio >= config.minimum_full_image_domain_support_ratio
+    )
+    accepted = bool(exact_label_accepted or near_threshold_consensus)
+    return FullImageDomainPrior(
+        accepted=accepted,
+        domain=top_domain if accepted else None,
+        score=float(top.get("score", route.score)),
+        margin=float(route.margin),
+        support_count=support_count,
+        candidate_count=candidate_count,
+        support_ratio=float(support_ratio),
+        exact_label_accepted=exact_label_accepted,
+        reason=(
+            "accepted_exact_full_image_domain"
+            if exact_label_accepted
+            else "accepted_near_threshold_domain_consensus"
+            if near_threshold_consensus
+            else "insufficient_full_image_domain_evidence"
+        ),
+    )
+
+
 def reconcile_asset_routes(
     full_image_route: AssetRoute | None,
     root_crop_route: AssetRoute,
@@ -866,9 +1104,7 @@ def reconcile_asset_routes(
         return root_crop_route, diagnostics
 
     domain = str(
-        full_top.get("asset_domain")
-        or crop_support_row.get("asset_domain")
-        or ""
+        full_top.get("asset_domain") or crop_support_row.get("asset_domain") or ""
     )
     profile_value = full_top.get("asset_profile") or crop_support_row.get(
         "asset_profile"
@@ -882,11 +1118,7 @@ def reconcile_asset_routes(
     combined_score = float((full_score + crop_support_score) / 2.0)
     support_row = {
         **dict(crop_support_row),
-        **{
-            key: value
-            for key, value in dict(full_top).items()
-            if key not in {"score"}
-        },
+        **{key: value for key, value in dict(full_top).items() if key not in {"score"}},
         "asset_label": full_label,
         "asset_domain": domain,
         "asset_profile": profile,

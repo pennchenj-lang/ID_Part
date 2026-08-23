@@ -204,6 +204,154 @@ def _identity_scope_key(candidate: MaskCandidate) -> str:
     return _root_key(candidate) or "unscoped"
 
 
+def _correlated_semantic_strength(candidate: MaskCandidate) -> float:
+    """Score one calibrated semantic mask without treating geometry as truth."""
+
+    geometry = float(
+        np.clip(candidate.metadata.get("retrieval_geometry_compatibility", 0.0), 0.0, 1.0)
+    )
+    corroboration = float(
+        np.clip(candidate.metadata.get("cross_source_best_iou", 0.0), 0.0, 1.0)
+    )
+    confirmed = 1.0 if candidate.metadata.get("cross_source_confirmed") else 0.0
+    return float(
+        0.58 * np.clip(candidate.score, 0.0, 1.0)
+        + 0.14 * np.clip(candidate.source_reliability, 0.0, 1.0)
+        + 0.13 * geometry
+        + 0.15 * corroboration
+        + 0.08 * confirmed
+    )
+
+
+def suppress_correlated_semantic_hypotheses(
+    candidates: list[MaskCandidate],
+    *,
+    duplicate_iou: float = 0.45,
+    duplicate_containment: float = 0.75,
+    minimum_area_coherence: float = 0.55,
+) -> tuple[list[MaskCandidate], tuple[dict[str, object], ...]]:
+    """Resolve alternate semantic names assigned to effectively one region.
+
+    Conditional text-mask queries are correlated measurements: two prompts can
+    activate the same pixels even when their labels describe different physical
+    parts.  This pass keeps the stronger explanation before ownership fusion.
+    Properly nested parent/child regions remain separate when the child is
+    substantially smaller, so a screen inside a housing is not erased merely
+    because it is contained by the housing.
+    """
+
+    if len(candidates) < 2:
+        return candidates, ()
+
+    candidate_ids = {id(candidate) for candidate in candidates}
+    semantic_areas = {
+        candidate.semantic_name: max(1, int(np.count_nonzero(candidate.mask)))
+        for candidate in candidates
+    }
+
+    def adjusted_strength(candidate: MaskCandidate) -> float:
+        strength = _correlated_semantic_strength(candidate)
+        parent_area = semantic_areas.get(candidate.semantic_parent)
+        candidate_area = max(1, int(np.count_nonzero(candidate.mask)))
+        # A child prediction that is as large as or larger than its predicted
+        # parent has not localized the child. Prefer the physical parent unless
+        # independent evidence later provides a distinct child boundary.
+        if parent_area is not None and candidate_area >= 0.85 * parent_area:
+            strength -= 0.14
+        return strength
+
+    ordered = sorted(
+        candidates,
+        key=lambda candidate: (
+            adjusted_strength(candidate),
+            candidate.semantic_name,
+        ),
+        reverse=True,
+    )
+    kept: list[MaskCandidate] = []
+    rows: list[dict[str, object]] = []
+    for candidate in ordered:
+        candidate_area = max(1, int(np.count_nonzero(candidate.mask)))
+        candidate_strength = adjusted_strength(candidate)
+        rejected_by: MaskCandidate | None = None
+        rejected_overlap: tuple[float, float, float] | None = None
+        rejected_reason = ""
+        for accepted in kept:
+            if candidate.semantic_name == accepted.semantic_name:
+                continue
+            candidate_root = _root_key(candidate)
+            accepted_root = _root_key(accepted)
+            if (
+                candidate_root is not None
+                and accepted_root is not None
+                and candidate_root != accepted_root
+            ):
+                continue
+            accepted_area = max(1, int(np.count_nonzero(accepted.mask)))
+            intersection = int(np.count_nonzero(candidate.mask & accepted.mask))
+            if not intersection:
+                continue
+            union = candidate_area + accepted_area - intersection
+            iou = intersection / max(1, union)
+            containment = intersection / min(candidate_area, accepted_area)
+            area_coherence = min(candidate_area, accepted_area) / max(
+                candidate_area, accepted_area
+            )
+            direct_hierarchy = (
+                candidate.semantic_parent == accepted.semantic_name
+                or accepted.semantic_parent == candidate.semantic_name
+            )
+            if direct_hierarchy and area_coherence < 0.72:
+                continue
+
+            coherent_duplicate = iou >= duplicate_iou or (
+                containment >= duplicate_containment
+                and area_coherence >= minimum_area_coherence
+            )
+            accepted_confirmed = bool(
+                accepted.metadata.get("cross_source_confirmed")
+            )
+            candidate_confirmed = bool(
+                candidate.metadata.get("cross_source_confirmed")
+            )
+            weak_nested_duplicate = (
+                containment >= 0.90
+                and area_coherence >= 0.25
+                and accepted_confirmed
+                and not candidate_confirmed
+                and adjusted_strength(accepted) >= candidate_strength + 0.08
+            )
+            if not coherent_duplicate and not weak_nested_duplicate:
+                continue
+            rejected_by = accepted
+            rejected_overlap = (iou, containment, area_coherence)
+            rejected_reason = (
+                "confirmed-over-weak-contained"
+                if weak_nested_duplicate and not coherent_duplicate
+                else "correlated-semantic-overlap"
+            )
+            break
+        if rejected_by is None or rejected_overlap is None:
+            kept.append(candidate)
+            continue
+        rows.append(
+            {
+                "dropped_semantic": candidate.semantic_name,
+                "kept_semantic": rejected_by.semantic_name,
+                "dropped_strength": candidate_strength,
+                "kept_strength": adjusted_strength(rejected_by),
+                "iou": rejected_overlap[0],
+                "containment": rejected_overlap[1],
+                "area_coherence": rejected_overlap[2],
+                "reason": rejected_reason,
+            }
+        )
+
+    kept_ids = {id(candidate) for candidate in kept}
+    assert kept_ids.issubset(candidate_ids)
+    return [candidate for candidate in candidates if id(candidate) in kept_ids], tuple(rows)
+
+
 def _is_broad_scene_layer(candidate: MaskCandidate) -> bool:
     if candidate.metadata.get("scene_role") != "scene_layer":
         return False

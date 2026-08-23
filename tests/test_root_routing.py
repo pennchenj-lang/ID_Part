@@ -4,7 +4,9 @@ from hpid_split.fusion import MaskCandidate
 from hpid_split.root_routing import (
     RootRoutingConfig,
     _select_salient_group,
+    candidate_root_key,
     propagate_scene_object_identity,
+    reconcile_prompt_root_escalations,
     route_asset_roots,
 )
 
@@ -29,6 +31,8 @@ def _candidate(
     global_proposal_rank: int | None = None,
     global_proposal_score: float = 0.0,
     global_proposal_accepted: bool = False,
+    sam_quality: float = 0.9,
+    root_model_label: str | None = None,
 ) -> MaskCandidate:
     root_key = f"root:{root_index}"
     return MaskCandidate(
@@ -42,7 +46,7 @@ def _candidate(
             "root_index": root_index,
             "candidate_key": root_key if root else f"{root_key}/{semantic_name}:01",
             "parent_candidate_key": None if root else root_key,
-            "sam_quality": 0.9,
+            "sam_quality": sam_quality,
             "root_label_specificity": root_label_specificity,
             "part_profile_specificity": part_profile_specificity,
             **(
@@ -68,6 +72,11 @@ def _candidate(
             **(
                 {"root_query_mode": root_query_mode}
                 if root_query_mode is not None
+                else {}
+            ),
+            **(
+                {"root_model_label": root_model_label}
+                if root_model_label is not None
                 else {}
             ),
             **(
@@ -549,6 +558,53 @@ def test_unaccepted_rank_one_internal_accessory_cannot_replace_full_subject() ->
     assert selected is full_subject
 
 
+def test_accepted_small_internal_asset_cannot_replace_complete_container() -> None:
+    internal_tool = {
+        "group_score": 0.889,
+        "physical_score": 0.893,
+        "winner": {
+            "routing_score": 0.59,
+            "semantic_category_score": 0.96,
+            "metrics": {
+                "frame_extent": 0.83,
+                "bbox_salience": 1.0,
+                "area_salience": 0.65,
+                "area_fraction": 0.084,
+                "physical_salience_score": 0.893,
+                "sam_score": 0.88,
+                "detector_score": 1.0,
+                "global_asset_proposal_rank": 1,
+                "global_asset_proposal_priority": 1.0,
+                "global_asset_proposal_accepted": True,
+            },
+        },
+    }
+    complete_container = {
+        "group_score": 0.801,
+        "physical_score": 0.862,
+        "winner": {
+            "routing_score": 0.48,
+            "semantic_category_score": 0.67,
+            "metrics": {
+                "frame_extent": 0.88,
+                "bbox_salience": 1.0,
+                "area_salience": 1.0,
+                "area_fraction": 0.584,
+                "physical_salience_score": 0.862,
+                "sam_score": 0.97,
+                "detector_score": 0.48,
+                "global_asset_proposal_rank": None,
+                "global_asset_proposal_priority": 0.0,
+                "global_asset_proposal_accepted": False,
+            },
+        },
+    }
+
+    selected, _ = _select_salient_group([internal_tool, complete_container])
+
+    assert selected is complete_container
+
+
 def test_accepted_global_proposal_wins_over_broader_same_asset_hypothesis() -> None:
     shape = (100, 100)
     broad = np.zeros(shape, dtype=bool)
@@ -588,6 +644,681 @@ def test_accepted_global_proposal_wins_over_broader_same_asset_hypothesis() -> N
         row for row in result.diagnostics["root_scores"] if row["selected"]
     )
     assert selected_row["global_asset_proposal_priority"] == 1.0
+
+
+def test_same_profile_stronger_geometry_can_replace_global_proposal_mask() -> None:
+    shape = (100, 100)
+    partial = np.zeros(shape, dtype=bool)
+    partial[35:80, 50:95] = True
+    complete = np.zeros(shape, dtype=bool)
+    complete[15:85, 10:90] = True
+    global_candidate = _candidate(
+        "daily_object",
+        "daily_object",
+        partial,
+        0.44,
+        "global",
+        1,
+        root=True,
+        selected_part_profile="footwear",
+        part_profile_specificity=1.0,
+        root_query_mode="global_asset_proposal",
+        global_proposal_rank=1,
+        global_proposal_score=0.29,
+        global_proposal_accepted=True,
+        domain_evidence=0.38,
+    )
+    complete_candidate = _candidate(
+        "daily_object",
+        "daily_object",
+        complete,
+        0.58,
+        "inventory",
+        2,
+        root=True,
+        selected_part_profile="footwear",
+        part_profile_specificity=1.0,
+        domain_evidence=0.72,
+    )
+    global_group = {
+        "physical_group_id": "physical:01",
+        "group_score": 0.69,
+        "physical_score": 0.66,
+        "winner": {
+            "candidate": global_candidate,
+            "routing_score": 0.34,
+            "geometry_representative_score": 0.78,
+            "metrics": {
+                "frame_extent": 0.60,
+                "bbox_salience": 0.90,
+                "area_salience": 0.75,
+                "area_fraction": 0.20,
+                "physical_salience_score": 0.66,
+                "semantic_mask_probability": 0.38,
+                "sam_score": 0.92,
+                "detector_score": 0.68,
+                "global_asset_proposal_rank": 1,
+                "global_asset_proposal_priority": 1.0,
+                "global_asset_proposal_accepted": True,
+            },
+        },
+    }
+    complete_group = {
+        "physical_group_id": "physical:02",
+        "group_score": 0.74,
+        "physical_score": 0.79,
+        "winner": {
+            "candidate": complete_candidate,
+            "routing_score": 0.44,
+            "geometry_representative_score": 0.86,
+            "metrics": {
+                "frame_extent": 0.80,
+                "bbox_salience": 1.0,
+                "area_salience": 1.0,
+                "area_fraction": 0.56,
+                "physical_salience_score": 0.79,
+                "semantic_mask_probability": 0.61,
+                "sam_score": 0.93,
+                "detector_score": 0.63,
+                "global_asset_proposal_rank": None,
+                "global_asset_proposal_priority": 0.0,
+                "global_asset_proposal_accepted": False,
+            },
+        },
+    }
+
+    selected, _ = _select_salient_group([global_group, complete_group])
+
+    assert selected is complete_group
+    assert selected["selection_reason"] == "same_profile_geometry_substitution"
+
+
+def test_disjoint_same_profile_region_cannot_replace_complete_asset() -> None:
+    shape = (100, 100)
+    complete = np.zeros(shape, dtype=bool)
+    complete[5:95, 5:95] = True
+    complete[10:90, 10:90] = False
+    internal_region = np.zeros(shape, dtype=bool)
+    internal_region[15:45, 15:45] = True
+    global_candidate = _candidate(
+        "container",
+        "container",
+        complete,
+        0.50,
+        "global",
+        1,
+        root=True,
+        selected_part_profile="flatware",
+        part_profile_specificity=1.0,
+        root_query_mode="global_asset_proposal",
+        global_proposal_rank=1,
+        global_proposal_score=0.28,
+        global_proposal_accepted=False,
+    )
+    internal_candidate = _candidate(
+        "container",
+        "container",
+        internal_region,
+        0.60,
+        "inventory",
+        2,
+        root=True,
+        selected_part_profile="flatware",
+        part_profile_specificity=1.0,
+    )
+    global_group = {
+        "physical_group_id": "physical:01",
+        "group_score": 0.70,
+        "physical_score": 0.65,
+        "winner": {
+            "candidate": global_candidate,
+            "routing_score": 0.40,
+            "geometry_representative_score": 0.70,
+            "metrics": {
+                "frame_extent": 0.90,
+                "bbox_salience": 1.0,
+                "area_salience": 1.0,
+                "area_fraction": 0.81,
+                "physical_salience_score": 0.65,
+                "semantic_mask_probability": 0.20,
+                "sam_score": 0.55,
+                "detector_score": 0.80,
+                "global_asset_proposal_rank": 1,
+                "global_asset_proposal_priority": 0.72,
+                "global_asset_proposal_accepted": False,
+            },
+        },
+    }
+    internal_group = {
+        "physical_group_id": "physical:02",
+        "group_score": 0.80,
+        "physical_score": 0.82,
+        "winner": {
+            "candidate": internal_candidate,
+            "routing_score": 0.55,
+            "geometry_representative_score": 0.88,
+            "metrics": {
+                "frame_extent": 0.35,
+                "bbox_salience": 0.70,
+                "area_salience": 0.55,
+                "area_fraction": 0.12,
+                "physical_salience_score": 0.82,
+                "semantic_mask_probability": 0.55,
+                "sam_score": 0.92,
+                "detector_score": 0.70,
+                "global_asset_proposal_rank": None,
+                "global_asset_proposal_priority": 0.0,
+                "global_asset_proposal_accepted": False,
+            },
+        },
+    }
+
+    selected, _ = _select_salient_group([global_group, internal_group])
+
+    assert selected is global_group
+
+
+def test_degenerate_global_identity_uses_compact_same_domain_geometry() -> None:
+    shape = (100, 100)
+    full_frame = np.ones(shape, dtype=bool)
+    compact = np.zeros(shape, dtype=bool)
+    compact[12:48, 2:24] = True
+    global_candidate = _candidate(
+        "device",
+        "device",
+        full_frame,
+        0.62,
+        "global",
+        1,
+        root=True,
+        selected_part_profile="clock_watch",
+        part_profile_specificity=1.0,
+        root_query_mode="global_asset_proposal",
+        global_proposal_rank=1,
+        global_proposal_score=0.28,
+        global_proposal_accepted=True,
+        semantic_mask_probability=0.22,
+        root_model_label="watch",
+    )
+    compact_candidate = _candidate(
+        "device",
+        "device",
+        compact,
+        0.44,
+        "inventory",
+        2,
+        root=True,
+        selected_part_profile="phone",
+        part_profile_specificity=1.0,
+        semantic_mask_probability=0.12,
+    )
+    global_row = {
+        "candidate": global_candidate,
+        "root_key": "global::1",
+        "routing_score": 0.42,
+        "metrics": {
+            "frame_extent": 1.0,
+            "bbox_salience": 1.0,
+            "area_salience": 1.0,
+            "area_fraction": 1.0,
+            "physical_salience_score": 0.57,
+            "semantic_mask_probability": 0.22,
+            "sam_score": 0.84,
+            "detector_score": 0.71,
+            "boundary_alignment": 0.18,
+            "coherence": 0.79,
+            "border_fraction": 0.08,
+            "touched_sides": 4,
+            "global_asset_proposal_rank": 1,
+            "global_asset_proposal_priority": 1.0,
+            "global_asset_proposal_accepted": True,
+        },
+    }
+    compact_row = {
+        "candidate": compact_candidate,
+        "root_key": "inventory::2",
+        "routing_score": 0.36,
+        "metrics": {
+            "frame_extent": 0.46,
+            "bbox_salience": 0.35,
+            "area_salience": 0.40,
+            "area_fraction": 0.0792,
+            "physical_salience_score": 0.49,
+            "semantic_mask_probability": 0.12,
+            "sam_score": 0.82,
+            "detector_score": 0.41,
+            "boundary_alignment": 0.62,
+            "coherence": 0.98,
+            "border_fraction": 0.03,
+            "touched_sides": 1,
+            "global_asset_proposal_rank": None,
+            "global_asset_proposal_priority": 0.0,
+            "global_asset_proposal_accepted": False,
+        },
+    }
+    global_group = {
+        "physical_group_id": "physical:01",
+        "rows": [global_row],
+        "winner": global_row,
+        "group_score": 0.64,
+        "physical_score": 0.57,
+    }
+    compact_group = {
+        "physical_group_id": "physical:02",
+        "rows": [compact_row],
+        "winner": compact_row,
+        "group_score": 0.44,
+        "physical_score": 0.49,
+    }
+
+    selected, _ = _select_salient_group([global_group, compact_group])
+
+    selected_candidate = selected["winner"]["candidate"]
+    assert np.array_equal(selected_candidate.mask, compact)
+    assert selected_candidate.metadata["selected_part_profile"] == "clock_watch"
+    assert selected_candidate.metadata["root_model_label"] == "watch"
+    assert selected["selection_reason"] == "degenerate_global_geometry_substitution"
+
+
+def test_degenerate_global_identity_prefers_complete_object_over_small_detail() -> None:
+    shape = (100, 100)
+    full_frame = np.ones(shape, dtype=bool)
+    complete = np.zeros(shape, dtype=bool)
+    complete[8:87, 4:76] = True
+    detail = np.zeros(shape, dtype=bool)
+    detail[9:38, 1:21] = True
+    global_candidate = _candidate(
+        "device",
+        "device",
+        full_frame,
+        0.62,
+        "global",
+        1,
+        root=True,
+        selected_part_profile="clock_watch",
+        part_profile_specificity=1.0,
+        root_query_mode="global_asset_proposal",
+        global_proposal_rank=1,
+        global_proposal_score=0.28,
+        global_proposal_accepted=True,
+        semantic_mask_probability=0.22,
+        root_model_label="watch",
+    )
+    complete_candidate = _candidate(
+        "device",
+        "device",
+        complete,
+        0.61,
+        "inventory-complete",
+        2,
+        root=True,
+        selected_part_profile="controls",
+        part_profile_specificity=1.0,
+    )
+    detail_candidate = _candidate(
+        "device",
+        "device",
+        detail,
+        0.44,
+        "inventory-detail",
+        3,
+        root=True,
+        selected_part_profile="phone",
+        part_profile_specificity=1.0,
+    )
+
+    def row(
+        candidate: MaskCandidate,
+        root_key: str,
+        *,
+        area_fraction: float,
+        frame_extent: float,
+        physical: float,
+        detector: float,
+        sam: float,
+        boundary: float,
+        touched_sides: int,
+    ) -> dict[str, object]:
+        return {
+            "candidate": candidate,
+            "root_key": root_key,
+            "routing_score": 0.40,
+            "metrics": {
+                "frame_extent": frame_extent,
+                "bbox_salience": frame_extent,
+                "area_salience": min(1.0, area_fraction / 0.35),
+                "area_fraction": area_fraction,
+                "physical_salience_score": physical,
+                "semantic_mask_probability": 0.12,
+                "sam_score": sam,
+                "detector_score": detector,
+                "boundary_alignment": boundary,
+                "coherence": 0.99,
+                "border_fraction": 0.03,
+                "touched_sides": touched_sides,
+                "global_asset_proposal_rank": None,
+                "global_asset_proposal_priority": 0.0,
+                "global_asset_proposal_accepted": False,
+            },
+        }
+
+    global_row = {
+        "candidate": global_candidate,
+        "root_key": "global::1",
+        "routing_score": 0.42,
+        "metrics": {
+            "frame_extent": 1.0,
+            "bbox_salience": 1.0,
+            "area_salience": 1.0,
+            "area_fraction": 1.0,
+            "physical_salience_score": 0.57,
+            "semantic_mask_probability": 0.22,
+            "sam_score": 0.84,
+            "detector_score": 0.71,
+            "boundary_alignment": 0.18,
+            "coherence": 0.79,
+            "border_fraction": 0.08,
+            "touched_sides": 4,
+            "global_asset_proposal_rank": 1,
+            "global_asset_proposal_priority": 1.0,
+            "global_asset_proposal_accepted": True,
+        },
+    }
+    complete_row = row(
+        complete_candidate,
+        "inventory::2",
+        area_fraction=0.349,
+        frame_extent=0.899,
+        physical=0.679,
+        detector=0.607,
+        sam=0.934,
+        boundary=0.529,
+        touched_sides=2,
+    )
+    detail_row = row(
+        detail_candidate,
+        "inventory::3",
+        area_fraction=0.056,
+        frame_extent=0.392,
+        physical=0.468,
+        detector=0.389,
+        sam=0.791,
+        boundary=0.610,
+        touched_sides=1,
+    )
+    groups = [
+        {
+            "physical_group_id": "physical:01",
+            "rows": [global_row],
+            "winner": global_row,
+            "group_score": 0.64,
+            "physical_score": 0.57,
+        },
+        {
+            "physical_group_id": "physical:02",
+            "rows": [complete_row],
+            "winner": complete_row,
+            "group_score": 0.58,
+            "physical_score": 0.679,
+        },
+        {
+            "physical_group_id": "physical:03",
+            "rows": [detail_row],
+            "winner": detail_row,
+            "group_score": 0.44,
+            "physical_score": 0.468,
+        },
+    ]
+
+    selected, _ = _select_salient_group(groups)
+
+    selected_candidate = selected["winner"]["candidate"]
+    assert np.array_equal(selected_candidate.mask, complete)
+    assert selected_candidate.metadata["selected_part_profile"] == "clock_watch"
+    assert selected_candidate.metadata["root_model_label"] == "watch"
+    assert selected["selection_reason"] == "degenerate_global_geometry_substitution"
+
+
+def test_global_identity_can_use_cross_domain_consensus_geometry() -> None:
+    shape = (100, 100)
+    contextual = np.zeros(shape, dtype=bool)
+    contextual[0:82, 30:94] = True
+    physical = np.zeros(shape, dtype=bool)
+    physical[10:94, 10:78] = True
+    global_candidate = _candidate(
+        "device",
+        "device",
+        contextual,
+        0.72,
+        "global",
+        1,
+        root=True,
+        selected_part_profile="clock_watch",
+        part_profile_specificity=1.0,
+        root_query_mode="global_asset_proposal",
+        global_proposal_rank=1,
+        global_proposal_score=0.29,
+        global_proposal_accepted=True,
+        semantic_mask_probability=0.08,
+        root_model_label="watch",
+    )
+    physical_candidate = _candidate(
+        "container",
+        "container",
+        physical,
+        0.61,
+        "inventory-a",
+        2,
+        root=True,
+        selected_part_profile="box",
+        part_profile_specificity=1.0,
+    )
+    corroborating_candidate = _candidate(
+        "daily_object",
+        "daily_object",
+        physical.copy(),
+        0.58,
+        "inventory-b",
+        3,
+        root=True,
+        selected_part_profile="soft_good",
+        part_profile_specificity=1.0,
+    )
+
+    def metrics(
+        *,
+        area: float,
+        extent: float,
+        physical_score: float,
+        boundary: float,
+        semantic_probability: float,
+        global_proposal: bool,
+    ) -> dict[str, object]:
+        return {
+            "frame_extent": extent,
+            "bbox_salience": 1.0,
+            "area_salience": 1.0,
+            "area_fraction": area,
+            "physical_salience_score": physical_score,
+            "semantic_mask_probability": semantic_probability,
+            "sam_score": 0.93 if not global_proposal else 0.86,
+            "detector_score": 0.62,
+            "boundary_alignment": boundary,
+            "coherence": 1.0,
+            "border_fraction": 0.03,
+            "touched_sides": 2,
+            "global_asset_proposal_rank": 1 if global_proposal else None,
+            "global_asset_proposal_priority": 1.0 if global_proposal else 0.0,
+            "global_asset_proposal_accepted": global_proposal,
+        }
+
+    global_row = {
+        "candidate": global_candidate,
+        "root_key": "global::1",
+        "routing_score": 0.46,
+        "metrics": metrics(
+            area=0.30,
+            extent=0.84,
+            physical_score=0.64,
+            boundary=0.45,
+            semantic_probability=0.08,
+            global_proposal=True,
+        ),
+    }
+    physical_row = {
+        "candidate": physical_candidate,
+        "root_key": "inventory::2",
+        "routing_score": 0.47,
+        "metrics": metrics(
+            area=0.29,
+            extent=0.86,
+            physical_score=0.84,
+            boundary=1.10,
+            semantic_probability=0.22,
+            global_proposal=False,
+        ),
+    }
+    corroborating_row = {
+        "candidate": corroborating_candidate,
+        "root_key": "inventory::3",
+        "routing_score": 0.45,
+        "metrics": metrics(
+            area=0.29,
+            extent=0.86,
+            physical_score=0.82,
+            boundary=1.08,
+            semantic_probability=0.18,
+            global_proposal=False,
+        ),
+    }
+    groups = [
+        {
+            "physical_group_id": "physical:01",
+            "rows": [global_row],
+            "winner": global_row,
+            "group_score": 0.65,
+            "physical_score": 0.64,
+            "consensus_support": 0.31,
+        },
+        {
+            "physical_group_id": "physical:02",
+            "rows": [physical_row, corroborating_row],
+            "winner": physical_row,
+            "group_score": 0.77,
+            "physical_score": 0.84,
+            "consensus_support": 0.69,
+        },
+    ]
+
+    selected, _ = _select_salient_group(groups)
+
+    selected_candidate = selected["winner"]["candidate"]
+    assert np.array_equal(selected_candidate.mask, physical)
+    assert selected_candidate.semantic_name == "device"
+    assert selected_candidate.metadata["selected_part_profile"] == "clock_watch"
+    assert selected_candidate.metadata["root_model_label"] == "watch"
+    assert selected["selection_reason"] == (
+        "cross_domain_consensus_geometry_substitution"
+    )
+
+
+def test_geometrically_stronger_global_proposal_corrects_context_category() -> None:
+    shape = (100, 100)
+    contextual_person = np.zeros(shape, dtype=bool)
+    contextual_person[:, :91] = True
+    garment = np.zeros(shape, dtype=bool)
+    garment[10:90, 14:82] = True
+    candidates = [
+        _candidate(
+            "character",
+            "character",
+            contextual_person,
+            0.59,
+            "context",
+            1,
+            root=True,
+            domain_evidence=0.88,
+            root_label_specificity=0.88,
+            part_profile_specificity=0.88,
+            selected_part_profile="humanoid",
+        ),
+        _candidate(
+            "daily_object",
+            "daily_object",
+            garment,
+            0.65,
+            "global",
+            2,
+            root=True,
+            domain_evidence=0.10,
+            part_profile_specificity=1.0,
+            selected_part_profile="garment",
+            root_query_mode="global_asset_proposal",
+            global_proposal_rank=1,
+            global_proposal_score=0.29,
+            global_proposal_accepted=True,
+            sam_quality=0.72,
+        ),
+    ]
+
+    result = route_asset_roots(
+        candidates,
+        image_shape=shape,
+        config=RootRoutingConfig(mode="primary", include_attached_roots=False),
+    )
+
+    assert result.diagnostics["selected_semantic"] == "daily_object"
+    selected = next(iter(result.candidates))
+    assert np.array_equal(selected.mask, garment)
+    assert selected.metadata["semantic_arbitration_override"] == (
+        "accepted_global_proposal_with_structural_support"
+    )
+
+
+def test_global_proposal_without_geometric_margin_cannot_change_category() -> None:
+    shape = (100, 100)
+    primary = np.zeros(shape, dtype=bool)
+    primary[8:92, 8:92] = True
+    contextual_patch = primary.copy()
+    candidates = [
+        _candidate(
+            "furniture",
+            "furniture",
+            primary,
+            0.61,
+            "primary",
+            1,
+            root=True,
+            domain_evidence=0.70,
+            root_label_specificity=1.0,
+            part_profile_specificity=1.0,
+            selected_part_profile="stool",
+        ),
+        _candidate(
+            "daily_object",
+            "daily_object",
+            contextual_patch,
+            0.35,
+            "global",
+            2,
+            root=True,
+            domain_evidence=0.10,
+            part_profile_specificity=1.0,
+            selected_part_profile="soft_good",
+            root_query_mode="global_asset_proposal",
+            global_proposal_rank=1,
+            global_proposal_score=0.29,
+            global_proposal_accepted=True,
+        ),
+    ]
+
+    result = route_asset_roots(
+        candidates,
+        image_shape=shape,
+        config=RootRoutingConfig(mode="primary", include_attached_roots=False),
+    )
+
+    assert result.diagnostics["selected_semantic"] == "furniture"
 
 
 def test_low_rank_global_proposal_cannot_override_clear_geometry() -> None:
@@ -1583,3 +2314,145 @@ def test_full_geometry_keeps_its_specific_profile_during_same_domain_fusion() ->
     assert np.array_equal(selected.mask, full_tree)
     assert selected.metadata["selected_part_profile"] == "tree_or_log"
     assert selected.metadata["profile_hint_source"] == "specific_root_label"
+
+
+def test_equivalent_prompt_escalation_preserves_proposal_geometry_and_profile() -> None:
+    shape = (100, 160)
+    proposal = np.zeros(shape, dtype=bool)
+    proposal[18:82, 10:150] = True
+    escalated = proposal.copy()
+    escalated[18:20, 12:148] = False
+    existing = _candidate(
+        "tool_prop",
+        "tool_prop",
+        proposal,
+        0.67,
+        "proposal-first",
+        1,
+        root=True,
+        root_query_mode="proposal_first_cross_cue",
+    )
+    existing = MaskCandidate(
+        existing.semantic_name,
+        existing.semantic_parent,
+        existing.mask,
+        existing.score,
+        existing.source,
+        metadata={
+            **existing.metadata,
+            "proposal_first_evidence": {
+                "nested_region_count": 5,
+                "complete_extent_support": 0.82,
+            },
+        },
+    )
+    prompted = _candidate(
+        "tool_prop",
+        "tool_prop",
+        escalated,
+        0.88,
+        "base-prompt",
+        1,
+        root=True,
+        root_query_mode="user_asset_prompt",
+        root_label_specificity=1.0,
+        part_profile_specificity=1.0,
+        selected_part_profile="firearm",
+        profile_hint_source="user_asset_prompt",
+    )
+
+    reconciled, diagnostics = reconcile_prompt_root_escalations(
+        [existing], [prompted]
+    )
+
+    assert len(reconciled) == 1
+    assert np.array_equal(reconciled[0].mask, proposal)
+    assert reconciled[0].metadata["selected_part_profile"] == "firearm"
+    assert reconciled[0].metadata["prompt_root_geometry_preserved"] is True
+    assert reconciled[0].metadata["proposal_first_evidence"][
+        "nested_region_count"
+    ] == 5
+    assert diagnostics["merged_equivalent_root_count"] == 1
+    assert diagnostics["retained_distinct_root_count"] == 0
+
+
+def test_materially_different_prompt_escalation_remains_a_root_candidate() -> None:
+    shape = (100, 100)
+    tiny = np.zeros(shape, dtype=bool)
+    tiny[42:58, 42:58] = True
+    complete = np.zeros(shape, dtype=bool)
+    complete[12:88, 16:84] = True
+    existing = _candidate(
+        "device", "device", tiny, 0.55, "proposal-first", 1, root=True
+    )
+    prompted = _candidate(
+        "device",
+        "device",
+        complete,
+        0.91,
+        "base-prompt",
+        1,
+        root=True,
+        selected_part_profile="calculator",
+        part_profile_specificity=1.0,
+    )
+
+    reconciled, diagnostics = reconcile_prompt_root_escalations(
+        [existing], [prompted]
+    )
+
+    assert len(reconciled) == 2
+    assert any(np.array_equal(candidate.mask, complete) for candidate in reconciled)
+    assert diagnostics["merged_equivalent_root_count"] == 0
+    assert diagnostics["retained_distinct_root_count"] == 1
+
+
+def test_prompt_root_reconciliation_is_permutation_invariant() -> None:
+    shape = (80, 120)
+    first = np.zeros(shape, dtype=bool)
+    first[10:70, 8:52] = True
+    second = np.zeros(shape, dtype=bool)
+    second[12:68, 68:112] = True
+    existing = [
+        _candidate("device", "device", first, 0.62, "proposal-a", 1, root=True),
+        _candidate("device", "device", second, 0.64, "proposal-b", 1, root=True),
+    ]
+    escalated = [
+        _candidate(
+            "device",
+            "device",
+            first.copy(),
+            0.90,
+            "base-a",
+            1,
+            root=True,
+            selected_part_profile="phone",
+        ),
+        _candidate(
+            "device",
+            "device",
+            second.copy(),
+            0.91,
+            "base-b",
+            1,
+            root=True,
+            selected_part_profile="phone",
+        ),
+    ]
+
+    forward, _ = reconcile_prompt_root_escalations(existing, escalated)
+    reverse, _ = reconcile_prompt_root_escalations(
+        list(reversed(existing)), list(reversed(escalated))
+    )
+
+    def signature(candidates: list[MaskCandidate]) -> set[tuple[str, str, int]]:
+        return {
+            (
+                candidate_root_key(candidate) or "",
+                str(candidate.metadata.get("selected_part_profile")),
+                int(np.count_nonzero(candidate.mask)),
+            )
+            for candidate in candidates
+        }
+
+    assert signature(forward) == signature(reverse)

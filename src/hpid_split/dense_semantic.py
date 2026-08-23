@@ -21,10 +21,158 @@ class DenseRegion:
 
 
 @dataclass(frozen=True)
+class DenseMaskQuery:
+    """One train-derived semantic query for direct conditional masks."""
+
+    semantic_name: str
+    prompts: tuple[str, ...]
+    maximum_instances: int
+    geometry_mean: tuple[float, float, float, float, float]
+    geometry_std: tuple[float, float, float, float, float]
+    geometry_samples: tuple[tuple[float, float, float, float, float], ...]
+
+
+@dataclass(frozen=True)
+class DenseMaskRegion:
+    semantic_name: str
+    prompt: str
+    mask: np.ndarray
+    score: float
+    peak_probability: float
+    mean_probability: float
+    geometry_compatibility: float
+    component_index: int
+
+
+@dataclass(frozen=True)
 class DenseProposalDiagnostics:
     queried_semantics: tuple[str, ...]
     proposed_region_count: int
     rejected_low_contrast_count: int
+
+
+@dataclass(frozen=True)
+class DenseMaskDiagnostics:
+    queried_semantics: tuple[str, ...]
+    threshold: float
+    proposed_region_count: int
+    rejected_empty_count: int
+    rejected_geometry_count: int
+
+
+def _mask_box(mask: np.ndarray) -> tuple[int, int, int, int]:
+    ys, xs = np.nonzero(mask)
+    if not len(xs):
+        return 0, 0, 0, 0
+    return int(xs.min()), int(ys.min()), int(xs.max() + 1), int(ys.max() + 1)
+
+
+def _geometry_descriptor(mask: np.ndarray, root: np.ndarray) -> np.ndarray:
+    x0, y0, x1, y1 = _mask_box(root)
+    px0, py0, px1, py1 = _mask_box(mask)
+    width = max(1, x1 - x0)
+    height = max(1, y1 - y0)
+    return np.asarray(
+        [
+            ((px0 + px1) / 2 - x0) / width,
+            ((py0 + py1) / 2 - y0) / height,
+            (px1 - px0) / width,
+            (py1 - py0) / height,
+            int(np.count_nonzero(mask)) / max(1, int(np.count_nonzero(root))),
+        ],
+        dtype=np.float32,
+    )
+
+
+def _geometry_compatibility(
+    descriptor: np.ndarray,
+    query: DenseMaskQuery,
+) -> float:
+    samples = np.asarray(query.geometry_samples, dtype=np.float32)
+    if samples.size == 0:
+        samples = np.asarray([query.geometry_mean], dtype=np.float32)
+    # Some public part annotations mix a compact component with a union mask.
+    # When the area modes are clearly separated, retain the majority mode and
+    # choose the smaller mode on a tie. This is train-side robust estimation,
+    # not an image/category exception at inference time.
+    if len(samples) >= 4:
+        areas = np.clip(samples[:, 4], 1e-6, None)
+        ordering = np.argsort(areas)
+        ordered = areas[ordering]
+        log_gaps = np.diff(np.log(ordered))
+        split = int(np.argmax(log_gaps)) + 1
+        if float(log_gaps[split - 1]) >= np.log(3.0):
+            low = ordering[:split]
+            high = ordering[split:]
+            samples = samples[
+                low if len(low) >= len(high) else high
+            ]
+    scales = np.maximum(
+        np.maximum(samples.std(axis=0), np.asarray(query.geometry_std) * 0.50),
+        np.asarray((0.10, 0.10, 0.14, 0.14, 0.025), dtype=np.float32),
+    )
+
+    def score(value: np.ndarray) -> float:
+        squared = ((samples - value[None, :]) / scales) ** 2
+        center_distance = np.sqrt(np.mean(squared[:, :2], axis=1))
+        eligible = center_distance <= 1.85
+        if not np.any(eligible):
+            return 0.0
+        eligible_squared = squared[eligible]
+        robust_distance = 0.65 * eligible_squared.mean(axis=1) + 0.35 * (
+            eligible_squared.max(axis=1)
+        )
+        return float(np.exp(-0.5 * np.min(robust_distance)))
+
+    mirrored = descriptor.copy()
+    mirrored[0] = 1.0 - mirrored[0]
+    return max(score(descriptor), score(mirrored))
+
+
+def select_direct_mask_components(
+    probability: np.ndarray,
+    root: np.ndarray,
+    query: DenseMaskQuery,
+    *,
+    threshold: float,
+    minimum_geometry_compatibility: float,
+) -> tuple[list[tuple[np.ndarray, float]], int]:
+    """Clean a conditional heatmap and retain plausible physical instances."""
+
+    if probability.shape != root.shape:
+        raise ValueError("probability and root must have the same shape")
+    active = (np.asarray(probability, dtype=np.float32) >= threshold) & root
+    if not active.any():
+        return [], 0
+    active = cv2.morphologyEx(
+        active.astype(np.uint8),
+        cv2.MORPH_CLOSE,
+        np.ones((3, 3), dtype=np.uint8),
+    )
+    count, components, stats, _ = cv2.connectedComponentsWithStats(active, 8)
+    minimum_area = max(6, round(float(np.count_nonzero(root)) * 0.0005))
+    ranked = sorted(
+        (
+            (int(stats[index, cv2.CC_STAT_AREA]), index)
+            for index in range(1, count)
+            if int(stats[index, cv2.CC_STAT_AREA]) >= minimum_area
+        ),
+        reverse=True,
+    )
+    accepted: list[tuple[np.ndarray, float]] = []
+    geometry_rejections = 0
+    for _, component_id in ranked:
+        component = (components == component_id) & root
+        compatibility = _geometry_compatibility(
+            _geometry_descriptor(component, root), query
+        )
+        if compatibility < minimum_geometry_compatibility:
+            geometry_rejections += 1
+            continue
+        accepted.append((component, compatibility))
+        if len(accepted) >= max(1, query.maximum_instances):
+            break
+    return accepted, geometry_rejections
 
 
 def parent_envelope(mask: np.ndarray, dilation_ratio: float) -> np.ndarray:
@@ -146,6 +294,123 @@ class DenseSemanticProposer:
                 align_corners=False,
             )[:, 0]
             return logits.sigmoid().float().cpu().numpy()
+
+    @property
+    def conditional_mask_threshold(self) -> float | None:
+        metadata = getattr(self.model.config, "hpid_conditional_parts", None)
+        if not isinstance(metadata, dict):
+            return None
+        threshold = float(metadata.get("calibrated_threshold", 0.0))
+        return threshold if 0.0 < threshold < 1.0 else None
+
+    def propose_direct_masks(
+        self,
+        image: Image.Image,
+        root: np.ndarray,
+        queries: list[DenseMaskQuery],
+        *,
+        phrases_per_query: int = 2,
+        batch_size: int = 8,
+        minimum_geometry_compatibility: float = 0.16,
+    ) -> tuple[list[DenseMaskRegion], DenseMaskDiagnostics]:
+        """Generate calibrated masks from a train-only conditional checkpoint.
+
+        The learned mask is semantic evidence, not final ownership. Geometry,
+        structure, appearance, and the public fusion stage still decide whether
+        it receives a persistent Part-ID.
+        """
+
+        threshold = self.conditional_mask_threshold
+        if threshold is None:
+            raise ValueError(
+                "direct conditional masks require a checkpoint with a calibrated "
+                "hpid_conditional_parts threshold"
+            )
+        if root.shape != (image.height, image.width):
+            raise ValueError("root mask must match the input image")
+        if phrases_per_query < 1 or batch_size < 1:
+            raise ValueError("phrases_per_query and batch_size must be positive")
+        prompt_rows: list[tuple[int, str]] = []
+        for query_index, query in enumerate(queries):
+            for prompt in tuple(dict.fromkeys(query.prompts))[:phrases_per_query]:
+                prompt_rows.append((query_index, prompt))
+        probability_rows = [
+            self.probability_maps(
+                image,
+                [prompt for _, prompt in prompt_rows[start : start + batch_size]],
+            )
+            for start in range(0, len(prompt_rows), batch_size)
+        ]
+        probabilities = (
+            np.concatenate(probability_rows, axis=0)
+            if probability_rows
+            else np.zeros((0, image.height, image.width), dtype=np.float32)
+        )
+        grouped: dict[int, list[tuple[str, np.ndarray]]] = {}
+        for (query_index, prompt), probability in zip(
+            prompt_rows, probabilities, strict=True
+        ):
+            grouped.setdefault(query_index, []).append((prompt, probability))
+
+        regions: list[DenseMaskRegion] = []
+        empty_rejections = 0
+        geometry_rejections = 0
+        for query_index, query in enumerate(queries):
+            rows = grouped.get(query_index, [])
+            if not rows:
+                empty_rejections += 1
+                continue
+            probability = np.maximum.reduce([row[1] for row in rows]).astype(
+                np.float32
+            )
+            probability[~root] = 0.0
+            components, rejected = select_direct_mask_components(
+                probability,
+                root,
+                query,
+                threshold=threshold,
+                minimum_geometry_compatibility=minimum_geometry_compatibility,
+            )
+            geometry_rejections += rejected
+            if not components:
+                empty_rejections += 1
+                continue
+            prompt = max(
+                rows,
+                key=lambda row: float(np.mean(row[1][root])) if root.any() else 0.0,
+            )[0]
+            for component_index, (component, compatibility) in enumerate(
+                components, start=1
+            ):
+                values = probability[component]
+                peak = float(values.max())
+                mean = float(values.mean())
+                score = float(
+                    np.clip(
+                        0.55 * mean + 0.25 * peak + 0.20 * compatibility,
+                        0.0,
+                        1.0,
+                    )
+                )
+                regions.append(
+                    DenseMaskRegion(
+                        semantic_name=query.semantic_name,
+                        prompt=prompt,
+                        mask=component,
+                        score=score,
+                        peak_probability=peak,
+                        mean_probability=mean,
+                        geometry_compatibility=compatibility,
+                        component_index=component_index,
+                    )
+                )
+        return regions, DenseMaskDiagnostics(
+            queried_semantics=tuple(query.semantic_name for query in queries),
+            threshold=threshold,
+            proposed_region_count=len(regions),
+            rejected_empty_count=empty_rejections,
+            rejected_geometry_count=geometry_rejections,
+        )
 
     def score_regions(
         self,

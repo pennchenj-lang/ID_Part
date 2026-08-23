@@ -35,6 +35,66 @@ class ProposalFirstResult:
     diagnostics: dict[str, object]
 
 
+def route_proposal_first_execution(
+    image: Image.Image,
+    *,
+    requested: bool,
+    root_mode: str,
+    target_point_xy: tuple[float, float] | None = None,
+    minimum_isolated_fraction: float = 0.20,
+    maximum_isolated_fraction: float = 0.50,
+) -> tuple[bool, dict[str, object]]:
+    """Choose one root-acquisition backend before loading either heavy model."""
+
+    if not requested:
+        return False, {
+            "algorithm": "hpid-adaptive-root-backend-v1",
+            "selected_backend": "detector_first",
+            "reason": "proposal_first_not_requested",
+            "ground_truth_used": False,
+        }
+    if root_mode == "scene":
+        return True, {
+            "algorithm": "hpid-adaptive-root-backend-v1",
+            "selected_backend": "proposal_first",
+            "reason": "scene_reuses_global_proposals",
+            "ground_truth_used": False,
+        }
+    if target_point_xy is not None:
+        return True, {
+            "algorithm": "hpid-adaptive-root-backend-v1",
+            "selected_backend": "proposal_first",
+            "reason": "explicit_target_point",
+            "ground_truth_used": False,
+        }
+    foreground = extract_primary_foreground(image)
+    output_fraction = float(
+        foreground.diagnostics.get(
+            "output_fraction",
+            foreground.diagnostics.get("foreground_fraction", 0.0),
+        )
+    )
+    use_proposal_first = bool(
+        foreground.mask is not None
+        and minimum_isolated_fraction <= output_fraction <= maximum_isolated_fraction
+    )
+    return use_proposal_first, {
+        "algorithm": "hpid-adaptive-root-backend-v1",
+        "selected_backend": (
+            "proposal_first" if use_proposal_first else "detector_first"
+        ),
+        "reason": (
+            "reliable_isolated_foreground"
+            if use_proposal_first
+            else "nonisolated_or_tight_crop"
+        ),
+        "minimum_isolated_fraction": minimum_isolated_fraction,
+        "maximum_isolated_fraction": maximum_isolated_fraction,
+        "foreground_preflight": foreground.diagnostics,
+        "ground_truth_used": False,
+    }
+
+
 def _area(mask: np.ndarray) -> int:
     return int(np.count_nonzero(mask))
 
@@ -164,20 +224,28 @@ def _primary_root_quality(
     estimated_foreground_fraction = float(
         foreground_diagnostics.get("foreground_fraction", 0.0)
     )
+    dominant_component_fraction = float(
+        foreground_diagnostics.get("dominant_component_fraction", 0.0)
+    )
     dominant_foreground = bool(
         foreground_diagnostics.get("uniform_border", False)
-        and float(
-            foreground_diagnostics.get("dominant_component_fraction", 0.0)
-        )
-        >= 0.82
+        and dominant_component_fraction >= 0.82
     )
     foreground_coverage_ratio = fraction / max(1e-6, estimated_foreground_fraction)
     if (
-        dominant_foreground
-        and estimated_foreground_fraction >= 0.12
-        and foreground_coverage_ratio < 0.38
+        estimated_foreground_fraction >= 0.12
+        and dominant_component_fraction >= 0.72
+        and fraction < 0.30
+        and foreground_coverage_ratio < 0.58
     ):
-        reasons.append("selected_root_under_covers_dominant_foreground")
+        reasons.append("selected_root_under_covers_foreground_envelope")
+    if (
+        estimated_foreground_fraction >= 0.08
+        and fraction >= 0.28
+        and border_touches >= 2
+        and foreground_coverage_ratio > 1.70
+    ):
+        reasons.append("selected_root_over_covers_foreground_envelope")
     return {
         "status": "fallback_recommended" if reasons else "accepted",
         "fallback_recommended": bool(reasons),
@@ -190,6 +258,7 @@ def _primary_root_quality(
         "estimated_foreground_fraction": estimated_foreground_fraction,
         "foreground_coverage_ratio": float(foreground_coverage_ratio),
         "dominant_foreground": dominant_foreground,
+        "dominant_component_fraction": dominant_component_fraction,
         "ground_truth_used": False,
     }
 

@@ -49,6 +49,7 @@ class VlmPartConfig:
     weak_semantic_maximum_margin: float = 0.08
     use_box_planner_queries: bool = False
     use_per_semantic_queries: bool = True
+    planner_batch_size: int = 3
     query_established_semantics: bool = False
     assignment_minimum_score: float = 0.48
     assignment_minimum_box_containment: float = 0.45
@@ -376,6 +377,7 @@ def parse_part_plan(
     image_size: tuple[int, int],
     allowed_parts: Mapping[str, PartPrompt],
     config: VlmPartConfig | None = None,
+    expected_coordinate_system: str | None = None,
 ) -> ParsedPartPlan:
     """Parse a bounded VLM proposal without inventing ontology labels."""
 
@@ -403,6 +405,13 @@ def parse_part_plan(
             },
         )
     coordinate_system = str(payload.get("coordinate_system", ""))
+    coordinate_system_recovered = False
+    if not coordinate_system and expected_coordinate_system in {
+        "normalized_1000",
+        "pixels",
+    }:
+        coordinate_system = str(expected_coordinate_system)
+        coordinate_system_recovered = True
     if coordinate_system not in {"normalized_1000", "pixels"}:
         return ParsedPartPlan(
             (),
@@ -516,6 +525,7 @@ def parse_part_plan(
         {
             "status": "parsed",
             "coordinate_system": coordinate_system,
+            "coordinate_system_recovered": coordinate_system_recovered,
             "raw_part_count": len(raw_parts),
             "accepted_part_count": len(bounded),
             "rejection_counts": rejection_counts,
@@ -1288,6 +1298,21 @@ def parse_region_batch_label_plan(
             if isinstance(raw_kind, str)
             else "uncertain"
         )
+        raw_semantic_name = raw.get("semantic_name")
+        canonical_names = {
+            _normalized_semantic(name): name for name in allowed_parts
+        }
+        normalized_semantic_name = (
+            _normalized_semantic(raw_semantic_name)
+            if isinstance(raw_semantic_name, str)
+            else ""
+        )
+        region_kind_recovered = bool(
+            entity_kind in canonical_names
+            and entity_kind == normalized_semantic_name
+        )
+        if region_kind_recovered:
+            entity_kind = "physical_component"
         parsed = parse_region_label_plan(
             json.dumps(raw),
             allowed_parts=allowed_parts,
@@ -1303,6 +1328,17 @@ def parse_region_batch_label_plan(
                     **parsed.diagnostics,
                     "status": "nonphysical_region_kind",
                     "region_kind": entity_kind,
+                },
+                entity_kind,
+            )
+        elif region_kind_recovered:
+            parsed = RegionLabelPlan(
+                parsed.semantic_name,
+                parsed.confidence,
+                {
+                    **parsed.diagnostics,
+                    "region_kind_recovered": True,
+                    "original_region_kind": raw_kind,
                 },
                 entity_kind,
             )
@@ -1999,7 +2035,12 @@ class VlmPartGenerator:
                     - total_query_count,
                 ),
             )
-            query_parts = query_parts[:remaining_query_budget]
+            maximum_query_part_count = (
+                remaining_query_budget
+                if self.config.use_per_semantic_queries
+                else remaining_query_budget * max(1, self.config.planner_batch_size)
+            )
+            query_parts = query_parts[:maximum_query_part_count]
             x0 = y0 = x1 = y1 = 0
             crop: Image.Image | None = None
             if query_parts:
@@ -2016,11 +2057,14 @@ class VlmPartGenerator:
                     crop_array = np.asarray(crop, dtype=np.uint8).copy()
                     crop_array[~local_root] = 127
                     crop = Image.fromarray(crop_array, mode="RGB")
-            query_groups = (
-                [(part,) for part in query_parts]
-                if self.config.use_per_semantic_queries
-                else ([tuple(query_parts)] if query_parts else [])
-            )
+            if self.config.use_per_semantic_queries:
+                query_groups = [(part,) for part in query_parts]
+            else:
+                batch_size = max(1, self.config.planner_batch_size)
+                query_groups = [
+                    tuple(query_parts[index : index + batch_size])
+                    for index in range(0, len(query_parts), batch_size)
+                ]
             planned_parts: list[PlannedPart] = []
             plan_rows: list[dict[str, object]] = []
             for query_group in query_groups:
@@ -2061,6 +2105,7 @@ class VlmPartGenerator:
                     image_size=crop.size,
                     allowed_parts=query_allowed,
                     config=self.config,
+                    expected_coordinate_system="normalized_1000",
                 )
                 planned_parts.extend(parsed.parts)
                 rejected["planner_unknown_or_rejected"] += sum(

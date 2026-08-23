@@ -14,6 +14,22 @@ class RootCleanupConfig:
     minimum_detached_area_ratio: float = 0.005
     maximum_detached_distance_ratio: float = 0.03
     minimum_support_overlap: float = 0.28
+    minimum_competing_root_containment: float = 0.82
+    minimum_competing_root_area_ratio: float = 0.003
+    maximum_competing_root_area_ratio: float = 0.32
+    maximum_competing_root_iou: float = 0.40
+    minimum_member_protection_containment: float = 0.72
+    maximum_member_protection_area_ratio: float = 3.0
+    competing_object_host_profiles: tuple[str, ...] = (
+        "table",
+        "cabinet",
+        "shelf",
+        "counter",
+        "desk",
+        "workbench",
+        "outdoor_level",
+        "interior_scene",
+    )
 
 
 @dataclass(frozen=True)
@@ -98,9 +114,182 @@ def _distance_to_main(component: np.ndarray, main: np.ndarray) -> float:
     return float(values.min()) if len(values) else float("inf")
 
 
+def _is_independently_supported_member(
+    competitor: MaskCandidate,
+    root: MaskCandidate,
+    scoped_candidates: list[MaskCandidate],
+    config: RootCleanupConfig,
+) -> tuple[bool, list[str]]:
+    """Protect a region when independent part evidence says it belongs to root."""
+
+    competitor_area = max(1, int(np.count_nonzero(competitor.mask)))
+    supporting_semantics: list[str] = []
+    competitor_family = _source_family(competitor)
+    for candidate in scoped_candidates:
+        if (
+            _is_root(candidate)
+            or bool(candidate.metadata.get("generic_visual_region"))
+            or candidate.semantic_name == root.semantic_name
+            or not candidate.semantic_name.startswith(f"{root.semantic_name}_")
+        ):
+            continue
+        candidate_area = max(1, int(np.count_nonzero(candidate.mask)))
+        intersection = int(np.count_nonzero(candidate.mask & competitor.mask))
+        containment = intersection / competitor_area
+        area_ratio = max(candidate_area, competitor_area) / min(
+            candidate_area, competitor_area
+        )
+        independent_source = _source_family(candidate) != competitor_family
+        direct_part_query = bool(
+            "/profile-refine" in candidate.source
+            or candidate.metadata.get("guided_prompt")
+        )
+        strong_cross_source = bool(
+            candidate.metadata.get("cross_source_confirmed")
+            and candidate.metadata.get("multi_view_confirmed")
+        )
+        if (
+            independent_source
+            and (direct_part_query or strong_cross_source)
+            and containment >= config.minimum_member_protection_containment
+            and area_ratio <= config.maximum_member_protection_area_ratio
+        ):
+            supporting_semantics.append(candidate.semantic_name)
+    return bool(supporting_semantics), sorted(set(supporting_semantics))
+
+
+def _can_host_competing_objects(
+    root: MaskCandidate,
+    config: RootCleanupConfig,
+) -> bool:
+    """Limit subtraction to support surfaces and scene-like root assets."""
+
+    profile = str(root.metadata.get("selected_part_profile", "")).strip().lower()
+    return bool(
+        root.semantic_name in {"terrain", "scene"}
+        or profile in set(config.competing_object_host_profiles)
+    )
+
+
+def _subtract_competing_roots(
+    mask: np.ndarray,
+    root: MaskCandidate,
+    scoped_candidates: list[MaskCandidate],
+    competing_roots: list[MaskCandidate],
+    config: RootCleanupConfig,
+) -> tuple[np.ndarray, dict[str, object]]:
+    """Remove independently proposed objects swallowed by a broad root mask.
+
+    A mask proposal for a support surface can include objects resting on it.
+    Those pixels are removed only when a distinct root hypothesis is mostly
+    contained by the selected root, is substantially smaller, and is not
+    corroborated as a part of the selected asset by an independent source.
+    """
+
+    output = mask.copy()
+    if not _can_host_competing_objects(root, config):
+        return output, {
+            "algorithm": "hpid-contained-competing-object-subtraction-v2",
+            "status": "skipped_non_host_asset",
+            "selected_part_profile": root.metadata.get("selected_part_profile"),
+            "candidate_count": len(competing_roots),
+            "accepted_count": 0,
+            "removed_area_px": 0,
+            "rows": [],
+            "ground_truth_used": False,
+        }
+    root_area = max(1, int(np.count_nonzero(mask)))
+    accepted_masks: list[np.ndarray] = []
+    rows: list[dict[str, object]] = []
+    ordered = sorted(
+        competing_roots,
+        key=lambda candidate: (
+            candidate.score * candidate.source_reliability,
+            int(np.count_nonzero(candidate.mask)),
+            _root_key(candidate),
+        ),
+        reverse=True,
+    )
+    for competitor in ordered:
+        if (
+            not _is_root(competitor)
+            or competitor.mask.shape != mask.shape
+            or _root_key(competitor) == _root_key(root)
+            or competitor.semantic_name == root.semantic_name
+        ):
+            continue
+        competitor_area = max(1, int(np.count_nonzero(competitor.mask)))
+        intersection = int(np.count_nonzero(mask & competitor.mask))
+        containment = intersection / competitor_area
+        area_ratio = intersection / root_area
+        union = root_area + competitor_area - intersection
+        iou = intersection / max(1, union)
+        duplicate = False
+        for accepted_mask in accepted_masks:
+            accepted_area = max(1, int(np.count_nonzero(accepted_mask)))
+            overlap = int(np.count_nonzero(competitor.mask & accepted_mask))
+            area_coherence = max(competitor_area, accepted_area) / min(
+                competitor_area, accepted_area
+            )
+            if (
+                overlap / min(competitor_area, accepted_area) >= 0.90
+                and area_coherence <= 2.0
+            ):
+                duplicate = True
+                break
+        protected, support_semantics = _is_independently_supported_member(
+            competitor,
+            root,
+            scoped_candidates,
+            config,
+        )
+        accepted = bool(
+            not protected
+            and containment >= config.minimum_competing_root_containment
+            and config.minimum_competing_root_area_ratio
+            <= area_ratio
+            <= config.maximum_competing_root_area_ratio
+            and iou <= config.maximum_competing_root_iou
+        )
+        removed_area = 0
+        if accepted:
+            removal = output & competitor.mask
+            removed_area = int(np.count_nonzero(removal))
+            output[removal] = False
+            accepted_masks.append(competitor.mask)
+        rows.append(
+            {
+                "root_key": _root_key(competitor),
+                "semantic_name": competitor.semantic_name,
+                "containment_in_selected_root": containment,
+                "selected_root_area_ratio": area_ratio,
+                "selected_root_iou": iou,
+                "duplicate_competitor": duplicate,
+                "duplicate_used_as_corroborating_extent": bool(
+                    duplicate and accepted
+                ),
+                "protected_as_selected_asset_member": protected,
+                "member_support_semantics": support_semantics,
+                "accepted": accepted,
+                "removed_area_px": removed_area,
+            }
+        )
+    return output, {
+        "algorithm": "hpid-contained-competing-object-subtraction-v2",
+        "status": "evaluated_host_asset",
+        "selected_part_profile": root.metadata.get("selected_part_profile"),
+        "candidate_count": len(rows),
+        "accepted_count": sum(bool(row["accepted"]) for row in rows),
+        "removed_area_px": int(np.count_nonzero(mask & ~output)),
+        "rows": rows,
+        "ground_truth_used": False,
+    }
+
+
 def _clean_root(
     root: MaskCandidate,
     scoped_candidates: list[MaskCandidate],
+    competing_roots: list[MaskCandidate],
     target_point_xy: tuple[float, float] | None,
     config: RootCleanupConfig,
 ) -> tuple[np.ndarray, dict[str, object]]:
@@ -166,6 +355,13 @@ def _clean_root(
                 "kept": keep,
             }
         )
+    clean, competing_diagnostics = _subtract_competing_roots(
+        clean,
+        root,
+        scoped_candidates,
+        competing_roots,
+        config,
+    )
     return clean, {
         "root_key": _root_key(root),
         "status": "cleaned" if not np.array_equal(clean, mask) else "unchanged",
@@ -176,6 +372,7 @@ def _clean_root(
         "removed_component_count": sum(not row["kept"] for row in component_rows),
         "components": component_rows,
         "target_component_used": target_component is not None,
+        "competing_object_subtraction": competing_diagnostics,
     }
 
 
@@ -183,6 +380,7 @@ def clean_primary_roots(
     candidates: list[MaskCandidate] | tuple[MaskCandidate, ...],
     roots: list[MaskCandidate] | tuple[MaskCandidate, ...],
     *,
+    competing_roots: list[MaskCandidate] | tuple[MaskCandidate, ...] = (),
     target_point_xy: tuple[float, float] | None = None,
     config: RootCleanupConfig | None = None,
 ) -> RootCleanupResult:
@@ -197,6 +395,7 @@ def clean_primary_roots(
         clean, row = _clean_root(
             root,
             scoped,
+            list(competing_roots),
             target_point_xy,
             config,
         )
@@ -230,8 +429,9 @@ def clean_primary_roots(
     return RootCleanupResult(
         tuple(output),
         {
-            "algorithm": "hpid-connected-root-cleanup-v1",
+            "algorithm": "hpid-connected-root-cleanup-v2",
             "root_count": len(root_rows),
+            "competing_root_count": len(competing_roots),
             "clipped_candidate_count": clipped_count,
             "dropped_candidate_count": dropped_count,
             "roots": root_rows,
