@@ -33,6 +33,17 @@ were frozen; only editable groups were regenerated. Because these cases were
 inspected while the grouping rules were debugged, they are now a regression
 set rather than an untouched independent test set.
 
+Version `0.3.2` keeps the frozen `0.3.1` quantitative evidence unchanged and
+repairs qualitative cross-domain grouping. A globe's meridian support is
+recovered as one continuous structure even when its lower arc is rejected as
+shading-like appearance evidence. Layered character clothing keeps the inner
+top, outer garment, and lower garment separate while anatomical regions share
+the body group. Scene instances now use a multicluster support-surface model,
+bounded appearance-marker supplementation, and structure-aware projected-face
+fusion so repeated trees and rocks can separate without turning every lit face
+into a public ID. These post-freeze examples are engineering regressions, not
+additional benchmark estimates.
+
 ## What is implemented
 
 - One-image CLI and local upload UI.

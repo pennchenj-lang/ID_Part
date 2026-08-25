@@ -144,6 +144,122 @@ def test_character_body_and_garment_use_hierarchical_groups() -> None:
     assert len(garment.member_part_ids) == 2
 
 
+def test_character_layered_clothing_keeps_inner_outer_and_lower_groups() -> None:
+    shape = (220, 140)
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[18:196, 35:105] = 1
+    instance_map[12:62, 30:110] = 2
+    instance_map[28:70, 43:97] = 3
+    instance_map[72:122, 52:88] = 4
+    instance_map[74:137, 92:116] = 5
+    instance_map[122:158, 43:98] = 6
+    instance_map[158:198, 45:62] = 7
+    instance_map[158:198, 78:95] = 8
+    instance_map[196:214, 39:101] = 9
+    image = np.full((*shape, 3), 244, dtype=np.uint8)
+    image[instance_map == 1] = (222, 168, 145)
+    image[instance_map == 2] = (55, 67, 73)
+    image[instance_map == 3] = (224, 170, 146)
+    image[instance_map == 4] = (235, 234, 218)
+    image[instance_map == 5] = (151, 190, 160)
+    image[instance_map == 6] = (83, 91, 102)
+    image[np.isin(instance_map, [7, 8])] = (225, 166, 143)
+    image[instance_map == 9] = (91, 138, 122)
+
+    def record(index: int, semantic: str, parent: str = "character") -> PartInstance:
+        mask = instance_map == index
+        ys, xs = np.nonzero(mask)
+        return PartInstance(
+            part_id=f"{parent}/{semantic}/center/{index:02d}",
+            semantic_name=semantic,
+            semantic_parent=parent,
+            instance_index=index,
+            side="center",
+            bbox_xyxy=(int(xs.min()), int(ys.min()), int(xs.max() + 1), int(ys.max() + 1)),
+            centroid_xy=(float(xs.mean()), float(ys.mean())),
+            area_px=int(mask.sum()),
+        )
+
+    records = [
+        record(1, "character"),
+        record(2, "character_hair"),
+        record(3, "character_head"),
+        record(4, "character_upper_clothing"),
+        record(5, "character_sleeve", "character_upper_clothing"),
+        record(6, "character_visual_panel_03"),
+        record(7, "character_leg"),
+        record(8, "character_leg"),
+        record(9, "character_shoe"),
+    ]
+
+    result = build_physical_groups(
+        instance_map,
+        records,
+        image=Image.fromarray(image),
+    )
+    by_name = {group.semantic_name: group for group in result.groups}
+
+    assert result.group_map[90, 70] == by_name["character_inner_top"].group_index
+    assert result.group_map[100, 104] == by_name["character_outer_garment"].group_index
+    assert result.group_map[140, 70] == by_name["character_lower_garment"].group_index
+    assert result.group_map[45, 70] == by_name["character_body"].group_index
+    assert "character_headwear" not in by_name
+    assert result.diagnostics["character_surface_grouping"][
+        "layered_upper_garment"
+    ]["detected"] is True
+    assert np.array_equal(result.group_map > 0, instance_map > 0)
+
+
+def test_character_same_garment_torso_and_sleeve_are_not_split_by_shading() -> None:
+    shape = (180, 120)
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[12:166, 30:90] = 1
+    instance_map[16:52, 34:86] = 2
+    instance_map[55:112, 42:78] = 3
+    instance_map[58:116, 78:104] = 4
+    instance_map[142:174, 38:82] = 5
+    image = np.full((*shape, 3), 244, dtype=np.uint8)
+    image[instance_map == 1] = (222, 168, 145)
+    image[instance_map == 2] = (48, 55, 61)
+    image[instance_map == 3] = (151, 190, 160)
+    image[instance_map == 4] = (146, 184, 156)
+    image[instance_map == 5] = (82, 133, 118)
+
+    def record(index: int, semantic: str, parent: str = "character") -> PartInstance:
+        mask = instance_map == index
+        ys, xs = np.nonzero(mask)
+        return PartInstance(
+            part_id=f"{parent}/{semantic}/center/{index:02d}",
+            semantic_name=semantic,
+            semantic_parent=parent,
+            instance_index=index,
+            side="center",
+            bbox_xyxy=(int(xs.min()), int(ys.min()), int(xs.max() + 1), int(ys.max() + 1)),
+            centroid_xy=(float(xs.mean()), float(ys.mean())),
+            area_px=int(mask.sum()),
+        )
+
+    result = build_physical_groups(
+        instance_map,
+        [
+            record(1, "character"),
+            record(2, "character_head"),
+            record(3, "character_upper_clothing"),
+            record(4, "character_sleeve", "character_upper_clothing"),
+            record(5, "character_shoe"),
+        ],
+        image=Image.fromarray(image),
+    )
+
+    semantics = {group.semantic_name for group in result.groups}
+    assert "character_upper_garment" in semantics
+    assert "character_inner_top" not in semantics
+    assert "character_outer_garment" not in semantics
+    assert result.diagnostics["character_surface_grouping"][
+        "layered_upper_garment"
+    ]["detected"] is False
+
+
 def test_character_leg_remains_in_body_group_with_image_audit_enabled() -> None:
     shape = (180, 120)
     instance_map = np.zeros(shape, dtype=np.uint16)
@@ -326,7 +442,7 @@ def test_character_headwear_and_lower_zone_labels_are_audited() -> None:
         )
 
     records = [
-        record(1, "character_head"),
+        record(1, "character_headwear"),
         record(2, "character_face"),
         record(3, "character_upper_clothing"),
         record(4, "character_lower_clothing"),
@@ -735,6 +851,118 @@ def test_profile_semantics_own_visual_regions_before_appearance_evidence() -> No
         "geometry",
         "appearance",
     ]
+
+
+def test_globe_ring_continuation_survives_shading_review_as_one_group() -> None:
+    shape = (120, 120)
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[10:82, 14:88] = 1
+    instance_map[18:74, 20:82] = 2
+    instance_map[14:72, 84:92] = 3
+    instance_map[70:91, 77:92] = 4
+    instance_map[84:104, 54:65] = 5
+    instance_map[102:117, 35:84] = 6
+
+    def record(index: int, semantic: str, parent: str) -> PartInstance:
+        mask = instance_map == index
+        ys, xs = np.nonzero(mask)
+        return PartInstance(
+            part_id=f"object_001/{semantic}/{index:02d}",
+            semantic_name=semantic,
+            semantic_parent=parent,
+            instance_index=index,
+            side="center",
+            bbox_xyxy=(int(xs.min()), int(ys.min()), int(xs.max() + 1), int(ys.max() + 1)),
+            centroid_xy=(float(xs.mean()), float(ys.mean())),
+            area_px=int(mask.sum()),
+        )
+
+    records = [
+        record(1, "device", "device"),
+        record(2, "device_globe_sphere", "device_body"),
+        record(3, "device_globe_meridian_ring", "device_body"),
+        record(4, "device_visual_strip_04", "device"),
+        record(5, "device_globe_stem", "device_base"),
+        record(6, "device_base", "device_body"),
+    ]
+    candidates = [
+        MaskCandidate(
+            "device",
+            "device",
+            instance_map > 0,
+            0.95,
+            "test/root",
+            metadata={
+                "candidate_key": "root:1",
+                "selected_part_profile": "globe",
+            },
+        )
+    ]
+    for record_row in (records[1], records[4], records[5]):
+        candidates.append(
+            MaskCandidate(
+                record_row.semantic_name,
+                record_row.semantic_parent,
+                instance_map == record_row.instance_index,
+                0.9,
+                "test/profile-refine",
+                metadata={
+                    "candidate_key": f"root:1/{record_row.semantic_name}",
+                    "selected_part_profile": "globe",
+                    "profile_refinement": True,
+                },
+            )
+        )
+    candidates.append(
+        MaskCandidate(
+            "device_globe_meridian_ring",
+            "device_body",
+            instance_map == 3,
+            0.56,
+            "test/proposal-first/semantic-rerank",
+            metadata={
+                "candidate_key": "root:1/visual-region:ring",
+                "semantic_reranked": True,
+                "semantic_rerank_route": "base",
+                "semantic_rerank_probability": 0.26,
+                "semantic_rerank_margin": 0.008,
+                "semantic_rerank_profile": "globe",
+                "root_area_fraction": 0.06,
+                "proposal_boundary_alignment": 1.0,
+                "cross_source_confirmed": True,
+                "appearance_graph_evidence": {
+                    "boundary_alignment": 1.0,
+                    "boundary_closure": 0.89,
+                    "independent_cue_count": 2,
+                    "shading_only_penalty": 0.76,
+                },
+            },
+        )
+    )
+
+    result = build_physical_groups(
+        instance_map,
+        records,
+        candidates=candidates,
+        image=Image.new("RGB", shape[::-1], "white"),
+    )
+    by_name = {group.semantic_name: group for group in result.groups}
+
+    assert result.group_map[30, 88] == by_name[
+        "device_globe_meridian_ring"
+    ].group_index
+    assert result.group_map[80, 84] == by_name[
+        "device_globe_meridian_ring"
+    ].group_index
+    assert result.group_map[94, 59] == by_name["device_globe_stem"].group_index
+    verification_rows = result.diagnostics["profile_structural_decomposition"][
+        "candidates"
+    ]
+    assert any(
+        row["semantic_name"] == "device_globe_meridian_ring"
+        and row["structurally_recovered"] is True
+        for row in verification_rows
+    )
 
 
 def test_tiny_remote_appearance_satellite_is_reassigned_to_nearest_group() -> None:

@@ -18,6 +18,8 @@ class SceneInstanceConfig:
     minimum_surface_cluster_fraction: float = 0.045
     minimum_surface_component_fraction: float = 0.022
     minimum_surface_span_fraction: float = 0.42
+    maximum_surface_partner_lab_distance: float = 38.0
+    minimum_surface_partner_span_ratio: float = 0.64
     object_color_distance: float = 20.0
     minimum_object_fraction: float = 0.00022
     minimum_seed_containment: float = 0.72
@@ -25,7 +27,10 @@ class SceneInstanceConfig:
     maximum_seed_area_fraction: float = 0.24
     minimum_peak_distance: int = 8
     peak_distance_fraction: float = 0.014
-    maximum_markers: int = 56
+    peak_radius_exclusion_weight: float = 0.44
+    maximum_peak_exclusion_multiplier: float = 2.5
+    maximum_markers: int = 48
+    maximum_color_component_markers: int = 14
     maximum_partitions: int = 48
     gradient_weight: float = 0.78
     distance_weight: float = 0.22
@@ -46,6 +51,13 @@ class SceneInstanceConfig:
     strong_projected_maximum_area_ratio: float = 0.50
     strong_projected_maximum_lab_distance: float = 150.0
     strong_projected_maximum_merged_fraction: float = 0.24
+    maximum_unseeded_projected_face_fraction: float = 0.125
+    compact_projected_maximum_merged_fraction: float = 0.08
+    compact_projected_minimum_contact: float = 0.30
+    compact_projected_minimum_horizontal_overlap: float = 0.58
+    compact_projected_minimum_vertical_overlap: float = 0.55
+    compact_projected_maximum_area_ratio: float = 0.68
+    compact_projected_minimum_aspect_ratio: float = 1.20
     minimum_shared_envelope_support: float = 0.72
     minimum_shared_envelope_precision: float = 0.52
     maximum_structural_merged_fraction: float = 0.13
@@ -100,7 +112,7 @@ def _surface_model(
     lab: np.ndarray,
     envelope: np.ndarray,
     config: SceneInstanceConfig,
-) -> tuple[np.ndarray, np.ndarray, dict[str, object]] | None:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, dict[str, object]] | None:
     pixels = lab[envelope]
     if len(pixels) < 96:
         return None
@@ -127,36 +139,89 @@ def _surface_model(
     envelope_area = max(1, _area(envelope))
     ex0, ey0, ex1, ey1 = _box(envelope)
     envelope_span = max(1, ex1 - ex0, ey1 - ey0)
-    ranked: list[tuple[float, int, int, int, float]] = []
+    boundary = envelope & ~cv2.erode(
+        envelope.astype(np.uint8), np.ones((3, 3), dtype=np.uint8)
+    ).astype(bool)
+    boundary_area = max(1, _area(boundary))
+    rows: list[dict[str, float | int]] = []
     for cluster_index in range(cluster_count):
         cluster = labels == cluster_index
         total = _area(cluster)
         largest, span = _largest_component_geometry(cluster)
-        score = largest + 0.25 * total
-        ranked.append((score, cluster_index, largest, total, span))
-    _, surface_index, largest, total, span = max(ranked)
-    total_fraction = total / envelope_area
-    largest_fraction = largest / envelope_area
-    span_fraction = span / envelope_span
-    if (
-        total_fraction < config.minimum_surface_cluster_fraction
-        or largest_fraction < config.minimum_surface_component_fraction
-        or span_fraction < config.minimum_surface_span_fraction
-    ):
+        rows.append(
+            {
+                "cluster_index": cluster_index,
+                "total": total,
+                "largest": largest,
+                "span": span,
+                "total_fraction": total / envelope_area,
+                "largest_fraction": largest / envelope_area,
+                "span_fraction": span / envelope_span,
+                "boundary_fraction": _area(cluster & boundary) / boundary_area,
+            }
+        )
+
+    eligible = [
+        row
+        for row in rows
+        if row["total_fraction"] >= config.minimum_surface_cluster_fraction
+        and row["largest_fraction"] >= config.minimum_surface_component_fraction
+        and row["span_fraction"] >= config.minimum_surface_span_fraction
+    ]
+    if not eligible:
         return None
-    surface_center = centers[surface_index]
-    surface_distance = np.linalg.norm(lab - surface_center, axis=2)
-    within_surface = surface_distance[labels == surface_index]
+
+    seed = max(
+        eligible,
+        key=lambda row: (
+            float(row["largest"])
+            + 0.25 * float(row["total"])
+            + 0.10 * float(row["boundary_fraction"]) * envelope_area
+        ),
+    )
+    seed_index = int(seed["cluster_index"])
+    selected_indices = [seed_index]
+    minimum_partner_span = (
+        config.minimum_surface_partner_span_ratio
+        * config.minimum_surface_span_fraction
+    )
+    for row in rows:
+        cluster_index = int(row["cluster_index"])
+        if cluster_index == seed_index:
+            continue
+        center_distance = float(
+            np.linalg.norm(centers[cluster_index] - centers[seed_index])
+        )
+        if (
+            center_distance <= config.maximum_surface_partner_lab_distance
+            and row["total_fraction"]
+            >= 0.50 * config.minimum_surface_cluster_fraction
+            and row["span_fraction"] >= minimum_partner_span
+        ):
+            selected_indices.append(cluster_index)
+
+    selected_centers = centers[selected_indices]
+    surface_distance = np.linalg.norm(
+        lab[:, :, None, :] - selected_centers[None, None, :, :], axis=3
+    ).min(axis=2)
+    surface_mask = np.isin(labels, selected_indices)
+    within_surface = surface_distance[surface_mask]
     robust_spread = (
         float(np.quantile(within_surface, 0.92)) if within_surface.size else 0.0
     )
     threshold = max(config.object_color_distance, 1.55 * robust_spread)
-    return surface_distance, labels == surface_index, {
-        "surface_cluster_index": int(surface_index),
-        "surface_cluster_fraction": float(total_fraction),
-        "surface_component_fraction": float(largest_fraction),
-        "surface_span_fraction": float(span_fraction),
-        "surface_lab": [float(value) for value in surface_center],
+    return surface_distance, surface_mask, labels, {
+        "surface_cluster_index": seed_index,
+        "surface_cluster_indices": selected_indices,
+        "surface_cluster_fraction": float(_area(surface_mask) / envelope_area),
+        "surface_component_fraction": float(seed["largest_fraction"]),
+        "surface_span_fraction": float(seed["span_fraction"]),
+        "surface_lab": [float(value) for value in centers[seed_index]],
+        "surface_labs": [
+            [float(value) for value in centers[index]]
+            for index in selected_indices
+        ],
+        "surface_cluster_rows": rows,
         "surface_spread": robust_spread,
         "object_distance_threshold": float(threshold),
         "sampled_label_count": len(sampled_labels),
@@ -335,6 +400,8 @@ def _merge_projected_face_fragments(
     lab: np.ndarray,
     object_mask: np.ndarray,
     config: SceneInstanceConfig,
+    *,
+    seed_masks: tuple[np.ndarray, ...] = (),
 ) -> tuple[np.ndarray, dict[str, object]]:
     """Merge projected top/side faces without collapsing adjacent instances."""
 
@@ -405,6 +472,21 @@ def _merge_projected_face_fragments(
             smaller_center_y <= ly0 + 0.68 * larger_height
             and ly1 >= sy1 + 0.15 * larger_height
         )
+        pair_union = masks[left] | masks[right]
+        shared_envelope_support = 0.0
+        shared_envelope_precision = 0.0
+        for seed in seed_masks:
+            seed = seed.astype(bool)
+            left_support = _area(seed & masks[left]) / max(1, areas[left])
+            right_support = _area(seed & masks[right]) / max(1, areas[right])
+            support = min(left_support, right_support)
+            precision = _area(seed & pair_union) / max(1, _area(seed))
+            if (support, precision) > (
+                shared_envelope_support,
+                shared_envelope_precision,
+            ):
+                shared_envelope_support = float(support)
+                shared_envelope_precision = float(precision)
         standard_face = bool(
             merged_fraction <= config.maximum_structural_merged_fraction
             and contact_ratio >= config.minimum_structural_face_contact
@@ -427,7 +509,35 @@ def _merge_projected_face_fragments(
             and upper_structure
             and lab_distance <= config.strong_projected_maximum_lab_distance
         )
-        provisional_accepted = standard_face or strong_projected_face
+        compact_projected_face = bool(
+            merged_fraction <= config.compact_projected_maximum_merged_fraction
+            and contact_ratio >= config.compact_projected_minimum_contact
+            and horizontal_overlap_ratio
+            >= config.compact_projected_minimum_horizontal_overlap
+            and vertical_overlap_ratio
+            >= config.compact_projected_minimum_vertical_overlap
+            and area_ratio <= config.compact_projected_maximum_area_ratio
+            and aspect_ratio >= config.compact_projected_minimum_aspect_ratio
+            and upper_structure
+            and lab_distance <= config.strong_projected_maximum_lab_distance
+        )
+        shared_object_support = bool(
+            shared_envelope_support >= config.minimum_shared_envelope_support
+            and shared_envelope_precision >= config.minimum_shared_envelope_precision
+        )
+        projected_face_evidence = bool(
+            not seed_masks
+            or merged_fraction <= config.maximum_unseeded_projected_face_fraction
+            or shared_object_support
+        )
+        provisional_accepted = bool(
+            (
+                standard_face
+                or strong_projected_face
+                or compact_projected_face
+            )
+            and projected_face_evidence
+        )
         rows.append(
             {
                 "labels": [left, right],
@@ -439,11 +549,16 @@ def _merge_projected_face_fragments(
                 "upper_structure": upper_structure,
                 "lab_distance": lab_distance,
                 "merged_fraction": float(merged_fraction),
+                "shared_envelope_support": shared_envelope_support,
+                "shared_envelope_precision": shared_envelope_precision,
+                "projected_face_evidence": projected_face_evidence,
                 "merge_reason": (
                     "projected_face"
                     if standard_face
                     else "strong_projected_face"
                     if strong_projected_face
+                    else "compact_projected_face"
+                    if compact_projected_face
                     else None
                 ),
                 "provisional_accepted": provisional_accepted,
@@ -562,7 +677,7 @@ def partition_scene_instances(
                 "ground_truth_used": False,
             },
         )
-    surface_distance, _, surface_diagnostics = surface
+    surface_distance, _, color_labels, surface_diagnostics = surface
     threshold = float(surface_diagnostics["object_distance_threshold"])
     appearance_foreground = envelope & (surface_distance >= threshold)
     appearance_foreground = cv2.morphologyEx(
@@ -629,6 +744,7 @@ def partition_scene_instances(
     marker_to_seed: dict[int, int] = {}
     marker_points: list[tuple[int, int, float]] = []
     marker_seed_masks: list[np.ndarray] = []
+    structural_seed_envelopes: list[np.ndarray] = []
     replaced_seed_indices: set[int] = set()
     suppressed_seed_markers: list[dict[str, object]] = []
     marker_index = 0
@@ -649,14 +765,18 @@ def partition_scene_instances(
             continue
         seed_area = max(1, _area(seed))
         duplicate_structure = None
+        duplicate_seed: np.ndarray | None = None
         for selected_seed in marker_seed_masks:
             selected_area = max(1, _area(selected_seed))
             intersection = _area(seed & selected_seed)
             overlap_of_smaller = intersection / min(seed_area, selected_area)
             if overlap_of_smaller >= 0.08:
                 duplicate_structure = overlap_of_smaller
+                duplicate_seed = selected_seed
                 break
         if duplicate_structure is not None:
+            if duplicate_seed is not None:
+                structural_seed_envelopes.append(seed | duplicate_seed)
             suppressed_seed_markers.append(
                 {
                     "seed_index": seed_index,
@@ -700,6 +820,92 @@ def partition_scene_instances(
         if marker_index >= config.maximum_markers:
             break
 
+    color_component_marker_count = 0
+    color_marker_candidates: list[
+        tuple[float, int, int, float, int]
+    ] = []
+    selected_surface_indices = {
+        int(value)
+        for value in surface_diagnostics["surface_cluster_indices"]
+    }
+    minimum_color_component_area = max(2 * minimum_object_area, 36)
+    for cluster_index in (
+        int(value) for value in np.unique(color_labels) if value >= 0
+    ):
+        if cluster_index in selected_surface_indices:
+            continue
+        cluster_mask = (color_labels == cluster_index) & object_mask
+        component_count, component_labels, component_stats, _ = (
+            cv2.connectedComponentsWithStats(
+                cluster_mask.astype(np.uint8), connectivity=8
+            )
+        )
+        for component_index in range(1, component_count):
+            component_area = int(
+                component_stats[component_index, cv2.CC_STAT_AREA]
+            )
+            if component_area < minimum_color_component_area:
+                continue
+            component = component_labels == component_index
+            seed_support = max(
+                (
+                    _area(component & seed) / max(1, component_area)
+                    for _, _, seed in seed_rows
+                ),
+                default=0.0,
+            )
+            if seed_support >= 0.50:
+                continue
+            point = _marker_point(component)
+            if point is None:
+                continue
+            y, x, radius = point
+            nearest_distance = min(
+                (
+                    float(np.hypot(x - old_x, y - old_y))
+                    for old_y, old_x, _ in marker_points
+                ),
+                default=float(max(width, height)),
+            )
+            score = float(
+                np.sqrt(component_area)
+                * max(1.0, radius)
+                * min(2.0, nearest_distance / max(1.0, minimum_peak_distance))
+            )
+            color_marker_candidates.append(
+                (score, y, x, radius, component_area)
+            )
+
+    for _, y, x, radius, _ in sorted(
+        color_marker_candidates, reverse=True
+    ):
+        if (
+            marker_index >= config.maximum_markers
+            or color_component_marker_count
+            >= config.maximum_color_component_markers
+        ):
+            break
+        exclusion = max(
+            0.75 * minimum_peak_distance,
+            min(
+                1.5 * minimum_peak_distance,
+                0.32
+                * (
+                    radius
+                    + max((point[2] for point in marker_points), default=0.0)
+                ),
+            ),
+        )
+        if any(
+            np.hypot(x - old_x, y - old_y) < exclusion
+            for old_y, old_x, _ in marker_points
+        ):
+            continue
+        marker_index += 1
+        marker_map[y, x] = marker_index
+        marker_points.append((y, x, radius))
+        color_component_marker_count += 1
+
     from scipy import ndimage as ndi
     from skimage.feature import peak_local_max
     from skimage.segmentation import watershed
@@ -713,6 +919,7 @@ def partition_scene_instances(
         num_peaks=config.maximum_markers,
         exclude_border=False,
     )
+    peak_candidate_count = len(coordinates)
     protected_seed_area = cv2.dilate(
         seed_union.astype(np.uint8), np.ones((5, 5), dtype=np.uint8)
     ).astype(bool)
@@ -726,7 +933,15 @@ def partition_scene_instances(
         radius = float(distance[y, x])
         too_close = any(
             np.hypot(x - old_x, y - old_y)
-            < max(minimum_peak_distance, 0.72 * (radius + old_radius))
+            < max(
+                minimum_peak_distance,
+                min(
+                    config.maximum_peak_exclusion_multiplier
+                    * minimum_peak_distance,
+                    config.peak_radius_exclusion_weight
+                    * (radius + old_radius),
+                ),
+            )
             for old_y, old_x, old_radius in marker_points
         )
         if too_close:
@@ -760,18 +975,22 @@ def partition_scene_instances(
         mask=object_mask,
         watershed_line=False,
     )
+    merge_seed_masks = tuple(seed for _, _, seed in seed_rows) + tuple(
+        structural_seed_envelopes
+    )
     labels, surface_merge_diagnostics = _merge_adjacent_object_surfaces(
         labels,
         lab,
         object_mask,
         config,
-        seed_masks=tuple(seed for _, _, seed in seed_rows),
+        seed_masks=merge_seed_masks,
     )
     labels, projected_face_diagnostics = _merge_projected_face_fragments(
         labels,
         lab,
         object_mask,
         config,
+        seed_masks=merge_seed_masks,
     )
     surface_merge_diagnostics["projected_face_consolidation"] = (
         projected_face_diagnostics
@@ -866,6 +1085,9 @@ def partition_scene_instances(
             "accepted_seed_count": len(seed_rows),
             "replaced_seed_count": len(replaced_seed_indices),
             "marker_count": marker_index,
+            "color_component_marker_count": color_component_marker_count,
+            "color_component_candidate_count": len(color_marker_candidates),
+            "peak_candidate_count": peak_candidate_count,
             "suppressed_seed_marker_count": len(suppressed_seed_markers),
             "suppressed_seed_markers": suppressed_seed_markers,
             "partition_count": len(partitions),

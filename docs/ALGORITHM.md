@@ -112,13 +112,23 @@ duplicate a physical part, or miss details; none may assign final IDs directly.
    fore-end seed may supply a smoothed Lab material reference with lightness
    downweighted; this reconnects one handguard across illumination changes
    before an edge-preserving watershed aligns boundaries to visible seams.
+   Curved supports and rings use semantic continuity plus shared topology:
+   disconnected visible arcs may share one Group ID when they occupy one
+   expected support path, while an intervening stem or base remains separate.
    Character grouping estimates a head-to-feet pose axis, derives its garment
    boundary from the head end and footwear start, audits compact face-interior
    islands topologically, and uses paired lower-limb skin evidence only after
-   semantic lower-body routing. It then clips every morphological update to the
-   existing root.
-   Appearance evidence cannot add a Group ID. Fast scene output uses distinct
-   neutral `scene_object` Groups when ontology labels are provisional.
+   semantic lower-body routing. Inner garments, outer garments, and lower
+   garments require separate semantic seeds; sleeves attach to their garment
+   seed instead of becoming colour-panel identities. It then clips every
+   morphological update to the existing root.
+   Fast scene grouping first estimates a multi-cluster support surface, then
+   treats bounded colour components, distance peaks, and closed boundaries as
+   marker evidence for repeated physical instances. Projected faces merge only
+   when they share one structural seed and satisfy compact size and offset
+   guards, preventing both one-rock-per-face fragmentation and whole-cluster
+   collapse. Appearance evidence cannot add a Group ID. Scene outputs retain
+   neutral `scene_object` names when ontology labels are provisional.
 20. Build occlusion hypotheses. Optional completion removes a hypothesized
    occluder with LaMa, asks SAM2 for an amodal mask, and accepts the result only
    when direction, contact, size, visible-lock, and false-addition gates pass.

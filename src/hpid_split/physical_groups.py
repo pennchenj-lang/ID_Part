@@ -243,13 +243,22 @@ def _knife_inventory_active(candidates: tuple[MaskCandidate, ...]) -> bool:
 
 
 def _selected_profile(candidates: tuple[MaskCandidate, ...]) -> str | None:
-    profiles = {
+    root_profiles = {
         str(candidate.metadata["selected_part_profile"])
         for candidate in candidates
         if candidate.semantic_name == candidate.semantic_parent
         and candidate.metadata.get("selected_part_profile")
     }
-    return next(iter(profiles)) if len(profiles) == 1 else None
+    if len(root_profiles) == 1:
+        return next(iter(root_profiles))
+    if root_profiles:
+        return None
+    child_profiles = {
+        str(candidate.metadata["selected_part_profile"])
+        for candidate in candidates
+        if candidate.metadata.get("selected_part_profile")
+    }
+    return next(iter(child_profiles)) if len(child_profiles) == 1 else None
 
 
 def _mask_shape_descriptor(mask: np.ndarray) -> dict[str, float] | None:
@@ -904,6 +913,35 @@ def _profile_candidate_verification(
     return accepted, proposed - accepted, rows
 
 
+def _structurally_recovered_profile_semantics(
+    profile: str | None,
+    verification_rows: list[dict[str, object]],
+) -> set[str]:
+    """Recover profile parts whose identity and geometry are independently sound.
+
+    Appearance remains a review signal in this case.  It cannot erase a named,
+    structurally valid component merely because illumination changes along one
+    continuous physical surface.
+    """
+
+    if profile != "globe":
+        return set()
+    recovered: set[str] = set()
+    for row in verification_rows:
+        semantic_name = str(row.get("semantic_name") or "")
+        stage_1 = row.get("stage_1_semantic")
+        stage_2 = row.get("stage_2_structure")
+        if (
+            semantic_name == "device_globe_meridian_ring"
+            and isinstance(stage_1, dict)
+            and isinstance(stage_2, dict)
+            and bool(stage_1.get("verified"))
+            and bool(stage_2.get("verified"))
+        ):
+            recovered.add(semantic_name)
+    return recovered
+
+
 def _character_axis_frame(
     instance_map: np.ndarray,
     records: list[PartInstance] | tuple[PartInstance, ...],
@@ -997,6 +1035,13 @@ def _profile_semantic_group_overrides(
     profile_semantics, rejected_profile_semantics, verification_rows = (
         _profile_candidate_verification(candidates, profile)
     )
+    structurally_recovered_semantics = _structurally_recovered_profile_semantics(
+        profile,
+        verification_rows,
+    )
+    if structurally_recovered_semantics:
+        profile_semantics |= structurally_recovered_semantics
+        rejected_profile_semantics -= structurally_recovered_semantics
     targets = [
         record
         for record in records
@@ -1110,7 +1155,19 @@ def _profile_semantic_group_overrides(
                 if source_lab is not None and target_lab is not None
                 else 0.0
             )
-            cost = 0.64 * spatial + 0.14 * appearance - 0.22 * shared_boundary
+            centroid_distance = float(
+                np.hypot(
+                    record.centroid_xy[0] - target.centroid_xy[0],
+                    record.centroid_xy[1] - target.centroid_xy[1],
+                )
+                / diagonal
+            )
+            cost = (
+                0.58 * spatial
+                + 0.14 * appearance
+                + 0.24 * centroid_distance
+                - 0.22 * shared_boundary
+            )
             scored.append((cost, target))
         _, target = min(scored, key=lambda row: row[0])
         overrides[record.part_id] = (
@@ -1129,6 +1186,14 @@ def _profile_semantic_group_overrides(
         "three_stage_verification": verification_rows,
         "verified_semantics": sorted(profile_semantics),
         "rejected_semantics": sorted(rejected_profile_semantics),
+        "structurally_recovered_semantics": sorted(
+            structurally_recovered_semantics
+        ),
+        "structural_recovery_policy": (
+            "globe_meridian_requires_semantic_and_structure; appearance_marks_review"
+            if structurally_recovered_semantics
+            else None
+        ),
         "ground_truth_used": False,
     }
 
@@ -1587,6 +1652,18 @@ def _semantic_seeded_profile_masks(
         if candidate_profile != profile or candidate.mask.shape != root.shape:
             continue
         verification = _candidate_three_stage_verification(candidate)
+        structurally_recovered = bool(
+            candidate.semantic_name
+            in _structurally_recovered_profile_semantics(
+                profile,
+                [
+                    {
+                        "semantic_name": candidate.semantic_name,
+                        **verification,
+                    }
+                ],
+            )
+        )
         canonical = _canonical_profile_group_semantic(
             candidate.semantic_name,
             profile,
@@ -1601,7 +1678,7 @@ def _semantic_seeded_profile_masks(
         )
         fraction = float(np.count_nonzero(clipped) / root_area)
         accepted = bool(
-            verification["accepted"]
+            (verification["accepted"] or structurally_recovered)
             and containment >= 0.80
             and 0.004 <= fraction <= 0.88
         )
@@ -1614,6 +1691,7 @@ def _semantic_seeded_profile_masks(
                 "root_containment": containment,
                 "root_area_fraction": fraction,
                 "accepted_seed": accepted,
+                "structurally_recovered": structurally_recovered,
                 "verification": verification,
             }
         )
@@ -2517,6 +2595,111 @@ def _character_surface_group_overrides(
         else None
     )
 
+    upper_records = [
+        record
+        for record in record_list
+        if record.semantic_name != record.semantic_parent
+        and bool(_words(record.semantic_name) & _UPPER_GARMENT_TOKENS)
+        and "sleeve" not in _words(record.semantic_name)
+    ]
+    sleeve_records = [
+        record
+        for record in record_list
+        if "sleeve" in _words(record.semantic_name)
+    ]
+    valid_upper_records: list[PartInstance] = []
+    rejected_upper_records: list[PartInstance] = []
+    for record in upper_records:
+        top, bottom, center_y, _ = normalized_geometry(record)
+        if (
+            top >= max(0.0, head_bottom_norm - 0.035)
+            and bottom <= lower_zone_start + 0.12
+            and center_y <= lower_zone_start + 0.04
+        ):
+            valid_upper_records.append(record)
+        else:
+            rejected_upper_records.append(record)
+
+    material_lab = lab * np.asarray((0.42, 1.0, 1.0), dtype=np.float32)
+    upper_layer_distances: list[float] = []
+    for sleeve in sleeve_records:
+        sleeve_mask = mask_for(sleeve)
+        if not np.any(sleeve_mask):
+            continue
+        sleeve_center = np.median(material_lab[sleeve_mask], axis=0)
+        distances = [
+            float(
+                np.linalg.norm(
+                    sleeve_center
+                    - np.median(material_lab[mask_for(record)], axis=0)
+                )
+            )
+            for record in valid_upper_records
+            if np.any(mask_for(record))
+        ]
+        if distances:
+            upper_layer_distances.append(min(distances))
+    layered_upper = bool(
+        valid_upper_records
+        and sleeve_records
+        and upper_layer_distances
+        and float(np.median(upper_layer_distances)) >= 12.0
+    )
+    upper_layer_overrides: dict[str, tuple[str, int | None, str]] = {}
+    if layered_upper:
+        for record in valid_upper_records:
+            upper_layer_overrides[record.part_id] = (
+                "character_inner_top",
+                None,
+                "character_layered_garment_inner_semantic_seed",
+            )
+        for record in sleeve_records:
+            upper_layer_overrides[record.part_id] = (
+                "character_outer_garment",
+                None,
+                "character_layered_garment_outer_sleeve_seed",
+            )
+    for record in rejected_upper_records:
+        record_mask = mask_for(record)
+        source_lab = np.median(lab[record_mask], axis=0)
+        continues_hair = bool(
+            hair_lab is not None
+            and hair_distance is not None
+            and float(np.linalg.norm(source_lab - hair_lab)) <= 20.0
+            and float(hair_distance[record_mask].min(initial=diagonal))
+            <= 0.035 * diagonal
+        )
+        upper_layer_overrides[record.part_id] = (
+            "character_hair" if continues_hair else "character_body",
+            None,
+            (
+                "character_overbroad_upper_candidate_hair_return"
+                if continues_hair
+                else "character_overbroad_upper_candidate_body_return"
+            ),
+        )
+
+    inner_layer_mask = np.isin(
+        instance_map,
+        [record.instance_index for record in valid_upper_records],
+    )
+    outer_layer_mask = np.isin(
+        instance_map,
+        [record.instance_index for record in sleeve_records],
+    )
+    layer_references = {
+        "character_inner_top": (
+            np.median(material_lab[inner_layer_mask], axis=0)
+            if np.any(inner_layer_mask)
+            else None
+        ),
+        "character_outer_garment": (
+            np.median(material_lab[outer_layer_mask], axis=0)
+            if np.any(outer_layer_mask)
+            else None
+        ),
+    }
+
     visual_assignments: dict[str, tuple[str, int | None, str]] = {}
     upper_visual_mask = np.zeros(instance_map.shape, dtype=bool)
     rows: list[dict[str, object]] = []
@@ -2528,10 +2711,24 @@ def _character_surface_group_overrides(
         area_fraction = record.area_px / root_area
         semantic = "character_body"
         evidence = "character_visual_body_fallback"
-        if top >= 0.82 or (center_y >= 0.88 and bottom >= 0.91):
+        source_lab = np.median(lab[mask], axis=0)
+        continues_hair = bool(
+            hair_lab is not None
+            and hair_distance is not None
+            and float(np.linalg.norm(source_lab - hair_lab)) <= 18.0
+            and float(hair_distance[mask].min(initial=diagonal)) <= 0.025 * diagonal
+        )
+        if continues_hair and center_y <= lower_zone_start + 0.02:
+            semantic = "character_hair"
+            evidence = "character_hair_appearance_continuation"
+        elif top >= 0.82 or (center_y >= 0.88 and bottom >= 0.91):
             semantic = "character_footwear"
             evidence = "character_pose_axis_footwear_zone"
-        elif top >= lower_zone_start and center_y >= lower_zone_start + 0.04:
+        elif (
+            center_y >= lower_zone_start - 0.012
+            and bottom >= lower_zone_start + 0.04
+            and top >= head_bottom_norm + 0.10
+        ):
             semantic = "character_lower_garment"
             evidence = "character_pose_axis_lower_garment_zone"
         elif (
@@ -2539,21 +2736,28 @@ def _character_surface_group_overrides(
             and top <= lower_zone_start + 0.08
             and center_y <= lower_zone_start + 0.08
         ):
-            semantic = "character_upper_garment"
-            evidence = "character_torso_and_sleeve_zone"
+            if layered_upper:
+                visual_center = np.median(material_lab[mask], axis=0)
+                distances = [
+                    (float(np.linalg.norm(visual_center - reference)), name)
+                    for name, reference in layer_references.items()
+                    if reference is not None
+                ]
+                if distances:
+                    _, semantic = min(distances, key=lambda row: row[0])
+                    evidence = "character_layered_garment_material_attachment"
+                else:
+                    semantic = "character_upper_garment"
+                    evidence = "character_torso_and_sleeve_zone"
+            else:
+                semantic = "character_upper_garment"
+                evidence = "character_torso_and_sleeve_zone"
         elif (
             bottom <= head_bottom_norm + 0.10
             and center_y <= head_bottom_norm
             and area_fraction >= 0.001
             and 0.08 <= center_x <= 0.92
         ):
-            source_lab = np.median(lab[mask], axis=0)
-            continues_hair = bool(
-                hair_lab is not None
-                and hair_distance is not None
-                and float(np.linalg.norm(source_lab - hair_lab)) <= 18.0
-                and float(hair_distance[mask].min(initial=diagonal)) <= 0.025 * diagonal
-            )
             # A visual atom inside the face is commonly an eye socket, blush,
             # highlight, or shading region.  Location plus appearance is not
             # semantic evidence for headwear.  Only an explicit headwear
@@ -2566,7 +2770,11 @@ def _character_surface_group_overrides(
                 else "character_head_visual_body_fallback"
             )
         visual_assignments[record.part_id] = (semantic, None, evidence)
-        if semantic == "character_upper_garment":
+        if semantic in {
+            "character_upper_garment",
+            "character_inner_top",
+            "character_outer_garment",
+        }:
             upper_visual_mask |= mask
         rows.append(
             {
@@ -2615,10 +2823,13 @@ def _character_surface_group_overrides(
     )
 
     overrides = dict(visual_assignments)
+    overrides.update(upper_layer_overrides)
     for record in record_list:
         words = _words(record.semantic_name)
         mask = mask_for(record)
         top, bottom, center_y, _ = normalized_geometry(record)
+        if record.part_id in upper_layer_overrides:
+            continue
         if words & _LOWER_GARMENT_TOKENS or record.semantic_name.endswith(
             "_lower_clothing"
         ):
@@ -2640,36 +2851,18 @@ def _character_surface_group_overrides(
                 None,
                 "character_upper_garment_inventory",
             )
-        elif "head" in words and skin_lab is not None:
-            head_lab = np.median(lab[mask], axis=0)
-            skin_difference = float(np.linalg.norm(head_lab - skin_lab))
-            skin_consistent_fraction = float(
-                np.mean(np.linalg.norm(lab[mask] - skin_lab, axis=1) <= 25.0)
+        elif words & {"headwear", "hat", "cap", "helmet"}:
+            overrides[record.part_id] = (
+                "character_headwear",
+                None,
+                "explicit_character_headwear_inventory",
             )
-            covers_head_cap = bool(
-                top <= 0.12
-                and bottom <= head_bottom_norm + 0.04
-                and record.area_px / root_area >= 0.06
+        elif words & {"head", "face"}:
+            overrides[record.part_id] = (
+                "character_body",
+                None,
+                "character_head_anatomy_body_group",
             )
-            if covers_head_cap and (
-                skin_difference >= 24.0 or skin_consistent_fraction <= 0.42
-            ):
-                overrides[record.part_id] = (
-                    "character_headwear",
-                    None,
-                    "character_head_skin_inconsistency",
-                )
-                rows.append(
-                    {
-                        "part_id": record.part_id,
-                        "semantic_name": "character_headwear",
-                        "skin_lab_difference": skin_difference,
-                        "skin_consistent_fraction": skin_consistent_fraction,
-                        "top": float(top),
-                        "bottom": float(bottom),
-                        "evidence": "character_head_skin_inconsistency",
-                    }
-                )
         elif (
             record.semantic_name == "character_accessory"
             and center_y <= head_bottom_norm + 0.08
@@ -2719,14 +2912,18 @@ def _character_surface_group_overrides(
             upper_gap = float(upper_distance[mask].min(initial=diagonal))
             if skin_difference >= 20.0 and upper_gap <= 0.03 * diagonal:
                 overrides[record.part_id] = (
-                    "character_upper_garment",
+                    (
+                        "character_outer_garment"
+                        if layered_upper
+                        else "character_upper_garment"
+                    ),
                     None,
                     "character_sleeve_skin_contrast",
                 )
                 rows.append(
                     {
                         "part_id": record.part_id,
-                        "semantic_name": "character_upper_garment",
+                        "semantic_name": overrides[record.part_id][0],
                         "skin_lab_difference": skin_difference,
                         "upper_gap_px": upper_gap,
                         "evidence": "character_sleeve_skin_contrast",
@@ -2741,6 +2938,19 @@ def _character_surface_group_overrides(
         "lower_zone_start_normalized": float(lower_zone_start),
         "axis_direction_xy": list(axis_frame.axis_direction_xy),
         "override_count": len(overrides),
+        "layered_upper_garment": {
+            "detected": layered_upper,
+            "valid_upper_seed_count": len(valid_upper_records),
+            "outer_sleeve_seed_count": len(sleeve_records),
+            "rejected_overbroad_upper_count": len(rejected_upper_records),
+            "median_material_distance": (
+                float(np.median(upper_layer_distances))
+                if upper_layer_distances
+                else None
+            ),
+            "appearance_role": "verify_same_or_distinct_semantic_garment_seeds",
+            "appearance_can_create_ids": False,
+        },
         "rows": rows,
         "appearance_role": "skin_or_sleeve_and_hair_continuation_only",
         "appearance_can_create_ids": False,
@@ -3552,6 +3762,8 @@ def _regularize_character_surface_boundaries(
     macro_semantics = {
         "character_body",
         "character_upper_garment",
+        "character_inner_top",
+        "character_outer_garment",
         "character_lower_garment",
         "character_footwear",
         "character_hair",
@@ -3668,7 +3880,11 @@ def _regularize_character_surface_boundaries(
     for group in macro_groups:
         group_mask = group_map == group.group_index
         coordinate = axis_frame.coordinate
-        if group.semantic_name == "character_upper_garment":
+        if group.semantic_name in {
+            "character_upper_garment",
+            "character_inner_top",
+            "character_outer_garment",
+        }:
             invalid = group_mask & (
                 (coordinate < axis_frame.head_end - 0.05)
                 | (coordinate > lower_zone_start + 0.05)
@@ -4751,6 +4967,14 @@ def build_physical_groups(
         selected_profile,
         instance_map > 0,
     )
+    structurally_recovered_profile_semantics = (
+        _structurally_recovered_profile_semantics(
+            selected_profile,
+            profile_verification_rows,
+        )
+    )
+    verified_profile_semantics |= structurally_recovered_profile_semantics
+    rejected_profile_semantics -= structurally_recovered_profile_semantics
     knife_inventory = _knife_inventory_active(candidate_tuple)
     promoted_visuals = _promotable_visual_semantics(candidate_tuple)
     profile_group_overrides, profile_grouping_diagnostics = (

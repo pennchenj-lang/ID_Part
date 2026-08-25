@@ -48,6 +48,62 @@ def test_scene_partition_separates_touching_repeated_objects() -> None:
     assert result.diagnostics["ground_truth_used"] is False
 
 
+def test_scene_partition_accepts_a_multitone_support_surface() -> None:
+    image = np.full((180, 260, 3), 248, dtype=np.uint8)
+    envelope = np.zeros((180, 260), dtype=np.uint8)
+    cv2.rectangle(envelope, (8, 34), (252, 174), 1, -1)
+    image[envelope.astype(bool)] = (58, 158, 54)
+    image[34:175, 130:253] = (76, 178, 66)
+    image[42:175:18, 8:253] = (69, 169, 61)
+
+    objects: list[np.ndarray] = []
+    for center, color in zip(
+        ((72, 105), (128, 101), (192, 108)),
+        ((170, 150, 126), (128, 119, 103), (198, 183, 151)),
+        strict=True,
+    ):
+        mask = np.zeros_like(envelope)
+        cv2.ellipse(mask, center, (24, 27), 0, 0, 360, 1, -1)
+        image[mask.astype(bool)] = color
+        objects.append(mask)
+
+    result = partition_scene_instances(
+        Image.fromarray(image),
+        _proposal(envelope),
+        [_proposal(objects[0]), _proposal(objects[2])],
+    )
+
+    assert result.diagnostics["status"] == "applied"
+    assert len(result.diagnostics["surface_cluster_indices"]) >= 2
+    assert len(result.partitions) >= 3
+
+
+def test_scene_partition_keeps_peaks_in_a_large_compound_cluster() -> None:
+    image = np.full((180, 280, 3), 248, dtype=np.uint8)
+    envelope = np.zeros((180, 280), dtype=np.uint8)
+    cv2.rectangle(envelope, (8, 34), (272, 174), 1, -1)
+    image[envelope.astype(bool)] = (62, 166, 58)
+    for center, color in zip(
+        ((65, 108), (115, 108), (165, 108), (215, 108)),
+        ((178, 126, 112), (112, 126, 176), (190, 170, 112), (105, 108, 102)),
+        strict=True,
+    ):
+        mask = np.zeros_like(envelope)
+        cv2.circle(mask, center, 34, 1, -1)
+        image[mask.astype(bool)] = color
+
+    result = partition_scene_instances(
+        Image.fromarray(image),
+        _proposal(envelope),
+        [],
+    )
+
+    assert result.diagnostics["status"] == "applied"
+    assert result.diagnostics["marker_count"] >= 4
+    assert result.diagnostics["color_component_marker_count"] >= 4
+    assert len(result.partitions) >= 4
+
+
 def test_scene_partition_consolidates_multiple_face_seeds_of_one_object() -> None:
     image = np.full((180, 260, 3), 246, dtype=np.uint8)
     envelope = np.zeros((180, 260), dtype=np.uint8)
@@ -153,9 +209,62 @@ def test_scene_projected_face_merge_joins_wide_top_to_body() -> None:
         lab,
         object_mask,
         SceneInstanceConfig(maximum_structural_merged_fraction=1.0),
+        seed_masks=(object_mask,),
     )
 
     assert set(np.unique(merged)) == {0, 1}
+    assert diagnostics["merge_rows"][0]["accepted"] is True
+
+
+def test_scene_projected_face_merge_keeps_separately_seeded_objects() -> None:
+    labels = np.zeros((100, 120), dtype=np.int32)
+    labels[20:88, 26:96] = 2
+    labels[12:36, 30:82] = 1
+    object_mask = labels > 0
+    lab = np.zeros((100, 120, 3), dtype=np.float32)
+    lab[labels == 1] = (185, 140, 135)
+    lab[labels == 2] = (110, 125, 120)
+
+    merged, diagnostics = _merge_projected_face_fragments(
+        labels,
+        lab,
+        object_mask,
+        SceneInstanceConfig(maximum_structural_merged_fraction=1.0),
+        seed_masks=(labels == 1, labels == 2),
+    )
+
+    assert set(np.unique(merged)) == {0, 1, 2}
+    assert diagnostics["merge_rows"][0]["projected_face_evidence"] is False
+    assert diagnostics["merge_rows"][0]["accepted"] is False
+
+
+def test_scene_projected_face_merge_joins_a_compact_offset_top() -> None:
+    labels = np.zeros((120, 150), dtype=np.int32)
+    labels[42:105, 38:118] = 2
+    labels[24:64, 48:102] = 1
+    object_mask = labels > 0
+    lab = np.zeros((120, 150, 3), dtype=np.float32)
+    lab[labels == 1] = (200, 145, 136)
+    lab[labels == 2] = (86, 124, 118)
+    unrelated = np.zeros_like(labels, dtype=bool)
+    unrelated[8:24, 8:24] = True
+    object_mask |= unrelated
+
+    merged, diagnostics = _merge_projected_face_fragments(
+        labels,
+        lab,
+        object_mask,
+        SceneInstanceConfig(
+            compact_projected_maximum_merged_fraction=1.0,
+            maximum_unseeded_projected_face_fraction=1.0,
+        ),
+    )
+
+    assert set(np.unique(merged)) == {0, 1}
+    assert diagnostics["merge_rows"][0]["merge_reason"] in {
+        "compact_projected_face",
+        "strong_projected_face",
+    }
     assert diagnostics["merge_rows"][0]["accepted"] is True
 
 

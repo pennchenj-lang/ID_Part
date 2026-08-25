@@ -747,10 +747,12 @@ def generate_proposal_first_roots(
             item
             for item in viable
             if bool(item[2].get("derived_from_background_complement"))
-            and not bool(item[2].get("derived_scene_object_envelope"))
+            and 0.24 <= _area(item[1].mask) / image_area <= 0.94
+            and _border_touches(item[1].mask.astype(bool)) <= 1
         ]
         if envelope_items:
             envelope_item = max(envelope_items, key=lambda item: _area(item[1].mask))
+            envelope_item[2]["scene_instance_envelope_selected"] = True
             seed_items = [
                 item
                 for item in viable

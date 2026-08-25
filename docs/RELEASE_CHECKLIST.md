@@ -7,7 +7,7 @@
   before/after audit with no ground-truth inference input.
 - [x] Evidence-gated LaMa + SAM2 completion runs locally.
 - [x] Exported packages have candidate audits, diagnostics, and SHA-256 hashes.
-- [x] 486 unit tests and full static checks pass on the current release tree.
+- [x] 582 unit tests and full static checks pass on the current release tree.
 - [x] Fast automatic inference reuses one SAM2 proposal pool and keeps
   Grounding DINO unloaded.
 - [x] Character, knife, firearm, globe, repeated-rock scene, and dual-building
