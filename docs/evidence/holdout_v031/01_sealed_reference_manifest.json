@@ -1,0 +1,303 @@
+{
+  "format": "HPID-Split sealed holdout references",
+  "format_version": "0.1.0",
+  "preregistration_sha256": "3d9d0191646fc2724f47976513a1c4f6a229c9f87866e3edc09527efd7205d33",
+  "opened_only_after_blind_inference": true,
+  "case_count": 42,
+  "cases": [
+    {
+      "case_id": "cellular_telephone__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\cellular_telephone__u01\\case.json",
+      "case_json_sha256": "5c87222e0969eb881487103134e7109ff4bb1bd3a2e36dc3561fb17e6656f8e2",
+      "part_count": 4,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "laptop_computer__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\laptop_computer__u01\\case.json",
+      "case_json_sha256": "45dbdb51e66552de40024f2c3228157d96c30bac97a3931e03fe643d705ba8a3",
+      "part_count": 7,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "television_set__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\television_set__u01\\case.json",
+      "case_json_sha256": "d9757394bdc8172b57de688c08bf4af602ce1916dad081399afdb463b3c7f890",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "remote_control__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\remote_control__u01\\case.json",
+      "case_json_sha256": "6ea4ef0e60e0b3d56c8e8fe79dbb8f7fcc89492b88336c88b5745aafe2ead5ba",
+      "part_count": 3,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "calculator__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\calculator__u01\\case.json",
+      "case_json_sha256": "12cd56e2799893ba14fd8393efff3d45b7988e74378f2b27cd027d2f95f278e4",
+      "part_count": 4,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "telephone__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\telephone__u01\\case.json",
+      "case_json_sha256": "0968fec89bf6f8906cb4a0f9131eb2619dec0e7ae9782d0ee58391d3f4459b36",
+      "part_count": 4,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "clock__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\clock__u01\\case.json",
+      "case_json_sha256": "b450c9f180a5ab12113c620ad36d907fddeda3e4ceb1f59b6f5c30421c6b52fa",
+      "part_count": 3,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "watch__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\watch__u01\\case.json",
+      "case_json_sha256": "23ba32e33bac93744dbdfee8b34a13068d138740a5069aaf2c94e8fe9d470e0c",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "chair__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\chair__u01\\case.json",
+      "case_json_sha256": "fba79d9146a280c62d0a294b1feb14574c913392725aaa9f7f0c084e8186d0a4",
+      "part_count": 7,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "bench__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\bench__u01\\case.json",
+      "case_json_sha256": "98f1d2be49ba528b18fdfcb6486979dbbd07ca2038a102238d55bba4ca36b6d8",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "stool__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\stool__u01\\case.json",
+      "case_json_sha256": "3b792a9d59214f1c8470a556fdd7db388755f9217ad23a198697d7458b2c96ef",
+      "part_count": 3,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "table__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\table__u01\\case.json",
+      "case_json_sha256": "16c1495b52c48368ea25bfe814ee4ccde9b6b22c19945108e950548226bd0faa",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "bottle__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\bottle__u01\\case.json",
+      "case_json_sha256": "7e0d2c83741af77798b445ed82facf940514d0074f20597735c5994704d02a22",
+      "part_count": 7,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "jar__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\jar__u01\\case.json",
+      "case_json_sha256": "8bd838a0215cd267c7508096710363c0a742ed129f4829840215c0d33bff6993",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "can__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\can__u01\\case.json",
+      "case_json_sha256": "b01050a00f7d6ec8b82e3c0ea68160c827b6cb4549987f436f393f50c6e13c8c",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "cup__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\cup__u01\\case.json",
+      "case_json_sha256": "2fb97ced76c0f51c7e6bde793e67cfdf8c866a2228f50e8e7850e9cb09588a88",
+      "part_count": 4,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "mug__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\mug__u01\\case.json",
+      "case_json_sha256": "0c3b4aef1ce49e91b30131ac8675826ca1d5c3e6bc76fd89ada93150e97ca8ed",
+      "part_count": 6,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "glass_drink_container__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\glass_drink_container__u01\\case.json",
+      "case_json_sha256": "7fbe864fea09c12b01e4098df47ffdf62fda3d55e5be3a28d833766df87af895",
+      "part_count": 4,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "bowl__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\bowl__u01\\case.json",
+      "case_json_sha256": "71d8b077f38564f1993f5dcaccbbbcb571e5218c201395c57f9afbf83bccb374",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "handbag__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\handbag__u01\\case.json",
+      "case_json_sha256": "09d5cb0e5e9e8521ee2542f1251cef4500a87bf48a3484f570d83327a957db74",
+      "part_count": 4,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "plastic_bag__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\plastic_bag__u01\\case.json",
+      "case_json_sha256": "b61a649707b16e5bea77d46d23942df89a383fcbb18376feb105da80c206d454",
+      "part_count": 3,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "box__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\box__u01\\case.json",
+      "case_json_sha256": "f5bc4e702d52bc4fcbaf1789b617e2cc4cd15b9d4b9b4342110495846f754816",
+      "part_count": 4,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "car_automobile__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\car_automobile__u01\\case.json",
+      "case_json_sha256": "0a0b7e817f947687d340e008cbb66bb175a36db45308912e98d75754f6b837f1",
+      "part_count": 16,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "bicycle__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\bicycle__u01\\case.json",
+      "case_json_sha256": "7d445cfb552f1ec897a343f79f1a22cd33784ad7ebfb71aef3fdce3b7daea1c0",
+      "part_count": 12,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "car_automobile__u02",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\car_automobile__u02\\case.json",
+      "case_json_sha256": "71513df1b5377bdfdd74a94eeea75eadcf8b85adce9c20bf18c46cf03d41c95d",
+      "part_count": 15,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "bicycle__u02",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\bicycle__u02\\case.json",
+      "case_json_sha256": "7fdc1154b46dd2b84430b51da5051c5ceb48456aa7d15b92d35a474edc9c039d",
+      "part_count": 12,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "book__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\book__u01\\case.json",
+      "case_json_sha256": "7d27fc183b7e952cfe0b73c261ab8d2a0546c35e7028f2ada5effbca01a1357f",
+      "part_count": 2,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "pencil__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\pencil__u01\\case.json",
+      "case_json_sha256": "af19677796a80015e59086ff3ee510fc1ccad872459b7ccb255eb2c89ce9bac3",
+      "part_count": 2,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "belt__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\belt__u01\\case.json",
+      "case_json_sha256": "1d3f59a527cf613c3a1e868ceb3c26acd929eb3d8575e7c771c40a07fad59a3a",
+      "part_count": 2,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "hat__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\hat__u01\\case.json",
+      "case_json_sha256": "15c80ca0bf9ede504e6be5c711a6e7465033f7407eae75e4b126151bef75a33e",
+      "part_count": 2,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "helmet__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\helmet__u01\\case.json",
+      "case_json_sha256": "7e96c783ac0083d7e74cfb4b9a774043bca627e326a77f0357bfddc5ca35c2e8",
+      "part_count": 3,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "shoe__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\shoe__u01\\case.json",
+      "case_json_sha256": "5233b154fbd4928f99829382e0f55a4115b0bd03be47bf9d0b47b46d8ed5f2c7",
+      "part_count": 9,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "slipper_footwear__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\slipper_footwear__u01\\case.json",
+      "case_json_sha256": "9223199a5f58929881cad7223c80623dfb9c293b2f6808a235ee3981d248b892",
+      "part_count": 2,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "scarf__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\scarf__u01\\case.json",
+      "case_json_sha256": "e60e20461481f9c4b0b3a8b58d418264a1d07f7eec1b4fef622a360edf376008",
+      "part_count": 2,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "screwdriver__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\screwdriver__u01\\case.json",
+      "case_json_sha256": "ad383a513cb2a6188f9d19274d8c1c63041e7510fa0b6dd7a636ff4778a62700",
+      "part_count": 2,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "wrench__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\wrench__u01\\case.json",
+      "case_json_sha256": "3a802ea7abf83ef999936599f1ef8a2273c4734e7061b954be82cf255d2833fa",
+      "part_count": 2,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "knife__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\knife__u01\\case.json",
+      "case_json_sha256": "5af72490c55484f58e9780587f58ebc14c57b2ca8a5dcc453ee34231eda6b0f5",
+      "part_count": 2,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "scissors__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\scissors__u01\\case.json",
+      "case_json_sha256": "1f33e1f9e9e85389a1c11bddda6d33bf45fd8df49b60f0c3c8e30b9249d56232",
+      "part_count": 4,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "pliers__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\pliers__u01\\case.json",
+      "case_json_sha256": "a84f88d3016915d027cee622d4a174afc1fbe4647618d833c8c5c67ef86c354e",
+      "part_count": 3,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "ladder__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\ladder__u01\\case.json",
+      "case_json_sha256": "a4d8d35d36a6c5b12547be0a7fa096a1fa43deaa1a9b76eb168ac98af817bc6a",
+      "part_count": 3,
+      "materialization_fallback_applied": false
+    },
+    {
+      "case_id": "guitar__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\guitar__u01\\case.json",
+      "case_json_sha256": "22ece2d50eb9f93be7946c4ef821beaef540934576532a3443399e836a14fe82",
+      "part_count": 5,
+      "materialization_fallback_applied": true
+    },
+    {
+      "case_id": "pan_for_cooking__u01",
+      "case_path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\pan_for_cooking__u01\\case.json",
+      "case_json_sha256": "1eb3cc5ed2beff2838cbad6802685ce4f8c63718e527062b82e7345115a9fb9f",
+      "part_count": 5,
+      "materialization_fallback_applied": false
+    }
+  ]
+}

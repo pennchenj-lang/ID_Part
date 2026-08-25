@@ -1,0 +1,43 @@
+﻿slot,domain,planned_object,failure_reason,final_object,same_category,object_fallback,resize,downloaded_size,annotation_size,aspect_ratio_relative_error,interpolation,before_inference,prediction_or_mask_quality_used_for_selection
+cellular_telephone__u01,device,cellular_telephone|obj=65705|img=444746,none,cellular_telephone|obj=65705|img=444746,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+laptop_computer__u01,device,laptop_computer|obj=187692|img=578775,none,laptop_computer|obj=187692|img=578775,true,false,true,639x359,640x359,0.00156250,PIL Lanczos,true,false
+television_set__u01,device,television_set|obj=92753|img=347389,none,television_set|obj=92753|img=347389,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+remote_control__u01,device,remote_control|obj=17499|img=229111,none,remote_control|obj=17499|img=229111,true,false,true,480x640,375x500,0.00000000,PIL Lanczos,true,false
+calculator__u01,device,calculator|obj=38531|img=561366,2 rejected candidate(s): HTTP 404; TLS certificate mismatch,cellular_telephone|obj=70677|img=104982,false,true,true,639x359,500x281,0.00032869,PIL Lanczos,true,false
+telephone__u01,device,telephone|obj=98939|img=70809,1 rejected candidate(s): HTTP 404; TLS certificate mismatch,telephone|obj=102790|img=523919,true,true,false,unchanged,native,0,none,true,false
+clock__u01,device,clock|obj=57760|img=72989,none,clock|obj=57760|img=72989,true,false,true,445x639,446x640,0.00068072,PIL Lanczos,true,false
+watch__u01,device,watch|obj=148791|img=195188,none,watch|obj=148791|img=195188,true,false,true,640x213,500x166,0.00244131,PIL Lanczos,true,false
+chair__u01,furniture,chair|obj=238100|img=129407,1 rejected candidate(s): HTTP 404; TLS certificate mismatch,chair|obj=95920|img=73549,true,true,false,unchanged,native,0,none,true,false
+bench__u01,furniture,bench|obj=146291|img=545181,none,bench|obj=146291|img=545181,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+stool__u01,furniture,stool|obj=104289|img=441411,none,stool|obj=104289|img=441411,true,false,true,639x428,640x428,0.00156250,PIL Lanczos,true,false
+table__u01,furniture,table|obj=116675|img=68162,none,table|obj=116675|img=68162,true,false,true,639x426,640x426,0.00156250,PIL Lanczos,true,false
+bottle__u01,container,bottle|obj=20822|img=460841,none,bottle|obj=20822|img=460841,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+jar__u01,container,jar|obj=71734|img=223444,none,jar|obj=71734|img=223444,true,false,true,639x368,500x288,0.00017391,PIL Lanczos,true,false
+can__u01,container,can|obj=105328|img=172012,none,can|obj=105328|img=172012,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+cup__u01,container,cup|obj=87909|img=163138,none,cup|obj=87909|img=163138,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+mug__u01,container,mug|obj=150618|img=249130,1 rejected candidate(s): HTTP 404; TLS certificate mismatch,mug|obj=15210|img=2592,true,true,true,639x365,640x366,0.00117295,PIL Lanczos,true,false
+glass_drink_container__u01,container,glass_(drink_container)|obj=40606|img=85089,none,glass_(drink_container)|obj=40606|img=85089,true,false,true,639x428,640x428,0.00156250,PIL Lanczos,true,false
+bowl__u01,container,bowl|obj=244436|img=319996,none,bowl|obj=244436|img=319996,true,false,true,532x639,416x500,0.00066209,PIL Lanczos,true,false
+handbag__u01,container,handbag|obj=51856|img=467742,2 rejected candidate(s): HTTP 404; TLS certificate mismatch,handbag|obj=53054|img=475995,true,true,false,unchanged,native,0,none,true,false
+plastic_bag__u01,container,plastic_bag|obj=93155|img=283131,none,plastic_bag|obj=93155|img=283131,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+box__u01,container,box|obj=77503|img=5754,2 rejected candidate(s): HTTP 404; TLS certificate mismatch,box|obj=182311|img=291898,true,true,false,unchanged,native,0,none,true,false
+car_automobile__u01,vehicle,car_(automobile)|obj=45908|img=67616,none,car_(automobile)|obj=45908|img=67616,true,false,false,unchanged,native,0,none,true,false
+bicycle__u01,vehicle,bicycle|obj=220953|img=358242,none,bicycle|obj=220953|img=358242,true,false,true,639x511,640x511,0.00156250,PIL Lanczos,true,false
+car_automobile__u02,vehicle,car_(automobile)|obj=218007|img=246750,none,car_(automobile)|obj=218007|img=246750,true,false,false,unchanged,native,0,none,true,false
+bicycle__u02,vehicle,bicycle|obj=133274|img=187509,2 rejected candidate(s): HTTP 404; TLS certificate mismatch,bicycle|obj=52568|img=453138,true,true,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+book__u01,daily_object,book|obj=76306|img=159561,1 rejected candidate(s): HTTP 404; TLS certificate mismatch,book|obj=208173|img=231351,true,true,true,432x576,375x500,0.00000000,PIL Lanczos,true,false
+pencil__u01,daily_object,pencil|obj=190713|img=310463,1 rejected candidate(s): TLS certificate mismatch,pencil|obj=118123|img=287285,true,true,true,640x426,500x333,0.00056338,PIL Lanczos,true,false
+belt__u01,daily_object,belt|obj=225859|img=419489,none,belt|obj=225859|img=419489,true,false,false,unchanged,native,0,none,true,false
+hat__u01,daily_object,hat|obj=8203|img=19924,1 rejected candidate(s): TLS certificate mismatch,hat|obj=224917|img=468519,true,true,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+helmet__u01,daily_object,helmet|obj=154250|img=221343,none,helmet|obj=154250|img=221343,true,false,true,640x427,640x426,0.00234192,PIL Lanczos,true,false
+shoe__u01,daily_object,shoe|obj=30158|img=35197,none,shoe|obj=30158|img=35197,true,false,true,428x639,429x640,0.00076970,PIL Lanczos,true,false
+slipper_footwear__u01,daily_object,slipper_(footwear)|obj=9366|img=18150,3 rejected candidate(s): TLS certificate mismatch,book|obj=150053|img=281774,false,true,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+scarf__u01,daily_object,scarf|obj=63479|img=539259,2 rejected candidate(s): HTTP 404; TLS certificate mismatch,scarf|obj=73790|img=434689,true,true,true,469x639,367x500,0.00005543,PIL Lanczos,true,false
+screwdriver__u01,tool_prop,screwdriver|obj=232603|img=195288,1 rejected candidate(s): HTTP 404; TLS certificate mismatch,knife|obj=64448|img=537081,false,true,false,unchanged,native,0,none,true,false
+wrench__u01,tool_prop,wrench|obj=105318|img=24136,1 rejected candidate(s): TLS certificate mismatch,knife|obj=153190|img=68344,false,true,false,unchanged,native,0,none,true,false
+knife__u01,tool_prop,knife|obj=210603|img=370728,none,knife|obj=210603|img=370728,true,false,false,unchanged,native,0,none,true,false
+scissors__u01,tool_prop,scissors|obj=759|img=351096,none,scissors|obj=759|img=351096,true,false,true,640x480,500x375,0.00000000,PIL Lanczos,true,false
+pliers__u01,tool_prop,pliers|obj=161597|img=528119,none,pliers|obj=161597|img=528119,true,false,true,427x639,428x640,0.00077516,PIL Lanczos,true,false
+ladder__u01,tool_prop,ladder|obj=148550|img=327988,none,ladder|obj=148550|img=327988,true,false,false,unchanged,native,0,none,true,false
+guitar__u01,tool_prop,guitar|obj=225848|img=302715,1 rejected candidate(s): HTTP 404; TLS certificate mismatch,guitar|obj=192151|img=92041,true,true,false,unchanged,native,0,none,true,false
+pan_for_cooking__u01,tool_prop,pan_(for_cooking)|obj=115950|img=143510,none,pan_(for_cooking)|obj=115950|img=143510,true,false,true,639x425,640x425,0.00156250,PIL Lanczos,true,false

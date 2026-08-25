@@ -1,0 +1,125 @@
+{
+  "format": "HPID-Split untouched-holdout strict-threshold reporting audit",
+  "format_version": "0.1.0",
+  "source_scored_utc": "2026-08-24T18:02:11.654456+00:00",
+  "derivation_only": true,
+  "prediction_rerun": false,
+  "prediction_source": "02_blind_inference (frozen outputs)",
+  "reference_source": "01_sealed_references (opened after blind inference)",
+  "matching": "one-to-one Hungarian assignment independently at each IoU threshold",
+  "thresholds": [
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75
+  ],
+  "case_count": 42,
+  "aggregate": {
+    "group_f1_at_025": {
+      "mean": 0.395109915134312,
+      "ci95_low": 0.3160460682969831,
+      "ci95_high": 0.4756558820874014,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_030": {
+      "mean": 0.36357207253656165,
+      "ci95_low": 0.28709355825694943,
+      "ci95_high": 0.4418086000535511,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_035": {
+      "mean": 0.3162503932821092,
+      "ci95_low": 0.23802094408959415,
+      "ci95_high": 0.39957355821116325,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_040": {
+      "mean": 0.29400312161358516,
+      "ci95_low": 0.21559097796824822,
+      "ci95_high": 0.3788715435995187,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_045": {
+      "mean": 0.25743887062808185,
+      "ci95_low": 0.1768380563857997,
+      "ci95_high": 0.3457295589953152,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_050": {
+      "mean": 0.2417259904939493,
+      "ci95_low": 0.16175426602703644,
+      "ci95_high": 0.33032411400532835,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_055": {
+      "mean": 0.1939764279775123,
+      "ci95_low": 0.11676606664171046,
+      "ci95_high": 0.2801084854274065,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_060": {
+      "mean": 0.15485735708424783,
+      "ci95_low": 0.08240064864329572,
+      "ci95_high": 0.24066542020848739,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_065": {
+      "mean": 0.13369333592022667,
+      "ci95_low": 0.062108399420374216,
+      "ci95_high": 0.21876668596731622,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_070": {
+      "mean": 0.1308922154720474,
+      "ci95_low": 0.05970117845117845,
+      "ci95_high": 0.21543605775643587,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_at_075": {
+      "mean": 0.10352672382084147,
+      "ci95_low": 0.043471928670458085,
+      "ci95_high": 0.17765079365079367,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    },
+    "group_f1_mean_025_075": {
+      "mean": 0.23500422036031593,
+      "ci95_low": 0.16529850188257555,
+      "ci95_high": 0.313592577857293,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825,
+      "bootstrap_unit": "object case"
+    }
+  },
+  "macro_averaging_note": "Precision, recall, and F1 are averaged independently over object cases. Macro F1 is not recomputed from macro precision and macro recall.",
+  "case_metrics_sha256": "8ded2c8050375d0f43b7273f177f7c8b97930a12773bb83361523da837f68d40",
+  "frozen_holdout_summary_sha256": "20063a3a1a6c09e1e0ef84e8d6fd48ed0175a1b8c46c4094b720cbe597014b49"
+}

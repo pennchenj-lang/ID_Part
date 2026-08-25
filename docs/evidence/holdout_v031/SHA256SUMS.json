@@ -1,0 +1,62 @@
+{
+  "00_preregistration.json": {
+    "bytes": 27566,
+    "sha256": "3d9d0191646fc2724f47976513a1c4f6a229c9f87866e3edc09527efd7205d33"
+  },
+  "00_preregistration.sha256": {
+    "bytes": 91,
+    "sha256": "72227e7b2117c239bde046b96af01e6f5f5f88970fd0c9eec6cbd82a1009705a"
+  },
+  "01_blind_input_manifest.json": {
+    "bytes": 29259,
+    "sha256": "0ad203424f5548677511a2689f1df42ba53aaf7d74509cafbddd2b5130565d7e"
+  },
+  "01_materialization_receipt.json": {
+    "bytes": 29300,
+    "sha256": "499838e579f43ad92634c541aaa7c36a100e653f30f1ee9cadf089d92ccacec3"
+  },
+  "01_sealed_reference_manifest.json": {
+    "bytes": 16620,
+    "sha256": "067d529a2ccb0b956cbcab40d93bdde8434ff62023ddfc0b349d60ac6b3f3cf0"
+  },
+  "02_blind_inference_manifest.json": {
+    "bytes": 417199,
+    "sha256": "a06f40702762eef744c5e45eb1e73f5e20cd2e15c50fae8f764bd06ea7e3a572"
+  },
+  "03_holdout_integrity_audit.json": {
+    "bytes": 494,
+    "sha256": "d4e68bebb949104b4065c0cf02f625ecb7de16e732ce5c32a0a17046b298b38e"
+  },
+  "03_holdout_summary.json": {
+    "bytes": 4280,
+    "sha256": "20063a3a1a6c09e1e0ef84e8d6fd48ed0175a1b8c46c4094b720cbe597014b49"
+  },
+  "04_process_isolated_determinism_audit.json": {
+    "bytes": 578,
+    "sha256": "851bba457b87bc7c59c1473472ad87f2345df37d0f55b9dc12cc7547fee7e1ea"
+  },
+  "05_strict_threshold_case_metrics.csv": {
+    "bytes": 13189,
+    "sha256": "8ded2c8050375d0f43b7273f177f7c8b97930a12773bb83361523da837f68d40"
+  },
+  "05_strict_threshold_summary.json": {
+    "bytes": 4097,
+    "sha256": "f4b270dc8aead7603c44a76649eef2a8aa6d10db355926c4d568defc046dd399"
+  },
+  "06_materialization_audit.csv": {
+    "bytes": 7381,
+    "sha256": "bb01ea4d2c9d500d25db18fc0c8c9731db64dbcd66fadb4709f69896ec3ae985"
+  },
+  "06_materialization_audit.json": {
+    "bytes": 80002,
+    "sha256": "a09d282f02a9328497b1d34e45fe2ea49d909bc9fe20c46d292049422c4dd0ec"
+  },
+  "07_evidence_timeline.json": {
+    "bytes": 2242,
+    "sha256": "26a04c38becb2cab0803036abf1a5b59b1cf7e01cd38b604b4a51b8129a452bc"
+  },
+  "README.md": {
+    "bytes": 1535,
+    "sha256": "97568e175c6f481686504b7a9f71875180e3a98de573fa367b6a8f08eb056e28"
+  }
+}

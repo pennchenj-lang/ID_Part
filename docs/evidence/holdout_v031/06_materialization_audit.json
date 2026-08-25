@@ -1,0 +1,1842 @@
+{
+  "format": "HPID-Split holdout materialization and coordinate audit",
+  "format_version": "0.1.0",
+  "case_count": 42,
+  "prior_manifest_set_operation": "union",
+  "object_fallback_count": 15,
+  "same_domain_cross_category_fallback_count": 4,
+  "dimension_normalization_count": 30,
+  "interpolation": "PIL Lanczos for RGB only; masks are decoded from PACO annotations at annotation dimensions",
+  "selection_timing": "All fallback and resize decisions occurred before inference.",
+  "selection_exclusion": "No model prediction or ground-truth mask quality was used to select a fallback.",
+  "rows": [
+    {
+      "slot": "cellular_telephone__u01",
+      "domain": "device",
+      "planned_object": "cellular_telephone|obj=65705|img=444746",
+      "failure_reason": "none",
+      "final_object": "cellular_telephone|obj=65705|img=444746",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "cellular_telephone__u01",
+        "object_annotation_id": 65705,
+        "image_id": 444746,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "laptop_computer__u01",
+      "domain": "device",
+      "planned_object": "laptop_computer|obj=187692|img=578775",
+      "failure_reason": "none",
+      "final_object": "laptop_computer|obj=187692|img=578775",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "639x359",
+      "annotation_size": "640x359",
+      "aspect_ratio_relative_error": "0.00156250",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "laptop_computer__u01",
+        "object_annotation_id": 187692,
+        "image_id": 578775,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 359) -> (640, 359)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          359
+        ],
+        "annotation_size": [
+          640,
+          359
+        ],
+        "aspect_ratio_relative_error": 0.0015625000000000222,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "television_set__u01",
+      "domain": "device",
+      "planned_object": "television_set|obj=92753|img=347389",
+      "failure_reason": "none",
+      "final_object": "television_set|obj=92753|img=347389",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "television_set__u01",
+        "object_annotation_id": 92753,
+        "image_id": 347389,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "remote_control__u01",
+      "domain": "device",
+      "planned_object": "remote_control|obj=17499|img=229111",
+      "failure_reason": "none",
+      "final_object": "remote_control|obj=17499|img=229111",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "480x640",
+      "annotation_size": "375x500",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "remote_control__u01",
+        "object_annotation_id": 17499,
+        "image_id": 229111,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(480, 640) -> (375, 500)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          480,
+          640
+        ],
+        "annotation_size": [
+          375,
+          500
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "calculator__u01",
+      "domain": "device",
+      "planned_object": "calculator|obj=38531|img=561366",
+      "failure_reason": "2 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "cellular_telephone|obj=70677|img=104982",
+      "same_category": "false",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "639x359",
+      "annotation_size": "500x281",
+      "aspect_ratio_relative_error": "0.00032869",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "calculator__u01",
+        "preregistered_object_category": "calculator",
+        "actual_object_category": "cellular_telephone",
+        "preregistered_object_annotation_id": 38531,
+        "actual_object_annotation_id": 70677,
+        "preregistered_image_id": 561366,
+        "actual_image_id": 104982,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 38531,
+            "image_id": 561366,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          },
+          {
+            "object_annotation_id": 214082,
+            "image_id": 387748,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-domain frozen-category-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "calculator__u01",
+        "object_annotation_id": 70677,
+        "image_id": 104982,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 359) -> (500, 281)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          359
+        ],
+        "annotation_size": [
+          500,
+          281
+        ],
+        "aspect_ratio_relative_error": 0.0003286908077995143,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "telephone__u01",
+      "domain": "device",
+      "planned_object": "telephone|obj=98939|img=70809",
+      "failure_reason": "1 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "telephone|obj=102790|img=523919",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "telephone__u01",
+        "preregistered_object_category": "telephone",
+        "actual_object_category": "telephone",
+        "preregistered_object_annotation_id": 98939,
+        "actual_object_annotation_id": 102790,
+        "preregistered_image_id": 70809,
+        "actual_image_id": 523919,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 98939,
+            "image_id": 70809,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "clock__u01",
+      "domain": "device",
+      "planned_object": "clock|obj=57760|img=72989",
+      "failure_reason": "none",
+      "final_object": "clock|obj=57760|img=72989",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "445x639",
+      "annotation_size": "446x640",
+      "aspect_ratio_relative_error": "0.00068072",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "clock__u01",
+        "object_annotation_id": 57760,
+        "image_id": 72989,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(445, 639) -> (446, 640)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          445,
+          639
+        ],
+        "annotation_size": [
+          446,
+          640
+        ],
+        "aspect_ratio_relative_error": 0.0006807160852509986,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "watch__u01",
+      "domain": "device",
+      "planned_object": "watch|obj=148791|img=195188",
+      "failure_reason": "none",
+      "final_object": "watch|obj=148791|img=195188",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x213",
+      "annotation_size": "500x166",
+      "aspect_ratio_relative_error": "0.00244131",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "watch__u01",
+        "object_annotation_id": 148791,
+        "image_id": 195188,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 213) -> (500, 166)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          213
+        ],
+        "annotation_size": [
+          500,
+          166
+        ],
+        "aspect_ratio_relative_error": 0.002441314553990659,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "chair__u01",
+      "domain": "furniture",
+      "planned_object": "chair|obj=238100|img=129407",
+      "failure_reason": "1 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "chair|obj=95920|img=73549",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "chair__u01",
+        "preregistered_object_category": "chair",
+        "actual_object_category": "chair",
+        "preregistered_object_annotation_id": 238100,
+        "actual_object_annotation_id": 95920,
+        "preregistered_image_id": 129407,
+        "actual_image_id": 73549,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 238100,
+            "image_id": 129407,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "bench__u01",
+      "domain": "furniture",
+      "planned_object": "bench|obj=146291|img=545181",
+      "failure_reason": "none",
+      "final_object": "bench|obj=146291|img=545181",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "bench__u01",
+        "object_annotation_id": 146291,
+        "image_id": 545181,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "stool__u01",
+      "domain": "furniture",
+      "planned_object": "stool|obj=104289|img=441411",
+      "failure_reason": "none",
+      "final_object": "stool|obj=104289|img=441411",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "639x428",
+      "annotation_size": "640x428",
+      "aspect_ratio_relative_error": "0.00156250",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "stool__u01",
+        "object_annotation_id": 104289,
+        "image_id": 441411,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 428) -> (640, 428)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          428
+        ],
+        "annotation_size": [
+          640,
+          428
+        ],
+        "aspect_ratio_relative_error": 0.0015624999999999112,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "table__u01",
+      "domain": "furniture",
+      "planned_object": "table|obj=116675|img=68162",
+      "failure_reason": "none",
+      "final_object": "table|obj=116675|img=68162",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "639x426",
+      "annotation_size": "640x426",
+      "aspect_ratio_relative_error": "0.00156250",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "table__u01",
+        "object_annotation_id": 116675,
+        "image_id": 68162,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 426) -> (640, 426)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          426
+        ],
+        "annotation_size": [
+          640,
+          426
+        ],
+        "aspect_ratio_relative_error": 0.0015624999999999112,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "bottle__u01",
+      "domain": "container",
+      "planned_object": "bottle|obj=20822|img=460841",
+      "failure_reason": "none",
+      "final_object": "bottle|obj=20822|img=460841",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "bottle__u01",
+        "object_annotation_id": 20822,
+        "image_id": 460841,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "jar__u01",
+      "domain": "container",
+      "planned_object": "jar|obj=71734|img=223444",
+      "failure_reason": "none",
+      "final_object": "jar|obj=71734|img=223444",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "639x368",
+      "annotation_size": "500x288",
+      "aspect_ratio_relative_error": "0.00017391",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "jar__u01",
+        "object_annotation_id": 71734,
+        "image_id": 223444,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 368) -> (500, 288)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          368
+        ],
+        "annotation_size": [
+          500,
+          288
+        ],
+        "aspect_ratio_relative_error": 0.00017391304347835757,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "can__u01",
+      "domain": "container",
+      "planned_object": "can|obj=105328|img=172012",
+      "failure_reason": "none",
+      "final_object": "can|obj=105328|img=172012",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "can__u01",
+        "object_annotation_id": 105328,
+        "image_id": 172012,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "cup__u01",
+      "domain": "container",
+      "planned_object": "cup|obj=87909|img=163138",
+      "failure_reason": "none",
+      "final_object": "cup|obj=87909|img=163138",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "cup__u01",
+        "object_annotation_id": 87909,
+        "image_id": 163138,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "mug__u01",
+      "domain": "container",
+      "planned_object": "mug|obj=150618|img=249130",
+      "failure_reason": "1 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "mug|obj=15210|img=2592",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "639x365",
+      "annotation_size": "640x366",
+      "aspect_ratio_relative_error": "0.00117295",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "mug__u01",
+        "preregistered_object_category": "mug",
+        "actual_object_category": "mug",
+        "preregistered_object_annotation_id": 150618,
+        "actual_object_annotation_id": 15210,
+        "preregistered_image_id": 249130,
+        "actual_image_id": 2592,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 150618,
+            "image_id": 249130,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "mug__u01",
+        "object_annotation_id": 15210,
+        "image_id": 2592,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 365) -> (640, 366)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          365
+        ],
+        "annotation_size": [
+          640,
+          366
+        ],
+        "aspect_ratio_relative_error": 0.001172945205479392,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "glass_drink_container__u01",
+      "domain": "container",
+      "planned_object": "glass_(drink_container)|obj=40606|img=85089",
+      "failure_reason": "none",
+      "final_object": "glass_(drink_container)|obj=40606|img=85089",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "639x428",
+      "annotation_size": "640x428",
+      "aspect_ratio_relative_error": "0.00156250",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "glass_drink_container__u01",
+        "object_annotation_id": 40606,
+        "image_id": 85089,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 428) -> (640, 428)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          428
+        ],
+        "annotation_size": [
+          640,
+          428
+        ],
+        "aspect_ratio_relative_error": 0.0015624999999999112,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "bowl__u01",
+      "domain": "container",
+      "planned_object": "bowl|obj=244436|img=319996",
+      "failure_reason": "none",
+      "final_object": "bowl|obj=244436|img=319996",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "532x639",
+      "annotation_size": "416x500",
+      "aspect_ratio_relative_error": "0.00066209",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "bowl__u01",
+        "object_annotation_id": 244436,
+        "image_id": 319996,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(532, 639) -> (416, 500)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          532,
+          639
+        ],
+        "annotation_size": [
+          416,
+          500
+        ],
+        "aspect_ratio_relative_error": 0.0006620922113880212,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "handbag__u01",
+      "domain": "container",
+      "planned_object": "handbag|obj=51856|img=467742",
+      "failure_reason": "2 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "handbag|obj=53054|img=475995",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "handbag__u01",
+        "preregistered_object_category": "handbag",
+        "actual_object_category": "handbag",
+        "preregistered_object_annotation_id": 51856,
+        "actual_object_annotation_id": 53054,
+        "preregistered_image_id": 467742,
+        "actual_image_id": 475995,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 51856,
+            "image_id": 467742,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          },
+          {
+            "object_annotation_id": 213187,
+            "image_id": 184550,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "plastic_bag__u01",
+      "domain": "container",
+      "planned_object": "plastic_bag|obj=93155|img=283131",
+      "failure_reason": "none",
+      "final_object": "plastic_bag|obj=93155|img=283131",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "plastic_bag__u01",
+        "object_annotation_id": 93155,
+        "image_id": 283131,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "box__u01",
+      "domain": "container",
+      "planned_object": "box|obj=77503|img=5754",
+      "failure_reason": "2 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "box|obj=182311|img=291898",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "box__u01",
+        "preregistered_object_category": "box",
+        "actual_object_category": "box",
+        "preregistered_object_annotation_id": 77503,
+        "actual_object_annotation_id": 182311,
+        "preregistered_image_id": 5754,
+        "actual_image_id": 291898,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 77503,
+            "image_id": 5754,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          },
+          {
+            "object_annotation_id": 231545,
+            "image_id": 134233,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "car_automobile__u01",
+      "domain": "vehicle",
+      "planned_object": "car_(automobile)|obj=45908|img=67616",
+      "failure_reason": "none",
+      "final_object": "car_(automobile)|obj=45908|img=67616",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "bicycle__u01",
+      "domain": "vehicle",
+      "planned_object": "bicycle|obj=220953|img=358242",
+      "failure_reason": "none",
+      "final_object": "bicycle|obj=220953|img=358242",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "639x511",
+      "annotation_size": "640x511",
+      "aspect_ratio_relative_error": "0.00156250",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "bicycle__u01",
+        "object_annotation_id": 220953,
+        "image_id": 358242,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 511) -> (640, 511)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          511
+        ],
+        "annotation_size": [
+          640,
+          511
+        ],
+        "aspect_ratio_relative_error": 0.0015624999999999112,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "car_automobile__u02",
+      "domain": "vehicle",
+      "planned_object": "car_(automobile)|obj=218007|img=246750",
+      "failure_reason": "none",
+      "final_object": "car_(automobile)|obj=218007|img=246750",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "bicycle__u02",
+      "domain": "vehicle",
+      "planned_object": "bicycle|obj=133274|img=187509",
+      "failure_reason": "2 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "bicycle|obj=52568|img=453138",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "bicycle__u02",
+        "preregistered_object_category": "bicycle",
+        "actual_object_category": "bicycle",
+        "preregistered_object_annotation_id": 133274,
+        "actual_object_annotation_id": 52568,
+        "preregistered_image_id": 187509,
+        "actual_image_id": 453138,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 133274,
+            "image_id": 187509,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          },
+          {
+            "object_annotation_id": 6931,
+            "image_id": 274687,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "bicycle__u02",
+        "object_annotation_id": 52568,
+        "image_id": 453138,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "book__u01",
+      "domain": "daily_object",
+      "planned_object": "book|obj=76306|img=159561",
+      "failure_reason": "1 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "book|obj=208173|img=231351",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "432x576",
+      "annotation_size": "375x500",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "book__u01",
+        "preregistered_object_category": "book",
+        "actual_object_category": "book",
+        "preregistered_object_annotation_id": 76306,
+        "actual_object_annotation_id": 208173,
+        "preregistered_image_id": 159561,
+        "actual_image_id": 231351,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 76306,
+            "image_id": 159561,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "book__u01",
+        "object_annotation_id": 208173,
+        "image_id": 231351,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(432, 576) -> (375, 500)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          432,
+          576
+        ],
+        "annotation_size": [
+          375,
+          500
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "pencil__u01",
+      "domain": "daily_object",
+      "planned_object": "pencil|obj=190713|img=310463",
+      "failure_reason": "1 rejected candidate(s): TLS certificate mismatch",
+      "final_object": "pencil|obj=118123|img=287285",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "640x426",
+      "annotation_size": "500x333",
+      "aspect_ratio_relative_error": "0.00056338",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "pencil__u01",
+        "preregistered_object_category": "pencil",
+        "actual_object_category": "pencil",
+        "preregistered_object_annotation_id": 190713,
+        "actual_object_annotation_id": 118123,
+        "preregistered_image_id": 310463,
+        "actual_image_id": 287285,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 190713,
+            "image_id": 310463,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "pencil__u01",
+        "object_annotation_id": 118123,
+        "image_id": 287285,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 426) -> (500, 333)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          426
+        ],
+        "annotation_size": [
+          500,
+          333
+        ],
+        "aspect_ratio_relative_error": 0.0005633802816902289,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "belt__u01",
+      "domain": "daily_object",
+      "planned_object": "belt|obj=225859|img=419489",
+      "failure_reason": "none",
+      "final_object": "belt|obj=225859|img=419489",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "hat__u01",
+      "domain": "daily_object",
+      "planned_object": "hat|obj=8203|img=19924",
+      "failure_reason": "1 rejected candidate(s): TLS certificate mismatch",
+      "final_object": "hat|obj=224917|img=468519",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "hat__u01",
+        "preregistered_object_category": "hat",
+        "actual_object_category": "hat",
+        "preregistered_object_annotation_id": 8203,
+        "actual_object_annotation_id": 224917,
+        "preregistered_image_id": 19924,
+        "actual_image_id": 468519,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 8203,
+            "image_id": 19924,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "hat__u01",
+        "object_annotation_id": 224917,
+        "image_id": 468519,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "helmet__u01",
+      "domain": "daily_object",
+      "planned_object": "helmet|obj=154250|img=221343",
+      "failure_reason": "none",
+      "final_object": "helmet|obj=154250|img=221343",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x427",
+      "annotation_size": "640x426",
+      "aspect_ratio_relative_error": "0.00234192",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "helmet__u01",
+        "object_annotation_id": 154250,
+        "image_id": 221343,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 427) -> (640, 426)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          427
+        ],
+        "annotation_size": [
+          640,
+          426
+        ],
+        "aspect_ratio_relative_error": 0.0023419203747071515,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "shoe__u01",
+      "domain": "daily_object",
+      "planned_object": "shoe|obj=30158|img=35197",
+      "failure_reason": "none",
+      "final_object": "shoe|obj=30158|img=35197",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "428x639",
+      "annotation_size": "429x640",
+      "aspect_ratio_relative_error": "0.00076970",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "shoe__u01",
+        "object_annotation_id": 30158,
+        "image_id": 35197,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(428, 639) -> (429, 640)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          428,
+          639
+        ],
+        "annotation_size": [
+          429,
+          640
+        ],
+        "aspect_ratio_relative_error": 0.000769704995057019,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "slipper_footwear__u01",
+      "domain": "daily_object",
+      "planned_object": "slipper_(footwear)|obj=9366|img=18150",
+      "failure_reason": "3 rejected candidate(s): TLS certificate mismatch",
+      "final_object": "book|obj=150053|img=281774",
+      "same_category": "false",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "slipper_footwear__u01",
+        "preregistered_object_category": "slipper_(footwear)",
+        "actual_object_category": "book",
+        "preregistered_object_annotation_id": 9366,
+        "actual_object_annotation_id": 150053,
+        "preregistered_image_id": 18150,
+        "actual_image_id": 281774,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 9366,
+            "image_id": 18150,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          },
+          {
+            "object_annotation_id": 17124,
+            "image_id": 42528,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          },
+          {
+            "object_annotation_id": 17123,
+            "image_id": 42528,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-domain frozen-category-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "slipper_footwear__u01",
+        "object_annotation_id": 150053,
+        "image_id": 281774,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "scarf__u01",
+      "domain": "daily_object",
+      "planned_object": "scarf|obj=63479|img=539259",
+      "failure_reason": "2 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "scarf|obj=73790|img=434689",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "true",
+      "downloaded_size": "469x639",
+      "annotation_size": "367x500",
+      "aspect_ratio_relative_error": "0.00005543",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "scarf__u01",
+        "preregistered_object_category": "scarf",
+        "actual_object_category": "scarf",
+        "preregistered_object_annotation_id": 63479,
+        "actual_object_annotation_id": 73790,
+        "preregistered_image_id": 539259,
+        "actual_image_id": 434689,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 63479,
+            "image_id": 539259,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          },
+          {
+            "object_annotation_id": 81503,
+            "image_id": 7873,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": {
+        "case_id": "scarf__u01",
+        "object_annotation_id": 73790,
+        "image_id": 434689,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(469, 639) -> (367, 500)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          469,
+          639
+        ],
+        "annotation_size": [
+          367,
+          500
+        ],
+        "aspect_ratio_relative_error": 5.543402711138956e-05,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "screwdriver__u01",
+      "domain": "tool_prop",
+      "planned_object": "screwdriver|obj=232603|img=195288",
+      "failure_reason": "1 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "knife|obj=64448|img=537081",
+      "same_category": "false",
+      "object_fallback": "true",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "screwdriver__u01",
+        "preregistered_object_category": "screwdriver",
+        "actual_object_category": "knife",
+        "preregistered_object_annotation_id": 232603,
+        "actual_object_annotation_id": 64448,
+        "preregistered_image_id": 195288,
+        "actual_image_id": 537081,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 232603,
+            "image_id": 195288,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-domain frozen-category-order integrity fallback"
+      },
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "wrench__u01",
+      "domain": "tool_prop",
+      "planned_object": "wrench|obj=105318|img=24136",
+      "failure_reason": "1 rejected candidate(s): TLS certificate mismatch",
+      "final_object": "knife|obj=153190|img=68344",
+      "same_category": "false",
+      "object_fallback": "true",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "wrench__u01",
+        "preregistered_object_category": "wrench",
+        "actual_object_category": "knife",
+        "preregistered_object_annotation_id": 105318,
+        "actual_object_annotation_id": 153190,
+        "preregistered_image_id": 24136,
+        "actual_image_id": 68344,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 105318,
+            "image_id": 24136,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-domain frozen-category-order integrity fallback"
+      },
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "knife__u01",
+      "domain": "tool_prop",
+      "planned_object": "knife|obj=210603|img=370728",
+      "failure_reason": "none",
+      "final_object": "knife|obj=210603|img=370728",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "scissors__u01",
+      "domain": "tool_prop",
+      "planned_object": "scissors|obj=759|img=351096",
+      "failure_reason": "none",
+      "final_object": "scissors|obj=759|img=351096",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "640x480",
+      "annotation_size": "500x375",
+      "aspect_ratio_relative_error": "0.00000000",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "scissors__u01",
+        "object_annotation_id": 759,
+        "image_id": 351096,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(640, 480) -> (500, 375)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          640,
+          480
+        ],
+        "annotation_size": [
+          500,
+          375
+        ],
+        "aspect_ratio_relative_error": 0.0,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "pliers__u01",
+      "domain": "tool_prop",
+      "planned_object": "pliers|obj=161597|img=528119",
+      "failure_reason": "none",
+      "final_object": "pliers|obj=161597|img=528119",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "427x639",
+      "annotation_size": "428x640",
+      "aspect_ratio_relative_error": "0.00077516",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "pliers__u01",
+        "object_annotation_id": 161597,
+        "image_id": 528119,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(427, 639) -> (428, 640)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          427,
+          639
+        ],
+        "annotation_size": [
+          428,
+          640
+        ],
+        "aspect_ratio_relative_error": 0.0007751597852952985,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "ladder__u01",
+      "domain": "tool_prop",
+      "planned_object": "ladder|obj=148550|img=327988",
+      "failure_reason": "none",
+      "final_object": "ladder|obj=148550|img=327988",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "guitar__u01",
+      "domain": "tool_prop",
+      "planned_object": "guitar|obj=225848|img=302715",
+      "failure_reason": "1 rejected candidate(s): HTTP 404; TLS certificate mismatch",
+      "final_object": "guitar|obj=192151|img=92041",
+      "same_category": "true",
+      "object_fallback": "true",
+      "resize": "false",
+      "downloaded_size": "unchanged",
+      "annotation_size": "native",
+      "aspect_ratio_relative_error": "0",
+      "interpolation": "none",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": {
+        "case_id": "guitar__u01",
+        "preregistered_object_category": "guitar",
+        "actual_object_category": "guitar",
+        "preregistered_object_annotation_id": 225848,
+        "actual_object_annotation_id": 192151,
+        "preregistered_image_id": 302715,
+        "actual_image_id": 92041,
+        "failed_candidates": [
+          {
+            "object_annotation_id": 225848,
+            "image_id": 302715,
+            "error_type": "ValueError",
+            "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+          }
+        ],
+        "selection_basis": "same-category frozen-order integrity fallback"
+      },
+      "source_integrity_record": null,
+      "source_dimension_normalization": null,
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    },
+    {
+      "slot": "pan_for_cooking__u01",
+      "domain": "tool_prop",
+      "planned_object": "pan_(for_cooking)|obj=115950|img=143510",
+      "failure_reason": "none",
+      "final_object": "pan_(for_cooking)|obj=115950|img=143510",
+      "same_category": "true",
+      "object_fallback": "false",
+      "resize": "true",
+      "downloaded_size": "639x425",
+      "annotation_size": "640x425",
+      "aspect_ratio_relative_error": "0.00156250",
+      "interpolation": "PIL Lanczos",
+      "before_inference": "true",
+      "prediction_or_mask_quality_used_for_selection": "false",
+      "fallback_record": null,
+      "source_integrity_record": {
+        "case_id": "pan_for_cooking__u01",
+        "object_annotation_id": 115950,
+        "image_id": 143510,
+        "failed_source_attempts": [
+          {
+            "source_field": "flickr_url",
+            "error_type": "dimension_normalized",
+            "error": "(639, 425) -> (640, 425)"
+          }
+        ],
+        "accepted_source": null
+      },
+      "source_dimension_normalization": {
+        "downloaded_size": [
+          639,
+          425
+        ],
+        "annotation_size": [
+          640,
+          425
+        ],
+        "aspect_ratio_relative_error": 0.0015625000000000222,
+        "resampling": "PIL Lanczos"
+      },
+      "coordinate_alignment": "When resize was required, RGB was first resampled to the PACO annotation dimensions with PIL Lanczos. The object mask and every part mask were then decoded at those dimensions, clipped in the same coordinate system, and cropped with the same oracle object box."
+    }
+  ],
+  "csv_sha256": "bb01ea4d2c9d500d25db18fc0c8c9731db64dbcd66fadb4709f69896ec3ae985"
+}

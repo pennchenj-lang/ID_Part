@@ -1,0 +1,100 @@
+{
+  "format": "HPID-Split untouched editable-group holdout evaluation",
+  "format_version": "0.1.0",
+  "scored_utc": "2026-08-24T18:02:11.654456+00:00",
+  "release_commit": "be543003632fa739d0b63e9acbffb8d91d99b84a",
+  "evaluation_protocol": "The v0.3.1 algorithm, configuration and 42 case identifiers were frozen before materialization. Blind inference consumed source_crop.png only. All 42 inference attempts completed before the sealed reference manifest was opened. No post-score algorithm adjustment or case rerun is permitted.",
+  "case_count": 42,
+  "successful_case_count": 42,
+  "failed_case_count": 0,
+  "domain_distribution": {
+    "container": 10,
+    "daily_object": 8,
+    "device": 8,
+    "furniture": 4,
+    "tool_prop": 8,
+    "vehicle": 4
+  },
+  "materialization_fallback_count": 15,
+  "cross_category_materialization_fallback_count": 4,
+  "dimension_normalization_count": 30,
+  "editable_group_macro_metrics": {
+    "part_discovery_precision_at_025": 0.40229591836734696,
+    "part_discovery_recall_at_025": 0.4269132653061224,
+    "part_discovery_f1_at_025": 0.395109915134312,
+    "mean_matched_iou": 0.45628407494483897,
+    "mean_matched_boundary_f1": 0.5160576714617557,
+    "semantic_part_recall": 0.28188775510204084,
+    "oversegmentation_ratio": 1.1861914210128495
+  },
+  "bootstrap_95ci": {
+    "part_discovery_precision_at_025": {
+      "mean": 0.40229591836734696,
+      "ci95_low": 0.3194947562358276,
+      "ci95_high": 0.4888888888888888,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825
+    },
+    "part_discovery_recall_at_025": {
+      "mean": 0.4269132653061224,
+      "ci95_low": 0.34174957482993196,
+      "ci95_high": 0.5122183248299319,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825
+    },
+    "part_discovery_f1_at_025": {
+      "mean": 0.395109915134312,
+      "ci95_low": 0.3160460682969831,
+      "ci95_high": 0.4756558820874014,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825
+    },
+    "mean_matched_iou": {
+      "mean": 0.45628407494483897,
+      "ci95_low": 0.3851710298609689,
+      "ci95_high": 0.5239738346366825,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825
+    },
+    "mean_matched_boundary_f1": {
+      "mean": 0.5160576714617557,
+      "ci95_low": 0.4347270631317089,
+      "ci95_high": 0.5919700336804652,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825
+    },
+    "semantic_part_recall": {
+      "mean": 0.28188775510204084,
+      "ci95_low": 0.20314554988662137,
+      "ci95_high": 0.36519345238095235,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825
+    },
+    "oversegmentation_ratio": {
+      "mean": 1.1861914210128495,
+      "ci95_low": 1.0219287367724867,
+      "ci95_high": 1.3596938775510203,
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260825
+    }
+  },
+  "mean_object_iou": 0.7282826151674685,
+  "domain_accuracy": 0.9523809523809523,
+  "mean_runtime_seconds": 31.66038889761798,
+  "median_runtime_seconds": 31.316156799992314,
+  "preregistration_sha256": "3d9d0191646fc2724f47976513a1c4f6a229c9f87866e3edc09527efd7205d33",
+  "blind_input_manifest_sha256": "0ad203424f5548677511a2689f1df42ba53aaf7d74509cafbddd2b5130565d7e",
+  "sealed_reference_manifest_sha256": "067d529a2ccb0b956cbcab40d93bdde8434ff62023ddfc0b349d60ac6b3f3cf0",
+  "blind_inference_manifest_sha256": "a06f40702762eef744c5e45eb1e73f5e20cd2e15c50fae8f764bd06ea7e3a572",
+  "case_metrics_sha256": "c482b6da3c0fe21d7f665c0a426a332acd912735c2c562804597f0fd9410ca4a",
+  "domain_metrics_sha256": "9d1b66e044c4f40445a10aff0bd1e8c4dd14c15c4ee223ded8f87a8438fa9372",
+  "leakage_audit": {
+    "prior_manifest_hashes_unchanged": true,
+    "overlapping_object_annotations": [],
+    "overlapping_source_images": [],
+    "unique_selected_object_annotations": true,
+    "unique_selected_source_images": true,
+    "references_absent_from_inference_commands": true
+  },
+  "evidence_boundary": "This is an untouched object-instance holdout within the PACO-LVIS v1 test split, using oracle object bounding-box crops. It evaluates v0.3.1 editable grouping on previously unused objects and source images, not unrestricted open-world scenes."
+}
