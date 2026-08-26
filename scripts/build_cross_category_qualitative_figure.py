@@ -153,7 +153,7 @@ def build_figure(cases: list[dict[str, object]], output: Path) -> None:
             "axes.linewidth": 0.7,
         }
     )
-    fig = plt.figure(figsize=(7.12, 4.82), facecolor="white")
+    fig = plt.figure(figsize=(7.12, 4.55), facecolor="white")
     outer = fig.add_gridspec(
         2,
         3,
