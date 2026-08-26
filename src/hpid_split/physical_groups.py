@@ -1679,6 +1679,128 @@ def _refine_inventory_boundaries(
     }
 
 
+def _absorb_profile_host_slivers(
+    image: Image.Image | np.ndarray | None,
+    root: np.ndarray,
+    masks: dict[str, np.ndarray],
+    *,
+    profile: str,
+    host_semantic: str,
+) -> tuple[dict[str, np.ndarray], dict[str, object]]:
+    """Attach thin host residuals to an adjacent verified structural surface."""
+
+    output = {semantic: mask.copy() for semantic, mask in masks.items()}
+    if profile != "road_vehicle" or host_semantic not in output:
+        return output, {"status": "inactive", "ground_truth_used": False}
+    host = output[host_semantic]
+    count, labels, stats, _ = cv2.connectedComponentsWithStats(
+        host.astype(np.uint8), connectivity=8
+    )
+    if count <= 1:
+        return output, {"status": "no_host_components", "ground_truth_used": False}
+
+    root_area = max(1, int(np.count_nonzero(root)))
+    root_y, root_x = np.nonzero(root)
+    root_width = max(1, int(root_x.max() - root_x.min() + 1))
+    root_height = max(1, int(root_y.max() - root_y.min() + 1))
+    weighted_lab: np.ndarray | None = None
+    if image is not None:
+        rgb = (
+            np.asarray(image.convert("RGB"), dtype=np.uint8)
+            if isinstance(image, Image.Image)
+            else np.asarray(image, dtype=np.uint8)
+        )
+        if rgb.shape[:2] == root.shape and rgb.ndim == 3 and rgb.shape[2] >= 3:
+            lab = cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2LAB).astype(np.float32)
+            weighted_lab = lab * np.asarray((0.25, 1.0, 1.0), dtype=np.float32)
+
+    structural_neighbors = tuple(
+        semantic
+        for semantic in (
+            "vehicle_windshield",
+            "vehicle_hood",
+            "vehicle_grille",
+            "vehicle_bumper",
+            "vehicle_roof",
+        )
+        if semantic in output
+    )
+    rows: list[dict[str, object]] = []
+    for component_index in range(1, count):
+        component = labels == component_index
+        area = int(stats[component_index, cv2.CC_STAT_AREA])
+        width = int(stats[component_index, cv2.CC_STAT_WIDTH])
+        height = int(stats[component_index, cv2.CC_STAT_HEIGHT])
+        x = int(stats[component_index, cv2.CC_STAT_LEFT])
+        y = int(stats[component_index, cv2.CC_STAT_TOP])
+        center_y = (y + 0.5 * height - root_y.min()) / root_height
+        thin_central_residual = bool(
+            area / root_area <= 0.05
+            and width / max(1, height) >= 3.2
+            and width / root_width >= 0.32
+            and 0.24 <= center_y <= 0.76
+        )
+        selected: str | None = None
+        neighbor_rows: list[dict[str, object]] = []
+        if thin_central_residual:
+            ring = cv2.dilate(
+                component.astype(np.uint8), np.ones((5, 5), np.uint8)
+            ).astype(bool) & ~component
+            component_reference = (
+                np.median(weighted_lab[component], axis=0)
+                if weighted_lab is not None
+                else None
+            )
+            scored: list[tuple[float, str]] = []
+            for semantic in structural_neighbors:
+                contact_mask = ring & output[semantic]
+                contact = int(np.count_nonzero(contact_mask))
+                color_distance = 0.0
+                if component_reference is not None and contact:
+                    color_distance = float(
+                        np.linalg.norm(
+                            np.median(weighted_lab[contact_mask], axis=0)
+                            - component_reference
+                        )
+                    )
+                score = float(
+                    contact / max(1.0, np.sqrt(area)) - color_distance / 12.0
+                )
+                neighbor_rows.append(
+                    {
+                        "semantic_name": semantic,
+                        "contact_px": contact,
+                        "weighted_lab_distance": color_distance,
+                        "score": score,
+                    }
+                )
+                if contact >= max(4, round(np.sqrt(area) * 0.12)):
+                    scored.append((score, semantic))
+            if scored:
+                selected = max(scored, key=lambda row: (row[0], row[1]))[1]
+                output[host_semantic] &= ~component
+                output[selected] |= component
+        rows.append(
+            {
+                "component_index": component_index,
+                "area_px": area,
+                "bbox_xywh": [x, y, width, height],
+                "thin_central_residual": thin_central_residual,
+                "assigned_to": selected,
+                "neighbors": neighbor_rows,
+            }
+        )
+    return output, {
+        "status": "completed",
+        "algorithm": "profile-host-sliver-adjacency-reassignment-v1",
+        "reassigned_component_count": sum(row["assigned_to"] is not None for row in rows),
+        "components": rows,
+        "appearance_role": "tie_break_between_existing_structural_ids",
+        "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
 def _canonical_profile_group_semantic(
     semantic_name: str,
     profile: str,
@@ -1930,11 +2052,181 @@ def _semantic_consensus_seed(
     }
 
 
+def _complete_wrapped_label_from_structure_and_material(
+    seed: np.ndarray,
+    support_masks: list[np.ndarray],
+    root: np.ndarray,
+    rgb: np.ndarray,
+) -> tuple[np.ndarray, dict[str, object]]:
+    """Complete a verified wrapped label without filling arbitrary image rows."""
+
+    if not support_masks:
+        return seed, {"status": "no_independent_support", "ground_truth_used": False}
+    support = np.logical_or.reduce(support_masks) & root
+    geometry = _root_relative_geometry(support, root)
+    if geometry is None:
+        return seed, {"status": "empty_support", "ground_truth_used": False}
+
+    ys, _xs = np.nonzero(support)
+    root_y, _root_x = np.nonzero(root)
+    root_height = max(1, int(root_y.max() - root_y.min() + 1))
+    pad = max(2, round(0.025 * root_height))
+    slot = np.zeros_like(root)
+    slot[max(0, int(ys.min()) - pad) : min(root.shape[0], int(ys.max()) + pad + 1)] = True
+    slot &= root
+
+    lab = cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2LAB).astype(np.float32)
+    weighted_lab = lab * np.asarray((0.30, 1.0, 1.0), dtype=np.float32)
+    support_distance = cv2.distanceTransform(
+        support.astype(np.uint8), cv2.DIST_L2, 5
+    )
+    core = support & (
+        support_distance >= max(1.0, float(support_distance.max()) * 0.16)
+    )
+    if np.count_nonzero(core) < 16:
+        core = support
+    reference = np.median(weighted_lab[core], axis=0)
+    color_distance = np.linalg.norm(weighted_lab - reference, axis=2)
+    support_quantile = float(np.quantile(color_distance[support], 0.90))
+    threshold = float(np.clip(support_quantile + 5.0, 14.0, 42.0))
+
+    material = slot & (color_distance <= threshold)
+    material |= support
+    material = cv2.morphologyEx(
+        material.astype(np.uint8),
+        cv2.MORPH_CLOSE,
+        np.ones((5, 5), np.uint8),
+    ).astype(bool) & slot
+    material = cv2.morphologyEx(
+        material.astype(np.uint8),
+        cv2.MORPH_OPEN,
+        np.ones((3, 3), np.uint8),
+    ).astype(bool) & slot
+    material |= support
+
+    count, labels, stats, _ = cv2.connectedComponentsWithStats(
+        material.astype(np.uint8), connectivity=8
+    )
+    completed = np.zeros_like(root)
+    component_rows: list[dict[str, object]] = []
+    for component_index in range(1, count):
+        component = labels == component_index
+        area = int(stats[component_index, cv2.CC_STAT_AREA])
+        overlap = int(np.count_nonzero(component & support))
+        accepted = overlap >= max(2, round(area * 0.01))
+        if accepted:
+            completed |= component
+        component_rows.append(
+            {
+                "area_px": area,
+                "support_overlap_px": overlap,
+                "accepted": accepted,
+            }
+        )
+
+    smoothed_rgb = cv2.GaussianBlur(rgb[:, :, :3], (5, 5), 0)
+    boundary_lab = cv2.cvtColor(smoothed_rgb, cv2.COLOR_RGB2LAB).astype(np.float32)
+    boundary_lab *= np.asarray((0.35, 1.0, 1.0), dtype=np.float32)
+    vertical_gradient = np.linalg.norm(
+        cv2.Sobel(boundary_lab, cv2.CV_32F, 0, 1, ksize=3), axis=2
+    )
+    support_y0 = int(ys.min())
+    support_y1 = int(ys.max() + 1)
+    support_height = max(4, support_y1 - support_y0)
+    top_boundaries = np.full(root.shape[1], support_y0, dtype=np.float32)
+    bottom_boundaries = np.full(root.shape[1], support_y1, dtype=np.float32)
+    valid_columns = np.flatnonzero(np.any(root, axis=0))
+    for x in valid_columns:
+        root_rows = np.flatnonzero(root[:, x])
+        top_start = max(
+            int(root_rows.min() + 2),
+            support_y0 - round(0.18 * support_height),
+        )
+        top_end = min(
+            int(root_rows.max() - 2),
+            support_y0 + round(0.48 * support_height),
+        )
+        if top_end > top_start:
+            top_boundaries[x] = top_start + int(
+                np.argmax(vertical_gradient[top_start : top_end + 1, x])
+            )
+        bottom_start = max(
+            int(root_rows.min() + 2),
+            support_y1 - round(0.40 * support_height),
+        )
+        bottom_end = min(
+            int(root_rows.max() - 1),
+            support_y1 + round(0.10 * support_height),
+        )
+        if bottom_end > bottom_start:
+            bottom_boundaries[x] = bottom_start + int(
+                np.argmax(vertical_gradient[bottom_start : bottom_end + 1, x])
+            ) + 1
+
+    def smooth_valid(values: np.ndarray, kernel_size: int = 9) -> np.ndarray:
+        selected = values[valid_columns]
+        radius = kernel_size // 2
+        padded = np.pad(selected, (radius, radius), mode="edge")
+        smoothed = np.asarray(
+            [np.median(padded[index : index + kernel_size]) for index in range(len(selected))],
+            dtype=np.float32,
+        )
+        output = values.copy()
+        output[valid_columns] = smoothed
+        return output
+
+    top_boundaries = smooth_valid(top_boundaries)
+    bottom_boundaries = smooth_valid(bottom_boundaries)
+    boundary_completed = np.zeros_like(root)
+    for x in valid_columns:
+        top = max(0, round(top_boundaries[x]))
+        bottom = min(root.shape[0], round(bottom_boundaries[x]))
+        if bottom > top:
+            boundary_completed[top:bottom, x] = True
+    boundary_completed &= root
+    boundary_completed |= seed | support
+    completed = boundary_completed
+
+    completed |= seed | support
+    support_area = max(1, int(np.count_nonzero(support)))
+    root_area = max(1, int(np.count_nonzero(root)))
+    area_ratio = float(np.count_nonzero(completed) / support_area)
+    root_fraction = float(np.count_nonzero(completed) / root_area)
+    stable = bool(
+        0.85 <= area_ratio <= 2.80
+        and root_fraction <= 0.55
+        and geometry["height_fraction"] <= 0.68
+    )
+    if not stable:
+        completed = seed | support
+    return completed & root, {
+        "status": "completed" if stable else "rejected_unstable_material_completion",
+        "algorithm": "verified-wrapped-label-column-boundary-completion-v2",
+        "weighted_lab_threshold": threshold,
+        "support_area_px": support_area,
+        "completed_area_px": int(np.count_nonzero(completed)),
+        "area_ratio": area_ratio,
+        "root_area_fraction": root_fraction,
+        "components": component_rows,
+        "support_y_interval": [support_y0, support_y1],
+        "column_boundary_search": {
+            "top_window": [-0.18, 0.48],
+            "bottom_window": [-0.40, 0.10],
+            "median_kernel_columns": 9,
+        },
+        "appearance_role": "column_boundary_alignment_inside_verified_wrapped_label_slot",
+        "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
 def _extend_label_from_visual_evidence(
     seed: np.ndarray,
     boundary_candidates: list[MaskCandidate],
     root: np.ndarray,
     image: Image.Image | np.ndarray | None,
+    *,
+    label_semantic: str,
 ) -> tuple[np.ndarray, dict[str, object]]:
     """Recover a wrapped label only after a semantic label seed exists.
 
@@ -1959,7 +2251,7 @@ def _extend_label_from_visual_evidence(
     reference = np.median(lab[seed], axis=0)
     diagonal = max(1.0, float(np.hypot(*root.shape)))
     additions: list[np.ndarray] = []
-    broad_support = False
+    broad_support_masks: list[np.ndarray] = []
     rows: list[dict[str, object]] = []
     seed_area = max(1, int(np.count_nonzero(seed)))
     seed_distance = cv2.distanceTransform((~seed).astype(np.uint8), cv2.DIST_L2, 5)
@@ -1979,8 +2271,13 @@ def _extend_label_from_visual_evidence(
         shading_penalty = float(appearance.get("shading_only_penalty", 0.0))
         closure = float(appearance.get("boundary_closure", 0.0))
         relative = _root_relative_geometry(mask, root)
+        duplicate_label_proposal = bool(
+            candidate.semantic_name == label_semantic
+            or "label" in _words(candidate.semantic_name)
+        )
         visual_extension = bool(
-            _is_visual_semantic(candidate.semantic_name)
+            not duplicate_label_proposal
+            and _is_visual_semantic(candidate.semantic_name)
             and
             0.008 <= fraction <= 0.24
             and gap <= 0.08
@@ -1988,7 +2285,8 @@ def _extend_label_from_visual_evidence(
             and shading_penalty < 0.42
         )
         wrapped_panel_support = bool(
-            relative is not None
+            not duplicate_label_proposal
+            and relative is not None
             and 0.10 <= fraction <= 0.50
             and seed_overlap >= 0.12
             and 0.42 <= relative["center_y"] <= 0.91
@@ -2001,7 +2299,8 @@ def _extend_label_from_visual_evidence(
         accepted = visual_extension or wrapped_panel_support
         if accepted:
             additions.append(mask)
-            broad_support |= wrapped_panel_support
+            if wrapped_panel_support:
+                broad_support_masks.append(mask)
         rows.append(
             {
                 "candidate_key": candidate.metadata.get("candidate_key"),
@@ -2012,6 +2311,7 @@ def _extend_label_from_visual_evidence(
                 "lab_distance": delta,
                 "boundary_closure": closure,
                 "shading_only_penalty": shading_penalty,
+                "duplicate_label_proposal": duplicate_label_proposal,
                 "visual_extension": visual_extension,
                 "wrapped_panel_support": wrapped_panel_support,
                 "accepted": accepted,
@@ -2019,39 +2319,24 @@ def _extend_label_from_visual_evidence(
         )
     extended = seed | np.logical_or.reduce(additions) if additions else seed
     band_completed = False
-    if broad_support:
-        root_rows = np.count_nonzero(root, axis=1)
-        support_rows = np.count_nonzero(extended & root, axis=1)
-        coverage = support_rows / np.maximum(1, root_rows)
-        active = (coverage >= 0.28) & (root_rows > 0)
-        active = cv2.morphologyEx(
-            active[:, None].astype(np.uint8),
-            cv2.MORPH_CLOSE,
-            np.ones((5, 1), np.uint8),
-        )[:, 0].astype(bool)
-        _count, labels_2d = cv2.connectedComponents(
-            active[:, None].astype(np.uint8)
-        )
-        labels = labels_2d[:, 0]
-        seed_rows = np.flatnonzero(np.any(seed, axis=1))
-        selected = 0
-        if seed_rows.size:
-            seed_center = round(float(np.median(seed_rows)))
-            selected = int(labels[seed_center])
-        if selected > 0:
-            band_rows = labels == selected
-            root_y = np.flatnonzero(root_rows > 0)
-            band_fraction = float(
-                np.count_nonzero(band_rows)
-                / max(1, root_y[-1] - root_y[0] + 1)
+    material_completion: dict[str, object] = {"status": "inactive"}
+    if broad_support_masks:
+        completed, material_completion = (
+            _complete_wrapped_label_from_structure_and_material(
+                seed,
+                broad_support_masks,
+                root,
+                rgb,
             )
-            if 0.12 <= band_fraction <= 0.62:
-                extended |= root & band_rows[:, None]
-                band_completed = True
+        )
+        extended |= completed
+        band_completed = material_completion.get("status") == "completed"
     return extended & root, {
         "status": "completed" if additions else "no_supported_extension",
-        "algorithm": "verified-label-wrapped-boundary-recovery-v2",
+        "algorithm": "verified-label-topology-and-material-recovery-v3",
+        "label_topology": "wrapped" if broad_support_masks else "local_patch",
         "wrapped_band_completed": band_completed,
+        "material_completion": material_completion,
         "appearance_role": "verified_label_boundary_extension_only",
         "appearance_can_create_ids": False,
         "candidates": rows,
@@ -2645,7 +2930,11 @@ def _residual_host_profile_masks(
         )
         if semantic.endswith("_label"):
             seed, extension = _extend_label_from_visual_evidence(
-                seed, list(candidates), root, image
+                seed,
+                list(candidates),
+                root,
+                image,
+                label_semantic=semantic,
             )
             consensus["visual_boundary_extension"] = extension
         if profile == "scissors_pliers" and semantic == "tool_prop_blade":
@@ -2761,17 +3050,29 @@ def _residual_host_profile_masks(
         root,
         output,
     )
-    locked_semantics: list[str] = []
+    lock_candidates = {
+        semantic for semantic in coarse_output if semantic.endswith("_label")
+    }
     if profile == "road_vehicle" and "vehicle_wheel" in coarse_output:
-        wheel = coarse_output["vehicle_wheel"]
-        released = output["vehicle_wheel"] & ~wheel
+        lock_candidates.add("vehicle_wheel")
+    locked_semantics: list[str] = []
+    for locked_semantic in sorted(lock_candidates):
+        locked_mask = coarse_output[locked_semantic]
+        released = output[locked_semantic] & ~locked_mask
         for semantic in output:
-            if semantic == "vehicle_wheel":
+            if semantic == locked_semantic:
                 continue
-            output[semantic] &= ~wheel
+            output[semantic] &= ~locked_mask
             output[semantic] |= released & coarse_output[semantic]
-        output["vehicle_wheel"] = wheel
-        locked_semantics.append("vehicle_wheel")
+        output[locked_semantic] = locked_mask
+        locked_semantics.append(locked_semantic)
+    output, host_sliver_diagnostics = _absorb_profile_host_slivers(
+        image,
+        root,
+        output,
+        profile=profile,
+        host_semantic=host,
+    )
     stack = np.stack(list(output.values()), axis=0)
     complete = np.array_equal(np.logical_or.reduce(list(output.values())), root)
     disjoint = int(stack.sum(axis=0).max(initial=0)) <= 1
@@ -2785,7 +3086,7 @@ def _residual_host_profile_masks(
         }
     return output, {
         "status": "completed",
-        "algorithm": "hpid-residual-host-physical-ownership-v3",
+        "algorithm": "hpid-residual-host-physical-ownership-v4",
         "selected_profile": profile,
         "host_semantic": host,
         "evidence_order": ["semantic", "structure", "appearance"],
@@ -2797,6 +3098,7 @@ def _residual_host_profile_masks(
         "wheel_pair_structure": wheel_diagnostics,
         "boundary_refinement": boundary_diagnostics,
         "boundary_locked_semantics": locked_semantics,
+        "host_sliver_reassignment": host_sliver_diagnostics,
         "appearance_role": "verified_boundary_refinement_only",
         "appearance_can_create_ids": False,
         "photometric_regions_can_create_ids": False,

@@ -77,6 +77,16 @@ proposal inference or changing fine Part-ID maps. The publication plate uses
 unretouched outputs, while the frozen `0.3.1` benchmark estimates remain the
 paper's preregistered quantitative evidence.
 
+Version `0.3.6` separates local patch labels from wrapped labels before any
+boundary completion. A second label proposal cannot validate itself as an
+independent wrapped-surface cue; a wrapped label instead requires a distinct
+structural proposal, followed by column-wise edge alignment inside that
+verified slot. The road-vehicle profile also reassigns thin disconnected host
+residuals to an adjacent verified surface rather than exposing arbitrary
+horizontal body strips. These changes are evaluated by regression on frozen
+candidate packages. They do not rerun proposal inference, alter fine Part-ID
+maps, or replace the frozen `0.3.1` quantitative estimates.
+
 ## What is implemented
 
 - One-image CLI and local upload UI.

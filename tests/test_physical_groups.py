@@ -5,6 +5,7 @@ from PIL import Image
 from hpid_split.fusion import MaskCandidate
 from hpid_split.instances import PartInstance
 from hpid_split.physical_groups import (
+    _absorb_profile_host_slivers,
     _candidate_three_stage_verification,
     _firearm_handguard_from_structure_and_material,
     _refine_inventory_boundaries,
@@ -2496,6 +2497,61 @@ def test_verified_label_seed_recovers_wrapped_band_from_boundary_support() -> No
     assert extension["appearance_can_create_ids"] is False
 
 
+def test_duplicate_label_proposal_does_not_expand_local_patch_to_full_band() -> None:
+    shape = (150, 90)
+    root = np.zeros(shape, dtype=bool)
+    root[8:142, 15:75] = True
+    label = np.zeros(shape, dtype=bool)
+    label[70:98, 44:66] = True
+    duplicate = label.copy()
+    duplicate[68:100, 42:68] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    image = np.full((*shape, 3), 232, dtype=np.uint8)
+    image[root] = (166, 112, 70)
+    image[label] = (235, 232, 218)
+    duplicate_candidate = MaskCandidate(
+        "container_label",
+        "container_body",
+        duplicate,
+        0.88,
+        "sam2-amg/test/point-grid",
+        metadata={
+            "candidate_key": "duplicate-label-region",
+            "appearance_graph_evidence": {
+                "boundary_closure": 0.90,
+                "shading_only_penalty": 0.02,
+            },
+        },
+    )
+    candidates = (
+        _residual_root_candidate("bottle_jar", "container", root),
+        _residual_part_candidate(
+            "bottle_jar",
+            "container_label",
+            "container_body",
+            label,
+            key="label-seed",
+        ),
+        duplicate_candidate,
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        Image.fromarray(image),
+        profile="bottle_jar",
+    )
+
+    assert masks is not None
+    assert np.array_equal(masks["container_label"], label)
+    extension = diagnostics["candidate_consensus"]["container_label"][
+        "visual_boundary_extension"
+    ]
+    assert extension["label_topology"] == "local_patch"
+    assert extension["wrapped_band_completed"] is False
+
+
 def test_chair_verified_seat_expands_to_complete_cushion_surface() -> None:
     shape = (160, 110)
     root = np.zeros(shape, dtype=bool)
@@ -2611,3 +2667,37 @@ def test_road_vehicle_recovers_paired_wheels_and_keeps_grille_separate() -> None
     assert count == 3
     assert diagnostics["wheel_pair_structure"]["status"] == "completed"
     assert diagnostics["wheel_pair_structure"]["appearance_can_create_ids"] is False
+
+
+def test_road_vehicle_absorbs_thin_host_sliver_into_adjacent_surface() -> None:
+    shape = (160, 200)
+    root = np.zeros(shape, dtype=bool)
+    root[10:150, 10:190] = True
+    host = np.zeros(shape, dtype=bool)
+    host[28:68, 16:38] = True
+    host[70:78, 55:145] = True
+    windshield = np.zeros(shape, dtype=bool)
+    windshield[28:70, 45:155] = True
+    hood = root & ~host & ~windshield
+    masks = {
+        "vehicle_body": host,
+        "vehicle_hood": hood,
+        "vehicle_windshield": windshield,
+    }
+    image = np.full((*shape, 3), 218, dtype=np.uint8)
+    image[root] = (205, 208, 212)
+    image[windshield | host] = (42, 64, 82)
+    image[28:68, 16:38] = (205, 208, 212)
+
+    refined, diagnostics = _absorb_profile_host_slivers(
+        Image.fromarray(image),
+        root,
+        masks,
+        profile="road_vehicle",
+        host_semantic="vehicle_body",
+    )
+
+    assert not np.any(refined["vehicle_body"][70:78, 55:145])
+    assert np.all(refined["vehicle_windshield"][70:78, 55:145])
+    assert diagnostics["reassigned_component_count"] == 1
+    assert diagnostics["appearance_can_create_ids"] is False
