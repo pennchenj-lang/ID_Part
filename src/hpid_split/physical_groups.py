@@ -2052,6 +2052,141 @@ def _semantic_consensus_seed(
     }
 
 
+def _snap_verified_region_to_local_edges(
+    baseline: np.ndarray,
+    semantic_seed: np.ndarray,
+    root: np.ndarray,
+    rgb: np.ndarray,
+) -> tuple[np.ndarray, dict[str, object]]:
+    """Snap a verified region to nearby edges without changing its scale."""
+
+    baseline = np.asarray(baseline, dtype=bool) & root
+    semantic_seed = np.asarray(semantic_seed, dtype=bool) & baseline
+    baseline_area = int(np.count_nonzero(baseline))
+    if baseline_area < 24:
+        return baseline, {"status": "region_too_small", "ground_truth_used": False}
+
+    inner = cv2.erode(
+        baseline.astype(np.uint8), np.ones((3, 3), np.uint8)
+    ).astype(bool)
+    outer = cv2.dilate(
+        baseline.astype(np.uint8), np.ones((7, 7), np.uint8)
+    ).astype(bool) & root
+    if np.count_nonzero(inner) < 8 or np.count_nonzero(outer) <= baseline_area:
+        return baseline, {"status": "local_band_unavailable", "ground_truth_used": False}
+
+    ys, xs = np.nonzero(outer)
+    y0, y1 = max(0, int(ys.min()) - 1), min(root.shape[0], int(ys.max()) + 2)
+    x0, x1 = max(0, int(xs.min()) - 1), min(root.shape[1], int(xs.max()) + 2)
+    local_outer = outer[y0:y1, x0:x1]
+    local_baseline = baseline[y0:y1, x0:x1]
+    local_inner = inner[y0:y1, x0:x1]
+    local_seed = semantic_seed[y0:y1, x0:x1]
+    grabcut_mask = np.full(local_outer.shape, cv2.GC_BGD, dtype=np.uint8)
+    grabcut_mask[local_outer] = cv2.GC_PR_BGD
+    grabcut_mask[local_baseline] = cv2.GC_PR_FGD
+    grabcut_mask[local_inner | local_seed] = cv2.GC_FGD
+
+    try:
+        background_model = np.zeros((1, 65), dtype=np.float64)
+        foreground_model = np.zeros((1, 65), dtype=np.float64)
+        cv2.setRNGSeed(0)
+        cv2.grabCut(
+            cv2.cvtColor(rgb[y0:y1, x0:x1, :3], cv2.COLOR_RGB2BGR),
+            grabcut_mask,
+            None,
+            background_model,
+            foreground_model,
+            5,
+            cv2.GC_INIT_WITH_MASK,
+        )
+    except cv2.error as error:
+        return baseline, {
+            "status": "failed_opencv",
+            "error": str(error),
+            "ground_truth_used": False,
+        }
+
+    local_candidate = (
+        (grabcut_mask == cv2.GC_FGD) | (grabcut_mask == cv2.GC_PR_FGD)
+    ) & local_outer
+    candidate = np.zeros_like(root)
+    candidate[y0:y1, x0:x1] = local_candidate
+    candidate |= semantic_seed
+    candidate &= root
+
+    smoothed = cv2.bilateralFilter(rgb[:, :, :3], 7, 30, 30)
+    lab = cv2.cvtColor(smoothed, cv2.COLOR_RGB2LAB).astype(np.float32)
+    gradient_x = cv2.Sobel(lab, cv2.CV_32F, 1, 0, ksize=3)
+    gradient_y = cv2.Sobel(lab, cv2.CV_32F, 0, 1, ksize=3)
+    gradient = np.sqrt(np.sum(gradient_x * gradient_x + gradient_y * gradient_y, axis=2))
+    root_edge = root ^ cv2.erode(
+        root.astype(np.uint8), np.ones((3, 3), np.uint8)
+    ).astype(bool)
+    root_edge_band = cv2.dilate(
+        root_edge.astype(np.uint8), np.ones((5, 5), np.uint8)
+    ).astype(bool)
+
+    def alignment_score(mask: np.ndarray) -> float:
+        edge = mask ^ cv2.erode(
+            mask.astype(np.uint8), np.ones((3, 3), np.uint8)
+        ).astype(bool)
+        internal_edge = edge & ~root_edge_band
+        values = gradient[internal_edge]
+        if values.size < 8:
+            values = gradient[edge]
+        if values.size == 0:
+            return 0.0
+        perimeter = max(1, int(np.count_nonzero(edge)))
+        area = max(1, int(np.count_nonzero(mask)))
+        jaggedness = perimeter * perimeter / (4.0 * np.pi * area)
+        return float(
+            np.quantile(values, 0.65)
+            + 0.35 * np.median(values)
+            - 2.0 * max(0.0, jaggedness - 4.0)
+        )
+
+    candidate_area = int(np.count_nonzero(candidate))
+    area_ratio = candidate_area / max(1, baseline_area)
+    seed_area = max(1, int(np.count_nonzero(semantic_seed)))
+    seed_recall = int(np.count_nonzero(candidate & semantic_seed)) / seed_area
+    count, _, stats, _ = cv2.connectedComponentsWithStats(
+        candidate.astype(np.uint8), connectivity=8
+    )
+    largest_fraction = (
+        float(stats[1:, cv2.CC_STAT_AREA].max() / max(1, candidate_area))
+        if count > 1
+        else 0.0
+    )
+    baseline_score = alignment_score(baseline)
+    candidate_score = alignment_score(candidate)
+    minimum_score_gain = max(8.0, 0.05 * abs(baseline_score))
+    accepted = bool(
+        0.98 <= area_ratio <= 1.02
+        and seed_recall >= 0.98
+        and largest_fraction >= 0.88
+        and candidate_score >= baseline_score + minimum_score_gain
+    )
+    return (candidate if accepted else baseline), {
+        "status": "completed" if accepted else "rejected_unstable_edge_snap",
+        "algorithm": "verified-region-local-edge-snap-v1",
+        "iterations": 5,
+        "outer_radius_px": 3,
+        "inner_radius_px": 1,
+        "baseline_area_px": baseline_area,
+        "candidate_area_px": candidate_area,
+        "area_ratio": area_ratio,
+        "semantic_seed_recall": seed_recall,
+        "largest_component_fraction": largest_fraction,
+        "baseline_boundary_score": baseline_score,
+        "candidate_boundary_score": candidate_score,
+        "minimum_score_gain": minimum_score_gain,
+        "appearance_role": "local_boundary_alignment_after_semantic_and_structural_verification",
+        "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
 def _complete_wrapped_label_from_structure_and_material(
     seed: np.ndarray,
     support_masks: list[np.ndarray],
@@ -2090,6 +2225,7 @@ def _complete_wrapped_label_from_structure_and_material(
     try:
         background_model = np.zeros((1, 65), dtype=np.float64)
         foreground_model = np.zeros((1, 65), dtype=np.float64)
+        cv2.setRNGSeed(0)
         cv2.grabCut(
             cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2BGR),
             grabcut_mask,
@@ -2157,7 +2293,17 @@ def _complete_wrapped_label_from_structure_and_material(
             "ground_truth_used": False,
         }
         if stable_seeded_cut:
-            return seeded_cut & root, seeded_cut_diagnostics
+            snapped_cut, edge_snap_diagnostics = _snap_verified_region_to_local_edges(
+                seeded_cut,
+                seed,
+                root,
+                rgb,
+            )
+            seeded_cut_diagnostics["local_edge_snap"] = edge_snap_diagnostics
+            seeded_cut_diagnostics["completed_area_px"] = int(
+                np.count_nonzero(snapped_cut)
+            )
+            return snapped_cut & root, seeded_cut_diagnostics
     except cv2.error as error:
         seeded_cut_diagnostics = {
             "status": "failed_opencv",
@@ -2723,7 +2869,7 @@ def _road_vehicle_wheels_from_structure(
     if not np.any(np.isfinite(center)):
         return None, {"status": "bottom_profile_missing", "ground_truth_used": False}
     bumper_baseline = float(np.nanmedian(center))
-    side_fraction = 0.22
+    side_fraction = 0.25
     side_slot = np.zeros_like(root)
     side_slot[:, x0 : x0 + round(side_fraction * width)] = True
     side_slot[:, x1 - round(side_fraction * width) : x1] = True
@@ -2737,13 +2883,28 @@ def _road_vehicle_wheels_from_structure(
         cv2.bilateralFilter(rgb[:, :, :3], 7, 35, 35),
         cv2.COLOR_RGB2GRAY,
     )
-    darkness_threshold = float(np.quantile(gray[lower_slot], 0.62))
+    darkness_quantile = 0.55
+    darkness_threshold = float(np.quantile(gray[lower_slot], darkness_quantile))
     support = lower_slot & (gray <= darkness_threshold)
     support = cv2.morphologyEx(
         support.astype(np.uint8),
         cv2.MORPH_CLOSE,
         np.ones((5, 5), np.uint8),
     ).astype(bool)
+    # Wheel material must touch the external lower silhouette.  Internal dark
+    # recesses, grille openings, and bumper shadows can be equally dark, but
+    # they sit deeper inside the object and therefore cannot seed wheel IDs.
+    contours, _ = cv2.findContours(
+        root.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+    )
+    external_silhouette = np.zeros_like(root, dtype=np.uint8)
+    cv2.drawContours(external_silhouette, contours, -1, 1, cv2.FILLED)
+    distance_to_silhouette = cv2.distanceTransform(
+        external_silhouette, cv2.DIST_L2, 5
+    )
+    silhouette_fraction = 0.095
+    silhouette_limit = max(3.0, silhouette_fraction * height)
+    support &= distance_to_silhouette <= silhouette_limit
     bottom_seed = side_slot & root & (grid_y >= round(bumper_baseline - 1.0))
     count, labels, stats, centroids = cv2.connectedComponentsWithStats(
         support.astype(np.uint8), connectivity=8
@@ -2765,10 +2926,10 @@ def _road_vehicle_wheels_from_structure(
         area_fraction = area / root_area
         side = "left" if component_x < center_x else "right"
         valid = bool(
-            0.008 <= area_fraction <= 0.11
+            0.004 <= area_fraction <= 0.11
             and component_y >= y0 + 0.72 * height
-            and 0.05 <= component_width / width <= 0.30
-            and 0.08 <= component_height / height <= 0.36
+            and 0.035 <= component_width / width <= 0.30
+            and 0.06 <= component_height / height <= 0.36
             and bottom_overlap >= max(2, round(area * 0.04))
         )
         score = float(
@@ -2819,14 +2980,70 @@ def _road_vehicle_wheels_from_structure(
             "components": rows,
             "ground_truth_used": False,
         }
-    wheels = (left[1] | right[1]) & root
+    raw_wheels = (left[1] | right[1]) & root
+    grid_y_full, grid_x_full = np.indices(root.shape)
+    lateral_gap = np.minimum(
+        np.abs(grid_x_full - x0),
+        np.abs((x1 - 1) - grid_x_full),
+    )
+    bottom_corner_fraction = 0.04
+    lateral_corner_fraction = 0.10
+    corner_support = (
+        (grid_y_full >= bumper_baseline - bottom_corner_fraction * height)
+        | (lateral_gap <= lateral_corner_fraction * width)
+    )
+    compact_wheels = raw_wheels & corner_support
+    compact_left_area = int(np.count_nonzero(compact_wheels & left[1]))
+    compact_right_area = int(np.count_nonzero(compact_wheels & right[1]))
+    left_retention = compact_left_area / max(1, left_area)
+    right_retention = compact_right_area / max(1, right_area)
+    corner_constraint_applied = bool(
+        left_retention >= 0.65 and right_retention >= 0.65
+    )
+    wheels = compact_wheels if corner_constraint_applied else raw_wheels
+    vertical_kernel_size = max(3, round(0.04 * height))
+    if vertical_kernel_size % 2 == 0:
+        vertical_kernel_size += 1
+    vertical_core = cv2.morphologyEx(
+        wheels.astype(np.uint8),
+        cv2.MORPH_OPEN,
+        np.ones((vertical_kernel_size, 1), np.uint8),
+    ).astype(bool)
+    vertical_left_area = int(np.count_nonzero(vertical_core & left[1]))
+    vertical_right_area = int(np.count_nonzero(vertical_core & right[1]))
+    vertical_left_retention = vertical_left_area / max(
+        1, int(np.count_nonzero(wheels & left[1]))
+    )
+    vertical_right_retention = vertical_right_area / max(
+        1, int(np.count_nonzero(wheels & right[1]))
+    )
+    vertical_count, _ = cv2.connectedComponents(vertical_core.astype(np.uint8))
+    vertical_coherence_applied = bool(
+        vertical_count >= 3
+        and vertical_left_retention >= 0.92
+        and vertical_right_retention >= 0.92
+    )
+    if vertical_coherence_applied:
+        wheels = vertical_core
     return wheels, {
         "status": "completed",
-        "algorithm": "road-vehicle-paired-wheel-structure-v1",
+        "algorithm": "road-vehicle-paired-wheel-structure-v3",
         "bumper_baseline_y": bumper_baseline,
         "lower_start_y": lower_start,
-        "darkness_quantile": 0.62,
+        "darkness_quantile": darkness_quantile,
         "darkness_threshold": darkness_threshold,
+        "side_fraction": side_fraction,
+        "silhouette_fraction": silhouette_fraction,
+        "silhouette_limit_px": silhouette_limit,
+        "bottom_corner_fraction": bottom_corner_fraction,
+        "lateral_corner_fraction": lateral_corner_fraction,
+        "left_corner_retention": left_retention,
+        "right_corner_retention": right_retention,
+        "corner_constraint_applied": corner_constraint_applied,
+        "vertical_kernel_size_px": vertical_kernel_size,
+        "vertical_left_retention": vertical_left_retention,
+        "vertical_right_retention": vertical_right_retention,
+        "vertical_coherence_applied": vertical_coherence_applied,
         "selected_components": [left[2], right[2]],
         "area_ratio": area_ratio,
         "normalized_vertical_gap": vertical_gap,

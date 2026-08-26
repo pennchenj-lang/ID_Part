@@ -100,6 +100,17 @@ IoU `0.6827` / boundary F1 `0.7813` to `0.8295` / `0.9176`. No proposal model
 was rerun, no ground-truth mask was available to grouping, and the frozen
 `0.3.1` primary estimates remain unchanged.
 
+Version `0.3.8` adds a bounded local edge snap after a wrapped label has passed
+the semantic and structural gates. The snap is accepted only when it preserves
+the verified seed, stays within two percent of the admitted area, and improves
+image-boundary alignment; smooth shading cannot create or enlarge a label ID.
+Road-vehicle wheel recovery now requires paired dark components near the lower
+external silhouette and removes upper bumper shadows unless they also lie on an
+outer vehicle flank. A vertical-coherence check also rejects thin horizontal
+shadows while retaining both supported wheel components. These are post-freeze
+grouping regressions over existing candidate packages. They do not use ground
+truth during inference or replace the frozen `0.3.1` primary estimates.
+
 ## What is implemented
 
 - One-image CLI and local upload UI.

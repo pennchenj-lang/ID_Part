@@ -9,7 +9,9 @@ from hpid_split.physical_groups import (
     _candidate_three_stage_verification,
     _firearm_handguard_from_structure_and_material,
     _refine_inventory_boundaries,
+    _road_vehicle_wheels_from_structure,
     _semantic_seeded_profile_masks,
+    _snap_verified_region_to_local_edges,
     build_physical_groups,
 )
 
@@ -2731,6 +2733,88 @@ def test_road_vehicle_recovers_paired_wheels_and_keeps_grille_separate() -> None
     assert count == 3
     assert diagnostics["wheel_pair_structure"]["status"] == "completed"
     assert diagnostics["wheel_pair_structure"]["appearance_can_create_ids"] is False
+
+
+def test_road_vehicle_wheel_structure_rejects_upper_bumper_shadow() -> None:
+    shape = (170, 210)
+    root = np.zeros(shape, dtype=bool)
+    root[15:128, 20:190] = True
+    root[112:158, 24:58] = True
+    root[112:158, 152:186] = True
+    image = np.full((*shape, 3), 230, dtype=np.uint8)
+    image[root] = (195, 198, 202)
+    image[118:158, 24:58] = (24, 25, 28)
+    image[118:158, 152:186] = (24, 25, 28)
+    image[105:137, 52:68] = (22, 23, 25)
+
+    wheels, diagnostics = _road_vehicle_wheels_from_structure(
+        root, Image.fromarray(image)
+    )
+
+    assert wheels is not None
+    assert diagnostics["status"] == "completed"
+    assert diagnostics["corner_constraint_applied"] is True
+    assert not np.any(wheels[105:120, 52:68])
+    count, _ = cv2.connectedComponents(wheels.astype(np.uint8))
+    assert count == 3
+
+
+def test_road_vehicle_wheel_structure_rejects_thin_horizontal_shadow() -> None:
+    shape = (170, 210)
+    root = np.zeros(shape, dtype=bool)
+    root[15:128, 20:190] = True
+    root[112:158, 24:58] = True
+    root[112:158, 152:186] = True
+    image = np.full((*shape, 3), 230, dtype=np.uint8)
+    image[root] = (195, 198, 202)
+    image[118:158, 24:58] = (24, 25, 28)
+    image[118:158, 152:186] = (24, 25, 28)
+    image[124:129, 52:80] = (22, 23, 25)
+
+    wheels, diagnostics = _road_vehicle_wheels_from_structure(
+        root, Image.fromarray(image)
+    )
+
+    assert wheels is not None
+    assert diagnostics["status"] == "completed"
+    assert diagnostics["vertical_coherence_applied"] is True
+    assert not np.any(wheels[124:129, 58:80])
+    count, _ = cv2.connectedComponents(wheels.astype(np.uint8))
+    assert count == 3
+
+
+def test_local_edge_snap_cannot_turn_smooth_shading_into_label_growth() -> None:
+    shape = (100, 120)
+    root = np.zeros(shape, dtype=bool)
+    root[8:92, 8:112] = True
+    baseline = np.zeros(shape, dtype=bool)
+    baseline[32:68, 28:92] = True
+    seed = np.zeros(shape, dtype=bool)
+    seed[42:58, 46:74] = True
+    image = np.full((*shape, 3), 190, dtype=np.uint8)
+    for x in range(shape[1]):
+        image[:, x] = np.clip(165 + x // 5, 0, 255)
+
+    cv2.setRNGSeed(123)
+    snapped, diagnostics = _snap_verified_region_to_local_edges(
+        baseline,
+        seed,
+        root,
+        image,
+    )
+    cv2.setRNGSeed(987)
+    repeated, repeated_diagnostics = _snap_verified_region_to_local_edges(
+        baseline,
+        seed,
+        root,
+        image,
+    )
+
+    assert np.array_equal(snapped, baseline)
+    assert np.array_equal(repeated, snapped)
+    assert repeated_diagnostics["candidate_area_px"] == diagnostics["candidate_area_px"]
+    assert diagnostics["status"] != "completed"
+    assert diagnostics["appearance_can_create_ids"] is False
 
 
 def test_road_vehicle_absorbs_thin_host_sliver_into_adjacent_surface() -> None:
