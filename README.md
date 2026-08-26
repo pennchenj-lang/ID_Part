@@ -96,7 +96,7 @@ boundary refinement so appearance cannot expand them into the chassis or wheel
 wells. On all 226 frozen candidate packages, editable-group F1@.25 remains
 `0.3773`; mean matched IoU changes from `0.46415` to `0.46439` and mean boundary
 F1 from `0.49015` to `0.49045`. The repaired soap-label case improves from
-IoU `0.6827` / boundary F1 `0.7813` to `0.8363` / `0.9176`. No proposal model
+IoU `0.6827` / boundary F1 `0.7813` to `0.8295` / `0.9176`. No proposal model
 was rerun, no ground-truth mask was available to grouping, and the frozen
 `0.3.1` primary estimates remain unchanged.
 
