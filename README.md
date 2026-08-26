@@ -54,6 +54,19 @@ release includes regression tests for same-material highlights and shadows and
 an audited six-domain qualitative plate whose public ID names contain no
 photometric-region labels. Frozen `0.3.1` benchmark numbers are unchanged.
 
+Version `0.3.4` replaces whole-root nearest-seed propagation with conservative
+residual-host ownership for common assets. Verified lids, labels, handles,
+seats, blades, lights, and windows keep their proposal-supported pixels; every
+unclaimed foreground pixel returns to an explicit body, frame, or handle host.
+Same-semantic proposals are clustered before ownership so one overbroad mask
+cannot override several agreeing masks. Profile geometry can correct a wide
+mid-axis chair member to a seat and can recover a windshield only inside the
+roof-to-hood slot. Appearance may extend an already verified label or blade
+boundary, but a highlight, shadow, colour patch, or texture patch still cannot
+name or create an ID. The release includes an unretouched six-domain
+qualitative audit with exact foreground conservation. Frozen `0.3.1`
+quantitative estimates remain unchanged.
+
 ## What is implemented
 
 - One-image CLI and local upload UI.
@@ -109,6 +122,11 @@ photometric-region labels. Frozen `0.3.1` benchmark numbers are unchanged.
 - A candidate-to-physical fusion layer. Colour, shading, texture, and raw SAM2
   regions remain internal evidence; editable Group IDs are emitted only after
   connectivity cleanup, semantic inventory constraints, and structural fusion.
+- Residual-host physical ownership for containers, daily objects, kettles,
+  chairs, scissors, and road vehicles. Small verified parts no longer flood the
+  whole object: the body, frame, or handle owns every pixel not claimed by a
+  corroborated physical subpart. Same-semantic proposal consensus rejects
+  isolated overbroad candidates before public IDs are formed.
 - Two public ID levels: fine Part IDs for audit and local detail, plus
   conservative editable Group IDs. Character anatomy shares a stable body
   group, one upper garment includes its sleeves, and repeated scene objects

@@ -109,11 +109,30 @@ _PHOTOMETRIC_PHYSICAL_SURFACE_TOKENS = {
 }
 _DISCRETE_REPEATED_PART_TOKENS = {
     "boulder",
+    "headlight",
     "rim",
     "rock",
     "tire",
     "tree",
     "wheel",
+}
+
+_PROFILE_RESIDUAL_HOST = {
+    "bottle_jar": "container_body",
+    "chair": "furniture_frame",
+    "kettle": "device_body",
+    "road_vehicle": "vehicle_body",
+    "scissors_pliers": "tool_prop_handle",
+    "simple_object": "daily_object_body",
+}
+
+_PROFILE_DOMAIN_PREFIX = {
+    "bottle_jar": "container_",
+    "chair": "furniture_",
+    "kettle": "device_",
+    "road_vehicle": "vehicle_",
+    "scissors_pliers": "tool_prop_",
+    "simple_object": "daily_object_",
 }
 
 
@@ -1666,16 +1685,760 @@ def _canonical_profile_group_semantic(
 ) -> str:
     """Map inventory labels to the physical group exposed by the profile."""
 
-    if profile != "knife":
-        return semantic_name
     words = _words(semantic_name)
-    if "blade" in words:
-        return "tool_prop_blade"
-    if words & {"wrap", "wrapping", "cloth"}:
-        return "tool_prop_wrap"
-    if words & _KNIFE_HANDLE_TOKENS or semantic_name == "tool_prop":
+    if profile == "knife":
+        if "blade" in words:
+            return "tool_prop_blade"
+        if words & {"wrap", "wrapping", "cloth"}:
+            return "tool_prop_wrap"
+        if words & _KNIFE_HANDLE_TOKENS or semantic_name == "tool_prop":
+            return "tool_prop_handle"
+    elif profile == "bottle_jar":
+        if "label" in words:
+            return "container_label"
+        if words & {"cap", "lid", "closure"}:
+            return "container_lid"
+        return "container_body"
+    elif profile == "simple_object":
+        if "label" in words:
+            return "daily_object_label"
+        if words & {"cap", "lid", "pump", "dispenser"}:
+            return "daily_object_cap"
+        if "neck" in words:
+            return "daily_object_neck"
+        return "daily_object_body"
+    elif profile == "kettle":
+        if "handle" in words:
+            return "device_handle"
+        if "base" in words:
+            return "device_base"
+        if "lid" in words:
+            return "device_lid"
+        if "spout" in words:
+            return "device_spout"
+        return "device_body"
+    elif profile == "chair":
+        if words & {"back", "backrest"}:
+            return "furniture_backrest"
+        if words & {"seat", "cushion"}:
+            return "furniture_seat"
+        return "furniture_frame"
+    elif profile == "scissors_pliers":
+        if words & {"blade", "jaw"}:
+            return "tool_prop_blade"
+        if words & {"pivot", "hinge", "joint"}:
+            return "tool_prop_pivot"
         return "tool_prop_handle"
+    elif profile == "road_vehicle":
+        if "headlight" in words or words & {"lamp", "turn", "signal"}:
+            return "vehicle_headlight"
+        if "roof" in words:
+            return "vehicle_roof"
+        if "windshield" in words or ("front" in words and "window" in words):
+            return "vehicle_windshield"
+        if "hood" in words or "bonnet" in words:
+            return "vehicle_hood"
+        if words & {"bumper", "grille", "grill"}:
+            return "vehicle_bumper"
+        if "mirror" in words:
+            return "vehicle_mirror"
+        if words & {"wheel", "tire", "rim"}:
+            return "vehicle_wheel"
+        return "vehicle_body"
     return semantic_name
+
+
+def _root_relative_geometry(
+    mask: np.ndarray,
+    root: np.ndarray,
+) -> dict[str, float] | None:
+    geometry = _mask_geometry_against_root(mask, root)
+    if geometry is None:
+        return None
+    root_y, root_x = np.nonzero(root)
+    x0, y0, x1, y1 = geometry["bbox_xyxy"]
+    root_x0, root_x1 = int(root_x.min()), int(root_x.max() + 1)
+    root_y0, root_y1 = int(root_y.min()), int(root_y.max() + 1)
+    root_width = max(1, root_x1 - root_x0)
+    root_height = max(1, root_y1 - root_y0)
+    return {
+        "root_area_fraction": float(geometry["root_area_fraction"]),
+        "bbox_fill_ratio": float(geometry["bbox_fill_ratio"]),
+        "aspect_ratio": float(geometry["aspect_ratio"]),
+        "largest_component_fraction": float(geometry["largest_component_fraction"]),
+        "outer_boundary_contact": float(geometry["outer_boundary_contact"]),
+        "center_x": float(((x0 + x1) * 0.5 - root_x0) / root_width),
+        "center_y": float(((y0 + y1) * 0.5 - root_y0) / root_height),
+        "width_fraction": float((x1 - x0) / root_width),
+        "height_fraction": float((y1 - y0) / root_height),
+    }
+
+
+def _profile_structural_semantic(
+    candidate: MaskCandidate,
+    root: np.ndarray,
+    profile: str,
+) -> tuple[str, str]:
+    """Resolve known detector confusions with profile geometry, not pixels."""
+
+    canonical = _canonical_profile_group_semantic(candidate.semantic_name, profile)
+    geometry = _root_relative_geometry(candidate.mask, root)
+    words = _words(candidate.semantic_name)
+    if geometry is None:
+        return canonical, "empty_candidate"
+    if profile == "chair" and words & {"apron", "stretcher", "rail"}:
+        seat_like = bool(
+            0.045 <= geometry["root_area_fraction"] <= 0.30
+            and geometry["aspect_ratio"] >= 1.45
+            and 0.34 <= geometry["center_y"] <= 0.76
+            and geometry["width_fraction"] >= 0.28
+        )
+        if seat_like:
+            return "furniture_seat", "mid_axis_wide_surface_rescue"
+    if profile == "kettle" and canonical == "device_spout":
+        protruding = bool(
+            geometry["root_area_fraction"] >= 0.025
+            and geometry["outer_boundary_contact"] >= 0.08
+            and (
+                geometry["center_x"] <= 0.25
+                or geometry["center_x"] >= 0.75
+            )
+        )
+        if not protruding:
+            return "device_body", "interior_stripe_not_spout"
+    return canonical, "inventory_semantic"
+
+
+def _profile_seed_geometry_allowed(
+    profile: str,
+    semantic: str,
+    geometry: dict[str, float],
+) -> bool:
+    fraction = geometry["root_area_fraction"]
+    if semantic.endswith(("_label", "_lid", "_cap")):
+        return 0.002 <= fraction <= 0.34
+    if semantic.endswith("_neck"):
+        return 0.008 <= fraction <= 0.20
+    if semantic.endswith("_handle"):
+        return 0.008 <= fraction <= 0.46
+    if semantic.endswith("_base"):
+        return 0.008 <= fraction <= 0.28
+    if semantic.endswith("_backrest"):
+        return 0.04 <= fraction <= 0.68
+    if semantic.endswith("_seat"):
+        return 0.035 <= fraction <= 0.38
+    if semantic.endswith("_blade"):
+        return 0.025 <= fraction <= 0.48
+    if semantic.endswith("_pivot"):
+        return 0.0004 <= fraction <= 0.08
+    if semantic.endswith("_headlight"):
+        return 0.001 <= fraction <= 0.18
+    if semantic.endswith("_mirror"):
+        return 0.001 <= fraction <= 0.12
+    if semantic.endswith(("_roof", "_hood", "_bumper", "_windshield")):
+        return 0.015 <= fraction <= 0.42
+    if semantic.endswith("_wheel"):
+        return 0.004 <= fraction <= 0.30
+    if profile == "kettle" and semantic == "device_spout":
+        return 0.025 <= fraction <= 0.30
+    return 0.004 <= fraction <= 0.72
+
+
+def _semantic_consensus_seed(
+    members: list[tuple[MaskCandidate, np.ndarray, float]],
+    root: np.ndarray,
+    *,
+    keep_disconnected_instances: bool,
+) -> tuple[np.ndarray, dict[str, object]]:
+    """Choose the mask cluster corroborated by independent proposal routes."""
+
+    ordered = sorted(
+        members,
+        key=lambda row: str(row[0].metadata.get("candidate_key") or row[0].source),
+    )
+    masks = [row[1] for row in ordered]
+    adjacency: list[set[int]] = [set() for _ in masks]
+    for left in range(len(masks)):
+        for right in range(left + 1, len(masks)):
+            intersection = int(np.count_nonzero(masks[left] & masks[right]))
+            union = int(np.count_nonzero(masks[left] | masks[right]))
+            iou = intersection / max(1, union)
+            if iou >= 0.45:
+                adjacency[left].add(right)
+                adjacency[right].add(left)
+
+    components: list[list[int]] = []
+    remaining = set(range(len(masks)))
+    while remaining:
+        start = min(remaining)
+        stack = [start]
+        component: list[int] = []
+        remaining.remove(start)
+        while stack:
+            current = stack.pop()
+            component.append(current)
+            for neighbour in sorted(adjacency[current]):
+                if neighbour in remaining:
+                    remaining.remove(neighbour)
+                    stack.append(neighbour)
+        components.append(sorted(component))
+
+    root_area = max(1, int(np.count_nonzero(root)))
+    component_rows: list[dict[str, object]] = []
+    selected_components: list[int]
+    if keep_disconnected_instances:
+        selected_components = list(range(len(components)))
+    else:
+        scored: list[tuple[float, int]] = []
+        for component_index, component in enumerate(components):
+            union = np.logical_or.reduce([masks[index] for index in component])
+            confidence = max(ordered[index][2] for index in component)
+            fraction = np.count_nonzero(union) / root_area
+            score = 3.0 * len(component) + confidence + 2.0 * np.sqrt(fraction)
+            scored.append((float(score), component_index))
+        selected_components = [max(scored, key=lambda row: (row[0], -row[1]))[1]]
+
+    selected_masks: list[np.ndarray] = []
+    for component_index, component in enumerate(components):
+        union = np.logical_or.reduce([masks[index] for index in component]) & root
+        selected = component_index in selected_components
+        if selected:
+            selected_masks.append(union)
+        component_rows.append(
+            {
+                "member_count": len(component),
+                "area_px": int(np.count_nonzero(union)),
+                "selected": selected,
+                "candidate_keys": [
+                    ordered[index][0].metadata.get("candidate_key")
+                    for index in component
+                ],
+            }
+        )
+    output = np.logical_or.reduce(selected_masks) if selected_masks else np.zeros_like(root)
+    return output, {
+        "algorithm": "semantic-proposal-consensus-clustering-v1",
+        "candidate_count": len(ordered),
+        "cluster_count": len(components),
+        "keep_disconnected_instances": keep_disconnected_instances,
+        "clusters": component_rows,
+        "ground_truth_used": False,
+    }
+
+
+def _extend_label_from_visual_evidence(
+    seed: np.ndarray,
+    visual_candidates: list[MaskCandidate],
+    root: np.ndarray,
+    image: Image.Image | np.ndarray | None,
+) -> tuple[np.ndarray, dict[str, object]]:
+    """Extend an existing label slot; appearance alone never creates the slot."""
+
+    if image is None or np.count_nonzero(seed) < 8:
+        return seed, {"status": "inactive", "ground_truth_used": False}
+    rgb = (
+        np.asarray(image.convert("RGB"), dtype=np.uint8)
+        if isinstance(image, Image.Image)
+        else np.asarray(image, dtype=np.uint8)
+    )
+    if rgb.shape[:2] != root.shape or rgb.ndim != 3 or rgb.shape[2] < 3:
+        return seed, {"status": "image_shape_mismatch", "ground_truth_used": False}
+    lab = cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2LAB).astype(np.float32)
+    reference = np.median(lab[seed], axis=0)
+    diagonal = max(1.0, float(np.hypot(*root.shape)))
+    additions: list[np.ndarray] = []
+    rows: list[dict[str, object]] = []
+    seed_distance = cv2.distanceTransform((~seed).astype(np.uint8), cv2.DIST_L2, 5)
+    for candidate in visual_candidates:
+        geometry = _mask_geometry_against_root(candidate.mask, root)
+        if geometry is None:
+            continue
+        mask = np.asarray(geometry["mask"], dtype=bool)
+        fraction = float(geometry["root_area_fraction"])
+        gap = float(seed_distance[mask].min(initial=diagonal) / diagonal)
+        delta = float(np.linalg.norm(np.median(lab[mask], axis=0) - reference))
+        appearance = candidate.metadata.get("appearance_graph_evidence")
+        appearance = appearance if isinstance(appearance, dict) else {}
+        shading_penalty = float(appearance.get("shading_only_penalty", 0.0))
+        accepted = bool(
+            0.008 <= fraction <= 0.24
+            and gap <= 0.08
+            and delta <= 40.0
+            and shading_penalty < 0.42
+        )
+        if accepted:
+            additions.append(mask)
+        rows.append(
+            {
+                "candidate_key": candidate.metadata.get("candidate_key"),
+                "root_area_fraction": fraction,
+                "normalized_gap": gap,
+                "lab_distance": delta,
+                "shading_only_penalty": shading_penalty,
+                "accepted": accepted,
+            }
+        )
+    extended = seed | np.logical_or.reduce(additions) if additions else seed
+    return extended & root, {
+        "status": "completed" if additions else "no_supported_extension",
+        "appearance_role": "verified_label_boundary_extension_only",
+        "appearance_can_create_ids": False,
+        "candidates": rows,
+        "ground_truth_used": False,
+    }
+
+
+def _extend_scissor_blade_from_visual_evidence(
+    seed: np.ndarray,
+    visual_candidates: list[MaskCandidate],
+    root: np.ndarray,
+    image: Image.Image | np.ndarray | None,
+) -> tuple[np.ndarray, dict[str, object]]:
+    """Add a second blade surface only to an already verified blade slot."""
+
+    if image is None or np.count_nonzero(seed) < 16:
+        return seed, {"status": "inactive", "ground_truth_used": False}
+    rgb = (
+        np.asarray(image.convert("RGB"), dtype=np.uint8)
+        if isinstance(image, Image.Image)
+        else np.asarray(image, dtype=np.uint8)
+    )
+    if rgb.shape[:2] != root.shape or rgb.ndim != 3 or rgb.shape[2] < 3:
+        return seed, {"status": "image_shape_mismatch", "ground_truth_used": False}
+    lab = cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2LAB).astype(np.float32)
+    reference = np.median(lab[seed], axis=0)
+    diagonal = max(1.0, float(np.hypot(*root.shape)))
+    distance = cv2.distanceTransform((~seed).astype(np.uint8), cv2.DIST_L2, 5)
+    additions: list[np.ndarray] = []
+    rows: list[dict[str, object]] = []
+    for candidate in visual_candidates:
+        geometry = _root_relative_geometry(candidate.mask, root)
+        if geometry is None:
+            continue
+        mask = np.asarray(candidate.mask, dtype=bool) & root
+        gap = float(distance[mask].min(initial=diagonal) / diagonal)
+        delta = float(np.linalg.norm(np.median(lab[mask], axis=0) - reference))
+        appearance = candidate.metadata.get("appearance_graph_evidence")
+        appearance = appearance if isinstance(appearance, dict) else {}
+        shading_penalty = float(appearance.get("shading_only_penalty", 0.0))
+        structural_bridge = bool(
+            geometry["aspect_ratio"] >= 3.0
+            and gap <= 0.06
+            and geometry["largest_component_fraction"] >= 0.85
+        )
+        accepted = bool(
+            0.008 <= geometry["root_area_fraction"] <= 0.20
+            and geometry["aspect_ratio"] >= 1.65
+            and gap <= 0.22
+            and (delta <= 42.0 or structural_bridge)
+            and shading_penalty < 0.42
+        )
+        if accepted:
+            additions.append(mask)
+        rows.append(
+            {
+                "candidate_key": candidate.metadata.get("candidate_key"),
+                "root_area_fraction": geometry["root_area_fraction"],
+                "aspect_ratio": geometry["aspect_ratio"],
+                "normalized_gap": gap,
+                "lab_distance": delta,
+                "shading_only_penalty": shading_penalty,
+                "structural_bridge": structural_bridge,
+                "accepted": accepted,
+            }
+        )
+    extended = seed | np.logical_or.reduce(additions) if additions else seed
+    return extended & root, {
+        "status": "completed" if additions else "no_supported_extension",
+        "algorithm": "verified-blade-visual-surface-extension-v1",
+        "appearance_role": "verified_blade_boundary_extension_only",
+        "appearance_can_create_ids": False,
+        "candidates": rows,
+        "ground_truth_used": False,
+    }
+
+
+def _simple_object_neck_from_structure(
+    cap: np.ndarray,
+    visual_candidates: list[MaskCandidate],
+    root: np.ndarray,
+) -> tuple[np.ndarray | None, dict[str, object]]:
+    """Recover a neck only as the narrow continuation directly below a cap."""
+
+    cap_geometry = _mask_geometry_against_root(cap, root)
+    if cap_geometry is None:
+        return None, {"status": "cap_unavailable", "ground_truth_used": False}
+    cap_box = cap_geometry["bbox_xyxy"]
+    cap_center_y = 0.5 * (cap_box[1] + cap_box[3])
+    diagonal = max(1.0, float(np.hypot(*root.shape)))
+    cap_distance = cv2.distanceTransform((~cap).astype(np.uint8), cv2.DIST_L2, 5)
+    accepted: list[tuple[float, np.ndarray, dict[str, object]]] = []
+    for candidate in visual_candidates:
+        geometry = _root_relative_geometry(candidate.mask, root)
+        if geometry is None:
+            continue
+        mask = np.asarray(candidate.mask, dtype=bool) & root
+        gap = float(cap_distance[mask].min(initial=diagonal) / diagonal)
+        ys, _ = np.nonzero(mask)
+        below_cap = float(np.mean(ys >= cap_center_y)) if len(ys) else 0.0
+        valid = bool(
+            0.02 <= geometry["root_area_fraction"] <= 0.20
+            and geometry["center_y"] <= 0.48
+            and gap <= 0.055
+            and below_cap >= 0.45
+        )
+        row = {
+            "candidate_key": candidate.metadata.get("candidate_key"),
+            "root_area_fraction": geometry["root_area_fraction"],
+            "center_y": geometry["center_y"],
+            "normalized_gap": gap,
+            "below_cap_fraction": below_cap,
+            "accepted": valid,
+        }
+        if valid:
+            score = (
+                1.0 - gap
+                + 0.5 * below_cap
+                + 0.2 * float(candidate.score)
+            )
+            accepted.append((score, mask, row))
+    if not accepted:
+        return None, {"status": "no_structural_neck", "ground_truth_used": False}
+    _, selected, row = max(accepted, key=lambda item: item[0])
+    neck = selected & ~cap
+    neck = cv2.morphologyEx(
+        neck.astype(np.uint8),
+        cv2.MORPH_CLOSE,
+        np.ones((3, 3), np.uint8),
+    ).astype(bool) & root
+    if np.count_nonzero(neck) < 12:
+        return None, {"status": "neck_too_small", "selected": row, "ground_truth_used": False}
+    return neck, {
+        "status": "completed",
+        "algorithm": "cap-adjacent-neck-structure-v1",
+        "selected": row,
+        "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
+def _road_vehicle_windshield_from_structure(
+    root: np.ndarray,
+    roof: np.ndarray | None,
+    hood: np.ndarray | None,
+    image: Image.Image | np.ndarray | None,
+) -> tuple[np.ndarray | None, dict[str, object]]:
+    """Resolve the inventory-defined windshield slot between roof and hood."""
+
+    if roof is None or hood is None or image is None:
+        return None, {"status": "structural_anchors_missing", "ground_truth_used": False}
+    roof_geometry = _mask_geometry_against_root(roof, root)
+    hood_geometry = _mask_geometry_against_root(hood, root)
+    if roof_geometry is None or hood_geometry is None:
+        return None, {"status": "empty_structural_anchor", "ground_truth_used": False}
+    roof_box = roof_geometry["bbox_xyxy"]
+    hood_box = hood_geometry["bbox_xyxy"]
+    y0 = max(roof_box[1], roof_box[3] - 3)
+    y1 = min(hood_box[3], hood_box[1] + 4)
+    x0 = max(roof_box[0], hood_box[0])
+    x1 = min(roof_box[2], hood_box[2])
+    if y1 - y0 < 8 or x1 - x0 < 12:
+        return None, {"status": "invalid_structural_slot", "ground_truth_used": False}
+    slot = np.zeros_like(root)
+    slot[y0:y1, x0:x1] = True
+    slot &= root
+    rgb = (
+        np.asarray(image.convert("RGB"), dtype=np.uint8)
+        if isinstance(image, Image.Image)
+        else np.asarray(image, dtype=np.uint8)
+    )
+    if rgb.shape[:2] != root.shape or rgb.ndim != 3 or rgb.shape[2] < 3:
+        return None, {"status": "image_shape_mismatch", "ground_truth_used": False}
+    gray = cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2GRAY)
+    values = gray[slot]
+    if values.size < 24:
+        return None, {"status": "slot_too_small", "ground_truth_used": False}
+    threshold = float(np.quantile(values, 0.58))
+    dark = slot & (gray <= threshold)
+    dark = cv2.morphologyEx(
+        dark.astype(np.uint8),
+        cv2.MORPH_CLOSE,
+        np.ones((5, 5), np.uint8),
+    ).astype(bool) & slot
+    count, labels, stats, centroids = cv2.connectedComponentsWithStats(
+        dark.astype(np.uint8), connectivity=8
+    )
+    slot_center_x = 0.5 * (x0 + x1)
+    candidates: list[tuple[float, int]] = []
+    for index in range(1, count):
+        area = int(stats[index, cv2.CC_STAT_AREA])
+        width = int(stats[index, cv2.CC_STAT_WIDTH])
+        center_gap = abs(float(centroids[index, 0]) - slot_center_x) / max(1, x1 - x0)
+        if area < max(20, round(np.count_nonzero(root) * 0.015)):
+            continue
+        if width < 0.28 * (x1 - x0) or center_gap > 0.30:
+            continue
+        candidates.append((area * (1.0 - center_gap), index))
+    if not candidates:
+        return None, {
+            "status": "no_central_dark_surface",
+            "gray_quantile": threshold,
+            "ground_truth_used": False,
+        }
+    _, selected_index = max(candidates)
+    windshield = labels == selected_index
+    windshield = cv2.morphologyEx(
+        windshield.astype(np.uint8),
+        cv2.MORPH_CLOSE,
+        np.ones((7, 7), np.uint8),
+    ).astype(bool) & slot
+    contours, _ = cv2.findContours(
+        windshield.astype(np.uint8),
+        cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_SIMPLE,
+    )
+    if contours:
+        filled = np.zeros_like(windshield, dtype=np.uint8)
+        cv2.drawContours(filled, contours, -1, 1, thickness=cv2.FILLED)
+        windshield = filled.astype(bool) & slot
+    geometry = _root_relative_geometry(windshield, root)
+    if geometry is None or not (0.025 <= geometry["root_area_fraction"] <= 0.38):
+        return None, {"status": "windshield_geometry_rejected", "ground_truth_used": False}
+    return windshield, {
+        "status": "completed",
+        "algorithm": "roof-hood-slot-photometric-refinement-v1",
+        "gray_quantile": threshold,
+        "root_area_fraction": geometry["root_area_fraction"],
+        "semantic_slot": "vehicle_windshield",
+        "appearance_role": "boundary_refinement_inside_structural_slot",
+        "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
+def _residual_host_profile_masks(
+    instance_map: np.ndarray,
+    candidates: tuple[MaskCandidate, ...],
+    image: Image.Image | np.ndarray | None,
+    *,
+    profile: str,
+) -> tuple[dict[str, np.ndarray] | None, dict[str, object]]:
+    """Build public IDs from verified parts plus a conservative host residual."""
+
+    host = _PROFILE_RESIDUAL_HOST[profile]
+    root = instance_map > 0
+    root_area = int(np.count_nonzero(root))
+    prefix = _PROFILE_DOMAIN_PREFIX[profile]
+    visual_candidates: list[MaskCandidate] = []
+    grouped: dict[str, list[tuple[MaskCandidate, np.ndarray, float]]] = {}
+    rows: list[dict[str, object]] = []
+    semantic_hypotheses: set[str] = set()
+    for candidate in candidates:
+        if candidate.semantic_name == candidate.semantic_parent:
+            continue
+        if not candidate.semantic_name.startswith(prefix):
+            continue
+        candidate_profile = str(
+            candidate.metadata.get("selected_part_profile")
+            or candidate.metadata.get("semantic_rerank_profile")
+            or candidate.metadata.get("structural_profile")
+            or ""
+        ).strip()
+        if candidate_profile and candidate_profile != profile:
+            continue
+        if _is_visual_semantic(candidate.semantic_name):
+            visual_candidates.append(candidate)
+            continue
+        semantic_hypotheses.add(candidate.semantic_name)
+        canonical, structural_reason = _profile_structural_semantic(
+            candidate, root, profile
+        )
+        geometry = _root_relative_geometry(candidate.mask, root)
+        if geometry is None:
+            continue
+        verification = _candidate_three_stage_verification(candidate, root)
+        stage_3 = verification.get("stage_3_appearance")
+        stage_3 = stage_3 if isinstance(stage_3, dict) else {}
+        photometric_rejection = str(stage_3.get("reason")) in {
+            "appearance_only_or_shading_like",
+            "highlight_or_shadow_only_boundary",
+        }
+        structural_rescue = structural_reason == "mid_axis_wide_surface_rescue"
+        source = candidate.source.casefold()
+        named_fallback = bool(
+            not candidate_profile
+            and float(candidate.score) >= 0.45
+            and any(
+                token in source
+                for token in (
+                    "prototype-labelled-region",
+                    "semantic-rerank",
+                    "structural-fusion",
+                )
+            )
+        )
+        geometry_allowed = _profile_seed_geometry_allowed(
+            profile, canonical, geometry
+        )
+        accepted = bool(
+            canonical != host
+            and geometry_allowed
+            and not photometric_rejection
+            and (verification["accepted"] or structural_rescue or named_fallback)
+        )
+        confidence = float(candidate.score * candidate.source_reliability)
+        rows.append(
+            {
+                "candidate_key": candidate.metadata.get("candidate_key"),
+                "semantic_name": candidate.semantic_name,
+                "canonical_group": canonical,
+                "structural_reason": structural_reason,
+                "root_area_fraction": geometry["root_area_fraction"],
+                "geometry_allowed": geometry_allowed,
+                "photometric_rejection": photometric_rejection,
+                "named_fallback": named_fallback,
+                "accepted_seed": accepted,
+                "verification": verification,
+            }
+        )
+        if accepted:
+            grouped.setdefault(canonical, []).append(
+                (candidate, np.asarray(candidate.mask, dtype=bool) & root, confidence)
+            )
+
+    seed_masks: dict[str, np.ndarray] = {}
+    consensus_rows: dict[str, object] = {}
+    for semantic in sorted(grouped):
+        keep_instances = bool(_words(semantic) & _DISCRETE_REPEATED_PART_TOKENS)
+        seed, consensus = _semantic_consensus_seed(
+            grouped[semantic],
+            root,
+            keep_disconnected_instances=keep_instances,
+        )
+        if semantic.endswith("_label"):
+            seed, extension = _extend_label_from_visual_evidence(
+                seed, visual_candidates, root, image
+            )
+            consensus["visual_boundary_extension"] = extension
+        if profile == "scissors_pliers" and semantic == "tool_prop_blade":
+            seed, extension = _extend_scissor_blade_from_visual_evidence(
+                seed, visual_candidates, root, image
+            )
+            consensus["visual_blade_extension"] = extension
+        if np.count_nonzero(seed) >= max(8, round(root_area * 0.0008)):
+            seed_masks[semantic] = seed
+            consensus_rows[semantic] = consensus
+
+    neck_diagnostics: dict[str, object] = {"status": "inactive"}
+    if (
+        profile == "simple_object"
+        and "daily_object_cap" in seed_masks
+        and any("neck" in _words(name) for name in semantic_hypotheses)
+        and "daily_object_neck" not in seed_masks
+    ):
+        neck, neck_diagnostics = _simple_object_neck_from_structure(
+            seed_masks["daily_object_cap"], visual_candidates, root
+        )
+        if neck is not None:
+            seed_masks["daily_object_neck"] = neck
+
+    windshield_diagnostics: dict[str, object] = {"status": "inactive"}
+    if profile == "road_vehicle" and "vehicle_windshield" not in seed_masks:
+        windshield, windshield_diagnostics = _road_vehicle_windshield_from_structure(
+            root,
+            seed_masks.get("vehicle_roof"),
+            seed_masks.get("vehicle_hood"),
+            image,
+        )
+        if windshield is not None:
+            seed_masks["vehicle_windshield"] = windshield
+
+    if not seed_masks:
+        return None, {
+            "status": "no_verified_physical_subparts",
+            "selected_profile": profile,
+            "host_semantic": host,
+            "candidates": rows,
+            "ground_truth_used": False,
+        }
+
+    priority_tokens = {
+        "pivot": 90,
+        "headlight": 88,
+        "mirror": 86,
+        "label": 84,
+        "lid": 82,
+        "cap": 82,
+        "neck": 80,
+        "windshield": 76,
+        "base": 72,
+        "seat": 70,
+        "backrest": 68,
+        "blade": 66,
+        "roof": 62,
+        "hood": 60,
+        "bumper": 58,
+        "handle": 56,
+        "wheel": 54,
+        "spout": 52,
+    }
+    ordered_semantics = sorted(
+        seed_masks,
+        key=lambda semantic: (
+            -max((priority_tokens.get(word, 0) for word in _words(semantic)), default=0),
+            int(np.count_nonzero(seed_masks[semantic])),
+            semantic,
+        ),
+    )
+    claimed = np.zeros_like(root)
+    resolved: dict[str, np.ndarray] = {}
+    for semantic in ordered_semantics:
+        mask = seed_masks[semantic] & root & ~claimed
+        if np.count_nonzero(mask) < max(8, round(root_area * 0.0008)):
+            continue
+        resolved[semantic] = mask
+        claimed |= mask
+    host_mask = root & ~claimed
+    if np.count_nonzero(host_mask) < max(24, round(root_area * 0.08)):
+        return None, {
+            "status": "host_residual_too_small",
+            "selected_profile": profile,
+            "host_semantic": host,
+            "host_fraction": float(np.count_nonzero(host_mask) / max(1, root_area)),
+            "candidates": rows,
+            "ground_truth_used": False,
+        }
+    output = {host: host_mask}
+    output.update({semantic: resolved[semantic] for semantic in sorted(resolved)})
+    stack = np.stack(list(output.values()), axis=0)
+    complete = np.array_equal(np.logical_or.reduce(list(output.values())), root)
+    disjoint = int(stack.sum(axis=0).max(initial=0)) <= 1
+    if not (complete and disjoint):
+        return None, {
+            "status": "ownership_invariant_failed",
+            "selected_profile": profile,
+            "complete_root_coverage": complete,
+            "disjoint_ownership": disjoint,
+            "ground_truth_used": False,
+        }
+    return output, {
+        "status": "completed",
+        "algorithm": "hpid-residual-host-physical-ownership-v2",
+        "selected_profile": profile,
+        "host_semantic": host,
+        "evidence_order": ["semantic", "structure", "appearance"],
+        "verified_semantics": sorted(resolved),
+        "candidate_consensus": consensus_rows,
+        "cap_neck_structure": neck_diagnostics,
+        "windshield_structure": windshield_diagnostics,
+        "appearance_role": "verified_boundary_refinement_only",
+        "appearance_can_create_ids": False,
+        "photometric_regions_can_create_ids": False,
+        "complete_root_coverage": True,
+        "disjoint_ownership": True,
+        "candidates": rows,
+        "ground_truth_used": False,
+    }
 
 
 def _semantic_seeded_profile_masks(
@@ -1702,6 +2465,13 @@ def _semantic_seeded_profile_masks(
             "selected_profile": profile,
             "ground_truth_used": False,
         }
+    if profile in _PROFILE_RESIDUAL_HOST:
+        return _residual_host_profile_masks(
+            instance_map,
+            candidates,
+            image,
+            profile=profile,
+        )
 
     rows: list[dict[str, object]] = []
     grouped: dict[str, list[MaskCandidate]] = {}
@@ -4738,6 +5508,7 @@ def _verified_profile_mask_groups(
     *,
     profile: str,
     diagnostics: dict[str, object],
+    candidates: tuple[MaskCandidate, ...] = (),
 ) -> PhysicalGroupingResult:
     """Export a profile decomposition whose groups passed all three gates."""
 
@@ -4830,6 +5601,13 @@ def _verified_profile_mask_groups(
         instance_map,
         records,
     )
+    group_map, cleaned_groups, repeated_split_diagnostics = (
+        _split_repeated_group_components(
+            group_map,
+            cleaned_groups,
+            candidates,
+        )
+    )
     cleaned_groups, updated_records, membership_diagnostics = (
         _rebind_group_memberships(
             group_map,
@@ -4871,6 +5649,7 @@ def _verified_profile_mask_groups(
                 "ground_truth_used": False,
             },
             "physical_component_cleanup": cleanup_diagnostics,
+            "repeated_instance_component_split": repeated_split_diagnostics,
             "group_membership_rebind": membership_diagnostics,
             "review_required_group_count": 0,
             "ground_truth_used": False,
@@ -5113,6 +5892,7 @@ def build_physical_groups(
                 records,
                 phone_masks,
                 profile="phone",
+                candidates=candidate_tuple,
                 diagnostics={
                     **phone_diagnostics,
                     "three_stage_candidate_verification": {
@@ -5182,6 +5962,7 @@ def build_physical_groups(
             records,
             semantic_partition_masks,
             profile=selected_profile or "resolved_profile",
+            candidates=candidate_tuple,
             diagnostics={
                 **semantic_partition_diagnostics,
                 "knife_structural_fallback": knife_structural_diagnostics,

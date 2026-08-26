@@ -2144,3 +2144,295 @@ def test_fragmented_label_does_not_create_repeated_editable_groups() -> None:
     assert len(label_groups) == 1
     split = result.diagnostics["repeated_instance_component_split"]
     assert split["split_group_count"] == 0
+
+
+def _residual_root_candidate(profile: str, domain: str, root: np.ndarray) -> MaskCandidate:
+    return MaskCandidate(
+        domain,
+        domain,
+        root,
+        0.95,
+        "test/root",
+        metadata={
+            "candidate_key": "root:1",
+            "selected_part_profile": profile,
+        },
+    )
+
+
+def _residual_part_candidate(
+    profile: str,
+    semantic: str,
+    parent: str,
+    mask: np.ndarray,
+    *,
+    key: str,
+    score: float = 0.72,
+) -> MaskCandidate:
+    return MaskCandidate(
+        semantic,
+        parent,
+        mask,
+        score,
+        "grounded-sam2/test/profile-refine",
+        metadata={
+            "candidate_key": key,
+            "selected_part_profile": profile,
+            "maximum_instances": 1,
+            "root_area_fraction": float(mask.mean()),
+        },
+    )
+
+
+def test_bottle_profile_keeps_cap_and_label_but_merges_surface_transitions() -> None:
+    shape = (160, 80)
+    root = np.zeros(shape, dtype=bool)
+    root[10:150, 16:64] = True
+    lid = np.zeros(shape, dtype=bool)
+    lid[10:28, 26:54] = True
+    label = np.zeros(shape, dtype=bool)
+    label[72:118, 22:58] = True
+    shoulder = np.zeros(shape, dtype=bool)
+    shoulder[28:45, 20:60] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    candidates = (
+        _residual_root_candidate("bottle_jar", "container", root),
+        _residual_part_candidate(
+            "bottle_jar", "container_lid", "container_body", lid, key="lid"
+        ),
+        _residual_part_candidate(
+            "bottle_jar", "container_label", "container_body", label, key="label"
+        ),
+        _residual_part_candidate(
+            "bottle_jar",
+            "container_shoulder",
+            "container_body",
+            shoulder,
+            key="shoulder",
+        ),
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map, candidates, None, profile="bottle_jar"
+    )
+
+    assert masks is not None
+    assert set(masks) == {"container_body", "container_label", "container_lid"}
+    assert np.all(masks["container_body"][shoulder])
+    assert np.array_equal(np.logical_or.reduce(list(masks.values())), root)
+    assert diagnostics["photometric_regions_can_create_ids"] is False
+
+
+def test_simple_object_rejects_flooded_neck_and_recovers_cap_adjacent_neck() -> None:
+    shape = (150, 90)
+    root = np.zeros(shape, dtype=bool)
+    root[8:142, 15:75] = True
+    cap = np.zeros(shape, dtype=bool)
+    cap[8:30, 34:58] = True
+    collar = np.zeros(shape, dtype=bool)
+    collar[20:48, 28:64] = True
+    flooded_neck = np.zeros(shape, dtype=bool)
+    flooded_neck[45:132, 18:72] = True
+    label = np.zeros(shape, dtype=bool)
+    label[78:118, 24:66] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    visual = MaskCandidate(
+        "daily_object_visual_panel_01",
+        "daily_object",
+        collar,
+        0.80,
+        "sam2-amg/test/point-grid",
+        metadata={"candidate_key": "visual-collar", "visual_region": True},
+    )
+    candidates = (
+        _residual_root_candidate("simple_object", "daily_object", root),
+        _residual_part_candidate(
+            "simple_object", "daily_object_cap", "daily_object_body", cap, key="cap"
+        ),
+        _residual_part_candidate(
+            "simple_object",
+            "daily_object_neck",
+            "daily_object_body",
+            flooded_neck,
+            key="bad-neck",
+        ),
+        _residual_part_candidate(
+            "simple_object",
+            "daily_object_label",
+            "daily_object_body",
+            label,
+            key="label",
+        ),
+        visual,
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map, candidates, None, profile="simple_object"
+    )
+
+    assert masks is not None
+    assert "daily_object_neck" in masks
+    assert np.count_nonzero(masks["daily_object_neck"]) < np.count_nonzero(
+        flooded_neck
+    )
+    assert diagnostics["cap_neck_structure"]["status"] == "completed"
+    assert np.array_equal(np.logical_or.reduce(list(masks.values())), root)
+
+
+def test_chair_mid_axis_wide_stretcher_is_resolved_as_seat() -> None:
+    shape = (160, 110)
+    root = np.zeros(shape, dtype=bool)
+    root[8:152, 12:98] = True
+    backrest = np.zeros(shape, dtype=bool)
+    backrest[12:62, 20:90] = True
+    mislabeled_seat = np.zeros(shape, dtype=bool)
+    mislabeled_seat[78:98, 24:88] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    candidates = (
+        _residual_root_candidate("chair", "furniture", root),
+        _residual_part_candidate(
+            "chair",
+            "furniture_backrest",
+            "furniture_body",
+            backrest,
+            key="backrest",
+        ),
+        _residual_part_candidate(
+            "chair",
+            "furniture_stretcher",
+            "furniture_leg",
+            mislabeled_seat,
+            key="stretcher",
+            score=0.36,
+        ),
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map, candidates, None, profile="chair"
+    )
+
+    assert masks is not None
+    assert set(masks) == {
+        "furniture_backrest",
+        "furniture_frame",
+        "furniture_seat",
+    }
+    assert np.all(masks["furniture_seat"][mislabeled_seat])
+    row = next(
+        row
+        for row in diagnostics["candidates"]
+        if row["semantic_name"] == "furniture_stretcher"
+    )
+    assert row["structural_reason"] == "mid_axis_wide_surface_rescue"
+
+
+def test_scissors_consensus_rejects_whole_object_blade_proposal() -> None:
+    shape = (100, 240)
+    root = np.zeros(shape, dtype=bool)
+    root[18:82, 10:230] = True
+    correct_blade = np.zeros(shape, dtype=bool)
+    correct_blade[24:58, 150:224] = True
+    flooded_blade = root.copy()
+    flooded_blade[:, :135] = False
+    flooded_blade[18:82, 85:230] = True
+    pivot = np.zeros(shape, dtype=bool)
+    pivot[45:53, 140:148] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    candidates: list[MaskCandidate] = [
+        _residual_root_candidate("scissors_pliers", "tool_prop", root),
+        _residual_part_candidate(
+            "scissors_pliers",
+            "tool_prop_blade",
+            "tool_prop_body",
+            flooded_blade,
+            key="blade-flooded",
+        ),
+    ]
+    for index in range(3):
+        candidates.append(
+            _residual_part_candidate(
+                "scissors_pliers",
+                "tool_prop_blade",
+                "tool_prop_body",
+                correct_blade,
+                key=f"blade-correct-{index}",
+            )
+        )
+    candidates.append(
+        _residual_part_candidate(
+            "scissors_pliers",
+            "tool_prop_pivot",
+            "tool_prop_body",
+            pivot,
+            key="pivot",
+        )
+    )
+
+    masks, _ = _semantic_seeded_profile_masks(
+        instance_map, tuple(candidates), None, profile="scissors_pliers"
+    )
+
+    assert masks is not None
+    assert np.array_equal(masks["tool_prop_blade"], correct_blade)
+    assert np.all(masks["tool_prop_handle"][root & ~correct_blade & ~pivot])
+
+
+def test_vehicle_windshield_is_refined_only_inside_roof_hood_slot() -> None:
+    shape = (150, 200)
+    root = np.zeros(shape, dtype=bool)
+    root[12:140, 20:180] = True
+    roof = np.zeros(shape, dtype=bool)
+    roof[12:28, 45:155] = True
+    hood = np.zeros(shape, dtype=bool)
+    hood[88:112, 38:162] = True
+    headlight_left = np.zeros(shape, dtype=bool)
+    headlight_left[102:116, 30:48] = True
+    headlight_right = np.zeros(shape, dtype=bool)
+    headlight_right[102:116, 152:170] = True
+    image = np.full((*shape, 3), 225, dtype=np.uint8)
+    image[root] = (205, 205, 205)
+    image[28:88, 48:152] = (42, 69, 84)
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    candidates = (
+        _residual_root_candidate("road_vehicle", "vehicle", root),
+        _residual_part_candidate(
+            "road_vehicle", "vehicle_roof", "vehicle_body", roof, key="roof"
+        ),
+        _residual_part_candidate(
+            "road_vehicle", "vehicle_hood", "vehicle_body", hood, key="hood"
+        ),
+        _residual_part_candidate(
+            "road_vehicle",
+            "vehicle_headlight",
+            "vehicle_body",
+            headlight_left,
+            key="headlight-left",
+        ),
+        _residual_part_candidate(
+            "road_vehicle",
+            "vehicle_headlight",
+            "vehicle_body",
+            headlight_right,
+            key="headlight-right",
+        ),
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        Image.fromarray(image),
+        profile="road_vehicle",
+    )
+
+    assert masks is not None
+    assert "vehicle_windshield" in masks
+    windshield_y, _ = np.nonzero(masks["vehicle_windshield"])
+    assert windshield_y.min() >= 25
+    assert windshield_y.max() < 92
+    assert diagnostics["windshield_structure"]["status"] == "completed"
+    assert diagnostics["appearance_can_create_ids"] is False

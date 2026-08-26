@@ -107,6 +107,17 @@ duplicate a physical part, or miss details; none may assign final IDs directly.
    independently inset and predominantly rectangular surface, and finally a
    closed non-shading boundary. The structural surface supplies the pixels;
    the semantic proposal supplies only the admissible name.
+   For residual-host profiles, the object body, frame, or handle is an explicit
+   ownership class. Verified semantic masks retain only their supported local
+   pixels; they do not propagate over the complete root. Same-semantic masks
+   first form IoU-consensus clusters so one overbroad proposal cannot defeat a
+   corroborated cluster. Unclaimed foreground returns to the host, which makes
+   ownership complete and disjoint without converting illumination regions
+   into parts. Profile geometry may correct a wide mid-axis chair member to a
+   seat, derive a neck as the narrow continuation of a verified cap, or define
+   a windshield slot between verified roof and hood anchors. Appearance is
+   restricted to boundary refinement inside such a verified semantic and
+   structural slot.
    For an inventory-constrained object such as a firearm, eroded structural
    regions become fixed semantic markers. A semantically and spatially valid
    fore-end seed may supply a smoothed Lab material reference with lightness
