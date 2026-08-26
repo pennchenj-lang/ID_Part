@@ -3,7 +3,10 @@ from dataclasses import replace
 import numpy as np
 from PIL import Image
 
-from hpid_split.appearance_graph import optimize_appearance_graph
+from hpid_split.appearance_graph import (
+    annotate_appearance_evidence,
+    optimize_appearance_graph,
+)
 from hpid_split.fusion import MaskCandidate
 
 
@@ -89,6 +92,45 @@ def test_smooth_luminance_gradient_is_not_promoted_to_part_id() -> None:
         "low_cross_cue_utility",
         "single_model_without_visible_boundary",
     }
+
+
+def test_closed_same_material_shadow_is_photometric_not_a_part() -> None:
+    image = np.full((100, 100, 3), (150, 150, 150), dtype=np.uint8)
+    image[30:70, 30:70] = (92, 92, 92)
+    candidate = _visual(
+        "named_panel",
+        _mask(30, 70, 30, 70),
+        generic=False,
+    )
+
+    result = annotate_appearance_evidence(
+        Image.fromarray(image), [candidate], [_root()]
+    )
+
+    evidence = result.candidates[0].metadata["appearance_graph_evidence"]
+    assert evidence["boundary_closure"] >= 0.75
+    assert evidence["shading_only_penalty"] >= 0.42
+    assert evidence["illumination_region"] == "shadow"
+    assert evidence["root_boundary_contact"] == 0.0
+
+
+def test_closed_same_material_highlight_is_photometric_not_a_part() -> None:
+    image = np.full((100, 100, 3), (85, 85, 85), dtype=np.uint8)
+    image[30:70, 30:70] = (170, 170, 170)
+    candidate = _visual(
+        "named_panel",
+        _mask(30, 70, 30, 70),
+        generic=False,
+    )
+
+    result = annotate_appearance_evidence(
+        Image.fromarray(image), [candidate], [_root()]
+    )
+
+    evidence = result.candidates[0].metadata["appearance_graph_evidence"]
+    assert evidence["shading_only_penalty"] >= 0.42
+    assert evidence["illumination_region"] == "highlight"
+    assert evidence["root_boundary_contact"] == 0.0
 
 
 def test_prompt_semantic_can_keep_same_color_part_without_false_material_claim() -> None:

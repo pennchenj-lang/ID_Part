@@ -44,6 +44,16 @@ fusion so repeated trees and rocks can separate without turning every lit face
 into a public ID. These post-freeze examples are engineering regressions, not
 additional benchmark estimates.
 
+Version `0.3.3` adds an all-candidate photometric boundary audit before final
+physical grouping. Closed highlights, cast shadows, smooth illumination
+gradients, colour patches, and texture patches remain evidence-only regions;
+they cannot create a public Part ID without independent semantic and physical
+structure support. Bounded optical components such as screens, lenses, and
+windshields remain eligible when their own closed geometry is supported. The
+release includes regression tests for same-material highlights and shadows and
+an audited six-domain qualitative plate whose public ID names contain no
+photometric-region labels. Frozen `0.3.1` benchmark numbers are unchanged.
+
 ## What is implemented
 
 - One-image CLI and local upload UI.

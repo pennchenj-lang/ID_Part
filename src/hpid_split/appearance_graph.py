@@ -32,6 +32,76 @@ class AppearanceGraphResult:
     diagnostics: dict[str, object]
 
 
+def annotate_appearance_evidence(
+    image: Image.Image,
+    candidates: list[MaskCandidate] | tuple[MaskCandidate, ...],
+    roots: list[MaskCandidate] | tuple[MaskCandidate, ...],
+) -> AppearanceGraphResult:
+    """Attach photometric boundary evidence without selecting or naming regions.
+
+    The normal appearance graph is built only from generic visual proposals.
+    Semantic backends can therefore otherwise reach physical grouping without
+    being checked for highlight- or shadow-only boundaries.  This audit runs on
+    every candidate after root cleanup, preserves every mask and label, and only
+    supplies evidence to the later physical-region gate.
+    """
+
+    roots_by_key = {_root_key(root): root for root in roots}
+    lab, gradient, texture = _feature_maps(image)
+    output: list[MaskCandidate] = []
+    rows: list[dict[str, object]] = []
+    missing_root_count = 0
+    for candidate in candidates:
+        root = roots_by_key.get(_root_key(candidate))
+        if root is None:
+            output.append(candidate)
+            missing_root_count += 1
+            continue
+        evidence = _appearance_evidence(
+            candidate,
+            root,
+            lab,
+            gradient,
+            texture,
+        )
+        output.append(
+            replace(
+                candidate,
+                metadata={
+                    **candidate.metadata,
+                    "appearance_graph_evidence": evidence,
+                    "photometric_boundary_audit": {
+                        "algorithm": "hpid-all-candidate-photometric-audit-v1",
+                        "evidence_only": True,
+                        "can_create_id": False,
+                        "ground_truth_used": False,
+                    },
+                },
+            )
+        )
+        rows.append(
+            {
+                "candidate_key": _candidate_key(candidate),
+                "semantic_name": candidate.semantic_name,
+                "source": candidate.source,
+                **evidence,
+            }
+        )
+    return AppearanceGraphResult(
+        tuple(output),
+        {
+            "algorithm": "hpid-all-candidate-photometric-audit-v1",
+            "input_candidate_count": len(candidates),
+            "audited_candidate_count": len(rows),
+            "missing_root_count": missing_root_count,
+            "evidence_only": True,
+            "appearance_can_create_ids": False,
+            "evidence": rows,
+            "ground_truth_used": False,
+        },
+    )
+
+
 def _root_key(candidate: MaskCandidate) -> str:
     return (
         f"{candidate.metadata.get('root_origin', 'legacy')}::"
@@ -100,6 +170,10 @@ def _appearance_evidence(
             "luminance_contrast": 0.0,
             "texture_contrast": 0.0,
             "shading_only_penalty": 0.0,
+            "illumination_region": "none",
+            "signed_luminance_delta": 0.0,
+            "root_boundary_contact": 0.0,
+            "nestedness": 1.0,
             "independent_cue_count": 0,
             "multi_view_confirmed": False,
             "geometric_support": 0.0,
@@ -114,6 +188,15 @@ def _appearance_evidence(
     inner = mask & ~eroded
     outer = dilated & root_mask & ~mask
     boundary = inner | outer
+
+    root_eroded = cv2.erode(root_mask.astype(np.uint8), kernel).astype(bool)
+    root_boundary = root_mask & ~root_eroded
+    candidate_boundary = inner
+    candidate_boundary_area = max(1, _area(candidate_boundary))
+    root_boundary_contact = float(
+        np.count_nonzero(candidate_boundary & root_boundary)
+        / candidate_boundary_area
+    )
 
     root_gradients = gradient[root_mask]
     edge_reference = (
@@ -142,8 +225,9 @@ def _appearance_evidence(
         chroma_contrast = float(
             np.clip(np.linalg.norm(inner_lab[1:] - outer_lab[1:]) / 58.0, 0.0, 1.0)
         )
+        signed_luminance_delta = float(inner_lab[0] - outer_lab[0])
         luminance_contrast = float(
-            np.clip(abs(float(inner_lab[0] - outer_lab[0])) / 72.0, 0.0, 1.0)
+            np.clip(abs(signed_luminance_delta) / 72.0, 0.0, 1.0)
         )
         texture_contrast = float(
             np.clip(
@@ -157,20 +241,39 @@ def _appearance_evidence(
         chroma_contrast = 0.0
         luminance_contrast = 0.0
         texture_contrast = 0.0
+        signed_luminance_delta = 0.0
 
-    # A luminance change without chromatic, textural, or closed-edge support is
-    # more likely to be illumination on one surface than a separate part.
-    non_luminance_support = max(
-        1.35 * chroma_contrast,
-        1.15 * texture_contrast,
-        0.70 * boundary_closure,
+    # Closed contours are deliberately not treated as material evidence here:
+    # cast shadows and specular highlights can both be closed. A nested region
+    # whose boundary changes mainly in L, while chroma and local texture remain
+    # stable, is illumination evidence rather than a new part. Root silhouette
+    # contact reduces (but never removes) that penalty because many physical
+    # parts terminate on the object outline.
+    material_change_support = max(
+        1.20 * chroma_contrast,
+        0.90 * texture_contrast,
     )
-    shading_only_penalty = float(
+    illumination_strength = float(
         np.clip(
-            (luminance_contrast - non_luminance_support - 0.06) / 0.42,
+            (luminance_contrast - material_change_support - 0.055) / 0.30,
             0.0,
             1.0,
         )
+    )
+    nestedness = float(np.clip(1.0 - root_boundary_contact / 0.18, 0.0, 1.0))
+    shading_only_penalty = float(
+        np.clip(
+            illumination_strength * (0.58 + 0.42 * nestedness),
+            0.0,
+            1.0,
+        )
+    )
+    illumination_region = (
+        "highlight"
+        if shading_only_penalty >= 0.42 and signed_luminance_delta > 0.0
+        else "shadow"
+        if shading_only_penalty >= 0.42 and signed_luminance_delta < 0.0
+        else "none"
     )
     multi_view = bool(candidate.metadata.get("multi_view_confirmed"))
     geometric_support = float(
@@ -213,6 +316,10 @@ def _appearance_evidence(
         "luminance_contrast": luminance_contrast,
         "texture_contrast": texture_contrast,
         "shading_only_penalty": shading_only_penalty,
+        "illumination_region": illumination_region,
+        "signed_luminance_delta": signed_luminance_delta,
+        "root_boundary_contact": root_boundary_contact,
+        "nestedness": nestedness,
         "independent_cue_count": int(independent_cue_count),
         "multi_view_confirmed": multi_view,
         "geometric_support": geometric_support,

@@ -132,6 +132,9 @@ class PhysicalRegionGateConfig:
     laminar_strip_minimum_luminance_contrast: float = 0.12
     named_host_minimum_containment: float = 0.72
     named_host_maximum_area_ratio: float = 2.50
+    maximum_named_shading_only_penalty: float = 0.42
+    minimum_named_physical_boundary_alignment: float = 0.58
+    minimum_named_physical_boundary_closure: float = 0.46
     corroboration_iou: float = 0.25
     corroboration_containment: float = 0.65
     open_domains: tuple[str, ...] = (
@@ -150,6 +153,18 @@ class PhysicalRegionGateConfig:
 class PhysicalRegionGateResult:
     candidates: tuple[MaskCandidate, ...]
     diagnostics: dict[str, object]
+
+
+_PHOTOMETRIC_PHYSICAL_SURFACE_TOKENS = {
+    "display",
+    "glass",
+    "lens",
+    "mirror",
+    "screen",
+    "visor",
+    "window",
+    "windshield",
+}
 
 
 @dataclass(frozen=True)
@@ -1059,6 +1074,7 @@ def filter_unresolved_visual_regions(
     nested_surface_texture_count = 0
     nested_named_region_count = 0
     laminar_surface_strip_count = 0
+    photometric_only_named_count = 0
     for candidate in candidates:
         is_generic = bool(candidate.metadata.get("generic_visual_region"))
         vlm_audit = candidate.metadata.get("vlm_physicality_audit")
@@ -1070,9 +1086,77 @@ def filter_unresolved_visual_regions(
         vlm_physical = vlm_decision == "physical_supported"
         vlm_nonphysical = vlm_decision == "nonphysical_supported"
         if not is_generic:
-            if bool(candidate.metadata.get("visual_region")) and vlm_nonphysical:
+            appearance_evidence = candidate.metadata.get(
+                "appearance_graph_evidence"
+            )
+            appearance_evidence = (
+                appearance_evidence
+                if isinstance(appearance_evidence, dict)
+                else {}
+            )
+            shading_penalty = float(
+                appearance_evidence.get("shading_only_penalty", 0.0)
+            )
+            boundary_alignment = float(
+                appearance_evidence.get("boundary_alignment", 0.0)
+            )
+            boundary_closure = float(
+                appearance_evidence.get("boundary_closure", 0.0)
+            )
+            root_boundary_contact = float(
+                appearance_evidence.get("root_boundary_contact", 0.0)
+            )
+            cross_source = bool(
+                candidate.metadata.get("cross_source_confirmed")
+                or candidate.metadata.get("multi_view_confirmed")
+            )
+            physical_boundary = bool(
+                boundary_alignment
+                >= config.minimum_named_physical_boundary_alignment
+                and boundary_closure
+                >= config.minimum_named_physical_boundary_closure
+            )
+            semantic_tokens = set(
+                re.findall(r"[a-z0-9]+", candidate.semantic_name.casefold())
+            )
+            bounded_photometric_surface = bool(
+                physical_boundary
+                and semantic_tokens & _PHOTOMETRIC_PHYSICAL_SURFACE_TOKENS
+            )
+            independent_physical_structure = bool(
+                root_boundary_contact >= 0.10
+                or float(candidate.metadata.get("geometric_support", 0.0))
+                >= 0.72
+                or candidate.metadata.get("topology_refinement")
+                or candidate.source.startswith("hpid-shape-bottleneck/")
+            )
+            direct_semantic_source = any(
+                token in candidate.source.casefold()
+                for token in (
+                    "/profile-refine",
+                    "conditional-part",
+                    "grounded-sam",
+                    "grounding-dino",
+                    "prototype-retrieval",
+                )
+            ) and "semantic-rerank" not in candidate.source.casefold()
+            photometric_only = bool(
+                candidate.semantic_name != candidate.semantic_parent
+                and shading_penalty
+                >= config.maximum_named_shading_only_penalty
+                and not bounded_photometric_surface
+                and not vlm_physical
+                and not (
+                    independent_physical_structure
+                    and (cross_source or direct_semantic_source)
+                )
+            )
+            if (
+                bool(candidate.metadata.get("visual_region")) and vlm_nonphysical
+            ) or photometric_only:
                 rejected_count += 1
-                vlm_nonphysical_count += 1
+                vlm_nonphysical_count += int(vlm_nonphysical)
+                photometric_only_named_count += int(photometric_only)
                 rows.append(
                     {
                         "candidate_key": _candidate_key(candidate),
@@ -1086,7 +1170,22 @@ def filter_unresolved_visual_regions(
                         "silhouette_structure": False,
                         "profile_structural_fallback": False,
                         "vlm_physical_supported": False,
-                        "vlm_nonphysical_supported": True,
+                        "vlm_nonphysical_supported": vlm_nonphysical,
+                        "photometric_only_region": photometric_only,
+                        "shading_only_penalty": shading_penalty,
+                        "boundary_alignment": boundary_alignment,
+                        "boundary_closure": boundary_closure,
+                        "root_boundary_contact": root_boundary_contact,
+                        "illumination_region": appearance_evidence.get(
+                            "illumination_region", "none"
+                        ),
+                        "independent_physical_structure": (
+                            independent_physical_structure
+                        ),
+                        "direct_semantic_source": direct_semantic_source,
+                        "bounded_photometric_surface": (
+                            bounded_photometric_surface
+                        ),
                         "outer_boundary_contact": None,
                         "root_area_fraction": candidate.metadata.get(
                             "root_area_fraction"
@@ -1350,6 +1449,7 @@ def filter_unresolved_visual_regions(
             "nested_surface_texture_rejected_count": nested_surface_texture_count,
             "nested_named_region_rejected_count": nested_named_region_count,
             "laminar_surface_strip_rejected_count": laminar_surface_strip_count,
+            "photometric_only_named_rejected_count": photometric_only_named_count,
             "vlm_physical_supported_count": vlm_physical_count,
             "vlm_nonphysical_rejected_count": vlm_nonphysical_count,
             "candidates": rows,

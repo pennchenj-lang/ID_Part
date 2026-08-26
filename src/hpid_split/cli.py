@@ -15,7 +15,7 @@ import torch
 from PIL import Image
 
 from .adapters import semantic_prediction_candidates
-from .appearance_graph import optimize_appearance_graph
+from .appearance_graph import annotate_appearance_evidence, optimize_appearance_graph
 from .appearance_proposals import (
     AppearanceProposalConfig,
     propose_appearance_regions,
@@ -2863,6 +2863,15 @@ def command_auto(args: argparse.Namespace) -> int:
         ),
     )
     candidates = list(root_cleanup.candidates)
+    photometric_audit_roots = _routed_roots(
+        candidates, routed.diagnostics, args.root_mode
+    )
+    photometric_boundary_audit = annotate_appearance_evidence(
+        image,
+        candidates,
+        photometric_audit_roots,
+    )
+    candidates = list(photometric_boundary_audit.candidates)
     axis_roots = _routed_roots(candidates, routed.diagnostics, args.root_mode)
     axis_consistency = enforce_axis_consistency(
         candidates,
@@ -3016,6 +3025,7 @@ def command_auto(args: argparse.Namespace) -> int:
         "vlm_part_generation": vlm_part_diagnostics,
         "mask_refinement": refinement_diagnostics,
         "root_cleanup": root_cleanup.diagnostics,
+        "photometric_boundary_audit": photometric_boundary_audit.diagnostics,
         "axis_consistency": axis_consistency.diagnostics,
         "physical_region_gate": physical_region_gate.diagnostics,
         "root_geometry_refinement": root_geometry.diagnostics,

@@ -1162,6 +1162,70 @@ def test_three_stage_gate_rejects_shading_after_semantic_and_structure_pass() ->
     assert verification["accepted"] is False
 
 
+def test_three_stage_gate_rejects_single_model_named_shadow_without_structure() -> None:
+    mask = np.zeros((100, 160), dtype=bool)
+    mask[35:65, 44:116] = True
+    candidate = MaskCandidate(
+        semantic_name="vehicle_seat",
+        semantic_parent="vehicle_body",
+        mask=mask,
+        score=0.82,
+        source="conditional-part[model]/direct-calibrated-mask",
+        metadata={
+            "selected_part_profile": "road_vehicle",
+            "direct_conditional_mask": True,
+            "root_area_fraction": 0.08,
+            "geometric_support": 0.46,
+            "cross_source_confirmed": False,
+            "appearance_graph_evidence": {
+                "boundary_alignment": 0.42,
+                "boundary_closure": 0.18,
+                "independent_cue_count": 1,
+                "shading_only_penalty": 0.88,
+            },
+        },
+    )
+
+    verification = _candidate_three_stage_verification(candidate)
+
+    assert verification["stage_1_semantic"]["verified"] is True
+    assert verification["stage_2_structure"]["verified"] is False
+    assert verification["stage_3_appearance"]["evaluated"] is False
+    assert verification["accepted"] is False
+
+
+def test_three_stage_gate_keeps_bounded_window_despite_reflection() -> None:
+    mask = np.zeros((100, 160), dtype=bool)
+    mask[22:72, 36:126] = True
+    candidate = MaskCandidate(
+        semantic_name="vehicle_windshield",
+        semantic_parent="vehicle_body",
+        mask=mask,
+        score=0.84,
+        source="conditional-part[model]/direct-calibrated-mask",
+        metadata={
+            "selected_part_profile": "road_vehicle",
+            "direct_conditional_mask": True,
+            "root_area_fraction": 0.24,
+            "geometric_support": 0.59,
+            "cross_source_confirmed": False,
+            "appearance_graph_evidence": {
+                "boundary_alignment": 0.92,
+                "boundary_closure": 0.74,
+                "independent_cue_count": 2,
+                "shading_only_penalty": 0.82,
+            },
+        },
+    )
+
+    verification = _candidate_three_stage_verification(candidate)
+
+    assert verification["stage_2_structure"]["bounded_photometric_surface"] is True
+    assert verification["stage_2_structure"]["verified"] is True
+    assert verification["stage_3_appearance"]["verified"] is True
+    assert verification["accepted"] is True
+
+
 def test_three_stage_gate_accepts_inventory_label_with_closed_multi_cue_boundary() -> None:
     mask = np.zeros((100, 160), dtype=bool)
     mask[22:78, 35:125] = True

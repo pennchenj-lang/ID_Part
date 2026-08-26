@@ -1968,6 +1968,43 @@ def test_physical_region_gate_rejects_named_visual_surface_detail() -> None:
     assert result.diagnostics["vlm_nonphysical_rejected_count"] == 1
 
 
+def test_physical_region_gate_rejects_named_highlight_or_shadow_only_region() -> None:
+    root = _root()
+    panel = _visual(
+        "named-lighting-patch",
+        _mask(25, 55, 25, 55),
+        kind="panel",
+        fraction=0.12,
+    )
+    panel = replace(
+        panel,
+        semantic_name="device_panel",
+        semantic_parent="device",
+        source="conditional-part[model]/direct-calibrated-mask",
+        metadata={
+            **panel.metadata,
+            "generic_visual_region": False,
+            "appearance_graph_evidence": {
+                "shading_only_penalty": 0.86,
+                "boundary_alignment": 0.33,
+                "boundary_closure": 0.14,
+                "chroma_contrast": 0.01,
+                "texture_contrast": 0.02,
+                "luminance_contrast": 0.48,
+            },
+        },
+    )
+
+    result = filter_unresolved_visual_regions(
+        [root, panel],
+        [root],
+        {"device": _closed_profile_domain()},
+    )
+
+    assert result.candidates == (root,)
+    assert result.diagnostics["photometric_only_named_rejected_count"] == 1
+
+
 def test_physical_region_gate_blocks_generic_override_for_flat_media_profile() -> None:
     root = _root()
     detail = _visual(

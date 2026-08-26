@@ -92,7 +92,21 @@ _SLENDER_PART_TOKENS = {
     "stem",
 }
 _INTERNAL_PART_TOKENS = {"hole", "inner", "inside", "lining", "opening"}
-_OPEN_INTERIOR_PROFILES = {"drinkware", "flatware", "open_container"}
+_OPEN_INTERIOR_PROFILES = {
+    "drinkware",
+    "flatware",
+    "open_container",
+}
+_PHOTOMETRIC_PHYSICAL_SURFACE_TOKENS = {
+    "display",
+    "glass",
+    "lens",
+    "mirror",
+    "screen",
+    "visor",
+    "window",
+    "windshield",
+}
 _DISCRETE_REPEATED_PART_TOKENS = {
     "boulder",
     "rim",
@@ -484,9 +498,31 @@ def _candidate_three_stage_verification(
     boundary_closure = float(appearance.get("boundary_closure", 0.0))
     cue_count = int(appearance.get("independent_cue_count", 0))
     shading_penalty = float(appearance.get("shading_only_penalty", 0.0))
+    root_boundary_contact = float(appearance.get("root_boundary_contact", 0.0))
     cross_source = bool(
         metadata.get("cross_source_confirmed")
         or metadata.get("multi_view_confirmed")
+    )
+    independent_physical_structure = bool(
+        root_boundary_contact >= 0.10
+        or geometric_support >= 0.72
+        or metadata.get("topology_refinement")
+        or source.startswith("hpid-shape-bottleneck/")
+    )
+    photometric_only = bool(
+        shading_penalty >= 0.42
+        and not (
+            boundary_alignment >= 0.58
+            and boundary_closure >= 0.46
+            and bool(
+                _words(candidate.semantic_name)
+                & _PHOTOMETRIC_PHYSICAL_SURFACE_TOKENS
+            )
+        )
+        and not (
+            independent_physical_structure
+            and (cross_source or direct_semantic)
+        )
     )
     axis_gate = metadata.get("axis_consistency_gate")
     axis_gate = axis_gate if isinstance(axis_gate, dict) else {}
@@ -532,11 +568,31 @@ def _candidate_three_stage_verification(
         and not bool(physical_gate.get("nested_surface_texture"))
         and not bool(physical_gate.get("laminar_surface_strip"))
     )
+    appearance_evidence_available = bool(appearance)
+    conditional_direct = bool(metadata.get("direct_conditional_mask"))
+    direct_geometry_threshold = 0.64 if conditional_direct else 0.55
+    bounded_photometric_surface = bool(
+        _words(candidate.semantic_name)
+        & _PHOTOMETRIC_PHYSICAL_SURFACE_TOKENS
+        and boundary_alignment >= 0.58
+        and boundary_closure >= 0.46
+        and geometric_support >= 0.50
+    )
+    direct_semantic_structure = bool(
+        direct_semantic
+        and (
+            not appearance_evidence_available
+            or cross_source
+            or geometric_support >= direct_geometry_threshold
+            or closed_boundary_structure
+            or bounded_photometric_surface
+        )
+    )
     raw_structure_verified = bool(
         axis_not_rejected
         and semantic_shape["accepted"]
         and (
-            direct_semantic
+            direct_semantic_structure
             or cross_source
             or shape_structure
             or closed_boundary_structure
@@ -548,8 +604,8 @@ def _candidate_three_stage_verification(
     raw_structure_reason = (
         str(semantic_shape["reason"])
         if not semantic_shape["accepted"]
-        else "direct_semantic_mask"
-        if direct_semantic
+        else "direct_semantic_with_independent_structure"
+        if direct_semantic_structure
         else "cross_source_structure"
         if cross_source
         else "shape_bottleneck"
@@ -576,8 +632,12 @@ def _candidate_three_stage_verification(
     )
 
     if not visual_derived or direct_semantic:
-        raw_appearance_verified = shading_penalty < 0.72
-        raw_appearance_reason = "no_appearance_contradiction"
+        raw_appearance_verified = not photometric_only
+        raw_appearance_reason = (
+            "no_appearance_contradiction"
+            if raw_appearance_verified
+            else "highlight_or_shadow_only_boundary"
+        )
     else:
         raw_appearance_verified = bool(
             shading_penalty <= 0.50
@@ -627,6 +687,9 @@ def _candidate_three_stage_verification(
             "axis_not_rejected": axis_not_rejected,
             "cross_source": cross_source,
             "closed_boundary_structure": closed_boundary_structure,
+            "direct_semantic_structure": direct_semantic_structure,
+            "bounded_photometric_surface": bounded_photometric_surface,
+            "appearance_evidence_available": appearance_evidence_available,
             "root_area_fraction": root_area_fraction,
             "semantic_shape_consistency": semantic_shape,
         },
@@ -640,6 +703,11 @@ def _candidate_three_stage_verification(
             "boundary_closure": boundary_closure,
             "independent_cue_count": cue_count,
             "shading_only_penalty": shading_penalty,
+            "illumination_region": appearance.get(
+                "illumination_region", "none"
+            ),
+            "root_boundary_contact": root_boundary_contact,
+            "independent_physical_structure": independent_physical_structure,
             "can_create_id": False,
         },
         "accepted": accepted,
