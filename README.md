@@ -67,6 +67,16 @@ name or create an ID. The release includes an unretouched six-domain
 qualitative audit with exact foreground conservation. Frozen `0.3.1`
 quantitative estimates remain unchanged.
 
+Version `0.3.5` adds semantic-seed boundary recovery for wrapped labels and
+chair cushions, then separates a vehicle grille from its bumper and recovers
+paired wheels from the road-vehicle inventory, lower silhouette topology, and
+matched lateral structure. Smoothed Lab values only align an already admitted
+part to an image seam; highlights and shadows still cannot create IDs. A
+post-freeze regroup audit completed all 226 frozen packages without rerunning
+proposal inference or changing fine Part-ID maps. The publication plate uses
+unretouched outputs, while the frozen `0.3.1` benchmark estimates remain the
+paper's preregistered quantitative evidence.
+
 ## What is implemented
 
 - One-image CLI and local upload UI.

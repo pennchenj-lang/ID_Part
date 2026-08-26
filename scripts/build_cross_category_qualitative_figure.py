@@ -46,16 +46,18 @@ EXPECTED_GROUPS = {
     "Vehicle": {
         "vehicle_body",
         "vehicle_bumper",
+        "vehicle_grille",
         "vehicle_headlight",
         "vehicle_hood",
         "vehicle_mirror",
         "vehicle_roof",
+        "vehicle_wheel",
         "vehicle_windshield",
     },
 }
 
 EXPECTED_INSTANCE_COUNTS = {
-    "Vehicle": {"vehicle_headlight": 2},
+    "Vehicle": {"vehicle_headlight": 2, "vehicle_wheel": 2},
 }
 
 

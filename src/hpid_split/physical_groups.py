@@ -1738,7 +1738,9 @@ def _canonical_profile_group_semantic(
             return "vehicle_windshield"
         if "hood" in words or "bonnet" in words:
             return "vehicle_hood"
-        if words & {"bumper", "grille", "grill"}:
+        if words & {"grille", "grill"}:
+            return "vehicle_grille"
+        if "bumper" in words:
             return "vehicle_bumper"
         if "mirror" in words:
             return "vehicle_mirror"
@@ -1835,7 +1837,9 @@ def _profile_seed_geometry_allowed(
         return 0.001 <= fraction <= 0.18
     if semantic.endswith("_mirror"):
         return 0.001 <= fraction <= 0.12
-    if semantic.endswith(("_roof", "_hood", "_bumper", "_windshield")):
+    if semantic.endswith(
+        ("_roof", "_hood", "_bumper", "_grille", "_windshield")
+    ):
         return 0.015 <= fraction <= 0.42
     if semantic.endswith("_wheel"):
         return 0.004 <= fraction <= 0.30
@@ -1928,11 +1932,19 @@ def _semantic_consensus_seed(
 
 def _extend_label_from_visual_evidence(
     seed: np.ndarray,
-    visual_candidates: list[MaskCandidate],
+    boundary_candidates: list[MaskCandidate],
     root: np.ndarray,
     image: Image.Image | np.ndarray | None,
 ) -> tuple[np.ndarray, dict[str, object]]:
-    """Extend an existing label slot; appearance alone never creates the slot."""
+    """Recover a wrapped label only after a semantic label seed exists.
+
+    A detector often returns only printed text while an automatic proposal
+    covers the complete label band under an incorrect name such as ``neck``.
+    Such a proposal may extend the verified label when it overlaps the seed,
+    has a closed mid-body boundary, and is not an illumination-only region.
+    The same evidence can complete the cross-section of a wrapped label, but it
+    can never introduce a label without the semantic seed.
+    """
 
     if image is None or np.count_nonzero(seed) < 8:
         return seed, {"status": "inactive", "ground_truth_used": False}
@@ -1947,40 +1959,99 @@ def _extend_label_from_visual_evidence(
     reference = np.median(lab[seed], axis=0)
     diagonal = max(1.0, float(np.hypot(*root.shape)))
     additions: list[np.ndarray] = []
+    broad_support = False
     rows: list[dict[str, object]] = []
+    seed_area = max(1, int(np.count_nonzero(seed)))
     seed_distance = cv2.distanceTransform((~seed).astype(np.uint8), cv2.DIST_L2, 5)
-    for candidate in visual_candidates:
+    for candidate in boundary_candidates:
+        if candidate.semantic_name == candidate.semantic_parent:
+            continue
         geometry = _mask_geometry_against_root(candidate.mask, root)
         if geometry is None:
             continue
         mask = np.asarray(geometry["mask"], dtype=bool)
         fraction = float(geometry["root_area_fraction"])
         gap = float(seed_distance[mask].min(initial=diagonal) / diagonal)
+        seed_overlap = float(np.count_nonzero(mask & seed) / seed_area)
         delta = float(np.linalg.norm(np.median(lab[mask], axis=0) - reference))
         appearance = candidate.metadata.get("appearance_graph_evidence")
         appearance = appearance if isinstance(appearance, dict) else {}
         shading_penalty = float(appearance.get("shading_only_penalty", 0.0))
-        accepted = bool(
+        closure = float(appearance.get("boundary_closure", 0.0))
+        relative = _root_relative_geometry(mask, root)
+        visual_extension = bool(
+            _is_visual_semantic(candidate.semantic_name)
+            and
             0.008 <= fraction <= 0.24
             and gap <= 0.08
             and delta <= 40.0
             and shading_penalty < 0.42
         )
+        wrapped_panel_support = bool(
+            relative is not None
+            and 0.10 <= fraction <= 0.50
+            and seed_overlap >= 0.12
+            and 0.42 <= relative["center_y"] <= 0.91
+            and relative["width_fraction"] >= 0.34
+            and relative["height_fraction"] >= 0.18
+            and closure >= 0.30
+            and delta <= 68.0
+            and shading_penalty < 0.55
+        )
+        accepted = visual_extension or wrapped_panel_support
         if accepted:
             additions.append(mask)
+            broad_support |= wrapped_panel_support
         rows.append(
             {
                 "candidate_key": candidate.metadata.get("candidate_key"),
+                "semantic_name": candidate.semantic_name,
                 "root_area_fraction": fraction,
                 "normalized_gap": gap,
+                "seed_overlap": seed_overlap,
                 "lab_distance": delta,
+                "boundary_closure": closure,
                 "shading_only_penalty": shading_penalty,
+                "visual_extension": visual_extension,
+                "wrapped_panel_support": wrapped_panel_support,
                 "accepted": accepted,
             }
         )
     extended = seed | np.logical_or.reduce(additions) if additions else seed
+    band_completed = False
+    if broad_support:
+        root_rows = np.count_nonzero(root, axis=1)
+        support_rows = np.count_nonzero(extended & root, axis=1)
+        coverage = support_rows / np.maximum(1, root_rows)
+        active = (coverage >= 0.28) & (root_rows > 0)
+        active = cv2.morphologyEx(
+            active[:, None].astype(np.uint8),
+            cv2.MORPH_CLOSE,
+            np.ones((5, 1), np.uint8),
+        )[:, 0].astype(bool)
+        _count, labels_2d = cv2.connectedComponents(
+            active[:, None].astype(np.uint8)
+        )
+        labels = labels_2d[:, 0]
+        seed_rows = np.flatnonzero(np.any(seed, axis=1))
+        selected = 0
+        if seed_rows.size:
+            seed_center = round(float(np.median(seed_rows)))
+            selected = int(labels[seed_center])
+        if selected > 0:
+            band_rows = labels == selected
+            root_y = np.flatnonzero(root_rows > 0)
+            band_fraction = float(
+                np.count_nonzero(band_rows)
+                / max(1, root_y[-1] - root_y[0] + 1)
+            )
+            if 0.12 <= band_fraction <= 0.62:
+                extended |= root & band_rows[:, None]
+                band_completed = True
     return extended & root, {
         "status": "completed" if additions else "no_supported_extension",
+        "algorithm": "verified-label-wrapped-boundary-recovery-v2",
+        "wrapped_band_completed": band_completed,
         "appearance_role": "verified_label_boundary_extension_only",
         "appearance_can_create_ids": False,
         "candidates": rows,
@@ -2117,6 +2188,263 @@ def _simple_object_neck_from_structure(
         "status": "completed",
         "algorithm": "cap-adjacent-neck-structure-v1",
         "selected": row,
+        "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
+def _chair_seat_from_verified_seed(
+    seed: np.ndarray,
+    backrest: np.ndarray | None,
+    root: np.ndarray,
+    image: Image.Image | np.ndarray | None,
+) -> tuple[np.ndarray, dict[str, object]]:
+    """Complete a verified chair seat inside the backrest/frame slot.
+
+    The semantic seed establishes that a seat exists.  Geometry limits the
+    recovery to the horizontal slot below the backrest, and smoothed Lab
+    similarity fills the cushion surface.  Illumination cannot create a seat.
+    """
+
+    seed_geometry = _mask_geometry_against_root(seed, root)
+    back_geometry = (
+        _mask_geometry_against_root(backrest, root)
+        if backrest is not None
+        else None
+    )
+    if image is None or seed_geometry is None or back_geometry is None:
+        return seed, {"status": "structural_anchor_missing", "ground_truth_used": False}
+    rgb = (
+        np.asarray(image.convert("RGB"), dtype=np.uint8)
+        if isinstance(image, Image.Image)
+        else np.asarray(image, dtype=np.uint8)
+    )
+    if rgb.shape[:2] != root.shape or rgb.ndim != 3 or rgb.shape[2] < 3:
+        return seed, {"status": "image_shape_mismatch", "ground_truth_used": False}
+
+    root_y, root_x = np.nonzero(root)
+    root_x0, root_x1 = int(root_x.min()), int(root_x.max() + 1)
+    root_y0, root_y1 = int(root_y.min()), int(root_y.max() + 1)
+    root_width = max(1, root_x1 - root_x0)
+    root_height = max(1, root_y1 - root_y0)
+    seed_x0, seed_y0, seed_x1, seed_y1 = seed_geometry["bbox_xyxy"]
+    back_x0, _back_y0, back_x1, back_y1 = back_geometry["bbox_xyxy"]
+    slot_x0 = max(root_x0, min(seed_x0, back_x0) - round(0.05 * root_width))
+    slot_x1 = min(root_x1, max(seed_x1, back_x1) + round(0.06 * root_width))
+    slot_y0 = max(
+        root_y0,
+        min(seed_y0 - round(0.08 * root_height), back_y1 - round(0.04 * root_height)),
+    )
+    slot_y1 = min(root_y1, seed_y1 + round(0.08 * root_height))
+    if slot_x1 - slot_x0 < 8 or slot_y1 - slot_y0 < 6:
+        return seed, {"status": "invalid_structural_slot", "ground_truth_used": False}
+    slot = np.zeros_like(root)
+    slot[slot_y0:slot_y1, slot_x0:slot_x1] = True
+    slot &= root & ~np.asarray(backrest, dtype=bool)
+
+    smoothed = cv2.bilateralFilter(rgb[:, :, :3], 9, 45, 45)
+    lab = cv2.cvtColor(smoothed, cv2.COLOR_RGB2LAB).astype(np.float32)
+    weighted = lab * np.asarray((0.35, 1.0, 1.0), dtype=np.float32)
+    reference = np.median(weighted[seed], axis=0)
+    color_distance = np.linalg.norm(weighted - reference, axis=2)
+    seed_quantile = float(np.quantile(color_distance[seed], 0.90))
+    threshold = float(np.clip(seed_quantile + 4.0, 14.0, 28.0))
+    support = slot & (color_distance <= threshold)
+    support |= seed
+    support = cv2.morphologyEx(
+        support.astype(np.uint8),
+        cv2.MORPH_CLOSE,
+        np.ones((5, 5), np.uint8),
+    ).astype(bool) & slot
+
+    count, labels, stats, _ = cv2.connectedComponentsWithStats(
+        support.astype(np.uint8), connectivity=8
+    )
+    completed = np.zeros_like(root)
+    component_rows: list[dict[str, object]] = []
+    for component_index in range(1, count):
+        component = labels == component_index
+        area = int(stats[component_index, cv2.CC_STAT_AREA])
+        overlap = int(np.count_nonzero(component & seed))
+        accepted = overlap >= max(2, round(area * 0.01))
+        if accepted:
+            completed |= component
+        component_rows.append(
+            {
+                "area_px": area,
+                "seed_overlap_px": overlap,
+                "accepted": accepted,
+            }
+        )
+    completed |= seed
+    seed_area = max(1, int(np.count_nonzero(seed)))
+    area_ratio = float(np.count_nonzero(completed) / seed_area)
+    root_fraction = float(np.count_nonzero(completed) / max(1, np.count_nonzero(root)))
+    stable = 1.0 <= area_ratio <= 3.25 and root_fraction <= 0.36
+    if not stable:
+        completed = seed.copy()
+    return completed & root, {
+        "status": "completed" if stable else "rejected_unstable_extension",
+        "algorithm": "verified-chair-seat-structural-slot-recovery-v1",
+        "slot_bbox_xyxy": [slot_x0, slot_y0, slot_x1, slot_y1],
+        "weighted_lab_threshold": threshold,
+        "area_ratio": area_ratio,
+        "root_area_fraction": root_fraction,
+        "components": component_rows,
+        "appearance_role": "verified_seat_boundary_extension_only",
+        "appearance_can_create_ids": False,
+        "ground_truth_used": False,
+    }
+
+
+def _road_vehicle_wheels_from_structure(
+    root: np.ndarray,
+    image: Image.Image | np.ndarray | None,
+) -> tuple[np.ndarray | None, dict[str, object]]:
+    """Recover a paired wheel slot from profile semantics and lower topology.
+
+    The road-vehicle inventory supplies the semantic hypothesis.  Two lateral
+    components must agree in height, scale, and silhouette extension before
+    their dark material is used to align boundaries.  A lone shadow therefore
+    cannot create a public wheel ID.
+    """
+
+    if image is None or np.count_nonzero(root) < 256:
+        return None, {"status": "inactive", "ground_truth_used": False}
+    rgb = (
+        np.asarray(image.convert("RGB"), dtype=np.uint8)
+        if isinstance(image, Image.Image)
+        else np.asarray(image, dtype=np.uint8)
+    )
+    if rgb.shape[:2] != root.shape or rgb.ndim != 3 or rgb.shape[2] < 3:
+        return None, {"status": "image_shape_mismatch", "ground_truth_used": False}
+
+    ys, xs = np.nonzero(root)
+    x0, x1 = int(xs.min()), int(xs.max() + 1)
+    y0, y1 = int(ys.min()), int(ys.max() + 1)
+    width = max(1, x1 - x0)
+    height = max(1, y1 - y0)
+    bottom_profile = np.asarray(
+        [
+            np.flatnonzero(root[:, x]).max()
+            if np.any(root[:, x])
+            else np.nan
+            for x in range(x0, x1)
+        ],
+        dtype=np.float32,
+    )
+    center = bottom_profile[round(0.30 * width) : round(0.70 * width)]
+    if not np.any(np.isfinite(center)):
+        return None, {"status": "bottom_profile_missing", "ground_truth_used": False}
+    bumper_baseline = float(np.nanmedian(center))
+    side_fraction = 0.22
+    side_slot = np.zeros_like(root)
+    side_slot[:, x0 : x0 + round(side_fraction * width)] = True
+    side_slot[:, x1 - round(side_fraction * width) : x1] = True
+    grid_y = np.indices(root.shape, sparse=True)[0]
+    lower_start = int(max(y0 + 0.70 * height, bumper_baseline - 0.16 * height))
+    lower_slot = side_slot & root & (grid_y >= lower_start)
+    if np.count_nonzero(lower_slot) < 32:
+        return None, {"status": "lower_slot_too_small", "ground_truth_used": False}
+
+    gray = cv2.cvtColor(
+        cv2.bilateralFilter(rgb[:, :, :3], 7, 35, 35),
+        cv2.COLOR_RGB2GRAY,
+    )
+    darkness_threshold = float(np.quantile(gray[lower_slot], 0.62))
+    support = lower_slot & (gray <= darkness_threshold)
+    support = cv2.morphologyEx(
+        support.astype(np.uint8),
+        cv2.MORPH_CLOSE,
+        np.ones((5, 5), np.uint8),
+    ).astype(bool)
+    bottom_seed = side_slot & root & (grid_y >= round(bumper_baseline - 1.0))
+    count, labels, stats, centroids = cv2.connectedComponentsWithStats(
+        support.astype(np.uint8), connectivity=8
+    )
+    root_area = max(1, int(np.count_nonzero(root)))
+    candidates: dict[str, list[tuple[float, np.ndarray, dict[str, object]]]] = {
+        "left": [],
+        "right": [],
+    }
+    rows: list[dict[str, object]] = []
+    center_x = 0.5 * (x0 + x1)
+    for component_index in range(1, count):
+        component = labels == component_index
+        area = int(stats[component_index, cv2.CC_STAT_AREA])
+        component_x, component_y = map(float, centroids[component_index])
+        component_width = int(stats[component_index, cv2.CC_STAT_WIDTH])
+        component_height = int(stats[component_index, cv2.CC_STAT_HEIGHT])
+        bottom_overlap = int(np.count_nonzero(component & bottom_seed))
+        area_fraction = area / root_area
+        side = "left" if component_x < center_x else "right"
+        valid = bool(
+            0.008 <= area_fraction <= 0.11
+            and component_y >= y0 + 0.72 * height
+            and 0.05 <= component_width / width <= 0.30
+            and 0.08 <= component_height / height <= 0.36
+            and bottom_overlap >= max(2, round(area * 0.04))
+        )
+        score = float(
+            area
+            * (1.0 + bottom_overlap / max(1, area))
+            * (1.0 + abs(component_x - center_x) / max(1.0, width))
+        )
+        if valid:
+            candidates[side].append(
+                (
+                    score,
+                    component,
+                    {
+                        "component_index": component_index,
+                        "area_px": area,
+                        "centroid_xy": [component_x, component_y],
+                    },
+                )
+            )
+        rows.append(
+            {
+                "component_index": component_index,
+                "side": side,
+                "area_px": area,
+                "area_fraction": area_fraction,
+                "centroid_xy": [component_x, component_y],
+                "bottom_overlap_px": bottom_overlap,
+                "accepted_candidate": valid,
+            }
+        )
+    if not candidates["left"] or not candidates["right"]:
+        return None, {
+            "status": "paired_components_missing",
+            "components": rows,
+            "ground_truth_used": False,
+        }
+    left = max(candidates["left"], key=lambda item: item[0])
+    right = max(candidates["right"], key=lambda item: item[0])
+    left_area = int(np.count_nonzero(left[1]))
+    right_area = int(np.count_nonzero(right[1]))
+    area_ratio = min(left_area, right_area) / max(1, max(left_area, right_area))
+    vertical_gap = abs(float(left[2]["centroid_xy"][1]) - float(right[2]["centroid_xy"][1])) / height
+    if area_ratio < 0.20 or vertical_gap > 0.16:
+        return None, {
+            "status": "pair_consistency_failed",
+            "area_ratio": area_ratio,
+            "normalized_vertical_gap": vertical_gap,
+            "components": rows,
+            "ground_truth_used": False,
+        }
+    wheels = (left[1] | right[1]) & root
+    return wheels, {
+        "status": "completed",
+        "algorithm": "road-vehicle-paired-wheel-structure-v1",
+        "bumper_baseline_y": bumper_baseline,
+        "lower_start_y": lower_start,
+        "darkness_quantile": 0.62,
+        "darkness_threshold": darkness_threshold,
+        "selected_components": [left[2], right[2]],
+        "area_ratio": area_ratio,
+        "normalized_vertical_gap": vertical_gap,
+        "evidence_order": ["road_vehicle_inventory", "paired_lower_topology", "appearance_boundary"],
         "appearance_can_create_ids": False,
         "ground_truth_used": False,
     }
@@ -2317,7 +2645,7 @@ def _residual_host_profile_masks(
         )
         if semantic.endswith("_label"):
             seed, extension = _extend_label_from_visual_evidence(
-                seed, visual_candidates, root, image
+                seed, list(candidates), root, image
             )
             consensus["visual_boundary_extension"] = extension
         if profile == "scissors_pliers" and semantic == "tool_prop_blade":
@@ -2342,6 +2670,16 @@ def _residual_host_profile_masks(
         if neck is not None:
             seed_masks["daily_object_neck"] = neck
 
+    chair_seat_diagnostics: dict[str, object] = {"status": "inactive"}
+    if profile == "chair" and "furniture_seat" in seed_masks:
+        seat, chair_seat_diagnostics = _chair_seat_from_verified_seed(
+            seed_masks["furniture_seat"],
+            seed_masks.get("furniture_backrest"),
+            root,
+            image,
+        )
+        seed_masks["furniture_seat"] = seat
+
     windshield_diagnostics: dict[str, object] = {"status": "inactive"}
     if profile == "road_vehicle" and "vehicle_windshield" not in seed_masks:
         windshield, windshield_diagnostics = _road_vehicle_windshield_from_structure(
@@ -2353,6 +2691,12 @@ def _residual_host_profile_masks(
         if windshield is not None:
             seed_masks["vehicle_windshield"] = windshield
 
+    wheel_diagnostics: dict[str, object] = {"status": "inactive"}
+    if profile == "road_vehicle" and "vehicle_wheel" not in seed_masks:
+        wheels, wheel_diagnostics = _road_vehicle_wheels_from_structure(root, image)
+        if wheels is not None:
+            seed_masks["vehicle_wheel"] = wheels
+
     if not seed_masks:
         return None, {
             "status": "no_verified_physical_subparts",
@@ -2363,8 +2707,10 @@ def _residual_host_profile_masks(
         }
 
     priority_tokens = {
+        "wheel": 94,
         "pivot": 90,
         "headlight": 88,
+        "grille": 87,
         "mirror": 86,
         "label": 84,
         "lid": 82,
@@ -2379,7 +2725,6 @@ def _residual_host_profile_masks(
         "hood": 60,
         "bumper": 58,
         "handle": 56,
-        "wheel": 54,
         "spout": 52,
     }
     ordered_semantics = sorted(
@@ -2410,6 +2755,23 @@ def _residual_host_profile_masks(
         }
     output = {host: host_mask}
     output.update({semantic: resolved[semantic] for semantic in sorted(resolved)})
+    coarse_output = {semantic: mask.copy() for semantic, mask in output.items()}
+    output, boundary_diagnostics = _refine_inventory_boundaries(
+        image,
+        root,
+        output,
+    )
+    locked_semantics: list[str] = []
+    if profile == "road_vehicle" and "vehicle_wheel" in coarse_output:
+        wheel = coarse_output["vehicle_wheel"]
+        released = output["vehicle_wheel"] & ~wheel
+        for semantic in output:
+            if semantic == "vehicle_wheel":
+                continue
+            output[semantic] &= ~wheel
+            output[semantic] |= released & coarse_output[semantic]
+        output["vehicle_wheel"] = wheel
+        locked_semantics.append("vehicle_wheel")
     stack = np.stack(list(output.values()), axis=0)
     complete = np.array_equal(np.logical_or.reduce(list(output.values())), root)
     disjoint = int(stack.sum(axis=0).max(initial=0)) <= 1
@@ -2423,14 +2785,18 @@ def _residual_host_profile_masks(
         }
     return output, {
         "status": "completed",
-        "algorithm": "hpid-residual-host-physical-ownership-v2",
+        "algorithm": "hpid-residual-host-physical-ownership-v3",
         "selected_profile": profile,
         "host_semantic": host,
         "evidence_order": ["semantic", "structure", "appearance"],
         "verified_semantics": sorted(resolved),
         "candidate_consensus": consensus_rows,
         "cap_neck_structure": neck_diagnostics,
+        "chair_seat_structure": chair_seat_diagnostics,
         "windshield_structure": windshield_diagnostics,
+        "wheel_pair_structure": wheel_diagnostics,
+        "boundary_refinement": boundary_diagnostics,
+        "boundary_locked_semantics": locked_semantics,
         "appearance_role": "verified_boundary_refinement_only",
         "appearance_can_create_ids": False,
         "photometric_regions_can_create_ids": False,
@@ -4010,7 +4376,10 @@ def _split_repeated_group_components(
     """Split only disconnected regions that plausibly denote repeated objects."""
 
     limits = _repeated_semantic_limits(candidates)
-    if not limits:
+    structural_pairs_present = any(
+        "paired_structural_recovery" in group.evidence for group in groups
+    )
+    if not limits and not structural_pairs_present:
         return group_map, tuple(groups), {
             "status": "inactive",
             "ground_truth_used": False,
@@ -4021,7 +4390,11 @@ def _split_repeated_group_components(
     next_index = 1
     for group in groups:
         mask = group_map == group.group_index
-        maximum = limits.get(group.semantic_name, 1)
+        structural_pair = "paired_structural_recovery" in group.evidence
+        maximum = max(
+            limits.get(group.semantic_name, 1),
+            2 if structural_pair else 1,
+        )
         words = _words(group.semantic_name)
         discrete_semantic = bool(words & _DISCRETE_REPEATED_PART_TOKENS)
         count, labels, stats, _ = cv2.connectedComponentsWithStats(
@@ -4049,6 +4422,8 @@ def _split_repeated_group_components(
         ]
         family = _semantic_shape_family(group.semantic_name)
         shape_consistent = bool(
+            structural_pair
+            or
             descriptors
             and all(
                 descriptor is not None
@@ -5591,7 +5966,13 @@ def _verified_profile_mask_groups(
                 ),
                 centroid_xy=(float(xs.mean()), float(ys.mean())),
                 area_px=len(xs),
-                evidence=f"{profile}_serial_three_stage_verification",
+                evidence=(
+                    f"{profile}_serial_three_stage_verification/"
+                    "paired_structural_recovery"
+                    if profile == "road_vehicle"
+                    and semantic == "vehicle_wheel"
+                    else f"{profile}_serial_three_stage_verification"
+                ),
                 review_required=False,
             )
         )

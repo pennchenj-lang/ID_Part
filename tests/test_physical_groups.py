@@ -2436,3 +2436,178 @@ def test_vehicle_windshield_is_refined_only_inside_roof_hood_slot() -> None:
     assert windshield_y.max() < 92
     assert diagnostics["windshield_structure"]["status"] == "completed"
     assert diagnostics["appearance_can_create_ids"] is False
+
+
+def test_verified_label_seed_recovers_wrapped_band_from_boundary_support() -> None:
+    shape = (150, 90)
+    root = np.zeros(shape, dtype=bool)
+    root[8:142, 15:75] = True
+    label_seed = np.zeros(shape, dtype=bool)
+    label_seed[86:106, 50:66] = True
+    broad_support = np.zeros(shape, dtype=bool)
+    broad_support[70:120, 18:55] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    image = np.full((*shape, 3), 232, dtype=np.uint8)
+    image[root] = (166, 112, 70)
+    image[70:120, 15:75] = (48, 72, 104)
+    support = MaskCandidate(
+        "daily_object_neck",
+        "daily_object_body",
+        broad_support,
+        0.72,
+        "sam2-amg/test/point-grid",
+        metadata={
+            "candidate_key": "broad-boundary-support",
+            "selected_part_profile": "simple_object",
+            "root_area_fraction": float(broad_support.mean()),
+            "proposal_boundary_alignment": 0.88,
+            "appearance_graph_evidence": {
+                "boundary_closure": 0.62,
+                "shading_only_penalty": 0.05,
+            },
+        },
+    )
+    candidates = (
+        _residual_root_candidate("simple_object", "daily_object", root),
+        _residual_part_candidate(
+            "simple_object",
+            "daily_object_label",
+            "daily_object_body",
+            label_seed,
+            key="label-seed",
+        ),
+        support,
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        Image.fromarray(image),
+        profile="simple_object",
+    )
+
+    assert masks is not None
+    assert np.all(masks["daily_object_label"][95, 15:75])
+    extension = diagnostics["candidate_consensus"]["daily_object_label"][
+        "visual_boundary_extension"
+    ]
+    assert extension["wrapped_band_completed"] is True
+    assert extension["appearance_can_create_ids"] is False
+
+
+def test_chair_verified_seat_expands_to_complete_cushion_surface() -> None:
+    shape = (160, 110)
+    root = np.zeros(shape, dtype=bool)
+    root[8:152, 12:98] = True
+    backrest = np.zeros(shape, dtype=bool)
+    backrest[12:62, 20:90] = True
+    seat_seed = np.zeros(shape, dtype=bool)
+    seat_seed[86:99, 26:82] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    image = np.full((*shape, 3), 230, dtype=np.uint8)
+    image[root] = (120, 78, 42)
+    image[72:103, 20:90] = (134, 142, 150)
+    candidates = (
+        _residual_root_candidate("chair", "furniture", root),
+        _residual_part_candidate(
+            "chair",
+            "furniture_backrest",
+            "furniture_body",
+            backrest,
+            key="backrest",
+        ),
+        _residual_part_candidate(
+            "chair",
+            "furniture_stretcher",
+            "furniture_leg",
+            seat_seed,
+            key="seat-seed",
+            score=0.36,
+        ),
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        Image.fromarray(image),
+        profile="chair",
+    )
+
+    assert masks is not None
+    assert masks["furniture_seat"][76, 50]
+    assert diagnostics["chair_seat_structure"]["status"] == "completed"
+    assert diagnostics["chair_seat_structure"]["appearance_can_create_ids"] is False
+
+
+def test_road_vehicle_recovers_paired_wheels_and_keeps_grille_separate() -> None:
+    shape = (160, 200)
+    root = np.zeros(shape, dtype=bool)
+    root[15:120, 20:180] = True
+    root[108:145, 25:55] = True
+    root[108:145, 145:175] = True
+    roof = np.zeros(shape, dtype=bool)
+    roof[15:31, 45:155] = True
+    hood = np.zeros(shape, dtype=bool)
+    hood[84:105, 38:162] = True
+    grille = np.zeros(shape, dtype=bool)
+    grille[96:106, 72:128] = True
+    headlight_left = np.zeros(shape, dtype=bool)
+    headlight_left[96:108, 30:50] = True
+    headlight_right = np.zeros(shape, dtype=bool)
+    headlight_right[96:108, 150:170] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    image = np.full((*shape, 3), 235, dtype=np.uint8)
+    image[root] = (205, 208, 212)
+    image[31:84, 48:152] = (44, 65, 82)
+    image[108:145, 25:55] = (24, 25, 28)
+    image[108:145, 145:175] = (24, 25, 28)
+    candidates = (
+        _residual_root_candidate("road_vehicle", "vehicle", root),
+        _residual_part_candidate(
+            "road_vehicle", "vehicle_roof", "vehicle_body", roof, key="roof"
+        ),
+        _residual_part_candidate(
+            "road_vehicle", "vehicle_hood", "vehicle_body", hood, key="hood"
+        ),
+        _residual_part_candidate(
+            "road_vehicle",
+            "vehicle_grille",
+            "vehicle_body",
+            grille,
+            key="grille",
+        ),
+        _residual_part_candidate(
+            "road_vehicle",
+            "vehicle_headlight",
+            "vehicle_body",
+            headlight_left,
+            key="headlight-left",
+        ),
+        _residual_part_candidate(
+            "road_vehicle",
+            "vehicle_headlight",
+            "vehicle_body",
+            headlight_right,
+            key="headlight-right",
+        ),
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        Image.fromarray(image),
+        profile="road_vehicle",
+    )
+
+    assert masks is not None
+    assert "vehicle_grille" in masks
+    assert "vehicle_wheel" in masks
+    count, _labels = cv2.connectedComponents(
+        masks["vehicle_wheel"].astype(np.uint8)
+    )
+    assert count == 3
+    assert diagnostics["wheel_pair_structure"]["status"] == "completed"
+    assert diagnostics["wheel_pair_structure"]["appearance_can_create_ids"] is False
