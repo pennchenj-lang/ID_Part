@@ -3,12 +3,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import textwrap
+from collections import Counter, defaultdict
 from pathlib import Path
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.patches import Rectangle
 from PIL import Image
 
 DOMAIN_PREFIXES = (
@@ -99,6 +100,18 @@ def load_case(spec: tuple[str, str, Path]) -> dict[str, object]:
         if not required.is_file():
             raise FileNotFoundError(required)
     groups = json.loads(groups_path.read_text(encoding="utf-8"))
+    with Image.open(group_map) as image:
+        preview = np.asarray(image.convert("RGB"), dtype=np.uint8)
+    with Image.open(group_id_map) as image:
+        group_indices = np.asarray(image, dtype=np.uint16)
+    group_colors: dict[int, tuple[float, float, float]] = {}
+    for group in groups:
+        group_index = int(group["group_index"])
+        pixels = preview[group_indices == group_index]
+        if pixels.size == 0:
+            raise ValueError(f"group {group_index} has no preview pixels in {directory}")
+        color = np.median(pixels, axis=0) / 255.0
+        group_colors[group_index] = tuple(float(channel) for channel in color)
     return {
         "domain": domain,
         "case_id": case_id,
@@ -109,7 +122,24 @@ def load_case(spec: tuple[str, str, Path]) -> dict[str, object]:
         "part_id_map": part_id_map,
         "groups_path": groups_path,
         "groups": groups,
+        "group_colors": group_colors,
     }
+
+
+def legend_entries(case: dict[str, object]) -> list[tuple[str, tuple[float, float, float]]]:
+    groups = list(case["groups"])
+    colors = dict(case["group_colors"])
+    totals = Counter(str(group["semantic_name"]) for group in groups)
+    seen: defaultdict[str, int] = defaultdict(int)
+    entries: list[tuple[str, tuple[float, float, float]]] = []
+    for group in groups:
+        semantic = str(group["semantic_name"])
+        seen[semantic] += 1
+        label = display_part(semantic)
+        if totals[semantic] > 1:
+            label = f"{label} {seen[semantic]}"
+        entries.append((label, colors[int(group["group_index"])]))
+    return entries
 
 
 def build_figure(cases: list[dict[str, object]], output: Path) -> None:
@@ -123,7 +153,7 @@ def build_figure(cases: list[dict[str, object]], output: Path) -> None:
             "axes.linewidth": 0.7,
         }
     )
-    fig = plt.figure(figsize=(7.12, 4.55), facecolor="white")
+    fig = plt.figure(figsize=(7.12, 4.82), facecolor="white")
     outer = fig.add_gridspec(
         2,
         3,
@@ -132,7 +162,7 @@ def build_figure(cases: list[dict[str, object]], output: Path) -> None:
         top=0.965,
         bottom=0.035,
         wspace=0.20,
-        hspace=0.31,
+        hspace=0.28,
     )
 
     for index, case in enumerate(cases):
@@ -140,7 +170,7 @@ def build_figure(cases: list[dict[str, object]], output: Path) -> None:
         sub = outer[row, column].subgridspec(
             3,
             2,
-            height_ratios=(0.10, 0.72, 0.18),
+            height_ratios=(0.09, 0.66, 0.25),
             wspace=0.055,
             hspace=0.045,
         )
@@ -189,32 +219,51 @@ def build_figure(cases: list[dict[str, object]], output: Path) -> None:
             va="top",
         )
 
-        group_names = [
-            display_part(str(group["semantic_name"])) for group in case["groups"]
-        ]
-        group_text = " · ".join(group_names)
-        wrapped = "\n".join(textwrap.wrap(group_text, width=43, break_long_words=False))
+        entries = legend_entries(case)
         text_ax.set_axis_off()
         text_ax.text(
             0.0,
-            0.95,
-            f"{len(group_names)} groups",
+            0.98,
+            f"{len(entries)} groups  |  color key",
             transform=text_ax.transAxes,
             fontsize=6.2,
             fontweight="bold",
             color="#25313B",
             va="top",
         )
-        text_ax.text(
-            0.0,
-            0.64,
-            wrapped,
-            transform=text_ax.transAxes,
-            fontsize=5.5,
-            color="#58636E",
-            va="top",
-            linespacing=1.16,
-        )
+        columns = 3 if len(entries) > 6 else 2
+        rows = int(np.ceil(len(entries) / columns))
+        x_step = 1.0 / columns
+        y_top = 0.67
+        y_step = 0.57 if rows <= 2 else 0.205
+        swatch_width = 0.034
+        swatch_height = 0.105 if rows <= 2 else 0.085
+        for entry_index, (label, color) in enumerate(entries):
+            legend_row = entry_index // columns
+            legend_column = entry_index % columns
+            x = legend_column * x_step
+            y = y_top - legend_row * y_step
+            text_ax.add_patch(
+                Rectangle(
+                    (x, y - swatch_height * 0.55),
+                    swatch_width,
+                    swatch_height,
+                    transform=text_ax.transAxes,
+                    facecolor=color,
+                    edgecolor="#343B42",
+                    linewidth=0.35,
+                    clip_on=False,
+                )
+            )
+            text_ax.text(
+                x + swatch_width + 0.012,
+                y,
+                label,
+                transform=text_ax.transAxes,
+                fontsize=4.8 if rows > 2 else 5.3,
+                color="#4A555F",
+                va="center",
+            )
 
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output.with_suffix(".png"), dpi=600, facecolor="white")
