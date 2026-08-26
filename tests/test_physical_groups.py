@@ -2494,7 +2494,71 @@ def test_verified_label_seed_recovers_wrapped_band_from_boundary_support() -> No
         "visual_boundary_extension"
     ]
     assert extension["wrapped_band_completed"] is True
+    assert (
+        extension["material_completion"]["algorithm"]
+        == "verified-label-seeded-material-grabcut-v1"
+    )
     assert extension["appearance_can_create_ids"] is False
+
+
+def test_vehicle_bumper_keeps_verified_candidate_boundary() -> None:
+    shape = (160, 200)
+    root = np.zeros(shape, dtype=bool)
+    root[8:152, 10:190] = True
+    roof = np.zeros(shape, dtype=bool)
+    roof[12:34, 42:158] = True
+    windshield = np.zeros(shape, dtype=bool)
+    windshield[34:76, 45:155] = True
+    hood = np.zeros(shape, dtype=bool)
+    hood[76:108, 32:168] = True
+    bumper = np.zeros(shape, dtype=bool)
+    bumper[112:140, 28:172] = True
+    instance_map = np.zeros(shape, dtype=np.uint16)
+    instance_map[root] = 1
+    image = np.full((*shape, 3), 220, dtype=np.uint8)
+    image[root] = (150, 150, 150)
+    image[roof] = (210, 210, 210)
+    image[windshield] = (55, 85, 105)
+    image[hood] = (185, 185, 185)
+    image[bumper] = (45, 45, 45)
+    candidates = (
+        _residual_root_candidate("road_vehicle", "vehicle", root),
+        _residual_part_candidate(
+            "road_vehicle", "vehicle_roof", "vehicle_body", roof, key="roof"
+        ),
+        _residual_part_candidate(
+            "road_vehicle",
+            "vehicle_windshield",
+            "vehicle_body",
+            windshield,
+            key="windshield",
+        ),
+        _residual_part_candidate(
+            "road_vehicle", "vehicle_hood", "vehicle_body", hood, key="hood"
+        ),
+        _residual_part_candidate(
+            "road_vehicle",
+            "vehicle_bumper",
+            "vehicle_body",
+            bumper,
+            key="bumper",
+        ),
+    )
+
+    masks, diagnostics = _semantic_seeded_profile_masks(
+        instance_map,
+        candidates,
+        Image.fromarray(image),
+        profile="road_vehicle",
+    )
+
+    assert masks is not None
+    assert np.all(~masks["vehicle_bumper"] | bumper)
+    assert np.count_nonzero(masks["vehicle_bumper"]) >= round(
+        np.count_nonzero(bumper) * 0.75
+    )
+    assert "vehicle_bumper" in diagnostics["boundary_locked_semantics"]
+    assert np.array_equal(np.logical_or.reduce(list(masks.values())), root)
 
 
 def test_duplicate_label_proposal_does_not_expand_local_patch_to_full_band() -> None:

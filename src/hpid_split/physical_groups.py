@@ -2075,6 +2075,98 @@ def _complete_wrapped_label_from_structure_and_material(
     slot[max(0, int(ys.min()) - pad) : min(root.shape[0], int(ys.max()) + pad + 1)] = True
     slot &= root
 
+    # A broad visual proposal can identify the correct label band while still
+    # covering one side of the host object.  Treat it as probable foreground,
+    # not final ownership.  The semantic label proposal is the only definite
+    # foreground; pixels outside the verified structural slot are definite
+    # background.  This prevents a one-sided panel from being copied directly
+    # into the public label ID.
+    grabcut_mask = np.full(root.shape, cv2.GC_BGD, dtype=np.uint8)
+    grabcut_mask[slot] = cv2.GC_PR_BGD
+    grabcut_mask[support & slot] = cv2.GC_PR_FGD
+    grabcut_mask[seed & slot] = cv2.GC_FGD
+    seeded_cut: np.ndarray | None = None
+    seeded_cut_diagnostics: dict[str, object]
+    try:
+        background_model = np.zeros((1, 65), dtype=np.float64)
+        foreground_model = np.zeros((1, 65), dtype=np.float64)
+        cv2.grabCut(
+            cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2BGR),
+            grabcut_mask,
+            None,
+            background_model,
+            foreground_model,
+            6,
+            cv2.GC_INIT_WITH_MASK,
+        )
+        seeded_cut = (
+            (grabcut_mask == cv2.GC_FGD)
+            | (grabcut_mask == cv2.GC_PR_FGD)
+        ) & slot
+        root_x = np.nonzero(root)[1]
+        root_width = max(1, int(root_x.max() - root_x.min() + 1))
+        horizontal_radius = max(1, round(root_width * 0.055))
+        vertical_radius = max(0, round(root_height * 0.008))
+        seeded_cut = cv2.dilate(
+            seeded_cut.astype(np.uint8),
+            np.ones(
+                (2 * vertical_radius + 1, 2 * horizontal_radius + 1),
+                dtype=np.uint8,
+            ),
+        ).astype(bool) & slot
+        seeded_cut = cv2.morphologyEx(
+            seeded_cut.astype(np.uint8),
+            cv2.MORPH_CLOSE,
+            np.ones((3, 3), dtype=np.uint8),
+        ).astype(bool) & slot
+        seeded_cut |= seed & slot
+
+        seeded_area = int(np.count_nonzero(seeded_cut))
+        support_area = max(1, int(np.count_nonzero(support)))
+        root_area = max(1, int(np.count_nonzero(root)))
+        support_overlap = int(np.count_nonzero(seeded_cut & support))
+        component_count, _, component_stats, _ = cv2.connectedComponentsWithStats(
+            seeded_cut.astype(np.uint8), connectivity=8
+        )
+        largest_component = (
+            int(component_stats[1:, cv2.CC_STAT_AREA].max())
+            if component_count > 1
+            else 0
+        )
+        stable_seeded_cut = bool(
+            seeded_area >= max(16, int(np.count_nonzero(seed)))
+            and 0.45 <= seeded_area / support_area <= 1.75
+            and seeded_area / root_area <= 0.55
+            and support_overlap / max(1, seeded_area) >= 0.55
+            and largest_component / max(1, seeded_area) >= 0.85
+        )
+        seeded_cut_diagnostics = {
+            "status": "completed" if stable_seeded_cut else "rejected_unstable_cut",
+            "algorithm": "verified-label-seeded-material-grabcut-v1",
+            "iterations": 6,
+            "horizontal_radius_px": horizontal_radius,
+            "vertical_radius_px": vertical_radius,
+            "support_area_px": support_area,
+            "completed_area_px": seeded_area,
+            "area_ratio": seeded_area / support_area,
+            "root_area_fraction": seeded_area / root_area,
+            "support_precision": support_overlap / max(1, seeded_area),
+            "largest_component_fraction": largest_component / max(1, seeded_area),
+            "appearance_role": "material_cut_inside_verified_label_slot",
+            "appearance_can_create_ids": False,
+            "ground_truth_used": False,
+        }
+        if stable_seeded_cut:
+            return seeded_cut & root, seeded_cut_diagnostics
+    except cv2.error as error:
+        seeded_cut_diagnostics = {
+            "status": "failed_opencv",
+            "algorithm": "verified-label-seeded-material-grabcut-v1",
+            "error": str(error),
+            "appearance_can_create_ids": False,
+            "ground_truth_used": False,
+        }
+
     lab = cv2.cvtColor(rgb[:, :, :3], cv2.COLOR_RGB2LAB).astype(np.float32)
     weighted_lab = lab * np.asarray((0.30, 1.0, 1.0), dtype=np.float32)
     support_distance = cv2.distanceTransform(
@@ -2214,6 +2306,7 @@ def _complete_wrapped_label_from_structure_and_material(
             "bottom_window": [-0.40, 0.10],
             "median_kernel_columns": 9,
         },
+        "seeded_material_cut": seeded_cut_diagnostics,
         "appearance_role": "column_boundary_alignment_inside_verified_wrapped_label_slot",
         "appearance_can_create_ids": False,
         "ground_truth_used": False,
@@ -2297,10 +2390,12 @@ def _extend_label_from_visual_evidence(
             and shading_penalty < 0.55
         )
         accepted = visual_extension or wrapped_panel_support
-        if accepted:
+        if visual_extension:
             additions.append(mask)
-            if wrapped_panel_support:
-                broad_support_masks.append(mask)
+        if wrapped_panel_support:
+            # Broad support defines the structural slot for material recovery;
+            # it is not itself public label ownership.
+            broad_support_masks.append(mask)
         rows.append(
             {
                 "candidate_key": candidate.metadata.get("candidate_key"),
@@ -2329,8 +2424,14 @@ def _extend_label_from_visual_evidence(
                 rgb,
             )
         )
-        extended |= completed
         band_completed = material_completion.get("status") == "completed"
+        if band_completed:
+            # The material cut supersedes visual extensions inside a wrapped
+            # label slot.  Re-unioning those proposals would restore the very
+            # one-sided over-expansion that the cut was introduced to remove.
+            extended = seed | completed
+        else:
+            extended |= completed
     return extended & root, {
         "status": "completed" if additions else "no_supported_extension",
         "algorithm": "verified-label-topology-and-material-recovery-v3",
@@ -3053,8 +3154,15 @@ def _residual_host_profile_masks(
     lock_candidates = {
         semantic for semantic in coarse_output if semantic.endswith("_label")
     }
-    if profile == "road_vehicle" and "vehicle_wheel" in coarse_output:
-        lock_candidates.add("vehicle_wheel")
+    if profile == "road_vehicle":
+        # These semantics already have direct or structurally recovered masks.
+        # Generic appearance watershed may align their edges, but it must not
+        # expand them into the surrounding chassis or wheel wells.
+        lock_candidates.update(
+            semantic
+            for semantic in ("vehicle_bumper", "vehicle_wheel")
+            if semantic in coarse_output
+        )
     locked_semantics: list[str] = []
     for locked_semantic in sorted(lock_candidates):
         locked_mask = coarse_output[locked_semantic]

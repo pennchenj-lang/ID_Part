@@ -87,6 +87,19 @@ horizontal body strips. These changes are evaluated by regression on frozen
 candidate packages. They do not rerun proposal inference, alter fine Part-ID
 maps, or replace the frozen `0.3.1` quantitative estimates.
 
+Version `0.3.7` stops a broad structural support proposal from directly owning
+wrapped-label pixels. The verified label seed is now the definite foreground
+for a bounded material cut, while the independently admitted support proposal
+only defines the probable-foreground slot. For road vehicles, directly
+verified bumper and structurally paired wheel masks are locked before generic
+boundary refinement so appearance cannot expand them into the chassis or wheel
+wells. On all 226 frozen candidate packages, editable-group F1@.25 remains
+`0.3773`; mean matched IoU changes from `0.46415` to `0.46439` and mean boundary
+F1 from `0.49015` to `0.49045`. The repaired soap-label case improves from
+IoU `0.6827` / boundary F1 `0.7813` to `0.8363` / `0.9176`. No proposal model
+was rerun, no ground-truth mask was available to grouping, and the frozen
+`0.3.1` primary estimates remain unchanged.
+
 ## What is implemented
 
 - One-image CLI and local upload UI.
