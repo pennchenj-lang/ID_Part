@@ -3,7 +3,7 @@
   "format_version": "1.0.0",
   "global_parameter_count": 460,
   "inventory_rule_count": 1515,
-  "prompt_bank": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\configs\\general_asset_prompts.json",
+  "prompt_bank": "configs/general_asset_prompts.json",
   "prompt_bank_sha256": "0c90c30779b670bf17a681df74e5765e751ddb425f9d11a04b7fa2d9da2cddcf",
   "development_manifest_sha256": "3d16426e4389d59c9fc2f820e8efd3f12c06aa6b881c28e5914479cb1f42dbcb",
   "test_manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
