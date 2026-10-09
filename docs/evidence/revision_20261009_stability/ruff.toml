@@ -1,0 +1,18 @@
+# These are checksum-bound executed scientific records. Keep their bytes intact.
+# Maintained replay/recompute tools in the neighboring review-options directory
+# receive the normal repository checks. This local configuration exempts only
+# the specific non-semantic archive findings below; undefined-name, syntax and
+# other runtime-relevant checks (including F821) remain enabled.
+#
+# I001: historical import formatting; F401: unused historical imports;
+# C408: equivalent dict()/tuple() spelling. BLE001 is intentional in the frozen
+# runner: every method failure is retained as an empty prediction with a logged
+# traceback, never excluded. B023 refers to initial_ok, which is called only
+# synchronously within the same threshold iteration and is never saved/returned.
+[lint.per-file-ignores]
+"audit/check_native_and_crosschecks.py" = ["I001", "C408"]
+"audit/independent_f1_summary.py" = ["I001", "F401", "C408"]
+"audit/independent_statistics.py" = ["C408"]
+"run_stability.py" = ["I001", "F401", "BLE001", "C408", "B023"]
+"summarize_check.py" = ["I001"]
+"summarize_native_check.py" = ["I001"]

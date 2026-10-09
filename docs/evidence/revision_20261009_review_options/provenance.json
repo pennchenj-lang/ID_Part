@@ -4,8 +4,8 @@
   "previous_stability_package_files_unchanged": 34,
   "source_audit_files_unchanged": 16,
   "original_analysis_script_sha256": "462b7a442c05875c94eb603b2aafc7004321e60ddbaee6a0ec52f320b0eeea7c",
-  "portable_replay_adapter_sha256": "f9bb80ae8a7d725de2819a9f23a55085d428f22f1016d1cf42296fc9ce1a6e93",
-  "adapter_changes": "Only external root/output/protocol paths made configurable; model, normalization, scoring and statistics unchanged.",
+  "portable_replay_adapter_sha256": "d0c04c3ee0248f447c4e3ed8a5f9ea25cf80a2714b01c660c9977523cf3d4804",
+  "adapter_changes": "Only external root/output/protocol paths made configurable and imports formatted for repository CI; model, normalization, scoring and statistics unchanged. Full replay repeated after formatting.",
   "source_audit_hashes": {
     "auxiliary_subsets.csv": "08d94b1fa3763995edeadc7fda5652716a0ccd597d69e68d86a8d2696d7663ef",
     "crosscheck_independent.py": "ad1717e20fa7dde9018c4f8dc000425199809910d2a63ec783c641bd55c77cb6",

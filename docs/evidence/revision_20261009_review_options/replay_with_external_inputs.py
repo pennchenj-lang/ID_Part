@@ -4,6 +4,7 @@ Run full replay with the frozen runtime; --recompute-only regenerates the
 statistics from the saved per-case source table with NumPy alone.
 """
 from __future__ import annotations
+
 import argparse
 import csv
 import hashlib
@@ -62,11 +63,14 @@ def replay():
     sys.path.insert(0, str(PROJECT / "hpid_split"))
     import hpid_split
     hpid_split.__path__.append(str(PROJECT / "hpid_split/src/hpid_split"))
-    from scripts.run_semantic_completion_frontend_benchmark import (
-        _predictions, _normalize, _normalized_name, _mask_iou,
-    )
-    from PIL import Image
     import cv2
+    from PIL import Image
+    from scripts.run_semantic_completion_frontend_benchmark import (
+        _mask_iou,
+        _normalize,
+        _normalized_name,
+        _predictions,
+    )
     cv2.setNumThreads(1)
     manifest = read_json(MANIFEST)
     targets = sorted(manifest["selected_cases"], key=lambda r:r["case_id"])
