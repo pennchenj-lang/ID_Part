@@ -1,0 +1,38 @@
+{
+  "signature": "ca04dfbb76d4c4713186a1f842ec2a691e89b95bcc4a093e90d299eb53d3adde",
+  "files": {
+    "evidence_run/protocol.json": "a45fbcff92f7afb5eeae9e2b58bdc978cb6210c6bb79a76d8eaecb1d56026693",
+    "evidence_run/run_stability.py": "de4e176b62fa67761c9caae36f175e246ab0872d1ffce9902e2ac9541d899484",
+    "runtime/code_snapshots/hpid_split_be54300_holdout/src/hpid_split/fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "runtime/code_snapshots/hpid_split_be54300_holdout/src/hpid_split/instances.py": "fb7c023b8cdf039d523d2841c5b9a3c5e45e3824b5da9ccdd29ca17140ff8c83",
+    "runtime/code_snapshots/hpid_split_be54300_holdout/src/hpid_split/metrics.py": "24451bc60484a6a90582859e91a2efc82b10290f8cfb3284749a7cf4a09effe4",
+    "runtime/code_snapshots/hpid_split_be54300_holdout/src/hpid_split/paper_eval.py": "be23216eb8844bb47af51553b054c51ddb5b1e4a26598dc29ab8c0491d64b958",
+    "runtime/code_snapshots/hpid_split_be54300_holdout/src/hpid_split/paco_eval.py": "ab28e9724c264382346e7bec4628b8355ad6f0a73bf0d9563f8585947b4fff56",
+    "project/src/hpid_split/postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
+    "project/scripts/evaluate_same_candidate_postprocessing.py": "7f2b86ec580093478d97b18a27eafb6167e508d00dd6ea08c06ec2eb30bf519b",
+    "project/scripts/analyze_automatic_root_robustness.py": "df0f341fe32ab24649528c64539196e438f19044e82cddd957503d0ab7837d47",
+    "runtime/datasets/paco/broad_objects_test_holdout_v3_4percat/manifest.json": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+    "runtime/experiments/paper_v031/test226_hpid/benchmark_summary.json": "c7a9e99241b80359f40f6f309dd1aae93252e879c794c810c2a11da7e541e464",
+    "runtime/experiments/paper_v031_identity_frontend_20260828/01_same_candidate/same_candidate_postprocessing_cases.csv": "6104c004ed9af825250a87bb667f0f2e5ac765fec9c38b0c244585f8aa32f04e"
+  },
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "numpy": "2.5.1",
+  "cv2": "5.0.0",
+  "methods": [
+    "hpid_split_a3",
+    "dbscan_fusion",
+    "greedy_nms"
+  ],
+  "conditions": [
+    "automatic_root",
+    "eroded_root",
+    "dilated_root",
+    "translated_root",
+    "score_jitter_20261009",
+    "score_jitter_20261010",
+    "score_jitter_20261011",
+    "candidate_dropout_20261009",
+    "candidate_dropout_20261010",
+    "candidate_dropout_20261011"
+  ]
+}

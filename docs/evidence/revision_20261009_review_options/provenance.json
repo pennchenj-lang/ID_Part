@@ -1,0 +1,35 @@
+{
+  "package": "Review-option post-hoc audit, 2026-10-09",
+  "unchanged_replay_input_hash_checks": 645,
+  "previous_stability_package_files_unchanged": 34,
+  "source_audit_files_unchanged": 16,
+  "original_analysis_script_sha256": "462b7a442c05875c94eb603b2aafc7004321e60ddbaee6a0ec52f320b0eeea7c",
+  "portable_replay_adapter_sha256": "f9bb80ae8a7d725de2819a9f23a55085d428f22f1016d1cf42296fc9ce1a6e93",
+  "adapter_changes": "Only external root/output/protocol paths made configurable; model, normalization, scoring and statistics unchanged.",
+  "source_audit_hashes": {
+    "auxiliary_subsets.csv": "08d94b1fa3763995edeadc7fda5652716a0ccd597d69e68d86a8d2696d7663ef",
+    "crosscheck_independent.py": "ad1717e20fa7dde9018c4f8dc000425199809910d2a63ec783c641bd55c77cb6",
+    "discordant_cases.csv": "87d2e07a17638bea51c8617b3fb7d7633ac4dd6f2fe5857c0f9b7ae1f328a33e",
+    "independent_crosscheck.json": "e35d25afd0e606abf44d0312b1e53a45d30b5a8dc14f656ef676cd3cf236ebbf",
+    "manuscript_tables.json": "a8d610726d304a1574970d438c80ef5b2ac0e29a1a346073763690130cae2cf8",
+    "method_summary.csv": "49cc1365f8cab01b41ddf8a3357751c401b3bf760868f9925cff5abb11bdce73",
+    "paired_contrasts.csv": "c15e6021594986270b82eb1de6c2e50faaa5443f293c8cc1b5878121513d7f79",
+    "README.txt": "e6a847e4620fd83ae2458a949def3b8ed81f8ff6acc804608cd1566e1f168896",
+    "replay_provenance.json": "45bf775a5f36c07d3651d32f0abbf8bed92460b9e8c80456dde6f8c7fcb7971f",
+    "reproduction_assertions.csv": "897cce7bf06e9b28e68ba05022e5db332d1550830d5ab8a87c462bb00566182d",
+    "review_burden_report.json": "8b49f5539ecf21af49054a36b3e91e17b21cdcf346c61e3a807b2f457ea48b3c",
+    "review_cases.csv": "187d90d8dca9f31246ef9b3ab3c28db4dd13a2c72754ad4cdd2322d040319b6a",
+    "review_instances.csv": "6f13eb1a4ac3b5208a7c5898477bbc4c9de1d4d3e439bc86cd90ec377597cb07",
+    "run_review_burden.py": "462b7a442c05875c94eb603b2aafc7004321e60ddbaee6a0ec52f320b0eeea7c",
+    "source_hashes.csv": "bef6d5c7f69deb412ef1dbdd6ff29e8bf7de7276aaddbe8c2960e289c7784d99",
+    "source_units.csv": "9b9cc8f1f0a5408dbd69f1e75d68878a762f707c22264b191391444729298ef2"
+  },
+  "original_csv_sha256": {
+    "completion_frontend_cases.csv": "552d43111179b0f3042e8a50c508515184aa55eccc26815ef2c838f9a3b8dff1",
+    "routing_correctness_cases.csv": "e72947b537c94b2bababa74a08c01182d1ecdc9522d8a80724b1d2238b41b672"
+  },
+  "original_target_manifest_sha256": "451f33618a7a8863347ae60429b8c083014c63a07a911423f3d7db5b9311ea35",
+  "target_manifest_redaction": "Only input_manifest machine-specific root replaced with relative source role; target entries, counts, masks and hashes unchanged. JSON serialized as UTF-8.",
+  "scope": "Statistics fully recomputable from included per-request records. Inference replay requires external frozen masks/images/code; these inputs are fingerprinted but not redistributed.",
+  "independent_findings_public_edit": "Removed duplicate draft manuscript wording and unresolved location placeholder; retained all scientific findings, limitations, guardrails and result values. Artifact names reflect the portable package."
+}

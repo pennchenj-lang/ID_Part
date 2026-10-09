@@ -1,0 +1,15 @@
+{
+  "status": "post_hoc_audit_plan_fixed_before_new_computation",
+  "data": "All 37 previously frozen controlled requests, all five originally compared methods",
+  "purpose": "Audit review-option reduction against correctness and availability guardrails without selecting subgroups for favorable outcomes.",
+  "known_prior_evidence": "The published full-cohort means and older unadjusted paired intervals were already inspected. This is an explicit post-hoc uncertainty and mechanism audit, not a prospectively registered confirmatory experiment.",
+  "primary_audit_contrast": "HPID Group IDs minus DBSCAN review_option_count over all 37 requests; also show all other original methods.",
+  "option_rule": "If any exported identity matches the normalized semantic request, expose those semantic matches; otherwise expose all exported instances. Never interpret this count as measured human time.",
+  "metrics": ["review_option_count", "query_unique", "query_ambiguous", "query_unresolved", "unique_and_correct at IoU .25/.50", "wrong_unique at IoU .25/.50", "any semantically correct target among matches at IoU .25/.50", "any geometrically correct target in exposed options at IoU .25/.50", "any geometrically correct target in all exported instances at IoU .25/.50"],
+  "guardrail_interpretation": "Correctness and candidate availability are shown with paired counts and intervals. Matching observed totals do not establish statistical equivalence or noninferiority. Geometric availability in a fallback set does not imply semantic resolution.",
+  "unit": "Verify the 37 requests belong to 37 unique source images; if so paired case bootstrap. Otherwise source-image cluster bootstrap.",
+  "uncertainty": "10000 paired bootstrap resamples, seed 20261009; descriptive 95% CIs for all metrics. Review-option comparisons against four original baselines additionally use 98.75% Bonferroni individual intervals for four-way familywise coverage. All metrics and effects remain visible.",
+  "secondary_subsets": ["Requests where both HPID and the comparator expose a semantically correct target at IoU .25 and .50", "Requests where both methods expose a geometrically correct target in their actual review set at IoU .25 and .50", "Requests where both methods have the same unique/ambiguous/unresolved state"],
+  "subset_warning": "These GT-conditioned post-hoc subsets are auxiliary mechanism diagnostics. They cannot replace the full cohort, establish causal cost reduction, or be called an independent confirmation.",
+  "freeze": "No algorithm, semantic normalization, query target, request rule, candidate mask, parameter, or case exclusion is changed. No new timing experiment is run."
+}

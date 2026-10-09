@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "requests": 37,
+  "method_request_records": 185,
+  "distinct_source_images": 37,
+  "numeric_reference_checks": 1202,
+  "tolerance": 1e-12,
+  "iterations": 10000,
+  "seed": 20261009,
+  "numpy": "2.5.1",
+  "exact_test_timing": "Sparse binary guardrail check added after the fixed audit; unadjusted and descriptive."
+}

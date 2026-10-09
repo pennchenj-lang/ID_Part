@@ -1,0 +1,8 @@
+{
+  "cases": 226,
+  "candidate_count": 1951,
+  "gt_count": 990,
+  "prediction_runs": 6780,
+  "target_rows": 59400,
+  "signature": "ca04dfbb76d4c4713186a1f842ec2a691e89b95bcc4a093e90d299eb53d3adde"
+}

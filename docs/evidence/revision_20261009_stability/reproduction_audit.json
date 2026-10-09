@@ -1,0 +1,6110 @@
+{
+  "case_count": 226,
+  "all_metrics_match": true,
+  "all_hpid_maps_exact": true,
+  "failure_count": 0,
+  "checks": [
+    {
+      "case_id": "basket__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "basket__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012123199994675815"
+    },
+    {
+      "case_id": "basket__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008681299979798496"
+    },
+    {
+      "case_id": "basket__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "basket__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02044310001656413"
+    },
+    {
+      "case_id": "basket__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004856600018683821"
+    },
+    {
+      "case_id": "basket__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "basket__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.013417200010735542"
+    },
+    {
+      "case_id": "basket__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004340599989518523"
+    },
+    {
+      "case_id": "basket__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "basket__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008027900010347366"
+    },
+    {
+      "case_id": "basket__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0021037000115029514"
+    },
+    {
+      "case_id": "belt__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "belt__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008599000284448266"
+    },
+    {
+      "case_id": "belt__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006228999700397253"
+    },
+    {
+      "case_id": "belt__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "belt__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008614999824203551"
+    },
+    {
+      "case_id": "belt__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006690000300295651"
+    },
+    {
+      "case_id": "belt__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "belt__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0022197000216692686"
+    },
+    {
+      "case_id": "belt__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0009108000085689127"
+    },
+    {
+      "case_id": "belt__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "belt__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012533400033134967"
+    },
+    {
+      "case_id": "belt__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0020879999501630664"
+    },
+    {
+      "case_id": "bench__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bench__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.03227099997457117"
+    },
+    {
+      "case_id": "bench__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009803700027987361"
+    },
+    {
+      "case_id": "bench__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bench__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.03379129996756092"
+    },
+    {
+      "case_id": "bench__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009454599989112467"
+    },
+    {
+      "case_id": "bench__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bench__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.057926799985580146"
+    },
+    {
+      "case_id": "bench__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.015630100038833916"
+    },
+    {
+      "case_id": "bench__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bench__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.1126263000187464"
+    },
+    {
+      "case_id": "bench__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.016532800043933094"
+    },
+    {
+      "case_id": "bicycle__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bicycle__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.06220990000292659"
+    },
+    {
+      "case_id": "bicycle__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.013902499980758876"
+    },
+    {
+      "case_id": "bicycle__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bicycle__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0765184000483714"
+    },
+    {
+      "case_id": "bicycle__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.018845300015527755"
+    },
+    {
+      "case_id": "bicycle__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bicycle__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.04637589998310432"
+    },
+    {
+      "case_id": "bicycle__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010825300007127225"
+    },
+    {
+      "case_id": "bicycle__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bicycle__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.08051469997735694"
+    },
+    {
+      "case_id": "bicycle__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.019562500005122274"
+    },
+    {
+      "case_id": "blender__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "blender__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.028291499998886138"
+    },
+    {
+      "case_id": "blender__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.007548899971880019"
+    },
+    {
+      "case_id": "blender__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "blender__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005330600019078702"
+    },
+    {
+      "case_id": "blender__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0016563999815844"
+    },
+    {
+      "case_id": "blender__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "blender__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0063770999549888074"
+    },
+    {
+      "case_id": "blender__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0009459000430069864"
+    },
+    {
+      "case_id": "blender__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "blender__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.06553189997794107"
+    },
+    {
+      "case_id": "blender__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.016082399990409613"
+    },
+    {
+      "case_id": "book__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "book__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005277599964756519"
+    },
+    {
+      "case_id": "book__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004023600020445883"
+    },
+    {
+      "case_id": "book__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "book__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00300030002836138"
+    },
+    {
+      "case_id": "book__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003298899973742664"
+    },
+    {
+      "case_id": "book__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "book__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.015725000004749745"
+    },
+    {
+      "case_id": "book__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005621400021482259"
+    },
+    {
+      "case_id": "book__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "book__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006601799977943301"
+    },
+    {
+      "case_id": "book__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0038395000156015158"
+    },
+    {
+      "case_id": "bottle__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bottle__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.01658690004842356"
+    },
+    {
+      "case_id": "bottle__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006145500054117292"
+    },
+    {
+      "case_id": "bottle__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bottle__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008457899966742843"
+    },
+    {
+      "case_id": "bottle__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0027599000022746623"
+    },
+    {
+      "case_id": "bottle__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bottle__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.01266490004491061"
+    },
+    {
+      "case_id": "bottle__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0031340999994426966"
+    },
+    {
+      "case_id": "bottle__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bottle__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008354199992027134"
+    },
+    {
+      "case_id": "bottle__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0021855999948456883"
+    },
+    {
+      "case_id": "bowl__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bowl__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00036509998608380556"
+    },
+    {
+      "case_id": "bowl__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00041989999590441585"
+    },
+    {
+      "case_id": "bowl__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bowl__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007043000077828765"
+    },
+    {
+      "case_id": "bowl__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008072999771684408"
+    },
+    {
+      "case_id": "bowl__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bowl__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010769999935291708"
+    },
+    {
+      "case_id": "bowl__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001064100011717528"
+    },
+    {
+      "case_id": "bowl__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bowl__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00330839998787269"
+    },
+    {
+      "case_id": "bowl__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001711699995212257"
+    },
+    {
+      "case_id": "box__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "box__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.09056540002347901"
+    },
+    {
+      "case_id": "box__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.020249799999874085"
+    },
+    {
+      "case_id": "box__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "box__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.05439259996637702"
+    },
+    {
+      "case_id": "box__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.019355299999006093"
+    },
+    {
+      "case_id": "box__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "box__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0025943000218831003"
+    },
+    {
+      "case_id": "box__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0026140999980270863"
+    },
+    {
+      "case_id": "box__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "box__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000597400008700788"
+    },
+    {
+      "case_id": "box__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007155999774113297"
+    },
+    {
+      "case_id": "broom__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "broom__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0017660000012256205"
+    },
+    {
+      "case_id": "broom__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007792999967932701"
+    },
+    {
+      "case_id": "broom__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "broom__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001191799994558096"
+    },
+    {
+      "case_id": "broom__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0011415000190027058"
+    },
+    {
+      "case_id": "broom__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "broom__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006370200018864125"
+    },
+    {
+      "case_id": "broom__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0017833999590948224"
+    },
+    {
+      "case_id": "bucket__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bucket__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006066400033887476"
+    },
+    {
+      "case_id": "bucket__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002098300028592348"
+    },
+    {
+      "case_id": "bucket__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bucket__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00018099998123943806"
+    },
+    {
+      "case_id": "bucket__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00023519998649135232"
+    },
+    {
+      "case_id": "bucket__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bucket__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005701599991880357"
+    },
+    {
+      "case_id": "bucket__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0016736999968998134"
+    },
+    {
+      "case_id": "bucket__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "bucket__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0052563000353984535"
+    },
+    {
+      "case_id": "bucket__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004372000053990632"
+    },
+    {
+      "case_id": "calculator__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "calculator__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0054095000377856195"
+    },
+    {
+      "case_id": "calculator__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0017439000075682998"
+    },
+    {
+      "case_id": "calculator__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "calculator__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.015929500048514456"
+    },
+    {
+      "case_id": "calculator__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002564600028563291"
+    },
+    {
+      "case_id": "calculator__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "calculator__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005378800036851317"
+    },
+    {
+      "case_id": "calculator__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001102799957152456"
+    },
+    {
+      "case_id": "can__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "can__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00756060000276193"
+    },
+    {
+      "case_id": "can__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001755799981765449"
+    },
+    {
+      "case_id": "can__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "can__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006732799985911697"
+    },
+    {
+      "case_id": "can__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0016020999755710363"
+    },
+    {
+      "case_id": "can__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "can__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002778099966235459"
+    },
+    {
+      "case_id": "can__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010724000167101622"
+    },
+    {
+      "case_id": "can__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "can__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.048958999977912754"
+    },
+    {
+      "case_id": "can__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.007594799972139299"
+    },
+    {
+      "case_id": "car_automobile__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "car_automobile__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.08389910002006218"
+    },
+    {
+      "case_id": "car_automobile__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.007488200033549219"
+    },
+    {
+      "case_id": "car_automobile__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "car_automobile__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.034383499994874"
+    },
+    {
+      "case_id": "car_automobile__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009610000008251518"
+    },
+    {
+      "case_id": "car_automobile__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "car_automobile__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.4039998999796808"
+    },
+    {
+      "case_id": "car_automobile__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.03300519997719675"
+    },
+    {
+      "case_id": "car_automobile__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "car_automobile__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.1408246000064537"
+    },
+    {
+      "case_id": "car_automobile__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.022559899953193963"
+    },
+    {
+      "case_id": "carton__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "carton__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006607600022107363"
+    },
+    {
+      "case_id": "carton__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001499100006185472"
+    },
+    {
+      "case_id": "carton__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "carton__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0004141000099480152"
+    },
+    {
+      "case_id": "carton__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005044999998062849"
+    },
+    {
+      "case_id": "carton__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "carton__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0113489999785088"
+    },
+    {
+      "case_id": "carton__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0034209999721497297"
+    },
+    {
+      "case_id": "carton__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "carton__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.018690099997911602"
+    },
+    {
+      "case_id": "carton__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0034206999698653817"
+    },
+    {
+      "case_id": "cellular_telephone__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cellular_telephone__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.03977219999069348"
+    },
+    {
+      "case_id": "cellular_telephone__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009037100011482835"
+    },
+    {
+      "case_id": "cellular_telephone__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cellular_telephone__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.07046349998563528"
+    },
+    {
+      "case_id": "cellular_telephone__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010400399973150343"
+    },
+    {
+      "case_id": "cellular_telephone__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cellular_telephone__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.039624800032470375"
+    },
+    {
+      "case_id": "cellular_telephone__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004869699943810701"
+    },
+    {
+      "case_id": "cellular_telephone__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cellular_telephone__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.017684100021142513"
+    },
+    {
+      "case_id": "cellular_telephone__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00399429997196421"
+    },
+    {
+      "case_id": "chair__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "chair__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.017765299999155104"
+    },
+    {
+      "case_id": "chair__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003571600012946874"
+    },
+    {
+      "case_id": "chair__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "chair__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003360799979418516"
+    },
+    {
+      "case_id": "chair__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0014326000236906111"
+    },
+    {
+      "case_id": "chair__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "chair__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.028956800000742078"
+    },
+    {
+      "case_id": "chair__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004184300021734089"
+    },
+    {
+      "case_id": "chair__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "chair__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009814299992285669"
+    },
+    {
+      "case_id": "chair__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0023332000127993524"
+    },
+    {
+      "case_id": "clock__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "clock__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00820809998549521"
+    },
+    {
+      "case_id": "clock__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002064000000245869"
+    },
+    {
+      "case_id": "clock__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "clock__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.12090869998792186"
+    },
+    {
+      "case_id": "clock__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010104999993927777"
+    },
+    {
+      "case_id": "clock__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "clock__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.04088819999014959"
+    },
+    {
+      "case_id": "clock__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008940700034145266"
+    },
+    {
+      "case_id": "clock__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "clock__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.058113900013267994"
+    },
+    {
+      "case_id": "clock__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010760399978607893"
+    },
+    {
+      "case_id": "crate__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "crate__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0034364000312052667"
+    },
+    {
+      "case_id": "crate__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0018347000004723668"
+    },
+    {
+      "case_id": "crate__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "crate__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008707100001629442"
+    },
+    {
+      "case_id": "crate__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0020223999745212495"
+    },
+    {
+      "case_id": "crate__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "crate__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.01160389999859035"
+    },
+    {
+      "case_id": "crate__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0025790000217966735"
+    },
+    {
+      "case_id": "crate__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "crate__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008915800019167364"
+    },
+    {
+      "case_id": "crate__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002042100008111447"
+    },
+    {
+      "case_id": "cup__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cup__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0026710000238381326"
+    },
+    {
+      "case_id": "cup__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001818199991248548"
+    },
+    {
+      "case_id": "cup__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cup__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001871999993454665"
+    },
+    {
+      "case_id": "cup__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00150830001803115"
+    },
+    {
+      "case_id": "cup__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cup__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003688400029204786"
+    },
+    {
+      "case_id": "cup__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0016195999924093485"
+    },
+    {
+      "case_id": "cup__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "cup__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0012732999748550355"
+    },
+    {
+      "case_id": "cup__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010597000364214182"
+    },
+    {
+      "case_id": "earphone__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "earphone__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008511000196449459"
+    },
+    {
+      "case_id": "earphone__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000728400016669184"
+    },
+    {
+      "case_id": "earphone__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "earphone__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0018964000046253204"
+    },
+    {
+      "case_id": "earphone__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010018000029958785"
+    },
+    {
+      "case_id": "earphone__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "earphone__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.007411900034639984"
+    },
+    {
+      "case_id": "earphone__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002733799978159368"
+    },
+    {
+      "case_id": "earphone__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "earphone__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0012137999874539673"
+    },
+    {
+      "case_id": "earphone__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000749099999666214"
+    },
+    {
+      "case_id": "fan__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "fan__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.011906900035683066"
+    },
+    {
+      "case_id": "fan__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002133699948899448"
+    },
+    {
+      "case_id": "fan__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "fan__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006654700031504035"
+    },
+    {
+      "case_id": "fan__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001655499974731356"
+    },
+    {
+      "case_id": "fan__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "fan__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0050005000084638596"
+    },
+    {
+      "case_id": "fan__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001417500025127083"
+    },
+    {
+      "case_id": "fan__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "fan__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0012049000361002982"
+    },
+    {
+      "case_id": "fan__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00070090004010126"
+    },
+    {
+      "case_id": "glass_drink_container__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "glass_drink_container__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001350899983663112"
+    },
+    {
+      "case_id": "glass_drink_container__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007116000051610172"
+    },
+    {
+      "case_id": "glass_drink_container__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "glass_drink_container__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0009068999788723886"
+    },
+    {
+      "case_id": "glass_drink_container__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005790999857708812"
+    },
+    {
+      "case_id": "glass_drink_container__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "glass_drink_container__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005289499997161329"
+    },
+    {
+      "case_id": "glass_drink_container__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0030376000213436782"
+    },
+    {
+      "case_id": "glass_drink_container__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "glass_drink_container__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003018299990799278"
+    },
+    {
+      "case_id": "glass_drink_container__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001215800002682954"
+    },
+    {
+      "case_id": "guitar__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "guitar__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02804840001044795"
+    },
+    {
+      "case_id": "guitar__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012190299981739372"
+    },
+    {
+      "case_id": "guitar__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "guitar__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004963899962604046"
+    },
+    {
+      "case_id": "guitar__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002577100007329136"
+    },
+    {
+      "case_id": "guitar__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "guitar__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0026738999877125025"
+    },
+    {
+      "case_id": "guitar__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0026498999795876443"
+    },
+    {
+      "case_id": "guitar__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "guitar__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006098999874666333"
+    },
+    {
+      "case_id": "guitar__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006388999754562974"
+    },
+    {
+      "case_id": "hammer__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "hammer__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012467399996239692"
+    },
+    {
+      "case_id": "hammer__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0031137000187300146"
+    },
+    {
+      "case_id": "hammer__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "hammer__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00016769999638199806"
+    },
+    {
+      "case_id": "hammer__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00021430000197142363"
+    },
+    {
+      "case_id": "hammer__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "hammer__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002528199984226376"
+    },
+    {
+      "case_id": "hammer__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0009347000159323215"
+    },
+    {
+      "case_id": "handbag__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "handbag__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.011939999996684492"
+    },
+    {
+      "case_id": "handbag__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004857900028582662"
+    },
+    {
+      "case_id": "handbag__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "handbag__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.048373500001616776"
+    },
+    {
+      "case_id": "handbag__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006153900001663715"
+    },
+    {
+      "case_id": "handbag__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "handbag__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02304499997990206"
+    },
+    {
+      "case_id": "handbag__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004087400040589273"
+    },
+    {
+      "case_id": "handbag__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "handbag__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.007432900019921362"
+    },
+    {
+      "case_id": "handbag__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002569400006905198"
+    },
+    {
+      "case_id": "hat__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "hat__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0025265999720431864"
+    },
+    {
+      "case_id": "hat__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000820400018710643"
+    },
+    {
+      "case_id": "hat__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "hat__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00414109998382628"
+    },
+    {
+      "case_id": "hat__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0021994999842718244"
+    },
+    {
+      "case_id": "hat__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "hat__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004322400025557727"
+    },
+    {
+      "case_id": "hat__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0017194999963976443"
+    },
+    {
+      "case_id": "hat__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "hat__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003888699982780963"
+    },
+    {
+      "case_id": "hat__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001514500007033348"
+    },
+    {
+      "case_id": "helmet__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "helmet__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.017603599990252405"
+    },
+    {
+      "case_id": "helmet__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006704600004013628"
+    },
+    {
+      "case_id": "helmet__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "helmet__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010573900013696402"
+    },
+    {
+      "case_id": "helmet__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0030350000015459955"
+    },
+    {
+      "case_id": "helmet__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "helmet__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001602300035301596"
+    },
+    {
+      "case_id": "helmet__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0011652999673970044"
+    },
+    {
+      "case_id": "helmet__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "helmet__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009828399983234704"
+    },
+    {
+      "case_id": "helmet__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003071499988436699"
+    },
+    {
+      "case_id": "jar__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "jar__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.01099209999665618"
+    },
+    {
+      "case_id": "jar__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0021631999989040196"
+    },
+    {
+      "case_id": "jar__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "jar__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008223299984820187"
+    },
+    {
+      "case_id": "jar__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001819099998101592"
+    },
+    {
+      "case_id": "jar__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "jar__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00469959998736158"
+    },
+    {
+      "case_id": "jar__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001507700013462454"
+    },
+    {
+      "case_id": "jar__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "jar__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002939400030300021"
+    },
+    {
+      "case_id": "jar__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001292100001592189"
+    },
+    {
+      "case_id": "kettle__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "kettle__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0014932999620214105"
+    },
+    {
+      "case_id": "kettle__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010743000311776996"
+    },
+    {
+      "case_id": "kettle__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "kettle__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0014031999744474888"
+    },
+    {
+      "case_id": "kettle__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007037000032141805"
+    },
+    {
+      "case_id": "kettle__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "kettle__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0045059999683871865"
+    },
+    {
+      "case_id": "kettle__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0015163000207394361"
+    },
+    {
+      "case_id": "kettle__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "kettle__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005318299983628094"
+    },
+    {
+      "case_id": "kettle__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0011956000234931707"
+    },
+    {
+      "case_id": "knife__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "knife__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0038369999965652823"
+    },
+    {
+      "case_id": "knife__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0038592999917455018"
+    },
+    {
+      "case_id": "knife__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "knife__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012003400013782084"
+    },
+    {
+      "case_id": "knife__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004787600017152727"
+    },
+    {
+      "case_id": "knife__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "knife__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007347000064328313"
+    },
+    {
+      "case_id": "knife__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008210000232793391"
+    },
+    {
+      "case_id": "knife__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "knife__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0037158000050112605"
+    },
+    {
+      "case_id": "knife__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0032550000469200313"
+    },
+    {
+      "case_id": "ladder__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "ladder__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004530600039288402"
+    },
+    {
+      "case_id": "ladder__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0019378000288270414"
+    },
+    {
+      "case_id": "ladder__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "ladder__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008913500001654029"
+    },
+    {
+      "case_id": "ladder__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002436299982946366"
+    },
+    {
+      "case_id": "ladder__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "ladder__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010995999909937382"
+    },
+    {
+      "case_id": "ladder__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008069000323303044"
+    },
+    {
+      "case_id": "ladder__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "ladder__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0004884999943897128"
+    },
+    {
+      "case_id": "ladder__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00046900002053007483"
+    },
+    {
+      "case_id": "lamp__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "lamp__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003875700000207871"
+    },
+    {
+      "case_id": "lamp__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010865000076591969"
+    },
+    {
+      "case_id": "lamp__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "lamp__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007164000417105854"
+    },
+    {
+      "case_id": "lamp__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005901000113226473"
+    },
+    {
+      "case_id": "lamp__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "lamp__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010396700003184378"
+    },
+    {
+      "case_id": "lamp__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0037742999847978354"
+    },
+    {
+      "case_id": "lamp__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "lamp__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0038211000501178205"
+    },
+    {
+      "case_id": "lamp__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001040699949953705"
+    },
+    {
+      "case_id": "laptop_computer__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "laptop_computer__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.19747649994678795"
+    },
+    {
+      "case_id": "laptop_computer__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.025075300014577806"
+    },
+    {
+      "case_id": "laptop_computer__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "laptop_computer__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.031017200031783432"
+    },
+    {
+      "case_id": "laptop_computer__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00642409996362403"
+    },
+    {
+      "case_id": "laptop_computer__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "laptop_computer__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.029124699998646975"
+    },
+    {
+      "case_id": "laptop_computer__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0044015999883413315"
+    },
+    {
+      "case_id": "laptop_computer__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "laptop_computer__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.01338179997401312"
+    },
+    {
+      "case_id": "laptop_computer__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00375740003073588"
+    },
+    {
+      "case_id": "microwave_oven__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "microwave_oven__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02330580004490912"
+    },
+    {
+      "case_id": "microwave_oven__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005089900048915297"
+    },
+    {
+      "case_id": "microwave_oven__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "microwave_oven__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0035140999825671315"
+    },
+    {
+      "case_id": "microwave_oven__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001763499982189387"
+    },
+    {
+      "case_id": "microwave_oven__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "microwave_oven__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00883330003125593"
+    },
+    {
+      "case_id": "microwave_oven__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0017863999819383025"
+    },
+    {
+      "case_id": "microwave_oven__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "microwave_oven__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.021609699993859977"
+    },
+    {
+      "case_id": "microwave_oven__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0027477999683469534"
+    },
+    {
+      "case_id": "mouse_computer_equipment__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mouse_computer_equipment__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010559799964539707"
+    },
+    {
+      "case_id": "mouse_computer_equipment__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004181900003459305"
+    },
+    {
+      "case_id": "mouse_computer_equipment__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mouse_computer_equipment__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012697600002866238"
+    },
+    {
+      "case_id": "mouse_computer_equipment__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005086799967102706"
+    },
+    {
+      "case_id": "mouse_computer_equipment__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mouse_computer_equipment__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.007093499996699393"
+    },
+    {
+      "case_id": "mouse_computer_equipment__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0030722999945282936"
+    },
+    {
+      "case_id": "mouse_computer_equipment__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mouse_computer_equipment__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005743799963966012"
+    },
+    {
+      "case_id": "mouse_computer_equipment__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0027522000018507242"
+    },
+    {
+      "case_id": "mug__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mug__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0019107999978587031"
+    },
+    {
+      "case_id": "mug__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000813300022855401"
+    },
+    {
+      "case_id": "mug__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mug__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02364339999621734"
+    },
+    {
+      "case_id": "mug__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004244299954734743"
+    },
+    {
+      "case_id": "mug__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mug__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008229600032791495"
+    },
+    {
+      "case_id": "mug__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0022220000391826034"
+    },
+    {
+      "case_id": "mug__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "mug__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002459899988025427"
+    },
+    {
+      "case_id": "mug__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0013787999632768333"
+    },
+    {
+      "case_id": "pan_for_cooking__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "pan_for_cooking__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0003342999843880534"
+    },
+    {
+      "case_id": "pan_for_cooking__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00042320002103224397"
+    },
+    {
+      "case_id": "pan_for_cooking__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "pan_for_cooking__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006439300021156669"
+    },
+    {
+      "case_id": "pan_for_cooking__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0018488999921828508"
+    },
+    {
+      "case_id": "pan_for_cooking__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "pan_for_cooking__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0044565999996848404"
+    },
+    {
+      "case_id": "pan_for_cooking__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0012451999937184155"
+    },
+    {
+      "case_id": "pan_for_cooking__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "pan_for_cooking__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008459000382572412"
+    },
+    {
+      "case_id": "pan_for_cooking__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005378999630920589"
+    },
+    {
+      "case_id": "pen__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "pen__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0016333999810740352"
+    },
+    {
+      "case_id": "pen__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008437000215053558"
+    },
+    {
+      "case_id": "pen__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "pen__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001029200037010014"
+    },
+    {
+      "case_id": "pen__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007439000182785094"
+    },
+    {
+      "case_id": "pen__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "pen__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00012509996304288507"
+    },
+    {
+      "case_id": "pen__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0001705000177025795"
+    },
+    {
+      "case_id": "plastic_bag__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plastic_bag__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004028199997264892"
+    },
+    {
+      "case_id": "plastic_bag__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0028985999524593353"
+    },
+    {
+      "case_id": "plastic_bag__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plastic_bag__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004805599979590625"
+    },
+    {
+      "case_id": "plastic_bag__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0026913000037893653"
+    },
+    {
+      "case_id": "plastic_bag__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plastic_bag__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0031919999746605754"
+    },
+    {
+      "case_id": "plastic_bag__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0014590999926440418"
+    },
+    {
+      "case_id": "plastic_bag__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plastic_bag__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004753299988806248"
+    },
+    {
+      "case_id": "plastic_bag__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001043700031004846"
+    },
+    {
+      "case_id": "plate__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plate__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0031701999832876027"
+    },
+    {
+      "case_id": "plate__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003094900050200522"
+    },
+    {
+      "case_id": "plate__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plate__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005249899986665696"
+    },
+    {
+      "case_id": "plate__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0036202999763190746"
+    },
+    {
+      "case_id": "plate__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plate__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0019311999785713851"
+    },
+    {
+      "case_id": "plate__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0018669000128284097"
+    },
+    {
+      "case_id": "plate__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "plate__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006949999951757491"
+    },
+    {
+      "case_id": "plate__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007198000093922019"
+    },
+    {
+      "case_id": "remote_control__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "remote_control__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.11052579997340217"
+    },
+    {
+      "case_id": "remote_control__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.013566399982664734"
+    },
+    {
+      "case_id": "remote_control__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "remote_control__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.07646839995868504"
+    },
+    {
+      "case_id": "remote_control__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009258800011593848"
+    },
+    {
+      "case_id": "remote_control__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "remote_control__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.1693109999760054"
+    },
+    {
+      "case_id": "remote_control__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.033339900022838265"
+    },
+    {
+      "case_id": "remote_control__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "remote_control__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.029183900041971356"
+    },
+    {
+      "case_id": "remote_control__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0076490999781526625"
+    },
+    {
+      "case_id": "scarf__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scarf__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.013268199982121587"
+    },
+    {
+      "case_id": "scarf__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0035487000131979585"
+    },
+    {
+      "case_id": "scarf__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scarf__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.01855879998765886"
+    },
+    {
+      "case_id": "scarf__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005684600037056953"
+    },
+    {
+      "case_id": "scarf__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scarf__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.07349899999098852"
+    },
+    {
+      "case_id": "scarf__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008721599995624274"
+    },
+    {
+      "case_id": "scarf__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scarf__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001291499997023493"
+    },
+    {
+      "case_id": "scarf__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0012823999859392643"
+    },
+    {
+      "case_id": "scissors__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scissors__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.04605300002731383"
+    },
+    {
+      "case_id": "scissors__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.013636199990287423"
+    },
+    {
+      "case_id": "scissors__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scissors__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.03668409999227151"
+    },
+    {
+      "case_id": "scissors__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012079200008884072"
+    },
+    {
+      "case_id": "scissors__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scissors__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02714759996160865"
+    },
+    {
+      "case_id": "scissors__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.007610700035002083"
+    },
+    {
+      "case_id": "scissors__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "scissors__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.05402199999662116"
+    },
+    {
+      "case_id": "scissors__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009573599963914603"
+    },
+    {
+      "case_id": "screwdriver__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "screwdriver__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00034119997872039676"
+    },
+    {
+      "case_id": "screwdriver__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0003492000396363437"
+    },
+    {
+      "case_id": "shoe__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "shoe__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00109779997728765"
+    },
+    {
+      "case_id": "shoe__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006371000199578702"
+    },
+    {
+      "case_id": "shoe__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "shoe__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00283730000955984"
+    },
+    {
+      "case_id": "shoe__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008597000269219279"
+    },
+    {
+      "case_id": "shoe__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "shoe__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0019274999503977597"
+    },
+    {
+      "case_id": "shoe__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0018770000315271318"
+    },
+    {
+      "case_id": "shoe__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "shoe__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005834000010509044"
+    },
+    {
+      "case_id": "shoe__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0021173999994061887"
+    },
+    {
+      "case_id": "slipper_footwear__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "slipper_footwear__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005474000354297459"
+    },
+    {
+      "case_id": "slipper_footwear__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00046140002086758614"
+    },
+    {
+      "case_id": "soap__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "soap__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0022592999739572406"
+    },
+    {
+      "case_id": "soap__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008699999889358878"
+    },
+    {
+      "case_id": "soap__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "soap__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008410000009462237"
+    },
+    {
+      "case_id": "soap__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007119000074453652"
+    },
+    {
+      "case_id": "spoon__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "spoon__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012793000030796975"
+    },
+    {
+      "case_id": "spoon__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003266699961386621"
+    },
+    {
+      "case_id": "spoon__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "spoon__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005414900020696223"
+    },
+    {
+      "case_id": "spoon__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0026926000136882067"
+    },
+    {
+      "case_id": "spoon__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "spoon__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0015198999899439514"
+    },
+    {
+      "case_id": "spoon__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007257999968715012"
+    },
+    {
+      "case_id": "spoon__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "spoon__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009259000013116747"
+    },
+    {
+      "case_id": "spoon__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00317799998447299"
+    },
+    {
+      "case_id": "stool__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "stool__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.029757200041785836"
+    },
+    {
+      "case_id": "stool__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005133999977260828"
+    },
+    {
+      "case_id": "stool__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "stool__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.013440200011245906"
+    },
+    {
+      "case_id": "stool__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0020930999889969826"
+    },
+    {
+      "case_id": "stool__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "stool__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008255100052338094"
+    },
+    {
+      "case_id": "stool__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0016130000003613532"
+    },
+    {
+      "case_id": "stool__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "stool__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005088000325486064"
+    },
+    {
+      "case_id": "stool__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000519900000654161"
+    },
+    {
+      "case_id": "sweater__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "sweater__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.04926950001390651"
+    },
+    {
+      "case_id": "sweater__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00974310003221035"
+    },
+    {
+      "case_id": "sweater__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "sweater__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.016030400001909584"
+    },
+    {
+      "case_id": "sweater__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004225199983920902"
+    },
+    {
+      "case_id": "sweater__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "sweater__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0016117000486701727"
+    },
+    {
+      "case_id": "sweater__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001644900010433048"
+    },
+    {
+      "case_id": "sweater__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "sweater__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.009635699971113354"
+    },
+    {
+      "case_id": "sweater__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.003981399990152568"
+    },
+    {
+      "case_id": "table__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "table__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.013260599982459098"
+    },
+    {
+      "case_id": "table__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0024267000262625515"
+    },
+    {
+      "case_id": "table__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "table__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.034171000006608665"
+    },
+    {
+      "case_id": "table__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008911099983379245"
+    },
+    {
+      "case_id": "table__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "table__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0011295999865978956"
+    },
+    {
+      "case_id": "table__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0013535000034607947"
+    },
+    {
+      "case_id": "table__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "table__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.025788200029637665"
+    },
+    {
+      "case_id": "table__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008041900000534952"
+    },
+    {
+      "case_id": "telephone__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "telephone__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.03711320000002161"
+    },
+    {
+      "case_id": "telephone__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0024029999622143805"
+    },
+    {
+      "case_id": "telephone__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "telephone__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0028793999808840454"
+    },
+    {
+      "case_id": "telephone__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0013700000126846135"
+    },
+    {
+      "case_id": "telephone__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "telephone__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.024026200000662357"
+    },
+    {
+      "case_id": "telephone__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0021285000257194042"
+    },
+    {
+      "case_id": "telephone__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "telephone__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.012797400006093085"
+    },
+    {
+      "case_id": "telephone__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0034995999885722995"
+    },
+    {
+      "case_id": "television_set__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "television_set__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.018983399961143732"
+    },
+    {
+      "case_id": "television_set__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010595800005830824"
+    },
+    {
+      "case_id": "television_set__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "television_set__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.23368539998773485"
+    },
+    {
+      "case_id": "television_set__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.03714279999257997"
+    },
+    {
+      "case_id": "television_set__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "television_set__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.015322899969760329"
+    },
+    {
+      "case_id": "television_set__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.008068700029980391"
+    },
+    {
+      "case_id": "television_set__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "television_set__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02647159999469295"
+    },
+    {
+      "case_id": "television_set__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.010136700002476573"
+    },
+    {
+      "case_id": "towel__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "towel__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0017980000120587647"
+    },
+    {
+      "case_id": "towel__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001082399976439774"
+    },
+    {
+      "case_id": "towel__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "towel__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0034961000201292336"
+    },
+    {
+      "case_id": "towel__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010785000049509108"
+    },
+    {
+      "case_id": "towel__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "towel__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0009972999687306583"
+    },
+    {
+      "case_id": "towel__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006488999933935702"
+    },
+    {
+      "case_id": "towel__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "towel__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00104010000359267"
+    },
+    {
+      "case_id": "towel__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010417999583296478"
+    },
+    {
+      "case_id": "trash_can__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "trash_can__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.02650600002380088"
+    },
+    {
+      "case_id": "trash_can__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.005102899973280728"
+    },
+    {
+      "case_id": "trash_can__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "trash_can__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0056164999841712415"
+    },
+    {
+      "case_id": "trash_can__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0021576000144705176"
+    },
+    {
+      "case_id": "trash_can__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "trash_can__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.015172499988693744"
+    },
+    {
+      "case_id": "trash_can__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002936100005172193"
+    },
+    {
+      "case_id": "trash_can__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "trash_can__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006288899981882423"
+    },
+    {
+      "case_id": "trash_can__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002517900022212416"
+    },
+    {
+      "case_id": "tray__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "tray__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0374376000254415"
+    },
+    {
+      "case_id": "tray__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006598500011023134"
+    },
+    {
+      "case_id": "tray__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "tray__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00088310003047809"
+    },
+    {
+      "case_id": "tray__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000992499990388751"
+    },
+    {
+      "case_id": "tray__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "tray__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00038600002881139517"
+    },
+    {
+      "case_id": "tray__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005732999998144805"
+    },
+    {
+      "case_id": "tray__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "tray__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0038908999995328486"
+    },
+    {
+      "case_id": "tray__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0019322000443935394"
+    },
+    {
+      "case_id": "vase__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "vase__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006852000020444393"
+    },
+    {
+      "case_id": "vase__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0022712000063620508"
+    },
+    {
+      "case_id": "vase__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "vase__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0034700999967753887"
+    },
+    {
+      "case_id": "vase__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001483700005337596"
+    },
+    {
+      "case_id": "vase__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "vase__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00285070005338639"
+    },
+    {
+      "case_id": "vase__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0014598999987356365"
+    },
+    {
+      "case_id": "vase__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "vase__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.002666999993380159"
+    },
+    {
+      "case_id": "vase__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0008732000133022666"
+    },
+    {
+      "case_id": "wallet__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "wallet__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000818300002720207"
+    },
+    {
+      "case_id": "wallet__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0005722999921999872"
+    },
+    {
+      "case_id": "wallet__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "wallet__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0010784000041894615"
+    },
+    {
+      "case_id": "wallet__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006284000119194388"
+    },
+    {
+      "case_id": "watch__01",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "watch__01",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.004047099966555834"
+    },
+    {
+      "case_id": "watch__01",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0007250999915413558"
+    },
+    {
+      "case_id": "watch__02",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "watch__02",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0006832000217400491"
+    },
+    {
+      "case_id": "watch__02",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.000492399965878576"
+    },
+    {
+      "case_id": "watch__03",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "watch__03",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.006074100034311414"
+    },
+    {
+      "case_id": "watch__03",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.001151299977209419"
+    },
+    {
+      "case_id": "watch__04",
+      "method": "hpid_split_a3",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": true,
+      "error": null,
+      "published_runtime_seconds": "0.0"
+    },
+    {
+      "case_id": "watch__04",
+      "method": "dbscan_fusion",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.00020919996313750744"
+    },
+    {
+      "case_id": "watch__04",
+      "method": "greedy_nms",
+      "max_abs_metric_difference": 0.0,
+      "differing_metrics": {},
+      "original_hpid_map_exact": null,
+      "error": null,
+      "published_runtime_seconds": "0.0002733999863266945"
+    }
+  ]
+}

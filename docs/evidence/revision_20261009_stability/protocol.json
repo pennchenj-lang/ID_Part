@@ -1,0 +1,50 @@
+{
+  "protocol_version": "1.1.0",
+  "frozen_before_results": true,
+  "date": "2026-10-09",
+  "purpose": "Fair comparison of correct identity continuity under small controlled input perturbations; no superiority is assumed.",
+  "cohort": "All 226 frozen test226_hpid cases, same 1951 accepted input candidates; no exclusion of inference failures.",
+  "methods": [
+    "hpid_split_a3",
+    "dbscan_fusion",
+    "greedy_nms"
+  ],
+  "fusion_source": "runtime/code_snapshots/hpid_split_be54300_holdout/src",
+  "baseline_source": "project/src/hpid_split/postprocess_baselines.py",
+  "configurations": "Frozen defaults. DBSCAN eps=0.43, vote_threshold=0.50; NMS iou_threshold=0.80, containment_threshold=0.92. No tuning in this experiment.",
+  "conditions": {
+    "automatic_root": "Original automatic root and frozen accepted candidates.",
+    "eroded_root": "Original S15: OpenCV elliptical erosion; radius=max(1,round(sqrt(root area)*0.03)), one iteration.",
+    "dilated_root": "Original S15: same elliptical kernel and one dilation iteration.",
+    "translated_root": "Original S15: integer shift=max(1,round(image diagonal*0.02)); cardinal direction selected by sha256('20260828:'+case_id)[0] modulo 4; nearest interpolation, zero boundary.",
+    "score_jitter_seed": "Three prespecified seeds: sort nonroot candidates by semantic_name,semantic_parent,source,prompt,score,source_reliability,packed-mask SHA256,metadata JSON; case-specific SHA256 seed selects independent score multipliers U(0.95,1.05), clip to [0,1]. Root unchanged. Identical modified candidates for all methods.",
+    "candidate_dropout_seed": "Three prespecified seeds: same stable nonroot ordering; uniformly sample round(0.10*N) nonroot candidates without replacement (Python ties-to-even rounding); retain root. N<6 may remove zero. Identical selected candidates for all methods. Record removal count and mask hashes."
+  },
+  "candidate_scope": "The root family replaces only the root mask. The score and dropout families follow their specified conditions, retaining the original root. Every method receives identical candidates per case and condition, including masks, scores, metadata, semantics and reliability. Proposal generation and grouping are not rerun.",
+  "common_identity_adapter": "Assign all nonempty output masks the same raw semantic_name/rank key, independently at each condition: group by raw semantic_name; sort by centroid y, centroid x, negative area, and full SHA256 packed-mask digest; use one-based rank. Neither root-center side labels, GT, native HPID IDs, nor cross-condition matching influences this assignment.",
+  "scoring": {
+    "thresholds": [
+      0.25,
+      0.5
+    ],
+    "semantic_normalization": "Original paper evaluator _normalize, using expected_domain and object_category for scoring only. Root output is scored as body only if body is annotated, matching the published protocol.",
+    "one_to_one_rule": "Independently in each condition, within each normalized semantic category, Hungarian assignment maximizes total mask IoU. GT rows follow source annotation order; prediction columns follow common identity key order. An assigned pair is correct only at IoU>=threshold. No GT-dependent relabeling occurs.",
+    "joint_correct_retention": "For every GT target: initial assignment is correct, perturbed assignment is correct, and both assignments have the same common identity key. Report numerator / all GT targets.",
+    "conditional_retention": "Joint-correct retained targets / initially correct targets for that method; zero-denominator counts disclosed, not assigned perfect retention.",
+    "primary_paired_retention": "Primary cohort: GT targets initially correct for all THREE methods under semantic Hungarian matching at each threshold. For each case, compute correct same-key retention of those targets, average within each prespecified family (3 conditions), average the three families, then average equally across eligible cases. Cases with zero common targets have undefined conditional retention, never 100%; exact omitted case/GT counts disclosed. HPID-minus-DBSCAN and HPID-minus-NMS use the same eligible cases and targets.",
+    "part_f1": "Published class-agnostic Part F1 at thresholds 0.25, 0.50, 0.75 and mean 0.25:0.05:0.75 for all methods and conditions. Macro average over all 226 cases.",
+    "native_identity": "Optional descriptive result only; not primary evidence of an advantage because the adapters differ across methods.",
+    "prespecified_sensitivity": "Report pairwise initially-common target cohorts and pooled-target rather than case-macro weighting in full. All-GT jointcorrect and F1 retain all 226 cases. Per-family and per-condition results all reported."
+  },
+  "uncertainty": "Independent statistics stage: paired case cluster bootstrap, 10000 resamples, seed 20261009, retaining all conditions and methods within each sampled case. Primary IoU .25 overall-three-family case-macro contrasts against DBSCAN/NMS: 97.5% individual percentile CIs (1.25%,98.75%) for Bonferroni familywise 95% coverage over 2 comparisons, alongside descriptive 95% CIs. Family-specific 3x2 contrasts: 99.1666667% individual CIs (0.4166667%,99.5833333%) for familywise95 across6. IoU .50 secondary. Category-cluster bootstrap is prespecified sensitivity. Report all effects regardless of direction.",
+  "engineering_validation": "First 3 sorted case IDs test execution and schema only; no protocol change based on effect direction. Confirm all 226 original HPID label maps exactly match stored frozen outputs, and all original F1/semantic/object metrics reproduce published same-candidate case CSV to numeric tolerance 1e-12.",
+  "failures": "Persist traceback and an empty prediction for any method failure; such outputs score zero correct. No silent case exclusion. Reproduction failures block scientific interpretation.",
+  "runtime": "Record wall-clock algorithm-call time for every method/condition, excluding I/O and scoring; four worker processes max, OpenCV and BLAS one thread. These concurrent rerun timings are diagnostic, not a calibrated speed benchmark. Preserve original published runtimes separately.",
+  "cache": "Per case/method/condition packed binary masks plus common and native IDs, semantics, source hashes, and timing. Cache validity bound to protocol and source code hashes.",
+  "limitations": "Post-hoc controlled root perturbation on an already analyzed cohort. Not new held-out images, candidate regeneration, crop-free root detection, video tracking, or user study. A result cannot establish superiority over learned segmentation systems or independent distributions.",
+  "random_seeds": [
+    20261009,
+    20261010,
+    20261011
+  ]
+}

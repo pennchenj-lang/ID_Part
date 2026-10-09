@@ -1,0 +1,1362 @@
+{
+  "case_count": 226,
+  "all_native_id_semantics_masks_exact": true,
+  "checks": [
+    {
+      "case_id": "basket__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "basket__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "basket__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "basket__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "belt__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "belt__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "belt__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "belt__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 13,
+      "new_count": 13
+    },
+    {
+      "case_id": "bench__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "bench__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "bench__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "bench__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "bicycle__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "bicycle__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 11,
+      "new_count": 11
+    },
+    {
+      "case_id": "bicycle__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "bicycle__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "blender__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "blender__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "blender__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "blender__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "book__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "book__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "book__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "book__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "bottle__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "bottle__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "bottle__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "bottle__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "bowl__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "bowl__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "bowl__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "bowl__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "box__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "box__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "box__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "box__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "broom__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "broom__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "broom__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "bucket__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "bucket__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "bucket__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "bucket__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "calculator__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "calculator__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "calculator__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "can__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "can__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "can__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "can__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "car_automobile__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "car_automobile__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 11,
+      "new_count": 11
+    },
+    {
+      "case_id": "car_automobile__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 13,
+      "new_count": 13
+    },
+    {
+      "case_id": "car_automobile__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "carton__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 11,
+      "new_count": 11
+    },
+    {
+      "case_id": "carton__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "carton__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "carton__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 11,
+      "new_count": 11
+    },
+    {
+      "case_id": "cellular_telephone__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "cellular_telephone__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 15,
+      "new_count": 15
+    },
+    {
+      "case_id": "cellular_telephone__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "cellular_telephone__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "chair__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "chair__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "chair__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 14,
+      "new_count": 14
+    },
+    {
+      "case_id": "chair__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "clock__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "clock__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 13,
+      "new_count": 13
+    },
+    {
+      "case_id": "clock__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "clock__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 13,
+      "new_count": 13
+    },
+    {
+      "case_id": "crate__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "crate__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "crate__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 13,
+      "new_count": 13
+    },
+    {
+      "case_id": "crate__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 13,
+      "new_count": 13
+    },
+    {
+      "case_id": "cup__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "cup__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "cup__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "cup__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "earphone__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "earphone__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "earphone__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "earphone__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "fan__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "fan__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "fan__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "fan__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "glass_drink_container__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "glass_drink_container__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "glass_drink_container__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "glass_drink_container__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "guitar__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "guitar__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "guitar__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "guitar__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "hammer__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 11,
+      "new_count": 11
+    },
+    {
+      "case_id": "hammer__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "hammer__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "handbag__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "handbag__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 12,
+      "new_count": 12
+    },
+    {
+      "case_id": "handbag__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "handbag__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "hat__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "hat__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "hat__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "hat__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "helmet__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "helmet__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "helmet__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "helmet__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "jar__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "jar__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "jar__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "jar__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "kettle__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "kettle__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "kettle__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "kettle__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "knife__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "knife__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "knife__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "knife__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "ladder__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "ladder__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "ladder__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "ladder__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "lamp__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "lamp__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "lamp__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "lamp__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "laptop_computer__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 14,
+      "new_count": 14
+    },
+    {
+      "case_id": "laptop_computer__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "laptop_computer__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "laptop_computer__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "microwave_oven__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "microwave_oven__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "microwave_oven__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "microwave_oven__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 12,
+      "new_count": 12
+    },
+    {
+      "case_id": "mouse_computer_equipment__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "mouse_computer_equipment__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "mouse_computer_equipment__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "mouse_computer_equipment__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "mug__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "mug__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "mug__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "mug__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "pan_for_cooking__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "pan_for_cooking__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "pan_for_cooking__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "pan_for_cooking__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "pen__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "pen__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "pen__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "plastic_bag__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "plastic_bag__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "plastic_bag__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "plastic_bag__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "plate__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "plate__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "plate__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "plate__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "remote_control__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 47,
+      "new_count": 47
+    },
+    {
+      "case_id": "remote_control__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 22,
+      "new_count": 22
+    },
+    {
+      "case_id": "remote_control__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 18,
+      "new_count": 18
+    },
+    {
+      "case_id": "remote_control__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "scarf__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "scarf__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "scarf__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 15,
+      "new_count": 15
+    },
+    {
+      "case_id": "scarf__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "scissors__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "scissors__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "scissors__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "scissors__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "screwdriver__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "shoe__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "shoe__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 10,
+      "new_count": 10
+    },
+    {
+      "case_id": "shoe__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "shoe__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "slipper_footwear__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "soap__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "soap__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "spoon__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "spoon__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "spoon__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "spoon__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "stool__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 16,
+      "new_count": 16
+    },
+    {
+      "case_id": "stool__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "stool__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "stool__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "sweater__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 12,
+      "new_count": 12
+    },
+    {
+      "case_id": "sweater__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "sweater__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "sweater__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "table__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "table__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "table__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "table__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "telephone__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 12,
+      "new_count": 12
+    },
+    {
+      "case_id": "telephone__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "telephone__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "telephone__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 14,
+      "new_count": 14
+    },
+    {
+      "case_id": "television_set__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "television_set__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 18,
+      "new_count": 18
+    },
+    {
+      "case_id": "television_set__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "television_set__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "towel__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "towel__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 7,
+      "new_count": 7
+    },
+    {
+      "case_id": "towel__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "towel__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 2,
+      "new_count": 2
+    },
+    {
+      "case_id": "trash_can__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 11,
+      "new_count": 11
+    },
+    {
+      "case_id": "trash_can__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "trash_can__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "trash_can__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "tray__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 9,
+      "new_count": 9
+    },
+    {
+      "case_id": "tray__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "tray__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    },
+    {
+      "case_id": "tray__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "vase__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "vase__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 6,
+      "new_count": 6
+    },
+    {
+      "case_id": "vase__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "vase__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "wallet__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "wallet__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 3,
+      "new_count": 3
+    },
+    {
+      "case_id": "watch__01",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 5,
+      "new_count": 5
+    },
+    {
+      "case_id": "watch__02",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 4,
+      "new_count": 4
+    },
+    {
+      "case_id": "watch__03",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 8,
+      "new_count": 8
+    },
+    {
+      "case_id": "watch__04",
+      "native_id_semantics_masks_exact": true,
+      "old_count": 1,
+      "new_count": 1
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "independent_main_csv_recomputation": [
+    {
+      "file": "independent_case_rates.csv",
+      "byte_exact_recomputation": true
+    },
+    {
+      "file": "independent_cohorts.csv",
+      "byte_exact_recomputation": true
+    },
+    {
+      "file": "independent_contrasts.csv",
+      "byte_exact_recomputation": true
+    },
+    {
+      "file": "independent_estimates.csv",
+      "byte_exact_recomputation": true
+    },
+    {
+      "file": "independent_strata.csv",
+      "byte_exact_recomputation": true
+    }
+  ],
+  "all_released_statistics_csvs_match_local_audit": true,
+  "portable_main_native_and_f1_scripts_executed": true,
+  "point_estimates_checked": 48,
+  "max_point_estimate_difference": 4.440892098500626e-16,
+  "external_masks_included": false,
+  "external_images_included": false
+}

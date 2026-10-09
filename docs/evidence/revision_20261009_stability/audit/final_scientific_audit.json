@@ -1,0 +1,112 @@
+{
+  "status": "completed",
+  "verification": {
+    "input_files_sha256_bound": 4073,
+    "original_candidates": 1951,
+    "gt_parts": 990,
+    "independent_source_images": 226,
+    "categories": 60,
+    "domains": 6,
+    "prediction_runs": 6780,
+    "inference_failures": 0,
+    "original_hpid_maps_reproduced_exactly": 226,
+    "published_metric_reproduction_tolerance": 1e-12,
+    "independent_mask_assignment_check": "Twelve cases selected by the first two alphabetical IDs within each of six domains; all 360 method-condition predictions independently reconstructed from packed masks, common IDs reconstructed from geometry/digest, semantic Hungarian IoU assignments rederived at both thresholds; exact agreement with producer results.",
+    "all_cache_containers_sha256_verified": 6780,
+    "independent_point_estimate_crosschecks": 48,
+    "maximum_point_estimate_difference": 4.440892098500626e-16
+  },
+  "primary_common_wrapper_result": {
+    "threshold": 0.25,
+    "eligible_cases": 90,
+    "excluded_zero_common_target_cases": 136,
+    "common_initial_correct_gt_parts": 126,
+    "all_gt_parts": 990,
+    "hpid_rate": 0.9399176954732511,
+    "dbscan_rate": 0.9600823045267489,
+    "nms_rate": 0.9398148148148149,
+    "hpid_minus_dbscan": -0.02016460905349795,
+    "hpid_minus_dbscan_bonferroni_97_5_ci": [
+      -0.04012345679012346,
+      -0.0008217592592591845
+    ],
+    "hpid_minus_dbscan_category_cluster_97_5_ci": [
+      -0.04354968753702932,
+      0.0026227017308322973
+    ],
+    "hpid_minus_nms": 0.00010288065843620828,
+    "hpid_minus_nms_bonferroni_97_5_ci": [
+      -0.026337448559670792,
+      0.02654449588477374
+    ],
+    "interpretation": "No support for higher correct identity continuity than DBSCAN or NMS. The primary case-bootstrap estimate favors DBSCAN; that inferiority inference is not robust to category-cluster resampling. The NMS interval spans zero and does not establish equivalence."
+  },
+  "scope_completeness": {
+    "families": [
+      "root",
+      "score_jitter",
+      "candidate_dropout"
+    ],
+    "perturbations_per_family": 3,
+    "family_comparisons": "All six HPID-minus-baseline contrasts at IoU .25 have 99.1666667% multiplicity-adjusted intervals spanning zero.",
+    "secondary_threshold": "IoU .50 has 55 common GT parts in 43 eligible cases; it is secondary, not a substitute primary endpoint.",
+    "sensitivity": "Pairwise common-target cohorts, pooled-target weighting, category-cluster bootstrap, every individual condition, native IDs and all-GT guardrails are retained in full."
+  },
+  "all_gt_guardrail": {
+    "cases": 226,
+    "threshold": 0.25,
+    "joint_correct_case_macro_hpid": 0.14905321027132584,
+    "joint_correct_case_macro_dbscan": 0.16709275647328742,
+    "joint_correct_case_macro_nms": 0.15528145132192503,
+    "original_part_f1_hpid": 0.3133108979746755,
+    "original_part_f1_dbscan": 0.35502084112876525,
+    "original_part_f1_nms": 0.3463867888214522,
+    "perturbed_average_part_f1_hpid": 0.30491077940265454,
+    "perturbed_average_part_f1_dbscan": 0.3492398420062149,
+    "perturbed_average_part_f1_nms": 0.33640719869218494
+  },
+  "native_id_diagnostic": {
+    "hpid_rate": 0.912962962962963,
+    "dbscan_rate": 0.9298353909465021,
+    "nms_rate": 0.9144032921810701,
+    "finding": "The native-ID secondary analysis also does not establish HPID superiority. Both adjusted paired intervals span zero.",
+    "what_common_wrapper_tests": "Applying one visible-mask semantic/rank wrapper to all outputs removes a naming-rule advantage and estimates the comparative continuity of correct output instances under that fixed wrapper.",
+    "what_common_wrapper_does_not_test": "It removes HPID's candidate-identity and parent-relative ID naming rules, so it does not isolate the potential value of HPID's full native identity contract, provenance, hierarchy or software package semantics.",
+    "what_native_comparison_tests": "It compares each method together with its own ID rule: HPID's native hierarchical IDs versus deterministic baseline semantic/side/rank IDs. This is a complete-package diagnostic, not a causal estimate of the fusion algorithm alone.",
+    "combined_boundary": "The common-wrapper result cannot by itself establish that the whole identity-contract contribution is valueless. However, neither this comparison nor the native-ID diagnostic provides evidence that HPID correctly preserves identities better than the tested baselines. No stability-superiority claim should be inserted."
+  },
+  "perturbation_effectiveness": {
+    "dropout_zero_change_cases": 94,
+    "dropout_zero_change_primary_cases": 26,
+    "removed_candidates_per_seed": 162,
+    "removed_candidates_per_case_range": [
+      0,
+      5
+    ],
+    "note": "Predeclared round(0.10*N) removes zero proposals in small candidate sets. Retain these cases but disclose the dose discretization; their unchanged outputs do not independently demonstrate robustness. No outcome-driven change to perturbation dose is justified."
+  },
+  "document_boundaries": [
+    "These are post-hoc controlled perturbations of a previously analyzed 226-image cohort, not a fresh independent validation set.",
+    "Root, score and candidate-list inputs vary; image acquisition, semantic proposal generation and full-image detection are not rerun.",
+    "Persistent correct part lookup under these synthetic changes is measured; cross-frame tracking, real occluded-input identity recovery, human editing time and safety are not measured.",
+    "The original protocol limitations field retained root-only wording despite correctly listing all three families elsewhere. Disclose this as a documentation omission; do not silently revise or hash-replace the frozen protocol.",
+    "Main and secondary comparison families are explicitly separated. Individual descriptive 95% intervals across all exploratory metrics do not support a familywise-controlled superiority claim.",
+    "The original conclusion about an exported, inspectable identity contract remains an architectural claim. Comparative task benefits require additional successful evidence rather than a wording change."
+  ],
+  "public_evidence_recommendation": {
+    "publishable": [
+      "Frozen protocol with hash and a separate documentation erratum",
+      "Exact original runner plus a path-portable derivative and a transformation record",
+      "All per-case metrics and all 59400 per-GT method-condition-threshold records",
+      "Common-wrapper and native full summaries, adjusted paired intervals and prespecified sensitivity analyses",
+      "Case IDs, domains, categories and source-image identifiers sufficient to establish the 226-image sampling unit",
+      "Original-result reproduction report, source hashes and independent audit certificates"
+    ],
+    "local_or_restricted": [
+      "Raw source images",
+      "Ground-truth or prediction mask caches when redistribution rights have not been established",
+      "Absolute local filesystem paths and user-specific environment information"
+    ],
+    "reproducibility_limit": "Summary statistics can be independently regenerated from public CSVs without masks. Full inference and mask-assignment replay requires obtaining the licensed original dataset/candidate files; do not describe the CSV-only release as a complete public inference replay."
+  }
+}

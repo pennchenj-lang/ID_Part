@@ -1,0 +1,109 @@
+{
+  "analysis": "Explicit post-hoc full-cohort audit; no algorithm or target changes",
+  "unit": "37 requests from 37 distinct source image IDs and source image SHA256s, confirmed by replay",
+  "bootstrap": {
+    "iterations": 10000,
+    "seed": 20261009,
+    "ordering": "case_id ascending",
+    "pairing": "one common resample index matrix for each full-cohort endpoint/contrast",
+    "pointwise_coverage": 0.95,
+    "option_comparison_individual_coverage": 0.9875,
+    "option_comparison_family_size": 4,
+    "quantile_method": "NumPy linear"
+  },
+  "binary_guardrail_test": {
+    "name": "Exact two-sided McNemar",
+    "implementation": "twice smaller Binomial(n_discordant, .5) tail, capped at 1",
+    "multiplicity": "unadjusted descriptive guardrails",
+    "timing": "added after fixed audit as sparse-outcome check; no change to option-count comparison family"
+  },
+  "option_contrasts": [
+    {
+      "comparator": "raw_proposals",
+      "metric": "review_option_count",
+      "hpid_sum": 76.0,
+      "comparator_sum": 136.0,
+      "hpid_mean": 2.054054054054054,
+      "comparator_mean": 3.675675675675676,
+      "hpid_only_or_higher": 1,
+      "comparator_only_or_higher": 18,
+      "equal": 18,
+      "relative_reduction": 0.4411764705882353,
+      "n": 37,
+      "mean": -1.6216216216216217,
+      "ci95_low": -2.5675675675675675,
+      "ci95_high": -0.7831081081081179,
+      "ci98_75_low": -2.8378378378378377,
+      "ci98_75_high": -0.5405405405405406
+    },
+    {
+      "comparator": "greedy_nms",
+      "metric": "review_option_count",
+      "hpid_sum": 76.0,
+      "comparator_sum": 140.0,
+      "hpid_mean": 2.054054054054054,
+      "comparator_mean": 3.7837837837837838,
+      "hpid_only_or_higher": 1,
+      "comparator_only_or_higher": 14,
+      "equal": 22,
+      "relative_reduction": 0.45714285714285713,
+      "n": 37,
+      "mean": -1.7297297297297298,
+      "ci95_low": -2.945945945945946,
+      "ci95_high": -0.7567567567567568,
+      "ci98_75_low": -3.324324324324324,
+      "ci98_75_high": -0.5268581081080983
+    },
+    {
+      "comparator": "dbscan_fusion",
+      "metric": "review_option_count",
+      "hpid_sum": 76.0,
+      "comparator_sum": 104.0,
+      "hpid_mean": 2.054054054054054,
+      "comparator_mean": 2.810810810810811,
+      "hpid_only_or_higher": 3,
+      "comparator_only_or_higher": 9,
+      "equal": 25,
+      "relative_reduction": 0.2692307692307692,
+      "n": 37,
+      "mean": -0.7567567567567568,
+      "ci95_low": -1.5405405405405406,
+      "ci95_high": -0.08108108108108109,
+      "ci98_75_low": -1.770439189189189,
+      "ci98_75_high": 0.06773648648649633
+    },
+    {
+      "comparator": "local_pairwise_crf",
+      "metric": "review_option_count",
+      "hpid_sum": 76.0,
+      "comparator_sum": 160.0,
+      "hpid_mean": 2.054054054054054,
+      "comparator_mean": 4.324324324324325,
+      "hpid_only_or_higher": 4,
+      "comparator_only_or_higher": 22,
+      "equal": 11,
+      "relative_reduction": 0.525,
+      "n": 37,
+      "mean": -2.27027027027027,
+      "ci95_low": -3.675675675675676,
+      "ci95_high": -1.027027027027027,
+      "ci98_75_low": -4.108108108108108,
+      "ci98_75_high": -0.7567567567567568
+    }
+  ],
+  "metric_definitions": {
+    "review_option_count": "Semantic matches when any exist; otherwise all exported instances.",
+    "semantic_correct_any_match": "At least one normalized semantic match reaches target IoU threshold.",
+    "geometry_correct_any_exposed": "At least one option actually exposed by the rule reaches target IoU threshold, including fallback options with mismatched labels.",
+    "geometry_correct_any_exported": "At least one of all exported instances reaches target IoU threshold regardless of query exposure or label.",
+    "unique_and_correct": "Exactly one semantic match that reaches target IoU threshold.",
+    "wrong_unique": "Exactly one semantic match below target IoU threshold."
+  },
+  "limitations": [
+    "No new independent cases; results were known before this post-hoc uncertainty audit.",
+    "Option counts are an objective interface proxy, not measured human time or workload.",
+    "Equal observed correctness totals do not establish equivalence or noninferiority.",
+    "Auxiliary subsets are GT-conditioned post-hoc mechanism diagnostics, not full-cohort or causal evidence.",
+    "Only option count contrasts have four-comparison Bonferroni intervals; all guardrail intervals are descriptive pointwise 95%."
+  ]
+}

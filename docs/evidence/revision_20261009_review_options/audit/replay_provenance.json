@@ -1,0 +1,21 @@
+{
+  "cases": 37,
+  "methods": 5,
+  "reproduced_case_methods": 185,
+  "unique_image_ids": 37,
+  "unique_source_image_sha256": 37,
+  "unique_source_crop_sha256": 37,
+  "target_manifest_sha256": "451f33618a7a8863347ae60429b8c083014c63a07a911423f3d7db5b9311ea35",
+  "original_routing_csv_sha256": "e72947b537c94b2bababa74a08c01182d1ecdc9522d8a80724b1d2238b41b672",
+  "protocol_sha256": "001eb4cb1c24c2879d569cf15113afbf0439373fedc4572175f8cd3a8b1bdcba",
+  "code_sha256": {
+    "run_review_burden.py": "462b7a442c05875c94eb603b2aafc7004321e60ddbaee6a0ec52f320b0eeea7c",
+    "run_semantic_completion_frontend_benchmark.py": "2895bb42c635702a3d2dfc9bdf088057203ae7b919a39e153fdb43fcadc0b240",
+    "audit_completion_routing.py": "a8e3b4c7750388c4d30d5b671b7d415a5704cbfb28fed081dbbe5ec5dba4e8ed",
+    "postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
+    "paco_eval.py": "ab28e9724c264382346e7bec4628b8355ad6f0a73bf0d9563f8585947b4fff56",
+    "paco_semantics.py": "9d2c54326f5fc7e0e739e0181c713e4a47c81e357827f0121ef37d5ca7401be8"
+  },
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "numpy": "2.5.1"
+}

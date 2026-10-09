@@ -1,0 +1,2038 @@
+{
+  "cases": [
+    {
+      "case_id": "basket__01",
+      "image_id": 409424,
+      "source_image_sha256": "531c72c7805cf414b6c827d05a8a44b5e16d41505f53efcaf3c8834c6297e4ca",
+      "object_category": "basket",
+      "expected_domain": "container",
+      "candidate_count": 3,
+      "gt_count": 4
+    },
+    {
+      "case_id": "basket__02",
+      "image_id": 365819,
+      "source_image_sha256": "f22767e3a25ef7d92e3f8775646bebc1c162c58cf84279454219f97f6a3bef19",
+      "object_category": "basket",
+      "expected_domain": "container",
+      "candidate_count": 9,
+      "gt_count": 4
+    },
+    {
+      "case_id": "basket__03",
+      "image_id": 268092,
+      "source_image_sha256": "b15b985bf74a58703c8c286abd41f8929ec0940ca31b2d118b918371a83f95f0",
+      "object_category": "basket",
+      "expected_domain": "container",
+      "candidate_count": 9,
+      "gt_count": 4
+    },
+    {
+      "case_id": "basket__04",
+      "image_id": 349480,
+      "source_image_sha256": "5aaa39045a8a57304931299c4a569f5811e0f63474376985c1c0b0579e67fcb5",
+      "object_category": "basket",
+      "expected_domain": "container",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "belt__01",
+      "image_id": 96215,
+      "source_image_sha256": "a688b8332dd1289ba3ecc945e779cec06e1f26bbffe105cc0fdd99141a9827d8",
+      "object_category": "belt",
+      "expected_domain": "daily_object",
+      "candidate_count": 4,
+      "gt_count": 6
+    },
+    {
+      "case_id": "belt__02",
+      "image_id": 67315,
+      "source_image_sha256": "358712ed2abbec0edf8213ef98e3ebaeee1d520e9df632054a890a71d4d382e5",
+      "object_category": "belt",
+      "expected_domain": "daily_object",
+      "candidate_count": 4,
+      "gt_count": 4
+    },
+    {
+      "case_id": "belt__03",
+      "image_id": 513456,
+      "source_image_sha256": "feff129be765b9520b0078749e1566b0daad6bae6049ed6cd87c77a00b0467f4",
+      "object_category": "belt",
+      "expected_domain": "daily_object",
+      "candidate_count": 6,
+      "gt_count": 3
+    },
+    {
+      "case_id": "belt__04",
+      "image_id": 41710,
+      "source_image_sha256": "aa1468c7fc55b2e7343d24e39b06a65edf221964ef8d8202b1b3e7867f375a71",
+      "object_category": "belt",
+      "expected_domain": "daily_object",
+      "candidate_count": 17,
+      "gt_count": 3
+    },
+    {
+      "case_id": "bench__01",
+      "image_id": 370493,
+      "source_image_sha256": "bcfe690d233ab330eb3a2e8c4fa6f3583907f9df720f552a496970d18e592186",
+      "object_category": "bench",
+      "expected_domain": "furniture",
+      "candidate_count": 6,
+      "gt_count": 5
+    },
+    {
+      "case_id": "bench__02",
+      "image_id": 468505,
+      "source_image_sha256": "7b09e083ac9a1f0c3825280513fa3a9821099f6a674ec3fab63aaceeff420b6a",
+      "object_category": "bench",
+      "expected_domain": "furniture",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "bench__03",
+      "image_id": 349184,
+      "source_image_sha256": "7a0a18d27afea56932340f51de698f4118b5d154c73aa75eff0706d7e6539866",
+      "object_category": "bench",
+      "expected_domain": "furniture",
+      "candidate_count": 12,
+      "gt_count": 5
+    },
+    {
+      "case_id": "bench__04",
+      "image_id": 39196,
+      "source_image_sha256": "32147c2021394fb824a8cb2b77f71a74db96327e89bb92c68ef7a6a5df407990",
+      "object_category": "bench",
+      "expected_domain": "furniture",
+      "candidate_count": 17,
+      "gt_count": 5
+    },
+    {
+      "case_id": "bicycle__01",
+      "image_id": 323564,
+      "source_image_sha256": "06a2503a6197f6c476ee2bceabea3e13f3337f6f01c87a54e45f8af9894d3824",
+      "object_category": "bicycle",
+      "expected_domain": "vehicle",
+      "candidate_count": 11,
+      "gt_count": 12
+    },
+    {
+      "case_id": "bicycle__02",
+      "image_id": 142342,
+      "source_image_sha256": "9ed75df416e32b1b225482428c47d11541dc291f374f3a8688364632087cad5b",
+      "object_category": "bicycle",
+      "expected_domain": "vehicle",
+      "candidate_count": 13,
+      "gt_count": 12
+    },
+    {
+      "case_id": "bicycle__03",
+      "image_id": 174482,
+      "source_image_sha256": "3fbd217b9deb8c95fca1352ccbda11d1bfab808aa17bf442b1c54a3822d27ac7",
+      "object_category": "bicycle",
+      "expected_domain": "vehicle",
+      "candidate_count": 12,
+      "gt_count": 12
+    },
+    {
+      "case_id": "bicycle__04",
+      "image_id": 20342,
+      "source_image_sha256": "7d5b6c39788170311cf055ca0a01de0cfdd5160ef3a5d58c61f254205ca54e3a",
+      "object_category": "bicycle",
+      "expected_domain": "vehicle",
+      "candidate_count": 12,
+      "gt_count": 12
+    },
+    {
+      "case_id": "blender__01",
+      "image_id": 107167,
+      "source_image_sha256": "1003ac483b5283aafe57a7c7be36be518b8e06475fa8763c25c918cd0cb683e1",
+      "object_category": "blender",
+      "expected_domain": "device",
+      "candidate_count": 8,
+      "gt_count": 7
+    },
+    {
+      "case_id": "blender__02",
+      "image_id": 214224,
+      "source_image_sha256": "ea6803428615e671b906b8fee6a5af77f8ba241eeec52b1fc81bef8794a25789",
+      "object_category": "blender",
+      "expected_domain": "device",
+      "candidate_count": 9,
+      "gt_count": 7
+    },
+    {
+      "case_id": "blender__03",
+      "image_id": 320875,
+      "source_image_sha256": "b18373c1ce0495b88d5b7820f256dfba8bc290a1132d85019a39ed8654a58ad2",
+      "object_category": "blender",
+      "expected_domain": "device",
+      "candidate_count": 13,
+      "gt_count": 7
+    },
+    {
+      "case_id": "blender__04",
+      "image_id": 320706,
+      "source_image_sha256": "d5a97ebfeafd3ea0c7905a89582668007a10166a47b3c79db089319ca6876e99",
+      "object_category": "blender",
+      "expected_domain": "device",
+      "candidate_count": 10,
+      "gt_count": 6
+    },
+    {
+      "case_id": "book__01",
+      "image_id": 105388,
+      "source_image_sha256": "4020d1343a1b2def316c7f4a33cc45d7078fdc5ad6a5e3bf2a2b596babb022d9",
+      "object_category": "book",
+      "expected_domain": "daily_object",
+      "candidate_count": 4,
+      "gt_count": 2
+    },
+    {
+      "case_id": "book__02",
+      "image_id": 217859,
+      "source_image_sha256": "d8cd8232820ef2494375ffe219f724d7defbca5fbf15d6bbcd4071dd8c9d0479",
+      "object_category": "book",
+      "expected_domain": "daily_object",
+      "candidate_count": 2,
+      "gt_count": 2
+    },
+    {
+      "case_id": "book__03",
+      "image_id": 396729,
+      "source_image_sha256": "d419eba01ab4d552ecd5a954c9f30a90fb593cf99d26ab9efd2c19f493ea3954",
+      "object_category": "book",
+      "expected_domain": "daily_object",
+      "candidate_count": 7,
+      "gt_count": 2
+    },
+    {
+      "case_id": "book__04",
+      "image_id": 518110,
+      "source_image_sha256": "081e8dcc4ebfe80d9813da90b3661b30576f133fc3fcf2f38a8223c2ccf4248a",
+      "object_category": "book",
+      "expected_domain": "daily_object",
+      "candidate_count": 5,
+      "gt_count": 2
+    },
+    {
+      "case_id": "bottle__01",
+      "image_id": 204502,
+      "source_image_sha256": "5e6005fa17fc3a838c35766878a77b0286da181f9a5ce4b6caef2e9538b49034",
+      "object_category": "bottle",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 6
+    },
+    {
+      "case_id": "bottle__02",
+      "image_id": 460950,
+      "source_image_sha256": "225ff77897fa329cec2fd5839db433baeac3e566e48cef190a7a20013fef930f",
+      "object_category": "bottle",
+      "expected_domain": "container",
+      "candidate_count": 8,
+      "gt_count": 6
+    },
+    {
+      "case_id": "bottle__03",
+      "image_id": 366695,
+      "source_image_sha256": "fb5615b68554e8231ca909b5e1ea38d9cb6d7d8c452f5b568c825fc4bf40ee24",
+      "object_category": "bottle",
+      "expected_domain": "container",
+      "candidate_count": 12,
+      "gt_count": 6
+    },
+    {
+      "case_id": "bottle__04",
+      "image_id": 418155,
+      "source_image_sha256": "616a185494dc08417e1487ceb4b0b906ff34e3fcbb17b0c5fc83674577acfc9e",
+      "object_category": "bottle",
+      "expected_domain": "container",
+      "candidate_count": 10,
+      "gt_count": 6
+    },
+    {
+      "case_id": "bowl__01",
+      "image_id": 47388,
+      "source_image_sha256": "6c6be5e1fa654097d7e2c099e9eff9d9e369dc34336f5c266656c09246aec241",
+      "object_category": "bowl",
+      "expected_domain": "container",
+      "candidate_count": 1,
+      "gt_count": 4
+    },
+    {
+      "case_id": "bowl__02",
+      "image_id": 226076,
+      "source_image_sha256": "6241e4d2feab2a41aafd39a4d3203fada20386ecd249e2c7ae1a5a51914a67ad",
+      "object_category": "bowl",
+      "expected_domain": "container",
+      "candidate_count": 1,
+      "gt_count": 4
+    },
+    {
+      "case_id": "bowl__03",
+      "image_id": 547633,
+      "source_image_sha256": "4682d6799114ca9a215d6502dc62b92dcc2b9d0255017ac16cffb38f46aa907a",
+      "object_category": "bowl",
+      "expected_domain": "container",
+      "candidate_count": 2,
+      "gt_count": 4
+    },
+    {
+      "case_id": "bowl__04",
+      "image_id": 22446,
+      "source_image_sha256": "5d31e85160e9b52b9eb201ff8418da59e39bfc7bc66eb5ebb3864dfc78a9cc84",
+      "object_category": "bowl",
+      "expected_domain": "container",
+      "candidate_count": 5,
+      "gt_count": 4
+    },
+    {
+      "case_id": "box__01",
+      "image_id": 474579,
+      "source_image_sha256": "7e46e8aaf362632411b5602fb54a48a22952208632ac06fa214e31ae4b7356d6",
+      "object_category": "box",
+      "expected_domain": "container",
+      "candidate_count": 11,
+      "gt_count": 4
+    },
+    {
+      "case_id": "box__02",
+      "image_id": 179037,
+      "source_image_sha256": "1bf1051712d8eb457d610241fa448d6c7b69a9957e716722f68ff8332f21a1e0",
+      "object_category": "box",
+      "expected_domain": "container",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "box__03",
+      "image_id": 494195,
+      "source_image_sha256": "32c86d3c1ddbd5290c2ae80e6ab11ebc933c58d402acce9c827121e75d567824",
+      "object_category": "box",
+      "expected_domain": "container",
+      "candidate_count": 2,
+      "gt_count": 4
+    },
+    {
+      "case_id": "box__04",
+      "image_id": 458048,
+      "source_image_sha256": "1468e1f0bcd75b2ad78f08ffff5bbf3c71a732cc81320b3476bae99fdac47279",
+      "object_category": "box",
+      "expected_domain": "container",
+      "candidate_count": 1,
+      "gt_count": 4
+    },
+    {
+      "case_id": "broom__01",
+      "image_id": 165257,
+      "source_image_sha256": "78776c05b6599062897055f16546a1571c63264408f7d61123a8296d2261feb2",
+      "object_category": "broom",
+      "expected_domain": "tool_prop",
+      "candidate_count": 5,
+      "gt_count": 4
+    },
+    {
+      "case_id": "broom__02",
+      "image_id": 456662,
+      "source_image_sha256": "70cf9dc5eea9336d8f7b87d08e35425346b21793733836640ce232bc794aab13",
+      "object_category": "broom",
+      "expected_domain": "tool_prop",
+      "candidate_count": 2,
+      "gt_count": 3
+    },
+    {
+      "case_id": "broom__03",
+      "image_id": 423875,
+      "source_image_sha256": "13839e2c01e666cd2273b9cda8cf75bf03d44f746557d0f9e9a1e06c0b3ebbaa",
+      "object_category": "broom",
+      "expected_domain": "tool_prop",
+      "candidate_count": 8,
+      "gt_count": 3
+    },
+    {
+      "case_id": "bucket__01",
+      "image_id": 433229,
+      "source_image_sha256": "f8d203e3c786a54e53dc79b9aecd0cfc3a9eeb6052effebfb4241fee46e51680",
+      "object_category": "bucket",
+      "expected_domain": "container",
+      "candidate_count": 9,
+      "gt_count": 5
+    },
+    {
+      "case_id": "bucket__02",
+      "image_id": 515630,
+      "source_image_sha256": "919e5711dcdf262d8eb90e7bd9ddeb79f389d7de4d98413da5dab1d21102d59d",
+      "object_category": "bucket",
+      "expected_domain": "container",
+      "candidate_count": 1,
+      "gt_count": 5
+    },
+    {
+      "case_id": "bucket__03",
+      "image_id": 161222,
+      "source_image_sha256": "be28a36ad06ba72762f0753f1efede71e3f23e6eef42c986f51d43093b94a858",
+      "object_category": "bucket",
+      "expected_domain": "container",
+      "candidate_count": 10,
+      "gt_count": 5
+    },
+    {
+      "case_id": "bucket__04",
+      "image_id": 383562,
+      "source_image_sha256": "410ad51e697b32ac9d702bee6f96ba312dabe135c95a926fb9bdba263b77ed35",
+      "object_category": "bucket",
+      "expected_domain": "container",
+      "candidate_count": 3,
+      "gt_count": 4
+    },
+    {
+      "case_id": "calculator__01",
+      "image_id": 73729,
+      "source_image_sha256": "933f3f410e9e947bb78970114555dc303ea73553ae836129dbba5f0c36151e6e",
+      "object_category": "calculator",
+      "expected_domain": "device",
+      "candidate_count": 9,
+      "gt_count": 2
+    },
+    {
+      "case_id": "calculator__02",
+      "image_id": 215170,
+      "source_image_sha256": "148ef145b08ec97331459b2e9cd78fd3256bfdbb657eee3f1d99c2051b9794bd",
+      "object_category": "calculator",
+      "expected_domain": "device",
+      "candidate_count": 17,
+      "gt_count": 2
+    },
+    {
+      "case_id": "calculator__03",
+      "image_id": 248314,
+      "source_image_sha256": "b0e88b00e281499d3a13d73a5487d220efbfa55d825d1c797ebf372605443e98",
+      "object_category": "calculator",
+      "expected_domain": "device",
+      "candidate_count": 13,
+      "gt_count": 2
+    },
+    {
+      "case_id": "can__01",
+      "image_id": 424842,
+      "source_image_sha256": "e1f39eb2c45ef38be8c9c84324a30e235accb06e8e0d10998d2088add9826f8b",
+      "object_category": "can",
+      "expected_domain": "container",
+      "candidate_count": 11,
+      "gt_count": 6
+    },
+    {
+      "case_id": "can__02",
+      "image_id": 576771,
+      "source_image_sha256": "2a8afd944c13c9593c042836a52876daff69c13fd657df4770b54ca7fa918f68",
+      "object_category": "can",
+      "expected_domain": "container",
+      "candidate_count": 11,
+      "gt_count": 5
+    },
+    {
+      "case_id": "can__03",
+      "image_id": 514209,
+      "source_image_sha256": "8bf02155bf2d925ecf62be15a603b2c8e0d00f1b98f1c6ae2321d9a0abe07f89",
+      "object_category": "can",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 5
+    },
+    {
+      "case_id": "can__04",
+      "image_id": 128428,
+      "source_image_sha256": "a0f44ac5fbec412125452d56cd314e7219fd4ca71c85c20af1b209ce7d622b76",
+      "object_category": "can",
+      "expected_domain": "container",
+      "candidate_count": 13,
+      "gt_count": 4
+    },
+    {
+      "case_id": "car_automobile__01",
+      "image_id": 150137,
+      "source_image_sha256": "7ed308c6470b7397cb0c635c8a98259617f36b862e64e2d218a7e7b0d3bfc866",
+      "object_category": "car_(automobile)",
+      "expected_domain": "vehicle",
+      "candidate_count": 19,
+      "gt_count": 17
+    },
+    {
+      "case_id": "car_automobile__02",
+      "image_id": 122166,
+      "source_image_sha256": "8ebacc179572e8c6aee80986286ca7d7438c5e2c009008deed8e9f83b2bf83e2",
+      "object_category": "car_(automobile)",
+      "expected_domain": "vehicle",
+      "candidate_count": 19,
+      "gt_count": 17
+    },
+    {
+      "case_id": "car_automobile__03",
+      "image_id": 516167,
+      "source_image_sha256": "e75f149a11bf34ca7e3da64ec5ba36fff37d23b1a658298251ff48abd1263ef1",
+      "object_category": "car_(automobile)",
+      "expected_domain": "vehicle",
+      "candidate_count": 26,
+      "gt_count": 16
+    },
+    {
+      "case_id": "car_automobile__04",
+      "image_id": 7713,
+      "source_image_sha256": "b31135f04469af3ec6657bd557b58731fb62e6a089f4ec9efa291bff2b3a98a6",
+      "object_category": "car_(automobile)",
+      "expected_domain": "vehicle",
+      "candidate_count": 17,
+      "gt_count": 16
+    },
+    {
+      "case_id": "carton__01",
+      "image_id": 42427,
+      "source_image_sha256": "07c16fbcd34c8d404923ac6aa3727d496843010b2c167aae998144bdbbf54a72",
+      "object_category": "carton",
+      "expected_domain": "container",
+      "candidate_count": 13,
+      "gt_count": 4
+    },
+    {
+      "case_id": "carton__02",
+      "image_id": 225539,
+      "source_image_sha256": "a703f8d1026241e834534c42e3f7515d88abca5dd0a5e9042b92bef2781fa3dc",
+      "object_category": "carton",
+      "expected_domain": "container",
+      "candidate_count": 1,
+      "gt_count": 3
+    },
+    {
+      "case_id": "carton__03",
+      "image_id": 98582,
+      "source_image_sha256": "f2c7daab58a404b273c08406dddc577b417a312ecfa313cb68e1d3fd0bf943e9",
+      "object_category": "carton",
+      "expected_domain": "container",
+      "candidate_count": 11,
+      "gt_count": 2
+    },
+    {
+      "case_id": "carton__04",
+      "image_id": 81504,
+      "source_image_sha256": "e916ff6381343e22d9cb9a1844063ef3ceb8ed58fb5f927b68fa796c046774b3",
+      "object_category": "carton",
+      "expected_domain": "container",
+      "candidate_count": 17,
+      "gt_count": 2
+    },
+    {
+      "case_id": "cellular_telephone__01",
+      "image_id": 444770,
+      "source_image_sha256": "eb07f676597878202151f5da892b23ac479cf31ee597447527ede3c9ee91fe03",
+      "object_category": "cellular_telephone",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 4
+    },
+    {
+      "case_id": "cellular_telephone__02",
+      "image_id": 446207,
+      "source_image_sha256": "dc0b41a8f88a6c5353b46b28c4e5eccab1087e7f1b183d046a792ca193e36ee5",
+      "object_category": "cellular_telephone",
+      "expected_domain": "device",
+      "candidate_count": 17,
+      "gt_count": 4
+    },
+    {
+      "case_id": "cellular_telephone__03",
+      "image_id": 288391,
+      "source_image_sha256": "94cb00a6a2fbf146b5384f2f0b1d7b8ba34b429542865850d943245b4b97f544",
+      "object_category": "cellular_telephone",
+      "expected_domain": "device",
+      "candidate_count": 16,
+      "gt_count": 4
+    },
+    {
+      "case_id": "cellular_telephone__04",
+      "image_id": 289169,
+      "source_image_sha256": "66c180ce488adbfff13559e6fe0a3ce0bde294b5657a9eedd395f49693c0a52e",
+      "object_category": "cellular_telephone",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 4
+    },
+    {
+      "case_id": "chair__01",
+      "image_id": 281066,
+      "source_image_sha256": "735fb7e342244e0713a7b535cd1ec0aa839770383be634c6642fa915cf026d43",
+      "object_category": "chair",
+      "expected_domain": "furniture",
+      "candidate_count": 14,
+      "gt_count": 7
+    },
+    {
+      "case_id": "chair__02",
+      "image_id": 472102,
+      "source_image_sha256": "fb31682b4fd722e56e673748c678f17febd8e9db3887f1ac98d86b9bb3e6f21c",
+      "object_category": "chair",
+      "expected_domain": "furniture",
+      "candidate_count": 6,
+      "gt_count": 7
+    },
+    {
+      "case_id": "chair__03",
+      "image_id": 235268,
+      "source_image_sha256": "d0f79f600d083ef4dcbec26fbb8d3621110258cb0795aaf948a2118199fd54ad",
+      "object_category": "chair",
+      "expected_domain": "furniture",
+      "candidate_count": 20,
+      "gt_count": 7
+    },
+    {
+      "case_id": "chair__04",
+      "image_id": 515574,
+      "source_image_sha256": "7360a31e263d22b7acc781db72a8bfbca238867aa2d10cce607fdf97ca19c0ab",
+      "object_category": "chair",
+      "expected_domain": "furniture",
+      "candidate_count": 13,
+      "gt_count": 7
+    },
+    {
+      "case_id": "clock__01",
+      "image_id": 369789,
+      "source_image_sha256": "847e37589aed9fdf97df73da1d756b40503ae457d64c5714103480507bbfa946",
+      "object_category": "clock",
+      "expected_domain": "device",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "clock__02",
+      "image_id": 27585,
+      "source_image_sha256": "1ff009b9955d58357eccd3147b97e659963467be421dce2fad109cb98fc2763e",
+      "object_category": "clock",
+      "expected_domain": "device",
+      "candidate_count": 21,
+      "gt_count": 3
+    },
+    {
+      "case_id": "clock__03",
+      "image_id": 161348,
+      "source_image_sha256": "919eb9e39302c758fd9b032f4e5a624eccbc856026691fc347aaa3e17fb7587f",
+      "object_category": "clock",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 3
+    },
+    {
+      "case_id": "clock__04",
+      "image_id": 6527,
+      "source_image_sha256": "d0892861444225c774be0b7da396fc683a04f85297db62fcc7c6e04263c8f08a",
+      "object_category": "clock",
+      "expected_domain": "device",
+      "candidate_count": 17,
+      "gt_count": 2
+    },
+    {
+      "case_id": "crate__01",
+      "image_id": 61108,
+      "source_image_sha256": "79a145495f2e1f6e3479d94bd54293b22b0920e87cb4325833715671bb70177d",
+      "object_category": "crate",
+      "expected_domain": "container",
+      "candidate_count": 6,
+      "gt_count": 3
+    },
+    {
+      "case_id": "crate__02",
+      "image_id": 290864,
+      "source_image_sha256": "9f3cb082003cb925716bd84d4bb48492f80861dc329d9c7e44ab0fdcb6a9f43f",
+      "object_category": "crate",
+      "expected_domain": "container",
+      "candidate_count": 12,
+      "gt_count": 3
+    },
+    {
+      "case_id": "crate__03",
+      "image_id": 303566,
+      "source_image_sha256": "c99dbcd15caf663675ac399cbff2270d1990479125db03f05dcea96eec985d54",
+      "object_category": "crate",
+      "expected_domain": "container",
+      "candidate_count": 16,
+      "gt_count": 3
+    },
+    {
+      "case_id": "crate__04",
+      "image_id": 313562,
+      "source_image_sha256": "de2699dcaecf9d4e3f20a172d3ee780b9dc43e0ac9fa5c9daed5f39bfe8f40f5",
+      "object_category": "crate",
+      "expected_domain": "container",
+      "candidate_count": 14,
+      "gt_count": 3
+    },
+    {
+      "case_id": "cup__01",
+      "image_id": 49286,
+      "source_image_sha256": "d84baf04b62cb5395edd146f8dd9e7f7aa71514305341758aeb39b8ca71b5c62",
+      "object_category": "cup",
+      "expected_domain": "container",
+      "candidate_count": 4,
+      "gt_count": 3
+    },
+    {
+      "case_id": "cup__02",
+      "image_id": 102885,
+      "source_image_sha256": "d8c104bb613e8ee8e01c23b7eee749b780f6ee7304e72b11f6ee8be23e3bc93d",
+      "object_category": "cup",
+      "expected_domain": "container",
+      "candidate_count": 3,
+      "gt_count": 3
+    },
+    {
+      "case_id": "cup__03",
+      "image_id": 574103,
+      "source_image_sha256": "3f833e591e599d3f8c05b690d129d04239bc058369bd221ed8deaa5fe27e6624",
+      "object_category": "cup",
+      "expected_domain": "container",
+      "candidate_count": 6,
+      "gt_count": 3
+    },
+    {
+      "case_id": "cup__04",
+      "image_id": 558092,
+      "source_image_sha256": "6f6036df9eff2ef23187d9aa9ef774d3ca880e9de14afcb3730940999a7e5618",
+      "object_category": "cup",
+      "expected_domain": "container",
+      "candidate_count": 3,
+      "gt_count": 3
+    },
+    {
+      "case_id": "earphone__01",
+      "image_id": 410033,
+      "source_image_sha256": "c4257ab3a8193467ebe57d212ef84885e486e3c03a3cc388a7b746a83f55611b",
+      "object_category": "earphone",
+      "expected_domain": "device",
+      "candidate_count": 3,
+      "gt_count": 4
+    },
+    {
+      "case_id": "earphone__02",
+      "image_id": 334470,
+      "source_image_sha256": "e7ee49b20e88b3fd7e8de1ce395bb350696e32648a655b42df5102a59429e187",
+      "object_category": "earphone",
+      "expected_domain": "device",
+      "candidate_count": 6,
+      "gt_count": 4
+    },
+    {
+      "case_id": "earphone__03",
+      "image_id": 472737,
+      "source_image_sha256": "a48700999aa792b340e2a09366cc01cdb33e4c9e54d8de07f073d001a37ffab4",
+      "object_category": "earphone",
+      "expected_domain": "device",
+      "candidate_count": 9,
+      "gt_count": 3
+    },
+    {
+      "case_id": "earphone__04",
+      "image_id": 510609,
+      "source_image_sha256": "116b5871a4896a6e4436b778e4d8638942245c8b81d96d8e74989484593bb17d",
+      "object_category": "earphone",
+      "expected_domain": "device",
+      "candidate_count": 5,
+      "gt_count": 3
+    },
+    {
+      "case_id": "fan__01",
+      "image_id": 131638,
+      "source_image_sha256": "46d80008d5ec63f9aafe096afefdd9afc317b75941cc7a7eb04ca6dd8ea930f1",
+      "object_category": "fan",
+      "expected_domain": "device",
+      "candidate_count": 13,
+      "gt_count": 5
+    },
+    {
+      "case_id": "fan__02",
+      "image_id": 462791,
+      "source_image_sha256": "bab3b452626e68baaa6588452c2625b5c2f9714914a1b0a6cdd24c78d97e1a00",
+      "object_category": "fan",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 5
+    },
+    {
+      "case_id": "fan__03",
+      "image_id": 111022,
+      "source_image_sha256": "0c1f42e340582d2da5162379f751ca86fb4408f34364b7e058127824f14f4507",
+      "object_category": "fan",
+      "expected_domain": "device",
+      "candidate_count": 10,
+      "gt_count": 5
+    },
+    {
+      "case_id": "fan__04",
+      "image_id": 440475,
+      "source_image_sha256": "6ede34aeab69b8e477cc2319a1cf765caaefa2ba54b1d6bbabb025c78b3832b3",
+      "object_category": "fan",
+      "expected_domain": "device",
+      "candidate_count": 5,
+      "gt_count": 5
+    },
+    {
+      "case_id": "glass_drink_container__01",
+      "image_id": 64733,
+      "source_image_sha256": "621d0078e6768bfec94eec284815f082e5fa5167b00f456a151be6c2f70d9b01",
+      "object_category": "glass_(drink_container)",
+      "expected_domain": "container",
+      "candidate_count": 5,
+      "gt_count": 5
+    },
+    {
+      "case_id": "glass_drink_container__02",
+      "image_id": 7220,
+      "source_image_sha256": "65b311bcb6b891263b019dab1bf4b263185417402ebc933cd820747e898aa815",
+      "object_category": "glass_(drink_container)",
+      "expected_domain": "container",
+      "candidate_count": 4,
+      "gt_count": 5
+    },
+    {
+      "case_id": "glass_drink_container__03",
+      "image_id": 202609,
+      "source_image_sha256": "dba32452338dd8aa834e047856b056115666d323ed27b756217aff6d62bc5fd6",
+      "object_category": "glass_(drink_container)",
+      "expected_domain": "container",
+      "candidate_count": 4,
+      "gt_count": 4
+    },
+    {
+      "case_id": "glass_drink_container__04",
+      "image_id": 319617,
+      "source_image_sha256": "bae0345c180040d2bcb796f2b228ac2fab19d14ef845e7d9a1981ae1822a78c9",
+      "object_category": "glass_(drink_container)",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "guitar__01",
+      "image_id": 448236,
+      "source_image_sha256": "b32a58b464124df93307652fefb04cea74be06b71e43409518d38027fe24db32",
+      "object_category": "guitar",
+      "expected_domain": "tool_prop",
+      "candidate_count": 7,
+      "gt_count": 8
+    },
+    {
+      "case_id": "guitar__02",
+      "image_id": 498997,
+      "source_image_sha256": "6d1ab1e92a014ce14ca538135b848914d6eb3da686379355f4b51ef4df90f681",
+      "object_category": "guitar",
+      "expected_domain": "tool_prop",
+      "candidate_count": 5,
+      "gt_count": 8
+    },
+    {
+      "case_id": "guitar__03",
+      "image_id": 297353,
+      "source_image_sha256": "d53f4d429470a1c1d3fdf90edf0a50f4341a15dd2bd05423137e90595aa68882",
+      "object_category": "guitar",
+      "expected_domain": "tool_prop",
+      "candidate_count": 4,
+      "gt_count": 6
+    },
+    {
+      "case_id": "guitar__04",
+      "image_id": 104666,
+      "source_image_sha256": "dd4894659b341e475fafde075de45ef71e0d2ceeff387199b9c80ae1fe41477e",
+      "object_category": "guitar",
+      "expected_domain": "tool_prop",
+      "candidate_count": 2,
+      "gt_count": 2
+    },
+    {
+      "case_id": "hammer__01",
+      "image_id": 437290,
+      "source_image_sha256": "e09849f5b9eaa47b33e33cb5bf8aa7703c3ba590917bf9ea70e9779aa7c1c7d5",
+      "object_category": "hammer",
+      "expected_domain": "tool_prop",
+      "candidate_count": 12,
+      "gt_count": 3
+    },
+    {
+      "case_id": "hammer__02",
+      "image_id": 303592,
+      "source_image_sha256": "642dad55296f99155209d563bd39029ecb13b2c859a0b86da50191a01d673c6f",
+      "object_category": "hammer",
+      "expected_domain": "tool_prop",
+      "candidate_count": 1,
+      "gt_count": 3
+    },
+    {
+      "case_id": "hammer__03",
+      "image_id": 298773,
+      "source_image_sha256": "f0ae810c24cd0bcd1bc3765b759716d07552bb02ce00d3e24df67c735f4578fc",
+      "object_category": "hammer",
+      "expected_domain": "tool_prop",
+      "candidate_count": 8,
+      "gt_count": 3
+    },
+    {
+      "case_id": "handbag__01",
+      "image_id": 377651,
+      "source_image_sha256": "9a21177acb759ce7c21d2db298b52e1af06dd90d3fc48a0fd413968f46a05b7c",
+      "object_category": "handbag",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "handbag__02",
+      "image_id": 130826,
+      "source_image_sha256": "c727ed87e31917401ee49d4a82c5814b0e2a33784bddd54008f3fd17a554dd89",
+      "object_category": "handbag",
+      "expected_domain": "container",
+      "candidate_count": 20,
+      "gt_count": 4
+    },
+    {
+      "case_id": "handbag__03",
+      "image_id": 569878,
+      "source_image_sha256": "210511a29c11032168e719c51296cdf82e2f51ac96d8bf8601e02a2ab6e92a52",
+      "object_category": "handbag",
+      "expected_domain": "container",
+      "candidate_count": 16,
+      "gt_count": 4
+    },
+    {
+      "case_id": "handbag__04",
+      "image_id": 482970,
+      "source_image_sha256": "490cb1412cb1b7016d4f327a53f901735cdc43a0c8a4d05d390f51fe923401af",
+      "object_category": "handbag",
+      "expected_domain": "container",
+      "candidate_count": 11,
+      "gt_count": 4
+    },
+    {
+      "case_id": "hat__01",
+      "image_id": 453549,
+      "source_image_sha256": "71b22789c1395a164d267cf44ab2ee13d4d3e43957a63ab1a57f79c0b0916e0a",
+      "object_category": "hat",
+      "expected_domain": "daily_object",
+      "candidate_count": 8,
+      "gt_count": 3
+    },
+    {
+      "case_id": "hat__02",
+      "image_id": 511398,
+      "source_image_sha256": "23a719d049d248f3b222e3701e76b8f3db9159dd9f770df70f7fb2b7a46ef883",
+      "object_category": "hat",
+      "expected_domain": "daily_object",
+      "candidate_count": 6,
+      "gt_count": 2
+    },
+    {
+      "case_id": "hat__03",
+      "image_id": 185989,
+      "source_image_sha256": "2bf00809d80f7bf89994e62ffd2432372968e6541e175581b6961d8be5dda722",
+      "object_category": "hat",
+      "expected_domain": "daily_object",
+      "candidate_count": 6,
+      "gt_count": 2
+    },
+    {
+      "case_id": "hat__04",
+      "image_id": 209018,
+      "source_image_sha256": "71a3ccd2f13c7d86285148b26b12594a6bed21545c32029d6cd529021889c3dd",
+      "object_category": "hat",
+      "expected_domain": "daily_object",
+      "candidate_count": 6,
+      "gt_count": 2
+    },
+    {
+      "case_id": "helmet__01",
+      "image_id": 339738,
+      "source_image_sha256": "d488c55b9e3ff3fb8470f17e766db64a891eb7b0254259642dae9caad0367873",
+      "object_category": "helmet",
+      "expected_domain": "daily_object",
+      "candidate_count": 8,
+      "gt_count": 2
+    },
+    {
+      "case_id": "helmet__02",
+      "image_id": 190659,
+      "source_image_sha256": "0ae274b7c9e0e50d5e73393a3f83cf8d59021c1ef55f81dd859ca09f8073c974",
+      "object_category": "helmet",
+      "expected_domain": "daily_object",
+      "candidate_count": 11,
+      "gt_count": 2
+    },
+    {
+      "case_id": "helmet__03",
+      "image_id": 366717,
+      "source_image_sha256": "0b18b6f3037deb71df850cba3664de64c13eaafeed9d1155fc2ddf75c2312fd2",
+      "object_category": "helmet",
+      "expected_domain": "daily_object",
+      "candidate_count": 4,
+      "gt_count": 2
+    },
+    {
+      "case_id": "helmet__04",
+      "image_id": 396137,
+      "source_image_sha256": "7e58c6baa03a47b366df54017cd0196282cf9394ed69cca8af14b51828593a1d",
+      "object_category": "helmet",
+      "expected_domain": "daily_object",
+      "candidate_count": 11,
+      "gt_count": 2
+    },
+    {
+      "case_id": "jar__01",
+      "image_id": 14034,
+      "source_image_sha256": "10eaed82870dfa9deffb1f45f16e65a79147d086db15ac93cc27d8963c8ecfe7",
+      "object_category": "jar",
+      "expected_domain": "container",
+      "candidate_count": 10,
+      "gt_count": 4
+    },
+    {
+      "case_id": "jar__02",
+      "image_id": 330420,
+      "source_image_sha256": "74709572fde0d40265d84d990b8558651a7d95704b4c3182383b5e0ff9913904",
+      "object_category": "jar",
+      "expected_domain": "container",
+      "candidate_count": 11,
+      "gt_count": 4
+    },
+    {
+      "case_id": "jar__03",
+      "image_id": 536935,
+      "source_image_sha256": "09d8024a537291ec842a2a139290b90f762b9f6eef878fdb00009b74631367e4",
+      "object_category": "jar",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "jar__04",
+      "image_id": 411189,
+      "source_image_sha256": "84dbee98af99f0b95e2dcbdc32086532d9cdbb979b63813724421e7a345d2a20",
+      "object_category": "jar",
+      "expected_domain": "container",
+      "candidate_count": 6,
+      "gt_count": 4
+    },
+    {
+      "case_id": "kettle__01",
+      "image_id": 142240,
+      "source_image_sha256": "ff104738627a5c3640ee9510fd0d15179f2146808269bfb7ed3b63ebe16c380b",
+      "object_category": "kettle",
+      "expected_domain": "device",
+      "candidate_count": 4,
+      "gt_count": 5
+    },
+    {
+      "case_id": "kettle__02",
+      "image_id": 283717,
+      "source_image_sha256": "4c9771d3818235fd653c42b15154f3dc59b5ba1ccc53a77410149df6efac3866",
+      "object_category": "kettle",
+      "expected_domain": "device",
+      "candidate_count": 6,
+      "gt_count": 5
+    },
+    {
+      "case_id": "kettle__03",
+      "image_id": 290768,
+      "source_image_sha256": "c88f97f9a80404eb68c2b98f63cff786cf51fdea27a3a91d54ce522ca71daa88",
+      "object_category": "kettle",
+      "expected_domain": "device",
+      "candidate_count": 9,
+      "gt_count": 4
+    },
+    {
+      "case_id": "kettle__04",
+      "image_id": 187592,
+      "source_image_sha256": "0ebc8771f82d88510ea0d8beef82d6a2efc108b0ab05c576192d19d788a62785",
+      "object_category": "kettle",
+      "expected_domain": "device",
+      "candidate_count": 10,
+      "gt_count": 4
+    },
+    {
+      "case_id": "knife__01",
+      "image_id": 288023,
+      "source_image_sha256": "7b1f8c1de8b57fca1ddf9969a16b90fc9665e7760cf8cf83a4432e64ad84eb54",
+      "object_category": "knife",
+      "expected_domain": "tool_prop",
+      "candidate_count": 2,
+      "gt_count": 2
+    },
+    {
+      "case_id": "knife__02",
+      "image_id": 209142,
+      "source_image_sha256": "d15dad7800020c44d70ec078dd9544302ecf5b978c0594c5601780e9ad7a8ce8",
+      "object_category": "knife",
+      "expected_domain": "tool_prop",
+      "candidate_count": 6,
+      "gt_count": 2
+    },
+    {
+      "case_id": "knife__03",
+      "image_id": 335954,
+      "source_image_sha256": "669629c8047a0c8df75fd16dfaf468d56eac8cf23c32dcb2c1ee37701fa0d16e",
+      "object_category": "knife",
+      "expected_domain": "tool_prop",
+      "candidate_count": 1,
+      "gt_count": 2
+    },
+    {
+      "case_id": "knife__04",
+      "image_id": 98085,
+      "source_image_sha256": "1e81c676636578cbe77a367274385f594c7158b3d79c2f2859c64fc03549aa29",
+      "object_category": "knife",
+      "expected_domain": "tool_prop",
+      "candidate_count": 3,
+      "gt_count": 2
+    },
+    {
+      "case_id": "ladder__01",
+      "image_id": 187734,
+      "source_image_sha256": "ffc7899178b299ac46d3b450fe9d08094a8cb6088f912c7644ff84447f73e012",
+      "object_category": "ladder",
+      "expected_domain": "tool_prop",
+      "candidate_count": 7,
+      "gt_count": 3
+    },
+    {
+      "case_id": "ladder__02",
+      "image_id": 477473,
+      "source_image_sha256": "7ae2ab07640f97852cfde66ba81029979a052f8b84b134da6f5488eeb04853db",
+      "object_category": "ladder",
+      "expected_domain": "tool_prop",
+      "candidate_count": 12,
+      "gt_count": 3
+    },
+    {
+      "case_id": "ladder__03",
+      "image_id": 343062,
+      "source_image_sha256": "a5f6d9b2acf83f62e53c18c44d5698be222e3d1dff657607d39997c8cac661cf",
+      "object_category": "ladder",
+      "expected_domain": "tool_prop",
+      "candidate_count": 4,
+      "gt_count": 3
+    },
+    {
+      "case_id": "ladder__04",
+      "image_id": 338108,
+      "source_image_sha256": "0161db5a84ac0adfd8a0065d7a4541b023e22b070b904987ade3b087071e37a2",
+      "object_category": "ladder",
+      "expected_domain": "tool_prop",
+      "candidate_count": 2,
+      "gt_count": 3
+    },
+    {
+      "case_id": "lamp__01",
+      "image_id": 430731,
+      "source_image_sha256": "084f61288e12e7459c29f13c58814be5d2496b19f0a686d9eacf38057dcfeff6",
+      "object_category": "lamp",
+      "expected_domain": "device",
+      "candidate_count": 7,
+      "gt_count": 5
+    },
+    {
+      "case_id": "lamp__02",
+      "image_id": 58133,
+      "source_image_sha256": "193adb8e5fa35dd762dd2fdc2afde38081969133f4af8072f9b4343377db5d01",
+      "object_category": "lamp",
+      "expected_domain": "device",
+      "candidate_count": 3,
+      "gt_count": 5
+    },
+    {
+      "case_id": "lamp__03",
+      "image_id": 568584,
+      "source_image_sha256": "de96225d1fe50558cdacd99f4548062bfbc69f154e45c80ce473c148cc88b97f",
+      "object_category": "lamp",
+      "expected_domain": "device",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "lamp__04",
+      "image_id": 210973,
+      "source_image_sha256": "59d98a36a90d3c3ed556c3132494e1b7e2d39a6dfc1b07fd1a4ca587ac96343a",
+      "object_category": "lamp",
+      "expected_domain": "device",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "laptop_computer__01",
+      "image_id": 364485,
+      "source_image_sha256": "3c80de73c392f5ce649ebc769578bf145e592af002dc287a8595ea8d88267b99",
+      "object_category": "laptop_computer",
+      "expected_domain": "device",
+      "candidate_count": 23,
+      "gt_count": 7
+    },
+    {
+      "case_id": "laptop_computer__02",
+      "image_id": 339352,
+      "source_image_sha256": "ac2bbff703997ab4a46ba76c9f4d0c4de9fa26173e69d61bb611d04ecf6b2416",
+      "object_category": "laptop_computer",
+      "expected_domain": "device",
+      "candidate_count": 12,
+      "gt_count": 6
+    },
+    {
+      "case_id": "laptop_computer__03",
+      "image_id": 435003,
+      "source_image_sha256": "1c85a216844b5fbb6f479190eb95b2dddf9058019770fb4e5a9a0eaee1b73e79",
+      "object_category": "laptop_computer",
+      "expected_domain": "device",
+      "candidate_count": 15,
+      "gt_count": 7
+    },
+    {
+      "case_id": "laptop_computer__04",
+      "image_id": 360951,
+      "source_image_sha256": "6a25fa3d091b2ceff847bfefd481872dff08ff6c0003ca2fa6bd19d15dfb30e1",
+      "object_category": "laptop_computer",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 7
+    },
+    {
+      "case_id": "microwave_oven__01",
+      "image_id": 338248,
+      "source_image_sha256": "f929d7043f33f763b3bd4989c50d49dc3eed0a8dc751db605823a9e115922f7e",
+      "object_category": "microwave_oven",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 5
+    },
+    {
+      "case_id": "microwave_oven__02",
+      "image_id": 189257,
+      "source_image_sha256": "150c80b1f6b270dc937bcc23414e51443235a1b459cab58af90d1981599b936e",
+      "object_category": "microwave_oven",
+      "expected_domain": "device",
+      "candidate_count": 5,
+      "gt_count": 5
+    },
+    {
+      "case_id": "microwave_oven__03",
+      "image_id": 189694,
+      "source_image_sha256": "83fb7b5bdd1198aa088351b56332d7586304b914fd76624890eb05e63ec78372",
+      "object_category": "microwave_oven",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 5
+    },
+    {
+      "case_id": "microwave_oven__04",
+      "image_id": 192410,
+      "source_image_sha256": "8ef19cd6a17e7401eee6e965cba8eb59fd6cf63575a819c50927ebbd070bd991",
+      "object_category": "microwave_oven",
+      "expected_domain": "device",
+      "candidate_count": 20,
+      "gt_count": 5
+    },
+    {
+      "case_id": "mouse_computer_equipment__01",
+      "image_id": 271068,
+      "source_image_sha256": "ca163df54da8625a97e30e8723ca640be38f119ccb0db02149bdafe6fb8cda24",
+      "object_category": "mouse_(computer_equipment)",
+      "expected_domain": "device",
+      "candidate_count": 7,
+      "gt_count": 5
+    },
+    {
+      "case_id": "mouse_computer_equipment__02",
+      "image_id": 28978,
+      "source_image_sha256": "2bd7b8925be8894f606025e7840037127b5c3148b632b99cdf6d62c5105151ef",
+      "object_category": "mouse_(computer_equipment)",
+      "expected_domain": "device",
+      "candidate_count": 8,
+      "gt_count": 5
+    },
+    {
+      "case_id": "mouse_computer_equipment__03",
+      "image_id": 95908,
+      "source_image_sha256": "f2a4714a3fbe0ff172a1bebf491450515f7681eaae90613ac49ad0c0a81090b9",
+      "object_category": "mouse_(computer_equipment)",
+      "expected_domain": "device",
+      "candidate_count": 6,
+      "gt_count": 5
+    },
+    {
+      "case_id": "mouse_computer_equipment__04",
+      "image_id": 349234,
+      "source_image_sha256": "c615e5a3df6b06aa5d9f22821f1687ccd4c1e6605c86db73e58f4687adf9890c",
+      "object_category": "mouse_(computer_equipment)",
+      "expected_domain": "device",
+      "candidate_count": 6,
+      "gt_count": 5
+    },
+    {
+      "case_id": "mug__01",
+      "image_id": 218205,
+      "source_image_sha256": "e1aff20767ce90b413a97b3a719eca9653b44dacae3586aab0d3de330cfd38a7",
+      "object_category": "mug",
+      "expected_domain": "container",
+      "candidate_count": 6,
+      "gt_count": 6
+    },
+    {
+      "case_id": "mug__02",
+      "image_id": 157526,
+      "source_image_sha256": "8d6d1df14f7c08c009204c556103a51e96f3301f116515320a04c32b24e309eb",
+      "object_category": "mug",
+      "expected_domain": "container",
+      "candidate_count": 13,
+      "gt_count": 5
+    },
+    {
+      "case_id": "mug__03",
+      "image_id": 308524,
+      "source_image_sha256": "add4494aabdbf7bd65328b7c1e7feb9fb7f3a5a302ce47142a48cbefa0a29e24",
+      "object_category": "mug",
+      "expected_domain": "container",
+      "candidate_count": 9,
+      "gt_count": 5
+    },
+    {
+      "case_id": "mug__04",
+      "image_id": 53465,
+      "source_image_sha256": "43dd9e176700f70cda79c70a64ec5c8895dffc0d7e0b1e34ea4e5ccafebc2931",
+      "object_category": "mug",
+      "expected_domain": "container",
+      "candidate_count": 5,
+      "gt_count": 5
+    },
+    {
+      "case_id": "pan_for_cooking__01",
+      "image_id": 561004,
+      "source_image_sha256": "8702b6ba3316cf6379a347aae7dbfadcc587cdc7d7227c813fad431875a381d6",
+      "object_category": "pan_(for_cooking)",
+      "expected_domain": "tool_prop",
+      "candidate_count": 1,
+      "gt_count": 4
+    },
+    {
+      "case_id": "pan_for_cooking__02",
+      "image_id": 538859,
+      "source_image_sha256": "369897f816788a32c5cfe18620c5e7e0327c3fe974c0ef03c7f7e537957fb9d8",
+      "object_category": "pan_(for_cooking)",
+      "expected_domain": "tool_prop",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "pan_for_cooking__03",
+      "image_id": 505728,
+      "source_image_sha256": "a64a0c9a01c54f4090c2d88763a742a0165be5d6d378a189235fe748d039d307",
+      "object_category": "pan_(for_cooking)",
+      "expected_domain": "tool_prop",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "pan_for_cooking__04",
+      "image_id": 286182,
+      "source_image_sha256": "86125a7f9839ec4f1d089ed8ccb55641f224f50c45b8fcb6ae374284abeab2b9",
+      "object_category": "pan_(for_cooking)",
+      "expected_domain": "tool_prop",
+      "candidate_count": 3,
+      "gt_count": 4
+    },
+    {
+      "case_id": "pen__01",
+      "image_id": 150652,
+      "source_image_sha256": "f79c9716873ec77fc5af671499f605d2df1e88a8715486318bae469f9750f776",
+      "object_category": "pen",
+      "expected_domain": "daily_object",
+      "candidate_count": 6,
+      "gt_count": 4
+    },
+    {
+      "case_id": "pen__02",
+      "image_id": 561453,
+      "source_image_sha256": "6d5785ff05bded01ac783ac573aab8c25e7b4a59be2c04a0e164bfc24a604eeb",
+      "object_category": "pen",
+      "expected_domain": "daily_object",
+      "candidate_count": 4,
+      "gt_count": 2
+    },
+    {
+      "case_id": "pen__03",
+      "image_id": 147415,
+      "source_image_sha256": "7e695f6509b7611767b1bea2a4ef40e02b511129da5a924bae27bb0ca3dcc447",
+      "object_category": "pen",
+      "expected_domain": "daily_object",
+      "candidate_count": 1,
+      "gt_count": 2
+    },
+    {
+      "case_id": "plastic_bag__01",
+      "image_id": 205861,
+      "source_image_sha256": "909982a3f0bbaa9ce6e02c654edb80ab12f8c2625b4a009c9adf7811280d114a",
+      "object_category": "plastic_bag",
+      "expected_domain": "container",
+      "candidate_count": 4,
+      "gt_count": 3
+    },
+    {
+      "case_id": "plastic_bag__02",
+      "image_id": 464928,
+      "source_image_sha256": "353382d834e14dc2d113f754f7450aa8fbdc3e6a2b06ea823c80d2f3ffa09273",
+      "object_category": "plastic_bag",
+      "expected_domain": "container",
+      "candidate_count": 5,
+      "gt_count": 3
+    },
+    {
+      "case_id": "plastic_bag__03",
+      "image_id": 44388,
+      "source_image_sha256": "e660c00e2ae07824445b4315510105f3edff42b6c47e7bab86efcdd2291770c1",
+      "object_category": "plastic_bag",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 3
+    },
+    {
+      "case_id": "plastic_bag__04",
+      "image_id": 36230,
+      "source_image_sha256": "663a4a5d5800897eb622fd8962186d0431ed7533076d55f3895e49b3ff8cb084",
+      "object_category": "plastic_bag",
+      "expected_domain": "container",
+      "candidate_count": 10,
+      "gt_count": 3
+    },
+    {
+      "case_id": "plate__01",
+      "image_id": 375430,
+      "source_image_sha256": "781e1a3be50e0f45dc307c6fa76bb54c48d4e7974bde8a4ee652e8089bbcd429",
+      "object_category": "plate",
+      "expected_domain": "container",
+      "candidate_count": 3,
+      "gt_count": 4
+    },
+    {
+      "case_id": "plate__02",
+      "image_id": 267300,
+      "source_image_sha256": "666333e7cc2a035971ea5e82b43bd8180b721eb63195568b889a0a220c3cce40",
+      "object_category": "plate",
+      "expected_domain": "container",
+      "candidate_count": 4,
+      "gt_count": 4
+    },
+    {
+      "case_id": "plate__03",
+      "image_id": 187454,
+      "source_image_sha256": "a34f918b20ebbbf2d744aa970ba11f41d1d6367bc3b000001939604654f02cf9",
+      "object_category": "plate",
+      "expected_domain": "container",
+      "candidate_count": 3,
+      "gt_count": 4
+    },
+    {
+      "case_id": "plate__04",
+      "image_id": 312412,
+      "source_image_sha256": "da8f009f3b4a940f411fa73a16e3a0e2e24fc84ad06c3c0a0d32a5e9ebcf2630",
+      "object_category": "plate",
+      "expected_domain": "container",
+      "candidate_count": 2,
+      "gt_count": 4
+    },
+    {
+      "case_id": "remote_control__01",
+      "image_id": 93114,
+      "source_image_sha256": "dccb61d8c5cf2ca3ee9eac819cdb0b38a24a0ac533841e64dc732928c11a58a2",
+      "object_category": "remote_control",
+      "expected_domain": "device",
+      "candidate_count": 51,
+      "gt_count": 3
+    },
+    {
+      "case_id": "remote_control__02",
+      "image_id": 476810,
+      "source_image_sha256": "517c9cc8f102629d2f1d067d8861ddb49c49fbdc75f16abdbd033d15a875f14a",
+      "object_category": "remote_control",
+      "expected_domain": "device",
+      "candidate_count": 32,
+      "gt_count": 3
+    },
+    {
+      "case_id": "remote_control__03",
+      "image_id": 517699,
+      "source_image_sha256": "bd1aa4c6e7d1c33f60d26f50d12f6b1aaa9adb4ea74bb7c96a7b68276ef66420",
+      "object_category": "remote_control",
+      "expected_domain": "device",
+      "candidate_count": 19,
+      "gt_count": 2
+    },
+    {
+      "case_id": "remote_control__04",
+      "image_id": 6422,
+      "source_image_sha256": "1ee2212a3f4877d0051d20d188f30b7e70c82b8bd5a952a377bc8367f532856e",
+      "object_category": "remote_control",
+      "expected_domain": "device",
+      "candidate_count": 10,
+      "gt_count": 2
+    },
+    {
+      "case_id": "scarf__01",
+      "image_id": 52902,
+      "source_image_sha256": "34bd011745ac16a11d85a980425519d8e1139ef0b2261056501a1f20cb2d867d",
+      "object_category": "scarf",
+      "expected_domain": "daily_object",
+      "candidate_count": 9,
+      "gt_count": 2
+    },
+    {
+      "case_id": "scarf__02",
+      "image_id": 413044,
+      "source_image_sha256": "c5d4665d05fdcd5909d80d2a760e37ef0217204017392bb4fcac6330bff387d2",
+      "object_category": "scarf",
+      "expected_domain": "daily_object",
+      "candidate_count": 10,
+      "gt_count": 2
+    },
+    {
+      "case_id": "scarf__03",
+      "image_id": 74256,
+      "source_image_sha256": "24d5c238500665ac7b67057535818586c54411b02daee6b155d0024f4f39a483",
+      "object_category": "scarf",
+      "expected_domain": "daily_object",
+      "candidate_count": 22,
+      "gt_count": 2
+    },
+    {
+      "case_id": "scarf__04",
+      "image_id": 463284,
+      "source_image_sha256": "fe12f9ce44bf671383b326e86964e13c3b29f8e03e4e7f8c769952f4a0c2245b",
+      "object_category": "scarf",
+      "expected_domain": "daily_object",
+      "candidate_count": 2,
+      "gt_count": 2
+    },
+    {
+      "case_id": "scissors__01",
+      "image_id": 48601,
+      "source_image_sha256": "25a9e4ef266abbcc6fd8cf5849f2932a3781ac704ca2d03ff7f4760b28a94495",
+      "object_category": "scissors",
+      "expected_domain": "tool_prop",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "scissors__02",
+      "image_id": 244582,
+      "source_image_sha256": "d49d10be23bc69b8b535be780140dee8917bd9de7f293953dff500ab0d337cd7",
+      "object_category": "scissors",
+      "expected_domain": "tool_prop",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "scissors__03",
+      "image_id": 239882,
+      "source_image_sha256": "b866a65fa3a71163d3f7e69792f3b22bf4d53bbf99c0d0d5c4f998a0f1f5ed3e",
+      "object_category": "scissors",
+      "expected_domain": "tool_prop",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "scissors__04",
+      "image_id": 379443,
+      "source_image_sha256": "2995339680fcf8825f1d8cf253c4644c7b5aeb67042795da0084a4bea5a0a86d",
+      "object_category": "scissors",
+      "expected_domain": "tool_prop",
+      "candidate_count": 13,
+      "gt_count": 4
+    },
+    {
+      "case_id": "screwdriver__01",
+      "image_id": 473500,
+      "source_image_sha256": "3544a54ba07d632f58f417ff11faceb2bbf27f5dbec218b93bf12cf4f044cc47",
+      "object_category": "screwdriver",
+      "expected_domain": "tool_prop",
+      "candidate_count": 2,
+      "gt_count": 3
+    },
+    {
+      "case_id": "shoe__01",
+      "image_id": 149962,
+      "source_image_sha256": "d8e0664cbba5361a856e633a745c4eb0e590c1d15349518e907e0ffa58e56c57",
+      "object_category": "shoe",
+      "expected_domain": "daily_object",
+      "candidate_count": 5,
+      "gt_count": 7
+    },
+    {
+      "case_id": "shoe__02",
+      "image_id": 186605,
+      "source_image_sha256": "53489b9ccfb07dd9796cc05a5f78edc24bae4269e1240a2fdb8606a01315f9ec",
+      "object_category": "shoe",
+      "expected_domain": "daily_object",
+      "candidate_count": 10,
+      "gt_count": 7
+    },
+    {
+      "case_id": "shoe__03",
+      "image_id": 184003,
+      "source_image_sha256": "59f1205218241aec2d9a7f292aa2133bd18c6cbcba311082d5afa4fb9fcc29c2",
+      "object_category": "shoe",
+      "expected_domain": "daily_object",
+      "candidate_count": 2,
+      "gt_count": 6
+    },
+    {
+      "case_id": "shoe__04",
+      "image_id": 90833,
+      "source_image_sha256": "0fe1d0b24d32678cde353178ade38ef963ece2b55eef1ec247b868681ea88b34",
+      "object_category": "shoe",
+      "expected_domain": "daily_object",
+      "candidate_count": 7,
+      "gt_count": 6
+    },
+    {
+      "case_id": "slipper_footwear__01",
+      "image_id": 171309,
+      "source_image_sha256": "b6e9a253cdba0f897ed5c190678a224e659756d07af25db0be48638202276f59",
+      "object_category": "slipper_(footwear)",
+      "expected_domain": "daily_object",
+      "candidate_count": 3,
+      "gt_count": 3
+    },
+    {
+      "case_id": "soap__01",
+      "image_id": 239627,
+      "source_image_sha256": "efcde4e8d42f3e606457e4cf6a9043ca6aaac32198584845868d1466356c4f51",
+      "object_category": "soap",
+      "expected_domain": "daily_object",
+      "candidate_count": 8,
+      "gt_count": 6
+    },
+    {
+      "case_id": "soap__02",
+      "image_id": 265432,
+      "source_image_sha256": "c87add8900dad719bc0cf8bf5a3f2a14198c68f6f0d5a6ffe1f1365ec6d3995b",
+      "object_category": "soap",
+      "expected_domain": "daily_object",
+      "candidate_count": 3,
+      "gt_count": 5
+    },
+    {
+      "case_id": "spoon__01",
+      "image_id": 377359,
+      "source_image_sha256": "d5410e517e832752fc19d486c209f4e5579d6655ca2a2b82b65298820221b516",
+      "object_category": "spoon",
+      "expected_domain": "tool_prop",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "spoon__02",
+      "image_id": 227960,
+      "source_image_sha256": "c308dcc311f42cfa4ab5349fd90136897e5bb5da43fb2bb9327632eca52e3468",
+      "object_category": "spoon",
+      "expected_domain": "tool_prop",
+      "candidate_count": 5,
+      "gt_count": 4
+    },
+    {
+      "case_id": "spoon__03",
+      "image_id": 293044,
+      "source_image_sha256": "31387cbdefb56e1b906287f6d02266af374ae1659344bb73150890085fc7fd82",
+      "object_category": "spoon",
+      "expected_domain": "tool_prop",
+      "candidate_count": 6,
+      "gt_count": 4
+    },
+    {
+      "case_id": "spoon__04",
+      "image_id": 106557,
+      "source_image_sha256": "58115d365a0ad744a0291aa7c1334119f70dda6b1f592cdb218d3ee1afc21d44",
+      "object_category": "spoon",
+      "expected_domain": "tool_prop",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "stool__01",
+      "image_id": 47886,
+      "source_image_sha256": "054bba13c29c499d7abffc0dd454e6cde9e8b81c9fe15fe22369655dd91d2cb1",
+      "object_category": "stool",
+      "expected_domain": "furniture",
+      "candidate_count": 18,
+      "gt_count": 3
+    },
+    {
+      "case_id": "stool__02",
+      "image_id": 368900,
+      "source_image_sha256": "2fdda86abcefbbd1fd255861d4c1d240fe32bff43d4140c17d5308011bbacb61",
+      "object_category": "stool",
+      "expected_domain": "furniture",
+      "candidate_count": 13,
+      "gt_count": 3
+    },
+    {
+      "case_id": "stool__03",
+      "image_id": 68833,
+      "source_image_sha256": "9e29b176b8c0ff46fda18b967aab4aa17d4ca5f45fa590896d876b66474aa7ab",
+      "object_category": "stool",
+      "expected_domain": "furniture",
+      "candidate_count": 12,
+      "gt_count": 3
+    },
+    {
+      "case_id": "stool__04",
+      "image_id": 399028,
+      "source_image_sha256": "2db1bd2ee9df10c6fd57ad2518a9d779850e4fd8512ec0ae8ceb01e5769b94be",
+      "object_category": "stool",
+      "expected_domain": "furniture",
+      "candidate_count": 2,
+      "gt_count": 3
+    },
+    {
+      "case_id": "sweater__01",
+      "image_id": 418062,
+      "source_image_sha256": "f2e3c8d1e4e8d408dc8c39933b2fccb40951f52c3c617050252122de669ffecf",
+      "object_category": "sweater",
+      "expected_domain": "daily_object",
+      "candidate_count": 15,
+      "gt_count": 7
+    },
+    {
+      "case_id": "sweater__02",
+      "image_id": 124117,
+      "source_image_sha256": "15974c8417da8ebf06f198d14050687d2950576f9e5f9f1b2ba8cf9a37d23dc1",
+      "object_category": "sweater",
+      "expected_domain": "daily_object",
+      "candidate_count": 10,
+      "gt_count": 7
+    },
+    {
+      "case_id": "sweater__03",
+      "image_id": 323626,
+      "source_image_sha256": "1c3407e8f777c3d94f421d280faf0aff308bec5700fa2454fa2ff54145b4a86b",
+      "object_category": "sweater",
+      "expected_domain": "daily_object",
+      "candidate_count": 2,
+      "gt_count": 7
+    },
+    {
+      "case_id": "sweater__04",
+      "image_id": 175781,
+      "source_image_sha256": "9fee9cc493c2041412c8fb6cf6cceaa5ce8f7df96f379939aa97cf43ed6f4b5c",
+      "object_category": "sweater",
+      "expected_domain": "daily_object",
+      "candidate_count": 6,
+      "gt_count": 7
+    },
+    {
+      "case_id": "table__01",
+      "image_id": 295134,
+      "source_image_sha256": "346beed0f255f4ca94989f34036d50eaa2a86c878efe20c5403f7ba2e96b265a",
+      "object_category": "table",
+      "expected_domain": "furniture",
+      "candidate_count": 14,
+      "gt_count": 5
+    },
+    {
+      "case_id": "table__02",
+      "image_id": 91406,
+      "source_image_sha256": "49cfc8f4435780aa54ba08f7df7146f5bb5ad935d562542050cdb657700f0da3",
+      "object_category": "table",
+      "expected_domain": "furniture",
+      "candidate_count": 11,
+      "gt_count": 4
+    },
+    {
+      "case_id": "table__03",
+      "image_id": 112378,
+      "source_image_sha256": "1c3243e8b8ae4be52be7f1ae0aa9c9a5a517d93b7218edb222cd68d2f87041ec",
+      "object_category": "table",
+      "expected_domain": "furniture",
+      "candidate_count": 1,
+      "gt_count": 2
+    },
+    {
+      "case_id": "table__04",
+      "image_id": 325114,
+      "source_image_sha256": "b00883cb1edf9badb2c6e8725d830b0fc4728980b0599fcff493bade9d219beb",
+      "object_category": "table",
+      "expected_domain": "furniture",
+      "candidate_count": 10,
+      "gt_count": 4
+    },
+    {
+      "case_id": "telephone__01",
+      "image_id": 275585,
+      "source_image_sha256": "be46bb46c3b3b899fa42e67b65d8c5ff3b5d2fdece120d05e49e974543f4f0cb",
+      "object_category": "telephone",
+      "expected_domain": "device",
+      "candidate_count": 19,
+      "gt_count": 4
+    },
+    {
+      "case_id": "telephone__02",
+      "image_id": 198561,
+      "source_image_sha256": "eea1ba69b3df8dc50563aee0658f90123342ae64bafb0612498cfc4166de5538",
+      "object_category": "telephone",
+      "expected_domain": "device",
+      "candidate_count": 6,
+      "gt_count": 4
+    },
+    {
+      "case_id": "telephone__03",
+      "image_id": 516916,
+      "source_image_sha256": "39d55358a91560d344e93716d6cc9d522d85587217d96ff8ff69a7e2adb73227",
+      "object_category": "telephone",
+      "expected_domain": "device",
+      "candidate_count": 20,
+      "gt_count": 4
+    },
+    {
+      "case_id": "telephone__04",
+      "image_id": 4795,
+      "source_image_sha256": "bdc4015321d7bdbd56be7041b944db6b20e9ec9859daef495f005687a443243d",
+      "object_category": "telephone",
+      "expected_domain": "device",
+      "candidate_count": 14,
+      "gt_count": 4
+    },
+    {
+      "case_id": "television_set__01",
+      "image_id": 98839,
+      "source_image_sha256": "2e43743e124d071e76f5e153760e5faf94794d9f2af59fbc00cf586ebc1eb631",
+      "object_category": "television_set",
+      "expected_domain": "device",
+      "candidate_count": 5,
+      "gt_count": 4
+    },
+    {
+      "case_id": "television_set__02",
+      "image_id": 131131,
+      "source_image_sha256": "db8fd02988cdf2d737e36f2e868db84628bc0c4a482a4a783e23b5c78971a69c",
+      "object_category": "television_set",
+      "expected_domain": "device",
+      "candidate_count": 19,
+      "gt_count": 4
+    },
+    {
+      "case_id": "television_set__03",
+      "image_id": 254600,
+      "source_image_sha256": "3f4dbba38ac02a9bed65a96bb0948c0ea9f505c1a7a3295cab790e96e4a42065",
+      "object_category": "television_set",
+      "expected_domain": "device",
+      "candidate_count": 5,
+      "gt_count": 4
+    },
+    {
+      "case_id": "television_set__04",
+      "image_id": 25560,
+      "source_image_sha256": "42b74492b219c36d01587ac82e55f525efeada1d943c2737aa03fded058a199f",
+      "object_category": "television_set",
+      "expected_domain": "device",
+      "candidate_count": 8,
+      "gt_count": 3
+    },
+    {
+      "case_id": "towel__01",
+      "image_id": 228817,
+      "source_image_sha256": "65e58f9a22871b76bae80941ebc1b1931f76ab44552688ea79c9f8d5436e861b",
+      "object_category": "towel",
+      "expected_domain": "daily_object",
+      "candidate_count": 5,
+      "gt_count": 4
+    },
+    {
+      "case_id": "towel__02",
+      "image_id": 442982,
+      "source_image_sha256": "e898fa455550f3975d4f66e4f35578ff476ef73d8fdbaba27f38cb634c891601",
+      "object_category": "towel",
+      "expected_domain": "daily_object",
+      "candidate_count": 8,
+      "gt_count": 4
+    },
+    {
+      "case_id": "towel__03",
+      "image_id": 173968,
+      "source_image_sha256": "21af874ad3636df6d8486a1d64bee516dcd0a460e8d6dfb6e13b91c7d80ae97b",
+      "object_category": "towel",
+      "expected_domain": "daily_object",
+      "candidate_count": 4,
+      "gt_count": 3
+    },
+    {
+      "case_id": "towel__04",
+      "image_id": 197864,
+      "source_image_sha256": "6257853f1f8a0bb8960c976b68f7925564990251206e8e6ae7e2dcc30ac96abd",
+      "object_category": "towel",
+      "expected_domain": "daily_object",
+      "candidate_count": 2,
+      "gt_count": 2
+    },
+    {
+      "case_id": "trash_can__01",
+      "image_id": 250370,
+      "source_image_sha256": "39909a489a961b4e6ebd7ba49155cb4b39388f00e4f80b6d3be5c1e9a28f662b",
+      "object_category": "trash_can",
+      "expected_domain": "container",
+      "candidate_count": 15,
+      "gt_count": 4
+    },
+    {
+      "case_id": "trash_can__02",
+      "image_id": 80185,
+      "source_image_sha256": "609f905786b04e3a8e8b0dc6821d054aab4f3d4793c6c065c497653598bb6f20",
+      "object_category": "trash_can",
+      "expected_domain": "container",
+      "candidate_count": 6,
+      "gt_count": 4
+    },
+    {
+      "case_id": "trash_can__03",
+      "image_id": 281102,
+      "source_image_sha256": "8a1819fa4ebb1fb793c9efd42a721b4d9adef89613846b00f0272f57348f44ab",
+      "object_category": "trash_can",
+      "expected_domain": "container",
+      "candidate_count": 13,
+      "gt_count": 4
+    },
+    {
+      "case_id": "trash_can__04",
+      "image_id": 461597,
+      "source_image_sha256": "638663058dc53095b36325a8a1098cf2478e15d7ad56d4b44c4fa20b6ce04f9e",
+      "object_category": "trash_can",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 4
+    },
+    {
+      "case_id": "tray__01",
+      "image_id": 223761,
+      "source_image_sha256": "fdf770c5adf9573c57413db34ea55841685dd1cfddf9a60d94006fa2776a31c7",
+      "object_category": "tray",
+      "expected_domain": "container",
+      "candidate_count": 11,
+      "gt_count": 4
+    },
+    {
+      "case_id": "tray__02",
+      "image_id": 376806,
+      "source_image_sha256": "16e2a3cfa3f451267bbf5f05486a410df89c3945e2057b61289bf04151a5f632",
+      "object_category": "tray",
+      "expected_domain": "container",
+      "candidate_count": 1,
+      "gt_count": 4
+    },
+    {
+      "case_id": "tray__03",
+      "image_id": 353237,
+      "source_image_sha256": "27229155389b144b95cf27822dc82ae5987e87b0b0cb003a43579954509ffa0c",
+      "object_category": "tray",
+      "expected_domain": "container",
+      "candidate_count": 1,
+      "gt_count": 4
+    },
+    {
+      "case_id": "tray__04",
+      "image_id": 256518,
+      "source_image_sha256": "37bb2ffb4e49039b5e0ef170171c68bfe946c5f5c631e20b16681b8319fcf419",
+      "object_category": "tray",
+      "expected_domain": "container",
+      "candidate_count": 5,
+      "gt_count": 4
+    },
+    {
+      "case_id": "vase__01",
+      "image_id": 143526,
+      "source_image_sha256": "e66b497333b62e88acc8200e2bb53afb55a845d5cbc4f388c80e161adae917c9",
+      "object_category": "vase",
+      "expected_domain": "container",
+      "candidate_count": 9,
+      "gt_count": 5
+    },
+    {
+      "case_id": "vase__02",
+      "image_id": 577735,
+      "source_image_sha256": "0fcc1212307a4a555daecefbad6ce825e61614e2aa118d3a94ca32990a52eeca",
+      "object_category": "vase",
+      "expected_domain": "container",
+      "candidate_count": 6,
+      "gt_count": 5
+    },
+    {
+      "case_id": "vase__03",
+      "image_id": 467315,
+      "source_image_sha256": "92073a880b0301d0489ee969f19cb15c0728cfe408586a7ad27fb0a29b5707a4",
+      "object_category": "vase",
+      "expected_domain": "container",
+      "candidate_count": 6,
+      "gt_count": 5
+    },
+    {
+      "case_id": "vase__04",
+      "image_id": 187279,
+      "source_image_sha256": "3bc1d2408b1887579e5ca48721e1d172a37130d5a6a73f699bde62ca68fdd48b",
+      "object_category": "vase",
+      "expected_domain": "container",
+      "candidate_count": 7,
+      "gt_count": 5
+    },
+    {
+      "case_id": "wallet__01",
+      "image_id": 566752,
+      "source_image_sha256": "24ed37c8b6509c9c38e45022142f2d61804ce5226b8e84789c2ed7ecc9fac45a",
+      "object_category": "wallet",
+      "expected_domain": "daily_object",
+      "candidate_count": 4,
+      "gt_count": 2
+    },
+    {
+      "case_id": "wallet__02",
+      "image_id": 98642,
+      "source_image_sha256": "c49ef0c3c9ab5e25345a99189e12f8c81b3a4cc4207dac0b638834aa7639f313",
+      "object_category": "wallet",
+      "expected_domain": "daily_object",
+      "candidate_count": 5,
+      "gt_count": 2
+    },
+    {
+      "case_id": "watch__01",
+      "image_id": 120420,
+      "source_image_sha256": "cb4cb64ebe94a7af48ed198e165bce9d7c82c8e2d28b9084f6a35000b47e82f2",
+      "object_category": "watch",
+      "expected_domain": "device",
+      "candidate_count": 11,
+      "gt_count": 3
+    },
+    {
+      "case_id": "watch__02",
+      "image_id": 548882,
+      "source_image_sha256": "43a049613dcfdcb1c0a7409a1ae7b59c550acf734a2016a90a6f63af07582dd4",
+      "object_category": "watch",
+      "expected_domain": "device",
+      "candidate_count": 4,
+      "gt_count": 3
+    },
+    {
+      "case_id": "watch__03",
+      "image_id": 35884,
+      "source_image_sha256": "17cce4a91cfa3ee24c57db1e9c2c2d67b2865acb4f32c7f34af4be53bf79bad5",
+      "object_category": "watch",
+      "expected_domain": "device",
+      "candidate_count": 10,
+      "gt_count": 2
+    },
+    {
+      "case_id": "watch__04",
+      "image_id": 65806,
+      "source_image_sha256": "55fc97c7db789cce9236b34815aa20899ca84c774301fea8163f85aef1b42c94",
+      "object_category": "watch",
+      "expected_domain": "device",
+      "candidate_count": 1,
+      "gt_count": 2
+    }
+  ]
+}

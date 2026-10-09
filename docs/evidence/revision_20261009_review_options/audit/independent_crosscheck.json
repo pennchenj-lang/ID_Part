@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "paired_case_method_records": 185,
+  "per_case_numeric_fields_checked": 3700,
+  "aggregate_numeric_fields_checked": 344,
+  "tolerance": 1e-12,
+  "independent_replay_script_sha256": "24116f3caca76137880497cc1f167d7258a8dc2bbec2352019f9cb82317f2709",
+  "own_replay_script_sha256": "462b7a442c05875c94eb603b2aafc7004321e60ddbaee6a0ec52f320b0eeea7c"
+}

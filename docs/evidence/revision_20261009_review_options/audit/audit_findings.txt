@@ -1,0 +1,60 @@
+INDEPENDENT AUDIT: REVIEW OPTIONS ON THE FROZEN 37 REQUESTS
+
+Decision
+The measured advantage is a smaller exposed option set over the full fixed cohort. It is strongest versus greedy NMS, raw proposals and local pairwise CRF. HPID has the lowest observed mean among all five methods. This is not evidence of perturbation stability, reduced human time, equal overall correctness, or general segmentation superiority. The DBSCAN-specific option-count difference does not exclude zero under the prespecified four-comparison adjustment, and it disappears on requests where both methods expose a correct option.
+
+Independent computation
+- Read the fixed audit protocol, original completion/routing case CSVs, frozen target manifest and unchanged algorithm sources. No producer summary table was used.
+- Independently loaded original candidate masks, ran all four original baselines, read stored HPID Group masks, normalized semantics and reconstructed the actual review set for all 37 x 5 outputs.
+- Reproduced all 185 original method/request endpoints to numerical tolerance 1e-12, including review-option counts, match counts, selected IoU, routing state and correctness at IoU .25/.50.
+- Verified 37 distinct source image IDs and source-image SHA256 values; n=37 paired requests, not 185 independent observations. There were no empty exported outputs and no zero-option review sets.
+- Paired percentile bootstrap: 10,000 draws, seed 20261009, lexically sorted case IDs; same draws for all full-cohort estimates. Descriptive 95% intervals; additionally 98.75% individual intervals for the four review-option contrasts (Bonferroni familywise 95%). This is a post-hoc audit of existing data, not a fresh holdout or a preregistered confirmatory study.
+
+Option definition verified against source code
+If normalized-semantic matches exist, expose those matches; otherwise expose all exported instances. The original routing CSV's correct_in_review_set metric only counts correct options within ambiguous semantic matches. It must not be confused with geometric correctness in the actual exposed set, which also includes fallback sets on unresolved requests. A geometrically overlapping fallback output need not carry the requested semantic identity.
+
+Full-cohort review-option means and paired HPID-minus-comparator intervals
+HPID: 76 total / 37 = 2.054054.
+Raw: 136 / 37 = 3.675676; difference -1.621622; 95% [-2.567568, -0.783108]; 98.75% [-2.837838, -0.540541].
+NMS: 140 / 37 = 3.783784; difference -1.729730; 95% [-2.945946, -0.756757]; 98.75% [-3.324324, -0.526858].
+DBSCAN: 104 / 37 = 2.810811; difference -0.756757; 95% [-1.540541, -0.081081]; 98.75% [-1.770439, 0.067736].
+Local pairwise CRF: 160 / 37 = 4.324324; difference -2.270270; 95% [-3.675676, -1.027027]; 98.75% [-4.108108, -0.756757].
+Observed relative reductions of mean options: 44.1% versus Raw, 45.7% versus NMS, 26.9% versus DBSCAN, 52.5% versus CRF. These are ratios of cohort means, not averages of request-level percentage reductions or measures of time saved.
+
+Correctness/coverage guardrails at IoU .25 (all denominators 37)
+                                Raw  NMS  DBSCAN  CRF  HPID
+Unique and correct                9    9      14    6    14
+Wrong unique                      5    4       5    3     6
+Any correct semantic match       18   11      15   13    15
+Correct geometry in exposed set  22   21      21   20    19
+Correct geometry in all exports  24   23      26   24    25
+Unresolved semantic request      10   16      11   14    11
+
+Important paired facts
+- Versus NMS, HPID gains 5 uniquely correct requests and loses none at IoU .25; it gains 4 semantically correct available requests and loses none. In the actual exposed geometry set, however, HPID gains 2 and loses 4. The wrong-unique comparison gains 4 errors and removes 2, net +2.
+- Versus DBSCAN, unique-correct and semantic-available totals match, but each involves 1 HPID-only success and 1 DBSCAN-only success. Matching totals do not establish equivalence or noninferiority. Actual exposed geometry has 1 HPID-only and 3 DBSCAN-only success, net -2.
+- Small binary discordant counts make percentile bootstrap intervals insufficient grounds for broad confirmatory claims. Report those counts descriptively. For perspective only, the unplanned exact two-sided binomial/McNemar diagnostic for 5 gains and 0 losses is p=.0625; it must not be used as a newly chosen primary test or omitted from claims that say routing accuracy is definitively improved.
+
+Prespecified secondary mechanism checks
+- On the 14 requests where HPID and DBSCAN both have a correct semantic match at IoU .25, all per-request option counts are identical: means 1.071429 vs 1.071429. At IoU .50 the five jointly correct requests also have identical counts (1 each).
+- On the 18 requests where both HPID and DBSCAN have correct geometry in their actual exposed set at .25, means are both 1.666667 (paired difference 0, 95% [-.166667,.166667]). All DBSCAN full-cohort option-count differences occur on requests where neither method has a correct semantic match. Some of those nevertheless have geometrically correct fallback choices.
+- On the 11 requests with correct semantic matches for both HPID and NMS at .25, means are 1.090909 vs 1.181818; paired difference -.090909, 95% [-.272727,0]. On the 17 jointly geometry-correct exposed sets, means are 1.705882 vs 3.117647; paired difference -1.411765, 95% [-3.647059,0].
+- These truth-conditioned post-hoc subsets diagnose where a difference arises; they are not independently randomized groups or evidence that full-cohort omissions are harmless. Full subset outputs are retained in independent_subsets.json.
+
+Claim boundaries
+- Do not say superiority to DBSCAN was established after four-comparison adjustment.
+- Do not say option reduction holds when both methods correctly resolve the same requests; the DBSCAN joint-correct subset contradicts this.
+- Do not describe fewer options as lower human time, lower error, improved segmentation or improved identity stability.
+- Do not say all other outcomes are equivalent, preserved or no worse. Equal totals alone are not equivalence evidence, and some coverage/error counts are worse.
+- Main text can remain focused on the narrow supported advantage, but it needs an explicit pointer and a concise tradeoff clause; retain all methods/guardrails in SI and source data.
+
+Artifacts
+recompute.py: portable independent statistical recomputation.
+replay_with_external_inputs.py: full replay adapter for external frozen inputs.
+independent_audit_report.json: verification counts, source hashes, full-cohort option comparisons.
+independent_rows.csv: all 185 reconstructed outputs and availability endpoints.
+independent_contrasts.csv: all full-cohort paired effects and intervals.
+independent_subsets.json: every planned mechanism subset including case IDs.
+independent_case_contributions.csv: full case-level option changes and correctness status.
+independent_source_units.csv: source identity verification.
+independent_assertions.csv: 185 successful original-endpoint checks.

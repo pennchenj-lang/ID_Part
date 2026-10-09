@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "method_request_endpoint_checks": 185,
+  "byte_identical_output_files": 11,
+  "outputs": [
+    {
+      "path": "data/review_cases.csv",
+      "sha256": "187d90d8dca9f31246ef9b3ab3c28db4dd13a2c72754ad4cdd2322d040319b6a"
+    },
+    {
+      "path": "data/review_instances.csv",
+      "sha256": "6f13eb1a4ac3b5208a7c5898477bbc4c9de1d4d3e439bc86cd90ec377597cb07"
+    },
+    {
+      "path": "data/source_units.csv",
+      "sha256": "9b9cc8f1f0a5408dbd69f1e75d68878a762f707c22264b191391444729298ef2"
+    },
+    {
+      "path": "data/source_hashes.csv",
+      "sha256": "bef6d5c7f69deb412ef1dbdd6ff29e8bf7de7276aaddbe8c2960e289c7784d99"
+    },
+    {
+      "path": "audit/reproduction_assertions.csv",
+      "sha256": "897cce7bf06e9b28e68ba05022e5db332d1550830d5ab8a87c462bb00566182d"
+    },
+    {
+      "path": "results/method_summary.csv",
+      "sha256": "49cc1365f8cab01b41ddf8a3357751c401b3bf760868f9925cff5abb11bdce73"
+    },
+    {
+      "path": "results/paired_contrasts.csv",
+      "sha256": "c15e6021594986270b82eb1de6c2e50faaa5443f293c8cc1b5878121513d7f79"
+    },
+    {
+      "path": "results/auxiliary_subsets.csv",
+      "sha256": "08d94b1fa3763995edeadc7fda5652716a0ccd597d69e68d86a8d2696d7663ef"
+    },
+    {
+      "path": "results/discordant_cases.csv",
+      "sha256": "87d2e07a17638bea51c8617b3fb7d7633ac4dd6f2fe5857c0f9b7ae1f328a33e"
+    },
+    {
+      "path": "results/manuscript_tables.json",
+      "sha256": "a8d610726d304a1574970d438c80ef5b2ac0e29a1a346073763690130cae2cf8"
+    },
+    {
+      "path": "results/review_burden_report.json",
+      "sha256": "8b49f5539ecf21af49054a36b3e91e17b21cdcf346c61e3a807b2f457ea48b3c"
+    }
+  ],
+  "note": "Full replay adapter tested using external frozen inputs, without changing packaged source files."
+}

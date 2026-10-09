@@ -1,0 +1,201 @@
+{
+  "scope": "Only portable paths and metadata input adapters were changed. Inference, matching, identity assignment, perturbation settings and statistical functions are unchanged. Local source hashes describe the executed original; released hashes describe portable copies.",
+  "files": [
+    {
+      "source": "protocol.json",
+      "released_as": "protocol.json",
+      "source_sha256": "a45fbcff92f7afb5eeae9e2b58bdc978cb6210c6bb79a76d8eaecb1d56026693",
+      "released_sha256": "a0c12f685b90d7e06d0173f69007530b2cdbedb447cd0ce615a148f761c28f32",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "run_stability.py",
+      "released_as": "run_stability.py",
+      "source_sha256": "de4e176b62fa67761c9caae36f175e246ab0872d1ffce9902e2ac9541d899484",
+      "released_sha256": "509f4898f57cce522594ba9805363126ec2a847ec054f6ad908a6d4951f42ad5",
+      "change": "portable path/input adaptation only"
+    },
+    {
+      "source": "summarize_check.py",
+      "released_as": "summarize_check.py",
+      "source_sha256": "be4e93c59f9ab06384f822c102d7dd511f01c6c09f4e4645123545c84c78ad73",
+      "released_sha256": "be4e93c59f9ab06384f822c102d7dd511f01c6c09f4e4645123545c84c78ad73",
+      "change": "byte-exact"
+    },
+    {
+      "source": "summarize_native_check.py",
+      "released_as": "summarize_native_check.py",
+      "source_sha256": "1d4ff1414698eccfec6bdb2960da38acdb8f2020cac6132cb822ee119fa252f3",
+      "released_sha256": "1d4ff1414698eccfec6bdb2960da38acdb8f2020cac6132cb822ee119fa252f3",
+      "change": "byte-exact"
+    },
+    {
+      "source": "summary_crosscheck.json",
+      "released_as": "summary_crosscheck.json",
+      "source_sha256": "11e34fce910ab00ed0907ac8e25d5611c4438d7c6e7a288c9e313c9820fa0942",
+      "released_sha256": "11e34fce910ab00ed0907ac8e25d5611c4438d7c6e7a288c9e313c9820fa0942",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "native_summary.json",
+      "released_as": "native_summary.json",
+      "source_sha256": "cd10e970562731d3bd882c01847213407a14e5302a841fd275dd5bdb73ac96af",
+      "released_sha256": "cd10e970562731d3bd882c01847213407a14e5302a841fd275dd5bdb73ac96af",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "case_metrics.csv",
+      "released_as": "case_metrics.csv",
+      "source_sha256": "e4507fde2cc4ddc1a4966967a01c0ece2bbb436832fea9b9bf45e4716e90d0d5",
+      "released_sha256": "e4507fde2cc4ddc1a4966967a01c0ece2bbb436832fea9b9bf45e4716e90d0d5",
+      "change": "byte-exact"
+    },
+    {
+      "source": "target_retention.csv",
+      "released_as": "target_retention.csv",
+      "source_sha256": "6a93acfcc06e7fd9bacda15c0fa7df20edebc97c82fe56e9358589eaa937161e",
+      "released_sha256": "6a93acfcc06e7fd9bacda15c0fa7df20edebc97c82fe56e9358589eaa937161e",
+      "change": "byte-exact"
+    },
+    {
+      "source": "completion.json",
+      "released_as": "completion.json",
+      "source_sha256": "7c7415d5eeb9c2330c8ba5fecee86a45b2193e8385f46b1c978eba3575b4104a",
+      "released_sha256": "7c7415d5eeb9c2330c8ba5fecee86a45b2193e8385f46b1c978eba3575b4104a",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "reproduction_audit.json",
+      "released_as": "reproduction_audit.json",
+      "source_sha256": "8f3d2f4473e9b0b9bcbf88d75afcb2d7a5eabd680720d1b57c459b19ad6e0b06",
+      "released_sha256": "8f3d2f4473e9b0b9bcbf88d75afcb2d7a5eabd680720d1b57c459b19ad6e0b06",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "native_identity_reproduction.json",
+      "released_as": "native_identity_reproduction.json",
+      "source_sha256": "b630658c65660addaa7ba0cfa2fcda4f9157c9a5a5da4ea6002a96f3fc2867ac",
+      "released_sha256": "b630658c65660addaa7ba0cfa2fcda4f9157c9a5a5da4ea6002a96f3fc2867ac",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "provenance.json",
+      "released_as": "provenance.json",
+      "source_sha256": "9038c9c361bc1af66d10b8b121605e786bbc06bc6782b9d5b0bfcc4e889c6a2e",
+      "released_sha256": "8c8afe472eb75bc3207c2a9b7c2f145ff1dec3ac02dcc4a6472bd8f3a01cf060",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "audit/statistics/independent_case_rates.csv",
+      "released_as": "audit/statistics/independent_case_rates.csv",
+      "source_sha256": "16d4227397cf4cfa3070c047644fb314e935e81592c761afb54c3d3eead57893",
+      "released_sha256": "16d4227397cf4cfa3070c047644fb314e935e81592c761afb54c3d3eead57893",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_cohorts.csv",
+      "released_as": "audit/statistics/independent_cohorts.csv",
+      "source_sha256": "e5f36d4b677a0cb0631051fb31957680539c4041edd3a6d45488986e8defcc33",
+      "released_sha256": "e5f36d4b677a0cb0631051fb31957680539c4041edd3a6d45488986e8defcc33",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_contrasts.csv",
+      "released_as": "audit/statistics/independent_contrasts.csv",
+      "source_sha256": "a6aa4e81c6bcd68c66936c1784f38bd4e90bee67f445e12c86b5775ba53e83aa",
+      "released_sha256": "a6aa4e81c6bcd68c66936c1784f38bd4e90bee67f445e12c86b5775ba53e83aa",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_estimates.csv",
+      "released_as": "audit/statistics/independent_estimates.csv",
+      "source_sha256": "11dd67322d7f14f74150addfc89646683fc432b11f6ef17d98fdf69819600392",
+      "released_sha256": "11dd67322d7f14f74150addfc89646683fc432b11f6ef17d98fdf69819600392",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_native_contrasts.csv",
+      "released_as": "audit/statistics/independent_native_contrasts.csv",
+      "source_sha256": "e954289b21c610f4cc051e01089c8d6488fa56beec7869cdf70f9e22e07a4c1e",
+      "released_sha256": "e954289b21c610f4cc051e01089c8d6488fa56beec7869cdf70f9e22e07a4c1e",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_native_estimates.csv",
+      "released_as": "audit/statistics/independent_native_estimates.csv",
+      "source_sha256": "62b91301100062ae3314d82a9b8ede5975226f11a40bd08d3242c8a4c74b11eb",
+      "released_sha256": "62b91301100062ae3314d82a9b8ede5975226f11a40bd08d3242c8a4c74b11eb",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_segmentation_contrasts.csv",
+      "released_as": "audit/statistics/independent_segmentation_contrasts.csv",
+      "source_sha256": "a6ba59cea97a18b75686febaec56496fb655f7e1f2a42c5aa1086e1bcc71f6c8",
+      "released_sha256": "a6ba59cea97a18b75686febaec56496fb655f7e1f2a42c5aa1086e1bcc71f6c8",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_segmentation_summary.csv",
+      "released_as": "audit/statistics/independent_segmentation_summary.csv",
+      "source_sha256": "13f254b794508564a20d8354c0311cbe1174692f8ffba85237a6a3adc7bc4369",
+      "released_sha256": "13f254b794508564a20d8354c0311cbe1174692f8ffba85237a6a3adc7bc4369",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/independent_statistics_report.json",
+      "released_as": "audit/statistics/independent_statistics_report.json",
+      "source_sha256": "a082fb6b13155031e1271bac00d8d52e0788f7b7d7b2fcd6779ce852efb14d4a",
+      "released_sha256": "a082fb6b13155031e1271bac00d8d52e0788f7b7d7b2fcd6779ce852efb14d4a",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "audit/statistics/independent_strata.csv",
+      "released_as": "audit/statistics/independent_strata.csv",
+      "source_sha256": "70c7a45249d3e99fe198cf0d08888ed9170cd36b8536b95bf629f35778323ee6",
+      "released_sha256": "70c7a45249d3e99fe198cf0d08888ed9170cd36b8536b95bf629f35778323ee6",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/statistics/native_and_producer_crosscheck.json",
+      "released_as": "audit/statistics/native_and_producer_crosscheck.json",
+      "source_sha256": "7ddae332484c21c3c4f1eaecab8e1f07c1bd085b98fac44ca02a3f96fa04cab3",
+      "released_sha256": "7ddae332484c21c3c4f1eaecab8e1f07c1bd085b98fac44ca02a3f96fa04cab3",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "audit/input_bindings.json",
+      "released_as": "audit/input_bindings.json",
+      "source_sha256": "43155f6c4154e417fcebb0b7bb9f2ecc888746bbdabb0fdfec2917908aff81e7",
+      "released_sha256": "1804649cb38a1628d9931ef59249600d8a490512ecfd13024bea661e0086da44",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "audit/independent_mask_check.json",
+      "released_as": "audit/independent_mask_check.json",
+      "source_sha256": "f5c409cf797fffc4a5202b14477951d901235e8a1061bd1c9d85cbdb1ec441d3",
+      "released_sha256": "48fe9e50a83126f1b1a40403ea7ba1db5ac1a5b1ad61a7d5631d3b4626f1e986",
+      "change": "local path strings replaced with relative provenance namespaces"
+    },
+    {
+      "source": "audit/independent_statistics.py",
+      "released_as": "audit/independent_statistics.py",
+      "source_sha256": "08030ebbce2d058f1b3c50b89da85ed4f0b58a45c6f0eccc4707c6bb89356f01",
+      "released_sha256": "105992c909360ccd18cda6be9daa0717b1159cb16095836905d6ded4afb89279",
+      "change": "portable path/input adaptation only"
+    },
+    {
+      "source": "audit/independent_f1_summary.py",
+      "released_as": "audit/independent_f1_summary.py",
+      "source_sha256": "156903cee687007f5e2e7a75fb0113ee452eda0bc960194381ce2e4ef41b472f",
+      "released_sha256": "156903cee687007f5e2e7a75fb0113ee452eda0bc960194381ce2e4ef41b472f",
+      "change": "byte-exact"
+    },
+    {
+      "source": "audit/check_native_and_crosschecks.py",
+      "released_as": "audit/check_native_and_crosschecks.py",
+      "source_sha256": "6de8b14de2340cc35f8e485d53ba8ea609863f2b7b1424560b4db197c60e8adb",
+      "released_sha256": "6de8b14de2340cc35f8e485d53ba8ea609863f2b7b1424560b4db197c60e8adb",
+      "change": "byte-exact"
+    }
+  ]
+}
