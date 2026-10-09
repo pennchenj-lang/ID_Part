@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "return_code": 0,
+  "case_id": "cellular_telephone__u01",
+  "runtime_seconds": 37.45645880699158,
+  "checks": {
+    "part_id_map.tiff": true,
+    "group_id_map.tiff": true,
+    "parts.json": true,
+    "groups.json": true
+  },
+  "protocol_sha256": "99f79ad09cc259d33b3251d1349891997789f9dab1d82ed0639f5c1292bd72ed"
+}

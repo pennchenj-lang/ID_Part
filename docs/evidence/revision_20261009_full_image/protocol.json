@@ -1,0 +1,42 @@
+{
+  "title": "Reviewer 1 comment 4 full-image primary-object evaluation",
+  "created_utc": "2026-10-09T13:00:44.309179+00:00",
+  "status": "Locally fixed before new full-image inference or scoring, not public preregistration",
+  "design": "Paired retrospective extension of the previously untouched 42-object holdout. This new analysis does not create a fresh untouched holdout.",
+  "cohort": "All 42 actually materialized cases in the archived r5 input manifest, including its documented pre-inference source substitutions. No selection by new predictions or scores.",
+  "inference": {
+    "release_commit": "be543003632fa739d0b63e9acbffb8d91d99b84a",
+    "configuration": "Exact archived r5 CLI command, changing only image path and output path. Frozen automatic decomposition and primary root mode.",
+    "input": "Complete archived normalized source_full.png copied to anonymous input paths. No ground-truth box, mask, category, object identity, target point or expected profile is supplied.",
+    "target_policy": "The released primary-object selection policy chooses the output autonomously. No scoring-time selection of the root closest to the reference.",
+    "model_policy": "Existing frozen checkpoints, prompt bank and retrieval assets. No fitting, threshold search, prompt adjustment, category-specific intervention or outcome-based retry.",
+    "attempts": "One completed attempt per image. Interrupted/infrastructure-failed attempts are recorded; any mechanical recovery must preserve commands and parameters and be disclosed.",
+    "environment_control": "First archived cropped input rerun before the full-image run; compare pixel maps and ordered identity/semantic records with historical output. A discrepancy triggers documentation and a paired same-environment cropped rerun, never parameter tuning."
+  },
+  "evaluation": {
+    "primary_endpoint": "Macro Group F1 at mask IoU 0.25 over all 42 targets. Compare full-image outputs with archived cropped outputs translated into full-image coordinates, using the same full reference masks.",
+    "prediction_policy": "All exported Groups/Parts of the autonomously selected primary object enter the applicable released scoring rule. No ground-truth-based spatial clipping, category filtering, root reselection or restriction to successful detections.",
+    "primary_scope": "Target-specific primary-object pipeline evaluation, not all-object scene detection average precision. Selecting another object is a task error for the originally fixed target.",
+    "matching": "Released PACO evaluator Hungarian maximum total mask-IoU matching followed by thresholding. Released body inclusion and semantic normalization rules are unchanged and only used during scoring.",
+    "coordinate_control": "Reproduce historical crop-space Group F1 mean 0.395109915134312 and verify all available historical case metrics. Compare cropped and full reference masks and report any truncation discrepancy before interpreting paired scores.",
+    "secondary_endpoints": [
+      "Group F1 at IoU 0.50 and 0.75",
+      "Fine Part F1 at IoU 0.25, 0.50, 0.75",
+      "automatic root mask IoU and bbox IoU",
+      "exported foreground IoU",
+      "target root overlap success at IoU 0.25 and 0.50",
+      "domain and profile accuracy",
+      "predicted counts",
+      "runtime and valid package rate"
+    ],
+    "failure_policy": "All 42 cases remain in denominators. Missing/invalid output gives zero discovery, overlap and semantic success; count and provenance are reported. No successful-only headline mean.",
+    "inference_boundary": "The contrast measures combined target discovery, context/scale, root construction and downstream grouping effects from removing the annotation-derived crop. It is not a causal isolation of a detector alone."
+  },
+  "statistics": {
+    "unit": "Paired target/source image. Confirm unique image IDs; use image-cluster resampling if multiple targets share one image.",
+    "bootstrap_seed": 20261009,
+    "bootstrap_draws": 10000,
+    "interval": "Paired percentile 95% confidence intervals. Primary comparison full-image minus cropped. Secondary intervals descriptive and pointwise, no multiplicity-adjusted superiority claim."
+  },
+  "reporting": "Report the actual performance change regardless of sign. Replace earlier unmeasured-full-image wording after independent audit. Preserve original holdout results and distinguish this retrospective extension. Main text gives compact principal result and boundary; SI gives protocol, counts, metrics and paired intervals."
+}

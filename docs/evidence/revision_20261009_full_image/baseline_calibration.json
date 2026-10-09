@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "case_count": 42,
+  "unique_image_count": 42,
+  "historical_crop_group_f1_025": 0.395109915134312,
+  "independent_crop_group_f1_025": 0.395109915134312,
+  "projected_crop_full_truth_group_f1_025": 0.395109915134312,
+  "truncation_case_count": 0,
+  "root_count_distribution": {
+    "1": 42
+  },
+  "numeric_check_count": 756,
+  "maximum_numeric_delta": 0.0,
+  "actual_category_metadata_corrections": [
+    {
+      "case_id": "calculator__u01",
+      "field": "expected_profile",
+      "blind_manifest_value": "controls",
+      "actual_category_value": "phone"
+    },
+    {
+      "case_id": "slipper_footwear__u01",
+      "field": "expected_profile",
+      "blind_manifest_value": "footwear",
+      "actual_category_value": "book"
+    },
+    {
+      "case_id": "screwdriver__u01",
+      "field": "expected_profile",
+      "blind_manifest_value": "screwdriver",
+      "actual_category_value": "knife"
+    },
+    {
+      "case_id": "wrench__u01",
+      "field": "expected_profile",
+      "blind_manifest_value": "wrench",
+      "actual_category_value": "knife"
+    }
+  ],
+  "full_image_predictions_consumed": false,
+  "gpu_used": false
+}

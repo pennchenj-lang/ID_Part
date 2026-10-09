@@ -1,0 +1,1101 @@
+{
+  "created_utc": "2026-10-09T13:40:08.990595+00:00",
+  "status": "PASS",
+  "scope": "Read-only CPU command, input, environment and snapshot audit. No inference or scoring run by this auditor.",
+  "case_count": 42,
+  "case_pass_count": 42,
+  "checks": [
+    {
+      "check": "all_manifests_have_42_cases",
+      "pass": true
+    },
+    {
+      "check": "historical_all_42_share_one_normalized_template",
+      "pass": true
+    },
+    {
+      "check": "new_all_42_share_one_normalized_template",
+      "pass": true
+    },
+    {
+      "check": "runner_template_matches_actual_command_list",
+      "pass": true
+    },
+    {
+      "check": "inference_manifest_per_case_fields_are_only_anonymous_id_path_hash",
+      "pass": true
+    },
+    {
+      "check": "inference_manifest_declares_no_reference_paths",
+      "pass": true
+    },
+    {
+      "check": "runner_environment_matches_frozen_offline_configuration",
+      "pass": true,
+      "details": {
+        "PYTHONPATH": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\code_snapshots\\hpid_split_be54300_holdout\\src",
+        "PYTHONHASHSEED": "20260825",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "HF_HOME": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\hf_home",
+        "TORCH_HOME": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\torch-cache",
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      }
+    },
+    {
+      "check": "subprocess_uses_snapshot_cwd_and_audited_environment",
+      "pass": true
+    },
+    {
+      "check": "snapshot_assignment_matches_frozen_holdout",
+      "pass": true
+    },
+    {
+      "check": "historical_python_executable_and_seed_match",
+      "pass": true
+    },
+    {
+      "check": "release_commit_matches_protocol",
+      "pass": true
+    },
+    {
+      "check": "no_target_category_profile_bbox_mask_point_or_asset_prompt_flags",
+      "pass": true,
+      "details": [
+        "--adaptive-profile-refinement",
+        "--asset-router-index",
+        "--asset-router-model",
+        "--conditional-direct-masks",
+        "--conditional-mask-batch-size",
+        "--conditional-mask-minimum-geometry",
+        "--conditional-mask-minimum-prior",
+        "--conditional-mask-phrases",
+        "--conditional-part-model",
+        "--decomposition-mode",
+        "--dense-semantic-fallback",
+        "--dense-semantic-model",
+        "--device",
+        "--grabcut-iterations",
+        "--grounding-model",
+        "--image",
+        "--local-files-only",
+        "--maximum-grabcut-candidates",
+        "--no-isolated-profile-resolution",
+        "--no-profile-refinement",
+        "--output",
+        "--prompt-bank",
+        "--proposal-first-fast",
+        "--retrieval-index",
+        "--root-mode",
+        "--visual-crop-layers",
+        "--visual-points-per-crop"
+      ]
+    },
+    {
+      "check": "runner_does_not_read_sealed_reference_manifest",
+      "pass": true
+    },
+    {
+      "check": "template_access_is_first_historical_command_only",
+      "pass": true
+    },
+    {
+      "check": "full_image_commands_are_auto_primary",
+      "pass": true
+    },
+    {
+      "check": "frozen_asset_audit_passed_all_7_artifacts",
+      "pass": true
+    },
+    {
+      "check": "snapshot_all_64_python_files_unchanged_since_frozen_audit",
+      "pass": true
+    },
+    {
+      "check": "independent_crop_environment_control_passed",
+      "pass": true,
+      "details": {
+        "status": "PASS",
+        "return_code": 0,
+        "case_id": "cellular_telephone__u01",
+        "runtime_seconds": 37.45645880699158,
+        "checks": {
+          "part_id_map.tiff": true,
+          "group_id_map.tiff": true,
+          "parts.json": true,
+          "groups.json": true
+        },
+        "protocol_sha256": "99f79ad09cc259d33b3251d1349891997789f9dab1d82ed0639f5c1292bd72ed"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "anonymous_id": "img_001",
+      "historical_case_id": "cellular_telephone__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_001.png",
+      "input_sha256": "524c66f753fc81007e388eb0502fcbe69d5a16d88d8e5ab153fc45318691ee3d",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "d64ec61224967a28b9ec7f895a197213e2cfc5158b3c2c956a8f0091a7afc447"
+    },
+    {
+      "anonymous_id": "img_002",
+      "historical_case_id": "laptop_computer__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_002.png",
+      "input_sha256": "6bfd0713895de5ef735114dfca52ffde2dcd083d641b9353195bcb327ebe2d89",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "eafe7f74cf5949e6775f4af937b4c600c2b033c3cd94938b78d23097e7c9e567"
+    },
+    {
+      "anonymous_id": "img_003",
+      "historical_case_id": "television_set__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_003.png",
+      "input_sha256": "938799b99eff11b051552014bae1403a6dc19bce3acb0eaa20e42824e6838038",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "fba297ca1e9ec7d3b0063b160a3b852c1b296ee9246a21193e7aacb50c946b77"
+    },
+    {
+      "anonymous_id": "img_004",
+      "historical_case_id": "remote_control__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_004.png",
+      "input_sha256": "e9b62286bd593e51a30d98f52c2b30c45be293d2b63251a6155fa1d6f4935eb5",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "4c16da522c82f8cc9af5d635df9f9d262b945c018bacbf02d337f193053fcef0"
+    },
+    {
+      "anonymous_id": "img_005",
+      "historical_case_id": "calculator__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_005.png",
+      "input_sha256": "445eeb9a9787c5e480f39b77ec8bbeec14f8617495ca3d025d5fccbb30cbab8e",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "4e23ae327e5f6e6be4cb864870bc3d6803d41d0386990014c85128ea5c70cefe"
+    },
+    {
+      "anonymous_id": "img_006",
+      "historical_case_id": "telephone__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_006.png",
+      "input_sha256": "93c6ce6ed8f3fc2b45f5b79bec4d64cfc97f9d52c9daea12bf7f4856786c5b7d",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "5a74e97d7ce2d8406b3bb3cc8386ebc5cf6b21bb8a404108f38ab5164f1bd32c"
+    },
+    {
+      "anonymous_id": "img_007",
+      "historical_case_id": "clock__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_007.png",
+      "input_sha256": "3aff7b2f7f68b35590c9e094c2f197199377d566485324cc7db8ea143dfc9195",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "94710e42070cca8c1f232d38645c71edfbb837da8be138062d699bf9c1f9497e"
+    },
+    {
+      "anonymous_id": "img_008",
+      "historical_case_id": "watch__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_008.png",
+      "input_sha256": "ad6867a45895a3ee8a63748cb1a80c741a396e0bf88b0080648b169ee93698d7",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "1d2280b31ad1e338101740b31c45e3168ce650e7641068870146b5c65bc83ac2"
+    },
+    {
+      "anonymous_id": "img_009",
+      "historical_case_id": "chair__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_009.png",
+      "input_sha256": "050fc3ecb845d2399a554e4a844b6999f7f7f771308a0a2c1a2d3807cca965cf",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "633841a9665206a8445fa5ca8700b0548ff09889abff02ceee387ba24f0d6a59"
+    },
+    {
+      "anonymous_id": "img_010",
+      "historical_case_id": "bench__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_010.png",
+      "input_sha256": "404501181b4a8680947c027cd2959c49f40b913c89d2f3927e5b108ee49439c7",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "3b82814d87d207a6d7df533ac1401766b9bfd5d58da13aa55c20ac372d63a08f"
+    },
+    {
+      "anonymous_id": "img_011",
+      "historical_case_id": "stool__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_011.png",
+      "input_sha256": "40d92b190b67533a067d463b9cedcafa750d89d32247f85465891743631c914c",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "d4f4a9abf1ea9d89e475cf67f4f02e70cc82337a0b54a5ad6133fc08a3e9e2a2"
+    },
+    {
+      "anonymous_id": "img_012",
+      "historical_case_id": "table__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_012.png",
+      "input_sha256": "6d946de749ab91e4068215cd7cae63e0d4e40bc77e4c79da26f0f697d40c3b9e",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "5d49cdff5290c355c0370e361c580db9ff9c176a9ef32ef2fddb2b59773f7374"
+    },
+    {
+      "anonymous_id": "img_013",
+      "historical_case_id": "bottle__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_013.png",
+      "input_sha256": "7505dfcf5b3eef7d320bef1832b7b9dc61cd3234e7140b6aa8834547f992a2c9",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "fbe66227cd32268cdfce5c43708066eec4106293d7418bbb1f5e461f9fde8f41"
+    },
+    {
+      "anonymous_id": "img_014",
+      "historical_case_id": "jar__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_014.png",
+      "input_sha256": "e9ca71938bbc1ecd8218b06fcf028dfb0757d66b2c198fcadeea9eac20a70abc",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "3f3095a97fe0eb70424077dccc8ca7a181630b41c7d9a529aa2d0740fad9b1ad"
+    },
+    {
+      "anonymous_id": "img_015",
+      "historical_case_id": "can__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_015.png",
+      "input_sha256": "370c7f184bb3e1d2267f8c89ef690cbacfc6210ae28601cdbd8d2a308c8feba9",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "daf24cfa54d7e444f13fec935452ef2b832a2adadefc0e0696cdf67f2a278137"
+    },
+    {
+      "anonymous_id": "img_016",
+      "historical_case_id": "cup__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_016.png",
+      "input_sha256": "819b25c23bc0b8c3b0c29fee6bd1dcc965c74cc3ef2e106c4bed276e2a63b7aa",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "db620bcc1d48583b39ba50ccc826641e2a1abcce7dff4ecd11809960dcc11755"
+    },
+    {
+      "anonymous_id": "img_017",
+      "historical_case_id": "mug__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_017.png",
+      "input_sha256": "b696a7583cfed377ca8694357f641b5ca3cd247580d8b1d8146ea8dfbaca1fe8",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "1b17239f6b30f347317e6853c354dcf283a5a12c7463aefdcaea04b6220fb556"
+    },
+    {
+      "anonymous_id": "img_018",
+      "historical_case_id": "glass_drink_container__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_018.png",
+      "input_sha256": "fe5315edf93fb2180ef4487b75cec81af540511a2cbd8d325c6eb2d88e600a17",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "e2c943a2455b5a0b13f97d0be240280de49e701ffee0bbae972a2463d02a3a80"
+    },
+    {
+      "anonymous_id": "img_019",
+      "historical_case_id": "bowl__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_019.png",
+      "input_sha256": "8a1bf996989ea56b38f2807f8e66c5be1a4e0a6d8047e32d3003edb815809c99",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "28f72f8ace9cbc550809c616a4c4efaa8794c9dc78786071b09c04db28e65d3b"
+    },
+    {
+      "anonymous_id": "img_020",
+      "historical_case_id": "handbag__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_020.png",
+      "input_sha256": "58050a392e92efbb8afc32f46cf7dc20c90718e3229b6c6c5d88aa42fa1fac5b",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "a0a6b58d535d37656e1f42355da4767ecec0958770998be55d9a334978006ca3"
+    },
+    {
+      "anonymous_id": "img_021",
+      "historical_case_id": "plastic_bag__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_021.png",
+      "input_sha256": "06ade2b5ca314c4fcb3ddc182d5b55b2f5ca81c982a24dd1c261f1979393b83c",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "62352c096fce8bdcfdce35d9aeed629ae569afa0192c41856b23786e6ce235f7"
+    },
+    {
+      "anonymous_id": "img_022",
+      "historical_case_id": "box__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_022.png",
+      "input_sha256": "705de98442a4a4f63afcf404b3a6dac5138861192bdd162fedc4939692b8746f",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "860facf4a5e9fd3c398c049e0398441ff4da79a1b36083ee5a4aa7eb8f1685db"
+    },
+    {
+      "anonymous_id": "img_023",
+      "historical_case_id": "car_automobile__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_023.png",
+      "input_sha256": "5151ffc71baf9d79a3b524de0a6f05430f688f537f59da2171d27daf129a3396",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "a678a90e11f923e065428f5dbd9923d806aa61b39534d045591fe6359975ce88"
+    },
+    {
+      "anonymous_id": "img_024",
+      "historical_case_id": "bicycle__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_024.png",
+      "input_sha256": "3e337db620bc9c6da8a90b2c43ca13c74581394b27ad01fdf2f045e552898b2b",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "bc8ae32ac971d22000d2ea0f084929e588c8d9544ceab38e2f7910eef37760f9"
+    },
+    {
+      "anonymous_id": "img_025",
+      "historical_case_id": "car_automobile__u02",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_025.png",
+      "input_sha256": "ab355f94f5fb0039bcdd89cf5caed8c498dd79442d5a50309c26a8fef4e6c57a",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "a57ea828c44e8db7046355a6ae0778134413347c177c15a507b7a567fef7981b"
+    },
+    {
+      "anonymous_id": "img_026",
+      "historical_case_id": "bicycle__u02",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_026.png",
+      "input_sha256": "ece3bac661734fe6b2cff4be61c7b41058536f970bfb155daffcc4d594a2a03c",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "ceeb1ffb96b4ffb02e2adb9b63ad47954581b839419a0133839d9bf6e39c1476"
+    },
+    {
+      "anonymous_id": "img_027",
+      "historical_case_id": "book__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_027.png",
+      "input_sha256": "83d8d121a32ea3c15d2a08930e32961309be29c0ed9f8b42951e306a1a627427",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "eed8418029991b2c7c30ea58dc3d1fa2577fd0fcbc05d4d5387d6ce8d01295e8"
+    },
+    {
+      "anonymous_id": "img_028",
+      "historical_case_id": "pencil__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_028.png",
+      "input_sha256": "992ad7081cece9a769f145b40844839266f6f395e351f18895fa9976257fe626",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "5c1fa177a5fe9409db51f5575a533dd771086bc4831ded48f5f7e44ea05c4d75"
+    },
+    {
+      "anonymous_id": "img_029",
+      "historical_case_id": "belt__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_029.png",
+      "input_sha256": "59778e4db886ba5df74d916363f41cdd125096014b0eaad02e5160110806e3b0",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "9da1c98f4a51b98902afc52c225bf9c40c78c5ce2b446cbaf8c0a900d3cee88b"
+    },
+    {
+      "anonymous_id": "img_030",
+      "historical_case_id": "hat__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_030.png",
+      "input_sha256": "1a66f7f68dca4ca534aed0bd7b53a8fccdb14ffc3b850d9e1d61d701cda8bdd1",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "352d764b63b60b32a6f38d48a9f9a47524132672a4a255b407f2f5595c70a377"
+    },
+    {
+      "anonymous_id": "img_031",
+      "historical_case_id": "helmet__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_031.png",
+      "input_sha256": "f9d04e1351ed447c03a575c5600c1a02c775d68afad06adef3617bf685be5fc3",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "d3e452f10e8ed67a7acd03d944963651aaecac26d876dceaa69889f94212f049"
+    },
+    {
+      "anonymous_id": "img_032",
+      "historical_case_id": "shoe__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_032.png",
+      "input_sha256": "b92f5dc04b3e77d12c0eac55252dcc30ff66ce1d58a8dbe3050db1f674a8f390",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "46929198f933be0c7d7fc61118ed37920f5e8c02e07687a64b7561ebeb63043b"
+    },
+    {
+      "anonymous_id": "img_033",
+      "historical_case_id": "slipper_footwear__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_033.png",
+      "input_sha256": "5cceeb90a80e3b25d166fbf3e2a82accdadf62431cd8442f6e2f85283b9554fc",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "c27deb87cd01d209727e70317957d3980193dc147b2de4f5d8ae506b86eead3d"
+    },
+    {
+      "anonymous_id": "img_034",
+      "historical_case_id": "scarf__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_034.png",
+      "input_sha256": "a4677c76b2f88f03c3fd5c57b0d5797a133d7cb57e90340579bc9cff16e937c4",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "0f1ba74c734b616947dd017a461b8018bfdcc05bf7a50f8bdf8db3887f749f35"
+    },
+    {
+      "anonymous_id": "img_035",
+      "historical_case_id": "screwdriver__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_035.png",
+      "input_sha256": "e3eae2e23b5ed6011b3db3a2deba17aed7d404f22b1ff011e050c00be7f05e99",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "18cf2b6cc8df22dac3868aa99824743aa90a544068c7fac37075e317204b37f5"
+    },
+    {
+      "anonymous_id": "img_036",
+      "historical_case_id": "wrench__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_036.png",
+      "input_sha256": "c9390b6f5eb0d09a1b1a6d9b6d07d73d02eca064e397712100c8baa2d69204a5",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "bcb76cd72de57addee5e8332e284f525f9ea9983e15711e583cc0569f83625e0"
+    },
+    {
+      "anonymous_id": "img_037",
+      "historical_case_id": "knife__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_037.png",
+      "input_sha256": "c9f8cab421496a0d0b9394388287f8d758529f904f53fd4c0df16cfe5d39b2bd",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "1cc58b1d9370ac0c9a82c9fd7c3296fd51d49b327d5ee44a980d0b16f7aa6a07"
+    },
+    {
+      "anonymous_id": "img_038",
+      "historical_case_id": "scissors__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_038.png",
+      "input_sha256": "46076e9d4dcc8560dabf0e58c59cf42a2195dd9681305b68235145270a784dcf",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "de394055b41c8e6c74aa529bc3b52c2fc2936c553b7ecb040936a52ea0af356f"
+    },
+    {
+      "anonymous_id": "img_039",
+      "historical_case_id": "pliers__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_039.png",
+      "input_sha256": "c54a04137c70b2c6d7c9d717a5cb5360987df341ed954b7f83a23a5ea68af5d2",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "e8f497abdb466bee576184a72552cdc98055c176c69970070ba6875ba750cb63"
+    },
+    {
+      "anonymous_id": "img_040",
+      "historical_case_id": "ladder__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_040.png",
+      "input_sha256": "b846599efd5fa8fb46a37b9f5369f753f7340f407bb0c5f75eaa39e3b682a54e",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "b1b32ebf52c7d889e52bdae4b3c368a6be016f0bd6049563b6130b88db9d6832"
+    },
+    {
+      "anonymous_id": "img_041",
+      "historical_case_id": "guitar__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_041.png",
+      "input_sha256": "6559e1206c1ce7f64ec14fbe818c2a013e4e8e02a6609a4e10ca5ce80bd5005c",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "6b38f68a3245f271474f3d4ebf1bf76a41b7213903fb99bc02afd5aa5dcc6807"
+    },
+    {
+      "anonymous_id": "img_042",
+      "historical_case_id": "pan_for_cooking__u01",
+      "status": "PASS",
+      "only_image_output_changed": true,
+      "changed_token_indices": [
+        5,
+        7
+      ],
+      "anonymous_image_path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inputs\\img_042.png",
+      "input_sha256": "4d6785366a155f18bc5820549ed92ead9162622f79a2b1f93e001f8cae329c85",
+      "exact_archived_full_image_bytes": true,
+      "output_is_own_anonymous_directory": true,
+      "available_receipt_command_matches": true,
+      "command_sha256": "2fdf1787852d9a1f0c11d674198b4ef145571747a1f437d016469911545ccd9d"
+    }
+  ],
+  "snapshot_checks": [
+    {
+      "path": "src/hpid_split/__init__.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/adapters.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/amodal.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/appearance_graph.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/appearance_proposals.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/asset_routing.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/benchmarking.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/candidate_backends.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/cli.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/conditional_parts.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/data.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/dense_semantic.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/embedding_ranker.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/ensemble_gate.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/export.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/florence_parts.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/foundation.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/fusion.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/guided_prompts.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/inference.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/instances.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/losses.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/mask_refinement.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/metrics.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/model.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/occlusion.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/ontology_routing.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/paco.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/paco_eval.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/paco_semantics.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/paper_audit.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/paper_eval.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/physical_groups.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/physical_region_audit.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/profile_resolution.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/prompt_bank.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/proposal_first.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/quality.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/registry.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/relational.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/resource_paths.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/resources/__init__.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/restoration.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/retrieval.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/root_cleanup.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/root_geometry.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/root_routing.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/scene_instances.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/scene_root_audit.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/scope_routing.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/semantic_candidate_audit.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/semantic_refinement.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/setup_completion.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/shape_proposals.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/structural_fusion.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/taxonomy.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/text_segmentation.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/training.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/validation.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/visual_regions.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/visual_semantics.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/vlm_parts.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/vlm_roots.py",
+      "unchanged_since_freeze": true
+    },
+    {
+      "path": "src/hpid_split/webapp.py",
+      "unchanged_since_freeze": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\run_full_image.py",
+      "sha256": "72dc855383b540590874338f0fb46734ce06352055f9117bff3cbf4ae97b1f89"
+    },
+    {
+      "path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\frozen_commands.json",
+      "sha256": "2b190decd2030dbeeb00d927ee79b3ae678fd0adac1380fcb6253cf26ad83a03"
+    },
+    {
+      "path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\inference_manifest.json",
+      "sha256": "bd402f8c3e70166f7bb0e6ef84801fbf30a4bec69bff6dc863eb99219a0e96c2"
+    },
+    {
+      "path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\sealed_reference_manifest.json",
+      "sha256": "02747efa64ec6e5b8ce51267f834f1ca6fd12b197c4ba04e16c30502c1fecb64"
+    },
+    {
+      "path": "D:\\HPID_Gaussian_IEEEAccess_Runtime\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\02_blind_inference_manifest.json",
+      "sha256": "a06f40702762eef744c5e45eb1e73f5e20cd2e15c50fae8f764bd06ea7e3a572"
+    },
+    {
+      "path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\protocol.json",
+      "sha256": "99f79ad09cc259d33b3251d1349891997789f9dab1d82ed0639f5c1292bd72ed"
+    },
+    {
+      "path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\frozen_assets_audit.json",
+      "sha256": "85e1ccee1c0edb5f15b270d9c2b177b69687cbb9a3470b22ad0c1e01f5dae051"
+    },
+    {
+      "path": "G:\\Codex\\2026-10-08\\hpid-access-resubmission-astra\\stability_work\\full_image_review4\\environment_control\\receipt.json",
+      "sha256": "f10d09268fa1ad0de84ac7f584cea53cbfc8182af8be6ce1a8adf129a7f34651"
+    }
+  ],
+  "scientific_boundary": "Full-image inputs differ in crop/context/scale; command parity does not imply equivalent performance. Data-bearing audit mapper is separate from inference and no sealed metadata is passed to the subprocess. Generic frozen prompt bank and learned router assets are retained, not per-case ground-truth prompts.",
+  "runtime_boundary": "Static subprocess environment configuration plus exact first-crop control are audited; OS-level tracing of all file reads is not performed. Existing per-case receipts are checked where already present; completion sealing remains the root runner responsibility.",
+  "errors": []
+}
