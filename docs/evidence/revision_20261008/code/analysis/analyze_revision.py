@@ -1,5 +1,4 @@
 from __future__ import annotations
-from portable_paths import BUNDLE_ROOT, DATA_ROOT, SOURCE_ROOT, PROJECT_ROOT, OUTPUT_DIR, resolve_data
 
 import argparse
 import csv
@@ -7,12 +6,20 @@ import hashlib
 import itertools
 import json
 import math
-import os
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import asdict, replace
 from pathlib import Path
+
+from portable_paths import (
+    BUNDLE_ROOT,
+    DATA_ROOT,
+    OUTPUT_DIR,
+    PROJECT_ROOT,
+    SOURCE_ROOT,
+    resolve_data,
+)
 
 ROOT = BUNDLE_ROOT
 PROJECT = PROJECT_ROOT
@@ -29,9 +36,14 @@ sys.path.insert(0, str(PROJECT / "hpid_split/scripts"))
 
 import cv2
 import numpy as np
+from analyze_cross_domain_fusion_ablation import _evaluate_result, _load_candidates
+from hpid_split.fusion import (
+    FusionConfig,
+    _source_agreement_factors,
+    _source_family,
+    fuse_candidates,
+)
 from PIL import Image
-from analyze_cross_domain_fusion_ablation import _load_candidates, _evaluate_result
-from hpid_split.fusion import FusionConfig, fuse_candidates, _source_family, _source_agreement_factors
 
 cv2.setNumThreads(1)
 METRICS = ["part_f1_at_025", "part_recall_at_025", "part_f1_at_050", "part_f1_at_075", "semantic_f1_at_025", "root_foreground_iou", "mean_matched_boundary_f1_at_025", "predicted_part_count"]

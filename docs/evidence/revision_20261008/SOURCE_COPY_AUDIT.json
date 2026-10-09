@@ -1995,9 +1995,11 @@
     "source": "${REVISION_ROOT}\\verify_public_metrics.py",
     "public_path": "tools/verify_public_metrics.py",
     "original_sha256": "56d337a91abf9a5015bf8d6b7055fddfd30597993b7451f330df9807a822e500",
-    "public_sha256": "56d337a91abf9a5015bf8d6b7055fddfd30597993b7451f330df9807a822e500",
-    "bytes": 40763,
-    "path_redacted": false
+    "public_sha256": "6f740bd9630352a05b7951a8cb0b5aef350217e18fa2c9b5f0b608d25fa3e873",
+    "bytes": 41526,
+    "path_redacted": false,
+    "pre_maintenance_public_sha256": "56d337a91abf9a5015bf8d6b7055fddfd30597993b7451f330df9807a822e500",
+    "maintenance_edit": "Style integration only; import cleanup, explicit audit-exception comments, equivalent set comprehension, and removal of unused assignment targets while retaining validation calls. See verification/lint_integration.json."
   },
   {
     "source": "${REVISION_ROOT}\\qa\\public_bundle_numeric_privacy_audit.json",

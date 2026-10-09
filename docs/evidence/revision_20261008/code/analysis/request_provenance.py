@@ -4,7 +4,6 @@ No proposal-generation rerun, retuning, causal deletion intervention, or new cas
 Wrappers call unchanged implementations; exact stored endpoint checks are mandatory.
 """
 from __future__ import annotations
-from portable_paths import BUNDLE_ROOT, DATA_ROOT, SOURCE_ROOT, PROJECT_ROOT, OUTPUT_DIR, resolve_data
 
 import argparse
 import csv
@@ -14,6 +13,15 @@ import math
 import sys
 from collections import Counter
 from pathlib import Path
+
+from portable_paths import (
+    BUNDLE_ROOT,
+    DATA_ROOT,
+    OUTPUT_DIR,
+    PROJECT_ROOT,
+    SOURCE_ROOT,
+    resolve_data,
+)
 
 ROOT = BUNDLE_ROOT
 PROJECT = PROJECT_ROOT
@@ -26,16 +34,16 @@ MANIFEST = FRONT / "02_completion_frontend/completion_target_manifest.json"
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(SNAPSHOT / "src"))
 import cv2
+import hpid_split
 import numpy as np
 from PIL import Image, ImageDraw
-import hpid_split
 
 # Baselines were added after the holdout algorithm snapshot. Load that one missing
 # module from the archived workspace, while fusion/groups remain the frozen code.
 hpid_split.__path__.append(str(PROJECT / "hpid_split/src/hpid_split"))
-import hpid_split.fusion as fusion
 import hpid_split.physical_groups as pg
 import hpid_split.postprocess_baselines as baseline
+from hpid_split import fusion
 from hpid_split.export import load_previous_package
 from hpid_split.paco_eval import _normalize
 
@@ -325,7 +333,7 @@ def main():
                      "semantic_rejected_all_candidates": candidate.semantic_name in rejected,
                      "dbscan_cluster": cluster_index}
             if cluster_index is not None:
-                semantic, parent, cluster_mask, confidence = observer.db_rows[cluster_index]
+                semantic, _parent, cluster_mask, _confidence = observer.db_rows[cluster_index]
                 cdata.update({"dbscan_cluster_size": len(observer.clusters[cluster_index]),
                               "dbscan_cluster_semantic": semantic,
                               "dbscan_cluster_semantic_matches_target": normal(semantic, target) == token(target),
@@ -391,7 +399,7 @@ def main():
                         "group_evidence": next(g.evidence for g in grouped.groups if g.group_id == chosen.identity)})
             details[-1]["selected_group_reference_overlaps"] = ref_overlaps
             source = Image.open(package / "source.png").convert("RGB")
-            def panel(mask, color):
+            def panel(mask, color, source=source):
                 arr = np.asarray(source).copy()
                 arr[mask] = (.45*arr[mask] + .55*np.array(color)).astype(np.uint8)
                 img = Image.fromarray(arr); img.thumbnail((300, 250)); return img

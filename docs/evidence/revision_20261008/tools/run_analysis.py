@@ -1,6 +1,12 @@
 """Run path-adapted copies without altering the archived numerical evidence."""
+import argparse
+import json
+import os
+import shutil
+import subprocess
+import sys
 from pathlib import Path
-import argparse,json,os,shutil,subprocess,sys
+
 B=Path(__file__).resolve().parents[1]
 FILES={'taxonomy':'taxonomy_behavior.py','score':'score_provenance.py','routing':'analyze_revision.py','sensitivity':'analyze_revision.py','holdout':'analyze_revision.py','gate':'gate_ablation.py','stage':'stage_diagnosis.py','request':'request_provenance.py'}
 def main():

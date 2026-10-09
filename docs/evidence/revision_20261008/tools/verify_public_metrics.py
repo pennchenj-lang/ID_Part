@@ -8,7 +8,6 @@ This verifies arithmetic and internal agreement, not image-ground-truth truthful
 from __future__ import annotations
 
 import argparse
-import ast
 import csv
 import hashlib
 import json
@@ -120,7 +119,7 @@ class Audit:
         before = len(self.failures)
         try:
             information = function()
-        except Exception as error:
+        except Exception as error:  # noqa: BLE001 - Convert any section failure into an explicit FAIL; never accept it silently.
             self.failures.append({"check": name + "/exception", "detail": str(error)})
             information = {}
         self.sections[name] = {"status": "PASS" if len(self.failures) == before else "FAIL", **(information or {})}
@@ -198,7 +197,7 @@ class Audit:
         self.eq(len(case_ids), 226, "stages/cases")
         self.eq(len(rows), 226*17, "stages/case_cross_product")
         self.eq(len(tracks), 990*17, "stages/reference_cross_product")
-        self.eq(set(r["stage"] for r in summaries), set(order), "stages/summary_stages")
+        self.eq({r["stage"] for r in summaries}, set(order), "stages/summary_stages")
         categories = [lookup[(cid, order[0])]["category"] for cid in case_ids]
         tracks_by_case_stage = defaultdict(list)
         for row in tracks:
@@ -266,7 +265,7 @@ class Audit:
         nine = self.read("request_nine_correct_ambiguous.csv")
         protocol = self.read("request_protocol.json")
         lookup = self.unique(endpoints, ("case_id","method"), "requests/unique_case_method")
-        case_lookup = self.unique(cases, ("case_id",), "requests/unique_case")
+        self.unique(cases, ("case_id",), "requests/unique_case")
         candidate_lookup = self.unique(candidates, ("case_id","candidate_index"), "requests/unique_candidate")
         self.eq(len(cases), 37, "requests/cases")
         self.eq(len(endpoints), 111, "requests/rows")
@@ -398,7 +397,7 @@ class Audit:
         repeat = self.read(p+"gate_repeat_pixel_audit.json")
         lookup = self.unique(cases,("split","case_id","variant"),"gates/unique_case_variant")
         whole = self.unique(complete,("split","case_id","candidate_key"),"gates/unique_complete_candidate")
-        nominated = self.unique(pool,("split","case_id","candidate_key"),"gates/unique_nominated_candidate")
+        self.unique(pool,("split","case_id","candidate_key"),"gates/unique_nominated_candidate")
         variants = protocol["variants"]
         self.eq(len(cases),268*8,"gates/complete_cross_product")
         self.eq(len(complete),2400,"gates/complete_candidates")
@@ -490,15 +489,16 @@ class Audit:
 def privacy_audit(bundle):
     """Inspect names/text and decode each allowed generated mask or ID map."""
     import io
+
     from PIL import Image
     findings = []
     counts = Counter()
-    hard_names = re.compile(r"(?:LOCAL_ONLY|qa_content_|ASTRA_HANDOFF|reviewer_tracker|author.?portrait|decision.?letter|submitted_baseline|(?:^|/)\.env(?:$|[./]))",re.I)
-    forbidden_image = re.compile(r"(?:^|/)(?:source|source_overlay|truth_part|controlled_defect|corrupted|completed|object_mask_crop|reference[^/]*|portrait)[^/]*\.(?:png|jpe?g|tiff?|webp)$",re.I)
-    raw_path = re.compile(r"(?:[A-Z]:(?:\\+|/)(?:Users|HPID_Gaussian|Codex)|/\x55sers/[^/]+/)",re.I)
+    hard_names = re.compile(r"(?:LOCAL_ONLY|qa_content_|ASTRA_HANDOFF|reviewer_tracker|author.?portrait|decision.?letter|submitted_baseline|(?:^|/)\.env(?:$|[./]))",re.IGNORECASE)
+    forbidden_image = re.compile(r"(?:^|/)(?:source|source_overlay|truth_part|controlled_defect|corrupted|completed|object_mask_crop|reference[^/]*|portrait)[^/]*\.(?:png|jpe?g|tiff?|webp)$",re.IGNORECASE)
+    raw_path = re.compile(r"(?:[A-Z]:(?:\\+|/)(?:Users|HPID_Gaussian|Codex)|/\x55sers/[^/]+/)",re.IGNORECASE)
     secret = re.compile(r"(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)")
-    allowed_image = re.compile(r"(?:candidate_masks/[^/]+\.png|(?:part|group)_id_map\.tiff?|masks_visible/[^/]+\.png|/(?:raw_proposals|dbscan_fusion|hpid_split_group_ids)/selected_part\.png)$",re.I)
-    images = re.compile(r"\.(?:png|jpe?g|tiff?|webp|gif)$",re.I)
+    allowed_image = re.compile(r"(?:candidate_masks/[^/]+\.png|(?:part|group)_id_map\.tiff?|masks_visible/[^/]+\.png|/(?:raw_proposals|dbscan_fusion|hpid_split_group_ids)/selected_part\.png)$",re.IGNORECASE)
+    images = re.compile(r"\.(?:png|jpe?g|tiff?|webp|gif)$",re.IGNORECASE)
     text_exts = {".csv",".json",".txt",".md",".py",".toml",".yaml",".yml",".ps1",".log",".sh"}
     def inspect(name, data=None):
         name = name.replace("\\","/")
@@ -522,7 +522,7 @@ def privacy_audit(bundle):
                             valid=im.mode in {"I","I;16","I;16L","I;16B"} and im.getextrema()[0]>=0
                         if not valid:findings.append({"path":name,"issue":"prediction_mask_pixel_mode_or_values_invalid","mode":im.mode})
                         else:counts["prediction_masks_pixel_verified"] += 1
-                except Exception as exc:
+                except Exception as exc:  # noqa: BLE001 - Any image decoder failure is an explicit privacy finding.
                     findings.append({"path":name,"issue":"prediction_image_decode_failed","error":str(exc)})
         if data is not None and Path(name).suffix.lower() in text_exts:
             counts["text_files_scanned"] += 1

@@ -1,8 +1,11 @@
-from pathlib import Path
-import json,hashlib
-from PIL import Image
-import numpy as np
 import argparse
+import hashlib
+import json
+from pathlib import Path
+
+import numpy as np
+from PIL import Image
+
 _parser=argparse.ArgumentParser();_parser.add_argument('--earlier',type=Path,required=True);_parser.add_argument('--later',type=Path,required=True);_parser.add_argument('--output',type=Path,required=True);_args=_parser.parse_args()
 _args.output.parent.mkdir(parents=True,exist_ok=True)
 A=_args.earlier

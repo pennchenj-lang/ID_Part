@@ -1,6 +1,11 @@
 """Extract generated outputs and optionally add separately supplied local inputs."""
+import argparse
+import hashlib
+import json
+import shutil
+import zipfile
 from pathlib import Path
-import argparse,hashlib,json,shutil,zipfile
+
 B=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():

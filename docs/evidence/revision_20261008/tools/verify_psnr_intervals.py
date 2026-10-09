@@ -1,10 +1,12 @@
 """Audit the two recorded bootstrap intervals without changing either analysis."""
-from pathlib import Path
+import argparse
 import csv
 import hashlib
 import json
+from pathlib import Path
+
 import numpy as np
-import argparse
+
 _parser=argparse.ArgumentParser();_parser.add_argument("--data-root",type=Path,required=True);_parser.add_argument("--output",type=Path,required=True);_args=_parser.parse_args()
 _args.output.parent.mkdir(parents=True,exist_ok=True)
 

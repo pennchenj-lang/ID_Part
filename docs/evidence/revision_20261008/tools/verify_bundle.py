@@ -1,5 +1,8 @@
+import hashlib
+import json
+import zipfile
 from pathlib import Path
-import hashlib,json,zipfile
+
 B=Path(__file__).resolve().parents[1]
 files=json.loads((B/'FILE_MANIFEST.json').read_text())
 actual={p.relative_to(B).as_posix() for p in B.rglob('*') if p.is_file() and '.git' not in p.parts}

@@ -1,28 +1,40 @@
 from __future__ import annotations
-from portable_paths import BUNDLE_ROOT, DATA_ROOT, SOURCE_ROOT, PROJECT_ROOT, OUTPUT_DIR, resolve_data
+
 import argparse
-from collections import Counter
-from concurrent.futures import ProcessPoolExecutor, as_completed
-from copy import deepcopy
 import hashlib
 import importlib.util
-import itertools
 import json
 import os
 import platform
 import sys
+from collections import Counter
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from copy import deepcopy
 from pathlib import Path
 from types import SimpleNamespace
 
+# Bootstrap archived source paths before importing frozen algorithm/helper modules.
 from analyze_revision import (
-    ROOT, OUT, BENCH, HOLDOUT, SNAPSHOT, SEED, read_json, write_json,
-    write_csv, bootstrap, _load_candidates, _evaluate_result,
+    BENCH,
+    HOLDOUT,
+    OUT,
+    ROOT,
+    SEED,
+    SNAPSHOT,
+    _evaluate_result,
+    _load_candidates,
+    bootstrap,
+    read_json,
+    write_csv,
+    write_json,
 )
-import numpy as np
-from PIL import Image
-from hpid_split.export import load_previous_package
+
+# isort: split
 import hpid_split.physical_groups as pg
+import numpy as np
 from analyze_paper_results import _match_metrics
+from hpid_split.export import load_previous_package
+from PIL import Image
 
 ORIGINAL_GATE=pg._candidate_three_stage_verification
 CURRENT_GROUP_MODULE=pg
@@ -134,7 +146,7 @@ def worker(item):
                        'appearance_reason':row[STAGES[2]]['reason']})
     resultrows=[]
     for variant,enabled in VARIANTS.items():
-        def modified_gate(candidate,root=None):
+        def modified_gate(candidate,root=None,enabled=enabled,variant=variant):
             return logged_gate(candidate,root,enabled,variant)
         pg._candidate_three_stage_verification=modified_gate
         try:

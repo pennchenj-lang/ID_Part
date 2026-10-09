@@ -1,24 +1,28 @@
 """Executable boundary fixtures, not accuracy samples or an OOD benchmark."""
 from __future__ import annotations
-from portable_paths import BUNDLE_ROOT, DATA_ROOT, SOURCE_ROOT, PROJECT_ROOT, OUTPUT_DIR, resolve_data
+
 import hashlib
 import json
 from dataclasses import replace
-from pathlib import Path
-import sys
-from analyze_revision import SNAPSHOT, OUT, write_json
+
 import numpy as np
-from hpid_split.fusion import MaskCandidate, FusionConfig, fuse_candidates, taxonomy_from_candidates
-from hpid_split.taxonomy import Taxonomy
-from hpid_split.prompt_bank import PromptBank, DomainPrompt, PartPrompt
+from analyze_revision import OUT, SNAPSHOT, write_json
+from hpid_split.fusion import (
+    FusionConfig,
+    MaskCandidate,
+    fuse_candidates,
+    taxonomy_from_candidates,
+)
 from hpid_split.physical_groups import _candidate_three_stage_verification
+from hpid_split.prompt_bank import DomainPrompt, PartPrompt, PromptBank
+from hpid_split.taxonomy import Taxonomy
 
 rows=[]
 def check(name, operation, predicate, purpose):
     try:
         observed=operation()
         outcome={'returned':observed}
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 - Record exact exception types for API fixtures; failed predicates raise below.
         outcome={'exception':type(exc).__name__, 'message':str(exc)}
     passed=bool(predicate(outcome))
     rows.append({'fixture':name,'purpose':purpose,'assertion_passed':passed,**outcome})

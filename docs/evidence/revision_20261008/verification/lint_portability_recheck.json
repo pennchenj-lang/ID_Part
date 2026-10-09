@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "context": "Post-publication style-check integration revalidation; no new experiment or result replacement.",
+  "checks": [
+    {
+      "analysis_file": "holdout_root_cases.csv",
+      "replay_rows": 84,
+      "comparison": "all public CSV fields exact; byte-exact against original local CSV before public UTF-8 sanitation",
+      "passed": true
+    },
+    {
+      "analysis_file": "routing_intervals.csv",
+      "replay_rows": 40,
+      "comparison": "all public CSV fields exact; byte-exact against original local CSV before public UTF-8 sanitation",
+      "passed": true
+    },
+    {
+      "analysis_file": "routing_transitions.csv",
+      "replay_rows": 37,
+      "comparison": "all public CSV fields exact; byte-exact against original local CSV before public UTF-8 sanitation",
+      "passed": true
+    },
+    {
+      "analysis_file": "score_candidate_provenance.csv",
+      "replay_rows": 1951,
+      "comparison": "all public CSV fields exact; byte-exact against original local CSV before public UTF-8 sanitation",
+      "passed": true
+    },
+    {
+      "analysis_file": "sensitivity_cases.csv",
+      "replay_rows": 150,
+      "comparison": "all subset fields exact",
+      "passed": true
+    },
+    {
+      "analysis_file": "stage_case_metrics.csv",
+      "replay_rows": 51,
+      "comparison": "all subset fields exact",
+      "passed": true
+    },
+    {
+      "analysis_file": "request_endpoints.csv",
+      "replay_rows": 9,
+      "comparison": "all subset fields exact",
+      "passed": true
+    },
+    {
+      "analysis_file": "gate_ablation/group_gate_cases.csv",
+      "replay_rows": 48,
+      "comparison": "all fields exact except documented input-path hashes and one-pixel map-change fields",
+      "passed": true
+    },
+    {
+      "analysis_file": "taxonomy_behavior.json",
+      "replay_rows": 43,
+      "comparison": "all fixtures and frozen source hashes exact",
+      "passed": true
+    }
+  ],
+  "execution_scope": {
+    "taxonomy": "43 fixtures passed",
+    "score": "all226 cases/1951 candidates",
+    "routing": "all37 requests",
+    "holdout": "all42 cases/84 paired rows",
+    "sensitivity": "3 cases x50 settings",
+    "gate": "3 cases per split x8 subsets",
+    "stage": "3 cases x17 stage endpoints",
+    "request": "3 requests x3 stored routing methods"
+  },
+  "immutable_files_byte_exact": 259,
+  "immutable_scopes": [
+    "sources/",
+    "code/original/",
+    "code/packaging/",
+    "evidence/",
+    "inputs/"
+  ],
+  "limitations": "Subset smoke checks establish retained path portability, not a new complete independent experiment. The documented Group one-pixel counterfactual repeat limitation remains.",
+  "initial_recheck_failure": "The first gate import-sort attempt failed before inference because path bootstrap moved after the helper import. Corrected by an explicit isort block split; all gate checks in this report are from the successful rerun."
+}

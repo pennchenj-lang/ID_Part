@@ -1,13 +1,22 @@
 """Audit stored proposal-score provenance without rerunning upstream models."""
 from __future__ import annotations
-from portable_paths import BUNDLE_ROOT, DATA_ROOT, SOURCE_ROOT, PROJECT_ROOT, OUTPUT_DIR, resolve_data
+
 import csv
 import hashlib
 import json
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
+
+from portable_paths import (
+    BUNDLE_ROOT,
+    DATA_ROOT,
+    OUTPUT_DIR,
+    PROJECT_ROOT,
+    SOURCE_ROOT,
+    resolve_data,
+)
 
 ROOT = BUNDLE_ROOT
 PROJECT = PROJECT_ROOT
@@ -19,10 +28,15 @@ OUT = OUTPUT_DIR
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(SNAPSHOT / "src"))
 sys.path.insert(0, str(PROJECT / "hpid_split/scripts"))
-import numpy as np
 import cv2
+import numpy as np
 from analyze_cross_domain_fusion_ablation import _load_candidates
-from hpid_split.fusion import FusionConfig, _source_family, _source_agreement_factors, _is_broad_scene_layer
+from hpid_split.fusion import (
+    FusionConfig,
+    _is_broad_scene_layer,
+    _source_agreement_factors,
+    _source_family,
+)
 from hpid_split.prompt_bank import PromptBank
 
 cv2.setNumThreads(1)

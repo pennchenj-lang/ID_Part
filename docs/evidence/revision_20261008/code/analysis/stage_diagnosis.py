@@ -6,7 +6,6 @@ diagnostics are exported. --limit uses a separate prefix and cannot replace the
 complete run. Read stage_protocol.json before interpreting intermediate rows.
 """
 from __future__ import annotations
-from portable_paths import BUNDLE_ROOT, DATA_ROOT, SOURCE_ROOT, PROJECT_ROOT, OUTPUT_DIR, resolve_data
 
 import argparse
 import csv
@@ -16,7 +15,17 @@ import json
 import sys
 from collections import defaultdict
 from concurrent.futures import ProcessPoolExecutor, as_completed
+from itertools import pairwise
 from pathlib import Path
+
+from portable_paths import (
+    BUNDLE_ROOT,
+    DATA_ROOT,
+    OUTPUT_DIR,
+    PROJECT_ROOT,
+    SOURCE_ROOT,
+    resolve_data,
+)
 
 ROOT = BUNDLE_ROOT
 PROJECT = PROJECT_ROOT
@@ -32,11 +41,11 @@ sys.path.insert(0, str(PROJECT / "hpid_split/scripts"))
 
 import cv2
 import numpy as np
-from PIL import Image
-import hpid_split.fusion as fusion
+from analyze_cross_domain_fusion_ablation import _load_candidates
+from hpid_split import fusion
 from hpid_split.paco_eval import _normalize
 from hpid_split.paper_eval import _hungarian, _semantic_hungarian
-from analyze_cross_domain_fusion_ablation import _load_candidates
+from PIL import Image
 
 # The older algorithm snapshot predates the frozen comparison baseline. Load
 # that baseline's unchanged workspace file explicitly and record its hash.
@@ -354,7 +363,7 @@ def main():
                 summary[f"{metric}_{key}"] = value
         summaries.append(summary)
     track_index = {(r["case_id"], r["reference_index"], r["stage"]): r for r in tracks}
-    pairs = list(zip(STAGES[:-2], STAGES[1:-1])) + [("final_hpid", "final_dbscan")]
+    pairs = list(pairwise(STAGES[:-1])) + [("final_hpid", "final_dbscan")]
     for before, after in pairs:
         transition = {"before": before, "after": after, "case_count": len(ids)}
         for metric in metric_names:

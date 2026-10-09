@@ -1,10 +1,10 @@
-from portable_paths import BUNDLE_ROOT, DATA_ROOT, SOURCE_ROOT, PROJECT_ROOT, OUTPUT_DIR, resolve_data
-from pathlib import Path
 import csv
+import hashlib
 import json
 import subprocess
-import hashlib
+
 import numpy as np
+from portable_paths import BUNDLE_ROOT, DATA_ROOT, OUTPUT_DIR
 
 ROOT = BUNDLE_ROOT
 E = OUTPUT_DIR
@@ -41,7 +41,7 @@ probes=[]
 for name,relative in [('PartCATSeg','part-catseg'),('HOPS','HOPS')]:
     repo=R/'external_part_baselines_20260828'/relative
     command=[str(R/'.venv/Scripts/python.exe'),'-B','-X','utf8',str(repo/'train_net.py'),'--help']
-    run=subprocess.run(command,capture_output=True,text=True,encoding='utf-8',timeout=120)
+    run=subprocess.run(command,capture_output=True,text=True,encoding='utf-8',timeout=120,check=False)
     probes.append({'method':name,'command':command,'return_code':run.returncode,'stdout':run.stdout,'stderr':run.stderr,'scope':'local entrypoint environment probe, not a trained inference run','entrypoint_sha256':hashlib.sha256((repo/'train_net.py').read_bytes()).hexdigest()})
 (E/'external_entrypoint_probes.json').write_text(json.dumps(probes,indent=2),encoding='utf-8')
 print(json.dumps(diagnosis,indent=2))

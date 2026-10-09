@@ -1,0 +1,11 @@
+# This directory contains a scientific evidence archive as well as maintained
+# replay tools. Archived sources, original analyses, packaging provenance and
+# executed evidence are checksum-bound records: do not rewrite them for style.
+# The scoped exclusions do not apply to repository production code, and no rule
+# selection or fatal/undefined-name check is disabled for code/analysis or tools.
+extend-exclude = [
+    "sources/**",
+    "code/original/**",
+    "code/packaging/**",
+    "evidence/**",
+]
