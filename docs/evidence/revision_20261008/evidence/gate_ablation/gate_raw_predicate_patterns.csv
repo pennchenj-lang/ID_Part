@@ -1,0 +1,16 @@
+split,raw_S_T_A,n
+holdout42,001,12
+holdout42,010,1
+holdout42,011,4
+holdout42,100,3
+holdout42,101,39
+holdout42,110,7
+holdout42,111,192
+test226,000,20
+test226,001,61
+test226,010,13
+test226,011,24
+test226,100,40
+test226,101,286
+test226,110,32
+test226,111,546

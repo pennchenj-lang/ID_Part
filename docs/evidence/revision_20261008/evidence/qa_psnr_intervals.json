@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "metric": "hidden_region_psnr",
+      "case_values_equal": true,
+      "n": 37,
+      "original": {
+        "seed": 20261839,
+        "draws": 10000,
+        "case_order": "sorted case identifiers",
+        "recorded_equals_recomputed": true,
+        "mean": -0.7430670626198396,
+        "low": -1.6322432704575072,
+        "high": 0.015262537401812179
+      },
+      "post_review": {
+        "seed": 20261008,
+        "draws": 10000,
+        "case_order": "stored completion export order",
+        "recorded_equals_recomputed": true,
+        "mean": -0.7430670626198395,
+        "low": -1.6786964546679275,
+        "high": 0.02055014905794956
+      }
+    },
+    {
+      "metric": "completion_request_recall",
+      "case_values_equal": true,
+      "n": 37,
+      "original": {
+        "seed": 20261834,
+        "draws": 10000,
+        "case_order": "sorted case identifiers",
+        "recorded_equals_recomputed": true,
+        "mean": -0.08541843547570305,
+        "low": -0.20070861218083558,
+        "high": 0.0224589061845869
+      },
+      "post_review": {
+        "seed": 20261008,
+        "draws": 10000,
+        "case_order": "stored completion export order",
+        "recorded_equals_recomputed": true,
+        "mean": -0.08541843547570305,
+        "low": -0.19871509722515193,
+        "high": 0.023651580526762306
+      }
+    }
+  ],
+  "interpretation": "Both intervals use precisely the same37 paired values and the same case-paired percentile estimator. Different seeds and case order generate different finite Monte Carlo draws; this is not a data or estimand change. Keep the original frozen interval in the manuscript and label the later interval as a post-review recomputation.",
+  "recommended_supplement_note": "Table S27 retains the original 10,000-draw case-paired percentile intervals. Its HPID-minus-raw PSNR contrast used sorted case IDs and seed 20261839 (base20260828 plus1000 plus metric index11), giving -0.7431dB [-1.6322,0.0153]. The post-review source-data audit uses the same37 paired values in export order with seed20261008, giving [-1.6787,0.0206]. The difference reflects finite Monte Carlo resampling, not changed outcomes; both intervals include zero.",
+  "source_locations": [
+    "hpid_split/scripts/run_semantic_completion_frontend_benchmark.py:32,41-58,192-202,223-240",
+    "revision_20261008/analyze_revision.py:24,66-71,214-226"
+  ],
+  "source_sha256": {
+    "${RUNTIME_ROOT}\\experiments\\paper_v031_identity_frontend_20260828\\03_completion_group_frontend\\completion_frontend_cases.csv": "552d43111179b0f3042e8a50c508515184aa55eccc26815ef2c838f9a3b8dff1",
+    "${RUNTIME_ROOT}\\experiments\\paper_v031_identity_frontend_20260828\\03_completion_group_frontend\\completion_frontend_paired.csv": "8828f1ab2940304e24dd1fd8697ee78240dd25d15a8f127f4e0c3cb6acbb078e",
+    "${REVISION_ROOT}\\evidence\\synthesis_diagnostics.csv": "81a60d6869cdc2679dca872fba4480a3db00ab5dab7237c4269e66cb22dab96d",
+    "${REVISION_ROOT}\\evidence\\routing_audit.json": "71b827a48569f13c60976a92a0936af786da2c9a235f84b0958e8bcf30f72ad8"
+  }
+}

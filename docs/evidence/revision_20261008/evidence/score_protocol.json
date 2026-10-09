@@ -1,0 +1,206 @@
+{
+  "n_cases": 226,
+  "n_candidates": 1951,
+  "n_recorded_families": 9,
+  "fusion_config": {
+    "minimum_area_px": 20,
+    "same_source_nms_iou": 0.82,
+    "same_source_nms_containment": 0.9,
+    "hierarchy_strength": 0.65,
+    "orphan_support": 0.12,
+    "parent_dilation_ratio": 0.018,
+    "dense_parent_dilation_ratio": 0.06,
+    "direct_gate_threshold": 0.38,
+    "direct_gate_margin": 0.82,
+    "detail_bonus": 0.08,
+    "identity_match_iou": 0.38,
+    "identity_match_containment": 0.72,
+    "identity_match_centroid_ratio": 0.45,
+    "identity_strong_containment": 0.9,
+    "identity_strong_containment_coherence": 0.86,
+    "minimum_identity_visible_fraction": 0.012,
+    "maximum_identity_sliver_image_fraction": 0.001,
+    "standard_component_fraction": 5e-05,
+    "detail_component_fraction": 1e-05,
+    "cleanup_passes": 3,
+    "uncorroborated_source_penalty": 1.0,
+    "full_agreement_overlap": 0.55,
+    "use_remainder_attachment": true,
+    "remainder_merge_distance_ratio": 0.025,
+    "use_consensus": true,
+    "use_parent_support": true,
+    "use_parent_envelope": false,
+    "use_parent_residual": true,
+    "use_root_coverage_conservation": true,
+    "use_transitive_residual": false,
+    "transitive_residual_dense_only": true,
+    "use_direct_gate": true,
+    "use_specificity_ownership": true,
+    "use_hierarchical_duplicate_suppression": true,
+    "hierarchical_duplicate_iou": 0.9,
+    "hierarchical_duplicate_containment": 0.98,
+    "hierarchical_duplicate_area_coherence": 0.9,
+    "hierarchical_duplicate_child_strength_ratio": 0.9,
+    "specificity_minimum_containment": 0.8,
+    "specificity_minimum_host_fraction": 0.012,
+    "semantic_detail_minimum_host_fraction": 0.0002,
+    "specificity_maximum_host_fraction": 0.78,
+    "structural_specificity_maximum_host_fraction": 0.92,
+    "specificity_minimum_candidate_strength": 0.24,
+    "specificity_root_minimum_candidate_score": 0.36,
+    "specificity_host_suppression": 0.28,
+    "specificity_child_evidence_floor_ratio": 0.9,
+    "scene_layer_fallback_weight": 0.72,
+    "use_boundary_ownership": false
+  },
+  "no_model_generation_or_retraining": true,
+  "source_hashes": [
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\appearance_graph.py",
+      "sha256": "c54aefb95f08d53d882d3c2a3d468ea5c380adc08cab9bac0a30640c00ac66e6"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\appearance_proposals.py",
+      "sha256": "8d0ec63abd3cb3bd7483a5fd0a62ea71e4d16d8819bd2a5190f793a25a319115"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\asset_routing.py",
+      "sha256": "0d811693be7cf85edb8cf2b316b78137f91dd7016eb7c6365db3ae950819cc08"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\cli.py",
+      "sha256": "c32381baec0577a0e943f95d3384417b254efc1f7507005fbb28f5e0bc042a89"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\dense_semantic.py",
+      "sha256": "40c97172951c16b107b2bb2a136cd9141f0ce92f522046beee236934d14580e1"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\foundation.py",
+      "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\fusion.py",
+      "sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\profile_resolution.py",
+      "sha256": "3ccaca7c143a08c11872d861cf585d2684dfe051290ea5994bf1a949fb1d28b8"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\prompt_bank.py",
+      "sha256": "d0a4fd7527bb5a548b2e3151bcace803f95c180da181b585e4feb38b7f2fe508"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\relational.py",
+      "sha256": "f4c6f03d9d6c5ad4eb894c369b5a628d496189e736f73be509aa7f03190f2ca1"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\retrieval.py",
+      "sha256": "26918e36bc8ebb741e15e1d025ef3cba3ca414cd0e7284c76dba10216057537f"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\root_geometry.py",
+      "sha256": "ca661d61eecf25d1d44568ef4a44021c061f669a71b14c0a24503509c6fe938b"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\root_routing.py",
+      "sha256": "fe1eca656ca8765867d63a76e0f0cecaa6f1d6692ef04d74de323e4abf995aa6"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\structural_fusion.py",
+      "sha256": "19ceab84e64725ec50b8f9f4dc2a042a8fd8112e8d3fea8cb49c23f7e286f7f1"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\visual_regions.py",
+      "sha256": "ae6221b7915d5da98d6db814ed06e57ba04494b252144f49aaa4c7b3017aeabb"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\visual_semantics.py",
+      "sha256": "a5e935b2e4b4224215f9ca5e055e5538dfe77e1cb2193cd7fc52d6bafbce1f9d"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\configs\\general_asset_prompts.json",
+      "sha256": "0c90c30779b670bf17a681df74e5765e751ddb425f9d11a04b7fa2d9da2cddcf"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\configs\\paco_modern_extensions.json",
+      "sha256": "2264e676f7e8770d213bfd5920065b68c96a733b95a36ad036620eca0ad22e1d"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\configs\\game_asset_extensions.json",
+      "sha256": "e2a02ce5a4ed8d8635e07cc48cc9380b28f73194d414ced6e0a04241b977b46a"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\.venv\\Lib\\site-packages\\transformers\\models\\grounding_dino\\processing_grounding_dino.py",
+      "sha256": "f87435e2a2f748e78afc29d159378a271e4c763aafa2ead637c799b3078190c9"
+    },
+    {
+      "path": "${RUNTIME_ROOT}\\.venv\\Lib\\site-packages\\transformers\\pipelines\\mask_generation.py",
+      "sha256": "9e3d55f7d7f41df9f6cfdf7164349e61df130e79af810b652ed9ab94ad77ea81"
+    }
+  ],
+  "config_equivalence_to_snapshot": [
+    {
+      "name": "general_asset_prompts.json",
+      "used_sha256": "0c90c30779b670bf17a681df74e5765e751ddb425f9d11a04b7fa2d9da2cddcf",
+      "snapshot_sha256": "0b27a54cb564bfc6599b4204fdf6817acbc75c03e262266739f88eac66279098",
+      "json_semantically_equal": true,
+      "newline_normalized_text_equal": true
+    },
+    {
+      "name": "paco_modern_extensions.json",
+      "used_sha256": "2264e676f7e8770d213bfd5920065b68c96a733b95a36ad036620eca0ad22e1d",
+      "snapshot_sha256": "b7ca6ed74a399f23b79e0b4273a3c71b90d605f99977fa0c38bd61dfbad750bd",
+      "json_semantically_equal": true,
+      "newline_normalized_text_equal": true
+    },
+    {
+      "name": "game_asset_extensions.json",
+      "used_sha256": "e2a02ce5a4ed8d8635e07cc48cc9380b28f73194d414ced6e0a04241b977b46a",
+      "snapshot_sha256": "9752259626433694665cb10eb194d37d59e2e1c000577612cd25e94dfed0dc6b",
+      "json_semantically_equal": true,
+      "newline_normalized_text_equal": true
+    }
+  ],
+  "prior_fixed_candidate_weights_exact_multiset_match": true,
+  "observed_global_ranges": {
+    "score": {
+      "min": 0.043385233730077744,
+      "max": 0.952812916266872
+    },
+    "source_reliability": {
+      "min": 0.27785634473435494,
+      "max": 1.13657607421875
+    },
+    "agreement": {
+      "min": 1.0,
+      "max": 1.0
+    },
+    "effective_weight": {
+      "min": 0.1316655294832865,
+      "max": 0.9606005189125426
+    }
+  },
+  "prompt_bank_matches_benchmark_sha256": true,
+  "frozen_fusion_matches_handoff_sha256": true,
+  "script_sha256": "28b18792e9938e3aa959c8e436ae86bce6cd8215224d03554dc4d56dbf81c66c",
+  "reliability_gt_one_n": 10,
+  "score_outside_unit_interval_n": 0,
+  "broad_scene_layer_n": 0,
+  "all_agreements_equal_one": true,
+  "score_reconstructed_n": 1213,
+  "score_reconstruction_mismatches": 0,
+  "reliability_reconstructed_n": 1951,
+  "reliability_reconstruction_mismatches": 7,
+  "root_composite_simple_formula_exception_n": 7,
+  "boundaries": [
+    "s is final stored proposal score, not universally detector score. Formula and implementation are heuristic score shaping; no reliability diagram, ECE, or learned correctness calibration was performed.",
+    "Producer formulas are source-audited. Numerical checks reconstruct only fields with retained precursor metadata; raw detector/CLIPSeg/SAM tensors are not rerun. Observed final scores are authoritative.",
+    "For 7 profile-resolved roots, r is a maximum across broad/evidence/geometry roots, but retained sam_quality belongs only to the selected geometry. The simple .8+.2*q check differs; archived r remains authoritative, and exact reconstruction of discarded precursor r values is not claimed.",
+    "Visual metadata sam_quality stores pre-appearance proposal.score, including contour heuristic scores. Model-origin SAM quality can already include multiview/crop scaling.",
+    "Family labels are grouping keys with explicit overrides. Correlation persists between profile-refine, profile-dense and other shared models; noisy-OR does not establish calibrated independent evidence.",
+    "Frozen inputs/configuration and source hashes are preserved. This audit does not independently establish the historical date at which every upstream dependency/checkpoint was frozen.",
+    "No reference masks enter score checks. Reconstruction exceptions remain visible and must be explained, never silently excluded."
+  ]
+}

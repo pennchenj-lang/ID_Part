@@ -1,0 +1,15 @@
+{
+  "kind": "diffusers-inpaint-sam2",
+  "model": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+  "cache_dir": "../.runtime/hf_home",
+  "segmentation_model": "facebook/sam2.1-hiera-tiny",
+  "variant": "fp16",
+  "resolution": 512,
+  "inference_steps": 24,
+  "guidance_scale": 6.0,
+  "strength": 0.98,
+  "maximum_hypotheses": 1,
+  "maximum_target_parts": 2,
+  "minimum_target_area_ratio": 0.002,
+  "local_files_only": false
+}

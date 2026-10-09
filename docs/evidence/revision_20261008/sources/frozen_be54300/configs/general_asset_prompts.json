@@ -1,0 +1,5121 @@
+{
+  "include": [
+    "paco_modern_extensions.json",
+    "game_asset_extensions.json"
+  ],
+  "domains": [
+    {
+      "name": "character",
+      "classifier_prompt": "a person or humanoid character with a face body arms and legs",
+      "root_prompts": [
+        "person",
+        "human character",
+        "cartoon character"
+      ],
+      "generic_root_prompts": [
+        "human character",
+        "cartoon character"
+      ],
+      "parts": [
+        {
+          "semantic_name": "character_head",
+          "prompts": [
+            "head",
+            "face"
+          ],
+          "maximum_parent_fraction": 0.48,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "character_hair",
+          "semantic_parent": "character",
+          "query_parent": "character",
+          "fallback_query_parent": "character_head",
+          "fallback_if_coverage_below": 0.08,
+          "assembly_parent": "character_head",
+          "prompts": [
+            "hair",
+            "hairstyle"
+          ],
+          "maximum_parent_fraction": 0.65,
+          "fallback_maximum_parent_fraction": 1.6,
+          "minimum_parent_containment": 0.0,
+          "maximum_instances": 3,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "character_front_hair",
+          "semantic_parent": "character_hair",
+          "prompts": [
+            "front hair",
+            "bangs",
+            "fringe hair"
+          ],
+          "maximum_parent_fraction": 0.65,
+          "maximum_instances": 2,
+          "detail": true,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "character_back_hair",
+          "semantic_parent": "character_hair",
+          "prompts": [
+            "back hair",
+            "rear hair"
+          ],
+          "maximum_parent_fraction": 0.85,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "character_side_hair",
+          "semantic_parent": "character_hair",
+          "prompts": [
+            "side hair",
+            "side lock of hair"
+          ],
+          "minimum_parent_containment": 0.55,
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 2,
+          "detail": true,
+          "priority": 1.08
+        },
+        {
+          "semantic_name": "character_headwear",
+          "semantic_parent": "character",
+          "assembly_parent": "character_head",
+          "spatial_anchor": "character_head",
+          "spatial_relation": "overlap",
+          "spatial_tolerance": 0.02,
+          "prompts": [
+            "helmet",
+            "hat",
+            "cap",
+            "headwear"
+          ],
+          "minimum_parent_fraction": 0.02,
+          "maximum_parent_fraction": 0.48,
+          "maximum_instances": 1,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "character_eye",
+          "semantic_parent": "character_head",
+          "prompts": [
+            "eye",
+            "eyeball"
+          ],
+          "dense_prompts": [
+            "eyes"
+          ],
+          "maximum_parent_fraction": 0.2,
+          "minimum_parent_containment": 0.05,
+          "maximum_instances": 2,
+          "detail": true,
+          "dense_fallback": true,
+          "priority": 1.15
+        },
+        {
+          "semantic_name": "character_eyebrow",
+          "semantic_parent": "character_head",
+          "spatial_anchor": "character_eye",
+          "spatial_relation": "above",
+          "spatial_tolerance": 0.01,
+          "prompts": [
+            "eyebrow",
+            "brow"
+          ],
+          "dense_prompts": [
+            "eyebrows"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 2,
+          "detail": true,
+          "dense_fallback": true,
+          "appearance_anchor": "character_eye",
+          "appearance_relation": "above",
+          "appearance_polarity": "dark",
+          "appearance_search_scale": 1.0,
+          "appearance_minimum_contrast": 0.045,
+          "priority": 1.15
+        },
+        {
+          "semantic_name": "character_eyelash",
+          "semantic_parent": "character_head",
+          "spatial_anchor": "character_eye",
+          "spatial_relation": "overlap",
+          "spatial_tolerance": 0.01,
+          "prompts": [
+            "eyelash",
+            "upper eyelashes"
+          ],
+          "dense_prompts": [
+            "eyelashes"
+          ],
+          "maximum_parent_fraction": 0.05,
+          "maximum_instances": 2,
+          "detail": true,
+          "dense_fallback": true,
+          "appearance_anchor": "character_eye",
+          "appearance_relation": "upper_boundary",
+          "appearance_polarity": "dark",
+          "appearance_search_scale": 1.0,
+          "appearance_minimum_contrast": 0.035,
+          "priority": 1.15
+        },
+        {
+          "semantic_name": "character_eyewear",
+          "semantic_parent": "character_head",
+          "assembly_parent": "character_head",
+          "spatial_anchor": "character_eye",
+          "spatial_relation": "overlap",
+          "spatial_tolerance": 0.01,
+          "prompts": [
+            "goggles",
+            "glasses",
+            "eyewear"
+          ],
+          "minimum_parent_fraction": 0.015,
+          "maximum_parent_fraction": 0.58,
+          "maximum_instances": 1,
+          "detail": true,
+          "priority": 1.14
+        },
+        {
+          "semantic_name": "character_torso",
+          "prompts": [
+            "torso",
+            "body"
+          ],
+          "maximum_parent_fraction": 0.55,
+          "maximum_instances": 1,
+          "priority": 0.92
+        },
+        {
+          "semantic_name": "character_arm",
+          "prompts": [
+            "arm"
+          ],
+          "maximum_parent_fraction": 0.24,
+          "maximum_instances": 2,
+          "priority": 0.92
+        },
+        {
+          "semantic_name": "character_sleeve",
+          "semantic_parent": "character_upper_clothing",
+          "prompts": [
+            "sleeve"
+          ],
+          "maximum_parent_fraction": 0.55,
+          "maximum_instances": 2,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "character_cuff",
+          "semantic_parent": "character_sleeve",
+          "prompts": [
+            "cuff",
+            "sleeve cuff"
+          ],
+          "maximum_parent_fraction": 0.24,
+          "maximum_instances": 2,
+          "detail": true,
+          "priority": 1.15
+        },
+        {
+          "semantic_name": "character_hand",
+          "prompts": [
+            "hand"
+          ],
+          "maximum_parent_fraction": 0.1,
+          "maximum_instances": 2,
+          "detail": true,
+          "priority": 1.05
+        },
+        {
+          "semantic_name": "character_leg",
+          "prompts": [
+            "leg",
+            "pants leg"
+          ],
+          "maximum_parent_fraction": 0.42,
+          "maximum_instances": 2,
+          "priority": 0.92
+        },
+        {
+          "semantic_name": "character_shoe",
+          "prompts": [
+            "shoe",
+            "boot",
+            "sneaker"
+          ],
+          "maximum_parent_fraction": 0.2,
+          "maximum_instances": 2,
+          "priority": 1.08
+        },
+        {
+          "semantic_name": "character_shoe_upper",
+          "semantic_parent": "character_shoe",
+          "prompts": [
+            "shoe upper",
+            "upper part of shoe"
+          ],
+          "maximum_parent_fraction": 0.9,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "character_shoe_sole",
+          "semantic_parent": "character_shoe",
+          "prompts": [
+            "shoe sole",
+            "outsole"
+          ],
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 1,
+          "detail": true,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "character_shoe_tongue",
+          "semantic_parent": "character_shoe",
+          "prompts": [
+            "shoe tongue"
+          ],
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 1,
+          "detail": true,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "character_shoelace",
+          "semantic_parent": "character_shoe",
+          "prompts": [
+            "shoelace",
+            "shoe laces"
+          ],
+          "maximum_parent_fraction": 0.28,
+          "maximum_instances": 1,
+          "detail": true,
+          "priority": 1.15
+        },
+        {
+          "semantic_name": "character_heel",
+          "semantic_parent": "character_shoe",
+          "prompts": [
+            "shoe heel",
+            "heel of shoe"
+          ],
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "character_sock",
+          "prompts": [
+            "sock",
+            "ankle sock"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 2,
+          "detail": true,
+          "priority": 1.05
+        },
+        {
+          "semantic_name": "character_upper_clothing",
+          "semantic_parent": "character",
+          "fallback_query_parent": "character_torso",
+          "fallback_if_coverage_below": 0.35,
+          "assembly_parent": "character_torso",
+          "spatial_anchor": "character_head",
+          "spatial_relation": "below",
+          "spatial_tolerance": 0.03,
+          "prompts": [
+            "shirt",
+            "jacket",
+            "hoodie",
+            "upper garment"
+          ],
+          "maximum_parent_fraction": 0.72,
+          "fallback_maximum_parent_fraction": 1.6,
+          "maximum_instances": 2,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "character_collar",
+          "semantic_parent": "character_upper_clothing",
+          "prompts": [
+            "collar",
+            "shirt collar",
+            "hood opening"
+          ],
+          "maximum_parent_fraction": 0.24,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "character_torso_cloth",
+          "semantic_parent": "character_upper_clothing",
+          "prompts": [
+            "shirt body panel",
+            "torso part of garment",
+            "bodice"
+          ],
+          "dense_prompts": [
+            "main torso fabric of the top"
+          ],
+          "maximum_parent_fraction": 0.92,
+          "maximum_instances": 1,
+          "detail": true,
+          "dense_fallback": true,
+          "priority": 1.08
+        },
+        {
+          "semantic_name": "character_hem",
+          "semantic_parent": "character_upper_clothing",
+          "prompts": [
+            "shirt hem",
+            "garment hem",
+            "waistband of top"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "character_inner_clothing",
+          "semantic_parent": "character_upper_clothing",
+          "prompts": [
+            "inner shirt",
+            "undershirt",
+            "inner garment"
+          ],
+          "maximum_parent_fraction": 0.3,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "character_lower_clothing",
+          "prompts": [
+            "pants",
+            "shorts",
+            "skirt",
+            "lower garment"
+          ],
+          "maximum_parent_fraction": 0.5,
+          "maximum_instances": 1,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "character_accessory",
+          "prompts": [
+            "character accessory",
+            "clothing patch",
+            "brooch",
+            "pendant"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 4,
+          "detail": true,
+          "priority": 1.05
+        },
+        {
+          "semantic_name": "character_bag",
+          "semantic_parent": "character",
+          "assembly_parent": "character_torso",
+          "spatial_anchor": "character_torso",
+          "spatial_relation": "overlap",
+          "spatial_tolerance": 0.08,
+          "prompts": [
+            "shoulder bag",
+            "side bag",
+            "satchel",
+            "handbag",
+            "pouch worn by the character"
+          ],
+          "minimum_parent_fraction": 0.004,
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 2,
+          "priority": 1.12
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "humanoid",
+          "requires_grounded_refinement": true,
+          "classifier_prompt": "a complete person or humanoid character with head, hair, clothes, arms, hands, legs, shoes, and accessories",
+          "root_hints": [
+            "person",
+            "human character",
+            "cartoon character",
+            "humanoid character",
+            "character"
+          ],
+          "parts": [
+            "character_head",
+            "character_hair",
+            "character_torso",
+            "character_arm",
+            "character_sleeve",
+            "character_hand",
+            "character_leg",
+            "character_shoe",
+            "character_upper_clothing",
+            "character_lower_clothing",
+            "character_accessory"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vehicle",
+      "classifier_prompt": "a vehicle such as a car bicycle motorcycle airplane or boat",
+      "root_prompts": [
+        "car",
+        "automobile",
+        "truck",
+        "bus",
+        "motorcycle",
+        "bicycle",
+        "airplane",
+        "boat",
+        "vehicle"
+      ],
+      "generic_root_prompts": [
+        "vehicle"
+      ],
+      "default_part_semantics": [
+        "vehicle_body",
+        "vehicle_wheel",
+        "vehicle_light"
+      ],
+      "parts": [
+        {
+          "semantic_name": "vehicle_body",
+          "prompts": [
+            "vehicle body",
+            "car body",
+            "main vehicle frame"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_wheel",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "wheel",
+            "road wheel"
+          ],
+          "maximum_parent_fraction": 0.3,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "vehicle_tire",
+          "semantic_parent": "vehicle_wheel",
+          "query_parent": "vehicle",
+          "prompts": [
+            "tire",
+            "rubber tire"
+          ],
+          "maximum_parent_fraction": 0.28,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "vehicle_rim",
+          "semantic_parent": "vehicle_wheel",
+          "query_parent": "vehicle",
+          "prompts": [
+            "wheel rim",
+            "wheel hub"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 8,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_door",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "car door",
+            "vehicle door"
+          ],
+          "maximum_instances": 6
+        },
+        {
+          "semantic_name": "vehicle_window",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "side window",
+            "vehicle window"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "vehicle_windshield",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "windshield",
+            "front windscreen"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "vehicle_light",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "headlight",
+            "tail light",
+            "vehicle lamp"
+          ],
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 8,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_headlight",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "headlight",
+            "front lamp"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_taillight",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "tail light",
+            "rear lamp"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_turn_signal",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "turn signal",
+            "indicator light"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_mirror",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "side mirror",
+            "vehicle mirror"
+          ],
+          "maximum_parent_fraction": 0.1,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_handle",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "door handle",
+            "vehicle handle"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 6,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_seat",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "vehicle seat",
+            "saddle"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "vehicle_bumper",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "front bumper",
+            "rear bumper"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "vehicle_hood",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "car hood",
+            "bonnet"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_trunk",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "car trunk lid",
+            "boot lid"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_roof",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "car roof",
+            "vehicle roof"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_fender",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "car fender",
+            "wheel arch panel"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "vehicle_grille",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "front grille",
+            "car grille"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "vehicle_wiper",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "windshield wiper",
+            "wiper blade"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_antenna",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "car antenna",
+            "vehicle aerial"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_badge",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "car badge",
+            "vehicle logo"
+          ],
+          "maximum_parent_fraction": 0.06,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_frame",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle frame",
+            "motorcycle frame"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_top_tube",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle top tube"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_down_tube",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle down tube"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_seat_tube",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle seat tube"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_seat_stay",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle seat stay"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "vehicle_head_tube",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle head tube"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_stem",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle stem"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_handlebar",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "handlebar",
+            "bicycle handlebar"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_pedal",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "pedal",
+            "bicycle pedal"
+          ],
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_chain",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle chain",
+            "drive chain"
+          ],
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_gear",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "bicycle gear",
+            "chainring",
+            "sprocket"
+          ],
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "vehicle_fork",
+          "semantic_parent": "vehicle_frame",
+          "query_parent": "vehicle",
+          "prompts": [
+            "front fork",
+            "bicycle fork"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "vehicle_wing",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "aircraft wing",
+            "airplane wing"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "vehicle_tail",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "aircraft tail",
+            "tail fin"
+          ],
+          "maximum_instances": 3
+        },
+        {
+          "semantic_name": "vehicle_engine",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "aircraft engine",
+            "vehicle engine"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "vehicle_sail",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "boat sail",
+            "sail"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "vehicle_mast",
+          "semantic_parent": "vehicle_body",
+          "query_parent": "vehicle",
+          "prompts": [
+            "boat mast",
+            "mast"
+          ],
+          "maximum_instances": 3
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "road_vehicle",
+          "root_hints": [
+            "car",
+            "automobile",
+            "truck",
+            "bus"
+          ],
+          "parts": [
+            "vehicle_door",
+            "vehicle_window",
+            "vehicle_windshield",
+            "vehicle_tire",
+            "vehicle_rim",
+            "vehicle_headlight",
+            "vehicle_taillight",
+            "vehicle_turn_signal",
+            "vehicle_mirror",
+            "vehicle_handle",
+            "vehicle_bumper",
+            "vehicle_hood",
+            "vehicle_trunk",
+            "vehicle_roof",
+            "vehicle_fender",
+            "vehicle_grille",
+            "vehicle_wiper",
+            "vehicle_antenna",
+            "vehicle_badge"
+          ]
+        },
+        {
+          "name": "two_wheeler",
+          "root_hints": [
+            "bicycle",
+            "bike",
+            "motorcycle"
+          ],
+          "parts": [
+            "vehicle_frame",
+            "vehicle_top_tube",
+            "vehicle_down_tube",
+            "vehicle_seat_tube",
+            "vehicle_seat_stay",
+            "vehicle_head_tube",
+            "vehicle_stem",
+            "vehicle_wheel",
+            "vehicle_tire",
+            "vehicle_rim",
+            "vehicle_seat",
+            "vehicle_handlebar",
+            "vehicle_pedal",
+            "vehicle_chain",
+            "vehicle_gear",
+            "vehicle_fork",
+            "vehicle_light"
+          ]
+        },
+        {
+          "name": "aircraft",
+          "root_hints": [
+            "airplane",
+            "aircraft",
+            "aeroplane"
+          ],
+          "parts": [
+            "vehicle_wing",
+            "vehicle_tail",
+            "vehicle_engine",
+            "vehicle_window",
+            "vehicle_wheel"
+          ]
+        },
+        {
+          "name": "boat",
+          "root_hints": [
+            "boat",
+            "ship",
+            "sailboat"
+          ],
+          "parts": [
+            "vehicle_sail",
+            "vehicle_mast",
+            "vehicle_window"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "furniture",
+      "classifier_prompt": "a piece of furniture such as a chair table cabinet sofa or bed",
+      "root_prompts": [
+        "chair",
+        "bench",
+        "stool",
+        "table",
+        "desk",
+        "cabinet",
+        "sofa",
+        "bed",
+        "bookcase",
+        "shelf",
+        "office chair",
+        "coffee table",
+        "nightstand",
+        "wardrobe",
+        "dresser",
+        "furniture"
+      ],
+      "generic_root_prompts": [
+        "furniture"
+      ],
+      "default_part_semantics": [
+        "furniture_body",
+        "furniture_leg",
+        "furniture_handle"
+      ],
+      "parts": [
+        {
+          "semantic_name": "furniture_body",
+          "prompts": [
+            "furniture body",
+            "cabinet body",
+            "main furniture frame"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "furniture_top",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "table top",
+            "desk top",
+            "top panel"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "furniture_leg",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "furniture leg",
+            "chair leg",
+            "table leg"
+          ],
+          "planner_description": "a structural load-bearing post extending from the seat, frame, or tabletop toward the floor",
+          "planner_exclusions": [
+            "small terminal foot or caster",
+            "horizontal stretcher or rail",
+            "background object"
+          ],
+          "maximum_parent_fraction": 0.3,
+          "maximum_instances": 8,
+          "dense_fallback": true
+        },
+        {
+          "semantic_name": "furniture_foot",
+          "semantic_parent": "furniture_leg",
+          "query_parent": "furniture",
+          "prompts": [
+            "furniture foot",
+            "chair foot"
+          ],
+          "planner_description": "the short terminal pad, glide, caster, or widened end at the floor-contacting tip of a furniture leg",
+          "planner_exclusions": [
+            "the long vertical leg shaft",
+            "detached background object"
+          ],
+          "maximum_parent_fraction": 0.1,
+          "maximum_instances": 8,
+          "detail": true,
+          "dense_fallback": true
+        },
+        {
+          "semantic_name": "furniture_seat",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "chair seat",
+            "bench seat",
+            "seat panel"
+          ],
+          "planner_description": "the upper load-bearing surface on which a person sits, attached above the legs or frame",
+          "planner_exclusions": [
+            "opening below the seat",
+            "leg",
+            "stretcher",
+            "background visible through furniture"
+          ],
+          "maximum_instances": 2,
+          "dense_fallback": true
+        },
+        {
+          "semantic_name": "furniture_cushion",
+          "semantic_parent": "furniture_seat",
+          "query_parent": "furniture",
+          "prompts": [
+            "seat cushion",
+            "sofa cushion"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "furniture_backrest",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "backrest",
+            "chair back",
+            "sofa back"
+          ],
+          "maximum_instances": 2,
+          "dense_fallback": true
+        },
+        {
+          "semantic_name": "furniture_rail",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "chair rail",
+            "furniture rail"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "furniture_spindle",
+          "semantic_parent": "furniture_backrest",
+          "query_parent": "furniture",
+          "prompts": [
+            "chair spindle",
+            "backrest spindle"
+          ],
+          "maximum_instances": 16
+        },
+        {
+          "semantic_name": "furniture_stile",
+          "semantic_parent": "furniture_backrest",
+          "query_parent": "furniture",
+          "prompts": [
+            "chair stile",
+            "backrest side post"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "furniture_apron",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "furniture apron",
+            "table apron",
+            "chair apron"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "furniture_stretcher",
+          "semantic_parent": "furniture_leg",
+          "query_parent": "furniture",
+          "prompts": [
+            "chair stretcher",
+            "table stretcher",
+            "leg support bar"
+          ],
+          "planner_description": "a narrow structural brace connecting two furniture legs below the seat or tabletop",
+          "planner_exclusions": [
+            "vertical leg",
+            "seat panel",
+            "empty opening between legs"
+          ],
+          "maximum_instances": 8,
+          "dense_fallback": true
+        },
+        {
+          "semantic_name": "furniture_armrest",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "armrest",
+            "chair arm"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "furniture_drawer",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "drawer",
+            "sliding drawer"
+          ],
+          "maximum_instances": 12
+        },
+        {
+          "semantic_name": "furniture_door",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "cabinet door",
+            "cupboard door"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "furniture_handle",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "drawer handle",
+            "cabinet handle",
+            "furniture knob"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 16,
+          "detail": true
+        },
+        {
+          "semantic_name": "furniture_shelf",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "shelf panel",
+            "cabinet shelf"
+          ],
+          "maximum_instances": 12
+        },
+        {
+          "semantic_name": "furniture_frame",
+          "semantic_parent": "furniture_body",
+          "query_parent": "furniture",
+          "prompts": [
+            "bed frame",
+            "furniture frame"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "furniture_headboard",
+          "semantic_parent": "furniture_frame",
+          "query_parent": "furniture",
+          "prompts": [
+            "headboard",
+            "bed headboard"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "furniture_mattress",
+          "semantic_parent": "furniture_frame",
+          "query_parent": "furniture",
+          "prompts": [
+            "mattress"
+          ],
+          "maximum_instances": 1
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "chair",
+          "root_hints": [
+            "chair",
+            "bench",
+            "stool"
+          ],
+          "root_query_groups": [
+            ["chair"],
+            ["bench"],
+            ["stool"]
+          ],
+          "subtypes": [
+            {
+              "name": "chair",
+              "root_hints": ["chair"],
+              "parts": [
+                "furniture_seat",
+                "furniture_cushion",
+                "furniture_backrest",
+                "furniture_armrest",
+                "furniture_rail",
+                "furniture_spindle",
+                "furniture_stile",
+                "furniture_apron",
+                "furniture_leg",
+                "furniture_stretcher",
+                "furniture_foot"
+              ]
+            },
+            {
+              "name": "bench",
+              "root_hints": ["bench"],
+              "parts": [
+                "furniture_seat",
+                "furniture_cushion",
+                "furniture_backrest",
+                "furniture_armrest",
+                "furniture_apron",
+                "furniture_leg",
+                "furniture_stretcher",
+                "furniture_foot"
+              ]
+            },
+            {
+              "name": "stool",
+              "root_hints": ["stool"],
+              "parts": [
+                "furniture_seat",
+                "furniture_cushion",
+                "furniture_leg",
+                "furniture_stretcher",
+                "furniture_foot"
+              ]
+            }
+          ],
+          "parts": [
+            "furniture_seat",
+            "furniture_cushion",
+            "furniture_backrest",
+            "furniture_armrest",
+            "furniture_rail",
+            "furniture_spindle",
+            "furniture_stile",
+            "furniture_apron",
+            "furniture_leg",
+            "furniture_stretcher",
+            "furniture_foot"
+          ],
+          "part_overrides": {
+            "furniture_seat": {
+              "minimum_parent_fraction": 0.03,
+              "maximum_parent_fraction": 0.55,
+              "maximum_instances": 1,
+              "priority": 1.35
+            },
+            "furniture_backrest": {
+              "minimum_parent_fraction": 0.03,
+              "maximum_parent_fraction": 0.55,
+              "maximum_instances": 1,
+              "priority": 1.2
+            },
+            "furniture_leg": {
+              "minimum_parent_fraction": 0.005,
+              "maximum_parent_fraction": 0.3,
+              "maximum_instances": 8,
+              "priority": 1.2
+            },
+            "furniture_stretcher": {
+              "minimum_parent_fraction": 0.002,
+              "maximum_parent_fraction": 0.18,
+              "maximum_instances": 8,
+              "priority": 1.1
+            },
+            "furniture_foot": {
+              "minimum_parent_fraction": 0.0005,
+              "maximum_parent_fraction": 0.08,
+              "maximum_instances": 8
+            }
+          }
+        },
+        {
+          "name": "table",
+          "root_hints": [
+            "table",
+            "desk"
+          ],
+          "parts": [
+            "furniture_top",
+            "furniture_apron",
+            "furniture_leg",
+            "furniture_stretcher",
+            "furniture_foot",
+            "furniture_drawer",
+            "furniture_handle"
+          ]
+        },
+        {
+          "name": "cabinet",
+          "root_hints": [
+            "cabinet",
+            "cupboard",
+            "bookcase",
+            "shelf"
+          ],
+          "parts": [
+            "furniture_door",
+            "furniture_drawer",
+            "furniture_handle",
+            "furniture_shelf",
+            "furniture_leg"
+          ]
+        },
+        {
+          "name": "sofa",
+          "root_hints": [
+            "sofa",
+            "couch"
+          ],
+          "parts": [
+            "furniture_seat",
+            "furniture_cushion",
+            "furniture_backrest",
+            "furniture_armrest",
+            "furniture_leg"
+          ]
+        },
+        {
+          "name": "bed",
+          "root_hints": [
+            "bed"
+          ],
+          "parts": [
+            "furniture_frame",
+            "furniture_headboard",
+            "furniture_mattress",
+            "furniture_leg"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tool_prop",
+      "classifier_prompt": "a handheld tool weapon firearm rifle gun instrument or utensil",
+      "root_prompts": [
+        "drill",
+        "power drill",
+        "hammer drill",
+        "rotary hammer",
+        "demolition hammer",
+        "jackhammer",
+        "hammer",
+        "knife",
+        "pliers",
+        "scissors",
+        "screwdriver",
+        "wrench",
+        "broom",
+        "ladder",
+        "guitar",
+        "pan",
+        "spoon",
+        "tool",
+        "handheld object",
+        "prop",
+        "weapon",
+        "firearm",
+        "rifle",
+        "gun",
+        "musical instrument",
+        "power tool",
+        "kitchen utensil",
+        "staff",
+        "wand",
+        "spear",
+        "polearm"
+      ],
+      "generic_root_prompts": [
+        "tool",
+        "handheld object",
+        "prop",
+        "weapon"
+      ],
+      "default_part_semantics": [
+        "tool_prop_body",
+        "tool_prop_handle",
+        "tool_prop_shaft",
+        "tool_prop_head"
+      ],
+      "parts": [
+        {
+          "semantic_name": "tool_prop_body",
+          "prompts": [
+            "tool body",
+            "main body",
+            "main housing"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_handle",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "tool handle",
+            "hand grip",
+            "handle"
+          ],
+          "planner_description": "a graspable handle or grip that is visibly distinct from the main tool housing; never the complete tool body",
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "tool_prop_blade",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "blade",
+            "cutting edge"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_trigger",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "trigger",
+            "power trigger"
+          ],
+          "planner_description": "the small curved firing lever inside the trigger guard below the receiver",
+          "planner_exclusions": [
+            "tool_prop_trigger_guard",
+            "tool_prop_grip"
+          ],
+          "maximum_parent_fraction": 0.1,
+          "maximum_instances": 2,
+          "axis_position": 0.12,
+          "axis_tolerance": 0.32,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_power_trigger",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "power tool trigger",
+            "drill trigger switch",
+            "power switch trigger"
+          ],
+          "planner_description": "the small finger-operated power switch on a drill or powered tool handle, not the handle or main housing",
+          "planner_exclusions": [
+            "tool_prop_handle",
+            "tool_prop_auxiliary_handle"
+          ],
+          "maximum_parent_fraction": 0.1,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_barrel",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "barrel",
+            "barrel tube"
+          ],
+          "planner_description": "the long narrow firing tube running forward from the receiver toward the muzzle, excluding any surrounding handguard",
+          "planner_exclusions": [
+            "tool_prop_handguard",
+            "tool_prop_muzzle",
+            "tool_prop_receiver"
+          ],
+          "minimum_parent_fraction": 0.008,
+          "maximum_parent_fraction": 0.22,
+          "maximum_instances": 2,
+          "axis_position": -0.65,
+          "axis_tolerance": 0.42
+        },
+        {
+          "semantic_name": "tool_prop_shaft",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "shaft",
+            "staff shaft",
+            "spear shaft",
+            "rod"
+          ],
+          "maximum_instances": 3
+        },
+        {
+          "semantic_name": "tool_prop_guard",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "protective guard",
+            "hand guard",
+            "guard"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_stock",
+          "prompts": [
+            "rifle stock",
+            "gun stock",
+            "buttstock",
+            "rear stock"
+          ],
+          "planner_description": "the rear shoulder support extending behind the receiver, often wood or polymer, including the butt end but not the pistol grip",
+          "planner_exclusions": [
+            "tool_prop_receiver",
+            "tool_prop_grip"
+          ],
+          "minimum_parent_fraction": 0.03,
+          "maximum_parent_fraction": 0.5,
+          "maximum_instances": 1,
+          "axis_position": 0.85,
+          "axis_tolerance": 0.38,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "tool_prop_receiver",
+          "prompts": [
+            "rifle receiver",
+            "gun receiver",
+            "receiver body"
+          ],
+          "planner_description": "the compact central metal action housing above the trigger and magazine, between the handguard and stock; never the whole firearm",
+          "planner_exclusions": [
+            "tool_prop_stock",
+            "tool_prop_handguard",
+            "tool_prop_magazine"
+          ],
+          "minimum_parent_fraction": 0.03,
+          "maximum_parent_fraction": 0.42,
+          "maximum_instances": 1,
+          "axis_position": 0.0,
+          "axis_tolerance": 0.5,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "tool_prop_magazine",
+          "prompts": [
+            "magazine",
+            "ammo magazine"
+          ],
+          "planner_description": "the detachable ammunition container projecting below the receiver, commonly curved on an AK and positioned in front of the pistol grip",
+          "planner_exclusions": [
+            "tool_prop_grip",
+            "tool_prop_handguard"
+          ],
+          "minimum_parent_fraction": 0.015,
+          "maximum_parent_fraction": 0.22,
+          "maximum_instances": 1,
+          "axis_position": -0.15,
+          "axis_tolerance": 0.32,
+          "priority": 1.15
+        },
+        {
+          "semantic_name": "tool_prop_grip",
+          "prompts": [
+            "pistol grip",
+            "firearm grip",
+            "vertical grip"
+          ],
+          "planner_description": "the hand-held downward handle behind the magazine and under the rear of the receiver",
+          "planner_exclusions": [
+            "tool_prop_magazine",
+            "tool_prop_handguard"
+          ],
+          "minimum_parent_fraction": 0.008,
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 2,
+          "axis_position": 0.28,
+          "axis_tolerance": 0.32,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "tool_prop_handguard",
+          "prompts": [
+            "handguard",
+            "rifle handguard",
+            "foregrip body"
+          ],
+          "planner_description": "the forward casing or wooden grip surrounding the barrel between the receiver and muzzle; it does not project downward like a magazine",
+          "planner_exclusions": [
+            "tool_prop_magazine",
+            "tool_prop_grip",
+            "tool_prop_receiver"
+          ],
+          "minimum_parent_fraction": 0.02,
+          "maximum_parent_fraction": 0.25,
+          "maximum_instances": 1,
+          "axis_position": -0.38,
+          "axis_tolerance": 0.42,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "tool_prop_sight",
+          "prompts": [
+            "front sight",
+            "rear sight",
+            "gun sight"
+          ],
+          "planner_description": "a small raised aiming component on the top line of the barrel or receiver",
+          "planner_exclusions": [
+            "tool_prop_muzzle",
+            "tool_prop_charging_handle"
+          ],
+          "minimum_parent_fraction": 0.0002,
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 2,
+          "detail": true,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "tool_prop_muzzle",
+          "prompts": [
+            "muzzle",
+            "muzzle device",
+            "barrel tip"
+          ],
+          "planner_description": "the terminal opening or device at the projectile-exit end of the barrel, not the entire front-sight assembly",
+          "planner_exclusions": [
+            "tool_prop_sight",
+            "tool_prop_barrel"
+          ],
+          "minimum_parent_fraction": 0.0002,
+          "maximum_parent_fraction": 0.06,
+          "maximum_instances": 1,
+          "axis_position": -0.9,
+          "axis_tolerance": 0.3,
+          "detail": true,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "tool_prop_trigger_guard",
+          "prompts": [
+            "trigger guard"
+          ],
+          "planner_description": "the small protective loop surrounding the trigger below the receiver",
+          "planner_exclusions": [
+            "tool_prop_trigger",
+            "tool_prop_grip"
+          ],
+          "minimum_parent_fraction": 0.0002,
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 1,
+          "axis_position": 0.12,
+          "axis_tolerance": 0.32,
+          "detail": true,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "tool_prop_charging_handle",
+          "prompts": [
+            "charging handle",
+            "bolt handle"
+          ],
+          "planner_description": "a small cocking control protruding from the receiver, not the receiver housing itself",
+          "planner_exclusions": [
+            "tool_prop_sight",
+            "tool_prop_receiver"
+          ],
+          "minimum_parent_fraction": 0.0002,
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 1,
+          "axis_position": 0.0,
+          "axis_tolerance": 0.45,
+          "detail": true,
+          "priority": 1.1
+        },
+        {
+          "semantic_name": "tool_prop_head",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "tool head",
+            "hammer head",
+            "staff head",
+            "spear head",
+            "ornamental head"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_face",
+          "semantic_parent": "tool_prop_head",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "hammer face",
+            "striking face"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_claw",
+          "semantic_parent": "tool_prop_head",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "hammer claw"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_pivot",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "pivot screw",
+            "scissors screw",
+            "joint pin"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_finger_hole",
+          "semantic_parent": "tool_prop_handle",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "scissors finger hole",
+            "finger loop"
+          ],
+          "maximum_parent_fraction": 0.22,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_chuck",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "drill chuck",
+            "drill tool holder"
+          ],
+          "planner_description": "the compact tool holder between a drill housing and its bit, excluding the complete front housing",
+          "maximum_parent_fraction": 0.24,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_bit",
+          "semantic_parent": "tool_prop_chuck",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "drill bit",
+            "rotary hammer bit"
+          ],
+          "planner_description": "the narrow replaceable cutting or drilling tool extending from the chuck",
+          "maximum_parent_fraction": 0.22,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_auxiliary_handle",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "jackhammer top handle",
+            "demolition hammer side handle",
+            "jackhammer hand grip"
+          ],
+          "planner_description": "a distinct top or side hand grip attached to a demolition hammer housing, never the long motor housing or the operator",
+          "maximum_parent_fraction": 0.24,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_wrap",
+          "semantic_parent": "tool_prop_handle",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "handle wrap",
+            "cloth wrapping",
+            "grip wrap"
+          ],
+          "dense_prompts": [
+            "cloth wrapped around the handle",
+            "colored grip wrapping"
+          ],
+          "planner_description": "a distinct cloth, cord, tape, or leather band wrapped around a tool handle; exclude the rigid handle, guard, and blade",
+          "planner_exclusions": [
+            "tool_prop_handle",
+            "tool_prop_guard",
+            "tool_prop_blade"
+          ],
+          "minimum_parent_fraction": 0.008,
+          "maximum_parent_fraction": 0.34,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_tool_holder",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "jackhammer tool holder",
+            "demolition hammer chisel holder",
+            "jackhammer front collar"
+          ],
+          "planner_description": "the compact collar that connects a demolition hammer body to its chisel, excluding the body and chisel",
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_chisel",
+          "semantic_parent": "tool_prop_tool_holder",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "jackhammer chisel",
+            "demolition hammer chisel bit",
+            "breaker steel bit"
+          ],
+          "planner_description": "the narrow replaceable steel chisel extending away from the demolition hammer tool holder",
+          "maximum_parent_fraction": 0.34,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_battery",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "drill battery",
+            "battery pack"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_tip",
+          "semantic_parent": "tool_prop_shaft",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "screwdriver tip",
+            "tool tip"
+          ],
+          "maximum_parent_fraction": 0.1,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_jaw",
+          "semantic_parent": "tool_prop_head",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "wrench jaw",
+            "pliers jaw"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_brush",
+          "semantic_parent": "tool_prop_shaft",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "broom brush",
+            "bristles"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_brush_cap",
+          "semantic_parent": "tool_prop_brush",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "broom brush cap",
+            "brush holder"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_rail",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "ladder rail",
+            "side rail"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_step",
+          "semantic_parent": "tool_prop_rail",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "ladder step",
+            "ladder rung"
+          ],
+          "maximum_instances": 24
+        },
+        {
+          "semantic_name": "tool_prop_top_cap",
+          "semantic_parent": "tool_prop_rail",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "ladder top cap",
+            "ladder top"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_neck",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar neck"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_fingerboard",
+          "semantic_parent": "tool_prop_neck",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar fingerboard",
+            "fretboard"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_headstock",
+          "semantic_parent": "tool_prop_neck",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar headstock"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_bridge",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar bridge"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_sound_hole",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar sound hole"
+          ],
+          "maximum_parent_fraction": 0.2,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_side",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar side",
+            "instrument side panel"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_tuning_key",
+          "semantic_parent": "tool_prop_headstock",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar tuning peg",
+            "tuning key"
+          ],
+          "maximum_parent_fraction": 0.06,
+          "maximum_instances": 8,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_pan_body",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "pan body",
+            "cooking pan"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_bowl",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "spoon bowl",
+            "ladle bowl"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_string",
+          "semantic_parent": "tool_prop_body",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "guitar string",
+            "instrument string"
+          ],
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 12,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_rim",
+          "semantic_parent": "tool_prop_bowl",
+          "query_parent": "tool_prop",
+          "prompts": [
+            "pan rim",
+            "spoon rim"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 2,
+          "detail": true
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "firearm",
+          "classifier_prompt": "a complete AK-47 assault rifle pistol or long gun with barrel receiver magazine trigger grip and shoulder stock",
+          "root_hints": [
+            "firearm",
+            "rifle",
+            "gun",
+            "pistol"
+          ],
+          "parts": [
+            "tool_prop_stock",
+            "tool_prop_receiver",
+            "tool_prop_barrel",
+            "tool_prop_magazine",
+            "tool_prop_grip",
+            "tool_prop_handguard",
+            "tool_prop_trigger",
+            "tool_prop_sight",
+            "tool_prop_muzzle",
+            "tool_prop_trigger_guard",
+            "tool_prop_charging_handle"
+          ],
+          "part_overrides": {
+            "tool_prop_stock": {"maximum_instances": 1},
+            "tool_prop_receiver": {"maximum_instances": 1},
+            "tool_prop_barrel": {"maximum_instances": 1},
+            "tool_prop_magazine": {"maximum_instances": 1},
+            "tool_prop_grip": {"maximum_instances": 1},
+            "tool_prop_handguard": {"maximum_instances": 1},
+            "tool_prop_trigger": {"maximum_instances": 1},
+            "tool_prop_sight": {"maximum_instances": 2},
+            "tool_prop_muzzle": {"maximum_instances": 1},
+            "tool_prop_trigger_guard": {"maximum_instances": 1},
+            "tool_prop_charging_handle": {"maximum_instances": 1}
+          }
+        },
+        {
+          "name": "staff",
+          "root_hints": [
+            "staff",
+            "wand",
+            "spear",
+            "polearm"
+          ],
+          "parts": [
+            "tool_prop_shaft",
+            "tool_prop_head",
+            "tool_prop_guard",
+            "tool_prop_tip"
+          ]
+        },
+        {
+          "name": "drill",
+          "root_hints": [
+            "drill",
+            "power drill",
+            "electric drill",
+            "hammer drill",
+            "rotary hammer"
+          ],
+          "parts": [
+            "tool_prop_handle",
+            "tool_prop_power_trigger",
+            "tool_prop_chuck",
+            "tool_prop_bit",
+            "tool_prop_battery"
+          ],
+          "part_overrides": {
+            "tool_prop_handle": {
+              "maximum_parent_fraction": 0.42,
+              "maximum_instances": 2
+            },
+            "tool_prop_battery": {
+              "maximum_parent_fraction": 0.34
+            }
+          }
+        },
+        {
+          "name": "jackhammer",
+          "classifier_prompt": "a pneumatic jackhammer demolition hammer or concrete breaker with a long motor housing handles tool holder and steel chisel",
+          "root_hints": [
+            "jackhammer",
+            "demolition hammer",
+            "concrete breaker",
+            "pneumatic drill",
+            "pneumatic hammer"
+          ],
+          "parts": [
+            "tool_prop_auxiliary_handle",
+            "tool_prop_power_trigger",
+            "tool_prop_tool_holder",
+            "tool_prop_chisel"
+          ]
+        },
+        {
+          "name": "hammer",
+          "root_hints": [
+            "hammer"
+          ],
+          "parts": [
+            "tool_prop_handle",
+            "tool_prop_head",
+            "tool_prop_face",
+            "tool_prop_claw"
+          ],
+          "part_overrides": {
+            "tool_prop_handle": {
+              "maximum_parent_fraction": 0.78,
+              "maximum_instances": 1
+            }
+          }
+        },
+        {
+          "name": "knife",
+          "root_hints": [
+            "knife"
+          ],
+          "parts": [
+            "tool_prop_handle",
+            "tool_prop_blade",
+            "tool_prop_guard",
+            "tool_prop_wrap"
+          ],
+          "part_overrides": {
+            "tool_prop_handle": {
+              "maximum_parent_fraction": 0.58,
+              "maximum_instances": 1,
+              "axis_position": 0.85,
+              "axis_tolerance": 0.55,
+              "topology_anchor": "tool_prop_blade",
+              "topology_relation": "terminal_complement",
+              "topology_scale": 0.2
+            },
+            "tool_prop_blade": {
+              "maximum_parent_fraction": 0.94,
+              "maximum_instances": 1,
+              "axis_position": -0.55,
+              "axis_tolerance": 0.65
+            },
+            "tool_prop_guard": {
+              "maximum_parent_fraction": 0.18,
+              "maximum_instances": 1,
+              "axis_position": 0.15,
+              "axis_tolerance": 0.5,
+              "detail": true
+            },
+            "tool_prop_wrap": {
+              "maximum_parent_fraction": 0.34,
+              "maximum_instances": 1,
+              "axis_position": 0.42,
+              "axis_tolerance": 0.58
+            }
+          }
+        },
+        {
+          "name": "scissors_pliers",
+          "root_hints": [
+            "scissors",
+            "pliers"
+          ],
+          "root_query_groups": [
+            ["scissors"],
+            ["pliers"]
+          ],
+          "subtypes": [
+            {
+              "name": "scissors",
+              "root_hints": ["scissors"],
+              "parts": [
+                "tool_prop_handle",
+                "tool_prop_blade",
+                "tool_prop_pivot",
+                "tool_prop_finger_hole"
+              ]
+            },
+            {
+              "name": "pliers",
+              "root_hints": ["pliers"],
+              "parts": [
+                "tool_prop_handle",
+                "tool_prop_pivot",
+                "tool_prop_jaw"
+              ]
+            }
+          ],
+          "parts": [
+            "tool_prop_handle",
+            "tool_prop_blade",
+            "tool_prop_pivot",
+            "tool_prop_finger_hole",
+            "tool_prop_jaw"
+          ]
+        },
+        {
+          "name": "screwdriver",
+          "root_hints": [
+            "screwdriver"
+          ],
+          "parts": [
+            "tool_prop_handle",
+            "tool_prop_shaft",
+            "tool_prop_tip"
+          ],
+          "part_overrides": {
+            "tool_prop_handle": {
+              "maximum_parent_fraction": 0.72,
+              "maximum_instances": 1
+            }
+          }
+        },
+        {
+          "name": "wrench",
+          "root_hints": [
+            "wrench",
+            "spanner"
+          ],
+          "parts": [
+            "tool_prop_handle",
+            "tool_prop_head",
+            "tool_prop_jaw"
+          ],
+          "part_overrides": {
+            "tool_prop_handle": {
+              "maximum_parent_fraction": 0.78,
+              "maximum_instances": 1
+            }
+          }
+        },
+        {
+          "name": "broom",
+          "root_hints": [
+            "broom"
+          ],
+          "parts": [
+            "tool_prop_shaft",
+            "tool_prop_brush",
+            "tool_prop_brush_cap"
+          ]
+        },
+        {
+          "name": "ladder",
+          "root_hints": [
+            "ladder"
+          ],
+          "parts": [
+            "tool_prop_rail",
+            "tool_prop_step",
+            "tool_prop_top_cap"
+          ]
+        },
+        {
+          "name": "guitar",
+          "root_hints": [
+            "guitar"
+          ],
+          "parts": [
+            "tool_prop_neck",
+            "tool_prop_fingerboard",
+            "tool_prop_headstock",
+            "tool_prop_bridge",
+            "tool_prop_sound_hole",
+            "tool_prop_side",
+            "tool_prop_tuning_key",
+            "tool_prop_string"
+          ]
+        },
+        {
+          "name": "pan",
+          "root_hints": [
+            "pan",
+            "frying pan"
+          ],
+          "parts": [
+            "tool_prop_pan_body",
+            "tool_prop_handle",
+            "tool_prop_rim"
+          ],
+          "part_overrides": {
+            "tool_prop_handle": {
+              "maximum_parent_fraction": 0.55,
+              "maximum_instances": 2
+            }
+          }
+        },
+        {
+          "name": "spoon",
+          "root_hints": [
+            "spoon",
+            "ladle"
+          ],
+          "parts": [
+            "tool_prop_handle",
+            "tool_prop_bowl",
+            "tool_prop_rim"
+          ],
+          "part_overrides": {
+            "tool_prop_handle": {
+              "maximum_parent_fraction": 0.82,
+              "maximum_instances": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "container",
+      "classifier_prompt": "a container such as a bottle box bag crate cup or tray",
+      "root_prompts": [
+        "bottle",
+        "jar",
+        "can",
+        "cup",
+        "mug",
+        "glass",
+        "bowl",
+        "box",
+        "carton",
+        "crate",
+        "basket",
+        "bucket",
+        "handbag",
+        "plastic bag",
+        "trash can",
+        "backpack",
+        "suitcase",
+        "luggage",
+        "storage bin",
+        "food container",
+        "plate",
+        "tray",
+        "serving plate",
+        "serving tray",
+        "container"
+      ],
+      "generic_root_prompts": [
+        "container"
+      ],
+      "default_part_semantics": [
+        "container_body",
+        "container_lid",
+        "container_handle",
+        "container_opening",
+        "container_base"
+      ],
+      "parts": [
+        {
+          "semantic_name": "container_body",
+          "prompts": [
+            "container body",
+            "bottle body",
+            "bag body",
+            "box body"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "container_side",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "box side panel",
+            "carton side",
+            "container side"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "container_lid",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "lid",
+            "cap",
+            "container cover"
+          ],
+          "maximum_parent_fraction": 0.36,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "container_neck",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "bottle neck",
+            "jar neck"
+          ],
+          "maximum_parent_fraction": 0.3,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "container_shoulder",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "bottle shoulder"
+          ],
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "container_ring",
+          "semantic_parent": "container_neck",
+          "query_parent": "container",
+          "prompts": [
+            "bottle neck ring",
+            "tamper ring"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_handle",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "container handle",
+            "bag handle",
+            "cup handle",
+            "bucket handle"
+          ],
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "container_strap",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "bag strap",
+            "shoulder strap"
+          ],
+          "maximum_parent_fraction": 0.55,
+          "maximum_instances": 3
+        },
+        {
+          "semantic_name": "container_buckle",
+          "semantic_parent": "container_strap",
+          "query_parent": "container",
+          "prompts": [
+            "bag buckle",
+            "strap buckle"
+          ],
+          "maximum_parent_fraction": 0.1,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_zipper",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "zipper",
+            "bag zipper"
+          ],
+          "maximum_parent_fraction": 0.14,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_pocket",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "bag pocket",
+            "front pocket"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "container_opening",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "container opening",
+            "bottle mouth",
+            "cup opening"
+          ],
+          "maximum_parent_fraction": 0.3,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "container_rim",
+          "semantic_parent": "container_opening",
+          "query_parent": "container",
+          "prompts": [
+            "cup rim",
+            "bowl rim",
+            "container rim"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_spout",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "spout",
+            "pouring spout"
+          ],
+          "maximum_parent_fraction": 0.3,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "container_label",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "product label",
+            "bottle label",
+            "logo label"
+          ],
+          "maximum_parent_fraction": 0.5,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_base",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "container base",
+            "bottle bottom",
+            "bag base"
+          ],
+          "maximum_parent_fraction": 0.32,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "container_inner",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "container inside",
+            "inner container surface"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "container_foot",
+          "semantic_parent": "container_base",
+          "query_parent": "container",
+          "prompts": [
+            "container foot",
+            "vase foot"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_outer_side",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "plate outer side",
+            "tray outer side"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "container_inner_wall",
+          "semantic_parent": "container_body",
+          "query_parent": "container",
+          "prompts": [
+            "plate inner wall",
+            "tray inner wall"
+          ],
+          "maximum_instances": 2
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "bottle_jar",
+          "root_hints": [
+            "bottle",
+            "jar",
+            "can"
+          ],
+          "parts": [
+            "container_lid",
+            "container_neck",
+            "container_ring",
+            "container_shoulder",
+            "container_opening",
+            "container_label",
+            "container_base",
+            "container_handle",
+            "container_spout",
+            "container_inner"
+          ]
+        },
+        {
+          "name": "drinkware",
+          "root_hints": [
+            "cup",
+            "mug",
+            "glass",
+            "bowl"
+          ],
+          "root_query_groups": [
+            ["cup", "mug"],
+            ["glass"],
+            ["bowl"]
+          ],
+          "subtypes": [
+            {
+              "name": "cup_or_mug",
+              "root_hints": ["cup", "mug"],
+              "parts": [
+                "container_handle",
+                "container_opening",
+                "container_rim",
+                "container_base",
+                "container_inner"
+              ]
+            },
+            {
+              "name": "glass",
+              "root_hints": ["glass"],
+              "parts": [
+                "container_opening",
+                "container_rim",
+                "container_base",
+                "container_inner"
+              ]
+            },
+            {
+              "name": "bowl",
+              "root_hints": ["bowl"],
+              "parts": [
+                "container_opening",
+                "container_rim",
+                "container_base",
+                "container_inner"
+              ]
+            }
+          ],
+          "parts": [
+            "container_handle",
+            "container_opening",
+            "container_rim",
+            "container_base",
+            "container_inner"
+          ]
+        },
+        {
+          "name": "bag",
+          "root_hints": [
+            "bag",
+            "handbag",
+            "plastic bag",
+            "backpack",
+            "purse",
+            "tote bag",
+            "shopping bag",
+            "carrier bag"
+          ],
+          "subtypes": [
+            {
+              "name": "structured_bag",
+              "root_hints": [
+                "bag",
+                "handbag",
+                "backpack",
+                "purse",
+                "tote bag"
+              ],
+              "parts": [
+                "container_handle",
+                "container_strap",
+                "container_buckle",
+                "container_zipper",
+                "container_pocket",
+                "container_opening",
+                "container_base"
+              ]
+            },
+            {
+              "name": "plastic_bag",
+              "root_hints": [
+                "plastic bag",
+                "shopping bag",
+                "carrier bag"
+              ],
+              "parts": [
+                "container_handle",
+                "container_opening",
+                "container_inner"
+              ]
+            }
+          ],
+          "parts": [
+            "container_handle",
+            "container_strap",
+            "container_buckle",
+            "container_zipper",
+            "container_pocket",
+            "container_opening",
+            "container_base",
+            "container_inner"
+          ]
+        },
+        {
+          "name": "box",
+          "root_hints": [
+            "box",
+            "carton",
+            "crate"
+          ],
+          "root_query_groups": [
+            ["box", "carton"],
+            ["crate"]
+          ],
+          "subtypes": [
+            {
+              "name": "box_or_carton",
+              "root_hints": ["box", "carton"],
+              "parts": [
+                "container_side",
+                "container_lid",
+                "container_label",
+                "container_base"
+              ]
+            },
+            {
+              "name": "crate",
+              "root_hints": ["crate"],
+              "parts": [
+                "container_side",
+                "container_lid",
+                "container_handle",
+                "container_base"
+              ]
+            }
+          ],
+          "parts": [
+            "container_side",
+            "container_lid",
+            "container_handle",
+            "container_label",
+            "container_base"
+          ],
+          "part_overrides": {
+            "container_side": {
+              "maximum_instances": 4
+            },
+            "container_lid": {
+              "maximum_instances": 1
+            },
+            "container_handle": {
+              "maximum_instances": 2
+            }
+          }
+        },
+        {
+          "name": "open_container",
+          "root_hints": [
+            "basket",
+            "bucket",
+            "trash can"
+          ],
+          "root_query_groups": [
+            ["basket"],
+            ["bucket"],
+            ["trash can"]
+          ],
+          "subtypes": [
+            {
+              "name": "basket",
+              "root_hints": ["basket"],
+              "parts": [
+                "container_lid",
+                "container_handle",
+                "container_opening",
+                "container_rim",
+                "container_base",
+                "container_inner"
+              ]
+            },
+            {
+              "name": "bucket",
+              "root_hints": ["bucket"],
+              "parts": [
+                "container_lid",
+                "container_handle",
+                "container_opening",
+                "container_rim",
+                "container_base",
+                "container_inner"
+              ]
+            },
+            {
+              "name": "trash_can",
+              "root_hints": ["trash can"],
+              "parts": [
+                "container_lid",
+                "container_handle",
+                "container_opening",
+                "container_rim",
+                "container_base",
+                "container_inner"
+              ]
+            }
+          ],
+          "parts": [
+            "container_lid",
+            "container_handle",
+            "container_opening",
+            "container_rim",
+            "container_base",
+            "container_inner"
+          ]
+        },
+        {
+          "name": "flatware",
+          "root_hints": [
+            "plate",
+            "tray",
+            "serving plate",
+            "serving tray"
+          ],
+          "root_query_groups": [
+            ["plate", "serving plate"],
+            ["tray", "serving tray"]
+          ],
+          "subtypes": [
+            {
+              "name": "plate",
+              "root_hints": ["plate", "serving plate"],
+              "parts": [
+                "container_rim",
+                "container_base",
+                "container_inner",
+                "container_inner_wall",
+                "container_outer_side"
+              ]
+            },
+            {
+              "name": "tray",
+              "root_hints": ["tray", "serving tray"],
+              "parts": [
+                "container_rim",
+                "container_base",
+                "container_inner",
+                "container_inner_wall",
+                "container_outer_side"
+              ]
+            }
+          ],
+          "parts": [
+            "container_rim",
+            "container_base",
+            "container_inner",
+            "container_inner_wall",
+            "container_outer_side"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "device",
+      "classifier_prompt": "an electronic device computer appliance machine phone camera or articulated display object",
+      "root_prompts": [
+        "cell phone",
+        "smartphone",
+        "laptop computer",
+        "computer monitor",
+        "television",
+        "camera",
+        "remote control",
+        "calculator",
+        "clock",
+        "watch",
+        "wristwatch",
+        "smartwatch",
+        "earphone",
+        "electric fan",
+        "lamp",
+        "blender",
+        "microwave oven",
+        "electric kettle",
+        "desktop computer",
+        "tablet computer",
+        "computer mouse",
+        "computer keyboard",
+        "printer",
+        "router",
+        "game controller",
+        "speaker",
+        "microphone",
+        "projector",
+        "vacuum cleaner",
+        "washing machine",
+        "refrigerator",
+        "toaster",
+        "coffee maker",
+        "air conditioner",
+        "hair dryer",
+        "electric toothbrush",
+        "world globe",
+        "desk globe",
+        "globe on a stand",
+        "smart home device",
+        "electronic device",
+        "computer",
+        "appliance",
+        "machine"
+      ],
+      "generic_root_prompts": [
+        "electronic device",
+        "computer",
+        "appliance",
+        "machine"
+      ],
+      "default_part_semantics": [
+        "device_body",
+        "device_button",
+        "device_port",
+        "device_cable"
+      ],
+      "parts": [
+        {
+          "semantic_name": "device_body",
+          "prompts": [
+            "device body",
+            "machine housing",
+            "main enclosure"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_back_panel",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "device back cover",
+            "rear panel",
+            "back panel"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_base_panel",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "laptop base panel",
+            "computer base panel"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_side_panel",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "device side panel",
+            "appliance side"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "device_top_panel",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "device top panel",
+            "appliance top"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_bottom_panel",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "device bottom panel",
+            "appliance bottom"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_logo",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "device logo",
+            "brand logo"
+          ],
+          "planner_description": "a visible manufacturer emblem physically printed, embossed, or attached to the device housing",
+          "planner_exclusions": [
+            "watermark over the photograph",
+            "screen content",
+            "reflection",
+            "random text fragment"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_screen",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "screen",
+            "display panel"
+          ],
+          "planner_description": "the complete rectangular display surface of the device, excluding text or graphics shown on it",
+          "planner_exclusions": [
+            "screen content",
+            "watermark fragment",
+            "bezel",
+            "single reflection"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_bezel",
+          "semantic_parent": "device_screen",
+          "query_parent": "device",
+          "prompts": [
+            "screen bezel",
+            "display frame"
+          ],
+          "planner_description": "the continuous physical frame surrounding the display surface",
+          "planner_exclusions": [
+            "small patch inside the screen",
+            "screen content",
+            "watermark fragment"
+          ],
+          "topology_anchor": "device_screen",
+          "topology_relation": "surround",
+          "topology_scale": 0.24,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_button",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "button",
+            "control button",
+            "power button"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 24,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_keyboard",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "keyboard",
+            "keypad"
+          ],
+          "dense_prompts": [
+            "keyboard area with rows of keys"
+          ],
+          "minimum_parent_fraction": 0.04,
+          "maximum_parent_fraction": 0.45,
+          "dense_fallback": true,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_key",
+          "semantic_parent": "device_keyboard",
+          "query_parent": "device",
+          "prompts": [
+            "keyboard key",
+            "keypad key"
+          ],
+          "planner_description": "one discrete physical key located within the keyboard or keypad array",
+          "planner_exclusions": [
+            "text or watermark on the screen",
+            "isolated screen pixel region",
+            "logo"
+          ],
+          "maximum_parent_fraction": 0.04,
+          "maximum_instances": 24,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_touchpad",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "touchpad",
+            "trackpad"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_camera",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "camera module",
+            "phone camera",
+            "webcam"
+          ],
+          "planner_description": "a physical imaging module or webcam mounted in the device housing, commonly on a display bezel",
+          "planner_exclusions": [
+            "mark inside the display",
+            "reflection",
+            "watermark fragment"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_lens",
+          "semantic_parent": "device_camera",
+          "query_parent": "device",
+          "prompts": [
+            "camera lens",
+            "phone camera lens"
+          ],
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 6,
+          "detail": true,
+          "dense_fallback": true
+        },
+        {
+          "semantic_name": "device_flash",
+          "semantic_parent": "device_camera",
+          "query_parent": "device",
+          "prompts": [
+            "camera flash",
+            "phone flash"
+          ],
+          "maximum_parent_fraction": 0.06,
+          "maximum_instances": 3,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_speaker",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "speaker grille",
+            "device speaker",
+            "earpiece speaker"
+          ],
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_microphone",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "microphone hole",
+            "device microphone"
+          ],
+          "maximum_parent_fraction": 0.04,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_cable",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "cable",
+            "power cord",
+            "earphone wire"
+          ],
+          "maximum_parent_fraction": 0.6,
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "device_connector",
+          "semantic_parent": "device_cable",
+          "query_parent": "device",
+          "prompts": [
+            "cable connector",
+            "plug"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_port",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "port",
+            "socket",
+            "connector port"
+          ],
+          "planner_description": "a physical connector opening on an exposed outer edge or side of the device housing",
+          "planner_exclusions": [
+            "mark in the middle of a screen or panel",
+            "watermark fragment",
+            "printed symbol"
+          ],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 12,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_hinge",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "laptop hinge",
+            "device hinge"
+          ],
+          "planner_description": "the mechanical joint connecting two articulated device sections, such as a laptop screen and base",
+          "planner_exclusions": [
+            "logo",
+            "screen content",
+            "isolated decorative mark"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_stand",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "monitor stand",
+            "device stand"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_base",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "device base",
+            "stand base",
+            "appliance base"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_globe_sphere",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "world globe sphere",
+            "round globe ball",
+            "map sphere"
+          ],
+          "planner_description": "the complete spherical map body of a world globe, excluding the meridian ring, axle, support stem, and base",
+          "planner_exclusions": [
+            "printed countries",
+            "map labels",
+            "meridian ring",
+            "stand base"
+          ],
+          "minimum_parent_fraction": 0.25,
+          "maximum_parent_fraction": 0.88,
+          "maximum_instances": 1,
+          "priority": 1.18
+        },
+        {
+          "semantic_name": "device_globe_meridian_ring",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "globe meridian ring",
+            "curved hoop around the globe",
+            "globe mounting arc"
+          ],
+          "planner_description": "the narrow curved support hoop following the outside of a globe sphere, not a printed longitude line on the map",
+          "planner_exclusions": [
+            "printed longitude line",
+            "country border",
+            "map text"
+          ],
+          "minimum_parent_fraction": 0.008,
+          "maximum_parent_fraction": 0.24,
+          "maximum_instances": 1,
+          "priority": 1.16
+        },
+        {
+          "semantic_name": "device_globe_axis",
+          "semantic_parent": "device_globe_meridian_ring",
+          "query_parent": "device",
+          "prompts": [
+            "globe axle",
+            "globe pivot pin",
+            "sphere rotation axis"
+          ],
+          "planner_description": "a small pivot or axle connecting the globe sphere to its meridian support",
+          "maximum_parent_fraction": 0.04,
+          "maximum_instances": 2,
+          "detail": true,
+          "priority": 1.12
+        },
+        {
+          "semantic_name": "device_globe_stem",
+          "semantic_parent": "device_base",
+          "query_parent": "device",
+          "prompts": [
+            "globe support stem",
+            "globe pedestal neck",
+            "upright connector above the base"
+          ],
+          "planner_description": "the narrow support between a globe sphere or meridian ring and the broad bottom base",
+          "minimum_parent_fraction": 0.005,
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 1,
+          "priority": 1.14
+        },
+        {
+          "semantic_name": "device_dial",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "control dial",
+            "watch dial",
+            "clock face"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "device_clock_hand",
+          "semantic_parent": "device_dial",
+          "query_parent": "device",
+          "prompts": [
+            "clock hand",
+            "watch hand"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_band",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "watch band",
+            "watch strap"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_lug",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "watch lug",
+            "strap lug"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_buckle",
+          "semantic_parent": "device_band",
+          "query_parent": "device",
+          "prompts": [
+            "watch buckle",
+            "strap buckle"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_earpad",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "ear pad",
+            "headphone ear cushion"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_headband",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "headphone headband"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_slider",
+          "semantic_parent": "device_headband",
+          "query_parent": "device",
+          "prompts": [
+            "headphone slider",
+            "headband adjuster"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_handle",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "appliance handle",
+            "kettle handle",
+            "door handle"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_door",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "appliance door",
+            "microwave door"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_control_panel",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "control panel",
+            "appliance control panel"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_turntable",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "microwave turntable",
+            "rotating tray"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_vent",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "air vent",
+            "vent grille"
+          ],
+          "maximum_parent_fraction": 0.3,
+          "maximum_instances": 6
+        },
+        {
+          "semantic_name": "device_blade",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "fan blade",
+            "blender blade"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "device_guard",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "fan guard",
+            "protective grille"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_motor",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "fan motor",
+            "electric motor housing"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_bracket",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "fan bracket",
+            "mounting bracket"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "device_canopy",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "ceiling fan canopy",
+            "ceiling canopy"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_rod",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "fan downrod",
+            "support rod",
+            "lamp pipe"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "device_jar",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "blender jar",
+            "blender container"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_lid",
+          "semantic_parent": "device_jar",
+          "query_parent": "device",
+          "prompts": [
+            "appliance lid",
+            "blender lid",
+            "kettle lid"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_spout",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "kettle spout",
+            "pouring spout"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_shade",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "lamp shade",
+            "lampshade"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "device_bulb",
+          "semantic_parent": "device_shade",
+          "query_parent": "device",
+          "prompts": [
+            "light bulb",
+            "lamp bulb"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "device_finial",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "lamp finial",
+            "clock finial",
+            "decorative finial"
+          ],
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_wheel",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "computer mouse scroll wheel",
+            "device wheel"
+          ],
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "device_battery",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "battery pack",
+            "removable battery"
+          ],
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_antenna",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "router antenna",
+            "device antenna"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "device_tray",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "printer paper tray",
+            "appliance tray"
+          ],
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "device_nozzle",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "vacuum nozzle",
+            "hair dryer nozzle"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_hose",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "vacuum hose",
+            "appliance hose"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_brush",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "vacuum brush",
+            "toothbrush head"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "device_tank",
+          "semantic_parent": "device_body",
+          "query_parent": "device",
+          "prompts": [
+            "water tank",
+            "appliance reservoir"
+          ],
+          "maximum_instances": 2
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "globe",
+          "requires_grounded_refinement": true,
+          "classifier_prompt": "a complete world globe with a spherical map body, meridian ring, axle, support stem, and round base",
+          "root_hints": [
+            "world globe",
+            "desk globe",
+            "globe on a stand"
+          ],
+          "parts": [
+            "device_globe_sphere",
+            "device_globe_meridian_ring",
+            "device_globe_axis",
+            "device_globe_stem",
+            "device_base"
+          ],
+          "part_overrides": {
+            "device_base": {
+              "prompts": [
+                "globe stand base",
+                "round pedestal base"
+              ],
+              "maximum_instances": 1
+            }
+          }
+        },
+        {
+          "name": "phone",
+          "root_hints": [
+            "cell phone",
+            "cellular telephone",
+            "smartphone",
+            "mobile phone"
+          ],
+          "parts": [
+            "device_screen",
+            "device_bezel",
+            "device_back_panel",
+            "device_button",
+            "device_camera",
+            "device_lens",
+            "device_flash",
+            "device_speaker",
+            "device_microphone",
+            "device_port"
+          ]
+        },
+        {
+          "name": "laptop",
+          "root_hints": [
+            "laptop",
+            "notebook computer"
+          ],
+          "parts": [
+            "device_screen",
+            "device_bezel",
+            "device_base_panel",
+            "device_logo",
+            "device_keyboard",
+            "device_key",
+            "device_touchpad",
+            "device_camera",
+            "device_hinge",
+            "device_port",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "display",
+          "root_hints": [
+            "monitor",
+            "television",
+            "tv"
+          ],
+          "root_query_groups": [
+            ["monitor"],
+            ["television", "tv"]
+          ],
+          "subtypes": [
+            {
+              "name": "monitor",
+              "root_hints": ["monitor"],
+              "parts": [
+                "device_screen",
+                "device_bezel",
+                "device_side_panel",
+                "device_top_panel",
+                "device_bottom_panel",
+                "device_button",
+                "device_port",
+                "device_stand",
+                "device_base"
+              ]
+            },
+            {
+              "name": "television",
+              "root_hints": ["television", "tv"],
+              "parts": [
+                "device_screen",
+                "device_bezel",
+                "device_side_panel",
+                "device_top_panel",
+                "device_bottom_panel",
+                "device_button",
+                "device_speaker",
+                "device_port",
+                "device_stand",
+                "device_base"
+              ]
+            }
+          ],
+          "parts": [
+            "device_screen",
+            "device_bezel",
+            "device_side_panel",
+            "device_top_panel",
+            "device_bottom_panel",
+            "device_button",
+            "device_speaker",
+            "device_port",
+            "device_stand",
+            "device_base"
+          ]
+        },
+        {
+          "name": "camera",
+          "root_hints": [
+            "camera"
+          ],
+          "parts": [
+            "device_screen",
+            "device_button",
+            "device_camera",
+            "device_lens",
+            "device_flash",
+            "device_port"
+          ]
+        },
+        {
+          "name": "controls",
+          "root_hints": [
+            "remote control",
+            "calculator",
+            "telephone"
+          ],
+          "root_query_groups": [
+            ["remote control"],
+            ["calculator"],
+            ["telephone"]
+          ],
+          "subtypes": [
+            {
+              "name": "remote_control",
+              "root_hints": ["remote control"],
+              "parts": [
+                "device_screen",
+                "device_button",
+                "device_logo",
+                "device_back_panel"
+              ]
+            },
+            {
+              "name": "calculator",
+              "root_hints": ["calculator"],
+              "parts": [
+                "device_screen",
+                "device_button",
+                "device_keyboard",
+                "device_key",
+                "device_logo",
+                "device_back_panel"
+              ]
+            },
+            {
+              "name": "telephone",
+              "root_hints": ["telephone"],
+              "parts": [
+                "device_screen",
+                "device_button",
+                "device_keyboard",
+                "device_key",
+                "device_logo",
+                "device_back_panel",
+                "device_speaker",
+                "device_cable"
+              ]
+            }
+          ],
+          "parts": [
+            "device_screen",
+            "device_button",
+            "device_keyboard",
+            "device_key",
+            "device_logo",
+            "device_back_panel",
+            "device_speaker",
+            "device_cable"
+          ],
+          "part_overrides": {
+            "device_logo": {
+              "maximum_instances": 1
+            }
+          },
+          "confusion_groups": [
+            ["device_button", "device_logo"]
+          ]
+        },
+        {
+          "name": "clock_watch",
+          "root_hints": [
+            "clock",
+            "watch",
+            "wristwatch",
+            "wrist watch",
+            "smartwatch",
+            "analog watch",
+            "digital watch"
+          ],
+          "root_query_groups": [
+            ["clock"],
+            [
+              "watch",
+              "wristwatch",
+              "wrist watch",
+              "smartwatch",
+              "analog watch",
+              "digital watch"
+            ]
+          ],
+          "subtypes": [
+            {
+              "name": "clock",
+              "root_hints": ["clock"],
+              "parts": [
+                "device_screen",
+                "device_dial",
+                "device_clock_hand",
+                "device_button",
+                "device_finial"
+              ]
+            },
+            {
+              "name": "watch",
+              "root_hints": [
+                "watch",
+                "wristwatch",
+                "wrist watch",
+                "smartwatch",
+                "analog watch",
+                "digital watch"
+              ],
+              "parts": [
+                "device_screen",
+                "device_dial",
+                "device_clock_hand",
+                "device_button",
+                "device_band",
+                "device_lug",
+                "device_buckle"
+              ]
+            }
+          ],
+          "parts": [
+            "device_screen",
+            "device_dial",
+            "device_clock_hand",
+            "device_button",
+            "device_band",
+            "device_lug",
+            "device_buckle",
+            "device_finial"
+          ]
+        },
+        {
+          "name": "earphone",
+          "root_hints": [
+            "earphone",
+            "earbud",
+            "headphone"
+          ],
+          "parts": [
+            "device_speaker",
+            "device_earpad",
+            "device_headband",
+            "device_slider",
+            "device_cable",
+            "device_connector",
+            "device_button"
+          ]
+        },
+        {
+          "name": "fan",
+          "root_hints": [
+            "fan",
+            "electric fan"
+          ],
+          "parts": [
+            "device_blade",
+            "device_guard",
+            "device_motor",
+            "device_bracket",
+            "device_canopy",
+            "device_rod",
+            "device_bulb",
+            "device_button",
+            "device_stand",
+            "device_base",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "lamp",
+          "root_hints": [
+            "lamp"
+          ],
+          "parts": [
+            "device_shade",
+            "device_bulb",
+            "device_rod",
+            "device_finial",
+            "device_stand",
+            "device_base",
+            "device_button",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "blender",
+          "root_hints": [
+            "blender"
+          ],
+          "parts": [
+            "device_jar",
+            "device_lid",
+            "device_blade",
+            "device_base",
+            "device_button",
+            "device_cable"
+          ]
+        },
+      {
+        "name": "microwave",
+        "requires_grounded_refinement": true,
+        "root_hints": [
+            "microwave",
+            "microwave oven"
+          ],
+          "parts": [
+            "device_door",
+            "device_handle",
+            "device_control_panel",
+            "device_dial",
+            "device_screen",
+            "device_button",
+            "device_turntable",
+            "device_side_panel",
+            "device_top_panel",
+            "device_vent",
+            "device_cable"
+          ],
+          "part_overrides": {
+            "device_door": {
+              "minimum_parent_fraction": 0.18,
+              "maximum_parent_fraction": 0.82
+            },
+            "device_control_panel": {
+              "minimum_parent_fraction": 0.015,
+              "maximum_parent_fraction": 0.28
+            },
+            "device_screen": {
+              "minimum_parent_fraction": 0.0005,
+              "maximum_parent_fraction": 0.12
+            },
+            "device_handle": {
+              "minimum_parent_fraction": 0.002,
+              "maximum_parent_fraction": 0.14
+            }
+          },
+          "confusion_groups": [
+            [
+              "device_door",
+              "device_control_panel",
+              "device_screen"
+            ]
+          ]
+        },
+        {
+          "name": "kettle",
+          "root_hints": [
+            "kettle",
+            "electric kettle"
+          ],
+          "parts": [
+            "device_lid",
+            "device_handle",
+            "device_spout",
+            "device_base",
+            "device_button",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "computer_peripheral",
+          "root_hints": [
+            "computer mouse",
+            "computer keyboard",
+            "trackball"
+          ],
+          "root_query_groups": [
+            ["computer mouse", "trackball"],
+            ["computer keyboard"]
+          ],
+          "subtypes": [
+            {
+              "name": "mouse_or_trackball",
+              "root_hints": ["computer mouse", "trackball"],
+              "parts": [
+                "device_button",
+                "device_wheel",
+                "device_logo",
+                "device_cable",
+                "device_connector",
+                "device_port"
+              ]
+            },
+            {
+              "name": "keyboard",
+              "root_hints": ["computer keyboard"],
+              "parts": [
+                "device_button",
+                "device_key",
+                "device_logo",
+                "device_cable",
+                "device_connector",
+                "device_port"
+              ]
+            }
+          ],
+          "parts": [
+            "device_button",
+            "device_key",
+            "device_wheel",
+            "device_logo",
+            "device_cable",
+            "device_connector",
+            "device_port"
+          ]
+        },
+        {
+          "name": "desktop_computer",
+          "root_hints": [
+            "desktop computer",
+            "computer tower",
+            "desktop pc"
+          ],
+          "parts": [
+            "device_side_panel",
+            "device_top_panel",
+            "device_button",
+            "device_port",
+            "device_vent",
+            "device_cable",
+            "device_logo"
+          ]
+        },
+        {
+          "name": "tablet",
+          "root_hints": [
+            "tablet computer",
+            "tablet device"
+          ],
+          "parts": [
+            "device_screen",
+            "device_bezel",
+            "device_back_panel",
+            "device_button",
+            "device_camera",
+            "device_speaker",
+            "device_microphone",
+            "device_port"
+          ]
+        },
+        {
+          "name": "printer",
+          "root_hints": [
+            "printer",
+            "office printer"
+          ],
+          "parts": [
+            "device_control_panel",
+            "device_screen",
+            "device_button",
+            "device_tray",
+            "device_door",
+            "device_port",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "network_device",
+          "root_hints": [
+            "router",
+            "modem",
+            "network switch"
+          ],
+          "parts": [
+            "device_antenna",
+            "device_button",
+            "device_port",
+            "device_vent",
+            "device_cable",
+            "device_logo"
+          ]
+        },
+        {
+          "name": "game_controller",
+          "root_hints": [
+            "game controller",
+            "gamepad",
+            "joystick"
+          ],
+          "parts": [
+            "device_button",
+            "device_dial",
+            "device_handle",
+            "device_port",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "audio_device",
+          "root_hints": [
+            "speaker",
+            "microphone",
+            "soundbar"
+          ],
+          "root_query_groups": [
+            ["speaker", "soundbar"],
+            ["microphone"]
+          ],
+          "subtypes": [
+            {
+              "name": "speaker_or_soundbar",
+              "root_hints": ["speaker", "soundbar"],
+              "parts": [
+                "device_speaker",
+                "device_button",
+                "device_dial",
+                "device_port",
+                "device_cable",
+                "device_stand"
+              ]
+            },
+            {
+              "name": "microphone",
+              "root_hints": ["microphone"],
+              "parts": [
+                "device_microphone",
+                "device_button",
+                "device_dial",
+                "device_port",
+                "device_cable",
+                "device_stand"
+              ]
+            }
+          ],
+          "parts": [
+            "device_speaker",
+            "device_microphone",
+            "device_button",
+            "device_dial",
+            "device_port",
+            "device_cable",
+            "device_stand"
+          ]
+        },
+        {
+          "name": "projector",
+          "root_hints": [
+            "projector",
+            "video projector"
+          ],
+          "parts": [
+            "device_lens",
+            "device_button",
+            "device_port",
+            "device_vent",
+            "device_stand",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "vacuum",
+          "root_hints": [
+            "vacuum cleaner",
+            "robot vacuum"
+          ],
+          "parts": [
+            "device_nozzle",
+            "device_hose",
+            "device_brush",
+            "device_wheel",
+            "device_button",
+            "device_cable",
+            "device_tank"
+          ]
+        },
+        {
+          "name": "large_appliance",
+          "root_hints": [
+            "washing machine",
+            "refrigerator",
+            "air conditioner"
+          ],
+          "root_query_groups": [
+            ["washing machine"],
+            ["refrigerator"],
+            ["air conditioner"]
+          ],
+          "subtypes": [
+            {
+              "name": "washing_machine",
+              "root_hints": ["washing machine"],
+              "parts": [
+                "device_door",
+                "device_handle",
+                "device_control_panel",
+                "device_screen",
+                "device_button",
+                "device_vent",
+                "device_tray"
+              ]
+            },
+            {
+              "name": "refrigerator",
+              "root_hints": ["refrigerator"],
+              "parts": [
+                "device_door",
+                "device_handle",
+                "device_control_panel",
+                "device_screen",
+                "device_button",
+                "device_vent",
+                "device_tray"
+              ]
+            },
+            {
+              "name": "air_conditioner",
+              "root_hints": ["air conditioner"],
+              "parts": [
+                "device_control_panel",
+                "device_screen",
+                "device_button",
+                "device_vent"
+              ]
+            }
+          ],
+          "parts": [
+            "device_door",
+            "device_handle",
+            "device_control_panel",
+            "device_screen",
+            "device_button",
+            "device_vent",
+            "device_tray"
+          ]
+        },
+        {
+          "name": "small_appliance",
+          "root_hints": [
+            "toaster",
+            "coffee maker",
+            "hair dryer"
+          ],
+          "root_query_groups": [
+            ["toaster"],
+            ["coffee maker"],
+            ["hair dryer"]
+          ],
+          "subtypes": [
+            {
+              "name": "toaster",
+              "root_hints": ["toaster"],
+              "parts": [
+                "device_button",
+                "device_dial",
+                "device_vent",
+                "device_tray",
+                "device_cable"
+              ]
+            },
+            {
+              "name": "coffee_maker",
+              "root_hints": ["coffee maker"],
+              "parts": [
+                "device_handle",
+                "device_button",
+                "device_dial",
+                "device_nozzle",
+                "device_tank",
+                "device_tray",
+                "device_cable"
+              ]
+            },
+            {
+              "name": "hair_dryer",
+              "root_hints": ["hair dryer"],
+              "parts": [
+                "device_handle",
+                "device_button",
+                "device_dial",
+                "device_vent",
+                "device_nozzle",
+                "device_cable"
+              ]
+            }
+          ],
+          "parts": [
+            "device_handle",
+            "device_button",
+            "device_dial",
+            "device_vent",
+            "device_nozzle",
+            "device_tank",
+            "device_tray",
+            "device_cable"
+          ]
+        },
+        {
+          "name": "personal_care",
+          "root_hints": [
+            "electric toothbrush",
+            "electric shaver"
+          ],
+          "parts": [
+            "device_brush",
+            "device_button",
+            "device_battery",
+            "device_base"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "daily_object",
+      "classifier_prompt": "clothing footwear book wallet helmet or everyday personal object",
+      "root_prompts": [
+        "book",
+        "newspaper",
+        "pen",
+        "pencil",
+        "wallet",
+        "belt",
+        "hat",
+        "helmet",
+        "shoe",
+        "slipper",
+        "pillow",
+        "towel",
+        "napkin",
+        "sponge",
+        "soap",
+        "ball",
+        "clothing",
+        "jacket",
+        "shirt",
+        "pants",
+        "dress",
+        "blanket",
+        "umbrella",
+        "daily object"
+      ],
+      "generic_root_prompts": [
+        "daily object"
+      ],
+      "default_part_semantics": [
+        "daily_object_body"
+      ],
+      "parts": [
+        {
+          "semantic_name": "daily_object_body",
+          "prompts": [
+            "main object body",
+            "main surface"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_cover",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "book cover",
+            "outer cover"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_page",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "book page",
+            "pages"
+          ],
+          "minimum_parent_fraction": 0.006,
+          "maximum_instances": 6
+        },
+        {
+          "semantic_name": "daily_object_spine",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "book spine"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_tip",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "pen tip",
+            "pencil tip"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_cap",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "pen cap",
+            "protective cap"
+          ],
+          "maximum_parent_fraction": 0.4,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_clip",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "pen clip"
+          ],
+          "maximum_parent_fraction": 0.14,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_band",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "belt strap",
+            "object band"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_buckle",
+          "semantic_parent": "daily_object_band",
+          "query_parent": "daily_object",
+          "prompts": [
+            "belt buckle",
+            "buckle"
+          ],
+          "maximum_parent_fraction": 0.25,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_pocket",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "wallet pocket",
+            "wallet compartment"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "daily_object_brim",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "hat brim",
+            "cap visor"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_shell",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "helmet shell",
+            "hard shell"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_visor",
+          "semantic_parent": "daily_object_shell",
+          "query_parent": "daily_object",
+          "prompts": [
+            "helmet visor",
+            "face shield"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_upper",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "shoe upper",
+            "footwear upper"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_sole",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "shoe sole",
+            "outsole"
+          ],
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_lace",
+          "semantic_parent": "daily_object_upper",
+          "query_parent": "daily_object",
+          "prompts": [
+            "shoelace",
+            "shoe lace"
+          ],
+          "maximum_parent_fraction": 0.22,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_panel",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "fabric panel",
+            "surface panel"
+          ],
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "daily_object_seam",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "fabric seam",
+            "stitched seam"
+          ],
+          "maximum_parent_fraction": 0.16,
+          "maximum_instances": 8,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_sleeve",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "garment sleeve",
+            "shirt sleeve"
+          ],
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "daily_object_collar",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "garment collar",
+            "shirt collar"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_cuff",
+          "semantic_parent": "daily_object_sleeve",
+          "query_parent": "daily_object",
+          "prompts": [
+            "sleeve cuff",
+            "garment cuff"
+          ],
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_hem",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "garment hem",
+            "fabric hem"
+          ],
+          "maximum_parent_fraction": 0.22,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_handle",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "umbrella handle",
+            "object handle"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_shaft",
+          "semantic_parent": "daily_object_body",
+          "query_parent": "daily_object",
+          "prompts": [
+            "umbrella shaft",
+            "object rod"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_canopy",
+          "semantic_parent": "daily_object_shaft",
+          "query_parent": "daily_object",
+          "prompts": [
+            "umbrella canopy"
+          ],
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_heel",
+          "semantic_parent": "daily_object_sole",
+          "query_parent": "daily_object",
+          "prompts": [
+            "shoe heel",
+            "footwear heel"
+          ],
+          "maximum_parent_fraction": 0.28,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_tongue",
+          "semantic_parent": "daily_object_upper",
+          "query_parent": "daily_object",
+          "prompts": [
+            "shoe tongue"
+          ],
+          "maximum_parent_fraction": 0.25,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "daily_object_toe",
+          "semantic_parent": "daily_object_upper",
+          "query_parent": "daily_object",
+          "prompts": [
+            "shoe toe box",
+            "shoe toe"
+          ],
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 1
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "book",
+          "root_hints": [
+            "book",
+            "newspaper"
+          ],
+          "subtypes": [
+            {
+              "name": "book",
+              "root_hints": ["book"],
+              "parts": [
+                "daily_object_cover",
+                "daily_object_page",
+                "daily_object_spine"
+              ]
+            },
+            {
+              "name": "newspaper",
+              "root_hints": ["newspaper"],
+              "parts": ["daily_object_page"]
+            }
+          ],
+          "parts": [
+            "daily_object_cover",
+            "daily_object_page",
+            "daily_object_spine"
+          ]
+        },
+        {
+          "name": "writing_tool",
+          "root_hints": [
+            "pen",
+            "pencil"
+          ],
+          "parts": [
+            "daily_object_tip",
+            "daily_object_cap",
+            "daily_object_clip"
+          ]
+        },
+        {
+          "name": "wallet_belt",
+          "root_hints": [
+            "wallet",
+            "belt"
+          ],
+          "root_query_groups": [
+            ["wallet"],
+            ["belt"]
+          ],
+          "subtypes": [
+            {
+              "name": "wallet",
+              "root_hints": ["wallet"],
+              "parts": ["daily_object_pocket"]
+            },
+            {
+              "name": "belt",
+              "root_hints": ["belt"],
+              "parts": ["daily_object_band", "daily_object_buckle"]
+            }
+          ],
+          "parts": [
+            "daily_object_band",
+            "daily_object_buckle",
+            "daily_object_pocket"
+          ]
+        },
+        {
+          "name": "headwear",
+          "root_hints": [
+            "hat",
+            "helmet"
+          ],
+          "parts": [
+            "daily_object_brim",
+            "daily_object_shell",
+            "daily_object_visor",
+            "daily_object_band"
+          ]
+        },
+        {
+          "name": "footwear",
+          "root_hints": [
+            "shoe",
+            "slipper"
+          ],
+          "parts": [
+            "daily_object_upper",
+            "daily_object_sole",
+            "daily_object_lace",
+            "daily_object_heel",
+            "daily_object_tongue",
+            "daily_object_toe"
+          ]
+        },
+        {
+          "name": "soft_good",
+          "root_hints": [
+            "pillow",
+            "towel",
+            "napkin",
+            "sponge"
+          ],
+          "parts": [
+            "daily_object_panel",
+            "daily_object_seam"
+          ]
+        },
+        {
+          "name": "simple_object",
+          "root_hints": [
+            "soap",
+            "ball"
+          ],
+          "parts": []
+        },
+        {
+          "name": "garment",
+          "root_hints": [
+            "clothing",
+            "jacket",
+            "shirt",
+            "sweater",
+            "dress",
+            "pants"
+          ],
+          "parts": [
+            "daily_object_panel",
+            "daily_object_sleeve",
+            "daily_object_collar",
+            "daily_object_cuff",
+            "daily_object_hem",
+            "daily_object_seam",
+            "daily_object_pocket"
+          ]
+        },
+        {
+          "name": "umbrella",
+          "root_hints": [
+            "umbrella"
+          ],
+          "parts": [
+            "daily_object_handle",
+            "daily_object_shaft",
+            "daily_object_canopy"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "structure",
+      "classifier_prompt": "a building bridge tower gate wall or architectural structure",
+      "root_prompts": [
+        "building",
+        "house",
+        "architectural structure"
+      ],
+      "generic_root_prompts": [
+        "architectural structure"
+      ],
+      "parts": [
+        {
+          "semantic_name": "structure_wall",
+          "prompts": [
+            "wall",
+            "facade"
+          ]
+        },
+        {
+          "semantic_name": "structure_roof",
+          "prompts": [
+            "roof"
+          ]
+        },
+        {
+          "semantic_name": "structure_door",
+          "prompts": [
+            "building door",
+            "entrance"
+          ]
+        },
+        {
+          "semantic_name": "structure_window",
+          "prompts": [
+            "building window"
+          ]
+        },
+        {
+          "semantic_name": "structure_stair",
+          "prompts": [
+            "stairs",
+            "steps"
+          ]
+        },
+        {
+          "semantic_name": "structure_pillar",
+          "prompts": [
+            "pillar",
+            "column"
+          ]
+        },
+        {
+          "semantic_name": "structure_balcony",
+          "prompts": [
+            "balcony"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "natural_object",
+      "classifier_prompt": "a plant tree rock crystal mushroom or other natural object",
+      "root_prompts": [
+        "plant",
+        "tree",
+        "flower",
+        "natural object"
+      ],
+      "generic_root_prompts": [
+        "natural object"
+      ],
+      "parts": [
+        {
+          "semantic_name": "natural_trunk",
+          "prompts": [
+            "tree trunk",
+            "plant stem"
+          ]
+        },
+        {
+          "semantic_name": "natural_branch",
+          "prompts": [
+            "branch"
+          ]
+        },
+        {
+          "semantic_name": "natural_leaf",
+          "prompts": [
+            "leaf",
+            "foliage"
+          ]
+        },
+        {
+          "semantic_name": "natural_flower",
+          "prompts": [
+            "flower",
+            "blossom"
+          ]
+        },
+        {
+          "semantic_name": "natural_root",
+          "prompts": [
+            "plant root",
+            "tree root"
+          ]
+        },
+        {
+          "semantic_name": "natural_pot",
+          "prompts": [
+            "plant pot",
+            "flower pot"
+          ]
+        }
+      ]
+    }
+  ]
+}

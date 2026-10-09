@@ -1,0 +1,748 @@
+{
+  "format": "HPID game-prop and scene ontology extension",
+  "format_version": "0.1.0",
+  "new_domains": [
+    {
+      "name": "terrain",
+      "classifier_prompt": "a broad continuous ground plane, landscape surface, path, cliff, water region, or game level floor",
+      "root_prompts": [
+        "terrain",
+        "ground region",
+        "landscape surface",
+        "landscape",
+        "outdoor game level",
+        "game level ground",
+        "cliff",
+        "water region"
+      ],
+      "generic_root_prompts": ["terrain", "ground region", "landscape surface"],
+      "default_part_semantics": [
+        "terrain_ground",
+        "terrain_path",
+        "terrain_rock",
+        "terrain_cliff",
+        "terrain_water",
+        "terrain_vegetation"
+      ],
+      "parts": [
+        {
+          "semantic_name": "terrain_ground",
+          "prompts": ["walkable ground", "terrain ground", "floor surface"],
+          "maximum_parent_fraction": 0.98,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "terrain_path",
+          "prompts": ["path", "road", "trail", "walkway"],
+          "semantic_parent": "terrain_ground",
+          "maximum_parent_fraction": 0.85,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "terrain_rock",
+          "prompts": ["terrain rock", "boulder", "rock outcrop"],
+          "maximum_parent_fraction": 0.80,
+          "maximum_instances": 16
+        },
+        {
+          "semantic_name": "terrain_cliff",
+          "prompts": ["cliff face", "rock wall", "terrain ledge"],
+          "maximum_parent_fraction": 0.90,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "terrain_water",
+          "prompts": ["water surface", "river", "lake", "pond"],
+          "maximum_parent_fraction": 0.95,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "terrain_vegetation",
+          "prompts": ["grass patch", "ground vegetation", "foliage patch"],
+          "maximum_parent_fraction": 0.90,
+          "maximum_instances": 24
+        },
+        {
+          "semantic_name": "terrain_snow",
+          "prompts": ["snow cover", "snow patch"],
+          "maximum_parent_fraction": 0.95,
+          "maximum_instances": 12
+        },
+        {
+          "semantic_name": "terrain_sand",
+          "prompts": ["sand surface", "sand patch", "desert ground"],
+          "maximum_parent_fraction": 0.95,
+          "maximum_instances": 12
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "outdoor_level",
+          "classifier_prompt": "a broad outdoor game level or landscape ground plane with paths, cliffs, water, and vegetation",
+          "root_hints": ["outdoor game level", "landscape", "terrain"],
+          "parts": [
+            "terrain_ground",
+            "terrain_path",
+            "terrain_rock",
+            "terrain_cliff",
+            "terrain_water",
+            "terrain_vegetation",
+            "terrain_snow",
+            "terrain_sand"
+          ]
+        }
+      ]
+    }
+  ],
+  "domain_extensions": [
+    {
+      "name": "tool_prop",
+      "root_prompts": [
+        "sword",
+        "dagger",
+        "axe",
+        "battle axe",
+        "mace",
+        "bow",
+        "crossbow",
+        "shield",
+        "buckler",
+        "grenade",
+        "throwable weapon",
+        "fantasy weapon",
+        "game weapon"
+      ],
+      "parts": [
+        {
+          "semantic_name": "tool_prop_hilt",
+          "prompts": ["sword hilt", "weapon hilt"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.35,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_pommel",
+          "prompts": ["sword pommel", "hilt end cap"],
+          "semantic_parent": "tool_prop_hilt",
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_blade_edge",
+          "prompts": ["blade edge", "cutting edge"],
+          "semantic_parent": "tool_prop_blade",
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_axe_head",
+          "prompts": ["axe head", "battle axe head"],
+          "semantic_parent": "tool_prop_handle",
+          "maximum_parent_fraction": 0.55,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_bow_limb",
+          "prompts": ["bow limb", "curved bow arm"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.85,
+          "maximum_instances": 2
+        },
+        {
+          "semantic_name": "tool_prop_bow_string",
+          "prompts": ["bow string", "crossbow string"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_shield_face",
+          "prompts": ["shield face", "shield body"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.95,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_shield_rim",
+          "prompts": ["shield rim", "shield border"],
+          "semantic_parent": "tool_prop_shield_face",
+          "maximum_parent_fraction": 0.40,
+          "maximum_instances": 1
+        },
+        {
+          "semantic_name": "tool_prop_shield_boss",
+          "prompts": ["shield boss", "central shield plate"],
+          "semantic_parent": "tool_prop_shield_face",
+          "maximum_parent_fraction": 0.24,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_pin",
+          "prompts": ["grenade pin", "safety pin"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.12,
+          "maximum_instances": 1,
+          "detail": true
+        },
+        {
+          "semantic_name": "tool_prop_safety_lever",
+          "prompts": ["grenade safety lever", "grenade spoon"],
+          "semantic_parent": "tool_prop_body",
+          "maximum_parent_fraction": 0.30,
+          "maximum_instances": 1
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "melee_weapon",
+          "classifier_prompt": "a sword dagger battle axe or mace with blade striking head hilt and handle",
+          "root_hints": ["sword", "dagger", "axe", "battle axe", "mace"],
+          "scene_root_query_groups": [
+            ["sword", "dagger", "battle axe", "mace"]
+          ],
+          "subtypes": [
+            {
+              "name": "sword_or_dagger",
+              "root_hints": ["sword", "dagger"],
+              "parts": [
+                "tool_prop_blade",
+                "tool_prop_blade_edge",
+                "tool_prop_guard",
+                "tool_prop_hilt",
+                "tool_prop_pommel"
+              ]
+            },
+            {
+              "name": "axe_or_mace",
+              "root_hints": ["axe", "battle axe", "mace"],
+              "parts": [
+                "tool_prop_handle",
+                "tool_prop_axe_head",
+                "tool_prop_head",
+                "tool_prop_pommel"
+              ]
+            }
+          ],
+          "parts": [
+            "tool_prop_blade",
+            "tool_prop_blade_edge",
+            "tool_prop_guard",
+            "tool_prop_hilt",
+            "tool_prop_handle",
+            "tool_prop_head",
+            "tool_prop_axe_head",
+            "tool_prop_pommel"
+          ]
+        },
+        {
+          "name": "bow_weapon",
+          "classifier_prompt": "an archery bow or crossbow with curved limbs taut string and arrow rest",
+          "root_hints": ["bow", "crossbow"],
+          "scene_root_query_groups": [["bow", "crossbow"]],
+          "parts": [
+            "tool_prop_body",
+            "tool_prop_bow_limb",
+            "tool_prop_bow_string",
+            "tool_prop_grip",
+            "tool_prop_trigger",
+            "tool_prop_sight"
+          ]
+        },
+        {
+          "name": "shield",
+          "classifier_prompt": "a broad round or rectangular defensive shield face with rim and central boss",
+          "root_hints": ["shield", "buckler"],
+          "scene_root_query_groups": [["shield", "buckler"]],
+          "parts": [
+            "tool_prop_shield_face",
+            "tool_prop_shield_rim",
+            "tool_prop_shield_boss",
+            "tool_prop_grip"
+          ]
+        },
+        {
+          "name": "throwable_weapon",
+          "classifier_prompt": "a small round hand grenade explosive with safety pin and lever",
+          "root_hints": ["grenade", "throwable weapon"],
+          "scene_root_query_groups": [["grenade", "throwable weapon"]],
+          "parts": [
+            "tool_prop_body",
+            "tool_prop_pin",
+            "tool_prop_safety_lever"
+          ]
+        }
+      ],
+      "profile_parts": {}
+    },
+    {
+      "name": "container",
+      "root_prompts": [
+        "treasure chest",
+        "loot chest",
+        "supply crate",
+        "wooden barrel",
+        "barrel",
+        "potion bottle",
+        "potion vial"
+      ],
+      "parts": [
+        {
+          "semantic_name": "container_hinge",
+          "prompts": ["chest hinge", "box hinge"],
+          "semantic_parent": "container_body",
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 4,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_lock",
+          "prompts": ["chest lock", "latch", "padlock"],
+          "semantic_parent": "container_body",
+          "maximum_parent_fraction": 0.20,
+          "maximum_instances": 2,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_reinforced_corner",
+          "prompts": ["reinforced corner", "metal corner plate"],
+          "semantic_parent": "container_body",
+          "maximum_parent_fraction": 0.20,
+          "maximum_instances": 8,
+          "detail": true
+        },
+        {
+          "semantic_name": "container_stave",
+          "prompts": ["barrel stave", "wooden barrel plank"],
+          "semantic_parent": "container_body",
+          "maximum_parent_fraction": 0.40,
+          "maximum_instances": 16
+        },
+        {
+          "semantic_name": "container_hoop",
+          "prompts": ["barrel hoop", "barrel metal band"],
+          "semantic_parent": "container_body",
+          "maximum_parent_fraction": 0.30,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "container_cork",
+          "prompts": ["bottle cork", "potion cork"],
+          "semantic_parent": "container_opening",
+          "maximum_parent_fraction": 0.18,
+          "maximum_instances": 1,
+          "detail": true
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "game_loot_container",
+          "classifier_prompt": "a treasure chest loot crate supply box or fantasy potion container",
+          "root_hints": [
+            "treasure chest",
+            "loot chest",
+            "supply crate",
+            "wooden barrel",
+            "barrel",
+            "potion bottle",
+            "potion vial"
+          ],
+          "scene_root_query_groups": [
+            ["treasure chest", "loot chest", "supply crate"],
+            ["wooden barrel", "barrel"],
+            ["potion bottle", "potion vial"]
+          ],
+          "subtypes": [
+            {
+              "name": "chest_or_crate",
+              "root_hints": ["treasure chest", "loot chest", "supply crate"],
+              "parts": [
+                "container_body",
+                "container_lid",
+                "container_hinge",
+                "container_lock",
+                "container_handle",
+                "container_reinforced_corner"
+              ]
+            },
+            {
+              "name": "barrel",
+              "root_hints": ["wooden barrel", "barrel"],
+              "parts": [
+                "container_body",
+                "container_lid",
+                "container_stave",
+                "container_hoop"
+              ]
+            },
+            {
+              "name": "potion",
+              "root_hints": ["potion bottle", "potion vial"],
+              "parts": [
+                "container_body",
+                "container_neck",
+                "container_opening",
+                "container_cork",
+                "container_label"
+              ]
+            }
+          ],
+          "parts": [
+            "container_body",
+            "container_lid",
+            "container_hinge",
+            "container_lock",
+            "container_handle",
+            "container_reinforced_corner",
+            "container_stave",
+            "container_hoop",
+            "container_neck",
+            "container_opening",
+            "container_cork",
+            "container_label"
+          ]
+        }
+      ],
+      "profile_parts": {}
+    },
+    {
+      "name": "daily_object",
+      "root_prompts": ["armor", "chest armor", "gauntlet", "shoulder armor"],
+      "parts": [
+        {
+          "semantic_name": "daily_object_armor_plate",
+          "prompts": ["armor plate", "chest plate"],
+          "maximum_parent_fraction": 0.90,
+          "maximum_instances": 16
+        },
+        {
+          "semantic_name": "daily_object_armor_guard",
+          "prompts": ["armor guard", "shoulder guard", "knee guard"],
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "daily_object_armor_strap",
+          "prompts": ["armor strap", "leather strap"],
+          "maximum_parent_fraction": 0.25,
+          "maximum_instances": 12
+        },
+        {
+          "semantic_name": "daily_object_armor_trim",
+          "prompts": ["armor trim", "decorative armor border"],
+          "maximum_parent_fraction": 0.25,
+          "maximum_instances": 12,
+          "detail": true
+        },
+        {
+          "semantic_name": "daily_object_armor_gem",
+          "prompts": ["armor gem", "embedded jewel"],
+          "maximum_parent_fraction": 0.08,
+          "maximum_instances": 12,
+          "detail": true
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "armor",
+          "classifier_prompt": "wearable fantasy or game armor with helmet chest plate gauntlets and boots",
+          "root_hints": ["armor", "chest armor", "gauntlet", "shoulder armor"],
+          "scene_root_query_groups": [
+            ["armor", "chest armor", "gauntlet", "shoulder armor"]
+          ],
+          "parts": [
+            "daily_object_armor_plate",
+            "daily_object_armor_guard",
+            "daily_object_armor_strap",
+            "daily_object_buckle",
+            "daily_object_armor_trim",
+            "daily_object_armor_gem"
+          ]
+        }
+      ],
+      "profile_parts": {}
+    },
+    {
+      "name": "structure",
+      "root_prompts": [
+        "castle",
+        "tower",
+        "bridge",
+        "footbridge",
+        "gate",
+        "portcullis",
+        "dungeon doorway",
+        "ruin",
+        "game building"
+      ],
+      "parts": [
+        {
+          "semantic_name": "structure_arch",
+          "prompts": ["architectural arch", "stone arch"],
+          "semantic_parent": "structure_wall",
+          "maximum_parent_fraction": 0.65,
+          "maximum_instances": 12
+        },
+        {
+          "semantic_name": "structure_gate",
+          "prompts": ["gate", "portcullis", "large entry gate"],
+          "semantic_parent": "structure_wall",
+          "maximum_parent_fraction": 0.75,
+          "maximum_instances": 6
+        },
+        {
+          "semantic_name": "structure_beam",
+          "prompts": ["support beam", "wooden beam"],
+          "semantic_parent": "structure_wall",
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 24
+        },
+        {
+          "semantic_name": "structure_platform",
+          "prompts": ["platform", "raised floor", "walkway platform"],
+          "maximum_parent_fraction": 0.80,
+          "maximum_instances": 12
+        },
+        {
+          "semantic_name": "structure_battlement",
+          "prompts": ["battlement", "castle crenellation"],
+          "semantic_parent": "structure_wall",
+          "maximum_parent_fraction": 0.40,
+          "maximum_instances": 24
+        },
+        {
+          "semantic_name": "structure_bridge_deck",
+          "prompts": ["bridge deck", "bridge walkway"],
+          "maximum_parent_fraction": 0.90,
+          "maximum_instances": 4
+        },
+        {
+          "semantic_name": "structure_railing",
+          "prompts": ["railing", "bridge rail", "balustrade"],
+          "semantic_parent": "structure_bridge_deck",
+          "maximum_parent_fraction": 0.45,
+          "maximum_instances": 12
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "game_structure",
+          "classifier_prompt": "a castle tower dungeon ruin fortification or game building",
+          "root_hints": ["castle", "tower", "game building", "ruin"],
+          "scene_root_query_groups": [
+            ["castle", "tower", "game building", "ruin"]
+          ],
+          "parts": [
+            "structure_wall",
+            "structure_roof",
+            "structure_door",
+            "structure_window",
+            "structure_stair",
+            "structure_pillar",
+            "structure_balcony",
+            "structure_arch",
+            "structure_gate",
+            "structure_beam",
+            "structure_platform",
+            "structure_battlement"
+          ]
+        },
+        {
+          "name": "bridge",
+          "classifier_prompt": "a bridge structure with deck supports rails or arches",
+          "root_hints": ["bridge", "footbridge"],
+          "scene_root_query_groups": [["bridge", "footbridge"]],
+          "parts": [
+            "structure_bridge_deck",
+            "structure_pillar",
+            "structure_arch",
+            "structure_railing",
+            "structure_stair"
+          ]
+        },
+        {
+          "name": "gate",
+          "classifier_prompt": "a gate doorway portcullis or entrance structure",
+          "root_hints": ["gate", "dungeon doorway", "portcullis"],
+          "scene_root_query_groups": [
+            ["gate", "dungeon doorway", "portcullis"]
+          ],
+          "parts": [
+            "structure_wall",
+            "structure_arch",
+            "structure_gate",
+            "structure_door",
+            "structure_pillar"
+          ]
+        }
+      ],
+      "profile_parts": {}
+    },
+    {
+      "name": "natural_object",
+      "root_prompts": [
+        "pine tree",
+        "conifer tree",
+        "stylized tree",
+        "low poly tree",
+        "game tree",
+        "rock",
+        "boulder",
+        "rock formation",
+        "stylized rock",
+        "low poly rock",
+        "game boulder",
+        "bush",
+        "mushroom",
+        "crystal cluster",
+        "fallen log",
+        "tree stump"
+      ],
+      "parts": [
+        {
+          "semantic_name": "natural_foliage_cluster",
+          "prompts": [
+            "tree foliage cluster",
+            "pine foliage layer",
+            "tree crown section"
+          ],
+          "maximum_parent_fraction": 0.90,
+          "maximum_instances": 16
+        },
+        {
+          "semantic_name": "natural_rock_body",
+          "prompts": ["rock body", "boulder body"],
+          "maximum_parent_fraction": 0.98,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "natural_rock_facet",
+          "prompts": ["rock facet", "rock face"],
+          "semantic_parent": "natural_rock_body",
+          "maximum_parent_fraction": 0.70,
+          "maximum_instances": 16
+        },
+        {
+          "semantic_name": "natural_moss",
+          "prompts": ["moss", "moss patch"],
+          "maximum_parent_fraction": 0.55,
+          "maximum_instances": 16
+        },
+        {
+          "semantic_name": "natural_mushroom_cap",
+          "prompts": ["mushroom cap"],
+          "maximum_parent_fraction": 0.80,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "natural_mushroom_stem",
+          "prompts": ["mushroom stem"],
+          "maximum_parent_fraction": 0.65,
+          "maximum_instances": 8
+        },
+        {
+          "semantic_name": "natural_crystal",
+          "prompts": ["crystal", "crystal shard"],
+          "maximum_parent_fraction": 0.90,
+          "maximum_instances": 24
+        }
+      ],
+      "part_profiles": [
+        {
+          "name": "tree",
+          "classifier_prompt": "a complete upright tree, pine tree, conifer, or stylized game tree with a trunk and foliage crown",
+          "root_hints": [
+            "tree",
+            "pine tree",
+            "conifer tree",
+            "stylized tree",
+            "low poly tree",
+            "game tree"
+          ],
+          "scene_root_query_groups": [
+            [
+              "tree",
+              "pine tree",
+              "conifer tree",
+              "stylized tree",
+              "low poly tree",
+              "game tree"
+            ]
+          ],
+          "parts": [
+            "natural_trunk",
+            "natural_branch",
+            "natural_foliage_cluster"
+          ]
+        },
+        {
+          "name": "log_or_stump",
+          "classifier_prompt": "a fallen log, cut log, or tree stump with exposed wood, bark, roots, or moss",
+          "root_hints": ["fallen log", "cut log", "tree stump"],
+          "scene_root_query_groups": [["fallen log", "tree stump"]],
+          "parts": [
+            "natural_trunk",
+            "natural_branch",
+            "natural_root",
+            "natural_moss"
+          ]
+        },
+        {
+          "name": "bush",
+          "classifier_prompt": "a compact bush, shrub, or hedge made of clustered foliage and small branches",
+          "root_hints": ["bush", "shrub", "hedge"],
+          "scene_root_query_groups": [["bush", "shrub"]],
+          "parts": [
+            "natural_foliage_cluster",
+            "natural_branch"
+          ]
+        },
+        {
+          "name": "rock",
+          "classifier_prompt": "a standalone rock, boulder, stone outcrop, stylized low-poly rock, or game boulder",
+          "root_hints": [
+            "rock",
+            "boulder",
+            "rock formation",
+            "stylized rock",
+            "low poly rock",
+            "game boulder"
+          ],
+          "scene_root_query_groups": [
+            [
+              "rock",
+              "boulder",
+              "rock formation",
+              "stylized rock",
+              "low poly rock",
+              "game boulder"
+            ]
+          ],
+          "parts": [
+            "natural_rock_body",
+            "natural_rock_facet",
+            "natural_moss"
+          ]
+        },
+        {
+          "name": "mushroom",
+          "classifier_prompt": "a mushroom or fantasy fungus with cap and stem",
+          "root_hints": ["mushroom"],
+          "scene_root_query_groups": [["mushroom"]],
+          "parts": ["natural_mushroom_cap", "natural_mushroom_stem"]
+        },
+        {
+          "name": "crystal",
+          "classifier_prompt": "a crystal cluster gem mineral shard or glowing ore",
+          "root_hints": ["crystal cluster", "crystal"],
+          "scene_root_query_groups": [["crystal cluster", "crystal"]],
+          "parts": ["natural_crystal", "natural_rock_body"]
+        }
+      ],
+      "profile_parts": {}
+    }
+  ]
+}

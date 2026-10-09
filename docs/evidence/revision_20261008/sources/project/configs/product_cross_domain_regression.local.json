@@ -1,0 +1,88 @@
+{
+  "format": "HPID local regression suite",
+  "version": "0.2.0",
+  "notes": [
+    "Development-only cross-domain product matrix.",
+    "Every case is RGB-only at inference and qualitative unless separately labelled.",
+    "No preview, mask, or annotated screenshot is used as an input."
+  ],
+  "cases": [
+    {
+      "case_id": "character_stylized_0001",
+      "image": "${USER_HOME}\\Desktop\\研究1\\总\\实验\\01_冻结输入\\HPID\\images\\0001.png",
+      "expected_domain": "character",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "furniture_stool",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v4_stool\\stool\\source.png",
+      "expected_domain": "furniture",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "controls_remote",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v4_remote\\remote_control\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "modern_laptop",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_laptop_dev_v4\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "modern_microwave",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_microwave_dev_v2\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "modern_mouse",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_mouse_dev_v1\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "modern_drill",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_drill_dev_v1\\source.png",
+      "expected_domain": "tool_prop",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "game_prop_firearm",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\ak_game_asset_v12\\source.png",
+      "expected_domain": "tool_prop",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "vehicle_bicycle",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v1\\bicycle\\source.png",
+      "expected_domain": "vehicle",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "vehicle_car",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v1\\car_automobile\\source.png",
+      "expected_domain": "vehicle",
+      "root_mode": "primary",
+      "evidence": "qualitative_only"
+    },
+    {
+      "case_id": "game_scene_outdoor_level",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\game_scene_product_v7\\source.png",
+      "expected_domain": null,
+      "root_mode": "scene",
+      "evidence": "qualitative_only"
+    }
+  ]
+}

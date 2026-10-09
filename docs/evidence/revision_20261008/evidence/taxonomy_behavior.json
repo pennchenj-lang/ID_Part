@@ -1,0 +1,610 @@
+{
+  "protocol": "Deterministic synthetic API boundary fixtures; these are not PACO cases or empirical OOD accuracy samples.",
+  "fixture_count": 43,
+  "all_assertions_passed": true,
+  "frozen_sources": {
+    "fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "taxonomy.py": "a7ae7377b94928b73f8314c30d1bb3144999c66f32474fb546a9a525d7a20eba",
+    "prompt_bank.py": "d0a4fd7527bb5a548b2e3151bcace803f95c180da181b585e4feb38b7f2fe508",
+    "physical_groups.py": "12753c082b9abc8f61ddfd63456d1a7f210da1e58d2b59d93081a46dcbc3afd7"
+  },
+  "config_sha256": "0b27a54cb564bfc6599b4204fdf6817acbc75c03e262266739f88eac66279098",
+  "fixtures": [
+    {
+      "fixture": "unknown_category_character",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "character_head",
+          "character_hair",
+          "character_front_hair",
+          "character_back_hair",
+          "character_side_hair",
+          "character_headwear",
+          "character_eye",
+          "character_eyebrow",
+          "character_eyelash",
+          "character_eyewear",
+          "character_torso",
+          "character_arm",
+          "character_sleeve",
+          "character_cuff",
+          "character_hand",
+          "character_leg",
+          "character_shoe",
+          "character_shoe_upper",
+          "character_shoe_sole",
+          "character_shoe_tongue",
+          "character_shoelace",
+          "character_heel",
+          "character_sock",
+          "character_upper_clothing",
+          "character_collar",
+          "character_torso_cloth",
+          "character_hem",
+          "character_inner_clothing",
+          "character_lower_clothing",
+          "character_accessory",
+          "character_bag"
+        ],
+        "reason": "ambiguous_profile_all_parts_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_character",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'character' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_character",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_vehicle",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "vehicle_body",
+          "vehicle_wheel",
+          "vehicle_light"
+        ],
+        "reason": "default_inventory_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_vehicle",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'vehicle' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_vehicle",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_furniture",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "furniture_body",
+          "furniture_leg",
+          "furniture_handle"
+        ],
+        "reason": "default_inventory_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_furniture",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'furniture' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_furniture",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_tool_prop",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "tool_prop_body",
+          "tool_prop_handle",
+          "tool_prop_shaft",
+          "tool_prop_head"
+        ],
+        "reason": "default_inventory_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_tool_prop",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'tool_prop' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_tool_prop",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_container",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "container_body",
+          "container_lid",
+          "container_handle",
+          "container_opening",
+          "container_base"
+        ],
+        "reason": "default_inventory_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_container",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'container' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_container",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_device",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "device_body",
+          "device_button",
+          "device_cable",
+          "device_port"
+        ],
+        "reason": "default_inventory_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_device",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'device' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_device",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_daily_object",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "daily_object_body"
+        ],
+        "reason": "default_inventory_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_daily_object",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'daily_object' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_daily_object",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_structure",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "structure_wall",
+          "structure_roof",
+          "structure_door",
+          "structure_window",
+          "structure_stair",
+          "structure_pillar",
+          "structure_balcony",
+          "structure_arch",
+          "structure_gate",
+          "structure_beam",
+          "structure_platform",
+          "structure_battlement",
+          "structure_bridge_deck",
+          "structure_railing"
+        ],
+        "reason": "ambiguous_profile_all_parts_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_structure",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'structure' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_structure",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_natural_object",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "natural_trunk",
+          "natural_branch",
+          "natural_leaf",
+          "natural_flower",
+          "natural_root",
+          "natural_pot",
+          "natural_foliage_cluster",
+          "natural_rock_body",
+          "natural_rock_facet",
+          "natural_moss",
+          "natural_mushroom_cap",
+          "natural_mushroom_stem",
+          "natural_crystal"
+        ],
+        "reason": "ambiguous_profile_all_parts_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_natural_object",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'natural_object' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_natural_object",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_category_terrain",
+      "purpose": "Unknown label uses configured fallback inventory; no novel hierarchy inference.",
+      "assertion_passed": true,
+      "returned": {
+        "selected_profile": null,
+        "parts": [
+          "terrain_ground",
+          "terrain_path",
+          "terrain_rock",
+          "terrain_cliff",
+          "terrain_water",
+          "terrain_vegetation"
+        ],
+        "reason": "default_inventory_fallback"
+      }
+    },
+    {
+      "fixture": "invalid_profile_hint_terrain",
+      "purpose": "An explicitly nonexistent profile hint raises instead of silently selecting a profile.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'terrain' has no part profile 'zz_missing_profile'"
+    },
+    {
+      "fixture": "unlisted_part_label_terrain",
+      "purpose": "String matching does not invent a semantic name for a completely unmatched token.",
+      "assertion_passed": true,
+      "returned": null
+    },
+    {
+      "fixture": "unknown_semantic_parent",
+      "purpose": "Prompt-bank construction validates referenced parent membership.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "part 'fixture_part' references unknown parent 'missing_parent'"
+    },
+    {
+      "fixture": "unknown_query_parent",
+      "purpose": "Prompt-bank construction validates referenced parent membership.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "part 'fixture_part' references unknown query parent 'missing_parent'"
+    },
+    {
+      "fixture": "unknown_fallback_query_parent",
+      "purpose": "Prompt-bank construction validates referenced parent membership.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "part 'fixture_part' references unknown fallback query parent 'missing_parent'"
+    },
+    {
+      "fixture": "unknown_assembly_parent",
+      "purpose": "Prompt-bank construction validates referenced parent membership.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "part 'fixture_part' references unknown assembly parent 'missing_parent'"
+    },
+    {
+      "fixture": "semantic_parent_cycle",
+      "purpose": "Prompt-bank construction rejects semantic-parent cycles.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "domain 'fixture_root' contains a semantic-parent cycle"
+    },
+    {
+      "fixture": "invalid_taxonomy_parent_index",
+      "purpose": "Explicit taxonomy rejects an out-of-range numerical parent index.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "fine_to_parent contains an invalid parent index"
+    },
+    {
+      "fixture": "dynamic_taxonomy_arbitrary_nonempty_labels",
+      "purpose": "Direct low-level fusion constructs a taxonomy from supplied labels; it does not validate an external inventory.",
+      "assertion_passed": true,
+      "returned": {
+        "fine_names": [
+          "background",
+          "zz_unlisted_parent",
+          "zz_unlisted_part"
+        ],
+        "parents": [
+          "background",
+          "zz_unlisted_parent"
+        ],
+        "output_names": [
+          "zz_unlisted_part"
+        ],
+        "output_pixels": 256
+      }
+    },
+    {
+      "fixture": "dynamic_taxonomy_conflicting_parents",
+      "purpose": "The same semantic name cannot be assigned two different parents.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "semantic name 'zz_unlisted_part' belongs to both 'zz_unlisted_parent' and 'other_parent'; namespace it"
+    },
+    {
+      "fixture": "explicit_taxonomy_unknown_class",
+      "purpose": "Explicit taxonomy excludes an unknown candidate class.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "taxonomy is missing candidate classes: ['zz_unlisted_part']"
+    },
+    {
+      "fixture": "empty_semantic_name",
+      "purpose": "Candidate constructor rejects an empty semantic name.",
+      "assertion_passed": true,
+      "exception": "ValueError",
+      "message": "candidate semantic names must not be empty"
+    },
+    {
+      "fixture": "gate_direct_source_unlisted_name",
+      "purpose": "The named Group gate can trust direct-source provenance without vocabulary membership validation; this is not OOD detection.",
+      "assertion_passed": true,
+      "returned": {
+        "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+        "visual_derived": false,
+        "selected_profile": null,
+        "stage_1_semantic": {
+          "order": 1,
+          "evaluated": true,
+          "verified": true,
+          "reason": "direct_semantic_segmenter",
+          "probability": null,
+          "margin": null,
+          "direct_semantic_source": true,
+          "inventory_supported": false
+        },
+        "stage_2_structure": {
+          "order": 2,
+          "evaluated": true,
+          "verified": true,
+          "reason": "direct_semantic_mask",
+          "raw_verified": true,
+          "geometric_support": 0.0,
+          "axis_not_rejected": true,
+          "cross_source": false,
+          "closed_boundary_structure": false,
+          "root_area_fraction": 0.0,
+          "semantic_shape_consistency": {
+            "accepted": true,
+            "reason": "shape_not_contradicted",
+            "shape_family": null,
+            "root_area_fraction": 0.0,
+            "outer_boundary_contact": 0.0,
+            "descriptor": {
+              "area_px": 256.0,
+              "bbox_fill_ratio": 1.0,
+              "aspect_ratio": 1.0,
+              "elongation": 1.0,
+              "circularity": 0.8936085770210968,
+              "centroid_x": 15.5,
+              "centroid_y": 15.5
+            },
+            "ground_truth_used": false
+          }
+        },
+        "stage_3_appearance": {
+          "order": 3,
+          "evaluated": true,
+          "verified": true,
+          "reason": "no_appearance_contradiction",
+          "raw_verified": true,
+          "boundary_alignment": 0.0,
+          "boundary_closure": 0.0,
+          "independent_cue_count": 0,
+          "shading_only_penalty": 0.0,
+          "can_create_id": false
+        },
+        "accepted": true,
+        "ground_truth_used": false
+      }
+    },
+    {
+      "fixture": "gate_nonempty_unverified_profile_string",
+      "purpose": "This low-level Group gate tests a nonempty profile provenance field, not profile membership in PromptBank.",
+      "assertion_passed": true,
+      "returned": {
+        "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+        "visual_derived": false,
+        "selected_profile": "zz_missing_profile",
+        "stage_1_semantic": {
+          "order": 1,
+          "evaluated": true,
+          "verified": true,
+          "reason": "resolved_inventory_candidate",
+          "probability": null,
+          "margin": null,
+          "direct_semantic_source": false,
+          "inventory_supported": true
+        },
+        "stage_2_structure": {
+          "order": 2,
+          "evaluated": true,
+          "verified": true,
+          "reason": "boundary_aligned_region",
+          "raw_verified": true,
+          "geometric_support": 0.8,
+          "axis_not_rejected": true,
+          "cross_source": false,
+          "closed_boundary_structure": false,
+          "root_area_fraction": 0.0,
+          "semantic_shape_consistency": {
+            "accepted": true,
+            "reason": "shape_not_contradicted",
+            "shape_family": null,
+            "root_area_fraction": 0.0,
+            "outer_boundary_contact": 0.0,
+            "descriptor": {
+              "area_px": 256.0,
+              "bbox_fill_ratio": 1.0,
+              "aspect_ratio": 1.0,
+              "elongation": 1.0,
+              "circularity": 0.8936085770210968,
+              "centroid_x": 15.5,
+              "centroid_y": 15.5
+            },
+            "ground_truth_used": false
+          }
+        },
+        "stage_3_appearance": {
+          "order": 3,
+          "evaluated": true,
+          "verified": true,
+          "reason": "no_appearance_contradiction",
+          "raw_verified": true,
+          "boundary_alignment": 0.0,
+          "boundary_closure": 0.0,
+          "independent_cue_count": 0,
+          "shading_only_penalty": 0.0,
+          "can_create_id": false
+        },
+        "accepted": true,
+        "ground_truth_used": false
+      }
+    },
+    {
+      "fixture": "gate_no_semantic_provenance",
+      "purpose": "Without direct-source or inventory provenance, this candidate fails the semantic stage.",
+      "assertion_passed": true,
+      "returned": {
+        "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+        "visual_derived": false,
+        "selected_profile": null,
+        "stage_1_semantic": {
+          "order": 1,
+          "evaluated": true,
+          "verified": false,
+          "reason": "nonvisual_semantic_candidate",
+          "probability": null,
+          "margin": null,
+          "direct_semantic_source": false,
+          "inventory_supported": false
+        },
+        "stage_2_structure": {
+          "order": 2,
+          "evaluated": false,
+          "verified": false,
+          "reason": "not_evaluated_semantic_failed",
+          "raw_verified": false,
+          "geometric_support": 0.0,
+          "axis_not_rejected": true,
+          "cross_source": false,
+          "closed_boundary_structure": false,
+          "root_area_fraction": 0.0,
+          "semantic_shape_consistency": {
+            "accepted": true,
+            "reason": "shape_not_contradicted",
+            "shape_family": null,
+            "root_area_fraction": 0.0,
+            "outer_boundary_contact": 0.0,
+            "descriptor": {
+              "area_px": 256.0,
+              "bbox_fill_ratio": 1.0,
+              "aspect_ratio": 1.0,
+              "elongation": 1.0,
+              "circularity": 0.8936085770210968,
+              "centroid_x": 15.5,
+              "centroid_y": 15.5
+            },
+            "ground_truth_used": false
+          }
+        },
+        "stage_3_appearance": {
+          "order": 3,
+          "evaluated": false,
+          "verified": false,
+          "reason": "not_evaluated_previous_stage_failed",
+          "raw_verified": true,
+          "boundary_alignment": 0.0,
+          "boundary_closure": 0.0,
+          "independent_cue_count": 0,
+          "shading_only_penalty": 0.0,
+          "can_create_id": false
+        },
+        "accepted": false,
+        "ground_truth_used": false
+      }
+    }
+  ]
+}

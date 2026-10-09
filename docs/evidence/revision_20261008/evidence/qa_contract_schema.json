@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "counts": {
+    "packages": 268,
+    "parts": 1680,
+    "status_target_selection_required": 58,
+    "status_review_recommended": 127,
+    "status_ready": 83
+  },
+  "failures": [],
+  "verified_part_fields": [
+    "part_id",
+    "group_id",
+    "semantic_name",
+    "semantic_parent",
+    "assembly_parent_id",
+    "mask_visible_path",
+    "bbox_visible"
+  ],
+  "verified_manifest_fields": [
+    "candidate_audit_path",
+    "diagnostics_path",
+    "quality_status",
+    "quality_report_path"
+  ],
+  "source": "Frozen export.py:342-371,390-410; quality.py:512-524; instances.py:11-26",
+  "note": "Actual268 archived packages checked. A field's presence and valid file link do not validate the semantic correctness of its label."
+}

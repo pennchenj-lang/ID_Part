@@ -1,0 +1,19 @@
+{
+  "checked_date": "2026-10-08",
+  "sources": [
+    {
+      "url": "https://github.com/facebookresearch/paco",
+      "finding": "README limits its license statement to source code; lists separate annotation/image downloads."
+    },
+    {
+      "url": "https://github.com/facebookresearch/paco/blob/main/LICENSE",
+      "finding": "MIT license covers software and associated documentation; this check does not establish redistribution permission for separate dataset images/reference mask files."
+    },
+    {
+      "url": "https://github.com/facebookresearch/paco/blob/main/docs/PACO_DATASET.md",
+      "finding": "PACO-LVIS derives from LVIS images and provides image/annotation IDs; the image records carry their own license identifiers."
+    }
+  ],
+  "decision": "Source photos and reference-mask pixels excluded. Numeric IDs, crop coordinates, source URLs and hashes permit reconstruction from separately obtained copies. Included binary prediction masks and fine/Group maps are generated HPID outputs. No inference of a common image license is made.",
+  "repo_license": "HPID source snapshots retain their original LICENSE and THIRD_PARTY notices; no new licensing declaration is fabricated."
+}

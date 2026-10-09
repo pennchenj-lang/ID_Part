@@ -1,0 +1,114 @@
+[
+  {
+    "case_id": "calculator__01",
+    "variant": "STA",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "calculator__01",
+    "variant": "none",
+    "pixels_differ_across_fixed_seed_runs": 1,
+    "pixels_differ_from_baseline_a": 1,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "calculator__01",
+    "variant": "S",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "calculator__01",
+    "variant": "ST",
+    "pixels_differ_across_fixed_seed_runs": 1,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 1
+  },
+  {
+    "case_id": "calculator__01",
+    "variant": "T",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "calculator__01",
+    "variant": "A",
+    "pixels_differ_across_fixed_seed_runs": 1,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 1
+  },
+  {
+    "case_id": "calculator__01",
+    "variant": "SA",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "calculator__01",
+    "variant": "TA",
+    "pixels_differ_across_fixed_seed_runs": 1,
+    "pixels_differ_from_baseline_a": 1,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "STA",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "none",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "S",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "ST",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 1,
+    "pixels_differ_from_baseline_b": 1
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "T",
+    "pixels_differ_across_fixed_seed_runs": 0,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "A",
+    "pixels_differ_across_fixed_seed_runs": 1,
+    "pixels_differ_from_baseline_a": 0,
+    "pixels_differ_from_baseline_b": 1
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "SA",
+    "pixels_differ_across_fixed_seed_runs": 1,
+    "pixels_differ_from_baseline_a": 1,
+    "pixels_differ_from_baseline_b": 0
+  },
+  {
+    "case_id": "scarf__03",
+    "variant": "TA",
+    "pixels_differ_across_fixed_seed_runs": 1,
+    "pixels_differ_from_baseline_a": 1,
+    "pixels_differ_from_baseline_b": 0
+  }
+]

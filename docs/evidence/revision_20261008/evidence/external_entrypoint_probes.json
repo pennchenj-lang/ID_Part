@@ -1,0 +1,34 @@
+[
+  {
+    "method": "PartCATSeg",
+    "command": [
+      "${RUNTIME_ROOT}\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "${RUNTIME_ROOT}\\external_part_baselines_20260828\\part-catseg\\train_net.py",
+      "--help"
+    ],
+    "return_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"${RUNTIME_ROOT}\\external_part_baselines_20260828\\part-catseg\\train_net.py\", line 14, in <module>\n    import detectron2.utils.comm as comm\nModuleNotFoundError: No module named 'detectron2'\n",
+    "scope": "local entrypoint environment probe, not a trained inference run",
+    "entrypoint_sha256": "b05bbaae9c0ef7d8f03be895df00e432c9f6684248b517bf6b0aef21002aceac"
+  },
+  {
+    "method": "HOPS",
+    "command": [
+      "${RUNTIME_ROOT}\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "${RUNTIME_ROOT}\\external_part_baselines_20260828\\HOPS\\train_net.py",
+      "--help"
+    ],
+    "return_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"${RUNTIME_ROOT}\\external_part_baselines_20260828\\HOPS\\train_net.py\", line 14, in <module>\n    import detectron2.utils.comm as comm\nModuleNotFoundError: No module named 'detectron2'\n",
+    "scope": "local entrypoint environment probe, not a trained inference run",
+    "entrypoint_sha256": "62ae1d14d70272548b4b5a92317d2344759255663f5e18297c4ce48b030ba727"
+  }
+]

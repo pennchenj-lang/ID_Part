@@ -1,0 +1,10 @@
+family,n,weight_min,weight_max,reliability_min,reliability_max,agreement_values
+grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny],258,0.3779175587796406,0.9606005189125426,0.6563781623208141,0.9979492187500001,[1.0]
+grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-dense,39,0.1316655294832865,0.6650353212337778,0.27785634473435494,0.7356048392449448,[1.0]
+grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine,474,0.411788193312483,0.7790430379066313,0.6610205078125,1.13657607421875,[1.0]
+hpid-appearance-contour,42,0.443581812928507,0.6076926416533015,0.62,0.68,[1.0]
+hpid-repetitive-physical-detail-v1,53,0.5594058016147635,0.73492,0.76,0.76,[1.0]
+hpid-structural-fusion-v1,2,0.6809084977724383,0.6976363503649636,0.74,0.74,[1.0]
+hpid-structural-fusion-v2,3,0.6854281979349074,0.6965729966443578,0.74,0.74,[1.0]
+hpid-topology-v1,13,0.5096960082948208,0.648082954275608,0.82,0.82,[1.0]
+sam2-amg[facebook/sam2.1-hiera-tiny],1067,0.4516826366968125,0.6872759099700443,0.5687369725837708,0.82,[1.0]

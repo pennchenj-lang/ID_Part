@@ -1,0 +1,32 @@
+{
+  "format": "HPID reviewed reference set",
+  "prompt_bank": "general_asset_prompts.json",
+  "part_name_mapping": {
+    "buttstock": "tool_prop_stock"
+  },
+  "exclude_parts": ["background_or_unusable_source_label"],
+  "part_aliases": {
+    "buttstock": ["stock", "rear stock"],
+    "magazine": ["ammunition magazine", "ammo magazine"]
+  },
+  "entries": [
+    {
+      "asset_id": "rifle_0001",
+      "asset_label": "rifle",
+      "asset_domain": "tool_prop",
+      "reviewed": true,
+      "image": "../data/references/rifle_0001.png",
+      "label_map": "../data/references/rifle_0001_labels.png",
+      "taxonomy": "../data/taxonomies/rifle_parts.json",
+      "aliases": ["long gun"]
+    },
+    {
+      "asset_id": "rifle_0002",
+      "asset_label": "rifle",
+      "asset_domain": "tool_prop",
+      "reviewed": true,
+      "package": "../data/reviewed_packages/rifle_0002",
+      "aliases": ["long gun"]
+    }
+  ]
+}

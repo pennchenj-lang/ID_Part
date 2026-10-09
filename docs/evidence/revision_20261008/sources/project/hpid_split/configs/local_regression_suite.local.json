@@ -1,0 +1,66 @@
+{
+  "format": "HPID local regression suite",
+  "version": "0.2.0",
+  "notes": [
+    "PACO crops use ground-truth boxes and are oracle-preprocessed benchmark inputs.",
+    "No PACO masks or labels are available to HPID inference."
+  ],
+  "cases": [
+    {
+      "case_id": "paco_phone_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/cellular_telephone/source_crop.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    },
+    {
+      "case_id": "paco_laptop_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/laptop_computer/source_crop.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    },
+    {
+      "case_id": "paco_chair_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/chair/source_crop.png",
+      "expected_domain": "furniture",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    },
+    {
+      "case_id": "paco_bottle_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/bottle/source_crop.png",
+      "expected_domain": "container",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    },
+    {
+      "case_id": "paco_car_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/car_automobile/source_crop.png",
+      "expected_domain": "vehicle",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    },
+    {
+      "case_id": "paco_bicycle_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/bicycle/source_crop.png",
+      "expected_domain": "vehicle",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    },
+    {
+      "case_id": "paco_scissors_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/scissors/source_crop.png",
+      "expected_domain": "tool_prop",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    },
+    {
+      "case_id": "paco_guitar_crop",
+      "image": "${RUNTIME_ROOT}/datasets/paco/modern_subset_v2/guitar/source_crop.png",
+      "expected_domain": "tool_prop",
+      "root_mode": "primary",
+      "evidence": "paco_oracle_crop_part_ground_truth"
+    }
+  ]
+}

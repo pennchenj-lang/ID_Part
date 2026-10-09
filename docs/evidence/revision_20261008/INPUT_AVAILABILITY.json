@@ -1,0 +1,15 @@
+{
+  "cases": 268,
+  "test_cases": 226,
+  "holdout_cases": 42,
+  "generated_prediction_candidates": 2400,
+  "archive_members": 4404,
+  "archive_bytes": 4981716,
+  "omitted_files": 1770,
+  "omitted_bytes": 31376285,
+  "numerical_verification_requires_images": false,
+  "image_level_replay_requires_omitted_inputs": true,
+  "source_images_in_bundle": false,
+  "reference_mask_pixels_in_bundle": false,
+  "input_paths_resolved_by": "code/analysis/portable_paths.py resolves ${RUNTIME_ROOT}, ${PROJECT_ROOT} and related markers recursively when loading manifests. No original drive letters are required."
+}

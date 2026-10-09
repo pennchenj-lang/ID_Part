@@ -1,0 +1,117 @@
+{
+  "format": "HPID local regression suite audit",
+  "source_manifest": "${PROJECT_ROOT}\\configs\\product_cross_domain_regression.local.json",
+  "case_count": 11,
+  "cases": [
+    {
+      "case_id": "character_stylized_0001",
+      "image": "${USER_HOME}\\Desktop\\研究1\\总\\实验\\01_冻结输入\\HPID\\images\\0001.png",
+      "expected_domain": "character",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "a6497740b25abf09b9a5f81227a9b1f507ed85524281b953f939ad8c715c4af5",
+      "width": 972,
+      "height": 1619
+    },
+    {
+      "case_id": "furniture_stool",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v4_stool\\stool\\source.png",
+      "expected_domain": "furniture",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "b5cfd72b3ba1c4fb1fdbc593863e11865cba99468257fa85da7fb38bd05506a4",
+      "width": 99,
+      "height": 134
+    },
+    {
+      "case_id": "controls_remote",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v4_remote\\remote_control\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "53ad4bd5e17955e24c597afd3c3fdead27d267bee17f9089519dd36b2a30a385",
+      "width": 198,
+      "height": 261
+    },
+    {
+      "case_id": "modern_laptop",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_laptop_dev_v4\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "c0cbc8ccd3f52d6e49ef13deed714fa11c34f8664ba357bad54d36086333adbc",
+      "width": 499,
+      "height": 480
+    },
+    {
+      "case_id": "modern_microwave",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_microwave_dev_v2\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "bdf1f0f7a7f275f259cbbdb066e545b93980c0a9827a42b9ae062c335c0e1a20",
+      "width": 167,
+      "height": 105
+    },
+    {
+      "case_id": "modern_mouse",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_mouse_dev_v1\\source.png",
+      "expected_domain": "device",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "dd9b4e890de0929ad7dfeda4a213302513dae7c9a6ca2654b0bc0d813fa0971e",
+      "width": 223,
+      "height": 231
+    },
+    {
+      "case_id": "modern_drill",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\modern_drill_dev_v1\\source.png",
+      "expected_domain": "tool_prop",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "b6c31887d21a2bb12d4060f68fa96096370a37f7a1ec467ae77f71029f891fb5",
+      "width": 230,
+      "height": 295
+    },
+    {
+      "case_id": "game_prop_firearm",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\ak_game_asset_v12\\source.png",
+      "expected_domain": "tool_prop",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "167b4eaf0d81ef8b510a68275782084fdad612a24dd659d6f372a4e7457f5c2c",
+      "width": 1010,
+      "height": 740
+    },
+    {
+      "case_id": "vehicle_bicycle",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v1\\bicycle\\source.png",
+      "expected_domain": "vehicle",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "b4cb76c2b529f21a13b2b7ef39a2c4941f0fddc508086fe24f0cd530b5a881d3",
+      "width": 491,
+      "height": 283
+    },
+    {
+      "case_id": "vehicle_car",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_matrix\\modern_dev_v1\\car_automobile\\source.png",
+      "expected_domain": "vehicle",
+      "root_mode": "primary",
+      "evidence": "qualitative_only",
+      "image_sha256": "d7a2d8b49fa545de8f2ae361f866c086321924d8f77977891e4dd9521ca7240a",
+      "width": 640,
+      "height": 302
+    },
+    {
+      "case_id": "game_scene_outdoor_level",
+      "image": "${RUNTIME_ROOT}\\experiments\\hpid_split_product_smoke\\game_scene_product_v7\\source.png",
+      "expected_domain": null,
+      "root_mode": "scene",
+      "evidence": "qualitative_only",
+      "image_sha256": "9ddf2e3ede60e1a8c766e3d69182a6193042c5afffca316314b358faad48ea09",
+      "width": 1520,
+      "height": 846
+    }
+  ]
+}

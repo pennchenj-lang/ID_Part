@@ -1,0 +1,18 @@
+{
+  "kind": "external-command",
+  "command": [
+    "python",
+    "C:/path/to/your/upstream_adapter.py",
+    "--request",
+    "{request}"
+  ],
+  "timeout_seconds": 900,
+  "provenance": {
+    "name": "Replace with the exact upstream model name",
+    "version": "Replace with a commit or release",
+    "implementation_url": "Replace with the official repository URL",
+    "publication_url": "Replace with the official paper URL",
+    "license": "Replace with the upstream code/model license",
+    "is_hpid_split_method": false
+  }
+}

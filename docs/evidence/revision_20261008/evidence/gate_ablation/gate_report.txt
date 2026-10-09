@@ -1,0 +1,71 @@
+HPID Group-stage gate intervention: verified report, 2026-10-08
+
+Scope and acceptance
+The requested same-pool three-gate experiment is now computed: eight enabled subsets (STA, none, S, ST, T, A, SA, TA), 226 earlier test cases and 42 holdout cases, 2,144 case-by-subset evaluations. This experiment is distinct from the 50 fine-ID parameter settings and from A0-A3. It intervenes on the actual named Group candidate verification function, after the archived fine-ID output. It does not rerun proposal generation, change the fine-ID fusion, remove every use of semantic/structural/appearance information elsewhere, or constitute a new independent test set.
+
+Historical source recovery
+The handoff snapshot alone was insufficient for test226: the later be54300 Group source reproduced 178/226 old test Group maps and 42/42 holdout maps. The old test packages were generated in August before the later Group changes. GitHub commit da7d236b7873200692c262d41b5f69196d9dd5fb, fetched through the authenticated GitHub connector, supplied the original Group module. That module exactly reproduced all 226 old Group maps and their ordered (index, ID, semantic-name) records. The be54300 module exactly reproduced all 42 holdout maps and records. Each split uses its matching Group module for every subset; results are never pooled across these two Group versions.
+
+Recovered source URL:
+https://github.com/pennchenj-lang/ID_Part/blob/da7d236b7873200692c262d41b5f69196d9dd5fb/src/hpid_split/physical_groups.py
+Git blob SHA: 3de7aa6d829c5380e612d35d2671724f5862ed06
+Recovered file SHA256: 819f7597bf118e318b1ba29aeeb300ba9d2ad69618d57701f1d57d199e63fdb1
+Holdout Group SHA256: 12753c082b9abc8f61ddfd63456d1a7f210da1e58d2b59d93081a46dcbc3afd7
+Original frozen runtime was not edited. The historical source is loaded as a separate module using the existing MaskCandidate and PartInstance types; exact replay checks establish compatibility for these archived inputs.
+
+Inputs and intervention
+Complete exported pools contain 1,951 candidates on test226 and 449 on holdout42. Profile nomination supplies 1,022 and 258 candidates to the named three-gate audit, respectively. Nomination is active on 189/226 and 37/42 cases. All 37 and 5 zero-nomination cases remain in the denominators; retained-pool precision, recall and F1 are zero for those cases. Complete exported pools and nominated pools have separate audit files.
+
+Fine maps and Part records, all ordered candidate masks, scores, reliability multipliers and metadata are hashed and asserted unchanged after each subset. All 2,144 assertions pass. Raw downstream predicates are used when earlier gates are bypassed, rather than retaining their original serial false values. Every actual call is logged with its root context. The old module has no root argument; the later module uses both fine-foreground and metadata-only contexts in different Group paths. Raw predicates are invariant across subsets within each candidate/context. Profile nominations, profile-specific structure/containment constraints and final Group cleanup remain active. T and A internally retain source/profile-dependent logic; disabling S is not deletion of all semantic information.
+
+Test226 results (Group F1@0.25; difference = subset minus STA; pointwise 95% paired bootstrap interval)
+Subset  Retained/1022  Group F1     Difference [low, high]
+STA     546            0.366197820  0
+none   1022            0.366722814  +0.000524994 [-0.012433635, +0.013365598]
+S       904            0.366459475  +0.000261655 [-0.012052828, +0.012732872]
+ST      578            0.363473676  -0.002724144 [-0.006780191, +0.000472551]
+T       615            0.360273815  -0.005924005 [-0.013249626, +0.000334727]
+A       917            0.368575092  +0.002377272 [-0.009833576, +0.015102519]
+SA      832            0.368354851  +0.002157031 [-0.009698280, +0.014186182]
+TA      570            0.363973262  -0.002224558 [-0.007029973, +0.001509630]
+
+Holdout42 results
+Subset  Retained/258   Group F1     Difference [low, high]
+STA     192            0.395109915  0
+none    258            0.389637533  -0.005472382 [-0.017488620, +0.006978377]
+S       241            0.390166634  -0.004943281 [-0.016924123, +0.007430474]
+ST      199            0.390861782  -0.004248133 [-0.010310107, 0]
+T       204            0.387938874  -0.007171041 [-0.015667307, -0.000784929]
+A       247            0.393885666  -0.001224249 [-0.012235429, +0.010059781]
+SA      231            0.394414767  -0.000695149 [-0.011705736, +0.010571097]
+TA      196            0.395109915  0 [0, 0]
+
+Candidate-retention interpretation
+At IoU0.25, none-to-STA changes macro candidate precision from 0.289074782 to 0.318101447 and recall from 0.265100952 to 0.197665217 on test226. Candidate F1 decreases from 0.241632684 to 0.215842449. On holdout42 precision increases from 0.294984767 to 0.331335067, recall decreases from 0.389772298 to 0.353207672, and F1 changes from 0.313820319 to 0.319249230. These are named-profile nomination masks, not all upstream proposals and not the final Group masks. Gate passage is not sufficient to guarantee a final Group; unchanged structural/cleanup paths may supersede nomination results.
+
+The results establish an auditable precision/recall trade-off, not a general overall-accuracy benefit of the full cascade. In particular, test226 final Group F1 is slightly higher with all three gates bypassed, with an interval spanning zero. Holdout42's all-off interval also spans zero. The T-only interval excluding zero is one exploratory pointwise comparison among multiple subsets/endpoints and must not be promoted into a multiplicity-adjusted superiority claim. No release retuning was performed.
+
+Statistics
+The case, not the candidate or subset run, is the paired resampling unit. Each split uses 10,000 percentile bootstrap draws with seed20261008. Intervals are pointwise, not simultaneous; no confirmatory hypothesis test or p value is claimed. All cases are retained. The 268 cases remain the same reused archived cases despite the 2,144 computed condition rows.
+
+Independent saved-output checks and repeat limitation
+gate_verify_results.py independently checks unique case/subset rows, split denominators, complete-exported and nomination counts, exact-baseline flags, immutable-input hashes, zero-nomination inclusion, all retained decisions from raw flags, raw-predicate invariance across actual calls, aggregate means and paired differences, interval bounds and repeated metric-summary equality. It checks 22,544 actual calls over 1,542 unique candidate/root-context pairs. It does not independently reestimate bootstrap intervals or repeat segmentation evaluation from the images.
+
+All evaluation metrics and confidence intervals are identical across three full runs. However, two counterfactual cases, calculator__01 and scarf__03, show a one-pixel discrepancy in targeted repeats even with a fixed Python hash seed. The root cause has not been established; it must not be attributed to hash ordering or label renumbering without further evidence. Baseline maps remain exact. The any-pixel-changed flags and counts are descriptive of the saved run and should not be used as a stable substantive result. gate_repeat_pixel_audit.json contains the measured pixel differences; gate_validation_checks.json deliberately records PASS_WITH_DOCUMENTED_ONE_PIXEL_REPEAT_LIMITATION and counterfactual_maps_bitwise_repeatable=false. No frozen algorithm change was made to suppress the discrepancy.
+
+C1-C3 and manuscript correction
+The previous C1-C3 statistics were computed retrospectively from physical_grouping.three_stage_candidate_verification in saved diagnostics, by selecting candidate masks according to the stored stage flags. They were not independent final-output interventions. The A0-A3 loader reads all exported candidates with no C3 filtering. The statement that A0-A3 operate after C3 is therefore not supported by these scripts and must be replaced. A suitable correction is: 'The earlier C1-C3 development audit measured candidate retention using stored Group-stage verification flags; A0-A3 separately varied fine-ID fusion on its frozen exported inputs. The new all-subset Group intervention reruns Group construction from the same complete archived input pool.'
+
+Suggested concise main-text result
+'We reran all eight subsets of the Group-stage semantic, structural and appearance gates while holding the complete archived inputs and fine-ID maps fixed. The matching historical Group implementations reproduced all226 test and42 holdout Group maps and ID/semantic records. Enabling all gates reduced the retained nomination pools from1,022 to546 and258 to192, respectively. Compared with the full cascade, bypassing all three changed Group F1@0.25 by+0.0005 (95% paired interval -0.0124 to0.0134) on226 cases and-0.0055 (-0.0175 to0.0070) on42 cases. These interventions expose a candidate precision/recall trade-off but do not establish a general final-accuracy advantage of the full cascade. The two Group versions and zero-nomination cases are reported separately in the supplement.'
+
+Source locations, relative to the working revision/project
+revision_20261008/gate_ablation.py:40 input fingerprint;54 switches;72 worker;142 immutability assertion;186 orchestration;201-218 protocol;245 statistical summaries.
+revision_20261008/evidence/gate_ablation/physical_groups_da7d236.py:235 predicate;339 raw structure;374 raw appearance;670 profile nomination;3971 actual Group construction.
+Frozen holdout src/hpid_split/cli.py:2937 fine fusion,2955 Group construction using fused.accepted_candidates.
+Frozen holdout src/hpid_split/physical_groups.py:385 predicate;869 profile nomination;1589 additional metadata-only invocation;4727 Group construction.
+hpid_split/scripts/analyze_paper_results.py:113 stored Group-audit lookup;197 retrospective candidate scoring;220 condition selection;234 mask load.
+hpid_split/scripts/analyze_cross_domain_fusion_ablation.py:103 unfiltered exported candidate loader;140 unchanged evaluator used through Group-mask adapter.
+
+Files to use in the manuscript
+group_gate_protocol.json, group_gate_cases.csv, group_gate_summary.csv, group_gate_complete_exported_pool.csv, group_gate_pool.csv, group_gate_actual_calls.csv, group_gate_input_provenance.json, group_gate_full_run.log, gate_validation_checks.json, gate_repeat_pixel_audit.json. Earlier failed trial logs and full-pass backups remain available for audit. Do not substitute the tiny trials for the full results.

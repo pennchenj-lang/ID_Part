@@ -1,0 +1,9 @@
+{
+  "categories": [
+    {
+      "category": "pliers",
+      "expected_domain": "tool_prop",
+      "expected_profile": "scissors_pliers"
+    }
+  ]
+}

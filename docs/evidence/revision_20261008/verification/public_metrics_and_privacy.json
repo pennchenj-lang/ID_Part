@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "checks": 275151,
+  "checks_by_family": {
+    "sensitivity": 25105,
+    "roots": 85,
+    "stages": 170459,
+    "requests": 4642,
+    "routing": 3291,
+    "gates": 65607,
+    "scores": 5962
+  },
+  "sections": {
+    "sensitivity": {
+      "status": "PASS",
+      "cases": 226,
+      "settings": 50,
+      "rows": 11300,
+      "mean_and_paired_delta_checks": 800
+    },
+    "roots": {
+      "status": "PASS",
+      "cases": 42,
+      "paired_diagnostic_only": true
+    },
+    "stages": {
+      "status": "PASS",
+      "cases": 226,
+      "stages": 17,
+      "reference_tracks": 16830,
+      "candidate_total": 1951
+    },
+    "requests": {
+      "status": "PASS",
+      "requests": 37,
+      "method_cases": 111,
+      "correct_raw_candidates": 23,
+      "unique_failures": 6,
+      "original_correct_ambiguous": 9
+    },
+    "routing": {
+      "status": "PASS",
+      "request_interval_rows": 585,
+      "earlier_interval_rows": 40,
+      "synthesis_cases": 37
+    },
+    "gates": {
+      "status": "PASS",
+      "cases": 268,
+      "variants": 8,
+      "rows": 2144,
+      "raw_predicate_contexts": 1542,
+      "documented_counterfactual_pixel_repeat_limit": true
+    },
+    "scores": {
+      "status": "PASS",
+      "candidates": 1951,
+      "families": 9
+    },
+    "bootstrap_quantiles": {
+      "status": "PASS",
+      "independently_recomputed_intervals": 1283
+    }
+  },
+  "failure_count": 0,
+  "failures": [],
+  "privacy": {
+    "status": "PASS",
+    "counts": {
+      "files_and_zip_members": 4685,
+      "text_files_scanned": 1631,
+      "prediction_mask_image_members": 3047,
+      "prediction_masks_pixel_verified": 3047
+    },
+    "findings": [],
+    "scope": "Filename/text/ZIP review and pixel decoding of every allowed prediction image. PNGs must be single-channel binary masks; TIFFs must be nonnegative integer ID maps. Source/reference imagery is excluded. This audit does not establish third-party image licenses."
+  },
+  "input_file_sha256": {
+    "sensitivity_cases.csv": "29aba2b8f13ba6d4cf7c7b835a547c05fa5782128d4aba6541e1bcb1521869ee",
+    "sensitivity_summary.csv": "1dc9f81a9ee7b604bab88272333836e9a2c6f9dded510301bf8b373200f47300",
+    "sensitivity_protocol.json": "5e5c029dce51881e7340288d9e469c26f11d94577de8cd9957382e964ad9164c",
+    "holdout_root_cases.csv": "e87e9d0822a72cd561cde955c0f5b0b3dfbf6d8e2b80dbe058126fef2f1ea283",
+    "holdout_root_summary.json": "4bb0291e244ca4f9546f7ce90e618601b645bd90ab11f949e056354ee461b638",
+    "stage_case_metrics.csv": "3b05c59de63e5858d9a63cc27b956aea242c5c2360c8be863ffbf93e98e900a5",
+    "stage_reference_tracks.csv": "00326e6283dd8f953e51684cbbbdce4450f4624963f8da306c650aeb514bef22",
+    "stage_shared_input_audit.csv": "487378c52e3c91d3430b3b4b681783b86a8fdc18babe4150c067515fee39944b",
+    "stage_protocol.json": "b45e731ba95ac51f8cf3240e0d40ba0b817f5914302b6accc82e0c3ad6d9b7e5",
+    "stage_summary.csv": "70a02ac805ff81236f599f2baa2262976f603a883937f5887dfb61d686732e55",
+    "stage_transitions.csv": "d7c54117a1cdf68e5193406ada9bb5d2b55b06ff53b1a7162d9dc107c260accb",
+    "stage_audit_summary.json": "9b3b8f8d596ea216222adeed06f7dca27a0fd28a84ee097b414a80b76454daa0",
+    "dbscan_diagnosis.json": "dbf41a4e1ef302417bd3df5bac5ba243f908c4b3bc738fbd183bf13ffc374344",
+    "request_endpoints.csv": "841817d542fc5931605301f0e73a4855eefb7df927a6c21e0d2349e7bfddcb84",
+    "request_instances.csv": "e007f5c710b2020ba2b5cb27225832480527d2d035b06af724d839b278cd90f7",
+    "request_cases.csv": "e2a71fbe9071e9c7455b8137b6d19463a739d189fe7ac2626dde626e12a67c79",
+    "request_candidate_trace.csv": "0b1674f18db6a9d18888012b56efc5e76e6598d5079779a54170adc06777c6e9",
+    "request_candidate_pixel_flows.csv": "42ab93a5fb13547b26beab3f3a3b4dcfe1a265f1d2901420352ff44e44a9a2e5",
+    "request_correct_candidate_outcomes.csv": "39844b90527499330b7a7a1d7cffe5d48798a33c66364fd124a7de91e772a1a0",
+    "request_six_wrong_cases.csv": "822b97effaeb86c7cf9d741bd33020f7e867114b2836d5734ddb594f460b3797",
+    "request_nine_correct_ambiguous.csv": "4f13326be05e6b8c28d984dd71e782ab3cec3a5bddab60c7f9fd2564b312739b",
+    "request_protocol.json": "cc676b37c66ccf185de4b71884ac2451c7cfda335f97fcfc1f4f4e6583ee5f5a",
+    "request_intervals.csv": "dc341d3293749874962e0d0d5feb9a91639a610cc91420ab3df4617f1c478cbb",
+    "routing_intervals.csv": "8da00a2a3407b030082d076a9df4803aa08fcca52da28e8fdc15271f9cd1127f",
+    "routing_transitions.csv": "966ea60b16e12878e5daec83d194c41e4df05b71bf0bd43e0b54fccd77ba3548",
+    "synthesis_diagnostics.csv": "4a9d2c12688d973a6142f23bd945171b68baac6c1db6768c5636ffecc935b411",
+    "routing_audit.json": "d7d188c12c4578e3ae4589cd27a1016b22e450f0858135084fe1a2e0ae1623d7",
+    "gate_ablation/group_gate_cases.csv": "f0004049a66222413f368f570f5c1fa63155a70da1a9dc8141516d43cc6fb901",
+    "gate_ablation/group_gate_summary.csv": "a3f4c6de5fdfe4f8d1a649bcbeef2e490b94a557a16b2c52735d9d66f561a783",
+    "gate_ablation/group_gate_pool.csv": "d0a14f4b37d3103e4e4aef86326a67a405801c451269708c91f752823e90de09",
+    "gate_ablation/group_gate_complete_exported_pool.csv": "b59e37498ac74b6d20eb45ae3cf09774161005d060b7f598c1b537e5278a1b55",
+    "gate_ablation/group_gate_actual_calls.csv": "0145a0bfe280bf01979cca261aa921decd41cce65cc7ed73b90ab280acb61f05",
+    "gate_ablation/group_gate_protocol.json": "f7416c5d6b808e6c696c1071d6260a480698bf16c5f97376b1ed9c8c4bb7f77e",
+    "gate_ablation/gate_validation_checks.json": "9ebe0b8ffffe836d152be18b735135f0c3b3f65711757dd3e192fca09259b220",
+    "gate_ablation/gate_repeat_pixel_audit.json": "6551c66357c35206f3f34ac411ba71d03de462ad9a18bd9b5921455a44dd3195",
+    "score_candidate_provenance.csv": "a566ae91d16fdbe25e68805f4450ca5ce91aea070246c6bcdbf8771b0ee63f36",
+    "score_family_ranges.csv": "113a20aaefe4d9260b99f4279fc34c024662ba737ff0a25d4124f686429aaf6f"
+  },
+  "numpy_version": "2.5.1",
+  "python_version": "3.12.2",
+  "scope": "Independent metric recomputation without algorithm-module imports or models; the optional privacy audit also decodes generated mask images.",
+  "limits": [
+    "Exact-map flags are cross-file declarations here; pixel equality itself requires the archived masks and original reproduction audits.",
+    "The verifier checks table arithmetic and consistency, not correctness of external annotations or scientific population generalization.",
+    "Request selected-identity scores are not re-ranked because per-instance confidence was not exported in request_instances.csv; selected IDs and their IoUs are cross-checked.",
+    "Privacy checks establish file exclusion and generated-mask pixel types; they do not establish redistribution licenses for separately supplied images or annotations."
+  ]
+}

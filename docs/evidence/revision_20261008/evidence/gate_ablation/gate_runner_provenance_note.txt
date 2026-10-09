@@ -1,0 +1,3 @@
+The group_gate_protocol.json script_sha256 identifies the script used for the final full run. Its exact executed bytes are preserved in backups/final_executed/gate_ablation.py.
+
+After completion, the live revision_20261008/gate_ablation.py received a comment-only correction: an initial suspected Python-hash-ordering explanation was replaced with the observed unassigned-cause one-pixel repeat limitation. No executable statement, algorithm, input, summary statistic or experimental data was changed. The report and independent validation explicitly retain that limitation. Future portability edits should likewise retain the executed source copy and distinguish revised reproduction tooling from the actual recorded run.

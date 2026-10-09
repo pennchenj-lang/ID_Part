@@ -1,0 +1,304 @@
+{
+  "status": "PASS",
+  "image_members": 3047,
+  "counts": {
+    "binary_candidate_masks": 2400,
+    "binary_selected_masks": 111,
+    "integer_id_maps": 536
+  },
+  "modes": {
+    "I;16": 536,
+    "L": 2511
+  },
+  "counterfactual_npz_arrays": [
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "STA",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "none",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "S",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "ST",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "T",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "A",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "SA",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_calculator__01.npz",
+      "variant": "TA",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "STA",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "none",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "S",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "ST",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "T",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "A",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "SA",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_a_scarf__03.npz",
+      "variant": "TA",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "STA",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "none",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "S",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "ST",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "T",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "A",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "SA",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_calculator__01.npz",
+      "variant": "TA",
+      "shape": [
+        169,
+        135
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "STA",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "none",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "S",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "ST",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "T",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "A",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "SA",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    },
+    {
+      "file": "evidence/gate_ablation/gate_hashseed_fixed_b_scarf__03.npz",
+      "variant": "TA",
+      "shape": [
+        343,
+        186
+      ],
+      "dtype": "uint16"
+    }
+  ],
+  "method": "Every PNG is single-channel binary; every TIFF is a nonnegative integer fine/Group ID map. Four supplementary repeat-audit NPZ files contain only32 two-dimensional uint16 ID maps. File-member whitelist also excludes source/reference masks. No RGB image members are included."
+}

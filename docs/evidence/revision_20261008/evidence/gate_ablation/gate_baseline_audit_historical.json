@@ -1,0 +1,16 @@
+{
+  "source": "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout",
+  "source_sha256": "12753c082b9abc8f61ddfd63456d1a7f210da1e58d2b59d93081a46dcbc3afd7",
+  "splits": {
+    "test226": {
+      "n": 226,
+      "exact_maps": 226,
+      "exact_semantics": 226
+    },
+    "holdout42": {
+      "n": 42,
+      "exact_maps": 42,
+      "exact_semantics": 42
+    }
+  }
+}

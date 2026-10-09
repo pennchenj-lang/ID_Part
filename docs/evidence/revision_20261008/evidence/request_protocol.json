@@ -1,0 +1,52 @@
+{
+  "case_count": 37,
+  "independent_new_cases": 0,
+  "same_frozen_holdout_requests": true,
+  "target_manifest_sha256": "451f33618a7a8863347ae60429b8c083014c63a07a911423f3d7db5b9311ea35",
+  "endpoint_source_sha256": "e72947b537c94b2bababa74a08c01182d1ecdc9522d8a80724b1d2238b41b672",
+  "exact_assertion_count": 37,
+  "routing_method_case_reproductions": 111,
+  "code_sha256": {
+    "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\physical_groups.py": "12753c082b9abc8f61ddfd63456d1a7f210da1e58d2b59d93081a46dcbc3afd7",
+    "${PROJECT_ROOT}\\src\\hpid_split\\postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
+    "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\paco_semantics.py": "9d2c54326f5fc7e0e739e0181c713e4a47c81e357827f0121ef37d5ca7401be8",
+    "${PROJECT_ROOT}\\scripts\\audit_completion_routing.py": "a8e3b4c7750388c4d30d5b671b7d415a5704cbfb28fed081dbbe5ec5dba4e8ed",
+    "${REVISION_ROOT}\\request_provenance.py": "2b550913969dccb4e83a68e5202a86d5f2fc713547c668e30ba9fdd12373c7ef"
+  },
+  "interval": "pointwise 95% Wilson; descriptive fixed-case proportions; no adjusted multiplicity or population-generalization claim",
+  "correct_raw_candidate_count": 23,
+  "correct_raw_case_count": 18,
+  "correct_raw_retained_each_fine_filter": {
+    "dedup_retained": 23,
+    "instance_cap_retained": 23,
+    "hierarchical_suppression_retained": 23
+  },
+  "nine_original_correct_ambiguous_transitions": {
+    "unique_correct": 5,
+    "unique_wrong": 2,
+    "ambiguous": 2
+  },
+  "six_failure_classes": {
+    "semantic_match_with_deficient_spatial_support": 4,
+    "semantic_label_with_support_on_different_reference_part": 2
+  },
+  "six_name_matches": 6,
+  "correct_raw_candidates_nominated_group_gates": 16,
+  "correct_raw_candidates_accepted_group_gates": 15,
+  "correct_raw_candidates_rejected_group_gates": 1,
+  "correct_raw_cases_losing_correct_hpid_option": [
+    "box__u01",
+    "car_automobile__u02",
+    "shoe__u01",
+    "scissors__u01"
+  ],
+  "limitations": [
+    "The available Raw pool is the exported pool after original fine-fusion input filtering; rejected proposal-generation masks are unavailable.",
+    "Candidate pixel-flow rows exactly partition an input candidate's support at later saved/replayed outputs. Overlapping candidates prevent unique causal attribution to an individual source.",
+    "Fine semantic stages use one union per class; final Part/Group and routing use instances. These stage match counts are not interchangeable.",
+    "Group naming can reconstruct physical partitions rather than merely merge candidate masks; membership IDs can be rebound after spatial regularization.",
+    "A name-matched output covering another annotated part is a spatial semantic-assignment warning, not independently adjudicated semantic misclassification.",
+    "Category strata are very small; Wilson intervals describe observed counts and do not establish generalization to new categories."
+  ]
+}

@@ -1,0 +1,7 @@
+case_id,domain,category,target,raw_state,hpid_state,raw_review_correct,hpid_review_correct,raw_best_iou,hpid_best_iou,raw_selected_iou,hpid_selected_iou
+telephone__u01,device,telephone,bezel,wrong_unique_025,wrong_unique_025,0.0,0.0,0.1219901132195822,0.04061291282356441,0.1219901132195822,0.04061291282356441
+bottle__u01,container,bottle,base,wrong_unique_025,wrong_unique_025,0.0,0.0,0.0,0.0,0.0,0.0
+box__u01,container,box,side,query_ambiguous,wrong_unique_025,1.0,0.0,0.5414703903095559,0.00694855495792264,0.16838552852052013,0.00694855495792264
+car_automobile__u02,vehicle,car_(automobile),windshield,query_ambiguous,wrong_unique_025,1.0,0.0,0.704812834224599,0.21711229946524063,0.07700534759358289,0.21711229946524063
+shoe__u01,daily_object,shoe,vamp,unique_and_correct_025,wrong_unique_025,0.0,0.0,0.4349748743718593,0.20691711389385808,0.4349748743718593,0.20691711389385808
+screwdriver__u01,tool_prop,knife,blade,wrong_unique_025,wrong_unique_025,0.0,0.0,0.0053810239772097805,0.012989057702904826,0.0053810239772097805,0.012989057702904826

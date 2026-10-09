@@ -1,0 +1,49 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_ONE_PIXEL_REPEAT_LIMITATION",
+  "case_variant_rows": 2144,
+  "baseline_exact_maps": 268,
+  "baseline_exact_id_semantic_sequences": 268,
+  "unchanged_input_checks": 2144,
+  "complete_exported_candidates": 2400,
+  "profile_nominations": 1280,
+  "actual_gate_invocations": 22544,
+  "unique_candidate_contexts": 1542,
+  "summary_means_recomputed": true,
+  "all_nomination_decisions_recomputed": true,
+  "raw_predicates_invariant_across_subsets": true,
+  "zero_nomination_cases_retained": true,
+  "independent_confidence_interval_reestimation": false,
+  "metric_summaries_identical_to_first_full_pass": true,
+  "counterfactual_maps_bitwise_repeatable": false,
+  "counterfactual_repeat_note": "Targeted fixed-seed repeats show one-pixel differences for calculator__01 and scarf__03. All saved evaluation metrics and confidence intervals are identical across full runs. Cause is not assigned; changing-case counts are descriptive run-specific values.",
+  "changed_map_count_discrepancies": [
+    {
+      "split": "test226",
+      "variant": "S",
+      "first_pass_count": 97,
+      "current_count": 96
+    },
+    {
+      "split": "test226",
+      "variant": "T",
+      "first_pass_count": 21,
+      "current_count": 20
+    },
+    {
+      "split": "test226",
+      "variant": "SA",
+      "first_pass_count": 86,
+      "current_count": 85
+    }
+  ],
+  "input_sha256": {
+    "group_gate_actual_calls.csv": "53ae15cc80dcf4579aa849577aab01a143c6e0977ddfc6ccae4f9c393d095cb5",
+    "group_gate_cases.csv": "203932ef48af7dabc34d6ce75974a51c32d9b0db7557333a7e8d8e038b45d833",
+    "group_gate_complete_exported_pool.csv": "780c93063b7070e36559c1a3e4896ac1b575320c3e22552a1ddb1bc6808ea074",
+    "group_gate_full_run.log": "1ed141fe039e0fd5b5728528ee4dd34305f2f651ca5ab623274dd681f8ac1f21",
+    "group_gate_input_provenance.json": "a911eae8b0be9b4283b7c0108758b00dc4bdf53f1ed1ff936ec7c4c332faf1a6",
+    "group_gate_pool.csv": "5d28872bde2f330f4a4b402aca1ffca1888aec6259142370c703179f216bac8a",
+    "group_gate_protocol.json": "5165acfa6440207487e02f70f89dcf5be9bcc0c1aa61d5cf06c8c3639fa86e18",
+    "group_gate_summary.csv": "5cca1f1935a31124ecdadf29f5544e7eb6d1299d4ec9ef07f3806b4417ba2410"
+  }
+}

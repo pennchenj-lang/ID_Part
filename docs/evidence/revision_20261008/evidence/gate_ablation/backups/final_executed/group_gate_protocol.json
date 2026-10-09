@@ -1,0 +1,73 @@
+{
+  "scope": "Post-review group-stage gate intervention on the complete archived pre-group-gate pool. The earlier fine-ID fusion and proposal generation are held fixed.",
+  "not_scope": "Not an upstream proposal-generation ablation, not an A0-A3 fine-ID ablation, and not a new independent test set.",
+  "variants": {
+    "STA": [
+      1,
+      1,
+      1
+    ],
+    "none": [
+      0,
+      0,
+      0
+    ],
+    "S": [
+      1,
+      0,
+      0
+    ],
+    "ST": [
+      1,
+      1,
+      0
+    ],
+    "T": [
+      0,
+      1,
+      0
+    ],
+    "A": [
+      0,
+      0,
+      1
+    ],
+    "SA": [
+      1,
+      0,
+      1
+    ],
+    "TA": [
+      0,
+      1,
+      1
+    ]
+  },
+  "n_cases": 268,
+  "source_sha256": "12753c082b9abc8f61ddfd63456d1a7f210da1e58d2b59d93081a46dcbc3afd7",
+  "historical_test226_source_sha256": "819f7597bf118e318b1ba29aeeb300ba9d2ad69618d57701f1d57d199e63fdb1",
+  "source_commits": {
+    "test226": "da7d236b7873200692c262d41b5f69196d9dd5fb",
+    "holdout42": "be543003632fa739d0b63e9acbffb8d91d99b84a"
+  },
+  "historical_source_url": "https://github.com/pennchenj-lang/ID_Part/blob/da7d236b7873200692c262d41b5f69196d9dd5fb/src/hpid_split/physical_groups.py",
+  "historical_github_blob_sha": "3de7aa6d829c5380e612d35d2671724f5862ed06",
+  "baseline_group_equality": "Every baseline must match the archived pixel map and ordered (Group index, ID, semantic name) records exactly.",
+  "input_integrity": "SHA256 over fine map, full Part records, ordered masks, scores, source reliability and full metadata is asserted unchanged after each subset.",
+  "version_audit": "Using the later holdout Group implementation on the earlier test226 archive reproduces only178/226 maps. The recovered Aug20 Group implementation reproduces226/226; the Aug23 implementation reproduces42/42. Each split therefore uses its own archived source consistently across all eight gate subsets; splits are never pooled.",
+  "seed": 20261008,
+  "bootstrap_draws": 10000,
+  "reference_used_in_inference": false,
+  "script_sha256": "649a999edc68bc4948e93d1928c591376727ad478aba9d1a97082ee7efc96494",
+  "python_version": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "numpy_version": "2.5.1",
+  "python_hash_seed": 20261008,
+  "group_change_definition": "group_map_changed compares numeric arrays; semantic_partition_changed compares sorted (semantic name, binary mask digest) and is invariant to Group index permutations.",
+  "paired_unit": "case within split; all eight interventions use each same case; no new independent test cases",
+  "ci": "Pointwise percentile paired-case bootstrap; exploratory, not simultaneous; no multiplicity-adjusted superiority claim",
+  "empty_nomination_policy": "All cases retained in means and denominators. Zero profile nominations yield zero retained-pool precision/recall/F1.",
+  "intervention_boundary": "Only _candidate_three_stage_verification is switched wherever called during Group construction. Profile-specific structural paths, nomination rules, containment/area constraints and final Group cleanup remain unchanged.",
+  "candidate_pool_control": "All exported candidates entering build_physical_groups are retained before each switch. Profile, root, fine IDs, masks, scores and metadata remain identical.",
+  "switch": "Only the three named predicates in _candidate_three_stage_verification are enabled/bypassed. Raw downstream predicates are re-evaluated even when an earlier predicate is bypassed."
+}

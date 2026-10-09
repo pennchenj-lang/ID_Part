@@ -1,0 +1,30 @@
+{
+  "format": "HPID PACO category selection",
+  "version": "0.1.0",
+  "categories": [
+    {"category": "cellular_telephone", "expected_domain": "device", "expected_profile": "phone"},
+    {"category": "laptop_computer", "expected_domain": "device", "expected_profile": "laptop"},
+    {"category": "television_set", "expected_domain": "device", "expected_profile": "display"},
+    {"category": "remote_control", "expected_domain": "device", "expected_profile": "controls"},
+    {"category": "clock", "expected_domain": "device", "expected_profile": "clock_watch"},
+    {"category": "watch", "expected_domain": "device", "expected_profile": "clock_watch"},
+    {"category": "earphone", "expected_domain": "device", "expected_profile": "earphone"},
+    {"category": "fan", "expected_domain": "device", "expected_profile": "fan"},
+    {"category": "lamp", "expected_domain": "device", "expected_profile": "lamp"},
+    {"category": "blender", "expected_domain": "device", "expected_profile": "blender"},
+    {"category": "microwave_oven", "expected_domain": "device", "expected_profile": "microwave"},
+    {"category": "kettle", "expected_domain": "device", "expected_profile": "kettle"},
+    {"category": "chair", "expected_domain": "furniture", "expected_profile": "chair"},
+    {"category": "table", "expected_domain": "furniture", "expected_profile": "table"},
+    {"category": "bottle", "expected_domain": "container", "expected_profile": "bottle_jar"},
+    {"category": "handbag", "expected_domain": "container", "expected_profile": "bag"},
+    {"category": "car_(automobile)", "expected_domain": "vehicle", "expected_profile": "road_vehicle"},
+    {"category": "bicycle", "expected_domain": "vehicle", "expected_profile": "two_wheeler"},
+    {"category": "book", "expected_domain": "daily_object", "expected_profile": "book"},
+    {"category": "knife", "expected_domain": "tool_prop", "expected_profile": "knife"},
+    {"category": "scissors", "expected_domain": "tool_prop", "expected_profile": "scissors_pliers"},
+    {"category": "hammer", "expected_domain": "tool_prop", "expected_profile": "hammer"},
+    {"category": "ladder", "expected_domain": "tool_prop", "expected_profile": "ladder"},
+    {"category": "guitar", "expected_domain": "tool_prop", "expected_profile": "guitar"}
+  ]
+}

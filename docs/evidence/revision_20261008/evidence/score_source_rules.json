@@ -1,0 +1,299 @@
+[
+  {
+    "rule": "grounding_score",
+    "source_file": "foundation.py",
+    "start_line": 2236,
+    "end_line": 2288,
+    "explanation": "s0 is Grounding DINO processor result['scores']; detection.score is used at root/guided/profile construction. Local installed processor computes max_token(sigmoid(logit)), not a calibrated mask probability.",
+    "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442",
+    "code_excerpt": "    def _ground(self, image: Image.Image, phrases: list[str]) -> list[Detection]:\n        if not getattr(self, \"_grounding_model_active\", True):\n            self.activate_grounding_model()\n        prompt = _prompt_text(phrases)\n        inputs = self.grounding_processor(\n            images=image, text=prompt, return_tensors=\"pt\"\n        ).to(self.device)\n        with (\n            torch.inference_mode(),\n            torch.amp.autocast(\"cuda\", enabled=self.device.startswith(\"cuda\")),\n        ):\n            outputs = self.grounding_model(**inputs)\n        target_sizes = torch.tensor([image.size[::-1]], device=self.device)\n        kwargs = {\n            \"text_threshold\": self.config.text_threshold,\n            \"target_sizes\": target_sizes,\n        }\n        try:\n            result = self.grounding_processor.post_process_grounded_object_detection(\n                outputs,\n                inputs.input_ids,\n                threshold=self.config.box_threshold,\n                **kwargs,\n            )[0]\n        except TypeError:\n            result = self.grounding_processor.post_process_grounded_object_detection(\n                outputs,\n                inputs.input_ids,\n                box_threshold=self.config.box_threshold,\n                **kwargs,\n            )[0]\n        raw_labels = result.get(\"text_labels\")\n        if raw_labels is None:\n            raise RuntimeError(\n                \"The installed Grounding DINO processor did not return text_labels\"\n            )\n        boxes = result[\"boxes\"]\n        scores = result[\"scores\"]\n        aligned_count = min(len(boxes), len(scores), len(raw_labels))\n        self._grounding_output_mismatch_count += (\n            max(len(boxes), len(scores), len(raw_labels)) - aligned_count\n        )\n        detections: list[Detection] = []\n        for index in range(aligned_count):\n            box = boxes[index]\n            score = scores[index]\n            label = raw_labels[index]\n            x0, y0, x1, y1 = (round(float(value)) for value in box.tolist())\n            x0, y0 = max(0, x0), max(0, y0)\n            x1, y1 = min(image.width, x1), min(image.height, y1)\n            if x1 <= x0 or y1 <= y0:\n                continue\n            detections.append(Detection(str(label), float(score), (x0, y0, x1, y1)))"
+  },
+  {
+    "rule": "root_candidate",
+    "source_file": "foundation.py",
+    "start_line": 3438,
+    "end_line": 3446,
+    "explanation": "s=detection.score; r=.80+.20*sam_quality. Root-routing selection can take maxima across detector-derived roots and retain geometry metadata from one root.",
+    "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442",
+    "code_excerpt": "            candidates.append(\n                MaskCandidate(\n                    semantic_name=domain.name,\n                    semantic_parent=domain.name,\n                    mask=mask,\n                    score=detection.score,\n                    source=self._grounded_source(\"root\"),\n                    prompt=detection.label,\n                    source_reliability=0.80 + 0.20 * sam_quality,"
+  },
+  {
+    "rule": "isolated_root",
+    "source_file": "foundation.py",
+    "start_line": 996,
+    "end_line": 1004,
+    "explanation": "s=detection.score; r=.80+.20*segmentation.quality.",
+    "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442",
+    "code_excerpt": "                        MaskCandidate(\n                            semantic_name=domain.name,\n                            semantic_parent=domain.name,\n                            mask=segmentation.mask,\n                            score=detection.score,\n                            source=self._grounded_source(\"isolated-profile-root\"),\n                            prompt=profile.root_hints[0],\n                            source_reliability=0.80 + 0.20 * segmentation.quality,\n                            metadata={"
+  },
+  {
+    "rule": "profile_root_resolution",
+    "source_file": "profile_resolution.py",
+    "start_line": 513,
+    "end_line": 545,
+    "explanation": "Resolved root keeps geometry sam_quality metadata, uses s=max(broad_root.score,evidence.score), and r=max(broad_root.r,evidence.r,geometry.r). Consequently the retained single sam_quality field need not reconstruct final r.",
+    "sha256": "3ccaca7c143a08c11872d861cf585d2684dfe051290ea5994bf1a949fb1d28b8",
+    "code_excerpt": "        metadata = {\n            **broad_root.metadata,\n            \"sam_quality\": geometry.metadata.get(\"sam_quality\", 0.5),\n            \"box_xyxy\": dict(geometry_row[\"metrics\"])[\"bbox_xyxy\"],\n            \"selected_part_profile\": profile,\n            \"resolved_object_label\": resolved_object_label,\n            \"part_profile_specificity\": 1.0,\n            \"part_profile_selection\": resolved_profile_diagnostics\n            or evidence.metadata.get(\"part_profile_selection\"),\n            \"profile_hint_source\": \"isolated_profile_consensus\",\n            \"profile_resolution_status\": \"accepted\",\n            \"profile_evidence_root_key\": _root_key(evidence),\n            \"profile_evidence_score\": float(winner[\"consensus_score\"]),\n            \"profile_evidence_margin\": margin,\n            \"profile_classifier\": evidence.metadata.get(\"profile_classifier\"),\n            \"profile_geometry_source\": _root_key(geometry),\n            \"profile_geometry_metrics\": geometry_row[\"metrics\"],\n            \"ground_truth_used\": False,\n        }\n        resolved.append(\n            MaskCandidate(\n                semantic_name=broad_root.semantic_name,\n                semantic_parent=broad_root.semantic_parent,\n                mask=geometry.mask,\n                score=max(broad_root.score, evidence.score),\n                source=geometry.source,\n                prompt=resolved_object_label,\n                source_reliability=max(\n                    broad_root.source_reliability,\n                    evidence.source_reliability,\n                    geometry.source_reliability,\n                ),\n                metadata=metadata,"
+  },
+  {
+    "rule": "guided_candidate",
+    "source_file": "foundation.py",
+    "start_line": 1402,
+    "end_line": 1411,
+    "explanation": "s=detection.score; r=.86*(.55+.45*segmentation.quality).",
+    "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442",
+    "code_excerpt": "                    MaskCandidate(\n                        semantic_name=semantic_name,\n                        semantic_parent=root.semantic_name,\n                        mask=full_mask,\n                        score=detection.score,\n                        source=self._grounded_source(\"guided-part\"),\n                        prompt=detection.label,\n                        source_reliability=(\n                            0.86 * (0.55 + 0.45 * segmentation.quality)\n                        ),"
+  },
+  {
+    "rule": "retrieved_part",
+    "source_file": "retrieval.py",
+    "start_line": 1603,
+    "end_line": 1619,
+    "explanation": "s=s0*(.58+.27*clip((visual_similarity+1)/2,0,1)+.15*geometry_score); r=r0*(.72+.28*retrieval_score).",
+    "sha256": "26918e36bc8ebb741e15e1d025ef3cba3ca414cd0e7284c76dba10216057537f",
+    "code_excerpt": "            if not keep:\n                continue\n            visual_weight = float(np.clip((visual_similarity + 1.0) / 2.0, 0.0, 1.0))\n            score_scale = 0.58 + 0.27 * visual_weight + 0.15 * geometry_score\n            accepted.append(\n                replace(\n                    candidate,\n                    semantic_name=prior.output_semantic_name,\n                    semantic_parent=prior.semantic_parent,\n                    score=float(candidate.score * score_scale),\n                    source=candidate.source.rsplit(\"/\", maxsplit=1)[0]\n                    + \"/retrieved-part\",\n                    source_reliability=float(\n                        candidate.source_reliability\n                        * (0.72 + 0.28 * prior.retrieval_score)\n                    ),\n                    metadata={"
+  },
+  {
+    "rule": "profile_refine",
+    "source_file": "foundation.py",
+    "start_line": 1754,
+    "end_line": 1767,
+    "explanation": "s=detection.score; r=.88*(.55+.45*segmentation.quality)*part.priority; positive profile priority need not be <=1.",
+    "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442",
+    "code_excerpt": "                    MaskCandidate(\n                        semantic_name=part.semantic_name,\n                        semantic_parent=part.semantic_parent or domain.name,\n                        mask=full_mask,\n                        score=detection.score,\n                        source=self._grounded_source(\"profile-refine\"),\n                        prompt=detection.label,\n                        source_reliability=(\n                            0.88 * (0.55 + 0.45 * segmentation.quality) * part.priority\n                        ),\n                        metadata={\n                            \"source_family\": f\"{self._root_origin()}/profile-refine\",\n                            \"root_origin\": root.metadata.get(\"root_origin\"),\n                            \"root_index\": root.metadata.get(\"root_index\"),"
+  },
+  {
+    "rule": "clipseg_activation",
+    "source_file": "dense_semantic.py",
+    "start_line": 274,
+    "end_line": 296,
+    "explanation": "CLIPSeg logits are interpolated and passed through sigmoid.",
+    "sha256": "40c97172951c16b107b2bb2a136cd9141f0ce92f522046beee236934d14580e1",
+    "code_excerpt": "    def probability_maps(self, image: Image.Image, prompts: list[str]) -> np.ndarray:\n        \"\"\"Return one image-sized CLIPSeg probability map per text prompt.\"\"\"\n\n        if not prompts:\n            return np.zeros((0, image.height, image.width), dtype=np.float32)\n        inputs = self.processor(\n            text=prompts,\n            images=[image] * len(prompts),\n            padding=True,\n            return_tensors=\"pt\",\n        ).to(self.device)\n        with (\n            torch.inference_mode(),\n            torch.amp.autocast(\"cuda\", enabled=self.device.startswith(\"cuda\")),\n        ):\n            logits = self.model(**inputs).logits[:, None]\n            logits = torch.nn.functional.interpolate(\n                logits,\n                size=(image.height, image.width),\n                mode=\"bilinear\",\n                align_corners=False,\n            )[:, 0]\n            return logits.sigmoid().float().cpu().numpy()"
+  },
+  {
+    "rule": "dense_region_score",
+    "source_file": "dense_semantic.py",
+    "start_line": 209,
+    "end_line": 244,
+    "explanation": "s0 is max Gaussian-smoothed CLIPSeg sigmoid activation in each retained region, not the direct-mask composite score in the other routine.",
+    "sha256": "40c97172951c16b107b2bb2a136cd9141f0ce92f522046beee236934d14580e1",
+    "code_excerpt": "    smoothed = cv2.GaussianBlur(probability.astype(np.float32), (0, 0), 2.0)\n    values = smoothed[allowed]\n    peak = float(values.max())\n    median = float(np.median(values))\n    contrast = peak - median\n    if peak < minimum_peak_probability or contrast < minimum_peak_contrast:\n        return []\n    threshold = max(\n        float(np.quantile(values, activation_quantile)),\n        median + minimum_peak_contrast,\n        peak * peak_ratio,\n    )\n    active = ((smoothed >= threshold) & allowed).astype(np.uint8)\n    active = cv2.morphologyEx(active, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))\n    count, components, stats, _ = cv2.connectedComponentsWithStats(active, 8)\n    height, width = probability.shape\n    regions: list[tuple[tuple[int, int, int, int], float, float]] = []\n    for component_id in range(1, count):\n        area = int(stats[component_id, cv2.CC_STAT_AREA])\n        if area < 8:\n            continue\n        x = int(stats[component_id, cv2.CC_STAT_LEFT])\n        y = int(stats[component_id, cv2.CC_STAT_TOP])\n        w = int(stats[component_id, cv2.CC_STAT_WIDTH])\n        h = int(stats[component_id, cv2.CC_STAT_HEIGHT])\n        pad = max(3, round(max(w, h) * box_padding_ratio))\n        component = components == component_id\n        box = (\n            max(0, x - pad),\n            max(0, y - pad),\n            min(width, x + w + pad),\n            min(height, y + h + pad),\n        )\n        regions.append((box, float(smoothed[component].max()), contrast))\n    regions.sort(key=lambda item: item[1], reverse=True)\n    return regions[:maximum]"
+  },
+  {
+    "rule": "profile_dense",
+    "source_file": "foundation.py",
+    "start_line": 1984,
+    "end_line": 2000,
+    "explanation": "s=region.score; r=dense_source_reliability*(.40+.60*s)*(.55+.45*SAM_quality)*part.priority. Default dense_source_reliability=.74. Metadata family retains grounded/profile-dense although actual source is CLIPSeg-SAM2.",
+    "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442",
+    "code_excerpt": "                            MaskCandidate(\n                                semantic_name=part.semantic_name,\n                                semantic_parent=(part.semantic_parent or domain.name),\n                                mask=full_mask,\n                                score=region.score,\n                                source=self._dense_source(\"profile-dense-supplement\"),\n                                prompt=region.prompt,\n                                source_reliability=(\n                                    self.config.dense_source_reliability\n                                    * (0.40 + 0.60 * region.score)\n                                    * (0.55 + 0.45 * segmentation.quality)\n                                    * part.priority\n                                ),\n                                metadata={\n                                    \"source_family\": (\n                                        f\"{self._root_origin()}/profile-dense\"\n                                    ),"
+  },
+  {
+    "rule": "sam2_pipeline",
+    "source_file": "visual_regions.py",
+    "start_line": 866,
+    "end_line": 910,
+    "explanation": "VisualMaskProposal.score=result['scores'] from mask-generation pipeline, which returns model iou_scores. It is a model mask-quality estimate.",
+    "sha256": "ae6221b7915d5da98d6db814ed06e57ba04494b252144f49aaa4c7b3017aeabb",
+    "code_excerpt": "    ) -> list[VisualMaskProposal]:\n        result = self.pipeline(\n            image.convert(\"RGB\"),\n            points_per_crop=points_per_crop,\n            points_per_batch=self.config.points_per_batch,\n            pred_iou_thresh=self.config.predicted_iou_threshold,\n            stability_score_thresh=self.config.stability_score_threshold,\n            crops_n_layers=0,\n            crops_nms_thresh=self.config.crops_nms_threshold,\n            output_bboxes_mask=True,\n            max_hole_area=64,\n            max_sprinkle_area=32,\n        )\n        boxes = result.get(\"bounding_boxes\", [None] * len(result[\"masks\"]))\n        offset_x, offset_y = offset_xy\n        output_height, output_width = output_shape\n        proposals: list[VisualMaskProposal] = []\n        for mask, score, box in zip(\n            result[\"masks\"], result[\"scores\"], boxes, strict=True\n        ):\n            local_mask = np.asarray(mask).astype(bool)\n            full_mask = np.zeros((output_height, output_width), dtype=bool)\n            y1 = min(output_height, offset_y + local_mask.shape[0])\n            x1 = min(output_width, offset_x + local_mask.shape[1])\n            full_mask[offset_y:y1, offset_x:x1] = local_mask[\n                : y1 - offset_y, : x1 - offset_x\n            ]\n            if box is None:\n                full_box = _box(full_mask)\n            else:\n                local_box = tuple(round(float(value)) for value in box)\n                full_box = (\n                    local_box[0] + offset_x,\n                    local_box[1] + offset_y,\n                    local_box[2] + offset_x,\n                    local_box[3] + offset_y,\n                )\n            proposals.append(\n                VisualMaskProposal(\n                    mask=full_mask,\n                    score=float(score),\n                    bbox_xyxy=full_box,\n                    scale_level=scale_level,\n                    view_id=view_id,\n                    target_root_key=target_root_key,"
+  },
+  {
+    "rule": "sam2_multiview",
+    "source_file": "visual_regions.py",
+    "start_line": 218,
+    "end_line": 240,
+    "explanation": "Select representative by .60*s+.24*best_view_IoU+.16*boundary_alignment; multiview s=min(1,s*(.96+.08*best_view_IoU)); isolated crop single view scales s by config.isolated_crop_score_scale.",
+    "sha256": "ae6221b7915d5da98d6db814ed06e57ba04494b252144f49aaa4c7b3017aeabb",
+    "code_excerpt": "        for index in indices:\n            proposal = proposals[index]\n            agreements = [\n                _overlap_metrics(proposal.mask, proposals[other].mask)[0]\n                for other in indices\n                if other != index and proposal.view_id != proposals[other].view_id\n            ]\n            best_iou = max(agreements, default=0.0)\n            edge_score = _boundary_alignment(edge_strength, proposal.mask)\n            rank = 0.60 * proposal.score + 0.24 * best_iou + 0.16 * edge_score\n            ranked.append((rank, best_iou, edge_score, index))\n        _, best_iou, edge_score, representative_index = max(ranked)\n        representative = proposals[representative_index]\n        score = representative.score\n        if len(views) > 1:\n            score = min(1.0, score * (0.96 + 0.08 * best_iou))\n        elif representative.scale_level > 0:\n            score *= config.isolated_crop_score_scale\n        consolidated.append(\n            VisualMaskProposal(\n                mask=representative.mask,\n                score=float(score),\n                bbox_xyxy=representative.bbox_xyxy,"
+  },
+  {
+    "rule": "visual_to_candidate",
+    "source_file": "visual_regions.py",
+    "start_line": 620,
+    "end_line": 644,
+    "explanation": "s=clip(proposal.score,0,1); r=.62 if generic else .68. Metadata field sam_quality stores proposal.score for ALL visual proposals including appearance-contour heuristics.",
+    "sha256": "ae6221b7915d5da98d6db814ed06e57ba04494b252144f49aaa4c7b3017aeabb",
+    "code_excerpt": "        candidate = MaskCandidate(\n            semantic_name=semantic_name,\n            semantic_parent=semantic_parent,\n            mask=mask,\n            score=float(np.clip(proposal.score, 0.0, 1.0)),\n            source=proposal_source,\n            prompt=prompt,\n            source_reliability=0.62 if generic else 0.68,\n            metadata={\n                \"source_family\": proposal_source.rsplit(\"/\", maxsplit=1)[0],\n                \"root_origin\": root.metadata.get(\"root_origin\"),\n                \"root_index\": root.metadata.get(\"root_index\"),\n                \"candidate_key\": (\n                    f\"{root_candidate_key}/visual-region:\"\n                    f\"{per_root_count.get(root_key, 0) + 1:02d}\"\n                ),\n                \"parent_candidate_key\": root_candidate_key,\n                \"assembly_parent_semantic\": str(assembly_parent),\n                \"assembly_parent_candidate_key\": root_candidate_key,\n                \"visual_region\": True,\n                \"generic_visual_region\": generic,\n                \"visual_region_kind\": _region_kind(mask, root_area),\n                \"sam_quality\": float(proposal.score),\n                \"proposal_scale_level\": int(proposal.scale_level),\n                \"proposal_view_id\": proposal.view_id,"
+  },
+  {
+    "rule": "contour_score",
+    "source_file": "appearance_proposals.py",
+    "start_line": 274,
+    "end_line": 298,
+    "explanation": "s0=clip(.43+.16*alignment+.14*closure+.08*chroma+.06*texture_delta+.13*shape_support,0,.95).",
+    "sha256": "8d0ec63abd3cb3bd7483a5fd0a62ea71e4d16d8819bd2a5190f793a25a319115",
+    "code_excerpt": "            ).astype(bool)\n            score = float(\n                np.clip(\n                    0.43\n                    + 0.16 * alignment\n                    + 0.14 * closure\n                    + 0.08 * chroma\n                    + 0.06 * texture_delta\n                    + 0.13 * shape_support,\n                    0.0,\n                    0.95,\n                )\n            )\n            proposal = VisualMaskProposal(\n                mask=full_mask,\n                score=score,\n                bbox_xyxy=_box(full_mask),\n                scale_level=-close_size,\n                view_id=f\"appearance-closed-contour-{close_size}\",\n                support_views=(f\"closed-edge-{close_size}\",),\n                support_levels=(-close_size,),\n                best_view_iou=0.0,\n                boundary_alignment=alignment,\n                target_root_key=root_key,\n                source=\"hpid-appearance-contour/closed-edge\","
+  },
+  {
+    "rule": "appearance_utility",
+    "source_file": "appearance_graph.py",
+    "start_line": 191,
+    "end_line": 208,
+    "explanation": "u=clip(.31*q+.18*boundary_alignment+.15*boundary_closure+.13*chroma+.08*texture+.08*multiview+.10*geometry+.07*named_semantic-.18*shading_penalty,0,1). q is stored proposal score, not universally raw SAM quality.",
+    "sha256": "c54aefb95f08d53d882d3c2a3d468ea5c380adc08cab9bac0a30640c00ac66e6",
+    "code_excerpt": "        )\n    )\n    utility = float(\n        np.clip(\n            0.31 * sam_quality\n            + 0.18 * boundary_alignment\n            + 0.15 * boundary_closure\n            + 0.13 * chroma_contrast\n            + 0.08 * texture_contrast\n            + 0.08 * float(multi_view)\n            + 0.10 * geometric_support\n            + 0.07 * float(semantic)\n            - 0.18 * shading_only_penalty,\n            0.0,\n            1.0,\n        )\n    )\n    return {"
+  },
+  {
+    "rule": "appearance_score",
+    "source_file": "appearance_graph.py",
+    "start_line": 443,
+    "end_line": 456,
+    "explanation": "Every accepted visual/contour candidate score becomes clip(.62*s0+.38*u,0,1).",
+    "sha256": "c54aefb95f08d53d882d3c2a3d468ea5c380adc08cab9bac0a30640c00ac66e6",
+    "code_excerpt": "        adjusted_score = float(\n            np.clip(0.62 * candidate.score + 0.38 * float(evidence[\"utility\"]), 0.0, 1.0)\n        )\n        updated_mask = candidate.mask\n        surface_regularization: dict[str, float | bool] | None = None\n        if reason == \"large_structural_surface\":\n            updated_mask, surface_regularization = _regularize_large_surface(\n                candidate, root\n            )\n        updated = replace(\n            candidate,\n            mask=updated_mask,\n            score=adjusted_score,\n            metadata={"
+  },
+  {
+    "rule": "cross_source_max",
+    "source_file": "appearance_graph.py",
+    "start_line": 368,
+    "end_line": 386,
+    "explanation": "Cross-source duplicate confirmation may replace incumbent score by max(incumbent.score,other.score); incumbent metadata alone may not preserve the other precursor score.",
+    "sha256": "c54aefb95f08d53d882d3c2a3d468ea5c380adc08cab9bac0a30640c00ac66e6",
+    "code_excerpt": "            conflict[0] == \"duplicate_region\"\n            and _source_family(candidate) != _source_family(conflict[2])\n        ):\n            incumbent = conflict[2]\n            families = {\n                *incumbent.metadata.get(\"supporting_source_families\", ()),\n                _source_family(incumbent),\n                _source_family(candidate),\n            }\n            selected[conflict[1]] = replace(\n                incumbent,\n                score=max(incumbent.score, candidate.score),\n                metadata={\n                    **incumbent.metadata,\n                    \"cross_source_confirmed\": True,\n                    \"supporting_source_families\": sorted(families),\n                },\n            )\n            cross_source_confirmations += 1"
+  },
+  {
+    "rule": "prototype_label",
+    "source_file": "retrieval.py",
+    "start_line": 1869,
+    "end_line": 1880,
+    "explanation": "Prototype labelling leaves s unchanged and scales r by .72+.28*combined prototype label score.",
+    "sha256": "26918e36bc8ebb741e15e1d025ef3cba3ca414cd0e7284c76dba10216057537f",
+    "code_excerpt": "            combined, raw_similarity, geometry_score, prior = best\n            labelled[id(candidate)] = replace(\n                candidate,\n                semantic_name=prior.output_semantic_name,\n                semantic_parent=prior.semantic_parent,\n                prompt=f\"retrieved visual prototype for {prior.display_name}\",\n                source=candidate.source.rsplit(\"/\", maxsplit=1)[0]\n                + \"/prototype-labelled-region\",\n                source_reliability=float(\n                    candidate.source_reliability * (0.72 + 0.28 * combined)\n                ),\n                metadata={"
+  },
+  {
+    "rule": "semantic_rerank",
+    "source_file": "visual_semantics.py",
+    "start_line": 2005,
+    "end_line": 2021,
+    "explanation": "s=clip(.65*s0+.35*label_rank_probability,0,1); r=max(r0,.66 default). Label-rank softmax is inventory-relative, not correctness calibration.",
+    "sha256": "a5e935b2e4b4224215f9ca5e055e5538dfe77e1cb2193cd7fc52d6bafbce1f9d",
+    "code_excerpt": "            output_by_key[key] = replace(\n                candidate,\n                semantic_name=part.semantic_name,\n                semantic_parent=semantic_parent,\n                score=float(\n                    np.clip(\n                        0.65 * candidate.score + 0.35 * float(row[\"probability\"]),\n                        0.0,\n                        1.0,\n                    )\n                ),\n                source=f\"{candidate.source}/semantic-rerank\",\n                prompt=_part_prompt(part, object_context),\n                source_reliability=max(\n                    candidate.source_reliability, config.source_reliability\n                ),\n                metadata=metadata,"
+  },
+  {
+    "rule": "label_rank_probability",
+    "source_file": "dense_semantic.py",
+    "start_line": 568,
+    "end_line": 592,
+    "explanation": "CLIPSeg image/text features: combined similarity is weighted full/masked similarity; exp((combined-max(combined))/.035) is normalized across the queried inventory. This p is only a relative label-ranking weight.",
+    "sha256": "40c97172951c16b107b2bb2a136cd9141f0ce92f522046beee236934d14580e1",
+    "code_excerpt": "                masked_rows.append((features @ text_features.T).cpu().numpy())\n        masked_similarities = np.concatenate(masked_rows, axis=0)\n        output: dict[str, dict[str, dict[str, float | str | int]]] = {}\n        for region_index, (region_key, _) in enumerate(regions):\n            combined = (\n                (1.0 - masked_weight) * full_similarities\n                + masked_weight * masked_similarities[region_index]\n            )\n            shifted = (combined - float(combined.max())) / temperature\n            probabilities = np.exp(shifted)\n            probabilities /= max(1e-8, float(probabilities.sum()))\n            ordering = np.argsort(-combined)\n            rank_by_index = {\n                int(index): rank for rank, index in enumerate(ordering, start=1)\n            }\n            output[region_key] = {\n                key: {\n                    \"prompt\": prompt,\n                    \"full_similarity\": float(full_similarities[label_index]),\n                    \"masked_similarity\": float(\n                        masked_similarities[region_index, label_index]\n                    ),\n                    \"combined_similarity\": float(combined[label_index]),\n                    \"probability\": float(probabilities[label_index]),\n                    \"rank\": rank_by_index[label_index],"
+  },
+  {
+    "rule": "inventory_cluster",
+    "source_file": "visual_semantics.py",
+    "start_line": 2166,
+    "end_line": 2186,
+    "explanation": "s=clip(.68*s0+.32*label_rank_probability,0,1); r=max(r0,.61 default).",
+    "sha256": "a5e935b2e4b4224215f9ca5e055e5538dfe77e1cb2193cd7fc52d6bafbce1f9d",
+    "code_excerpt": "                    output_by_key[key] = replace(\n                        candidate,\n                        semantic_name=part.semantic_name,\n                        semantic_parent=semantic_parent,\n                        score=float(\n                            np.clip(\n                                0.68 * candidate.score + 0.32 * probability,\n                                0.0,\n                                1.0,\n                            )\n                        ),\n                        source=(\n                            f\"{candidate.source}/semantic-inventory-cluster\"\n                        ),\n                        prompt=_part_prompt(part, object_context),\n                        source_reliability=max(\n                            candidate.source_reliability,\n                            config.within_root_source_reliability,\n                        ),\n                        metadata=metadata,\n                    )"
+  },
+  {
+    "rule": "within_root_consensus",
+    "source_file": "visual_semantics.py",
+    "start_line": 2450,
+    "end_line": 2469,
+    "explanation": "s=clip(.68*s0+.32*label_rank_probability,0,1); r=max(r0,.61 default).",
+    "sha256": "a5e935b2e4b4224215f9ca5e055e5538dfe77e1cb2193cd7fc52d6bafbce1f9d",
+    "code_excerpt": "                assigned = replace(\n                    candidate,\n                    semantic_name=part.semantic_name,\n                    semantic_parent=semantic_parent,\n                    score=float(\n                        np.clip(\n                            0.68 * candidate.score\n                            + 0.32 * float(proposal[\"probability\"]),\n                            0.0,\n                            1.0,\n                        )\n                    ),\n                    source=f\"{candidate.source}/within-root-repetition-consensus\",\n                    prompt=_part_prompt(part, object_context),\n                    source_reliability=max(\n                        candidate.source_reliability,\n                        config.within_root_source_reliability,\n                    ),\n                    metadata=metadata,\n                )"
+  },
+  {
+    "rule": "structural_visual",
+    "source_file": "structural_fusion.py",
+    "start_line": 676,
+    "end_line": 689,
+    "explanation": "Existing visual candidate s=clip(.68*s0+.24,0,1); r=max(r0,.74 default); source family remains the original visual family.",
+    "sha256": "19ceab84e64725ec50b8f9f4dc2a042a8fd8112e8d3fea8cb49c23f7e286f7f1",
+    "code_excerpt": "    semantic_parent = part.semantic_parent or root.semantic_name\n    assembly_parent = part.assembly_parent or semantic_parent\n    return replace(\n        candidate,\n        semantic_name=part.semantic_name,\n        semantic_parent=semantic_parent,\n        score=float(np.clip(0.68 * candidate.score + 0.24, 0.0, 1.0)),\n        source=f\"{candidate.source}/structural-fusion\",\n        prompt=part.prompts[0],\n        source_reliability=max(candidate.source_reliability, source_reliability),\n        metadata={\n            **candidate.metadata,\n            \"generic_visual_region\": False,\n            \"structural_fusion\": True,"
+  },
+  {
+    "rule": "structural_partition",
+    "source_file": "structural_fusion.py",
+    "start_line": 418,
+    "end_line": 430,
+    "explanation": "Generated silhouette-axial candidate s=clip(.78+.16*partition_score,0,.95), r=.74 default; family hpid-structural-fusion-v2.",
+    "sha256": "19ceab84e64725ec50b8f9f4dc2a042a8fd8112e8d3fea8cb49c23f7e286f7f1",
+    "code_excerpt": "    root_area = max(1, int(np.count_nonzero(root.mask)))\n    return MaskCandidate(\n        semantic_name=part.semantic_name,\n        semantic_parent=semantic_parent,\n        mask=mask,\n        score=float(np.clip(0.78 + 0.16 * partition.score, 0.0, 0.95)),\n        source=\"hpid-structural-fusion/silhouette-axial-partition\",\n        prompt=part.prompts[0],\n        source_reliability=source_reliability,\n        metadata={\n            \"source_family\": \"hpid-structural-fusion-v2\",\n            \"root_origin\": root.metadata.get(\"root_origin\"),\n            \"root_index\": root.metadata.get(\"root_index\"),"
+  },
+  {
+    "rule": "partition_score",
+    "source_file": "structural_fusion.py",
+    "start_line": 373,
+    "end_line": 378,
+    "explanation": "partition_score=.45*min(width_ratio/4,1)+.25*max(0,1-neck_ratio)+.20*min(local_contrast,1)+.10*min(narrow_fraction/.35,1).",
+    "sha256": "19ceab84e64725ec50b8f9f4dc2a042a8fd8112e8d3fea8cb49c23f7e286f7f1",
+    "code_excerpt": "            )\n            score = float(\n                0.45 * min(width_ratio / 4.0, 1.0)\n                + 0.25 * max(0.0, 1.0 - neck_ratio)\n                + 0.20 * min(local_contrast, 1.0)\n                + 0.10 * min(narrow_fraction / 0.35, 1.0)"
+  },
+  {
+    "rule": "structural_residual",
+    "source_file": "structural_fusion.py",
+    "start_line": 1465,
+    "end_line": 1476,
+    "explanation": "Generated axial residual s=clip(.62+.28*coverage,0,1), r=.74 default; family hpid-structural-fusion-v1. Other functions under this family exist but are absent from these 2 archived rows.",
+    "sha256": "19ceab84e64725ec50b8f9f4dc2a042a8fd8112e8d3fea8cb49c23f7e286f7f1",
+    "code_excerpt": "                )\n                output_by_key[candidate_key] = MaskCandidate(\n                    semantic_name=mass_part.semantic_name,\n                    semantic_parent=semantic_parent,\n                    mask=residual,\n                    score=float(np.clip(0.62 + 0.28 * coverage, 0.0, 1.0)),\n                    source=\"hpid-structural-fusion/axial-residual\",\n                    prompt=mass_part.prompts[0],\n                    source_reliability=config.source_reliability,\n                    metadata={\n                        \"source_family\": \"hpid-structural-fusion-v1\",\n                        \"root_origin\": root.metadata.get(\"root_origin\"),"
+  },
+  {
+    "rule": "topology",
+    "source_file": "foundation.py",
+    "start_line": 2109,
+    "end_line": 2121,
+    "explanation": "s=clip(.94*anchor.score,0,1), r=.82*part.priority. Actual source says hpid-topology-v2 while recorded source_family is hpid-topology-v1.",
+    "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442",
+    "code_excerpt": "                    derived_for_part.append(\n                        MaskCandidate(\n                            semantic_name=part.semantic_name,\n                            semantic_parent=part.semantic_parent or domain.name,\n                            mask=mask,\n                            score=float(np.clip(anchor.score * 0.94, 0.0, 1.0)),\n                            source=(f\"hpid-topology-v2/{part.topology_relation}\"),\n                            prompt=part.prompts[0],\n                            source_reliability=0.82 * part.priority,\n                            metadata={\n                                \"source_family\": \"hpid-topology-v1\",\n                                \"root_origin\": root.metadata.get(\"root_origin\"),\n                                \"root_index\": root.metadata.get(\"root_index\"),"
+  },
+  {
+    "rule": "repetitive",
+    "source_file": "relational.py",
+    "start_line": 283,
+    "end_line": 294,
+    "explanation": "s=clip(.48+.65*local_contrast,0,.94), r=.76.",
+    "sha256": "f4c6f03d9d6c5ad4eb894c369b5a628d496189e736f73be509aa7f03190f2ca1",
+    "code_excerpt": "                MaskCandidate(\n                    semantic_name=\"device_button\",\n                    semantic_parent=\"device_body\",\n                    mask=np.asarray(row[\"mask\"], dtype=bool),\n                    score=float(np.clip(0.48 + 0.65 * float(row[\"contrast\"]), 0.0, 0.94)),\n                    source=\"hpid-repetitive-physical-detail-v1\",\n                    prompt=\"repeated compact control region\",\n                    source_reliability=0.76,\n                    metadata={\n                        \"source_family\": \"hpid-repetitive-physical-detail-v1\",\n                        \"candidate_key\": f\"{root_key}:repeated-detail:{detail_index:02d}\",\n                        \"parent_candidate_key\": root_key,"
+  },
+  {
+    "rule": "root_geometry",
+    "source_file": "root_geometry.py",
+    "start_line": 208,
+    "end_line": 216,
+    "explanation": "Terminal relabelling can raise r=max(r,.82) while preserving score/source; similarly handle refinement at lines384-390.",
+    "sha256": "ca661d61eecf25d1d44568ef4a44021c061f669a71b14c0a24503509c6fe938b",
+    "code_excerpt": "    }\n    return replace(\n        candidate,\n        semantic_name=part.semantic_name,\n        semantic_parent=semantic_parent,\n        prompt=part.prompts[0],\n        source_reliability=max(candidate.source_reliability, 0.82),\n        metadata=metadata,\n    )"
+  },
+  {
+    "rule": "source_family",
+    "source_file": "fusion.py",
+    "start_line": 153,
+    "end_line": 171,
+    "explanation": "Prefer explicit metadata source_family, else remove last source suffix; normalize DINO tiny/base names. These identifiers are not evidence of statistical independence.",
+    "sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "code_excerpt": "def _source_family(candidate: MaskCandidate) -> str:\n    \"\"\"Collapse correlated stages from one model stack into one evidence source.\"\"\"\n    explicit = candidate.metadata.get(\"source_family\")\n    if explicit is not None and str(explicit).strip():\n        family = str(explicit).strip()\n    else:\n        # Stage is the final path-like suffix. Model identifiers inside brackets\n        # can themselves contain '/', for example IDEA-Research/grounding-dino-tiny.\n        family = candidate.source.rsplit(\"/\", maxsplit=1)[0]\n    # Tiny/base checkpoints from one Grounding DINO architecture are correlated\n    # proposal sources, not independent consensus votes. Keep the repository and\n    # downstream segmenter visible while collapsing only the checkpoint scale.\n    family = re.sub(\n        r\"grounding-dino-(?:tiny|base)\",\n        \"grounding-dino\",\n        family,\n        flags=re.IGNORECASE,\n    )\n    return family"
+  },
+  {
+    "rule": "agreement",
+    "source_file": "fusion.py",
+    "start_line": 471,
+    "end_line": 511,
+    "explanation": "a=lambda+(1-lambda)*min(1,best_cross_family_overlap/.55); single-family a=1. Default lambda=1 makes a=1 for every candidate in this release.",
+    "sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "code_excerpt": "def _source_agreement_factors(\n    candidates: list[MaskCandidate], config: FusionConfig\n) -> tuple[list[float], int]:\n    \"\"\"Calibrate complementary sources without suppressing single-source classes.\"\"\"\n    factors = [1.0] * len(candidates)\n    uncorroborated = 0\n    by_semantic: dict[str, list[int]] = {}\n    for index, candidate in enumerate(candidates):\n        by_semantic.setdefault(candidate.semantic_name, []).append(index)\n    for indices in by_semantic.values():\n        families = {_source_family(candidates[index]) for index in indices}\n        if len(families) < 2:\n            continue\n        for index in indices:\n            candidate = candidates[index]\n            family = _source_family(candidate)\n            area = int(np.count_nonzero(candidate.mask))\n            best_overlap = 0.0\n            for other_index in indices:\n                if other_index == index:\n                    continue\n                other = candidates[other_index]\n                if _source_family(other) == family:\n                    continue\n                intersection = int(np.count_nonzero(candidate.mask & other.mask))\n                if not intersection:\n                    continue\n                other_area = int(np.count_nonzero(other.mask))\n                union = area + other_area - intersection\n                overlap = max(\n                    intersection / max(1, union),\n                    intersection / max(1, min(area, other_area)),\n                )\n                best_overlap = max(best_overlap, overlap)\n            agreement = min(1.0, best_overlap / config.full_agreement_overlap)\n            factors[index] = config.uncorroborated_source_penalty + (\n                1.0 - config.uncorroborated_source_penalty\n            ) * agreement\n            if best_overlap == 0.0:\n                uncorroborated += 1\n    return factors, uncorroborated"
+  },
+  {
+    "rule": "fusion_weight",
+    "source_file": "fusion.py",
+    "start_line": 1519,
+    "end_line": 1540,
+    "explanation": "t=clip(s,0,1); w0=clip((.45+.55*t)*r*a,.01,.995); if broad scene-layer predicate then w=clip(.72*w0,.01,.995), else w=w0.",
+    "sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "code_excerpt": "        # Detector scores rank proposals but are not calibrated pixel\n        # probabilities. A mask accepted by the segmenter therefore receives a\n        # foreground floor while the detector score still controls conflicts.\n        calibrated_score = 0.45 + 0.55 * float(np.clip(candidate.score, 0.0, 1.0))\n        reliability = float(\n            np.clip(\n                calibrated_score\n                * candidate.source_reliability\n                * agreement_factor,\n                0.01,\n                0.995,\n            )\n        )\n        if _is_broad_scene_layer(candidate):\n            reliability = float(\n                np.clip(\n                    reliability * config.scene_layer_fallback_weight,\n                    0.01,\n                    0.995,\n                )\n            )\n        proposal = _soft_membership(candidate.mask) * reliability"
+  },
+  {
+    "rule": "evidence_pooling",
+    "source_file": "fusion.py",
+    "start_line": 1542,
+    "end_line": 1557,
+    "explanation": "Multiply soft mask membership by w. Max within class/family, then noisy-OR across recorded families (or max when consensus disabled). No empirical probability calibration.",
+    "sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "code_excerpt": "        family = _source_family(candidate)\n        key = (class_id, family)\n        if key not in source_evidence:\n            source_evidence[key] = proposal\n        else:\n            source_evidence[key] = np.maximum(source_evidence[key], proposal)\n        source_sets[class_id].add(family)\n\n    # Repeated prompts and hierarchy stages from one model are correlated.\n    # They contribute their maximum support once; only independent model\n    # families receive noisy-OR consensus credit.\n    for (class_id, _), proposal in source_evidence.items():\n        if config.use_consensus:\n            evidence[class_id] = _combine_noisy_or(evidence[class_id], proposal)\n        else:\n            evidence[class_id] = np.maximum(evidence[class_id], proposal)"
+  }
+]

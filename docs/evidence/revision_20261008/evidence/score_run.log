@@ -1,0 +1,60 @@
+{
+  "n_cases": 226,
+  "n_candidates": 1951,
+  "n_recorded_families": 9,
+  "no_model_generation_or_retraining": true,
+  "config_equivalence_to_snapshot": [
+    {
+      "name": "general_asset_prompts.json",
+      "used_sha256": "0c90c30779b670bf17a681df74e5765e751ddb425f9d11a04b7fa2d9da2cddcf",
+      "snapshot_sha256": "0b27a54cb564bfc6599b4204fdf6817acbc75c03e262266739f88eac66279098",
+      "json_semantically_equal": true,
+      "newline_normalized_text_equal": true
+    },
+    {
+      "name": "paco_modern_extensions.json",
+      "used_sha256": "2264e676f7e8770d213bfd5920065b68c96a733b95a36ad036620eca0ad22e1d",
+      "snapshot_sha256": "b7ca6ed74a399f23b79e0b4273a3c71b90d605f99977fa0c38bd61dfbad750bd",
+      "json_semantically_equal": true,
+      "newline_normalized_text_equal": true
+    },
+    {
+      "name": "game_asset_extensions.json",
+      "used_sha256": "e2a02ce5a4ed8d8635e07cc48cc9380b28f73194d414ced6e0a04241b977b46a",
+      "snapshot_sha256": "9752259626433694665cb10eb194d37d59e2e1c000577612cd25e94dfed0dc6b",
+      "json_semantically_equal": true,
+      "newline_normalized_text_equal": true
+    }
+  ],
+  "prior_fixed_candidate_weights_exact_multiset_match": true,
+  "observed_global_ranges": {
+    "score": {
+      "min": 0.043385233730077744,
+      "max": 0.952812916266872
+    },
+    "source_reliability": {
+      "min": 0.27785634473435494,
+      "max": 1.13657607421875
+    },
+    "agreement": {
+      "min": 1.0,
+      "max": 1.0
+    },
+    "effective_weight": {
+      "min": 0.1316655294832865,
+      "max": 0.9606005189125426
+    }
+  },
+  "prompt_bank_matches_benchmark_sha256": true,
+  "frozen_fusion_matches_handoff_sha256": true,
+  "script_sha256": "28b18792e9938e3aa959c8e436ae86bce6cd8215224d03554dc4d56dbf81c66c",
+  "reliability_gt_one_n": 10,
+  "score_outside_unit_interval_n": 0,
+  "broad_scene_layer_n": 0,
+  "all_agreements_equal_one": true,
+  "score_reconstructed_n": 1213,
+  "score_reconstruction_mismatches": 0,
+  "reliability_reconstructed_n": 1951,
+  "reliability_reconstruction_mismatches": 7,
+  "root_composite_simple_formula_exception_n": 7
+}

@@ -1,0 +1,13 @@
+{
+  "cases": 226,
+  "total_candidates": 1951,
+  "total_references": 990,
+  "category_clusters": 60,
+  "exact_hpid_maps": 226,
+  "maximum_archived_evaluator_discrepancy": 0.0,
+  "candidate_masks_unchanged_all_cases": true,
+  "candidates_removed_on_refilter": 0,
+  "remainder_components_attached": 0,
+  "visibility_slivers_dropped": 14,
+  "all_17_stages_present_each_case": true
+}
