@@ -1,0 +1,4 @@
+# Path-sanitized snapshots of executed scientific analyses; do not rewrite
+# historical code for style. These exclusions apply only to this evidence
+# archive. Maintained repository code and tests keep their existing checks.
+extend-exclude = ["R1C4_FullImage42/**", "R1C5_PartCATSeg/**", "R1C6_Handoff253/**", "R2C2/**", "R2C3/**", "R2C4/**", "R2C6/**", "shared_code/**"]

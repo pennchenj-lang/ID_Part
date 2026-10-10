@@ -1,0 +1,31 @@
+{
+  "status": "R2_COMMENT4_LOCALIZED_REVISION_COMPLETE_WORD_DEFERRED",
+  "created_utc": "2026-10-10T02:42:46.526600+00:00",
+  "work_completed": "14 bilingual localized replacements, evidence and prose independently verified. Existing 50-setting sensitivity study reused; no new model experiment.",
+  "locations": [
+    "IV-E ownership score explanation",
+    "VI-H sensitivity results",
+    "Reviewer 2 Comment 4 response and locations",
+    "Supplementary S19.1/Table S32 interpretation"
+  ],
+  "word_modified": false,
+  "pdf_created": false,
+  "zip_created": false,
+  "new_model_inference": false,
+  "original_evidence_modified": false,
+  "original_evidence_rows": 11300,
+  "case_count": 226,
+  "settings_including_release": 50,
+  "independently_recomputed_statistics": 2400,
+  "pending": "Batch-apply alongside previously approved reviewer revisions when the user requests unified Word updates, preserving inline math and yellow highlighting. Resolve original text/hash anchors across all pending patches or apply merged edits in descending original paragraph order.",
+  "scientific_boundary": "Local parameter-neighborhood observations and module-removal effects; no claim of theoretical optimality, universal insensitivity or absence of development-set overfitting.",
+  "artifacts": {
+    "revision_payload.json": "2ada6d625bc1b2eb49011c41adab07516981b7356d40bc0bf10e1a0bb422a542",
+    "revision_text_zh.txt": "4f5c36159403e47db4479b89bbcd39fef034be4f729f121d4b8391936a44b435",
+    "revision_text_en.txt": "5a2008ba4d25bc1655af0429a8217adbd74920ed76111dd45f22393089949804",
+    "revision_qa.json": "d7390295a323c8af73b18591aed3289c0a2221939ace20c5c9fd9be1a149fa75",
+    "prose_independent_audit.json": "f9b9a703aadd5e40552d2437637f32a1dec8e02a5885ee3dc9c78b5fb98aca81",
+    "evidence_audit/summary.json": "ad918ead9a6583485eee20a3d5bd729594060c347d6e7005d23e01b8ff85de0a",
+    "evidence_audit/receipt.json": "c3c76247222920f99864393e0646accbab18e83daf6747989b9f6a1590d1432a"
+  }
+}

@@ -1,0 +1,590 @@
+{
+  "anonymous_id": "img_023",
+  "case_id": "car_automobile__u01",
+  "image_id": 67616,
+  "object_category": "car_(automobile)",
+  "expected_domain": "vehicle",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 16,
+    "predicted_part_count": 15,
+    "assignments": [
+      [
+        0,
+        7,
+        0.5130848288536072
+      ],
+      [
+        1,
+        9,
+        0.0
+      ],
+      [
+        2,
+        6,
+        0.5664739608764648
+      ],
+      [
+        3,
+        2,
+        0.5126760601997375
+      ],
+      [
+        4,
+        13,
+        0.017915310338139534
+      ],
+      [
+        5,
+        12,
+        0.41147541999816895
+      ],
+      [
+        6,
+        4,
+        0.06896551698446274
+      ],
+      [
+        7,
+        3,
+        0.25128865242004395
+      ],
+      [
+        8,
+        5,
+        0.47863247990608215
+      ],
+      [
+        9,
+        0,
+        0.3646492660045624
+      ],
+      [
+        10,
+        14,
+        0.0
+      ],
+      [
+        12,
+        1,
+        0.06137903407216072
+      ],
+      [
+        13,
+        8,
+        0.10196078568696976
+      ],
+      [
+        14,
+        10,
+        0.1492537260055542
+      ],
+      [
+        15,
+        11,
+        0.1242450401186943
+      ]
+    ],
+    "part_f1_at_025": 0.45161290322580644,
+    "part_precision_at_025": 0.4666666666666667,
+    "part_recall_at_025": 0.4375,
+    "matched_count_at_025": 7,
+    "part_f1_at_050": 0.19354838709677422,
+    "part_precision_at_050": 0.2,
+    "part_recall_at_050": 0.1875,
+    "matched_count_at_050": 3,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.1732401436888148,
+    "semantic_union_recall_at_025": 0.4,
+    "semantic_label_precision": 0.8,
+    "annotated_semantic_class_count": 15,
+    "predicted_semantic_class_count": 15,
+    "unmatched_predicted_semantic_classes": [
+      "door",
+      "taillight",
+      "visual_panel_01"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "bumper",
+        "union_iou": 0.36464927829830335,
+        "truth_pixels": 2256,
+        "predicted_pixels": 3133
+      },
+      {
+        "semantic": "fender",
+        "union_iou": 0.0,
+        "truth_pixels": 703,
+        "predicted_pixels": 677
+      },
+      {
+        "semantic": "grille",
+        "union_iou": 0.25128865979381443,
+        "truth_pixels": 776,
+        "predicted_pixels": 195
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.0,
+        "truth_pixels": 22,
+        "predicted_pixels": 79
+      },
+      {
+        "semantic": "headlight",
+        "union_iou": 0.47863247863247865,
+        "truth_pixels": 420,
+        "predicted_pixels": 272
+      },
+      {
+        "semantic": "hood",
+        "union_iou": 0.0,
+        "truth_pixels": 975,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "mirror",
+        "union_iou": 0.5664739884393064,
+        "truth_pixels": 160,
+        "predicted_pixels": 111
+      },
+      {
+        "semantic": "rim",
+        "union_iou": 0.0,
+        "truth_pixels": 219,
+        "predicted_pixels": 46
+      },
+      {
+        "semantic": "roof",
+        "union_iou": 0.5130848532910388,
+        "truth_pixels": 713,
+        "predicted_pixels": 1195
+      },
+      {
+        "semantic": "runningboard",
+        "union_iou": 0.0,
+        "truth_pixels": 155,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "tire",
+        "union_iou": 0.12424503882657463,
+        "truth_pixels": 1146,
+        "predicted_pixels": 157
+      },
+      {
+        "semantic": "turn_signal",
+        "union_iou": 0.0,
+        "truth_pixels": 18,
+        "predicted_pixels": 139
+      },
+      {
+        "semantic": "window",
+        "union_iou": 0.025694444444444443,
+        "truth_pixels": 525,
+        "predicted_pixels": 952
+      },
+      {
+        "semantic": "windshield",
+        "union_iou": 0.27453341360626127,
+        "truth_pixels": 1631,
+        "predicted_pixels": 486
+      },
+      {
+        "semantic": "wiper",
+        "union_iou": 0.0,
+        "truth_pixels": 139,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 16,
+    "predicted_part_count": 137,
+    "assignments": [
+      [
+        0,
+        64,
+        0.2888583242893219
+      ],
+      [
+        1,
+        79,
+        0.18396227061748505
+      ],
+      [
+        2,
+        0,
+        0.21875
+      ],
+      [
+        3,
+        57,
+        0.42126789689064026
+      ],
+      [
+        4,
+        13,
+        0.07407407462596893
+      ],
+      [
+        5,
+        98,
+        0.449438214302063
+      ],
+      [
+        6,
+        126,
+        0.18981100618839264
+      ],
+      [
+        7,
+        102,
+        0.1472684144973755
+      ],
+      [
+        8,
+        80,
+        0.18040089309215546
+      ],
+      [
+        9,
+        66,
+        0.28593459725379944
+      ],
+      [
+        10,
+        112,
+        0.1538461595773697
+      ],
+      [
+        11,
+        7,
+        0.0357142873108387
+      ],
+      [
+        12,
+        32,
+        0.12041884660720825
+      ],
+      [
+        13,
+        8,
+        0.12183908373117447
+      ],
+      [
+        14,
+        132,
+        0.29411765933036804
+      ],
+      [
+        15,
+        83,
+        0.054973822087049484
+      ]
+    ],
+    "part_f1_at_025": 0.06535947712418301,
+    "part_precision_at_025": 0.0364963503649635,
+    "part_recall_at_025": 0.3125,
+    "matched_count_at_025": 5,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.02796828789477146,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.1,
+    "annotated_semantic_class_count": 15,
+    "predicted_semantic_class_count": 40,
+    "unmatched_predicted_semantic_classes": [
+      "antenna",
+      "container_base",
+      "container_body",
+      "container_bottom",
+      "container_handle",
+      "container_inner",
+      "container_inner_wall",
+      "container_label",
+      "container_lid",
+      "container_opening",
+      "container_outer_side",
+      "container_rim",
+      "container_side",
+      "container_zipper",
+      "daily_object_base",
+      "daily_object_belt_loop",
+      "daily_object_body",
+      "daily_object_border",
+      "daily_object_bottom",
+      "daily_object_closure",
+      "daily_object_hem",
+      "daily_object_lead",
+      "daily_object_neck",
+      "daily_object_punt",
+      "daily_object_rough_surface",
+      "daily_object_shoulder",
+      "daily_object_top",
+      "device_body",
+      "device_screen",
+      "furniture_leg",
+      "tool_prop_face",
+      "tool_prop_handle",
+      "tool_prop_side",
+      "unmapped_paco_2162",
+      "unmapped_paco_2336",
+      "unmapped_paco_2337"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "bumper",
+        "union_iou": 0.0,
+        "truth_pixels": 2256,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "fender",
+        "union_iou": 0.0,
+        "truth_pixels": 703,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "grille",
+        "union_iou": 0.11729141475211609,
+        "truth_pixels": 776,
+        "predicted_pixels": 148
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.0,
+        "truth_pixels": 22,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "headlight",
+        "union_iou": 0.0,
+        "truth_pixels": 420,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "hood",
+        "union_iou": 0.10645848119233499,
+        "truth_pixels": 975,
+        "predicted_pixels": 2143
+      },
+      {
+        "semantic": "mirror",
+        "union_iou": 0.0,
+        "truth_pixels": 160,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "rim",
+        "union_iou": 0.0,
+        "truth_pixels": 219,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "roof",
+        "union_iou": 0.0,
+        "truth_pixels": 713,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "runningboard",
+        "union_iou": 0.0,
+        "truth_pixels": 155,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "tire",
+        "union_iou": 0.0589159465828751,
+        "truth_pixels": 1146,
+        "predicted_pixels": 202
+      },
+      {
+        "semantic": "turn_signal",
+        "union_iou": 0.0,
+        "truth_pixels": 18,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "window",
+        "union_iou": 0.1368584758942457,
+        "truth_pixels": 525,
+        "predicted_pixels": 206
+      },
+      {
+        "semantic": "windshield",
+        "union_iou": 0.0,
+        "truth_pixels": 1631,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "wiper",
+        "union_iou": 0.0,
+        "truth_pixels": 139,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 61,
+    "foreground_pixels": 9164,
+    "unmapped_prediction_pixels": 967,
+    "unmapped_predicted_components": 9,
+    "component_area_min": 1,
+    "component_area_median": 10.0,
+    "component_area_max": 1921,
+    "component_source_labels": [
+      0,
+      20,
+      24,
+      25,
+      25,
+      28,
+      28,
+      29,
+      29,
+      29,
+      54,
+      55,
+      55,
+      55,
+      55,
+      59,
+      59,
+      59,
+      59,
+      60,
+      60,
+      61,
+      61,
+      61,
+      65,
+      65,
+      65,
+      70,
+      70,
+      70,
+      71,
+      71,
+      71,
+      71,
+      73,
+      82,
+      82,
+      86,
+      86,
+      86,
+      87,
+      88,
+      88,
+      119,
+      119,
+      119,
+      119,
+      145,
+      162,
+      162,
+      162,
+      162,
+      162,
+      165,
+      165,
+      165,
+      165,
+      205,
+      205,
+      205,
+      207,
+      207,
+      210,
+      210,
+      211,
+      211,
+      211,
+      211,
+      215,
+      225,
+      226,
+      232,
+      235,
+      249,
+      249,
+      249,
+      249,
+      251,
+      257,
+      257,
+      264,
+      276,
+      276,
+      276,
+      276,
+      277,
+      277,
+      286,
+      288,
+      294,
+      294,
+      307,
+      314,
+      317,
+      317,
+      328,
+      328,
+      336,
+      336,
+      337,
+      337,
+      339,
+      342,
+      342,
+      342,
+      343,
+      343,
+      361,
+      361,
+      363,
+      363,
+      364,
+      364,
+      365,
+      365,
+      365,
+      367,
+      367,
+      367,
+      369,
+      369,
+      369,
+      369,
+      370,
+      370,
+      370,
+      370,
+      370,
+      370,
+      427,
+      427,
+      444,
+      444,
+      449,
+      449,
+      449,
+      455
+    ]
+  },
+  "shape_hw": [
+    126,
+    176
+  ],
+  "annotated_pixels": 9858,
+  "overlapping_annotation_pixels": 0
+}

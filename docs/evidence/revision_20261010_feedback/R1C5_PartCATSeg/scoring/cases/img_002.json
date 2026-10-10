@@ -1,0 +1,253 @@
+{
+  "anonymous_id": "img_002",
+  "case_id": "laptop_computer__u01",
+  "image_id": 578775,
+  "object_category": "laptop_computer",
+  "expected_domain": "device",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 7,
+    "predicted_part_count": 15,
+    "assignments": [
+      [
+        0,
+        0,
+        0.0
+      ],
+      [
+        1,
+        10,
+        0.913384199142456
+      ],
+      [
+        2,
+        11,
+        0.49188482761383057
+      ],
+      [
+        3,
+        2,
+        0.6750722527503967
+      ],
+      [
+        4,
+        12,
+        0.11685534566640854
+      ],
+      [
+        5,
+        1,
+        0.0
+      ],
+      [
+        6,
+        3,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.27272727272727276,
+    "part_precision_at_025": 0.2,
+    "part_recall_at_025": 0.42857142857142855,
+    "matched_count_at_025": 3,
+    "part_f1_at_050": 0.18181818181818182,
+    "part_precision_at_050": 0.13333333333333333,
+    "part_recall_at_050": 0.2857142857142857,
+    "matched_count_at_050": 2,
+    "part_f1_at_075": 0.09090909090909091,
+    "part_precision_at_075": 0.06666666666666667,
+    "part_recall_at_075": 0.14285714285714285,
+    "matched_count_at_075": 1,
+    "mean_semantic_union_iou": 0.2971916078991246,
+    "semantic_union_recall_at_025": 0.42857142857142855,
+    "semantic_label_precision": 0.5,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 8,
+    "unmatched_predicted_semantic_classes": [
+      "bezel",
+      "hinge",
+      "key",
+      "port"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "base_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 14719,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "cable",
+        "union_iou": 0.0,
+        "truth_pixels": 29,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "camera",
+        "union_iou": 0.0,
+        "truth_pixels": 98,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "keyboard",
+        "union_iou": 0.6750722615369281,
+        "truth_pixels": 15510,
+        "predicted_pixels": 18102
+      },
+      {
+        "semantic": "logo",
+        "union_iou": 0.0,
+        "truth_pixels": 72,
+        "predicted_pixels": 91
+      },
+      {
+        "semantic": "screen",
+        "union_iou": 0.9133841770030171,
+        "truth_pixels": 22458,
+        "predicted_pixels": 23203
+      },
+      {
+        "semantic": "touchpad",
+        "union_iou": 0.4918848167539267,
+        "truth_pixels": 2478,
+        "predicted_pixels": 3221
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 7,
+    "predicted_part_count": 15,
+    "assignments": [
+      [
+        0,
+        1,
+        0.0
+      ],
+      [
+        1,
+        7,
+        0.6390921473503113
+      ],
+      [
+        2,
+        0,
+        0.0
+      ],
+      [
+        3,
+        2,
+        0.0
+      ],
+      [
+        4,
+        3,
+        0.0
+      ],
+      [
+        5,
+        14,
+        0.026455026119947433
+      ],
+      [
+        6,
+        4,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.09090909090909091,
+    "part_precision_at_025": 0.06666666666666667,
+    "part_recall_at_025": 0.14285714285714285,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.09090909090909091,
+    "part_precision_at_050": 0.06666666666666667,
+    "part_recall_at_050": 0.14285714285714285,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.12148947951273534,
+    "semantic_union_recall_at_025": 0.14285714285714285,
+    "semantic_label_precision": 0.5,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 2,
+    "unmatched_predicted_semantic_classes": [
+      "button"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "base_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 14719,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "cable",
+        "union_iou": 0.0,
+        "truth_pixels": 29,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "camera",
+        "union_iou": 0.0,
+        "truth_pixels": 98,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "keyboard",
+        "union_iou": 0.0,
+        "truth_pixels": 15510,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "logo",
+        "union_iou": 0.0,
+        "truth_pixels": 72,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "screen",
+        "union_iou": 0.8504263565891473,
+        "truth_pixels": 22458,
+        "predicted_pixels": 25283
+      },
+      {
+        "semantic": "touchpad",
+        "union_iou": 0.0,
+        "truth_pixels": 2478,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 4,
+    "foreground_pixels": 25289,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 6,
+    "component_area_median": 121.0,
+    "component_area_max": 19211,
+    "component_source_labels": [
+      101,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      343,
+      344,
+      344,
+      344,
+      344,
+      344,
+      344,
+      344
+    ]
+  },
+  "shape_hw": [
+    333,
+    491
+  ],
+  "annotated_pixels": 55364,
+  "overlapping_annotation_pixels": 0
+}

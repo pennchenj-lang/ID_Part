@@ -1,0 +1,270 @@
+{
+  "anonymous_id": "img_009",
+  "case_id": "chair__u01",
+  "image_id": 73549,
+  "object_category": "chair",
+  "expected_domain": "furniture",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 7,
+    "predicted_part_count": 3,
+    "assignments": [
+      [
+        2,
+        0,
+        0.5405643582344055
+      ],
+      [
+        3,
+        2,
+        0.0301204826682806
+      ],
+      [
+        6,
+        1,
+        0.2607709765434265
+      ]
+    ],
+    "part_f1_at_025": 0.4,
+    "part_precision_at_025": 0.6666666666666666,
+    "part_recall_at_025": 0.2857142857142857,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.2,
+    "part_precision_at_050": 0.3333333333333333,
+    "part_recall_at_050": 0.14285714285714285,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.02554621848739496,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.3333333333333333,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 3,
+    "unmatched_predicted_semantic_classes": [
+      "backrest",
+      "cushion"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "apron",
+        "union_iou": 0.0,
+        "truth_pixels": 206,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "leg",
+        "union_iou": 0.17882352941176471,
+        "truth_pixels": 151,
+        "predicted_pixels": 350
+      },
+      {
+        "semantic": "rail",
+        "union_iou": 0.0,
+        "truth_pixels": 1087,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "seat",
+        "union_iou": 0.0,
+        "truth_pixels": 100,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "spindle",
+        "union_iou": 0.0,
+        "truth_pixels": 209,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "stile",
+        "union_iou": 0.0,
+        "truth_pixels": 408,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "stretcher",
+        "union_iou": 0.0,
+        "truth_pixels": 52,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 7,
+    "predicted_part_count": 38,
+    "assignments": [
+      [
+        0,
+        0,
+        0.0
+      ],
+      [
+        1,
+        1,
+        0.0
+      ],
+      [
+        2,
+        2,
+        0.013040494173765182
+      ],
+      [
+        3,
+        3,
+        0.0
+      ],
+      [
+        4,
+        4,
+        0.0
+      ],
+      [
+        5,
+        5,
+        0.0
+      ],
+      [
+        6,
+        23,
+        0.032407406717538834
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.05555555555555555,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 18,
+    "unmatched_predicted_semantic_classes": [
+      "container_body",
+      "container_handle",
+      "container_inner",
+      "container_label",
+      "container_lid",
+      "container_opening",
+      "container_outer_side",
+      "container_rim",
+      "container_sipper",
+      "daily_object_body",
+      "daily_object_tip",
+      "daily_object_top",
+      "device_blade",
+      "device_body",
+      "device_button",
+      "device_cable",
+      "unmapped_paco_2336"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "apron",
+        "union_iou": 0.0,
+        "truth_pixels": 206,
+        "predicted_pixels": 4
+      },
+      {
+        "semantic": "leg",
+        "union_iou": 0.0,
+        "truth_pixels": 151,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "rail",
+        "union_iou": 0.0,
+        "truth_pixels": 1087,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "seat",
+        "union_iou": 0.0,
+        "truth_pixels": 100,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "spindle",
+        "union_iou": 0.0,
+        "truth_pixels": 209,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "stile",
+        "union_iou": 0.0,
+        "truth_pixels": 408,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "stretcher",
+        "union_iou": 0.0,
+        "truth_pixels": 52,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 27,
+    "foreground_pixels": 1221,
+    "unmapped_prediction_pixels": 7,
+    "unmapped_predicted_components": 1,
+    "component_area_min": 1,
+    "component_area_median": 9.0,
+    "component_area_max": 389,
+    "component_source_labels": [
+      2,
+      43,
+      47,
+      47,
+      55,
+      56,
+      57,
+      60,
+      60,
+      61,
+      62,
+      62,
+      63,
+      63,
+      63,
+      63,
+      64,
+      64,
+      65,
+      67,
+      103,
+      193,
+      193,
+      216,
+      218,
+      218,
+      218,
+      252,
+      258,
+      317,
+      317,
+      318,
+      336,
+      370,
+      374,
+      413,
+      420,
+      427
+    ]
+  },
+  "shape_hw": [
+    108,
+    83
+  ],
+  "annotated_pixels": 2213,
+  "overlapping_annotation_pixels": 0
+}

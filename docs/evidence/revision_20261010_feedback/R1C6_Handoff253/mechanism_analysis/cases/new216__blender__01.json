@@ -1,0 +1,333 @@
+{
+  "request": {
+    "request_id": "new216__blender__01",
+    "case_id": "blender__01",
+    "cohort": "new216",
+    "image_id": 107167,
+    "source_image_sha256": "1003ac483b5283aafe57a7c7be36be518b8e06475fa8763c25c918cd0cb683e1",
+    "object_annotation_id": 108820,
+    "object_category": "blender",
+    "expected_domain": "device",
+    "domain": "device",
+    "expected_profile": "blender",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\blender__01\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\blender__01",
+    "target_part_name": "food_cup",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\blender__01\\parts_crop\\002_food_cup.png",
+    "target_mask_sha256": "f7eaca8a8f94f689947440d2d266b0dc9cb85e0d67e3db8b3ef46a38c55ed1b0",
+    "target_area_px": 28844,
+    "target_object_fraction": 0.36225258715965036,
+    "defect_mode": "boundary",
+    "defect_seed": 20260845,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 17,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__01\\groups.json",
+    "hpid_group_map_sha256": "0c19d11e1328e03bf020c4d585d037eaa945c356b28f8dad8a1c3102f138e0e0",
+    "hpid_groups_sha256": "b137ca6c86283571d57d06852f321a015878e4022a503ceca69c4decef470c8f"
+  },
+  "summary": {
+    "request_id": "new216__blender__01",
+    "cohort": "new216",
+    "domain": "device",
+    "object_category": "blender",
+    "target": "food_cup",
+    "normalized_target": "jar",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 1,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.7868157177765919,
+    "accepted_best_matching_iou": 0.7868157177765919,
+    "native_part_best_matching_iou": 0,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.9384229130190611,
+    "group_best_any_semantic_iou": 0.9466160151954414,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 1
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__blender__01",
+      "cohort": "new216",
+      "raw_identity": "proposal/0006",
+      "semantic": "device_jar",
+      "target_iou": 0.7868157177765919,
+      "mask_area": 34772,
+      "raw_candidate_index_zero_based": 5,
+      "upstream_candidate_key": "root:1/visual-region:02",
+      "fingerprint": "6c8d933b39bd3316279dfa01f7d0b5cc8ca06d192bfbc6b1fa8c4a4269641ba8",
+      "accepted_by_fuser": true,
+      "accepted_index": 5,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "device/device/center/01",
+          "semantic": "device",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 29096,
+          "truth_overlap_pixels": 27999,
+          "final_target_iou": 0.9384229130190611
+        },
+        {
+          "identity": "device_jar/device_lid/center/01",
+          "semantic": "device_lid",
+          "normalized_semantic": "lid",
+          "candidate_overlap_pixels": 5660,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        },
+        {
+          "identity": "device/device_base/center/01",
+          "semantic": "device_base",
+          "normalized_semantic": "base",
+          "candidate_overlap_pixels": 12,
+          "truth_overlap_pixels": 10,
+          "final_target_iou": 0.0019992369324685236
+        },
+        {
+          "identity": "device_body/device_handle/left/01",
+          "semantic": "device_handle",
+          "normalized_semantic": "handle",
+          "candidate_overlap_pixels": 4,
+          "truth_overlap_pixels": 4,
+          "final_target_iou": 0.0017539463793535455
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/device_body",
+          "semantic": "device_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 29072,
+          "truth_overlap_pixels": 27999,
+          "final_target_iou": 0.9466160151954414
+        },
+        {
+          "identity": "object_001/device_lid/004",
+          "semantic": "device_lid",
+          "normalized_semantic": "lid",
+          "candidate_overlap_pixels": 5684,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        },
+        {
+          "identity": "object_001/device_base/002",
+          "semantic": "device_base",
+          "normalized_semantic": "base",
+          "candidate_overlap_pixels": 12,
+          "truth_overlap_pixels": 10,
+          "final_target_iou": 0.001999206421878338
+        },
+        {
+          "identity": "object_001/device_handle/003",
+          "semantic": "device_handle",
+          "normalized_semantic": "handle",
+          "candidate_overlap_pixels": 4,
+          "truth_overlap_pixels": 4,
+          "final_target_iou": 0.0017525740931993866
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "device/device/center/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device",
+      "normalized_semantic": "body",
+      "target_iou": 0.9384229130190611,
+      "area_px": 29834
+    },
+    {
+      "part_id": "device/device_base/center/01",
+      "group_id": "object_001/device_base/002",
+      "semantic": "device_base",
+      "normalized_semantic": "base",
+      "target_iou": 0.0019992369324685236,
+      "area_px": 36812
+    },
+    {
+      "part_id": "device_body/device_handle/left/01",
+      "group_id": "object_001/device_handle/003",
+      "semantic": "device_handle",
+      "normalized_semantic": "handle",
+      "target_iou": 0.0017539463793535455,
+      "area_px": 3140
+    },
+    {
+      "part_id": "device_jar/device_lid/center/01",
+      "group_id": "object_001/device_lid/004",
+      "semantic": "device_lid",
+      "normalized_semantic": "lid",
+      "target_iou": 0.0,
+      "area_px": 5717
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/device_body",
+      "semantic": "device_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "device/device/center/01"
+      ],
+      "target_iou": 0.9466160151954414,
+      "area_px": 29572,
+      "evidence": "conservative_visual_merge"
+    },
+    {
+      "group_id": "object_001/device_base/002",
+      "semantic": "device_base",
+      "normalized_semantic": "base",
+      "member_part_ids": [
+        "device/device_base/center/01"
+      ],
+      "target_iou": 0.001999206421878338,
+      "area_px": 36813,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_handle/003",
+      "semantic": "device_handle",
+      "normalized_semantic": "handle",
+      "member_part_ids": [
+        "device_body/device_handle/left/01"
+      ],
+      "target_iou": 0.0017525740931993866,
+      "area_px": 3165,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_lid/004",
+      "semantic": "device_lid",
+      "normalized_semantic": "lid",
+      "member_part_ids": [
+        "device_jar/device_lid/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 5953,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 8,
+    "accepted_candidate_count": 8,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 4,
+    "identity_hypothesis_count": 8,
+    "identity_group_count": 7,
+    "identity_hypotheses_merged": 1,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 5,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "device_body/device_handle/left/01",
+      "device_jar/device_lid/center/01"
+    ],
+    "classes_with_multiple_sources": [
+      "device_base"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 3,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 75503,
+    "lost_root_pixels_before_conservation": 2,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__01\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__blender__01",
+      "cohort": "new216",
+      "domain": "device",
+      "object_category": "blender",
+      "target": "jar",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.7868157177765919,
+      "accepted_best_iou": 0.7868157177765919,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.9466160151954414,
+      "part_to_group_fates": []
+    },
+    {
+      "request_id": "new216__blender__01",
+      "cohort": "new216",
+      "domain": "device",
+      "object_category": "blender",
+      "target": "jar",
+      "threshold": "050",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.7868157177765919,
+      "accepted_best_iou": 0.7868157177765919,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.9466160151954414,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

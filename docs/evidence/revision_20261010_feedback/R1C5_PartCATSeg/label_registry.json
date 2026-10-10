@@ -1,0 +1,2822 @@
+{
+  "source": "Public PACO training taxonomy categories only",
+  "taxonomy_file_sha256": "99d5bb11554393f56f50622e0d7b91448763931fbde87e2c7efa06fe7923fd12",
+  "selection": "All object-part pairs sorted by numeric category id",
+  "labels": [
+    {
+      "label_index": 0,
+      "paco_category_id": 2000,
+      "paco_name": "car_(automobile):antenna",
+      "rendered_name": "car (automobile)'s antenna"
+    },
+    {
+      "label_index": 1,
+      "paco_category_id": 2001,
+      "paco_name": "chair:apron",
+      "rendered_name": "chair's apron"
+    },
+    {
+      "label_index": 2,
+      "paco_category_id": 2002,
+      "paco_name": "table:apron",
+      "rendered_name": "table's apron"
+    },
+    {
+      "label_index": 3,
+      "paco_category_id": 2003,
+      "paco_name": "chair:arm",
+      "rendered_name": "chair's arm"
+    },
+    {
+      "label_index": 4,
+      "paco_category_id": 2004,
+      "paco_name": "bench:arm",
+      "rendered_name": "bench's arm"
+    },
+    {
+      "label_index": 5,
+      "paco_category_id": 2005,
+      "paco_name": "chair:back",
+      "rendered_name": "chair's back"
+    },
+    {
+      "label_index": 6,
+      "paco_category_id": 2006,
+      "paco_name": "guitar:back",
+      "rendered_name": "guitar's back"
+    },
+    {
+      "label_index": 7,
+      "paco_category_id": 2007,
+      "paco_name": "remote_control:back",
+      "rendered_name": "remote control's back"
+    },
+    {
+      "label_index": 8,
+      "paco_category_id": 2008,
+      "paco_name": "laptop_computer:back",
+      "rendered_name": "laptop computer's back"
+    },
+    {
+      "label_index": 9,
+      "paco_category_id": 2009,
+      "paco_name": "bench:back",
+      "rendered_name": "bench's back"
+    },
+    {
+      "label_index": 10,
+      "paco_category_id": 2010,
+      "paco_name": "telephone:back_cover",
+      "rendered_name": "telephone's back cover"
+    },
+    {
+      "label_index": 11,
+      "paco_category_id": 2011,
+      "paco_name": "cellular_telephone:back_cover",
+      "rendered_name": "cellular telephone's back cover"
+    },
+    {
+      "label_index": 12,
+      "paco_category_id": 2012,
+      "paco_name": "shoe:backstay",
+      "rendered_name": "shoe's backstay"
+    },
+    {
+      "label_index": 13,
+      "paco_category_id": 2013,
+      "paco_name": "belt:bar",
+      "rendered_name": "belt's bar"
+    },
+    {
+      "label_index": 14,
+      "paco_category_id": 2014,
+      "paco_name": "pen:barrel",
+      "rendered_name": "pen's barrel"
+    },
+    {
+      "label_index": 15,
+      "paco_category_id": 2015,
+      "paco_name": "bottle:base",
+      "rendered_name": "bottle's base"
+    },
+    {
+      "label_index": 16,
+      "paco_category_id": 2016,
+      "paco_name": "bowl:base",
+      "rendered_name": "bowl's base"
+    },
+    {
+      "label_index": 17,
+      "paco_category_id": 2017,
+      "paco_name": "clock:base",
+      "rendered_name": "clock's base"
+    },
+    {
+      "label_index": 18,
+      "paco_category_id": 2018,
+      "paco_name": "drum_(musical_instrument):base",
+      "rendered_name": "drum (musical instrument)'s base"
+    },
+    {
+      "label_index": 19,
+      "paco_category_id": 2019,
+      "paco_name": "bucket:base",
+      "rendered_name": "bucket's base"
+    },
+    {
+      "label_index": 20,
+      "paco_category_id": 2020,
+      "paco_name": "handbag:base",
+      "rendered_name": "handbag's base"
+    },
+    {
+      "label_index": 21,
+      "paco_category_id": 2021,
+      "paco_name": "fan:base",
+      "rendered_name": "fan's base"
+    },
+    {
+      "label_index": 22,
+      "paco_category_id": 2022,
+      "paco_name": "plate:base",
+      "rendered_name": "plate's base"
+    },
+    {
+      "label_index": 23,
+      "paco_category_id": 2023,
+      "paco_name": "television_set:base",
+      "rendered_name": "television set's base"
+    },
+    {
+      "label_index": 24,
+      "paco_category_id": 2024,
+      "paco_name": "basket:base",
+      "rendered_name": "basket's base"
+    },
+    {
+      "label_index": 25,
+      "paco_category_id": 2025,
+      "paco_name": "can:base",
+      "rendered_name": "can's base"
+    },
+    {
+      "label_index": 26,
+      "paco_category_id": 2026,
+      "paco_name": "mug:base",
+      "rendered_name": "mug's base"
+    },
+    {
+      "label_index": 27,
+      "paco_category_id": 2027,
+      "paco_name": "jar:base",
+      "rendered_name": "jar's base"
+    },
+    {
+      "label_index": 28,
+      "paco_category_id": 2028,
+      "paco_name": "soap:base",
+      "rendered_name": "soap's base"
+    },
+    {
+      "label_index": 29,
+      "paco_category_id": 2029,
+      "paco_name": "cup:base",
+      "rendered_name": "cup's base"
+    },
+    {
+      "label_index": 30,
+      "paco_category_id": 2030,
+      "paco_name": "kettle:base",
+      "rendered_name": "kettle's base"
+    },
+    {
+      "label_index": 31,
+      "paco_category_id": 2031,
+      "paco_name": "tray:base",
+      "rendered_name": "tray's base"
+    },
+    {
+      "label_index": 32,
+      "paco_category_id": 2032,
+      "paco_name": "chair:base",
+      "rendered_name": "chair's base"
+    },
+    {
+      "label_index": 33,
+      "paco_category_id": 2033,
+      "paco_name": "pan_(for_cooking):base",
+      "rendered_name": "pan (for cooking)'s base"
+    },
+    {
+      "label_index": 34,
+      "paco_category_id": 2034,
+      "paco_name": "blender:base",
+      "rendered_name": "blender's base"
+    },
+    {
+      "label_index": 35,
+      "paco_category_id": 2035,
+      "paco_name": "lamp:base",
+      "rendered_name": "lamp's base"
+    },
+    {
+      "label_index": 36,
+      "paco_category_id": 2036,
+      "paco_name": "glass_(drink_container):base",
+      "rendered_name": "glass (drink container)'s base"
+    },
+    {
+      "label_index": 37,
+      "paco_category_id": 2037,
+      "paco_name": "laptop_computer:base_panel",
+      "rendered_name": "laptop computer's base panel"
+    },
+    {
+      "label_index": 38,
+      "paco_category_id": 2038,
+      "paco_name": "bicycle:basket",
+      "rendered_name": "bicycle's basket"
+    },
+    {
+      "label_index": 39,
+      "paco_category_id": 2039,
+      "paco_name": "telephone:bezel",
+      "rendered_name": "telephone's bezel"
+    },
+    {
+      "label_index": 40,
+      "paco_category_id": 2040,
+      "paco_name": "cellular_telephone:bezel",
+      "rendered_name": "cellular telephone's bezel"
+    },
+    {
+      "label_index": 41,
+      "paco_category_id": 2041,
+      "paco_name": "knife:blade",
+      "rendered_name": "knife's blade"
+    },
+    {
+      "label_index": 42,
+      "paco_category_id": 2042,
+      "paco_name": "fan:blade",
+      "rendered_name": "fan's blade"
+    },
+    {
+      "label_index": 43,
+      "paco_category_id": 2043,
+      "paco_name": "blender:blade",
+      "rendered_name": "blender's blade"
+    },
+    {
+      "label_index": 44,
+      "paco_category_id": 2044,
+      "paco_name": "pliers:blade",
+      "rendered_name": "pliers's blade"
+    },
+    {
+      "label_index": 45,
+      "paco_category_id": 2045,
+      "paco_name": "scissors:blade",
+      "rendered_name": "scissors's blade"
+    },
+    {
+      "label_index": 46,
+      "paco_category_id": 2046,
+      "paco_name": "plastic_bag:body",
+      "rendered_name": "plastic bag's body"
+    },
+    {
+      "label_index": 47,
+      "paco_category_id": 2047,
+      "paco_name": "bottle:body",
+      "rendered_name": "bottle's body"
+    },
+    {
+      "label_index": 48,
+      "paco_category_id": 2048,
+      "paco_name": "guitar:body",
+      "rendered_name": "guitar's body"
+    },
+    {
+      "label_index": 49,
+      "paco_category_id": 2049,
+      "paco_name": "bowl:body",
+      "rendered_name": "bowl's body"
+    },
+    {
+      "label_index": 50,
+      "paco_category_id": 2050,
+      "paco_name": "drill:body",
+      "rendered_name": "drill's body"
+    },
+    {
+      "label_index": 51,
+      "paco_category_id": 2051,
+      "paco_name": "pencil:body",
+      "rendered_name": "pencil's body"
+    },
+    {
+      "label_index": 52,
+      "paco_category_id": 2052,
+      "paco_name": "drum_(musical_instrument):body",
+      "rendered_name": "drum (musical instrument)'s body"
+    },
+    {
+      "label_index": 53,
+      "paco_category_id": 2053,
+      "paco_name": "sweater:body",
+      "rendered_name": "sweater's body"
+    },
+    {
+      "label_index": 54,
+      "paco_category_id": 2054,
+      "paco_name": "trash_can:body",
+      "rendered_name": "trash can's body"
+    },
+    {
+      "label_index": 55,
+      "paco_category_id": 2055,
+      "paco_name": "scarf:body",
+      "rendered_name": "scarf's body"
+    },
+    {
+      "label_index": 56,
+      "paco_category_id": 2056,
+      "paco_name": "bucket:body",
+      "rendered_name": "bucket's body"
+    },
+    {
+      "label_index": 57,
+      "paco_category_id": 2057,
+      "paco_name": "handbag:body",
+      "rendered_name": "handbag's body"
+    },
+    {
+      "label_index": 58,
+      "paco_category_id": 2058,
+      "paco_name": "plate:body",
+      "rendered_name": "plate's body"
+    },
+    {
+      "label_index": 59,
+      "paco_category_id": 2059,
+      "paco_name": "calculator:body",
+      "rendered_name": "calculator's body"
+    },
+    {
+      "label_index": 60,
+      "paco_category_id": 2060,
+      "paco_name": "can:body",
+      "rendered_name": "can's body"
+    },
+    {
+      "label_index": 61,
+      "paco_category_id": 2061,
+      "paco_name": "mouse_(computer_equipment):body",
+      "rendered_name": "mouse (computer equipment)'s body"
+    },
+    {
+      "label_index": 62,
+      "paco_category_id": 2062,
+      "paco_name": "mug:body",
+      "rendered_name": "mug's body"
+    },
+    {
+      "label_index": 63,
+      "paco_category_id": 2063,
+      "paco_name": "jar:body",
+      "rendered_name": "jar's body"
+    },
+    {
+      "label_index": 64,
+      "paco_category_id": 2064,
+      "paco_name": "soap:body",
+      "rendered_name": "soap's body"
+    },
+    {
+      "label_index": 65,
+      "paco_category_id": 2065,
+      "paco_name": "towel:body",
+      "rendered_name": "towel's body"
+    },
+    {
+      "label_index": 66,
+      "paco_category_id": 2066,
+      "paco_name": "kettle:body",
+      "rendered_name": "kettle's body"
+    },
+    {
+      "label_index": 67,
+      "paco_category_id": 2067,
+      "paco_name": "glass_(drink_container):body",
+      "rendered_name": "glass (drink container)'s body"
+    },
+    {
+      "label_index": 68,
+      "paco_category_id": 2068,
+      "paco_name": "vase:body",
+      "rendered_name": "vase's body"
+    },
+    {
+      "label_index": 69,
+      "paco_category_id": 2069,
+      "paco_name": "dog:body",
+      "rendered_name": "dog's body"
+    },
+    {
+      "label_index": 70,
+      "paco_category_id": 2070,
+      "paco_name": "towel:border",
+      "rendered_name": "towel's border"
+    },
+    {
+      "label_index": 71,
+      "paco_category_id": 2071,
+      "paco_name": "can:bottom",
+      "rendered_name": "can's bottom"
+    },
+    {
+      "label_index": 72,
+      "paco_category_id": 2072,
+      "paco_name": "bucket:bottom",
+      "rendered_name": "bucket's bottom"
+    },
+    {
+      "label_index": 73,
+      "paco_category_id": 2073,
+      "paco_name": "handbag:bottom",
+      "rendered_name": "handbag's bottom"
+    },
+    {
+      "label_index": 74,
+      "paco_category_id": 2074,
+      "paco_name": "mug:bottom",
+      "rendered_name": "mug's bottom"
+    },
+    {
+      "label_index": 75,
+      "paco_category_id": 2075,
+      "paco_name": "bottle:bottom",
+      "rendered_name": "bottle's bottom"
+    },
+    {
+      "label_index": 76,
+      "paco_category_id": 2076,
+      "paco_name": "crate:bottom",
+      "rendered_name": "crate's bottom"
+    },
+    {
+      "label_index": 77,
+      "paco_category_id": 2077,
+      "paco_name": "bowl:bottom",
+      "rendered_name": "bowl's bottom"
+    },
+    {
+      "label_index": 78,
+      "paco_category_id": 2078,
+      "paco_name": "jar:bottom",
+      "rendered_name": "jar's bottom"
+    },
+    {
+      "label_index": 79,
+      "paco_category_id": 2079,
+      "paco_name": "pan_(for_cooking):bottom",
+      "rendered_name": "pan (for cooking)'s bottom"
+    },
+    {
+      "label_index": 80,
+      "paco_category_id": 2080,
+      "paco_name": "box:bottom",
+      "rendered_name": "box's bottom"
+    },
+    {
+      "label_index": 81,
+      "paco_category_id": 2081,
+      "paco_name": "plate:bottom",
+      "rendered_name": "plate's bottom"
+    },
+    {
+      "label_index": 82,
+      "paco_category_id": 2082,
+      "paco_name": "soap:bottom",
+      "rendered_name": "soap's bottom"
+    },
+    {
+      "label_index": 83,
+      "paco_category_id": 2083,
+      "paco_name": "tray:bottom",
+      "rendered_name": "tray's bottom"
+    },
+    {
+      "label_index": 84,
+      "paco_category_id": 2084,
+      "paco_name": "glass_(drink_container):bottom",
+      "rendered_name": "glass (drink container)'s bottom"
+    },
+    {
+      "label_index": 85,
+      "paco_category_id": 2085,
+      "paco_name": "television_set:bottom",
+      "rendered_name": "television set's bottom"
+    },
+    {
+      "label_index": 86,
+      "paco_category_id": 2086,
+      "paco_name": "trash_can:bottom",
+      "rendered_name": "trash can's bottom"
+    },
+    {
+      "label_index": 87,
+      "paco_category_id": 2087,
+      "paco_name": "carton:bottom",
+      "rendered_name": "carton's bottom"
+    },
+    {
+      "label_index": 88,
+      "paco_category_id": 2088,
+      "paco_name": "basket:bottom",
+      "rendered_name": "basket's bottom"
+    },
+    {
+      "label_index": 89,
+      "paco_category_id": 2089,
+      "paco_name": "spoon:bowl",
+      "rendered_name": "spoon's bowl"
+    },
+    {
+      "label_index": 90,
+      "paco_category_id": 2090,
+      "paco_name": "fan:bracket",
+      "rendered_name": "fan's bracket"
+    },
+    {
+      "label_index": 91,
+      "paco_category_id": 2091,
+      "paco_name": "guitar:bridge",
+      "rendered_name": "guitar's bridge"
+    },
+    {
+      "label_index": 92,
+      "paco_category_id": 2092,
+      "paco_name": "broom:brush",
+      "rendered_name": "broom's brush"
+    },
+    {
+      "label_index": 93,
+      "paco_category_id": 2093,
+      "paco_name": "broom:brush_cap",
+      "rendered_name": "broom's brush cap"
+    },
+    {
+      "label_index": 94,
+      "paco_category_id": 2094,
+      "paco_name": "belt:buckle",
+      "rendered_name": "belt's buckle"
+    },
+    {
+      "label_index": 95,
+      "paco_category_id": 2095,
+      "paco_name": "watch:buckle",
+      "rendered_name": "watch's buckle"
+    },
+    {
+      "label_index": 96,
+      "paco_category_id": 2096,
+      "paco_name": "lamp:bulb",
+      "rendered_name": "lamp's bulb"
+    },
+    {
+      "label_index": 97,
+      "paco_category_id": 2097,
+      "paco_name": "car_(automobile):bumper",
+      "rendered_name": "car (automobile)'s bumper"
+    },
+    {
+      "label_index": 98,
+      "paco_category_id": 2098,
+      "paco_name": "telephone:button",
+      "rendered_name": "telephone's button"
+    },
+    {
+      "label_index": 99,
+      "paco_category_id": 2099,
+      "paco_name": "remote_control:button",
+      "rendered_name": "remote control's button"
+    },
+    {
+      "label_index": 100,
+      "paco_category_id": 2100,
+      "paco_name": "television_set:button",
+      "rendered_name": "television set's button"
+    },
+    {
+      "label_index": 101,
+      "paco_category_id": 2101,
+      "paco_name": "cellular_telephone:button",
+      "rendered_name": "cellular telephone's button"
+    },
+    {
+      "label_index": 102,
+      "paco_category_id": 2102,
+      "paco_name": "clock:cable",
+      "rendered_name": "clock's cable"
+    },
+    {
+      "label_index": 103,
+      "paco_category_id": 2103,
+      "paco_name": "blender:cable",
+      "rendered_name": "blender's cable"
+    },
+    {
+      "label_index": 104,
+      "paco_category_id": 2104,
+      "paco_name": "lamp:cable",
+      "rendered_name": "lamp's cable"
+    },
+    {
+      "label_index": 105,
+      "paco_category_id": 2105,
+      "paco_name": "laptop_computer:cable",
+      "rendered_name": "laptop computer's cable"
+    },
+    {
+      "label_index": 106,
+      "paco_category_id": 2106,
+      "paco_name": "earphone:cable",
+      "rendered_name": "earphone's cable"
+    },
+    {
+      "label_index": 107,
+      "paco_category_id": 2107,
+      "paco_name": "kettle:cable",
+      "rendered_name": "kettle's cable"
+    },
+    {
+      "label_index": 108,
+      "paco_category_id": 2108,
+      "paco_name": "laptop_computer:camera",
+      "rendered_name": "laptop computer's camera"
+    },
+    {
+      "label_index": 109,
+      "paco_category_id": 2109,
+      "paco_name": "fan:canopy",
+      "rendered_name": "fan's canopy"
+    },
+    {
+      "label_index": 110,
+      "paco_category_id": 2110,
+      "paco_name": "pen:cap",
+      "rendered_name": "pen's cap"
+    },
+    {
+      "label_index": 111,
+      "paco_category_id": 2111,
+      "paco_name": "soap:cap",
+      "rendered_name": "soap's cap"
+    },
+    {
+      "label_index": 112,
+      "paco_category_id": 2112,
+      "paco_name": "carton:cap",
+      "rendered_name": "carton's cap"
+    },
+    {
+      "label_index": 113,
+      "paco_category_id": 2113,
+      "paco_name": "bottle:cap",
+      "rendered_name": "bottle's cap"
+    },
+    {
+      "label_index": 114,
+      "paco_category_id": 2114,
+      "paco_name": "soap:capsule",
+      "rendered_name": "soap's capsule"
+    },
+    {
+      "label_index": 115,
+      "paco_category_id": 2115,
+      "paco_name": "bottle:capsule",
+      "rendered_name": "bottle's capsule"
+    },
+    {
+      "label_index": 116,
+      "paco_category_id": 2116,
+      "paco_name": "watch:case",
+      "rendered_name": "watch's case"
+    },
+    {
+      "label_index": 117,
+      "paco_category_id": 2117,
+      "paco_name": "clock:case",
+      "rendered_name": "clock's case"
+    },
+    {
+      "label_index": 118,
+      "paco_category_id": 2118,
+      "paco_name": "pen:clip",
+      "rendered_name": "pen's clip"
+    },
+    {
+      "label_index": 119,
+      "paco_category_id": 2119,
+      "paco_name": "soap:closure",
+      "rendered_name": "soap's closure"
+    },
+    {
+      "label_index": 120,
+      "paco_category_id": 2120,
+      "paco_name": "bottle:closure",
+      "rendered_name": "bottle's closure"
+    },
+    {
+      "label_index": 121,
+      "paco_category_id": 2121,
+      "paco_name": "pipe:colied_tube",
+      "rendered_name": "pipe's colied tube"
+    },
+    {
+      "label_index": 122,
+      "paco_category_id": 2122,
+      "paco_name": "microwave_oven:control_panel",
+      "rendered_name": "microwave oven's control panel"
+    },
+    {
+      "label_index": 123,
+      "paco_category_id": 2123,
+      "paco_name": "bucket:cover",
+      "rendered_name": "bucket's cover"
+    },
+    {
+      "label_index": 124,
+      "paco_category_id": 2124,
+      "paco_name": "jar:cover",
+      "rendered_name": "jar's cover"
+    },
+    {
+      "label_index": 125,
+      "paco_category_id": 2125,
+      "paco_name": "blender:cover",
+      "rendered_name": "blender's cover"
+    },
+    {
+      "label_index": 126,
+      "paco_category_id": 2126,
+      "paco_name": "drum_(musical_instrument):cover",
+      "rendered_name": "drum (musical instrument)'s cover"
+    },
+    {
+      "label_index": 127,
+      "paco_category_id": 2127,
+      "paco_name": "basket:cover",
+      "rendered_name": "basket's cover"
+    },
+    {
+      "label_index": 128,
+      "paco_category_id": 2128,
+      "paco_name": "book:cover",
+      "rendered_name": "book's cover"
+    },
+    {
+      "label_index": 129,
+      "paco_category_id": 2129,
+      "paco_name": "sweater:cuff",
+      "rendered_name": "sweater's cuff"
+    },
+    {
+      "label_index": 130,
+      "paco_category_id": 2130,
+      "paco_name": "blender:cup",
+      "rendered_name": "blender's cup"
+    },
+    {
+      "label_index": 131,
+      "paco_category_id": 2131,
+      "paco_name": "clock:decoration",
+      "rendered_name": "clock's decoration"
+    },
+    {
+      "label_index": 132,
+      "paco_category_id": 2132,
+      "paco_name": "watch:dial",
+      "rendered_name": "watch's dial"
+    },
+    {
+      "label_index": 133,
+      "paco_category_id": 2133,
+      "paco_name": "microwave_oven:dial",
+      "rendered_name": "microwave oven's dial"
+    },
+    {
+      "label_index": 134,
+      "paco_category_id": 2134,
+      "paco_name": "microwave_oven:door_handle",
+      "rendered_name": "microwave oven's door handle"
+    },
+    {
+      "label_index": 135,
+      "paco_category_id": 2135,
+      "paco_name": "bicycle:down_tube",
+      "rendered_name": "bicycle's down tube"
+    },
+    {
+      "label_index": 136,
+      "paco_category_id": 2136,
+      "paco_name": "table:drawer",
+      "rendered_name": "table's drawer"
+    },
+    {
+      "label_index": 137,
+      "paco_category_id": 2137,
+      "paco_name": "mug:drawing",
+      "rendered_name": "mug's drawing"
+    },
+    {
+      "label_index": 138,
+      "paco_category_id": 2138,
+      "paco_name": "dog:ear",
+      "rendered_name": "dog's ear"
+    },
+    {
+      "label_index": 139,
+      "paco_category_id": 2139,
+      "paco_name": "earphone:ear_pads",
+      "rendered_name": "earphone's ear pads"
+    },
+    {
+      "label_index": 140,
+      "paco_category_id": 2140,
+      "paco_name": "pillow:embroidery",
+      "rendered_name": "pillow's embroidery"
+    },
+    {
+      "label_index": 141,
+      "paco_category_id": 2141,
+      "paco_name": "belt:end_tip",
+      "rendered_name": "belt's end tip"
+    },
+    {
+      "label_index": 142,
+      "paco_category_id": 2142,
+      "paco_name": "pencil:eraser",
+      "rendered_name": "pencil's eraser"
+    },
+    {
+      "label_index": 143,
+      "paco_category_id": 2143,
+      "paco_name": "dog:eye",
+      "rendered_name": "dog's eye"
+    },
+    {
+      "label_index": 144,
+      "paco_category_id": 2144,
+      "paco_name": "shoe:eyelet",
+      "rendered_name": "shoe's eyelet"
+    },
+    {
+      "label_index": 145,
+      "paco_category_id": 2145,
+      "paco_name": "hammer:face",
+      "rendered_name": "hammer's face"
+    },
+    {
+      "label_index": 146,
+      "paco_category_id": 2146,
+      "paco_name": "helmet:face_shield",
+      "rendered_name": "helmet's face shield"
+    },
+    {
+      "label_index": 147,
+      "paco_category_id": 2147,
+      "paco_name": "fan:fan_box",
+      "rendered_name": "fan's fan box"
+    },
+    {
+      "label_index": 148,
+      "paco_category_id": 2148,
+      "paco_name": "car_(automobile):fender",
+      "rendered_name": "car (automobile)'s fender"
+    },
+    {
+      "label_index": 149,
+      "paco_category_id": 2149,
+      "paco_name": "pencil:ferrule",
+      "rendered_name": "pencil's ferrule"
+    },
+    {
+      "label_index": 150,
+      "paco_category_id": 2150,
+      "paco_name": "scissors:finger_hole",
+      "rendered_name": "scissors's finger hole"
+    },
+    {
+      "label_index": 151,
+      "paco_category_id": 2151,
+      "paco_name": "guitar:fingerboard",
+      "rendered_name": "guitar's fingerboard"
+    },
+    {
+      "label_index": 152,
+      "paco_category_id": 2152,
+      "paco_name": "lamp:finial",
+      "rendered_name": "lamp's finial"
+    },
+    {
+      "label_index": 153,
+      "paco_category_id": 2153,
+      "paco_name": "clock:finial",
+      "rendered_name": "clock's finial"
+    },
+    {
+      "label_index": 154,
+      "paco_category_id": 2154,
+      "paco_name": "wallet:flap",
+      "rendered_name": "wallet's flap"
+    },
+    {
+      "label_index": 155,
+      "paco_category_id": 2155,
+      "paco_name": "blender:food_cup",
+      "rendered_name": "blender's food cup"
+    },
+    {
+      "label_index": 156,
+      "paco_category_id": 2156,
+      "paco_name": "dog:foot",
+      "rendered_name": "dog's foot"
+    },
+    {
+      "label_index": 157,
+      "paco_category_id": 2157,
+      "paco_name": "vase:foot",
+      "rendered_name": "vase's foot"
+    },
+    {
+      "label_index": 158,
+      "paco_category_id": 2158,
+      "paco_name": "ladder:foot",
+      "rendered_name": "ladder's foot"
+    },
+    {
+      "label_index": 159,
+      "paco_category_id": 2159,
+      "paco_name": "stool:footrest",
+      "rendered_name": "stool's footrest"
+    },
+    {
+      "label_index": 160,
+      "paco_category_id": 2160,
+      "paco_name": "bicycle:fork",
+      "rendered_name": "bicycle's fork"
+    },
+    {
+      "label_index": 161,
+      "paco_category_id": 2161,
+      "paco_name": "belt:frame",
+      "rendered_name": "belt's frame"
+    },
+    {
+      "label_index": 162,
+      "paco_category_id": 2162,
+      "paco_name": "mirror:frame",
+      "rendered_name": "mirror's frame"
+    },
+    {
+      "label_index": 163,
+      "paco_category_id": 2163,
+      "paco_name": "scarf:fringes",
+      "rendered_name": "scarf's fringes"
+    },
+    {
+      "label_index": 164,
+      "paco_category_id": 2164,
+      "paco_name": "bicycle:gear",
+      "rendered_name": "bicycle's gear"
+    },
+    {
+      "label_index": 165,
+      "paco_category_id": 2165,
+      "paco_name": "car_(automobile):grille",
+      "rendered_name": "car (automobile)'s grille"
+    },
+    {
+      "label_index": 166,
+      "paco_category_id": 2166,
+      "paco_name": "hammer:grip",
+      "rendered_name": "hammer's grip"
+    },
+    {
+      "label_index": 167,
+      "paco_category_id": 2167,
+      "paco_name": "pen:grip",
+      "rendered_name": "pen's grip"
+    },
+    {
+      "label_index": 168,
+      "paco_category_id": 2168,
+      "paco_name": "watch:hand",
+      "rendered_name": "watch's hand"
+    },
+    {
+      "label_index": 169,
+      "paco_category_id": 2169,
+      "paco_name": "clock:hand",
+      "rendered_name": "clock's hand"
+    },
+    {
+      "label_index": 170,
+      "paco_category_id": 2170,
+      "paco_name": "plastic_bag:handle",
+      "rendered_name": "plastic bag's handle"
+    },
+    {
+      "label_index": 171,
+      "paco_category_id": 2171,
+      "paco_name": "bottle:handle",
+      "rendered_name": "bottle's handle"
+    },
+    {
+      "label_index": 172,
+      "paco_category_id": 2172,
+      "paco_name": "drill:handle",
+      "rendered_name": "drill's handle"
+    },
+    {
+      "label_index": 173,
+      "paco_category_id": 2173,
+      "paco_name": "hammer:handle",
+      "rendered_name": "hammer's handle"
+    },
+    {
+      "label_index": 174,
+      "paco_category_id": 2174,
+      "paco_name": "scissors:handle",
+      "rendered_name": "scissors's handle"
+    },
+    {
+      "label_index": 175,
+      "paco_category_id": 2175,
+      "paco_name": "broom:handle",
+      "rendered_name": "broom's handle"
+    },
+    {
+      "label_index": 176,
+      "paco_category_id": 2176,
+      "paco_name": "screwdriver:handle",
+      "rendered_name": "screwdriver's handle"
+    },
+    {
+      "label_index": 177,
+      "paco_category_id": 2177,
+      "paco_name": "bucket:handle",
+      "rendered_name": "bucket's handle"
+    },
+    {
+      "label_index": 178,
+      "paco_category_id": 2178,
+      "paco_name": "handbag:handle",
+      "rendered_name": "handbag's handle"
+    },
+    {
+      "label_index": 179,
+      "paco_category_id": 2179,
+      "paco_name": "wrench:handle",
+      "rendered_name": "wrench's handle"
+    },
+    {
+      "label_index": 180,
+      "paco_category_id": 2180,
+      "paco_name": "pliers:handle",
+      "rendered_name": "pliers's handle"
+    },
+    {
+      "label_index": 181,
+      "paco_category_id": 2181,
+      "paco_name": "basket:handle",
+      "rendered_name": "basket's handle"
+    },
+    {
+      "label_index": 182,
+      "paco_category_id": 2182,
+      "paco_name": "mug:handle",
+      "rendered_name": "mug's handle"
+    },
+    {
+      "label_index": 183,
+      "paco_category_id": 2183,
+      "paco_name": "crate:handle",
+      "rendered_name": "crate's handle"
+    },
+    {
+      "label_index": 184,
+      "paco_category_id": 2184,
+      "paco_name": "jar:handle",
+      "rendered_name": "jar's handle"
+    },
+    {
+      "label_index": 185,
+      "paco_category_id": 2185,
+      "paco_name": "car_(automobile):handle",
+      "rendered_name": "car (automobile)'s handle"
+    },
+    {
+      "label_index": 186,
+      "paco_category_id": 2186,
+      "paco_name": "soap:handle",
+      "rendered_name": "soap's handle"
+    },
+    {
+      "label_index": 187,
+      "paco_category_id": 2187,
+      "paco_name": "cup:handle",
+      "rendered_name": "cup's handle"
+    },
+    {
+      "label_index": 188,
+      "paco_category_id": 2188,
+      "paco_name": "kettle:handle",
+      "rendered_name": "kettle's handle"
+    },
+    {
+      "label_index": 189,
+      "paco_category_id": 2189,
+      "paco_name": "knife:handle",
+      "rendered_name": "knife's handle"
+    },
+    {
+      "label_index": 190,
+      "paco_category_id": 2190,
+      "paco_name": "spoon:handle",
+      "rendered_name": "spoon's handle"
+    },
+    {
+      "label_index": 191,
+      "paco_category_id": 2191,
+      "paco_name": "pan_(for_cooking):handle",
+      "rendered_name": "pan (for cooking)'s handle"
+    },
+    {
+      "label_index": 192,
+      "paco_category_id": 2192,
+      "paco_name": "blender:handle",
+      "rendered_name": "blender's handle"
+    },
+    {
+      "label_index": 193,
+      "paco_category_id": 2193,
+      "paco_name": "vase:handle",
+      "rendered_name": "vase's handle"
+    },
+    {
+      "label_index": 194,
+      "paco_category_id": 2194,
+      "paco_name": "bicycle:handlebar",
+      "rendered_name": "bicycle's handlebar"
+    },
+    {
+      "label_index": 195,
+      "paco_category_id": 2195,
+      "paco_name": "dog:head",
+      "rendered_name": "dog's head"
+    },
+    {
+      "label_index": 196,
+      "paco_category_id": 2196,
+      "paco_name": "hammer:head",
+      "rendered_name": "hammer's head"
+    },
+    {
+      "label_index": 197,
+      "paco_category_id": 2197,
+      "paco_name": "wrench:head",
+      "rendered_name": "wrench's head"
+    },
+    {
+      "label_index": 198,
+      "paco_category_id": 2198,
+      "paco_name": "drum_(musical_instrument):head",
+      "rendered_name": "drum (musical instrument)'s head"
+    },
+    {
+      "label_index": 199,
+      "paco_category_id": 2199,
+      "paco_name": "bicycle:head_tube",
+      "rendered_name": "bicycle's head tube"
+    },
+    {
+      "label_index": 200,
+      "paco_category_id": 2200,
+      "paco_name": "earphone:headband",
+      "rendered_name": "earphone's headband"
+    },
+    {
+      "label_index": 201,
+      "paco_category_id": 2201,
+      "paco_name": "car_(automobile):headlight",
+      "rendered_name": "car (automobile)'s headlight"
+    },
+    {
+      "label_index": 202,
+      "paco_category_id": 2202,
+      "paco_name": "guitar:headstock",
+      "rendered_name": "guitar's headstock"
+    },
+    {
+      "label_index": 203,
+      "paco_category_id": 2203,
+      "paco_name": "shoe:heel",
+      "rendered_name": "shoe's heel"
+    },
+    {
+      "label_index": 204,
+      "paco_category_id": 2204,
+      "paco_name": "bottle:heel",
+      "rendered_name": "bottle's heel"
+    },
+    {
+      "label_index": 205,
+      "paco_category_id": 2205,
+      "paco_name": "plastic_bag:hem",
+      "rendered_name": "plastic bag's hem"
+    },
+    {
+      "label_index": 206,
+      "paco_category_id": 2206,
+      "paco_name": "sweater:hem",
+      "rendered_name": "sweater's hem"
+    },
+    {
+      "label_index": 207,
+      "paco_category_id": 2207,
+      "paco_name": "towel:hem",
+      "rendered_name": "towel's hem"
+    },
+    {
+      "label_index": 208,
+      "paco_category_id": 2208,
+      "paco_name": "belt:hole",
+      "rendered_name": "belt's hole"
+    },
+    {
+      "label_index": 209,
+      "paco_category_id": 2209,
+      "paco_name": "guitar:hole",
+      "rendered_name": "guitar's hole"
+    },
+    {
+      "label_index": 210,
+      "paco_category_id": 2210,
+      "paco_name": "trash_can:hole",
+      "rendered_name": "trash can's hole"
+    },
+    {
+      "label_index": 211,
+      "paco_category_id": 2211,
+      "paco_name": "car_(automobile):hood",
+      "rendered_name": "car (automobile)'s hood"
+    },
+    {
+      "label_index": 212,
+      "paco_category_id": 2212,
+      "paco_name": "earphone:housing",
+      "rendered_name": "earphone's housing"
+    },
+    {
+      "label_index": 213,
+      "paco_category_id": 2213,
+      "paco_name": "can:inner_body",
+      "rendered_name": "can's inner body"
+    },
+    {
+      "label_index": 214,
+      "paco_category_id": 2214,
+      "paco_name": "bucket:inner_body",
+      "rendered_name": "bucket's inner body"
+    },
+    {
+      "label_index": 215,
+      "paco_category_id": 2215,
+      "paco_name": "plastic_bag:inner_body",
+      "rendered_name": "plastic bag's inner body"
+    },
+    {
+      "label_index": 216,
+      "paco_category_id": 2216,
+      "paco_name": "handbag:inner_body",
+      "rendered_name": "handbag's inner body"
+    },
+    {
+      "label_index": 217,
+      "paco_category_id": 2217,
+      "paco_name": "mug:inner_body",
+      "rendered_name": "mug's inner body"
+    },
+    {
+      "label_index": 218,
+      "paco_category_id": 2218,
+      "paco_name": "bottle:inner_body",
+      "rendered_name": "bottle's inner body"
+    },
+    {
+      "label_index": 219,
+      "paco_category_id": 2219,
+      "paco_name": "wallet:inner_body",
+      "rendered_name": "wallet's inner body"
+    },
+    {
+      "label_index": 220,
+      "paco_category_id": 2220,
+      "paco_name": "bowl:inner_body",
+      "rendered_name": "bowl's inner body"
+    },
+    {
+      "label_index": 221,
+      "paco_category_id": 2221,
+      "paco_name": "jar:inner_body",
+      "rendered_name": "jar's inner body"
+    },
+    {
+      "label_index": 222,
+      "paco_category_id": 2222,
+      "paco_name": "blender:inner_body",
+      "rendered_name": "blender's inner body"
+    },
+    {
+      "label_index": 223,
+      "paco_category_id": 2223,
+      "paco_name": "drum_(musical_instrument):inner_body",
+      "rendered_name": "drum (musical instrument)'s inner body"
+    },
+    {
+      "label_index": 224,
+      "paco_category_id": 2224,
+      "paco_name": "glass_(drink_container):inner_body",
+      "rendered_name": "glass (drink container)'s inner body"
+    },
+    {
+      "label_index": 225,
+      "paco_category_id": 2225,
+      "paco_name": "trash_can:inner_body",
+      "rendered_name": "trash can's inner body"
+    },
+    {
+      "label_index": 226,
+      "paco_category_id": 2226,
+      "paco_name": "cup:inner_body",
+      "rendered_name": "cup's inner body"
+    },
+    {
+      "label_index": 227,
+      "paco_category_id": 2227,
+      "paco_name": "table:inner_body",
+      "rendered_name": "table's inner body"
+    },
+    {
+      "label_index": 228,
+      "paco_category_id": 2228,
+      "paco_name": "kettle:inner_body",
+      "rendered_name": "kettle's inner body"
+    },
+    {
+      "label_index": 229,
+      "paco_category_id": 2229,
+      "paco_name": "hat:inner_side",
+      "rendered_name": "hat's inner side"
+    },
+    {
+      "label_index": 230,
+      "paco_category_id": 2230,
+      "paco_name": "crate:inner_side",
+      "rendered_name": "crate's inner side"
+    },
+    {
+      "label_index": 231,
+      "paco_category_id": 2231,
+      "paco_name": "helmet:inner_side",
+      "rendered_name": "helmet's inner side"
+    },
+    {
+      "label_index": 232,
+      "paco_category_id": 2232,
+      "paco_name": "box:inner_side",
+      "rendered_name": "box's inner side"
+    },
+    {
+      "label_index": 233,
+      "paco_category_id": 2233,
+      "paco_name": "microwave_oven:inner_side",
+      "rendered_name": "microwave oven's inner side"
+    },
+    {
+      "label_index": 234,
+      "paco_category_id": 2234,
+      "paco_name": "pan_(for_cooking):inner_side",
+      "rendered_name": "pan (for cooking)'s inner side"
+    },
+    {
+      "label_index": 235,
+      "paco_category_id": 2235,
+      "paco_name": "basket:inner_side",
+      "rendered_name": "basket's inner side"
+    },
+    {
+      "label_index": 236,
+      "paco_category_id": 2236,
+      "paco_name": "carton:inner_side",
+      "rendered_name": "carton's inner side"
+    },
+    {
+      "label_index": 237,
+      "paco_category_id": 2237,
+      "paco_name": "tray:inner_side",
+      "rendered_name": "tray's inner side"
+    },
+    {
+      "label_index": 238,
+      "paco_category_id": 2238,
+      "paco_name": "plate:inner_wall",
+      "rendered_name": "plate's inner wall"
+    },
+    {
+      "label_index": 239,
+      "paco_category_id": 2239,
+      "paco_name": "tray:inner_wall",
+      "rendered_name": "tray's inner wall"
+    },
+    {
+      "label_index": 240,
+      "paco_category_id": 2240,
+      "paco_name": "shoe:insole",
+      "rendered_name": "shoe's insole"
+    },
+    {
+      "label_index": 241,
+      "paco_category_id": 2241,
+      "paco_name": "slipper_(footwear):insole",
+      "rendered_name": "slipper (footwear)'s insole"
+    },
+    {
+      "label_index": 242,
+      "paco_category_id": 2242,
+      "paco_name": "pliers:jaw",
+      "rendered_name": "pliers's jaw"
+    },
+    {
+      "label_index": 243,
+      "paco_category_id": 2243,
+      "paco_name": "pliers:joint",
+      "rendered_name": "pliers's joint"
+    },
+    {
+      "label_index": 244,
+      "paco_category_id": 2244,
+      "paco_name": "calculator:key",
+      "rendered_name": "calculator's key"
+    },
+    {
+      "label_index": 245,
+      "paco_category_id": 2245,
+      "paco_name": "guitar:key",
+      "rendered_name": "guitar's key"
+    },
+    {
+      "label_index": 246,
+      "paco_category_id": 2246,
+      "paco_name": "laptop_computer:keyboard",
+      "rendered_name": "laptop computer's keyboard"
+    },
+    {
+      "label_index": 247,
+      "paco_category_id": 2247,
+      "paco_name": "soap:label",
+      "rendered_name": "soap's label"
+    },
+    {
+      "label_index": 248,
+      "paco_category_id": 2248,
+      "paco_name": "bottle:label",
+      "rendered_name": "bottle's label"
+    },
+    {
+      "label_index": 249,
+      "paco_category_id": 2249,
+      "paco_name": "trash_can:label",
+      "rendered_name": "trash can's label"
+    },
+    {
+      "label_index": 250,
+      "paco_category_id": 2250,
+      "paco_name": "shoe:lace",
+      "rendered_name": "shoe's lace"
+    },
+    {
+      "label_index": 251,
+      "paco_category_id": 2251,
+      "paco_name": "pencil:lead",
+      "rendered_name": "pencil's lead"
+    },
+    {
+      "label_index": 252,
+      "paco_category_id": 2252,
+      "paco_name": "mouse_(computer_equipment):left_button",
+      "rendered_name": "mouse (computer equipment)'s left button"
+    },
+    {
+      "label_index": 253,
+      "paco_category_id": 2253,
+      "paco_name": "table:leg",
+      "rendered_name": "table's leg"
+    },
+    {
+      "label_index": 254,
+      "paco_category_id": 2254,
+      "paco_name": "bench:leg",
+      "rendered_name": "bench's leg"
+    },
+    {
+      "label_index": 255,
+      "paco_category_id": 2255,
+      "paco_name": "chair:leg",
+      "rendered_name": "chair's leg"
+    },
+    {
+      "label_index": 256,
+      "paco_category_id": 2256,
+      "paco_name": "dog:leg",
+      "rendered_name": "dog's leg"
+    },
+    {
+      "label_index": 257,
+      "paco_category_id": 2257,
+      "paco_name": "stool:leg",
+      "rendered_name": "stool's leg"
+    },
+    {
+      "label_index": 258,
+      "paco_category_id": 2258,
+      "paco_name": "can:lid",
+      "rendered_name": "can's lid"
+    },
+    {
+      "label_index": 259,
+      "paco_category_id": 2259,
+      "paco_name": "crate:lid",
+      "rendered_name": "crate's lid"
+    },
+    {
+      "label_index": 260,
+      "paco_category_id": 2260,
+      "paco_name": "box:lid",
+      "rendered_name": "box's lid"
+    },
+    {
+      "label_index": 261,
+      "paco_category_id": 2261,
+      "paco_name": "jar:lid",
+      "rendered_name": "jar's lid"
+    },
+    {
+      "label_index": 262,
+      "paco_category_id": 2262,
+      "paco_name": "pan_(for_cooking):lid",
+      "rendered_name": "pan (for cooking)'s lid"
+    },
+    {
+      "label_index": 263,
+      "paco_category_id": 2263,
+      "paco_name": "carton:lid",
+      "rendered_name": "carton's lid"
+    },
+    {
+      "label_index": 264,
+      "paco_category_id": 2264,
+      "paco_name": "trash_can:lid",
+      "rendered_name": "trash can's lid"
+    },
+    {
+      "label_index": 265,
+      "paco_category_id": 2265,
+      "paco_name": "kettle:lid",
+      "rendered_name": "kettle's lid"
+    },
+    {
+      "label_index": 266,
+      "paco_category_id": 2266,
+      "paco_name": "fan:light",
+      "rendered_name": "fan's light"
+    },
+    {
+      "label_index": 267,
+      "paco_category_id": 2267,
+      "paco_name": "shoe:lining",
+      "rendered_name": "shoe's lining"
+    },
+    {
+      "label_index": 268,
+      "paco_category_id": 2268,
+      "paco_name": "slipper_(footwear):lining",
+      "rendered_name": "slipper (footwear)'s lining"
+    },
+    {
+      "label_index": 269,
+      "paco_category_id": 2269,
+      "paco_name": "hat:logo",
+      "rendered_name": "hat's logo"
+    },
+    {
+      "label_index": 270,
+      "paco_category_id": 2270,
+      "paco_name": "mouse_(computer_equipment):logo",
+      "rendered_name": "mouse (computer equipment)'s logo"
+    },
+    {
+      "label_index": 271,
+      "paco_category_id": 2271,
+      "paco_name": "helmet:logo",
+      "rendered_name": "helmet's logo"
+    },
+    {
+      "label_index": 272,
+      "paco_category_id": 2272,
+      "paco_name": "fan:logo",
+      "rendered_name": "fan's logo"
+    },
+    {
+      "label_index": 273,
+      "paco_category_id": 2273,
+      "paco_name": "car_(automobile):logo",
+      "rendered_name": "car (automobile)'s logo"
+    },
+    {
+      "label_index": 274,
+      "paco_category_id": 2274,
+      "paco_name": "remote_control:logo",
+      "rendered_name": "remote control's logo"
+    },
+    {
+      "label_index": 275,
+      "paco_category_id": 2275,
+      "paco_name": "laptop_computer:logo",
+      "rendered_name": "laptop computer's logo"
+    },
+    {
+      "label_index": 276,
+      "paco_category_id": 2276,
+      "paco_name": "belt:loop",
+      "rendered_name": "belt's loop"
+    },
+    {
+      "label_index": 277,
+      "paco_category_id": 2277,
+      "paco_name": "bucket:loop",
+      "rendered_name": "bucket's loop"
+    },
+    {
+      "label_index": 278,
+      "paco_category_id": 2278,
+      "paco_name": "drum_(musical_instrument):loop",
+      "rendered_name": "drum (musical instrument)'s loop"
+    },
+    {
+      "label_index": 279,
+      "paco_category_id": 2279,
+      "paco_name": "broom:lower_bristles",
+      "rendered_name": "broom's lower bristles"
+    },
+    {
+      "label_index": 280,
+      "paco_category_id": 2280,
+      "paco_name": "watch:lug",
+      "rendered_name": "watch's lug"
+    },
+    {
+      "label_index": 281,
+      "paco_category_id": 2281,
+      "paco_name": "drum_(musical_instrument):lug",
+      "rendered_name": "drum (musical instrument)'s lug"
+    },
+    {
+      "label_index": 282,
+      "paco_category_id": 2282,
+      "paco_name": "car_(automobile):mirror",
+      "rendered_name": "car (automobile)'s mirror"
+    },
+    {
+      "label_index": 283,
+      "paco_category_id": 2283,
+      "paco_name": "fan:motor",
+      "rendered_name": "fan's motor"
+    },
+    {
+      "label_index": 284,
+      "paco_category_id": 2284,
+      "paco_name": "vase:mouth",
+      "rendered_name": "vase's mouth"
+    },
+    {
+      "label_index": 285,
+      "paco_category_id": 2285,
+      "paco_name": "bottle:neck",
+      "rendered_name": "bottle's neck"
+    },
+    {
+      "label_index": 286,
+      "paco_category_id": 2286,
+      "paco_name": "spoon:neck",
+      "rendered_name": "spoon's neck"
+    },
+    {
+      "label_index": 287,
+      "paco_category_id": 2287,
+      "paco_name": "vase:neck",
+      "rendered_name": "vase's neck"
+    },
+    {
+      "label_index": 288,
+      "paco_category_id": 2288,
+      "paco_name": "soap:neck",
+      "rendered_name": "soap's neck"
+    },
+    {
+      "label_index": 289,
+      "paco_category_id": 2289,
+      "paco_name": "dog:neck",
+      "rendered_name": "dog's neck"
+    },
+    {
+      "label_index": 290,
+      "paco_category_id": 2290,
+      "paco_name": "sweater:neckband",
+      "rendered_name": "sweater's neckband"
+    },
+    {
+      "label_index": 291,
+      "paco_category_id": 2291,
+      "paco_name": "dog:nose",
+      "rendered_name": "dog's nose"
+    },
+    {
+      "label_index": 292,
+      "paco_category_id": 2292,
+      "paco_name": "pipe:nozzle",
+      "rendered_name": "pipe's nozzle"
+    },
+    {
+      "label_index": 293,
+      "paco_category_id": 2293,
+      "paco_name": "pipe:nozzle_stem",
+      "rendered_name": "pipe's nozzle stem"
+    },
+    {
+      "label_index": 294,
+      "paco_category_id": 2294,
+      "paco_name": "tray:outer_side",
+      "rendered_name": "tray's outer side"
+    },
+    {
+      "label_index": 295,
+      "paco_category_id": 2295,
+      "paco_name": "shoe:outsole",
+      "rendered_name": "shoe's outsole"
+    },
+    {
+      "label_index": 296,
+      "paco_category_id": 2296,
+      "paco_name": "slipper_(footwear):outsole",
+      "rendered_name": "slipper (footwear)'s outsole"
+    },
+    {
+      "label_index": 297,
+      "paco_category_id": 2297,
+      "paco_name": "book:page",
+      "rendered_name": "book's page"
+    },
+    {
+      "label_index": 298,
+      "paco_category_id": 2298,
+      "paco_name": "bicycle:pedal",
+      "rendered_name": "bicycle's pedal"
+    },
+    {
+      "label_index": 299,
+      "paco_category_id": 2299,
+      "paco_name": "trash_can:pedal",
+      "rendered_name": "trash can's pedal"
+    },
+    {
+      "label_index": 300,
+      "paco_category_id": 2300,
+      "paco_name": "fan:pedestal_column",
+      "rendered_name": "fan's pedestal column"
+    },
+    {
+      "label_index": 301,
+      "paco_category_id": 2301,
+      "paco_name": "clock:pediment",
+      "rendered_name": "clock's pediment"
+    },
+    {
+      "label_index": 302,
+      "paco_category_id": 2302,
+      "paco_name": "guitar:pickguard",
+      "rendered_name": "guitar's pickguard"
+    },
+    {
+      "label_index": 303,
+      "paco_category_id": 2303,
+      "paco_name": "lamp:pipe",
+      "rendered_name": "lamp's pipe"
+    },
+    {
+      "label_index": 304,
+      "paco_category_id": 2304,
+      "paco_name": "hat:pom_pom",
+      "rendered_name": "hat's pom pom"
+    },
+    {
+      "label_index": 305,
+      "paco_category_id": 2305,
+      "paco_name": "belt:prong",
+      "rendered_name": "belt's prong"
+    },
+    {
+      "label_index": 306,
+      "paco_category_id": 2306,
+      "paco_name": "can:pull_tab",
+      "rendered_name": "can's pull tab"
+    },
+    {
+      "label_index": 307,
+      "paco_category_id": 2307,
+      "paco_name": "soap:punt",
+      "rendered_name": "soap's punt"
+    },
+    {
+      "label_index": 308,
+      "paco_category_id": 2308,
+      "paco_name": "bottle:punt",
+      "rendered_name": "bottle's punt"
+    },
+    {
+      "label_index": 309,
+      "paco_category_id": 2309,
+      "paco_name": "soap:push_pull_cap",
+      "rendered_name": "soap's push pull cap"
+    },
+    {
+      "label_index": 310,
+      "paco_category_id": 2310,
+      "paco_name": "shoe:quarter",
+      "rendered_name": "shoe's quarter"
+    },
+    {
+      "label_index": 311,
+      "paco_category_id": 2311,
+      "paco_name": "chair:rail",
+      "rendered_name": "chair's rail"
+    },
+    {
+      "label_index": 312,
+      "paco_category_id": 2312,
+      "paco_name": "ladder:rail",
+      "rendered_name": "ladder's rail"
+    },
+    {
+      "label_index": 313,
+      "paco_category_id": 2313,
+      "paco_name": "mouse_(computer_equipment):right_button",
+      "rendered_name": "mouse (computer equipment)'s right button"
+    },
+    {
+      "label_index": 314,
+      "paco_category_id": 2314,
+      "paco_name": "can:rim",
+      "rendered_name": "can's rim"
+    },
+    {
+      "label_index": 315,
+      "paco_category_id": 2315,
+      "paco_name": "bucket:rim",
+      "rendered_name": "bucket's rim"
+    },
+    {
+      "label_index": 316,
+      "paco_category_id": 2316,
+      "paco_name": "hat:rim",
+      "rendered_name": "hat's rim"
+    },
+    {
+      "label_index": 317,
+      "paco_category_id": 2317,
+      "paco_name": "handbag:rim",
+      "rendered_name": "handbag's rim"
+    },
+    {
+      "label_index": 318,
+      "paco_category_id": 2318,
+      "paco_name": "mug:rim",
+      "rendered_name": "mug's rim"
+    },
+    {
+      "label_index": 319,
+      "paco_category_id": 2319,
+      "paco_name": "bowl:rim",
+      "rendered_name": "bowl's rim"
+    },
+    {
+      "label_index": 320,
+      "paco_category_id": 2320,
+      "paco_name": "helmet:rim",
+      "rendered_name": "helmet's rim"
+    },
+    {
+      "label_index": 321,
+      "paco_category_id": 2321,
+      "paco_name": "jar:rim",
+      "rendered_name": "jar's rim"
+    },
+    {
+      "label_index": 322,
+      "paco_category_id": 2322,
+      "paco_name": "pan_(for_cooking):rim",
+      "rendered_name": "pan (for cooking)'s rim"
+    },
+    {
+      "label_index": 323,
+      "paco_category_id": 2323,
+      "paco_name": "car_(automobile):rim",
+      "rendered_name": "car (automobile)'s rim"
+    },
+    {
+      "label_index": 324,
+      "paco_category_id": 2324,
+      "paco_name": "plate:rim",
+      "rendered_name": "plate's rim"
+    },
+    {
+      "label_index": 325,
+      "paco_category_id": 2325,
+      "paco_name": "glass_(drink_container):rim",
+      "rendered_name": "glass (drink container)'s rim"
+    },
+    {
+      "label_index": 326,
+      "paco_category_id": 2326,
+      "paco_name": "tray:rim",
+      "rendered_name": "tray's rim"
+    },
+    {
+      "label_index": 327,
+      "paco_category_id": 2327,
+      "paco_name": "drum_(musical_instrument):rim",
+      "rendered_name": "drum (musical instrument)'s rim"
+    },
+    {
+      "label_index": 328,
+      "paco_category_id": 2328,
+      "paco_name": "trash_can:rim",
+      "rendered_name": "trash can's rim"
+    },
+    {
+      "label_index": 329,
+      "paco_category_id": 2329,
+      "paco_name": "cup:rim",
+      "rendered_name": "cup's rim"
+    },
+    {
+      "label_index": 330,
+      "paco_category_id": 2330,
+      "paco_name": "table:rim",
+      "rendered_name": "table's rim"
+    },
+    {
+      "label_index": 331,
+      "paco_category_id": 2331,
+      "paco_name": "basket:rim",
+      "rendered_name": "basket's rim"
+    },
+    {
+      "label_index": 332,
+      "paco_category_id": 2332,
+      "paco_name": "soap:ring",
+      "rendered_name": "soap's ring"
+    },
+    {
+      "label_index": 333,
+      "paco_category_id": 2333,
+      "paco_name": "broom:ring",
+      "rendered_name": "broom's ring"
+    },
+    {
+      "label_index": 334,
+      "paco_category_id": 2334,
+      "paco_name": "bottle:ring",
+      "rendered_name": "bottle's ring"
+    },
+    {
+      "label_index": 335,
+      "paco_category_id": 2335,
+      "paco_name": "fan:rod",
+      "rendered_name": "fan's rod"
+    },
+    {
+      "label_index": 336,
+      "paco_category_id": 2336,
+      "paco_name": "tissue_paper:roll",
+      "rendered_name": "tissue paper's roll"
+    },
+    {
+      "label_index": 337,
+      "paco_category_id": 2337,
+      "paco_name": "tape_(sticky_cloth_or_paper):roll",
+      "rendered_name": "tape (sticky cloth or paper)'s roll"
+    },
+    {
+      "label_index": 338,
+      "paco_category_id": 2338,
+      "paco_name": "car_(automobile):roof",
+      "rendered_name": "car (automobile)'s roof"
+    },
+    {
+      "label_index": 339,
+      "paco_category_id": 2339,
+      "paco_name": "sponge:rough_surface",
+      "rendered_name": "sponge's rough surface"
+    },
+    {
+      "label_index": 340,
+      "paco_category_id": 2340,
+      "paco_name": "car_(automobile):runningboard",
+      "rendered_name": "car (automobile)'s runningboard"
+    },
+    {
+      "label_index": 341,
+      "paco_category_id": 2341,
+      "paco_name": "bicycle:saddle",
+      "rendered_name": "bicycle's saddle"
+    },
+    {
+      "label_index": 342,
+      "paco_category_id": 2342,
+      "paco_name": "telephone:screen",
+      "rendered_name": "telephone's screen"
+    },
+    {
+      "label_index": 343,
+      "paco_category_id": 2343,
+      "paco_name": "cellular_telephone:screen",
+      "rendered_name": "cellular telephone's screen"
+    },
+    {
+      "label_index": 344,
+      "paco_category_id": 2344,
+      "paco_name": "laptop_computer:screen",
+      "rendered_name": "laptop computer's screen"
+    },
+    {
+      "label_index": 345,
+      "paco_category_id": 2345,
+      "paco_name": "scissors:screw",
+      "rendered_name": "scissors's screw"
+    },
+    {
+      "label_index": 346,
+      "paco_category_id": 2346,
+      "paco_name": "mouse_(computer_equipment):scroll_wheel",
+      "rendered_name": "mouse (computer equipment)'s scroll wheel"
+    },
+    {
+      "label_index": 347,
+      "paco_category_id": 2347,
+      "paco_name": "blender:seal_ring",
+      "rendered_name": "blender's seal ring"
+    },
+    {
+      "label_index": 348,
+      "paco_category_id": 2348,
+      "paco_name": "chair:seat",
+      "rendered_name": "chair's seat"
+    },
+    {
+      "label_index": 349,
+      "paco_category_id": 2349,
+      "paco_name": "bench:seat",
+      "rendered_name": "bench's seat"
+    },
+    {
+      "label_index": 350,
+      "paco_category_id": 2350,
+      "paco_name": "stool:seat",
+      "rendered_name": "stool's seat"
+    },
+    {
+      "label_index": 351,
+      "paco_category_id": 2351,
+      "paco_name": "car_(automobile):seat",
+      "rendered_name": "car (automobile)'s seat"
+    },
+    {
+      "label_index": 352,
+      "paco_category_id": 2352,
+      "paco_name": "bicycle:seat_stay",
+      "rendered_name": "bicycle's seat stay"
+    },
+    {
+      "label_index": 353,
+      "paco_category_id": 2353,
+      "paco_name": "bicycle:seat_tube",
+      "rendered_name": "bicycle's seat tube"
+    },
+    {
+      "label_index": 354,
+      "paco_category_id": 2354,
+      "paco_name": "lamp:shade",
+      "rendered_name": "lamp's shade"
+    },
+    {
+      "label_index": 355,
+      "paco_category_id": 2355,
+      "paco_name": "lamp:shade_cap",
+      "rendered_name": "lamp's shade cap"
+    },
+    {
+      "label_index": 356,
+      "paco_category_id": 2356,
+      "paco_name": "lamp:shade_inner_side",
+      "rendered_name": "lamp's shade inner side"
+    },
+    {
+      "label_index": 357,
+      "paco_category_id": 2357,
+      "paco_name": "broom:shaft",
+      "rendered_name": "broom's shaft"
+    },
+    {
+      "label_index": 358,
+      "paco_category_id": 2358,
+      "paco_name": "screwdriver:shank",
+      "rendered_name": "screwdriver's shank"
+    },
+    {
+      "label_index": 359,
+      "paco_category_id": 2359,
+      "paco_name": "table:shelf",
+      "rendered_name": "table's shelf"
+    },
+    {
+      "label_index": 360,
+      "paco_category_id": 2360,
+      "paco_name": "sweater:shoulder",
+      "rendered_name": "sweater's shoulder"
+    },
+    {
+      "label_index": 361,
+      "paco_category_id": 2361,
+      "paco_name": "soap:shoulder",
+      "rendered_name": "soap's shoulder"
+    },
+    {
+      "label_index": 362,
+      "paco_category_id": 2362,
+      "paco_name": "bottle:shoulder",
+      "rendered_name": "bottle's shoulder"
+    },
+    {
+      "label_index": 363,
+      "paco_category_id": 2363,
+      "paco_name": "crate:side",
+      "rendered_name": "crate's side"
+    },
+    {
+      "label_index": 364,
+      "paco_category_id": 2364,
+      "paco_name": "guitar:side",
+      "rendered_name": "guitar's side"
+    },
+    {
+      "label_index": 365,
+      "paco_category_id": 2365,
+      "paco_name": "box:side",
+      "rendered_name": "box's side"
+    },
+    {
+      "label_index": 366,
+      "paco_category_id": 2366,
+      "paco_name": "microwave_oven:side",
+      "rendered_name": "microwave oven's side"
+    },
+    {
+      "label_index": 367,
+      "paco_category_id": 2367,
+      "paco_name": "pan_(for_cooking):side",
+      "rendered_name": "pan (for cooking)'s side"
+    },
+    {
+      "label_index": 368,
+      "paco_category_id": 2368,
+      "paco_name": "television_set:side",
+      "rendered_name": "television set's side"
+    },
+    {
+      "label_index": 369,
+      "paco_category_id": 2369,
+      "paco_name": "carton:side",
+      "rendered_name": "carton's side"
+    },
+    {
+      "label_index": 370,
+      "paco_category_id": 2370,
+      "paco_name": "basket:side",
+      "rendered_name": "basket's side"
+    },
+    {
+      "label_index": 371,
+      "paco_category_id": 2371,
+      "paco_name": "mouse_(computer_equipment):side_button",
+      "rendered_name": "mouse (computer equipment)'s side button"
+    },
+    {
+      "label_index": 372,
+      "paco_category_id": 2372,
+      "paco_name": "car_(automobile):sign",
+      "rendered_name": "car (automobile)'s sign"
+    },
+    {
+      "label_index": 373,
+      "paco_category_id": 2373,
+      "paco_name": "soap:sipper",
+      "rendered_name": "soap's sipper"
+    },
+    {
+      "label_index": 374,
+      "paco_category_id": 2374,
+      "paco_name": "bottle:sipper",
+      "rendered_name": "bottle's sipper"
+    },
+    {
+      "label_index": 375,
+      "paco_category_id": 2375,
+      "paco_name": "chair:skirt",
+      "rendered_name": "chair's skirt"
+    },
+    {
+      "label_index": 376,
+      "paco_category_id": 2376,
+      "paco_name": "sweater:sleeve",
+      "rendered_name": "sweater's sleeve"
+    },
+    {
+      "label_index": 377,
+      "paco_category_id": 2377,
+      "paco_name": "earphone:slider",
+      "rendered_name": "earphone's slider"
+    },
+    {
+      "label_index": 378,
+      "paco_category_id": 2378,
+      "paco_name": "chair:spindle",
+      "rendered_name": "chair's spindle"
+    },
+    {
+      "label_index": 379,
+      "paco_category_id": 2379,
+      "paco_name": "car_(automobile):splashboard",
+      "rendered_name": "car (automobile)'s splashboard"
+    },
+    {
+      "label_index": 380,
+      "paco_category_id": 2380,
+      "paco_name": "blender:spout",
+      "rendered_name": "blender's spout"
+    },
+    {
+      "label_index": 381,
+      "paco_category_id": 2381,
+      "paco_name": "soap:spout",
+      "rendered_name": "soap's spout"
+    },
+    {
+      "label_index": 382,
+      "paco_category_id": 2382,
+      "paco_name": "kettle:spout",
+      "rendered_name": "kettle's spout"
+    },
+    {
+      "label_index": 383,
+      "paco_category_id": 2383,
+      "paco_name": "bottle:spout",
+      "rendered_name": "bottle's spout"
+    },
+    {
+      "label_index": 384,
+      "paco_category_id": 2384,
+      "paco_name": "car_(automobile):steeringwheel",
+      "rendered_name": "car (automobile)'s steeringwheel"
+    },
+    {
+      "label_index": 385,
+      "paco_category_id": 2385,
+      "paco_name": "bicycle:stem",
+      "rendered_name": "bicycle's stem"
+    },
+    {
+      "label_index": 386,
+      "paco_category_id": 2386,
+      "paco_name": "stool:step",
+      "rendered_name": "stool's step"
+    },
+    {
+      "label_index": 387,
+      "paco_category_id": 2387,
+      "paco_name": "ladder:step",
+      "rendered_name": "ladder's step"
+    },
+    {
+      "label_index": 388,
+      "paco_category_id": 2388,
+      "paco_name": "jar:sticker",
+      "rendered_name": "jar's sticker"
+    },
+    {
+      "label_index": 389,
+      "paco_category_id": 2389,
+      "paco_name": "chair:stile",
+      "rendered_name": "chair's stile"
+    },
+    {
+      "label_index": 390,
+      "paco_category_id": 2390,
+      "paco_name": "hat:strap",
+      "rendered_name": "hat's strap"
+    },
+    {
+      "label_index": 391,
+      "paco_category_id": 2391,
+      "paco_name": "watch:strap",
+      "rendered_name": "watch's strap"
+    },
+    {
+      "label_index": 392,
+      "paco_category_id": 2392,
+      "paco_name": "helmet:strap",
+      "rendered_name": "helmet's strap"
+    },
+    {
+      "label_index": 393,
+      "paco_category_id": 2393,
+      "paco_name": "slipper_(footwear):strap",
+      "rendered_name": "slipper (footwear)'s strap"
+    },
+    {
+      "label_index": 394,
+      "paco_category_id": 2394,
+      "paco_name": "belt:strap",
+      "rendered_name": "belt's strap"
+    },
+    {
+      "label_index": 395,
+      "paco_category_id": 2395,
+      "paco_name": "chair:stretcher",
+      "rendered_name": "chair's stretcher"
+    },
+    {
+      "label_index": 396,
+      "paco_category_id": 2396,
+      "paco_name": "table:stretcher",
+      "rendered_name": "table's stretcher"
+    },
+    {
+      "label_index": 397,
+      "paco_category_id": 2397,
+      "paco_name": "bench:stretcher",
+      "rendered_name": "bench's stretcher"
+    },
+    {
+      "label_index": 398,
+      "paco_category_id": 2398,
+      "paco_name": "guitar:string",
+      "rendered_name": "guitar's string"
+    },
+    {
+      "label_index": 399,
+      "paco_category_id": 2399,
+      "paco_name": "fan:string",
+      "rendered_name": "fan's string"
+    },
+    {
+      "label_index": 400,
+      "paco_category_id": 2400,
+      "paco_name": "blender:switch",
+      "rendered_name": "blender's switch"
+    },
+    {
+      "label_index": 401,
+      "paco_category_id": 2401,
+      "paco_name": "lamp:switch",
+      "rendered_name": "lamp's switch"
+    },
+    {
+      "label_index": 402,
+      "paco_category_id": 2402,
+      "paco_name": "kettle:switch",
+      "rendered_name": "kettle's switch"
+    },
+    {
+      "label_index": 403,
+      "paco_category_id": 2403,
+      "paco_name": "chair:swivel",
+      "rendered_name": "chair's swivel"
+    },
+    {
+      "label_index": 404,
+      "paco_category_id": 2404,
+      "paco_name": "bench:table_top",
+      "rendered_name": "bench's table top"
+    },
+    {
+      "label_index": 405,
+      "paco_category_id": 2405,
+      "paco_name": "dog:tail",
+      "rendered_name": "dog's tail"
+    },
+    {
+      "label_index": 406,
+      "paco_category_id": 2406,
+      "paco_name": "car_(automobile):taillight",
+      "rendered_name": "car (automobile)'s taillight"
+    },
+    {
+      "label_index": 407,
+      "paco_category_id": 2407,
+      "paco_name": "car_(automobile):tank",
+      "rendered_name": "car (automobile)'s tank"
+    },
+    {
+      "label_index": 408,
+      "paco_category_id": 2408,
+      "paco_name": "carton:tapering_top",
+      "rendered_name": "carton's tapering top"
+    },
+    {
+      "label_index": 409,
+      "paco_category_id": 2409,
+      "paco_name": "dog:teeth",
+      "rendered_name": "dog's teeth"
+    },
+    {
+      "label_index": 410,
+      "paco_category_id": 2410,
+      "paco_name": "towel:terry_bar",
+      "rendered_name": "towel's terry bar"
+    },
+    {
+      "label_index": 411,
+      "paco_category_id": 2411,
+      "paco_name": "can:text",
+      "rendered_name": "can's text"
+    },
+    {
+      "label_index": 412,
+      "paco_category_id": 2412,
+      "paco_name": "plastic_bag:text",
+      "rendered_name": "plastic bag's text"
+    },
+    {
+      "label_index": 413,
+      "paco_category_id": 2413,
+      "paco_name": "mug:text",
+      "rendered_name": "mug's text"
+    },
+    {
+      "label_index": 414,
+      "paco_category_id": 2414,
+      "paco_name": "newspaper:text",
+      "rendered_name": "newspaper's text"
+    },
+    {
+      "label_index": 415,
+      "paco_category_id": 2415,
+      "paco_name": "jar:text",
+      "rendered_name": "jar's text"
+    },
+    {
+      "label_index": 416,
+      "paco_category_id": 2416,
+      "paco_name": "carton:text",
+      "rendered_name": "carton's text"
+    },
+    {
+      "label_index": 417,
+      "paco_category_id": 2417,
+      "paco_name": "shoe:throat",
+      "rendered_name": "shoe's throat"
+    },
+    {
+      "label_index": 418,
+      "paco_category_id": 2418,
+      "paco_name": "microwave_oven:time_display",
+      "rendered_name": "microwave oven's time display"
+    },
+    {
+      "label_index": 419,
+      "paco_category_id": 2419,
+      "paco_name": "spoon:tip",
+      "rendered_name": "spoon's tip"
+    },
+    {
+      "label_index": 420,
+      "paco_category_id": 2420,
+      "paco_name": "pen:tip",
+      "rendered_name": "pen's tip"
+    },
+    {
+      "label_index": 421,
+      "paco_category_id": 2421,
+      "paco_name": "screwdriver:tip",
+      "rendered_name": "screwdriver's tip"
+    },
+    {
+      "label_index": 422,
+      "paco_category_id": 2422,
+      "paco_name": "shoe:toe_box",
+      "rendered_name": "shoe's toe box"
+    },
+    {
+      "label_index": 423,
+      "paco_category_id": 2423,
+      "paco_name": "slipper_(footwear):toe_box",
+      "rendered_name": "slipper (footwear)'s toe box"
+    },
+    {
+      "label_index": 424,
+      "paco_category_id": 2424,
+      "paco_name": "shoe:tongue",
+      "rendered_name": "shoe's tongue"
+    },
+    {
+      "label_index": 425,
+      "paco_category_id": 2425,
+      "paco_name": "bottle:top",
+      "rendered_name": "bottle's top"
+    },
+    {
+      "label_index": 426,
+      "paco_category_id": 2426,
+      "paco_name": "microwave_oven:top",
+      "rendered_name": "microwave oven's top"
+    },
+    {
+      "label_index": 427,
+      "paco_category_id": 2427,
+      "paco_name": "soap:top",
+      "rendered_name": "soap's top"
+    },
+    {
+      "label_index": 428,
+      "paco_category_id": 2428,
+      "paco_name": "television_set:top",
+      "rendered_name": "television set's top"
+    },
+    {
+      "label_index": 429,
+      "paco_category_id": 2429,
+      "paco_name": "table:top",
+      "rendered_name": "table's top"
+    },
+    {
+      "label_index": 430,
+      "paco_category_id": 2430,
+      "paco_name": "carton:top",
+      "rendered_name": "carton's top"
+    },
+    {
+      "label_index": 431,
+      "paco_category_id": 2431,
+      "paco_name": "ladder:top_cap",
+      "rendered_name": "ladder's top cap"
+    },
+    {
+      "label_index": 432,
+      "paco_category_id": 2432,
+      "paco_name": "bicycle:top_tube",
+      "rendered_name": "bicycle's top tube"
+    },
+    {
+      "label_index": 433,
+      "paco_category_id": 2433,
+      "paco_name": "laptop_computer:touchpad",
+      "rendered_name": "laptop computer's touchpad"
+    },
+    {
+      "label_index": 434,
+      "paco_category_id": 2434,
+      "paco_name": "car_(automobile):trunk",
+      "rendered_name": "car (automobile)'s trunk"
+    },
+    {
+      "label_index": 435,
+      "paco_category_id": 2435,
+      "paco_name": "car_(automobile):turnsignal",
+      "rendered_name": "car (automobile)'s turnsignal"
+    },
+    {
+      "label_index": 436,
+      "paco_category_id": 2436,
+      "paco_name": "microwave_oven:turntable",
+      "rendered_name": "microwave oven's turntable"
+    },
+    {
+      "label_index": 437,
+      "paco_category_id": 2437,
+      "paco_name": "shoe:vamp",
+      "rendered_name": "shoe's vamp"
+    },
+    {
+      "label_index": 438,
+      "paco_category_id": 2438,
+      "paco_name": "slipper_(footwear):vamp",
+      "rendered_name": "slipper (footwear)'s vamp"
+    },
+    {
+      "label_index": 439,
+      "paco_category_id": 2439,
+      "paco_name": "blender:vapour_cover",
+      "rendered_name": "blender's vapour cover"
+    },
+    {
+      "label_index": 440,
+      "paco_category_id": 2440,
+      "paco_name": "hat:visor",
+      "rendered_name": "hat's visor"
+    },
+    {
+      "label_index": 441,
+      "paco_category_id": 2441,
+      "paco_name": "helmet:visor",
+      "rendered_name": "helmet's visor"
+    },
+    {
+      "label_index": 442,
+      "paco_category_id": 2442,
+      "paco_name": "shoe:welt",
+      "rendered_name": "shoe's welt"
+    },
+    {
+      "label_index": 443,
+      "paco_category_id": 2443,
+      "paco_name": "chair:wheel",
+      "rendered_name": "chair's wheel"
+    },
+    {
+      "label_index": 444,
+      "paco_category_id": 2444,
+      "paco_name": "car_(automobile):wheel",
+      "rendered_name": "car (automobile)'s wheel"
+    },
+    {
+      "label_index": 445,
+      "paco_category_id": 2445,
+      "paco_name": "trash_can:wheel",
+      "rendered_name": "trash can's wheel"
+    },
+    {
+      "label_index": 446,
+      "paco_category_id": 2446,
+      "paco_name": "table:wheel",
+      "rendered_name": "table's wheel"
+    },
+    {
+      "label_index": 447,
+      "paco_category_id": 2447,
+      "paco_name": "bicycle:wheel",
+      "rendered_name": "bicycle's wheel"
+    },
+    {
+      "label_index": 448,
+      "paco_category_id": 2448,
+      "paco_name": "watch:window",
+      "rendered_name": "watch's window"
+    },
+    {
+      "label_index": 449,
+      "paco_category_id": 2449,
+      "paco_name": "car_(automobile):window",
+      "rendered_name": "car (automobile)'s window"
+    },
+    {
+      "label_index": 450,
+      "paco_category_id": 2450,
+      "paco_name": "car_(automobile):windowpane",
+      "rendered_name": "car (automobile)'s windowpane"
+    },
+    {
+      "label_index": 451,
+      "paco_category_id": 2451,
+      "paco_name": "car_(automobile):windshield",
+      "rendered_name": "car (automobile)'s windshield"
+    },
+    {
+      "label_index": 452,
+      "paco_category_id": 2452,
+      "paco_name": "car_(automobile):wiper",
+      "rendered_name": "car (automobile)'s wiper"
+    },
+    {
+      "label_index": 453,
+      "paco_category_id": 2453,
+      "paco_name": "mouse_(computer_equipment):wire",
+      "rendered_name": "mouse (computer equipment)'s wire"
+    },
+    {
+      "label_index": 454,
+      "paco_category_id": 2454,
+      "paco_name": "sweater:yoke",
+      "rendered_name": "sweater's yoke"
+    },
+    {
+      "label_index": 455,
+      "paco_category_id": 2455,
+      "paco_name": "handbag:zip",
+      "rendered_name": "handbag's zip"
+    }
+  ],
+  "background_index": 456,
+  "ignore_index": 65535,
+  "object_classes": [
+    "trash can",
+    "handbag",
+    "ball",
+    "basket",
+    "belt",
+    "bench",
+    "bicycle",
+    "blender",
+    "book",
+    "bottle",
+    "bowl",
+    "box",
+    "broom",
+    "bucket",
+    "calculator",
+    "can",
+    "car (automobile)",
+    "carton",
+    "cellular telephone",
+    "chair",
+    "clock",
+    "crate",
+    "cup",
+    "dog",
+    "drill",
+    "drum (musical instrument)",
+    "earphone",
+    "fan",
+    "glass (drink container)",
+    "guitar",
+    "hammer",
+    "hat",
+    "helmet",
+    "jar",
+    "kettle",
+    "knife",
+    "ladder",
+    "lamp",
+    "laptop computer",
+    "microwave oven",
+    "mirror",
+    "mouse (computer equipment)",
+    "mug",
+    "napkin",
+    "newspaper",
+    "pan (for cooking)",
+    "pen",
+    "pencil",
+    "pillow",
+    "pipe",
+    "plate",
+    "pliers",
+    "remote control",
+    "plastic bag",
+    "scarf",
+    "scissors",
+    "screwdriver",
+    "shoe",
+    "slipper (footwear)",
+    "soap",
+    "sponge",
+    "spoon",
+    "stool",
+    "sweater",
+    "table",
+    "tape (sticky cloth or paper)",
+    "telephone",
+    "television set",
+    "tissue paper",
+    "towel",
+    "tray",
+    "vase",
+    "wallet",
+    "watch",
+    "wrench"
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "anonymous_id": "img_040",
+  "case_id": "ladder__u01",
+  "image_id": 327988,
+  "object_category": "ladder",
+  "expected_domain": "tool_prop",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 3,
+    "predicted_part_count": 3,
+    "assignments": [
+      [
+        0,
+        0,
+        0.0
+      ],
+      [
+        1,
+        2,
+        0.5257452726364136
+      ],
+      [
+        2,
+        1,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.3333333333333333,
+    "part_precision_at_025": 0.3333333333333333,
+    "part_recall_at_025": 0.3333333333333333,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.3333333333333333,
+    "part_precision_at_050": 0.3333333333333333,
+    "part_recall_at_050": 0.3333333333333333,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.3333333333333333,
+    "annotated_semantic_class_count": 3,
+    "predicted_semantic_class_count": 3,
+    "unmatched_predicted_semantic_classes": [
+      "body",
+      "top_cap"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "foot",
+        "union_iou": 0.0,
+        "truth_pixels": 132,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "rail",
+        "union_iou": 0.0,
+        "truth_pixels": 358,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "step",
+        "union_iou": 0.0,
+        "truth_pixels": 970,
+        "predicted_pixels": 158
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 3,
+    "predicted_part_count": 52,
+    "assignments": [
+      [
+        0,
+        35,
+        0.32575756311416626
+      ],
+      [
+        1,
+        20,
+        0.05544932931661606
+      ],
+      [
+        2,
+        31,
+        0.1652003973722458
+      ]
+    ],
+    "part_f1_at_025": 0.03636363636363637,
+    "part_precision_at_025": 0.019230769230769232,
+    "part_recall_at_025": 0.3333333333333333,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.024640657084188913,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.047619047619047616,
+    "annotated_semantic_class_count": 3,
+    "predicted_semantic_class_count": 21,
+    "unmatched_predicted_semantic_classes": [
+      "body",
+      "container_base",
+      "container_bottom",
+      "container_lid",
+      "container_rim",
+      "container_side",
+      "daily_object_body",
+      "daily_object_border",
+      "daily_object_bottom",
+      "daily_object_end_tip",
+      "daily_object_frame",
+      "daily_object_hem",
+      "daily_object_top",
+      "device_base",
+      "device_logo",
+      "furniture_armrest",
+      "furniture_backrest",
+      "furniture_seat",
+      "unmapped_paco_2162",
+      "unmapped_paco_2337"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "foot",
+        "union_iou": 0.0,
+        "truth_pixels": 132,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "rail",
+        "union_iou": 0.0,
+        "truth_pixels": 358,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "step",
+        "union_iou": 0.07392197125256673,
+        "truth_pixels": 970,
+        "predicted_pixels": 76
+      }
+    ],
+    "predicted_raw_semantic_class_count": 24,
+    "foreground_pixels": 1111,
+    "unmapped_prediction_pixels": 249,
+    "unmapped_predicted_components": 3,
+    "component_area_min": 1,
+    "component_area_median": 6.0,
+    "component_area_max": 222,
+    "component_source_labels": [
+      4,
+      9,
+      9,
+      9,
+      23,
+      29,
+      29,
+      29,
+      29,
+      48,
+      51,
+      64,
+      65,
+      70,
+      70,
+      70,
+      76,
+      76,
+      82,
+      131,
+      141,
+      161,
+      161,
+      161,
+      161,
+      161,
+      161,
+      161,
+      161,
+      161,
+      161,
+      162,
+      162,
+      205,
+      207,
+      230,
+      230,
+      230,
+      259,
+      337,
+      349,
+      349,
+      349,
+      349,
+      349,
+      363,
+      363,
+      363,
+      387,
+      387,
+      387,
+      427
+    ]
+  },
+  "shape_hw": [
+    79,
+    72
+  ],
+  "annotated_pixels": 1460,
+  "overlapping_annotation_pixels": 0
+}

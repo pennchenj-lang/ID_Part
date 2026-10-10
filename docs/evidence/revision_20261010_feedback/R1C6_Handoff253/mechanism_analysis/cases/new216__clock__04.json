@@ -1,0 +1,633 @@
+{
+  "request": {
+    "request_id": "new216__clock__04",
+    "case_id": "clock__04",
+    "cohort": "new216",
+    "image_id": 6527,
+    "source_image_sha256": "d0892861444225c774be0b7da396fc683a04f85297db62fcc7c6e04263c8f08a",
+    "object_annotation_id": 61488,
+    "object_category": "clock",
+    "expected_domain": "device",
+    "domain": "device",
+    "expected_profile": "clock_watch",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\clock__04\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\clock__04",
+    "target_part_name": "hand",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\clock__04\\parts_crop\\001_hand.png",
+    "target_mask_sha256": "0b7b25e9dd95cee211e6d2222bb780133b613092708dc3bd1f72f95ccf66443a",
+    "target_area_px": 1949,
+    "target_object_fraction": 0.042726236408277794,
+    "defect_mode": "boundary",
+    "defect_seed": 20260898,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 70,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__04\\groups.json",
+    "hpid_group_map_sha256": "cdda43c8dbe09fbeae3c7c0d90646f2e1d3bded87e11d008b271df6746177f82",
+    "hpid_groups_sha256": "66ef129d2b08106c77ff6e12bbe3081b3f0633905937820ebcc714584bc95f15"
+  },
+  "summary": {
+    "request_id": "new216__clock__04",
+    "cohort": "new216",
+    "domain": "device",
+    "object_category": "clock",
+    "target": "hand",
+    "normalized_target": "clock_hand",
+    "raw_query_state": "ambiguous",
+    "hpid_query_state": "ambiguous",
+    "raw_match_count": 4,
+    "hpid_match_count": 4,
+    "raw_best_matching_iou": 0.5763986835919135,
+    "accepted_best_matching_iou": 0.5763986835919135,
+    "native_part_best_matching_iou": 0.33531451213472013,
+    "group_best_matching_iou": 0.33531451213472013,
+    "native_part_best_any_semantic_iou": 0.33531451213472013,
+    "group_best_any_semantic_iou": 0.33531451213472013,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 1,
+    "group_available_025": 1,
+    "raw_to_group_lost_025": 0,
+    "first_observed_loss_stage_025": "not_a_raw_to_group_loss",
+    "observed_subtype_025": "not_applicable",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__clock__04",
+      "cohort": "new216",
+      "raw_identity": "proposal/0003",
+      "semantic": "device_clock_hand",
+      "target_iou": 0.5763986835919135,
+      "mask_area": 1404,
+      "raw_candidate_index_zero_based": 2,
+      "upstream_candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:device_clock_hand:01",
+      "fingerprint": "12e88bd61df1d3dee849388a5d9dfbbe998bbe4a5d60ebafda686a475cd8233e",
+      "accepted_by_fuser": true,
+      "accepted_index": 2,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "device_dial/device_clock_hand/center/01",
+          "semantic": "device_clock_hand",
+          "normalized_semantic": "clock_hand",
+          "candidate_overlap_pixels": 747,
+          "truth_overlap_pixels": 677,
+          "final_target_iou": 0.33531451213472013
+        },
+        {
+          "identity": "device/device_dial/center/01",
+          "semantic": "device_dial",
+          "normalized_semantic": "dial",
+          "candidate_overlap_pixels": 654,
+          "truth_overlap_pixels": 547,
+          "final_target_iou": 0.03075911448820048
+        },
+        {
+          "identity": "device_dial/device_clock_hand/center/02",
+          "semantic": "device_clock_hand",
+          "normalized_semantic": "clock_hand",
+          "candidate_overlap_pixels": 2,
+          "truth_overlap_pixels": 1,
+          "final_target_iou": 0.0004636068613815484
+        },
+        {
+          "identity": "device_dial/device_clock_hand/right/01",
+          "semantic": "device_clock_hand",
+          "normalized_semantic": "clock_hand",
+          "candidate_overlap_pixels": 1,
+          "truth_overlap_pixels": 1,
+          "final_target_iou": 0.0038040893961008085
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/device_clock_hand/010",
+          "semantic": "device_clock_hand",
+          "normalized_semantic": "clock_hand",
+          "candidate_overlap_pixels": 747,
+          "truth_overlap_pixels": 677,
+          "final_target_iou": 0.33531451213472013
+        },
+        {
+          "identity": "object_001/device_dial/006",
+          "semantic": "device_dial",
+          "normalized_semantic": "dial",
+          "candidate_overlap_pixels": 654,
+          "truth_overlap_pixels": 547,
+          "final_target_iou": 0.026738647189583995
+        },
+        {
+          "identity": "object_001/device_clock_hand/012",
+          "semantic": "device_clock_hand",
+          "normalized_semantic": "clock_hand",
+          "candidate_overlap_pixels": 2,
+          "truth_overlap_pixels": 1,
+          "final_target_iou": 0.0004636068613815484
+        },
+        {
+          "identity": "object_001/device_clock_hand/013",
+          "semantic": "device_clock_hand",
+          "normalized_semantic": "clock_hand",
+          "candidate_overlap_pixels": 1,
+          "truth_overlap_pixels": 1,
+          "final_target_iou": 0.0038040893961008085
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": [
+        {
+          "json_path": "/profile_semantic_grouping/three_stage_verification/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:device_clock_hand:01",
+            "semantic_name": "device_clock_hand",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "clock_watch",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.02138588647248629,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.02138588647248629,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 1404.0,
+                  "bbox_fill_ratio": 0.20034246575342465,
+                  "aspect_ratio": 3.0416666666666665,
+                  "elongation": 4.817760459535666,
+                  "circularity": 0.06393758260520456,
+                  "centroid_x": 121.11182336182337,
+                  "centroid_y": 152.14672364672364
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        },
+        {
+          "json_path": "/semantic_seeded_physical_ownership/candidates/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:device_clock_hand:01",
+            "semantic_name": "device_clock_hand",
+            "canonical_group": "device_clock_hand",
+            "maximum_instances": 4,
+            "root_containment": 1.0,
+            "root_area_fraction": 0.019748779767346996,
+            "accepted_seed": true,
+            "verification": {
+              "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+              "visual_derived": false,
+              "selected_profile": "clock_watch",
+              "stage_1_semantic": {
+                "order": 1,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_segmenter",
+                "probability": null,
+                "margin": null,
+                "direct_semantic_source": true,
+                "inventory_supported": true
+              },
+              "stage_2_structure": {
+                "order": 2,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_mask",
+                "raw_verified": true,
+                "geometric_support": 0.0,
+                "axis_not_rejected": true,
+                "cross_source": false,
+                "closed_boundary_structure": false,
+                "root_area_fraction": 0.02138588647248629,
+                "semantic_shape_consistency": {
+                  "accepted": true,
+                  "reason": "shape_not_contradicted",
+                  "shape_family": null,
+                  "root_area_fraction": 0.02138588647248629,
+                  "outer_boundary_contact": 0.0,
+                  "descriptor": {
+                    "area_px": 1404.0,
+                    "bbox_fill_ratio": 0.20034246575342465,
+                    "aspect_ratio": 3.0416666666666665,
+                    "elongation": 4.817760459535666,
+                    "circularity": 0.06393758260520456,
+                    "centroid_x": 121.11182336182337,
+                    "centroid_y": 152.14672364672364
+                  },
+                  "ground_truth_used": false
+                }
+              },
+              "stage_3_appearance": {
+                "order": 3,
+                "evaluated": true,
+                "verified": true,
+                "reason": "no_appearance_contradiction",
+                "raw_verified": true,
+                "boundary_alignment": 0.0,
+                "boundary_closure": 0.0,
+                "independent_cue_count": 0,
+                "shading_only_penalty": 0.0,
+                "can_create_id": false
+              },
+              "accepted": true,
+              "ground_truth_used": false
+            }
+          }
+        },
+        {
+          "json_path": "/three_stage_candidate_verification/candidates/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:device_clock_hand:01",
+            "semantic_name": "device_clock_hand",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "clock_watch",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.02138588647248629,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.019748779767346996,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 1404.0,
+                  "bbox_fill_ratio": 0.20034246575342465,
+                  "aspect_ratio": 3.0416666666666665,
+                  "elongation": 4.817760459535666,
+                  "circularity": 0.06393758260520456,
+                  "centroid_x": 121.11182336182337,
+                  "centroid_y": 152.14672364672364
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "device/device/center/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device",
+      "normalized_semantic": "body",
+      "target_iou": 0.0,
+      "area_px": 8642
+    },
+    {
+      "part_id": "device/device_visual_panel_01/left/01",
+      "group_id": "object_001/device_dial/006",
+      "semantic": "device_visual_panel_01",
+      "normalized_semantic": "visual_panel_01",
+      "target_iou": 0.0,
+      "area_px": 1057
+    },
+    {
+      "part_id": "device/device_visual_strip_02/center/01",
+      "group_id": "object_001/device_dial/006",
+      "semantic": "device_visual_strip_02",
+      "normalized_semantic": "visual_strip_02",
+      "target_iou": 0.0,
+      "area_px": 5115
+    },
+    {
+      "part_id": "device/device_base/center/01",
+      "group_id": "object_001/device_base/004",
+      "semantic": "device_base",
+      "normalized_semantic": "base",
+      "target_iou": 0.0,
+      "area_px": 952
+    },
+    {
+      "part_id": "device/device_button/left/01",
+      "group_id": "object_001/device_button/005",
+      "semantic": "device_button",
+      "normalized_semantic": "button",
+      "target_iou": 0.0,
+      "area_px": 1025
+    },
+    {
+      "part_id": "device/device_dial/center/01",
+      "group_id": "object_001/device_dial/006",
+      "semantic": "device_dial",
+      "normalized_semantic": "dial",
+      "target_iou": 0.03075911448820048,
+      "area_px": 40375
+    },
+    {
+      "part_id": "device/device_logo/left/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device_logo",
+      "normalized_semantic": "logo",
+      "target_iou": 0.0,
+      "area_px": 6904
+    },
+    {
+      "part_id": "device/device_logo/left/02",
+      "group_id": "object_001/device_body",
+      "semantic": "device_logo",
+      "normalized_semantic": "logo",
+      "target_iou": 0.0,
+      "area_px": 4103
+    },
+    {
+      "part_id": "device/device_screen/right/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device_screen",
+      "normalized_semantic": "screen",
+      "target_iou": 0.0,
+      "area_px": 1297
+    },
+    {
+      "part_id": "device_dial/device_clock_hand/center/01",
+      "group_id": "object_001/device_clock_hand/010",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "target_iou": 0.33531451213472013,
+      "area_px": 747
+    },
+    {
+      "part_id": "device_dial/device_clock_hand/left/01",
+      "group_id": "object_001/device_clock_hand/011",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "target_iou": 0.0,
+      "area_px": 505
+    },
+    {
+      "part_id": "device_dial/device_clock_hand/center/02",
+      "group_id": "object_001/device_clock_hand/012",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "target_iou": 0.0004636068613815484,
+      "area_px": 209
+    },
+    {
+      "part_id": "device_dial/device_clock_hand/right/01",
+      "group_id": "object_001/device_clock_hand/013",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "target_iou": 0.0038040893961008085,
+      "area_px": 162
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/device_body",
+      "semantic": "device_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "device/device/center/01",
+        "device/device_logo/left/01",
+        "device/device_logo/left/02",
+        "device/device_screen/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 20944,
+      "evidence": "three_stage_semantic_rejection_merge"
+    },
+    {
+      "group_id": "object_001/device_dial/006",
+      "semantic": "device_dial",
+      "normalized_semantic": "dial",
+      "member_part_ids": [
+        "device/device_visual_panel_01/left/01",
+        "device/device_visual_strip_02/center/01",
+        "device/device_dial/center/01"
+      ],
+      "target_iou": 0.026738647189583995,
+      "area_px": 46549,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_base/004",
+      "semantic": "device_base",
+      "normalized_semantic": "base",
+      "member_part_ids": [
+        "device/device_base/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 952,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_button/005",
+      "semantic": "device_button",
+      "normalized_semantic": "button",
+      "member_part_ids": [
+        "device/device_button/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 1025,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_clock_hand/010",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "member_part_ids": [
+        "device_dial/device_clock_hand/center/01"
+      ],
+      "target_iou": 0.33531451213472013,
+      "area_px": 747,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_clock_hand/011",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "member_part_ids": [
+        "device_dial/device_clock_hand/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 505,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_clock_hand/012",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "member_part_ids": [
+        "device_dial/device_clock_hand/center/02"
+      ],
+      "target_iou": 0.0004636068613815484,
+      "area_px": 209,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_clock_hand/013",
+      "semantic": "device_clock_hand",
+      "normalized_semantic": "clock_hand",
+      "member_part_ids": [
+        "device_dial/device_clock_hand/right/01"
+      ],
+      "target_iou": 0.0038040893961008085,
+      "area_px": 162,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 17,
+    "accepted_candidate_count": 17,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 13,
+    "identity_hypothesis_count": 17,
+    "identity_group_count": 16,
+    "identity_hypotheses_merged": 1,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 6,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [],
+    "classes_with_multiple_sources": [
+      "device_clock_hand",
+      "device_dial"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 1,
+    "specificity_host_suppressions": 14,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 71125,
+    "lost_root_pixels_before_conservation": 2,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__04\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__clock__04",
+      "cohort": "new216",
+      "domain": "device",
+      "object_category": "clock",
+      "target": "clock_hand",
+      "threshold": "050",
+      "raw_query_state": "ambiguous",
+      "hpid_query_state": "ambiguous",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.5763986835919135,
+      "accepted_best_iou": 0.5763986835919135,
+      "part_best_iou": 0.33531451213472013,
+      "group_best_iou": 0.33531451213472013,
+      "group_any_semantic_best_iou": 0.33531451213472013,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

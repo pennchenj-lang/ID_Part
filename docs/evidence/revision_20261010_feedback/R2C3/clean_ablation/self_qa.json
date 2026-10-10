@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "audit_type": "implementation author self-QA; not an independent audit",
+  "protocol_sha256": "06f97a5361eafbf9f471cff5d4865cdc6f191b780510e99d042a9c6706fec060",
+  "run_receipt_sha256": "d3bb42aff068826a847dcdf1dcebfec572808cbcecc617e5ee29fc8d551b7334",
+  "self_qa_script_sha256": "ce8487edde93385f8c4cfa6237f6c9cc119605f2b501eed10408619757b354b6",
+  "n_cases": 226,
+  "n_rows": 678,
+  "n_source_files_verified": 67,
+  "n_input_files_verified": 4074,
+  "all_case_receipts_complete": true,
+  "all_frozen_files_unchanged": true,
+  "protocol_frozen_before_every_inference": true,
+  "original_candidates_unchanged": true,
+  "released_bitexact_maps": 226,
+  "released_endpoint_comparisons": 22600,
+  "released_endpoint_maximum_error": 0.0,
+  "arithmetic_checks": 105,
+  "maximum_arithmetic_error": 5.551115123125783e-17,
+  "scored_part_totals": {
+    "released": 1277,
+    "uniform_r": 1372,
+    "no_consensus": 1274
+  }
+}

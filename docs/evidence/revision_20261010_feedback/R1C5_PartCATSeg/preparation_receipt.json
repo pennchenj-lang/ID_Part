@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-09T14:47:36.627173+00:00",
+  "reference_manifest_sha256": "02747efa64ec6e5b8ce51267f834f1ca6fd12b197c4ba04e16c30502c1fecb64",
+  "inference_manifest_sha256": "ec52d3f9cb16ae7e8110ac5ac65bf7a016a32527939472c2eac20ff20a89c040",
+  "label_registry_sha256": "6559d5a714b3a5a23ef6469f3e714446790d77cfd5db6a245e5c5a0b5f9411f6",
+  "smoke_fixture_sha256": "f4ce0481475cfb4b1cfeb2c09dc17f7fa3be4b57e03291cc3b3ad0cc733305e2",
+  "smoke_role": "Synthetic unlabelled execution fixture; not used for scientific accuracy",
+  "predictions_read": false,
+  "word_modified": false
+}

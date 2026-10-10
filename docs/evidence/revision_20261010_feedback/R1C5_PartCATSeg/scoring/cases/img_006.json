@@ -1,0 +1,235 @@
+{
+  "anonymous_id": "img_006",
+  "case_id": "telephone__u01",
+  "image_id": 523919,
+  "object_category": "telephone",
+  "expected_domain": "device",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 4,
+    "predicted_part_count": 9,
+    "assignments": [
+      [
+        0,
+        8,
+        0.2726851999759674
+      ],
+      [
+        1,
+        3,
+        0.2965393662452698
+      ],
+      [
+        2,
+        1,
+        0.0
+      ],
+      [
+        3,
+        5,
+        0.5939245223999023
+      ]
+    ],
+    "part_f1_at_025": 0.46153846153846156,
+    "part_precision_at_025": 0.3333333333333333,
+    "part_recall_at_025": 0.75,
+    "matched_count_at_025": 3,
+    "part_f1_at_050": 0.15384615384615383,
+    "part_precision_at_050": 0.1111111111111111,
+    "part_recall_at_050": 0.25,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.07080208477697045,
+    "semantic_union_recall_at_025": 0.25,
+    "semantic_label_precision": 0.4,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 5,
+    "unmatched_predicted_semantic_classes": [
+      "keyboard",
+      "visual_panel_01",
+      "visual_panel_02"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "back_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 1053,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "bezel",
+        "union_iou": 0.022452830188679246,
+        "truth_pixels": 3723,
+        "predicted_pixels": 1696
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.2607555089192025,
+        "truth_pixels": 978,
+        "predicted_pixels": 1425
+      },
+      {
+        "semantic": "screen",
+        "union_iou": 0.0,
+        "truth_pixels": 251,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 4,
+    "predicted_part_count": 54,
+    "assignments": [
+      [
+        0,
+        0,
+        0.0
+      ],
+      [
+        1,
+        11,
+        0.12295082211494446
+      ],
+      [
+        2,
+        16,
+        0.4000000059604645
+      ],
+      [
+        3,
+        10,
+        0.2065439671278
+      ]
+    ],
+    "part_f1_at_025": 0.034482758620689655,
+    "part_precision_at_025": 0.018518518518518517,
+    "part_recall_at_025": 0.25,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.033445084486365614,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.26666666666666666,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 15,
+    "unmatched_predicted_semantic_classes": [
+      "body",
+      "container_body",
+      "container_cover",
+      "container_handle",
+      "container_inner",
+      "container_label",
+      "container_lid",
+      "daily_object_body",
+      "jar",
+      "tool_prop_body",
+      "tool_prop_bowl"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "back_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 1053,
+        "predicted_pixels": 25
+      },
+      {
+        "semantic": "bezel",
+        "union_iou": 0.005372011818426001,
+        "truth_pixels": 3723,
+        "predicted_pixels": 20
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.06978470675575353,
+        "truth_pixels": 978,
+        "predicted_pixels": 463
+      },
+      {
+        "semantic": "screen",
+        "union_iou": 0.05862361937128292,
+        "truth_pixels": 251,
+        "predicted_pixels": 995
+      }
+    ],
+    "predicted_raw_semantic_class_count": 23,
+    "foreground_pixels": 4222,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 19.5,
+    "component_area_max": 997,
+    "component_source_labels": [
+      11,
+      40,
+      40,
+      48,
+      55,
+      55,
+      55,
+      55,
+      56,
+      56,
+      59,
+      59,
+      60,
+      62,
+      67,
+      89,
+      99,
+      99,
+      100,
+      101,
+      101,
+      101,
+      101,
+      101,
+      101,
+      123,
+      127,
+      127,
+      127,
+      127,
+      155,
+      187,
+      214,
+      258,
+      261,
+      342,
+      342,
+      342,
+      342,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      411,
+      411
+    ]
+  },
+  "shape_hw": [
+    162,
+    137
+  ],
+  "annotated_pixels": 6005,
+  "overlapping_annotation_pixels": 0
+}

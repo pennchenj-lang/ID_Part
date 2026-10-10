@@ -1,0 +1,223 @@
+{
+  "request": {
+    "request_id": "new216__plastic_bag__02",
+    "case_id": "plastic_bag__02",
+    "cohort": "new216",
+    "image_id": 464928,
+    "source_image_sha256": "353382d834e14dc2d113f754f7450aa8fbdc3e6a2b06ea823c80d2f3ffa09273",
+    "object_annotation_id": 225830,
+    "object_category": "plastic_bag",
+    "expected_domain": "container",
+    "domain": "container",
+    "expected_profile": "bag",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\plastic_bag__02\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\plastic_bag__02",
+    "target_part_name": "text",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\plastic_bag__02\\parts_crop\\001_text.png",
+    "target_mask_sha256": "ee409f6fd80a0e52635dc304e68fcb493f6f69657bfa1ac3eda25910860ea0dc",
+    "target_area_px": 3923,
+    "target_object_fraction": 0.15099495785381625,
+    "defect_mode": "boundary",
+    "defect_seed": 20260982,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 154,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__02\\groups.json",
+    "hpid_group_map_sha256": "dd82a0fc7b6a985c5711dab86d0f1a5720441bcfb1a46dc91cdc90e8e87b3001",
+    "hpid_groups_sha256": "c15840fd461258c824145300b4844714a098145971280debef1d4772f566a941"
+  },
+  "summary": {
+    "request_id": "new216__plastic_bag__02",
+    "cohort": "new216",
+    "domain": "container",
+    "object_category": "plastic_bag",
+    "target": "text",
+    "normalized_target": "label",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 1,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.39574360273625536,
+    "accepted_best_matching_iou": 0.39574360273625536,
+    "native_part_best_matching_iou": 0,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.2716891797799749,
+    "group_best_any_semantic_iou": 0.1523731841839509,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 0,
+    "raw_available_050": 0,
+    "accepted_available_050": 0,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 0,
+    "first_observed_loss_stage_050": "not_a_raw_to_group_loss",
+    "observed_subtype_050": "not_applicable",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__plastic_bag__02",
+      "cohort": "new216",
+      "raw_identity": "proposal/0005",
+      "semantic": "container_label",
+      "target_iou": 0.39574360273625536,
+      "mask_area": 1586,
+      "raw_candidate_index_zero_based": 4,
+      "upstream_candidate_key": "root:1/visual-region:04",
+      "fingerprint": "429107688153bffff3c2db6d60f322150fce9b848bbb7d622d98fd2550ba8d2a",
+      "accepted_by_fuser": true,
+      "accepted_index": 4,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "container/container/center/01",
+          "semantic": "container",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 1586,
+          "truth_overlap_pixels": 1562,
+          "final_target_iou": 0.2716891797799749
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/container_body",
+          "semantic": "container_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 1586,
+          "truth_overlap_pixels": 1562,
+          "final_target_iou": 0.1523731841839509
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "container/container/center/01",
+      "group_id": "object_001/container_body",
+      "semantic": "container",
+      "normalized_semantic": "body",
+      "target_iou": 0.2716891797799749,
+      "area_px": 14341
+    },
+    {
+      "part_id": "container/container_pocket/center/01",
+      "group_id": "object_001/container_body",
+      "semantic": "container_pocket",
+      "normalized_semantic": "pocket",
+      "target_iou": 0.0008515097923626121,
+      "area_px": 11357
+    },
+    {
+      "part_id": "container/container_zipper/center/01",
+      "group_id": "object_001/container_body",
+      "semantic": "container_zipper",
+      "normalized_semantic": "zipper",
+      "target_iou": 0.0020186727226848347,
+      "area_px": 48
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/container_body",
+      "semantic": "container_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "container/container/center/01",
+        "container/container_pocket/center/01",
+        "container/container_zipper/center/01"
+      ],
+      "target_iou": 0.1523731841839509,
+      "area_px": 25746,
+      "evidence": "three_stage_semantic_rejection_merge"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 5,
+    "accepted_candidate_count": 5,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 3,
+    "identity_hypothesis_count": 5,
+    "identity_group_count": 5,
+    "identity_hypotheses_merged": 0,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 3,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [],
+    "classes_with_multiple_sources": [],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 2,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 25746,
+    "lost_root_pixels_before_conservation": 40,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__02\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__plastic_bag__02",
+      "cohort": "new216",
+      "domain": "container",
+      "object_category": "plastic_bag",
+      "target": "label",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.39574360273625536,
+      "accepted_best_iou": 0.39574360273625536,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.1523731841839509,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

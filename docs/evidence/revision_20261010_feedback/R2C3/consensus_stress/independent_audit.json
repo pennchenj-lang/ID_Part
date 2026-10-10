@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-10T01:52:59.250272+00:00",
+  "auditor_scope": "Independent code/design review, source and output binding, raw-table arithmetic, all-case eligibility reconstruction, fixed-first-three raw-pixel Eq2 stress replay; not a new model experiment.",
+  "audit_script_sha256": "5776e1e54fafbf9f0f5adc01a5fd51ab362f2cb10d2aa4eea638a80e7baa6de5",
+  "protocol_sha256": "5ff061ee0adbc793575305d28528dea99ba139902a1ab942e24d12036eafa0ae",
+  "post_run_receipt_sha256": "8a78ed7054894e21b025039a638b9a010147aeea676ce98e1c9c29a27aae206a",
+  "bound_files": {
+    "case_audit.csv": "65873a76990c1af44fe976786114fef89ab858a410118baefa27e38e1a9f6b1a",
+    "case_results.csv": "f6fc763fa76a80d47e0ed09dd45ee239dbf445a5095ad38ab5d9e4d04fda8d10",
+    "completion_receipt.json": "36916925e130bb47c12a2f7cb9cff7d13a76aff12359011ec21f27e216e4f4d2",
+    "freeze_receipt.json": "dd2b90ecc812b20a83ad866cae238098bc6a477c9ed3da632dfea263910654d0",
+    "paired_comparisons.csv": "b66b119f72e1d5010fd13b60791446f9b264889113f8a40c73216391d84dafbf",
+    "protocol.json": "5ff061ee0adbc793575305d28528dea99ba139902a1ab942e24d12036eafa0ae",
+    "protocol_clarification.json": "567542ba3077ea78573d51d77ad2f25cdb060f170de65e796ce83373711a525d",
+    "report.json": "3858782b2acbf3ed38686047df56451311ce102d5ad35757a8b9990b62e1c91b",
+    "run.log": "70eb87cd6c8ec49788f9f2e9156df68a0d42852bfab094bd6c401f5da8ae66ac",
+    "run_stress.py": "0e589cb6f7cd113dffd9c1dea06a3b3077c857ae40257b99a3b7efb232b265f3",
+    "summary.csv": "b8f02743d2bb4445fc7ebcb401ffe8d95d4ad596bfe366a976fbc037fc45ac13"
+  },
+  "n_cases": 226,
+  "n_eligible": 150,
+  "n_ineligible": 76,
+  "n_rows": 6000,
+  "n_categories_original": 60,
+  "n_categories_eligible": 51,
+  "all_conditions_and_three_r_levels_complete": true,
+  "all_same_family_repetition_metrics_zero_difference": true,
+  "candidate_noisy_or_same_cross_family_5_identical": true,
+  "uniform_r_levels_identical_as_defined": true,
+  "all_226_original_consensus_reconstruction_audits_zero_error": true,
+  "selection_reconstructed_from_inputs_all_cases": 226,
+  "selection_uses_no_stress_outcomes": true,
+  "raw_summary_and_pair_stats_checks": 1695,
+  "maximum_statistics_error": 3.3306690738754696e-16,
+  "fixed_sample_rule": "First three eligible case IDs in lexicographic order, fixed before raw replay; no result-based sample choice",
+  "pixel_replay_samples": [
+    {
+      "case_id": "basket__01",
+      "reference_index": 1,
+      "roi_pixels": 16528,
+      "roi_sha256": "a7a7276b74baa383dd27fb95404bd9e2cb188343f698e3d1f629d58225f7aa8e",
+      "consensus_array_bit_exact": true,
+      "independent_stress_metric_comparisons": 200,
+      "maximum_stress_metric_error": 0.0
+    },
+    {
+      "case_id": "basket__02",
+      "reference_index": 1,
+      "roi_pixels": 19226,
+      "roi_sha256": "2a24db1ed2c9bebda9f5b1e33697a6e17c42cea278c6058a38bdd71bae9c0489",
+      "consensus_array_bit_exact": true,
+      "independent_stress_metric_comparisons": 200,
+      "maximum_stress_metric_error": 0.0
+    },
+    {
+      "case_id": "basket__03",
+      "reference_index": 0,
+      "roi_pixels": 6479,
+      "roi_sha256": "9dde76450789b5287a6fdf1e7de23fc79a5fad9675f97e7c516d86fdef098670",
+      "consensus_array_bit_exact": true,
+      "independent_stress_metric_comparisons": 200,
+      "maximum_stress_metric_error": 0.0
+    }
+  ],
+  "log_seal_history": {
+    "original_receipt_only_mismatch": [
+      "run.log"
+    ],
+    "post_run_seal_verified": true,
+    "scientific_artifacts_unchanged": true
+  },
+  "protocol_clarification": {
+    "post_execution_start": true,
+    "original_retained": true,
+    "no_analysis_or_selection_change": true,
+    "correct_boundary": "Selection is conditioned on archived candidate-derived taxonomy and family keys; no candidate score, predicted overlap, correctness or stress outcome is used."
+  },
+  "reliability_audit": {
+    "status": "PASS",
+    "protocol_sha256": "a0569c54e618d8ca75b5fd9b71448d7d698cc9175ba9f7d313015a61a4f32868",
+    "all_candidates": 1951,
+    "primary_candidates": 892,
+    "same_semantic_gt_missing_all_candidates": 1059,
+    "same_semantic_gt_missing_evaluation_candidates": 938,
+    "missing_annotations_preserved_null_not_negative": true,
+    "recomputed": [
+      {
+        "iou_threshold": 0.25,
+        "candidate_n": 892,
+        "matched_n": 318,
+        "Brier": 0.25269543623065943,
+        "ECE10": 0.19992709601164255,
+        "maximum_point_and_interval_error": 8.326672684688674e-17
+      },
+      {
+        "iou_threshold": 0.5,
+        "candidate_n": 892,
+        "matched_n": 202,
+        "Brier": 0.2731017299680567,
+        "ECE10": 0.3299719390609699,
+        "maximum_point_and_interval_error": 5.551115123125783e-17
+      }
+    ]
+  },
+  "publication_limits": [
+    "Controlled conflict inside annotation-supported ROI; no claim of real FP prevalence or protection from high-confidence errors.",
+    "Eq2 evidence readouts stop before hierarchical ownership and final segmentation; no final-mask robustness claim.",
+    "Same-family exact-duplicate invariance is a mathematical property under correct family assignment, not proof that all correlated producer errors are suppressed.",
+    "Family keys do not establish statistical independence; use every stress level and all eligibility exclusions.",
+    "Brier/ECE are conditional diagnostics if heuristic w is interpreted as probability, not a fitted or validated calibration model.",
+    "All intervals are pointwise exploratory category-cluster intervals on a reused benchmark."
+  ]
+}

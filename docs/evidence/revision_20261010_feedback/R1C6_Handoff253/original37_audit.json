@@ -1,0 +1,661 @@
+{
+  "status": "HISTORICAL_READ_ONLY_RECOUNT",
+  "source": "__RUNTIME_ROOT__\\experiments\\paper_v031_identity_frontend_20260828\\03_completion_group_frontend\\routing_correctness_cases.csv",
+  "source_sha256": "e72947b537c94b2bababa74a08c01182d1ecdc9522d8a80724b1d2238b41b672",
+  "counts": {
+    "dbscan_fusion": {
+      "n": 37,
+      "025": {
+        "unique_correct": 14,
+        "wrong_unique": 5,
+        "ambiguous": 7,
+        "unresolved": 11,
+        "correct_in_review_numerator": 1,
+        "correct_in_review_denominator": 7
+      },
+      "050": {
+        "unique_correct": 6,
+        "wrong_unique": 13,
+        "ambiguous": 7,
+        "unresolved": 11,
+        "correct_in_review_numerator": 0,
+        "correct_in_review_denominator": 7
+      }
+    },
+    "greedy_nms": {
+      "n": 37,
+      "025": {
+        "unique_correct": 9,
+        "wrong_unique": 4,
+        "ambiguous": 8,
+        "unresolved": 16,
+        "correct_in_review_numerator": 2,
+        "correct_in_review_denominator": 8
+      },
+      "050": {
+        "unique_correct": 5,
+        "wrong_unique": 8,
+        "ambiguous": 8,
+        "unresolved": 16,
+        "correct_in_review_numerator": 1,
+        "correct_in_review_denominator": 8
+      }
+    },
+    "hpid_split_group_ids": {
+      "n": 37,
+      "025": {
+        "unique_correct": 14,
+        "wrong_unique": 6,
+        "ambiguous": 6,
+        "unresolved": 11,
+        "correct_in_review_numerator": 1,
+        "correct_in_review_denominator": 6
+      },
+      "050": {
+        "unique_correct": 7,
+        "wrong_unique": 13,
+        "ambiguous": 6,
+        "unresolved": 11,
+        "correct_in_review_numerator": 0,
+        "correct_in_review_denominator": 6
+      }
+    },
+    "local_pairwise_crf": {
+      "n": 37,
+      "025": {
+        "unique_correct": 6,
+        "wrong_unique": 3,
+        "ambiguous": 14,
+        "unresolved": 14,
+        "correct_in_review_numerator": 7,
+        "correct_in_review_denominator": 14
+      },
+      "050": {
+        "unique_correct": 3,
+        "wrong_unique": 6,
+        "ambiguous": 14,
+        "unresolved": 14,
+        "correct_in_review_numerator": 3,
+        "correct_in_review_denominator": 14
+      }
+    },
+    "raw_proposals": {
+      "n": 37,
+      "025": {
+        "unique_correct": 9,
+        "wrong_unique": 5,
+        "ambiguous": 13,
+        "unresolved": 10,
+        "correct_in_review_numerator": 9,
+        "correct_in_review_denominator": 13
+      },
+      "050": {
+        "unique_correct": 2,
+        "wrong_unique": 12,
+        "ambiguous": 13,
+        "unresolved": 10,
+        "correct_in_review_numerator": 7,
+        "correct_in_review_denominator": 13
+      }
+    }
+  },
+  "raw_to_hpid_state_transitions": [
+    {
+      "raw": "ambiguous",
+      "hpid": "ambiguous",
+      "n": 6
+    },
+    {
+      "raw": "ambiguous",
+      "hpid": "unique_correct",
+      "n": 5
+    },
+    {
+      "raw": "unresolved",
+      "hpid": "unresolved",
+      "n": 10
+    },
+    {
+      "raw": "unique_wrong",
+      "hpid": "unique_wrong",
+      "n": 3
+    },
+    {
+      "raw": "unique_correct",
+      "hpid": "unique_correct",
+      "n": 8
+    },
+    {
+      "raw": "unique_wrong",
+      "hpid": "unique_correct",
+      "n": 1
+    },
+    {
+      "raw": "unique_wrong",
+      "hpid": "unresolved",
+      "n": 1
+    },
+    {
+      "raw": "ambiguous",
+      "hpid": "unique_wrong",
+      "n": 2
+    },
+    {
+      "raw": "unique_correct",
+      "hpid": "unique_wrong",
+      "n": 1
+    }
+  ],
+  "paired_semantic_correct_availability": {
+    "raw_False_hpid_False": 18,
+    "raw_True_hpid_True": 14,
+    "raw_False_hpid_True": 1,
+    "raw_True_hpid_False": 4
+  },
+  "original_nine_correct_ambiguous_requests": [
+    {
+      "case_id": "laptop_computer__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.8677653188356552,
+      "hpid_best_semantic_iou": 0.6707413639513016
+    },
+    {
+      "case_id": "calculator__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.6421376393694733,
+      "hpid_best_semantic_iou": 0.5566710092727412
+    },
+    {
+      "case_id": "bench__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.7491801825755562,
+      "hpid_best_semantic_iou": 0.8895662160968283
+    },
+    {
+      "case_id": "box__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.5414703903095559,
+      "hpid_best_semantic_iou": 0.00694855495792264
+    },
+    {
+      "case_id": "bicycle__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.45691533615942315,
+      "hpid_best_semantic_iou": 0.4463748019017433
+    },
+    {
+      "case_id": "car_automobile__u02",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.704812834224599,
+      "hpid_best_semantic_iou": 0.21711229946524063
+    },
+    {
+      "case_id": "wrench__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.9527180783817952,
+      "hpid_best_semantic_iou": 0.7211796246648794
+    },
+    {
+      "case_id": "knife__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.6921168161862951,
+      "hpid_best_semantic_iou": 0.7725331535176444
+    },
+    {
+      "case_id": "scissors__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.25458986019875357,
+      "hpid_best_semantic_iou": 0.14190620272314675
+    }
+  ],
+  "all_paired_requests": [
+    {
+      "case_id": "cellular_telephone__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.16154120585087406,
+      "hpid_best_semantic_iou": 0.14027827327863004
+    },
+    {
+      "case_id": "laptop_computer__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.8677653188356552,
+      "hpid_best_semantic_iou": 0.6707413639513016
+    },
+    {
+      "case_id": "television_set__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "remote_control__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.02405857740585774,
+      "hpid_best_semantic_iou": 0.14596670934699105
+    },
+    {
+      "case_id": "calculator__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.6421376393694733,
+      "hpid_best_semantic_iou": 0.5566710092727412
+    },
+    {
+      "case_id": "telephone__u01",
+      "raw_state": "unique_wrong",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.1219901132195822,
+      "hpid_best_semantic_iou": 0.04061291282356441
+    },
+    {
+      "case_id": "clock__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.37645695668135093,
+      "hpid_best_semantic_iou": 0.4225673296192593
+    },
+    {
+      "case_id": "watch__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.27064777327935224,
+      "hpid_best_semantic_iou": 0.2656641604010025
+    },
+    {
+      "case_id": "chair__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "bench__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.7491801825755562,
+      "hpid_best_semantic_iou": 0.8895662160968283
+    },
+    {
+      "case_id": "stool__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "table__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "bottle__u01",
+      "raw_state": "unique_wrong",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "jar__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "can__u01",
+      "raw_state": "unique_wrong",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.21076181734740707,
+      "hpid_best_semantic_iou": 0.32855597620335314
+    },
+    {
+      "case_id": "cup__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "mug__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.7862883702914689,
+      "hpid_best_semantic_iou": 0.7556372305552796
+    },
+    {
+      "case_id": "glass_drink_container__u01",
+      "raw_state": "unique_wrong",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "bowl__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.2986003110419907,
+      "hpid_best_semantic_iou": 0.4835969537199766
+    },
+    {
+      "case_id": "handbag__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.3705229793977813,
+      "hpid_best_semantic_iou": 0.3045513654096229
+    },
+    {
+      "case_id": "plastic_bag__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.24989447024060785,
+      "hpid_best_semantic_iou": 0.24989447024060785
+    },
+    {
+      "case_id": "box__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.5414703903095559,
+      "hpid_best_semantic_iou": 0.00694855495792264
+    },
+    {
+      "case_id": "car_automobile__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.33196814562002275,
+      "hpid_best_semantic_iou": 0.36352169525731587
+    },
+    {
+      "case_id": "bicycle__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.45691533615942315,
+      "hpid_best_semantic_iou": 0.4463748019017433
+    },
+    {
+      "case_id": "car_automobile__u02",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.704812834224599,
+      "hpid_best_semantic_iou": 0.21711229946524063
+    },
+    {
+      "case_id": "bicycle__u02",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.37705669270719677,
+      "hpid_best_semantic_iou": 0.37669729952855807
+    },
+    {
+      "case_id": "helmet__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "shoe__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.4349748743718593,
+      "hpid_best_semantic_iou": 0.20691711389385808
+    },
+    {
+      "case_id": "slipper_footwear__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "screwdriver__u01",
+      "raw_state": "unique_wrong",
+      "hpid_state": "unique_wrong",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0053810239772097805,
+      "hpid_best_semantic_iou": 0.012989057702904826
+    },
+    {
+      "case_id": "wrench__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.9527180783817952,
+      "hpid_best_semantic_iou": 0.7211796246648794
+    },
+    {
+      "case_id": "knife__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.6921168161862951,
+      "hpid_best_semantic_iou": 0.7725331535176444
+    },
+    {
+      "case_id": "scissors__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.25458986019875357,
+      "hpid_best_semantic_iou": 0.14190620272314675
+    },
+    {
+      "case_id": "pliers__u01",
+      "raw_state": "ambiguous",
+      "hpid_state": "ambiguous",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "ladder__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    },
+    {
+      "case_id": "guitar__u01",
+      "raw_state": "unique_correct",
+      "hpid_state": "unique_correct",
+      "raw_semantic_correct_available": true,
+      "hpid_semantic_correct_available": true,
+      "raw_best_semantic_iou": 0.8087141339001063,
+      "hpid_best_semantic_iou": 0.7068965517241379
+    },
+    {
+      "case_id": "pan_for_cooking__u01",
+      "raw_state": "unresolved",
+      "hpid_state": "unresolved",
+      "raw_semantic_correct_available": false,
+      "hpid_semantic_correct_available": false,
+      "raw_best_semantic_iou": 0.0,
+      "hpid_best_semantic_iou": 0.0
+    }
+  ],
+  "interpretation": "Raw9/13 and HPID1/6 are conditional on different ambiguous-query sets. Of the same original9 with a correct ambiguous option,5 become uniquely correct,1 remains ambiguous with correct support,2 become wrongly unique and1 stays ambiguous without correct support. Six of those original9 retain a correct semantic option.",
+  "substantive_issue": "37 limits precision, but observed wrong-unique outputs and lost correct support are substantive failures. More cases improve precision and test reproducibility; they do not by themselves repair routing.",
+  "candidate_pruning_evidence": {
+    "case_count": 37,
+    "independent_new_cases": 0,
+    "same_frozen_holdout_requests": true,
+    "target_manifest_sha256": "451f33618a7a8863347ae60429b8c083014c63a07a911423f3d7db5b9311ea35",
+    "endpoint_source_sha256": "e72947b537c94b2bababa74a08c01182d1ecdc9522d8a80724b1d2238b41b672",
+    "exact_assertion_count": 37,
+    "routing_method_case_reproductions": 111,
+    "code_sha256": {
+      "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+      "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\physical_groups.py": "12753c082b9abc8f61ddfd63456d1a7f210da1e58d2b59d93081a46dcbc3afd7",
+      "${PROJECT_ROOT}\\src\\hpid_split\\postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
+      "${RUNTIME_ROOT}\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\paco_semantics.py": "9d2c54326f5fc7e0e739e0181c713e4a47c81e357827f0121ef37d5ca7401be8",
+      "${PROJECT_ROOT}\\scripts\\audit_completion_routing.py": "a8e3b4c7750388c4d30d5b671b7d415a5704cbfb28fed081dbbe5ec5dba4e8ed",
+      "${REVISION_ROOT}\\request_provenance.py": "2b550913969dccb4e83a68e5202a86d5f2fc713547c668e30ba9fdd12373c7ef"
+    },
+    "interval": "pointwise 95% Wilson; descriptive fixed-case proportions; no adjusted multiplicity or population-generalization claim",
+    "correct_raw_candidate_count": 23,
+    "correct_raw_case_count": 18,
+    "correct_raw_retained_each_fine_filter": {
+      "dedup_retained": 23,
+      "instance_cap_retained": 23,
+      "hierarchical_suppression_retained": 23
+    },
+    "nine_original_correct_ambiguous_transitions": {
+      "unique_correct": 5,
+      "unique_wrong": 2,
+      "ambiguous": 2
+    },
+    "six_failure_classes": {
+      "semantic_match_with_deficient_spatial_support": 4,
+      "semantic_label_with_support_on_different_reference_part": 2
+    },
+    "six_name_matches": 6,
+    "correct_raw_candidates_nominated_group_gates": 16,
+    "correct_raw_candidates_accepted_group_gates": 15,
+    "correct_raw_candidates_rejected_group_gates": 1,
+    "correct_raw_cases_losing_correct_hpid_option": [
+      "box__u01",
+      "car_automobile__u02",
+      "shoe__u01",
+      "scissors__u01"
+    ],
+    "limitations": [
+      "The available Raw pool is the exported pool after original fine-fusion input filtering; rejected proposal-generation masks are unavailable.",
+      "Candidate pixel-flow rows exactly partition an input candidate's support at later saved/replayed outputs. Overlapping candidates prevent unique causal attribution to an individual source.",
+      "Fine semantic stages use one union per class; final Part/Group and routing use instances. These stage match counts are not interchangeable.",
+      "Group naming can reconstruct physical partitions rather than merely merge candidate masks; membership IDs can be rebound after spatial regularization.",
+      "A name-matched output covering another annotated part is a spatial semantic-assignment warning, not independently adjudicated semantic misclassification.",
+      "Category strata are very small; Wilson intervals describe observed counts and do not establish generalization to new categories."
+    ]
+  },
+  "mechanism_claim_boundaries": [
+    "The available Raw pool is the exported pool after original fine-fusion input filtering; rejected proposal-generation masks are unavailable.",
+    "Candidate pixel-flow rows exactly partition an input candidate's support at later saved/replayed outputs. Overlapping candidates prevent unique causal attribution to an individual source.",
+    "Fine semantic stages use one union per class; final Part/Group and routing use instances. These stage match counts are not interchangeable.",
+    "Group naming can reconstruct physical partitions rather than merely merge candidate masks; membership IDs can be rebound after spatial regularization.",
+    "A name-matched output covering another annotated part is a spatial semantic-assignment warning, not independently adjudicated semantic misclassification.",
+    "Category strata are very small; Wilson intervals describe observed counts and do not establish generalization to new categories."
+  ],
+  "mechanism_diagnostics": [
+    "box__u01 candidate 2: 6437 true-positive source pixels; final Group allocations are bottom 6157, side 270 and label 10. Candidate accepted by Group verification; fine target IoU 0.006989, final 0.006949. DBSCAN places this candidate in a four-member cluster named bottom before ownership (target IoU 0.624237), losing semantic side routing despite retained geometry.",
+    "car_automobile__u02 candidate 2: 659 true-positive pixels; final windshield 203, window 348, roof 83, body 7, background 18. Correct candidate accepted by Group verification; fine target IoU 0.220321, final 0.217112. DBSCAN two-member cluster is named window (target IoU 0.523560), so windshield request becomes unresolved.",
+    "scissors__u01 candidate 7: 3023 true-positive pixels; final handle 1407, body 1588, blade 28. Its Group verification rejects this candidate, but another handle candidate verifies the semantic name. Correct support is already lost before Group construction (fine best IoU 0.141906), and the final best IoU is unchanged. This rejection is not evidence that it caused the observed loss.",
+    "shoe__u01 candidate 3: 2164 true-positive pixels; fine upper receives 237, final Group upper 1040, body 1106 and eyelet 18. Group attachment improves IoU from 0.093417 to 0.206917 but remains below threshold. DBSCAN remains correct (0.316625).",
+    "telephone__u01 and bottle__u01 already have no correct Raw target option. Bottle's automatic root covers only 0.4783% of the reference base; its selected Group has zero target intersection. Root replacement was not performed in this trace and is not inferred as a demonstrated repair.",
+    "screwdriver__u01 is actually the reference category knife. Its Raw blade candidate already targets the handle; fine blade is absent, while Group knife structural partition creates a blade-named region overlapping the reference handle. This is a persistent spatial-semantic mismatch, not novel-taxonomy generalization."
+  ],
+  "evidence_files": {
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_assertions.csv": "f451b9beda02e0f6599bfe55f0039810621e49c68eb2d9b2d7005d28e85f7b75",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_candidate_pixel_flows.csv": "42ab93a5fb13547b26beab3f3a3b4dcfe1a265f1d2901420352ff44e44a9a2e5",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_candidate_trace.csv": "0b1674f18db6a9d18888012b56efc5e76e6598d5079779a54170adc06777c6e9",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_case_details.json": "81b6fed7a853060026d5c3ab29ad402bc6116aaecd05ae740de9eb76d4a04ca3",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_cases.csv": "e2a71fbe9071e9c7455b8137b6d19463a739d189fe7ac2626dde626e12a67c79",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_correct_candidate_outcomes.csv": "39844b90527499330b7a7a1d7cffe5d48798a33c66364fd124a7de91e772a1a0",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_endpoints.csv": "841817d542fc5931605301f0e73a4855eefb7df927a6c21e0d2349e7bfddcb84",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_instances.csv": "e007f5c710b2020ba2b5cb27225832480527d2d035b06af724d839b278cd90f7",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_intervals.csv": "dc341d3293749874962e0d0d5feb9a91639a610cc91420ab3df4617f1c478cbb",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_nine_correct_ambiguous.csv": "4f13326be05e6b8c28d984dd71e782ab3cec3a5bddab60c7f9fd2564b312739b",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_protocol.json": "cc676b37c66ccf185de4b71884ac2451c7cfda335f97fcfc1f4f4e6583ee5f5a",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_report.json": "79cb145d035b18622578cca50b9cff2364c937f74d235c6a10de6dc7ebcd260d",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_six_wrong_cases.csv": "822b97effaeb86c7cf9d741bd33020f7e867114b2836d5734ddb594f460b3797",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_source_hashes.csv": "04a1d1c6084b118bdeee58d03a43651c5bf12bb0db151a18591afeab3df07df6",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\request_stage_trace.csv": "7248340abb956f211290ec70b7124c4db54cac55fa9706be94a27c0710a21ba1"
+  },
+  "script_sha256": "72c7e19801fb38382b59f2a0be7b6bb1021244d771a3112864479abe1ec0dffc"
+}

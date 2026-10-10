@@ -1,0 +1,233 @@
+{
+  "anonymous_id": "img_038",
+  "case_id": "scissors__u01",
+  "image_id": 351096,
+  "object_category": "scissors",
+  "expected_domain": "tool_prop",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 4,
+    "predicted_part_count": 4,
+    "assignments": [
+      [
+        0,
+        2,
+        0.27357178926467896
+      ],
+      [
+        1,
+        1,
+        0.01917465589940548
+      ],
+      [
+        2,
+        0,
+        0.8192805647850037
+      ],
+      [
+        3,
+        3,
+        0.3137255012989044
+      ]
+    ],
+    "part_f1_at_025": 0.75,
+    "part_precision_at_025": 0.75,
+    "part_recall_at_025": 0.75,
+    "matched_count_at_025": 3,
+    "part_f1_at_050": 0.25,
+    "part_precision_at_050": 0.25,
+    "part_recall_at_050": 0.25,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.25,
+    "part_precision_at_075": 0.25,
+    "part_recall_at_075": 0.25,
+    "matched_count_at_075": 1,
+    "mean_semantic_union_iou": 0.24188116864021736,
+    "semantic_union_recall_at_025": 0.25,
+    "semantic_label_precision": 1.0,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 3,
+    "unmatched_predicted_semantic_classes": [],
+    "semantic_union_rows": [
+      {
+        "semantic": "blade",
+        "union_iou": 0.8192805755395683,
+        "truth_pixels": 6528,
+        "predicted_pixels": 6116
+      },
+      {
+        "semantic": "finger_hole",
+        "union_iou": 0.0,
+        "truth_pixels": 10037,
+        "predicted_pixels": 137
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.1482440990213011,
+        "truth_pixels": 6690,
+        "predicted_pixels": 5277
+      },
+      {
+        "semantic": "pivot",
+        "union_iou": 0.0,
+        "truth_pixels": 332,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 4,
+    "predicted_part_count": 57,
+    "assignments": [
+      [
+        0,
+        26,
+        0.08270812779664993
+      ],
+      [
+        1,
+        8,
+        0.18513727188110352
+      ],
+      [
+        2,
+        2,
+        0.34788602590560913
+      ],
+      [
+        3,
+        36,
+        0.13732394576072693
+      ]
+    ],
+    "part_f1_at_025": 0.03278688524590164,
+    "part_precision_at_025": 0.017543859649122806,
+    "part_recall_at_025": 0.25,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.1410615395827024,
+    "semantic_union_recall_at_025": 0.25,
+    "semantic_label_precision": 0.2857142857142857,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 14,
+    "unmatched_predicted_semantic_classes": [
+      "bowl",
+      "container_body",
+      "container_opening",
+      "daily_object_end_tip",
+      "device_cable",
+      "device_camera",
+      "furniture_table_top",
+      "grip",
+      "head",
+      "jaw"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "blade",
+        "union_iou": 0.4074631357207343,
+        "truth_pixels": 6528,
+        "predicted_pixels": 2826
+      },
+      {
+        "semantic": "finger_hole",
+        "union_iou": 0.0,
+        "truth_pixels": 10037,
+        "predicted_pixels": 38
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.15678302261007537,
+        "truth_pixels": 6690,
+        "predicted_pixels": 4975
+      },
+      {
+        "semantic": "pivot",
+        "union_iou": 0.0,
+        "truth_pixels": 332,
+        "predicted_pixels": 1429
+      }
+    ],
+    "predicted_raw_semantic_class_count": 20,
+    "foreground_pixels": 14382,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 73.0,
+    "component_area_max": 2271,
+    "component_source_labels": [
+      41,
+      41,
+      41,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      45,
+      45,
+      45,
+      45,
+      56,
+      105,
+      108,
+      141,
+      150,
+      166,
+      173,
+      179,
+      180,
+      180,
+      180,
+      180,
+      180,
+      180,
+      180,
+      180,
+      180,
+      180,
+      180,
+      196,
+      196,
+      196,
+      197,
+      197,
+      197,
+      197,
+      197,
+      197,
+      242,
+      243,
+      243,
+      243,
+      243,
+      243,
+      243,
+      286,
+      286,
+      317,
+      404,
+      419
+    ]
+  },
+  "shape_hw": [
+    326,
+    489
+  ],
+  "annotated_pixels": 23587,
+  "overlapping_annotation_pixels": 0
+}

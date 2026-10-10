@@ -1,0 +1,239 @@
+{
+  "anonymous_id": "img_042",
+  "case_id": "pan_for_cooking__u01",
+  "image_id": 143510,
+  "object_category": "pan_(for_cooking)",
+  "expected_domain": "tool_prop",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 5,
+    "predicted_part_count": 1,
+    "assignments": [
+      [
+        4,
+        0,
+        0.013437625020742416
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.0,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 1,
+    "unmatched_predicted_semantic_classes": [
+      "lid"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "handle",
+        "union_iou": 0.0,
+        "truth_pixels": 2742,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "pan_body",
+        "union_iou": 0.0,
+        "truth_pixels": 23225,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "rim",
+        "union_iou": 0.0,
+        "truth_pixels": 3737,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "side",
+        "union_iou": 0.0,
+        "truth_pixels": 11298,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 5,
+    "predicted_part_count": 63,
+    "assignments": [
+      [
+        0,
+        21,
+        0.07227671891450882
+      ],
+      [
+        1,
+        4,
+        0.038669951260089874
+      ],
+      [
+        2,
+        0,
+        0.0
+      ],
+      [
+        3,
+        7,
+        0.06010551005601883
+      ],
+      [
+        4,
+        47,
+        0.20740926265716553
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.1,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 20,
+    "unmatched_predicted_semantic_classes": [
+      "bowl",
+      "container_base",
+      "container_body",
+      "container_bottom",
+      "container_inner",
+      "container_outer_side",
+      "container_rim",
+      "container_side",
+      "daily_object_body",
+      "daily_object_frame",
+      "daily_object_fringe",
+      "daily_object_top",
+      "daily_object_welt",
+      "device_screen",
+      "furniture_leg",
+      "furniture_shelf",
+      "furniture_top",
+      "unmapped_paco_2336"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "handle",
+        "union_iou": 0.0,
+        "truth_pixels": 2742,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "pan_body",
+        "union_iou": 0.0,
+        "truth_pixels": 23225,
+        "predicted_pixels": 967
+      },
+      {
+        "semantic": "rim",
+        "union_iou": 0.0,
+        "truth_pixels": 3737,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "side",
+        "union_iou": 0.0,
+        "truth_pixels": 11298,
+        "predicted_pixels": 12202
+      }
+    ],
+    "predicted_raw_semantic_class_count": 32,
+    "foreground_pixels": 58862,
+    "unmapped_prediction_pixels": 682,
+    "unmapped_predicted_components": 1,
+    "component_area_min": 7,
+    "component_area_median": 480.0,
+    "component_area_max": 4340,
+    "component_source_labels": [
+      19,
+      19,
+      19,
+      19,
+      19,
+      29,
+      33,
+      33,
+      46,
+      54,
+      54,
+      55,
+      56,
+      56,
+      56,
+      56,
+      57,
+      60,
+      60,
+      60,
+      62,
+      64,
+      65,
+      65,
+      72,
+      161,
+      163,
+      205,
+      205,
+      205,
+      213,
+      214,
+      214,
+      214,
+      215,
+      217,
+      217,
+      217,
+      226,
+      226,
+      226,
+      253,
+      336,
+      359,
+      365,
+      365,
+      367,
+      367,
+      367,
+      367,
+      370,
+      419,
+      427,
+      427,
+      429,
+      429,
+      429,
+      429,
+      429,
+      429,
+      429,
+      442,
+      448
+    ]
+  },
+  "shape_hw": [
+    363,
+    589
+  ],
+  "annotated_pixels": 41002,
+  "overlapping_annotation_pixels": 0
+}

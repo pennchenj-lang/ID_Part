@@ -1,0 +1,23 @@
+{
+  "status": "READY",
+  "created_utc": "2026-10-09T14:50:22.569713+00:00",
+  "scorer_sha256": "4557f704ea3901d58e6ebd14735b8a8cc1e1a83fd6b1e2246b6ac9cb1b9960f6",
+  "method": "Static source/memory review plus historicalHPID verification; no PartCATSeg predictions or synthetic all42 inference consumed.",
+  "component_policy": "Every8connected component retained; no area cutoffs.",
+  "efficiency": [
+    "One global int32 component map plus one temporary scipy connected-component map; no full-image Boolean array per component.",
+    "IoU matrix computed with component-area/intersection bincounts. Memory is O(imagePixels + nTruth*nComponents), not O(imagePixels*nComponents).",
+    "Canonical semantic-union masks allocated per present semantic class, independent of component count.",
+    "Hungarian matching runs once per case and assignments are reused for0.25/0.50/0.75 thresholds.",
+    "Only one case evaluated at a time; no all42 image arrays retained. Per-case outputs keep lightweight scalar results and component-to-label index lists."
+  ],
+  "cohort_dimensions": {
+    "maximum_image_pixels": 327040,
+    "maximum_truth_part_count": 16,
+    "loose_geometric_float32_matrix_bound_bytes": 20930560,
+    "loose_semantic_bool_union_bound_bytes": 149130240,
+    "maximum_actual_truth_times_pixels": 3924480
+  },
+  "remaining_limits": "Highly fragmented predictions can create many components and larger Hungarian matrices/JSON lists, but do not create one image-sized mask per component. These counts must be retained; no after-the-fact small-component removal. CPU time is not a reason to exclude a case.",
+  "baseline_reproduction": "scoring/baseline_reproduction.json:42/42PASS,PartF1@0.25=0.33895990145444427"
+}

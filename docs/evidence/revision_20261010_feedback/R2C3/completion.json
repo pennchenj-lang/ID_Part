@@ -1,0 +1,33 @@
+{
+  "status": "R2_COMMENT3_EXPERIMENTS_AND_LOCALIZED_TEXT_COMPLETE_WORD_DEFERRED",
+  "created_utc": "2026-10-10T01:58:52.553084+00:00",
+  "completed": {
+    "clean_full_fusion_cases": 226,
+    "clean_variants": 3,
+    "natural_candidate_audit": 1951,
+    "conditional_semantic_candidates": 892,
+    "consensus_bitexact_cases": 226,
+    "stress_eligible_cases": 150,
+    "stress_excluded_cases": 76,
+    "stress_rows": 6000,
+    "localized_bilingual_patches": 18
+  },
+  "word_modified": false,
+  "pdf_created": false,
+  "zip_created": false,
+  "weight_fit_performed": false,
+  "bounded_claim": "Source-family maximum prevents exact same-family repetition from accumulating additional Eq.2 evidence; noisy-OR contributes positively to the fixed-candidate full-fusion endpoint relative to maximum fusion. Neither result establishes calibrated weights or immunity to strong single/cross-family errors.",
+  "pending": "Apply these localized patches and previously staged reviewer items to the final bilingual Word files and highlighted Chinese manuscript only at the user-requested batch-update stage. No experiment rerun is needed for this item.",
+  "application_note": "Locate exact original paragraph text/hash across pending patch sets; apply in descending paragraph order per source document or resolve anchors again after each insertion. Never flatten the two OMML-bearing suffix-only patches.",
+  "receipts": {
+    "clean_ablation/independent_audit.json": "6a84d50a912bd356004f659307987294e0214b376f53dc01a151b7a993039493",
+    "consensus_stress/independent_audit.json": "411f52197a2147671a4719570ccefda10c371312cea7c54a2f800a88d1bc814f",
+    "reliability_audit/analysis_receipt.json": "95a0ca4367f339a59051e5956c3308680d07fc7c56c325d863e555b0d9426b37",
+    "revision_payload.json": "58d5dea64f601bd0930dc67f13403dd52c670207452c4ff3bb2df32d73819ab9",
+    "revision_qa.json": "6b4d79f5cf985b10dc101eee4d401b68d197e543369ad7a69533197f517deccc",
+    "revision_text_en.txt": "83b68469e98c5ed2f31f7f0544fed7494c6fa2c93f6b1a661bfe34c551e28b46",
+    "revision_text_zh.txt": "12f49e7416d6ef8c7714e7946446ca331ac43aa4825c1e4b417bf3a61e7c1c6c",
+    "prose_independent_audit.json": "d5f1682b9fabe43c67b0b769a480f7d810c3c0aa4287b7171361e803d3492782",
+    "实验结果核对_中文.txt": "6aeb2881f3e26fde38a60b1e9d1b71dccc8e6ce0d538a3b8abd2e7a15df93443"
+  }
+}

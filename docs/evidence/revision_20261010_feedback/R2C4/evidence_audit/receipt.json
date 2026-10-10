@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-10T02:37:11.714254+00:00",
+  "audit_script_sha256": "9cb0b532106be909e0fd64a9ebde2837905f378d850120bfe56df89907e9d9eb",
+  "summary_sha256": "ad918ead9a6583485eee20a3d5bd729594060c347d6e7005d23e01b8ff85de0a",
+  "source_files_unchanged": true,
+  "source_sha256": {
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\sensitivity_cases.csv": "29aba2b8f13ba6d4cf7c7b835a547c05fa5782128d4aba6541e1bcb1521869ee",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\sensitivity_summary.csv": "1dc9f81a9ee7b604bab88272333836e9a2c6f9dded510301bf8b373200f47300",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\sensitivity_protocol.json": "5e5c029dce51881e7340288d9e469c26f11d94577de8cd9957382e964ad9164c",
+    "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\sources\\frozen_be54300\\src\\hpid_split\\fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\code\\analysis\\analyze_revision.py": "7096fc13b27ba58f79fb983a17f7b1baa09c7de4ff86fe892da87bfd987f8192"
+  },
+  "existing_output_rows": 11300,
+  "recomputed_statistics": 2400,
+  "maximum_absolute_error": 5.551115123125783e-16,
+  "new_model_experiments": 0,
+  "Word_files_modified": 0
+}

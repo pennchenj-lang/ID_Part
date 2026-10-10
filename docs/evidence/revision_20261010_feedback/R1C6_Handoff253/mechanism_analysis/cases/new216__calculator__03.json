@@ -1,0 +1,302 @@
+{
+  "request": {
+    "request_id": "new216__calculator__03",
+    "case_id": "calculator__03",
+    "cohort": "new216",
+    "image_id": 248314,
+    "source_image_sha256": "b0e88b00e281499d3a13d73a5487d220efbfa55d825d1c797ebf372605443e98",
+    "object_annotation_id": 39071,
+    "object_category": "calculator",
+    "expected_domain": "device",
+    "domain": "device",
+    "expected_profile": "controls",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\calculator__03\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\calculator__03",
+    "target_part_name": "key",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\calculator__03\\parts_crop\\001_key.png",
+    "target_mask_sha256": "7bc2fafe7cf1d62a0412ca3d186918feadd703a93f808a4716238c4aca5aff93",
+    "target_area_px": 1737,
+    "target_object_fraction": 0.41926140477914553,
+    "defect_mode": "interior",
+    "defect_seed": 20260874,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 46,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__03\\groups.json",
+    "hpid_group_map_sha256": "3071523cae29adf2eaca39f60f271b9c175a9b36ad20f8e5ce687f224bbc10be",
+    "hpid_groups_sha256": "bacfb452d4145137bccc73ee8a1e2174d6b7fe75547f20b789d868e181da96f9"
+  },
+  "summary": {
+    "request_id": "new216__calculator__03",
+    "cohort": "new216",
+    "domain": "device",
+    "object_category": "calculator",
+    "target": "key",
+    "normalized_target": "key",
+    "raw_query_state": "ambiguous",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 2,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.26079545454545455,
+    "accepted_best_matching_iou": 0.26079545454545455,
+    "native_part_best_matching_iou": 0,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.7230837394771821,
+    "group_best_any_semantic_iou": 0.6091109478324761,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 0,
+    "accepted_available_050": 0,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 0,
+    "first_observed_loss_stage_050": "not_a_raw_to_group_loss",
+    "observed_subtype_050": "not_applicable",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 1
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__calculator__03",
+      "cohort": "new216",
+      "raw_identity": "proposal/0009",
+      "semantic": "device_key",
+      "target_iou": 0.26079545454545455,
+      "mask_area": 482,
+      "raw_candidate_index_zero_based": 8,
+      "upstream_candidate_key": "root:1/visual-region:05",
+      "fingerprint": "a4060736578cb79c413f3cff03eeb30c2820173221b79e3da9b0a83f31ae9022",
+      "accepted_by_fuser": true,
+      "accepted_index": 8,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "device_body/device_keyboard/center/01",
+          "semantic": "device_keyboard",
+          "normalized_semantic": "keyboard",
+          "candidate_overlap_pixels": 424,
+          "truth_overlap_pixels": 424,
+          "final_target_iou": 0.7230837394771821
+        },
+        {
+          "identity": "device_screen/device_bezel/center/01",
+          "semantic": "device_bezel",
+          "normalized_semantic": "bezel",
+          "candidate_overlap_pixels": 41,
+          "truth_overlap_pixels": 24,
+          "final_target_iou": 0.013102282333051564
+        },
+        {
+          "identity": "device/device/center/01",
+          "semantic": "device",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 13,
+          "truth_overlap_pixels": 8,
+          "final_target_iou": 0.012042612320518759
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/device_body",
+          "semantic": "device_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 437,
+          "truth_overlap_pixels": 432,
+          "final_target_iou": 0.6091109478324761
+        },
+        {
+          "identity": "object_001/device_bezel/006",
+          "semantic": "device_bezel",
+          "normalized_semantic": "bezel",
+          "candidate_overlap_pixels": 41,
+          "truth_overlap_pixels": 24,
+          "final_target_iou": 0.027049873203719356
+        }
+      ],
+      "unowned_part_pixels": 4,
+      "unowned_group_pixels": 4,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "device/device/center/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device",
+      "normalized_semantic": "body",
+      "target_iou": 0.012042612320518759,
+      "area_px": 448
+    },
+    {
+      "part_id": "device/device_base/right/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device_base",
+      "normalized_semantic": "base",
+      "target_iou": 0.0,
+      "area_px": 43
+    },
+    {
+      "part_id": "device_body/device_keyboard/center/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device_keyboard",
+      "normalized_semantic": "keyboard",
+      "target_iou": 0.7230837394771821,
+      "area_px": 2152
+    },
+    {
+      "part_id": "device_body/device_screen/center/01",
+      "group_id": "object_001/device_screen/004",
+      "semantic": "device_screen",
+      "normalized_semantic": "screen",
+      "target_iou": 0.0,
+      "area_px": 500
+    },
+    {
+      "part_id": "device/device_visual_panel_04/right/01",
+      "group_id": "object_001/device_bezel/006",
+      "semantic": "device_visual_panel_04",
+      "normalized_semantic": "visual_panel_04",
+      "target_iou": 0.018998272884283247,
+      "area_px": 33
+    },
+    {
+      "part_id": "device_screen/device_bezel/center/01",
+      "group_id": "object_001/device_bezel/006",
+      "semantic": "device_bezel",
+      "normalized_semantic": "bezel",
+      "target_iou": 0.013102282333051564,
+      "area_px": 660
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/device_body",
+      "semantic": "device_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "device/device/center/01",
+        "device/device_base/right/01",
+        "device_body/device_keyboard/center/01"
+      ],
+      "target_iou": 0.6091109478324761,
+      "area_px": 2643,
+      "evidence": "three_stage_semantic_rejection_merge"
+    },
+    {
+      "group_id": "object_001/device_screen/004",
+      "semantic": "device_screen",
+      "normalized_semantic": "screen",
+      "member_part_ids": [
+        "device_body/device_screen/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 500,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_bezel/006",
+      "semantic": "device_bezel",
+      "normalized_semantic": "bezel",
+      "member_part_ids": [
+        "device/device_visual_panel_04/right/01",
+        "device_screen/device_bezel/center/01"
+      ],
+      "target_iou": 0.027049873203719356,
+      "area_px": 693,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 13,
+    "accepted_candidate_count": 13,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 6,
+    "identity_hypothesis_count": 13,
+    "identity_group_count": 11,
+    "identity_hypotheses_merged": 2,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 7,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "device_body/device_keyboard/center/01",
+      "device_body/device_screen/center/01"
+    ],
+    "classes_with_multiple_sources": [
+      "device_keyboard",
+      "device_screen"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-dense",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "hpid-topology-v1",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 6,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 3846,
+    "lost_root_pixels_before_conservation": 25,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__03\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__calculator__03",
+      "cohort": "new216",
+      "domain": "device",
+      "object_category": "calculator",
+      "target": "key",
+      "threshold": "025",
+      "raw_query_state": "ambiguous",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.26079545454545455,
+      "accepted_best_iou": 0.26079545454545455,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.6091109478324761,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

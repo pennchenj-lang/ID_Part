@@ -1,0 +1,54 @@
+{
+  "status": "R2_COMMENT5_LOCALIZED_REVISION_COMPLETE_WORD_DEFERRED",
+  "completed_utc": "2026-10-10T03:26:45.866324+00:00",
+  "patch_count": 18,
+  "word_modified": false,
+  "new_model_experiment": false,
+  "primary_result": {
+    "raw_mean": 17.364706666072326,
+    "hpid_mean": 16.621639603452486,
+    "paired_mean_hpid_minus_raw": -0.7430670626198396,
+    "original_95_ci": [
+      -1.6322432704575072,
+      0.015262537401812179
+    ],
+    "bootstrap_seed": 20261839,
+    "iterations": 10000,
+    "case_order": "lexicographically sorted case_id",
+    "maximum_absolute_error_vs_original_paired_csv": 0.0
+  },
+  "independent_evidence_status": "PASS_WITH_SOURCE_PROVENANCE_LIMITATION",
+  "independent_prose_status": "PASS",
+  "persisted_outputs_rechecked": 185,
+  "source_hashes_unchanged": true,
+  "main_text_counts": {
+    "en": {
+      "before": 150,
+      "after": 150,
+      "unit": "words"
+    },
+    "zh": {
+      "before": 350,
+      "after": 372,
+      "unit": "nonwhitespace characters"
+    }
+  },
+  "files_sha256": {
+    "prepare_revision.py": "a068f50500490790d16647eefe251e81bb19cf1aa0f8f49bb3827ab79f332134",
+    "revision_payload.json": "c800cda27e5039ecd201eb9763e24b3eeb585dae1afbb698b4f5356a63b72849",
+    "revision_text_en.txt": "fcb8505e275fcb8f492c68b19e024478d9637af4ae2c6555e054fd0b889f8387",
+    "revision_text_zh.txt": "9e9f39baa9aaae41e46c1646f41faf9924be3d20e55f4ec2b8a7ca8daab24c76",
+    "revision_qa.json": "9e373aa26b36bfd829d05140c44e454e75a425061520761cc3e2828efc291711",
+    "evidence_audit.json": "4af4c16c11129f23ef2d33ba3d19b67722ddb33277a7c6d246144cea01b18f9f",
+    "prose_independent_audit.json": "e2382179862474b09493260fbcfa784106bc233131d7e1734432248adbcb8cb7"
+  },
+  "qa_note": "revision_qa.json records the earlier author-check stage; this completion record binds subsequent independent evidence and prose audits.",
+  "source_provenance_limit": "The published frozen_be54300 source contains restoration.py and its exact crop/_inpaint core but does not contain completion_frontend.py or run_semantic_completion_frontend_benchmark.py, and lacks the later inpaint_region wrapper. Current local copies are hash-bound, but this audit does not establish that those whole files are byte-identical to the 2026-08-28 execution source. Historical saved masks/completions independently verify U=O&support, outside-U copying, whole-O PSNR, and coverage/precision for all 185 outputs. Do not claim the complete 37-case generation program is archived as frozen_be54300.",
+  "future_merge_requirements": [
+    "Verify all source hashes and old-text anchors.",
+    "Synchronize VI-F quote in both response letters; italicize quoted text.",
+    "Retain Eq. (4), Eq. (5), Table S38 data and existing original-CI seed explanation at SI paragraph 155.",
+    "Reconcile original 37-case restoration wording with pending 253-image routing update without replacing its sample size.",
+    "Regenerate clean and yellow-highlighted Word together only when authorized; no PDF or ZIP."
+  ]
+}

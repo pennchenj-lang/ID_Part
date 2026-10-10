@@ -1,0 +1,728 @@
+{
+  "request": {
+    "request_id": "new216__car_automobile__03",
+    "case_id": "car_automobile__03",
+    "cohort": "new216",
+    "image_id": 516167,
+    "source_image_sha256": "e75f149a11bf34ca7e3da64ec5ba36fff37d23b1a658298251ff48abd1263ef1",
+    "object_annotation_id": 228637,
+    "object_category": "car_(automobile)",
+    "expected_domain": "vehicle",
+    "domain": "vehicle",
+    "expected_profile": "road_vehicle",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\car_automobile__03\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\car_automobile__03",
+    "target_part_name": "hood",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\car_automobile__03\\parts_crop\\005_hood.png",
+    "target_mask_sha256": "f7f69d8b44be43b09dbc1afd3a35cbf1a6b5b40bf6a3a4debaadc7d456d3c1d7",
+    "target_area_px": 21103,
+    "target_object_fraction": 0.1952047508486962,
+    "defect_mode": "interior",
+    "defect_seed": 20260881,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 53,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__03\\groups.json",
+    "hpid_group_map_sha256": "fc9f51771bef9cdad6c5a8c92564640a16a28ff90bf30d7cdd6b1bbf4d29f760",
+    "hpid_groups_sha256": "9efd041babe6a8d4303b919f814c732e4c8c15d0b4799995030991990bd290a3"
+  },
+  "summary": {
+    "request_id": "new216__car_automobile__03",
+    "cohort": "new216",
+    "domain": "vehicle",
+    "object_category": "car_(automobile)",
+    "target": "hood",
+    "normalized_target": "hood",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unique",
+    "raw_match_count": 1,
+    "hpid_match_count": 1,
+    "raw_best_matching_iou": 0.7987251466925577,
+    "accepted_best_matching_iou": 0.7987251466925577,
+    "native_part_best_matching_iou": 0.07951476093446429,
+    "group_best_matching_iou": 0.07951476093446429,
+    "native_part_best_any_semantic_iou": 0.3250788556250346,
+    "group_best_any_semantic_iou": 0.3280194315707186,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 1,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_050": 1,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__car_automobile__03",
+      "cohort": "new216",
+      "raw_identity": "proposal/0015",
+      "semantic": "vehicle_hood",
+      "target_iou": 0.7987251466925577,
+      "mask_area": 21507,
+      "raw_candidate_index_zero_based": 14,
+      "upstream_candidate_key": "root:2/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_hood:01",
+      "fingerprint": "a980bc8984c27764d37ac21e8a8a6beccf69a0c05aaf0cf23ac3f05c81e3e952",
+      "accepted_by_fuser": true,
+      "accepted_index": 14,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "vehicle/vehicle/center/01",
+          "semantic": "vehicle",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 10650,
+          "truth_overlap_pixels": 10427,
+          "final_target_iou": 0.3250788556250346
+        },
+        {
+          "identity": "vehicle/vehicle_door/center/01",
+          "semantic": "vehicle_door",
+          "normalized_semantic": "door",
+          "candidate_overlap_pixels": 9163,
+          "truth_overlap_pixels": 6816,
+          "final_target_iou": 0.1388933993667289
+        },
+        {
+          "identity": "vehicle_body/vehicle_hood/center/01",
+          "semantic": "vehicle_hood",
+          "normalized_semantic": "hood",
+          "candidate_overlap_pixels": 1678,
+          "truth_overlap_pixels": 1678,
+          "final_target_iou": 0.07951476093446429
+        },
+        {
+          "identity": "vehicle_body/vehicle_wiper/right/01",
+          "semantic": "vehicle_wiper",
+          "normalized_semantic": "wiper",
+          "candidate_overlap_pixels": 11,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        },
+        {
+          "identity": "vehicle/vehicle_dashboard/center/01",
+          "semantic": "vehicle_dashboard",
+          "normalized_semantic": "dashboard",
+          "candidate_overlap_pixels": 5,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0029602750190985483
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/vehicle_body",
+          "semantic": "vehicle_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 10650,
+          "truth_overlap_pixels": 10427,
+          "final_target_iou": 0.3280194315707186
+        },
+        {
+          "identity": "object_001/vehicle_door/005",
+          "semantic": "vehicle_door",
+          "normalized_semantic": "door",
+          "candidate_overlap_pixels": 9163,
+          "truth_overlap_pixels": 6816,
+          "final_target_iou": 0.1388933993667289
+        },
+        {
+          "identity": "object_001/vehicle_hood/008",
+          "semantic": "vehicle_hood",
+          "normalized_semantic": "hood",
+          "candidate_overlap_pixels": 1678,
+          "truth_overlap_pixels": 1678,
+          "final_target_iou": 0.07951476093446429
+        },
+        {
+          "identity": "object_001/vehicle_wiper/013",
+          "semantic": "vehicle_wiper",
+          "normalized_semantic": "wiper",
+          "candidate_overlap_pixels": 11,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        },
+        {
+          "identity": "object_001/vehicle_dashboard/003",
+          "semantic": "vehicle_dashboard",
+          "normalized_semantic": "dashboard",
+          "candidate_overlap_pixels": 5,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0029331062541394647
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": [
+        {
+          "json_path": "/profile_semantic_grouping/three_stage_verification/13",
+          "record": {
+            "candidate_key": "root:2/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_hood:01",
+            "semantic_name": "vehicle_hood",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "road_vehicle",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.2168153633836764,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.2168153633836764,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 21507.0,
+                  "bbox_fill_ratio": 0.6442307692307693,
+                  "aspect_ratio": 2.9158878504672896,
+                  "elongation": 3.3280480106673673,
+                  "circularity": 0.4250612805899193,
+                  "centroid_x": 368.8067605895755,
+                  "centroid_y": 187.92500116241223
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        },
+        {
+          "json_path": "/semantic_seeded_physical_ownership/candidates/13",
+          "record": {
+            "candidate_key": "root:2/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_hood:01",
+            "semantic_name": "vehicle_hood",
+            "canonical_group": "vehicle_hood",
+            "maximum_instances": 1,
+            "root_containment": 1.0,
+            "root_area_fraction": 0.20775896212289532,
+            "accepted_seed": true,
+            "verification": {
+              "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+              "visual_derived": false,
+              "selected_profile": "road_vehicle",
+              "stage_1_semantic": {
+                "order": 1,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_segmenter",
+                "probability": null,
+                "margin": null,
+                "direct_semantic_source": true,
+                "inventory_supported": true
+              },
+              "stage_2_structure": {
+                "order": 2,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_mask",
+                "raw_verified": true,
+                "geometric_support": 0.0,
+                "axis_not_rejected": true,
+                "cross_source": false,
+                "closed_boundary_structure": false,
+                "root_area_fraction": 0.2168153633836764,
+                "semantic_shape_consistency": {
+                  "accepted": true,
+                  "reason": "shape_not_contradicted",
+                  "shape_family": null,
+                  "root_area_fraction": 0.2168153633836764,
+                  "outer_boundary_contact": 0.0,
+                  "descriptor": {
+                    "area_px": 21507.0,
+                    "bbox_fill_ratio": 0.6442307692307693,
+                    "aspect_ratio": 2.9158878504672896,
+                    "elongation": 3.3280480106673673,
+                    "circularity": 0.4250612805899193,
+                    "centroid_x": 368.8067605895755,
+                    "centroid_y": 187.92500116241223
+                  },
+                  "ground_truth_used": false
+                }
+              },
+              "stage_3_appearance": {
+                "order": 3,
+                "evaluated": true,
+                "verified": true,
+                "reason": "no_appearance_contradiction",
+                "raw_verified": true,
+                "boundary_alignment": 0.0,
+                "boundary_closure": 0.0,
+                "independent_cue_count": 0,
+                "shading_only_penalty": 0.0,
+                "can_create_id": false
+              },
+              "accepted": true,
+              "ground_truth_used": false
+            }
+          }
+        },
+        {
+          "json_path": "/three_stage_candidate_verification/candidates/13",
+          "record": {
+            "candidate_key": "root:2/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_hood:01",
+            "semantic_name": "vehicle_hood",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "road_vehicle",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.2168153633836764,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.20775896212289532,
+                "outer_boundary_contact": 0.15164835164835164,
+                "descriptor": {
+                  "area_px": 21507.0,
+                  "bbox_fill_ratio": 0.6442307692307693,
+                  "aspect_ratio": 2.9158878504672896,
+                  "elongation": 3.3280480106673673,
+                  "circularity": 0.4250612805899193,
+                  "centroid_x": 368.8067605895755,
+                  "centroid_y": 187.92500116241223
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "vehicle/vehicle/center/01",
+      "group_id": "object_001/vehicle_body",
+      "semantic": "vehicle",
+      "normalized_semantic": "body",
+      "target_iou": 0.3250788556250346,
+      "area_px": 26788
+    },
+    {
+      "part_id": "vehicle_body/vehicle_bumper/right/01",
+      "group_id": "object_001/vehicle_bumper/002",
+      "semantic": "vehicle_bumper",
+      "normalized_semantic": "bumper",
+      "target_iou": 0.0,
+      "area_px": 5127
+    },
+    {
+      "part_id": "vehicle/vehicle_dashboard/center/01",
+      "group_id": "object_001/vehicle_dashboard/003",
+      "semantic": "vehicle_dashboard",
+      "normalized_semantic": "dashboard",
+      "target_iou": 0.0029602750190985483,
+      "area_px": 20909
+    },
+    {
+      "part_id": "vehicle_body/vehicle_door/left/01",
+      "group_id": "object_001/vehicle_door/004",
+      "semantic": "vehicle_door",
+      "normalized_semantic": "door",
+      "target_iou": 0.0,
+      "area_px": 2876
+    },
+    {
+      "part_id": "vehicle/vehicle_door/center/01",
+      "group_id": "object_001/vehicle_door/005",
+      "semantic": "vehicle_door",
+      "normalized_semantic": "door",
+      "target_iou": 0.1388933993667289,
+      "area_px": 35008
+    },
+    {
+      "part_id": "vehicle/vehicle_headlight/left/01",
+      "group_id": "object_001/vehicle_headlight/006",
+      "semantic": "vehicle_headlight",
+      "normalized_semantic": "headlight",
+      "target_iou": 0.0,
+      "area_px": 235
+    },
+    {
+      "part_id": "vehicle/vehicle_headlight/right/01",
+      "group_id": "object_001/vehicle_headlight/007",
+      "semantic": "vehicle_headlight",
+      "normalized_semantic": "headlight",
+      "target_iou": 0.0,
+      "area_px": 521
+    },
+    {
+      "part_id": "vehicle_body/vehicle_hood/center/01",
+      "group_id": "object_001/vehicle_hood/008",
+      "semantic": "vehicle_hood",
+      "normalized_semantic": "hood",
+      "target_iou": 0.07951476093446429,
+      "area_px": 1678
+    },
+    {
+      "part_id": "vehicle/vehicle_rim/left/01",
+      "group_id": "object_001/vehicle_rim/009",
+      "semantic": "vehicle_rim",
+      "normalized_semantic": "rim",
+      "target_iou": 0.0,
+      "area_px": 5020
+    },
+    {
+      "part_id": "vehicle_body/vehicle_roof/center/01",
+      "group_id": "object_001/vehicle_roof/010",
+      "semantic": "vehicle_roof",
+      "normalized_semantic": "roof",
+      "target_iou": 0.0,
+      "area_px": 1597
+    },
+    {
+      "part_id": "vehicle/vehicle_tire/left/01",
+      "group_id": "object_001/vehicle_tire/011",
+      "semantic": "vehicle_tire",
+      "normalized_semantic": "tire",
+      "target_iou": 0.0,
+      "area_px": 1972
+    },
+    {
+      "part_id": "vehicle_body/vehicle_windshield/center/01",
+      "group_id": "object_001/vehicle_windshield/012",
+      "semantic": "vehicle_windshield",
+      "normalized_semantic": "windshield",
+      "target_iou": 0.0,
+      "area_px": 1665
+    },
+    {
+      "part_id": "vehicle_body/vehicle_wiper/right/01",
+      "group_id": "object_001/vehicle_wiper/013",
+      "semantic": "vehicle_wiper",
+      "normalized_semantic": "wiper",
+      "target_iou": 0.0,
+      "area_px": 123
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/vehicle_body",
+      "semantic": "vehicle_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "vehicle/vehicle/center/01"
+      ],
+      "target_iou": 0.3280194315707186,
+      "area_px": 26464,
+      "evidence": "conservative_visual_merge"
+    },
+    {
+      "group_id": "object_001/vehicle_bumper/002",
+      "semantic": "vehicle_bumper",
+      "normalized_semantic": "bumper",
+      "member_part_ids": [
+        "vehicle_body/vehicle_bumper/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 5042,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_dashboard/003",
+      "semantic": "vehicle_dashboard",
+      "normalized_semantic": "dashboard",
+      "member_part_ids": [
+        "vehicle/vehicle_dashboard/center/01"
+      ],
+      "target_iou": 0.0029331062541394647,
+      "area_px": 21297,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_door/004",
+      "semantic": "vehicle_door",
+      "normalized_semantic": "door",
+      "member_part_ids": [
+        "vehicle_body/vehicle_door/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 2886,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_door/005",
+      "semantic": "vehicle_door",
+      "normalized_semantic": "door",
+      "member_part_ids": [
+        "vehicle/vehicle_door/center/01"
+      ],
+      "target_iou": 0.1388933993667289,
+      "area_px": 35008,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_headlight/006",
+      "semantic": "vehicle_headlight",
+      "normalized_semantic": "headlight",
+      "member_part_ids": [
+        "vehicle/vehicle_headlight/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 235,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_headlight/007",
+      "semantic": "vehicle_headlight",
+      "normalized_semantic": "headlight",
+      "member_part_ids": [
+        "vehicle/vehicle_headlight/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 521,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_hood/008",
+      "semantic": "vehicle_hood",
+      "normalized_semantic": "hood",
+      "member_part_ids": [
+        "vehicle_body/vehicle_hood/center/01"
+      ],
+      "target_iou": 0.07951476093446429,
+      "area_px": 1678,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_rim/009",
+      "semantic": "vehicle_rim",
+      "normalized_semantic": "rim",
+      "member_part_ids": [
+        "vehicle/vehicle_rim/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 5020,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_roof/010",
+      "semantic": "vehicle_roof",
+      "normalized_semantic": "roof",
+      "member_part_ids": [
+        "vehicle_body/vehicle_roof/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 1597,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_tire/011",
+      "semantic": "vehicle_tire",
+      "normalized_semantic": "tire",
+      "member_part_ids": [
+        "vehicle/vehicle_tire/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 1983,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_windshield/012",
+      "semantic": "vehicle_windshield",
+      "normalized_semantic": "windshield",
+      "member_part_ids": [
+        "vehicle_body/vehicle_windshield/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 1665,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_wiper/013",
+      "semantic": "vehicle_wiper",
+      "normalized_semantic": "wiper",
+      "member_part_ids": [
+        "vehicle_body/vehicle_wiper/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 123,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 26,
+    "accepted_candidate_count": 26,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 13,
+    "identity_hypothesis_count": 26,
+    "identity_group_count": 21,
+    "identity_hypotheses_merged": 5,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 15,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "vehicle_body/vehicle_bumper/right/01",
+      "vehicle_body/vehicle_door/left/01",
+      "vehicle_body/vehicle_hood/center/01",
+      "vehicle_body/vehicle_roof/center/01",
+      "vehicle_body/vehicle_windshield/center/01",
+      "vehicle_body/vehicle_wiper/right/01"
+    ],
+    "classes_with_multiple_sources": [
+      "vehicle_dashboard",
+      "vehicle_door",
+      "vehicle_fender",
+      "vehicle_headlight",
+      "vehicle_rim",
+      "vehicle_tire"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 3,
+    "specificity_host_suppressions": 4,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 103519,
+    "lost_root_pixels_before_conservation": 25,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__03\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__car_automobile__03",
+      "cohort": "new216",
+      "domain": "vehicle",
+      "object_category": "car_(automobile)",
+      "target": "hood",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unique",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.7987251466925577,
+      "accepted_best_iou": 0.7987251466925577,
+      "part_best_iou": 0.07951476093446429,
+      "group_best_iou": 0.07951476093446429,
+      "group_any_semantic_best_iou": 0.3280194315707186,
+      "part_to_group_fates": []
+    },
+    {
+      "request_id": "new216__car_automobile__03",
+      "cohort": "new216",
+      "domain": "vehicle",
+      "object_category": "car_(automobile)",
+      "target": "hood",
+      "threshold": "050",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unique",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.7987251466925577,
+      "accepted_best_iou": 0.7987251466925577,
+      "part_best_iou": 0.07951476093446429,
+      "group_best_iou": 0.07951476093446429,
+      "group_any_semantic_best_iou": 0.3280194315707186,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

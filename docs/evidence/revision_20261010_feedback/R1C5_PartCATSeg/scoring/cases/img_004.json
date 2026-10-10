@@ -1,0 +1,231 @@
+{
+  "anonymous_id": "img_004",
+  "case_id": "remote_control__u01",
+  "image_id": 229111,
+  "object_category": "remote_control",
+  "expected_domain": "device",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 3,
+    "predicted_part_count": 8,
+    "assignments": [
+      [
+        0,
+        7,
+        0.13147668540477753
+      ],
+      [
+        1,
+        4,
+        0.3559055030345917
+      ],
+      [
+        2,
+        5,
+        0.05872756987810135
+      ]
+    ],
+    "part_f1_at_025": 0.18181818181818182,
+    "part_precision_at_025": 0.125,
+    "part_recall_at_025": 0.3333333333333333,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.12998707978840107,
+    "semantic_union_recall_at_025": 0.3333333333333333,
+    "semantic_label_precision": 0.4,
+    "annotated_semantic_class_count": 3,
+    "predicted_semantic_class_count": 5,
+    "unmatched_predicted_semantic_classes": [
+      "screen",
+      "visual_panel_01",
+      "visual_panel_02"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "back_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 610,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.034055727554179564,
+        "truth_pixels": 1430,
+        "predicted_pixels": 574
+      },
+      {
+        "semantic": "logo",
+        "union_iou": 0.35590551181102364,
+        "truth_pixels": 235,
+        "predicted_pixels": 626
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 3,
+    "predicted_part_count": 74,
+    "assignments": [
+      [
+        0,
+        0,
+        0.11507715284824371
+      ],
+      [
+        1,
+        53,
+        0.3333333432674408
+      ],
+      [
+        2,
+        59,
+        0.27285128831863403
+      ]
+    ],
+    "part_f1_at_025": 0.051948051948051945,
+    "part_precision_at_025": 0.02702702702702703,
+    "part_recall_at_025": 0.6666666666666666,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.06042073900707001,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.25,
+    "annotated_semantic_class_count": 3,
+    "predicted_semantic_class_count": 12,
+    "unmatched_predicted_semantic_classes": [
+      "clock_hand",
+      "container_bottom",
+      "container_inner",
+      "container_lid",
+      "container_outer_side",
+      "container_ring",
+      "screen",
+      "side_panel",
+      "tool_prop_finger_hole"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "back_panel",
+        "union_iou": 0.012955580865603644,
+        "truth_pixels": 610,
+        "predicted_pixels": 6505
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.06304347826086956,
+        "truth_pixels": 1430,
+        "predicted_pixels": 3949
+      },
+      {
+        "semantic": "logo",
+        "union_iou": 0.10526315789473684,
+        "truth_pixels": 235,
+        "predicted_pixels": 2096
+      }
+    ],
+    "predicted_raw_semantic_class_count": 16,
+    "foreground_pixels": 15034,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 27.5,
+    "component_area_max": 4568,
+    "component_source_labels": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      72,
+      73,
+      88,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      99,
+      101,
+      101,
+      101,
+      101,
+      101,
+      127,
+      150,
+      169,
+      169,
+      213,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      334,
+      334,
+      334,
+      342,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      368,
+      370
+    ]
+  },
+  "shape_hw": [
+    313,
+    109
+  ],
+  "annotated_pixels": 2275,
+  "overlapping_annotation_pixels": 0
+}

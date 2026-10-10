@@ -1,0 +1,16 @@
+[
+  {
+    "ProcessId": 29484,
+    "ParentProcessId": 36232,
+    "CreationDate": "2026-10-09T23:01:20.19003+08:00",
+    "ExecutablePath": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\environment\\venv\\Scripts\\python.exe",
+    "CommandLine": "\"__WORKSPACE__\\stability_work\\learned_baseline_review5\\environment\\venv\\Scripts\\python.exe\" stability_work/learned_baseline_review5/smoke_inference.py --checkpoint-sha256 51a0cb99254f3778a0d629e0053af937807e55b266ae0071438c141566a36766 --cohort-manifest stability_work/learned_baseline_review5/inference_manifest.json --protocol-frozen stability_work/learned_baseline_review5/protocol_frozen.json --protocol-sha256 fc237e550c755d65cff07658cfa392387ef30db0786e29f271dd0eb954c4538d --device cuda --decoder-chunk-size 16 --decoder-equivalence-receipt stability_work/learned_baseline_review5/smoke_voc_02/decoder_equivalence.json --label-registry stability_work/learned_baseline_review5/label_registry.json --paco --output stability_work/learned_baseline_review5/cohort_predictions"
+  },
+  {
+    "ProcessId": 25008,
+    "ParentProcessId": 29484,
+    "CreationDate": "2026-10-09T23:01:20.209737+08:00",
+    "ExecutablePath": "__USER_HOME__\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "CommandLine": "\"__USER_HOME__\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" stability_work/learned_baseline_review5/smoke_inference.py --checkpoint-sha256 51a0cb99254f3778a0d629e0053af937807e55b266ae0071438c141566a36766 --cohort-manifest stability_work/learned_baseline_review5/inference_manifest.json --protocol-frozen stability_work/learned_baseline_review5/protocol_frozen.json --protocol-sha256 fc237e550c755d65cff07658cfa392387ef30db0786e29f271dd0eb954c4538d --device cuda --decoder-chunk-size 16 --decoder-equivalence-receipt stability_work/learned_baseline_review5/smoke_voc_02/decoder_equivalence.json --label-registry stability_work/learned_baseline_review5/label_registry.json --paco --output stability_work/learned_baseline_review5/cohort_predictions"
+  }
+]

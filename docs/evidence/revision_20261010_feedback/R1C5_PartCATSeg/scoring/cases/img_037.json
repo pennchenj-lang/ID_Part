@@ -1,0 +1,199 @@
+{
+  "anonymous_id": "img_037",
+  "case_id": "knife__u01",
+  "image_id": 370728,
+  "object_category": "knife",
+  "expected_domain": "tool_prop",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 2,
+    "predicted_part_count": 3,
+    "assignments": [
+      [
+        0,
+        0,
+        0.9395483136177063
+      ],
+      [
+        1,
+        1,
+        0.7687244415283203
+      ]
+    ],
+    "part_f1_at_025": 0.8,
+    "part_precision_at_025": 0.6666666666666666,
+    "part_recall_at_025": 1.0,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.8,
+    "part_precision_at_050": 0.6666666666666666,
+    "part_recall_at_050": 1.0,
+    "matched_count_at_050": 2,
+    "part_f1_at_075": 0.8,
+    "part_precision_at_075": 0.6666666666666666,
+    "part_recall_at_075": 1.0,
+    "matched_count_at_075": 2,
+    "mean_semantic_union_iou": 0.8541363968414475,
+    "semantic_union_recall_at_025": 1.0,
+    "semantic_label_precision": 0.6666666666666666,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 3,
+    "unmatched_predicted_semantic_classes": [
+      "visual_panel_01"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "blade",
+        "union_iou": 0.9395483270464899,
+        "truth_pixels": 19991,
+        "predicted_pixels": 19601
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.7687244666364049,
+        "truth_pixels": 3775,
+        "predicted_pixels": 4018
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 2,
+    "predicted_part_count": 68,
+    "assignments": [
+      [
+        0,
+        0,
+        0.7463659048080444
+      ],
+      [
+        1,
+        52,
+        0.49738219380378723
+      ]
+    ],
+    "part_f1_at_025": 0.05714285714285715,
+    "part_precision_at_025": 0.029411764705882353,
+    "part_recall_at_025": 1.0,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.028571428571428574,
+    "part_precision_at_050": 0.014705882352941176,
+    "part_recall_at_050": 0.5,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.37573977965947375,
+    "semantic_union_recall_at_025": 0.5,
+    "semantic_label_precision": 0.125,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 8,
+    "unmatched_predicted_semantic_classes": [
+      "bowl",
+      "container_body",
+      "container_inner",
+      "container_outer_side",
+      "daily_object_body",
+      "daily_object_top",
+      "furniture_top"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "blade",
+        "union_iou": 0.7514795593189475,
+        "truth_pixels": 19991,
+        "predicted_pixels": 18482
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.0,
+        "truth_pixels": 3775,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 17,
+    "foreground_pixels": 51837,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 45.0,
+    "component_area_max": 18333,
+    "component_source_labels": [
+      41,
+      45,
+      45,
+      46,
+      46,
+      46,
+      46,
+      55,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      65,
+      89,
+      89,
+      89,
+      89,
+      89,
+      213,
+      213,
+      213,
+      214,
+      214,
+      214,
+      214,
+      214,
+      214,
+      214,
+      214,
+      214,
+      215,
+      215,
+      215,
+      215,
+      215,
+      215,
+      217,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      370,
+      370,
+      370,
+      370,
+      427,
+      429
+    ]
+  },
+  "shape_hw": [
+    418,
+    252
+  ],
+  "annotated_pixels": 23766,
+  "overlapping_annotation_pixels": 0
+}

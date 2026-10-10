@@ -1,0 +1,27 @@
+{
+  "format": "HPID-Split controlled semantic-completion front-end benchmark",
+  "format_version": "1.0.0",
+  "case_count": 37,
+  "methods": [
+    "raw_proposals",
+    "greedy_nms",
+    "dbscan_fusion",
+    "local_pairwise_crf",
+    "hpid_split_group_ids"
+  ],
+  "task": "Resolve a requested physical part, intersect its selected identity mask with a controlled missing region, run a fixed LaMa completion backend, and lock every pixel outside that request.",
+  "evidence_boundary": "This is controlled 2D photo-region recovery and identity handoff. It is not real amodal ground truth, full-image detection, 3D reconstruction, out-of-frame prediction, or agricultural validation.",
+  "selection_burden_definition": "review_option_count counts matching semantic choices, or all exported instances when the requested semantic is absent. It is an objective option-count proxy, not measured human time.",
+  "completion_backend": {
+    "name": "LaMa via simple-lama-inpainting",
+    "version": "simple-lama-inpainting 0.1.2 / big-lama.pt",
+    "implementation_url": "https://github.com/enesmsahin/simple-lama-inpainting",
+    "publication_url": "https://openaccess.thecvf.com/content/WACV2022/html/Suvorov_Resolution-Robust_Large_Mask_Inpainting_With_Fourier_Convolutions_WACV_2022_paper.html",
+    "license": "Apache-2.0; upstream checkpoint terms apply",
+    "is_hpid_split_method": false
+  },
+  "target_manifest_sha256": "451f33618a7a8863347ae60429b8c083014c63a07a911423f3d7db5b9311ea35",
+  "reference_masks_used_in_hpid_inference": false,
+  "reference_masks_used_for_benchmark_construction_and_scoring": true,
+  "seed": 20260828
+}

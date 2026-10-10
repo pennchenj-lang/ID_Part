@@ -1,0 +1,13 @@
+﻿cohort,threshold,method,ambiguous_n,correct_in_ambiguous_k,rate
+old37,025,raw_proposals,13,9,0.6923076923076923
+old37,025,hpid_split_group_ids,6,1,0.16666666666666666
+old37,050,raw_proposals,13,7,0.5384615384615384
+old37,050,hpid_split_group_ids,6,0,0.0
+new216,025,raw_proposals,44,24,0.5454545454545454
+new216,025,hpid_split_group_ids,24,14,0.5833333333333334
+new216,050,raw_proposals,44,15,0.3409090909090909
+new216,050,hpid_split_group_ids,24,6,0.25
+combined,025,raw_proposals,57,33,0.5789473684210527
+combined,025,hpid_split_group_ids,30,15,0.5
+combined,050,raw_proposals,57,22,0.38596491228070173
+combined,050,hpid_split_group_ids,30,6,0.2

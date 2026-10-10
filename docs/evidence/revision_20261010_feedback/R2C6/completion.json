@@ -1,0 +1,49 @@
+{
+  "status": "R2_COMMENT6_VERIFIED_ROUTING_CAUSAL_MECHANISM_AND_LOCALIZED_REVISION_COMPLETE_WORD_DEFERRED",
+  "completed_utc": "2026-10-10T03:42:00.577286+00:00",
+  "word_modified": false,
+  "model_inference_run": false,
+  "patch_count": 18,
+  "archived_hpid_routes_reproduced": 37,
+  "unit_cases": 6,
+  "unit_setting_observations": 60,
+  "unit_count_note": "Ten settings per case include unchanged baseline and original-value flag/confidence controls; do not call all54 nonbaseline-labeled scenarios effective input changes.",
+  "verified_causal_claim": "In the evaluated benchmark resolver, a sole normalized-name match deterministically selects that ID without a separate spatial-quality veto, propagating a given upstream mask error into wrong-unique routing.",
+  "causal_boundary": "No upstream cause of mask error or gate-specific causal attribution established; no improved population performance claim.",
+  "independent_evidence_status": "PASS_WITH_HISTORICAL_HELPER_PROVENANCE_LIMITATION",
+  "independent_prose_status": "PASS",
+  "source_hashes_unchanged": true,
+  "main_text_counts": {
+    "en": {
+      "before": 197,
+      "after": 186,
+      "unit": "words"
+    },
+    "zh": {
+      "before": 449,
+      "after": 414,
+      "unit": "nonwhitespace characters"
+    }
+  },
+  "source_provenance_limit": "The published archived routing audit and be54300 normalizers are executed directly. The historical generation helper/Group adapter has no copy in the published frozen source tree; this audit binds its current local source hash and establishes exact agreement with all 37 archived Group routes and saved selected masks. It does not prove that the entire current helper file is byte-identical to its 2026-08-28 version.",
+  "files_sha256": {
+    "audit_resolver_causality.py": "b2654e8bf7e5deb2a68c22a875fd857b34ea213b60d9ea7f107fbd6a14a1f0ad",
+    "resolver_causal_audit.json": "4daac95dffb04e77553a422ca907865f6d9bed7517109df14477491fb8e910b3",
+    "resolver_independent_audit.json": "db0e7f012de52c6c483beca52a48ea5d5fa58974db0835b38e36689b7c1238d6",
+    "prepare_revision.py": "a1e33166523451d8519c92547103fd9a9285f7eb7233199985201bdb2a2a2286",
+    "revision_payload.json": "86f9fc6bd035345d8730c15c5ff453d6f8950c2501becf3543c7b69a91332c6f",
+    "revision_text_en.txt": "567d7e84dffe9e8d45feff2f1edb63d4dc26d6ad79ecbdc4e62fcefb238482eb",
+    "revision_text_zh.txt": "d74f0308f32944dd40652dc036fc546b858abe06ff1d45501492ffce4944c917",
+    "revision_qa.json": "79a1cf2da434ae4441898c60d28857e918dcd6ec361b553e127fa6ec0a76a3e8",
+    "prose_independent_audit.json": "a285c487526b3e7285bd1930bd5effe26364d08d65159f9714113daace513198"
+  },
+  "qa_note": "revision_qa.json is the author-stage snapshot; this completion binds the subsequent independent receipts.",
+  "future_merge_requirements": [
+    "Apply against original source hashes and unique old-text anchors or all patches in descending original paragraph order.",
+    "Update clean and yellow-highlighted Word together only during authorized batch merge; no PDF or ZIP.",
+    "Italicize response quote and ensure it equals revised IV-F paragraph exactly in each language.",
+    "Retain existing Tables S36-S37, SI paragraphs148-149 and equations; no renumbering is introduced.",
+    "Reconcile expanded253 count references with the separately completed handoff update; do not recast six-case unit experiments as 253-case interventions.",
+    "Include the resolver-unit script, intervention receipts, input/source hash bindings and helper-provenance limitation in final reproducibility materials."
+  ]
+}

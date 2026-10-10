@@ -1,0 +1,400 @@
+{
+  "anonymous_id": "img_013",
+  "case_id": "bottle__u01",
+  "image_id": 460841,
+  "object_category": "bottle",
+  "expected_domain": "container",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 7,
+    "predicted_part_count": 9,
+    "assignments": [
+      [
+        0,
+        1,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0.4404788911342621
+      ],
+      [
+        2,
+        3,
+        0.42058485746383667
+      ],
+      [
+        3,
+        5,
+        0.4527518153190613
+      ],
+      [
+        4,
+        6,
+        0.0
+      ],
+      [
+        5,
+        4,
+        0.0
+      ],
+      [
+        6,
+        2,
+        0.2817216217517853
+      ]
+    ],
+    "part_f1_at_025": 0.5,
+    "part_precision_at_025": 0.4444444444444444,
+    "part_recall_at_025": 0.5714285714285714,
+    "matched_count_at_025": 4,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.09654254378929665,
+    "semantic_union_recall_at_025": 0.14285714285714285,
+    "semantic_label_precision": 0.3333333333333333,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 9,
+    "unmatched_predicted_semantic_classes": [
+      "handle",
+      "inner",
+      "pull_tab",
+      "spout",
+      "visual_panel_02",
+      "visual_panel_03"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "base",
+        "union_iou": 0.0,
+        "truth_pixels": 2509,
+        "predicted_pixels": 111
+      },
+      {
+        "semantic": "body",
+        "union_iou": 0.4404788967189513,
+        "truth_pixels": 13080,
+        "predicted_pixels": 5930
+      },
+      {
+        "semantic": "label",
+        "union_iou": 0.23531890980612533,
+        "truth_pixels": 7117,
+        "predicted_pixels": 1676
+      },
+      {
+        "semantic": "lid",
+        "union_iou": 0.0,
+        "truth_pixels": 205,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "neck",
+        "union_iou": 0.0,
+        "truth_pixels": 584,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "ring",
+        "union_iou": 0.0,
+        "truth_pixels": 168,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "shoulder",
+        "union_iou": 0.0,
+        "truth_pixels": 1577,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": true
+  },
+  "partcatseg": {
+    "truth_part_count": 7,
+    "predicted_part_count": 143,
+    "assignments": [
+      [
+        0,
+        62,
+        0.27691957354545593
+      ],
+      [
+        1,
+        24,
+        0.1363808959722519
+      ],
+      [
+        2,
+        86,
+        0.5078505873680115
+      ],
+      [
+        3,
+        35,
+        0.23151125013828278
+      ],
+      [
+        4,
+        69,
+        0.15979380905628204
+      ],
+      [
+        5,
+        67,
+        0.5816993713378906
+      ],
+      [
+        6,
+        9,
+        0.4083854854106903
+      ]
+    ],
+    "part_f1_at_025": 0.05333333333333333,
+    "part_precision_at_025": 0.027972027972027972,
+    "part_recall_at_025": 0.5714285714285714,
+    "matched_count_at_025": 4,
+    "part_f1_at_050": 0.026666666666666665,
+    "part_precision_at_050": 0.013986013986013986,
+    "part_recall_at_050": 0.2857142857142857,
+    "matched_count_at_050": 2,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.09054510752299376,
+    "semantic_union_recall_at_025": 0.14285714285714285,
+    "semantic_label_precision": 0.21739130434782608,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 23,
+    "unmatched_predicted_semantic_classes": [
+      "bottom",
+      "capsule",
+      "daily_object_body",
+      "daily_object_cap",
+      "device_base",
+      "device_body",
+      "device_button",
+      "device_pediment",
+      "handle",
+      "heel",
+      "inner",
+      "punt",
+      "rim",
+      "sipper",
+      "spout",
+      "tool_prop_body",
+      "tool_prop_handle",
+      "unmapped_paco_2052"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "base",
+        "union_iou": 0.0,
+        "truth_pixels": 2509,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "body",
+        "union_iou": 0.5059483027094364,
+        "truth_pixels": 13080,
+        "predicted_pixels": 11098
+      },
+      {
+        "semantic": "label",
+        "union_iou": 0.0,
+        "truth_pixels": 7117,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "lid",
+        "union_iou": 0.0,
+        "truth_pixels": 205,
+        "predicted_pixels": 57
+      },
+      {
+        "semantic": "neck",
+        "union_iou": 0.04157303370786517,
+        "truth_pixels": 584,
+        "predicted_pixels": 343
+      },
+      {
+        "semantic": "ring",
+        "union_iou": 0.08629441624365482,
+        "truth_pixels": 168,
+        "predicted_pixels": 46
+      },
+      {
+        "semantic": "shoulder",
+        "union_iou": 0.0,
+        "truth_pixels": 1577,
+        "predicted_pixels": 69
+      }
+    ],
+    "predicted_raw_semantic_class_count": 38,
+    "foreground_pixels": 19249,
+    "unmapped_prediction_pixels": 100,
+    "unmapped_predicted_components": 3,
+    "component_area_min": 1,
+    "component_area_median": 15.0,
+    "component_area_max": 4136,
+    "component_source_labels": [
+      17,
+      46,
+      46,
+      46,
+      46,
+      46,
+      46,
+      47,
+      47,
+      47,
+      47,
+      47,
+      47,
+      47,
+      47,
+      47,
+      47,
+      47,
+      48,
+      51,
+      51,
+      52,
+      52,
+      52,
+      55,
+      55,
+      56,
+      56,
+      56,
+      57,
+      57,
+      57,
+      57,
+      57,
+      57,
+      59,
+      59,
+      59,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      63,
+      63,
+      63,
+      64,
+      64,
+      64,
+      64,
+      67,
+      67,
+      67,
+      67,
+      67,
+      73,
+      101,
+      110,
+      113,
+      115,
+      171,
+      171,
+      171,
+      182,
+      204,
+      204,
+      214,
+      215,
+      215,
+      216,
+      217,
+      217,
+      217,
+      217,
+      217,
+      218,
+      218,
+      218,
+      218,
+      218,
+      218,
+      218,
+      218,
+      218,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      224,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      285,
+      285,
+      285,
+      285,
+      285,
+      285,
+      286,
+      301,
+      308,
+      308,
+      318,
+      334,
+      334,
+      362,
+      362,
+      362,
+      362,
+      362,
+      374,
+      374,
+      374,
+      374,
+      383
+    ]
+  },
+  "shape_hw": [
+    170,
+    283
+  ],
+  "annotated_pixels": 18121,
+  "overlapping_annotation_pixels": 7117
+}

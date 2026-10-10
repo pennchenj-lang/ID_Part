@@ -1,0 +1,467 @@
+{
+  "anonymous_id": "img_024",
+  "case_id": "bicycle__u01",
+  "image_id": 358242,
+  "object_category": "bicycle",
+  "expected_domain": "vehicle",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 12,
+    "predicted_part_count": 6,
+    "assignments": [
+      [
+        0,
+        1,
+        0.49593809247016907
+      ],
+      [
+        1,
+        0,
+        0.0
+      ],
+      [
+        2,
+        3,
+        0.24461637437343597
+      ],
+      [
+        5,
+        2,
+        0.00036231885314919055
+      ],
+      [
+        9,
+        4,
+        0.05610198900103569
+      ],
+      [
+        11,
+        5,
+        0.44631537795066833
+      ]
+    ],
+    "part_f1_at_025": 0.2222222222222222,
+    "part_precision_at_025": 0.3333333333333333,
+    "part_recall_at_025": 0.16666666666666666,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.07140822531605057,
+    "semantic_union_recall_at_025": 0.08333333333333333,
+    "semantic_label_precision": 0.8,
+    "annotated_semantic_class_count": 12,
+    "predicted_semantic_class_count": 5,
+    "unmatched_predicted_semantic_classes": [
+      "visual_strip_01"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "down_tube",
+        "union_iou": 0.0,
+        "truth_pixels": 7356,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "fork",
+        "union_iou": 0.0,
+        "truth_pixels": 4982,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "gear",
+        "union_iou": 0.0,
+        "truth_pixels": 1330,
+        "predicted_pixels": 916
+      },
+      {
+        "semantic": "handlebar",
+        "union_iou": 0.0,
+        "truth_pixels": 5394,
+        "predicted_pixels": 4999
+      },
+      {
+        "semantic": "head_tube",
+        "union_iou": 0.0,
+        "truth_pixels": 2836,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "pedal",
+        "union_iou": 0.0,
+        "truth_pixels": 3690,
+        "predicted_pixels": 540
+      },
+      {
+        "semantic": "seat",
+        "union_iou": 0.0,
+        "truth_pixels": 2735,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "seat_stay",
+        "union_iou": 0.0,
+        "truth_pixels": 1728,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "seat_tube",
+        "union_iou": 0.0,
+        "truth_pixels": 3734,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "stem",
+        "union_iou": 0.0,
+        "truth_pixels": 1435,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "tire",
+        "union_iou": 0.8568987037926068,
+        "truth_pixels": 49743,
+        "predicted_pixels": 46955
+      },
+      {
+        "semantic": "top_tube",
+        "union_iou": 0.0,
+        "truth_pixels": 3443,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 12,
+    "predicted_part_count": 117,
+    "assignments": [
+      [
+        0,
+        80,
+        0.5502033233642578
+      ],
+      [
+        1,
+        1,
+        0.1672401875257492
+      ],
+      [
+        2,
+        2,
+        0.16126172244548798
+      ],
+      [
+        3,
+        102,
+        0.38455671072006226
+      ],
+      [
+        4,
+        100,
+        0.21622350811958313
+      ],
+      [
+        5,
+        114,
+        0.14985442161560059
+      ],
+      [
+        6,
+        36,
+        0.10915032774209976
+      ],
+      [
+        7,
+        87,
+        0.27024513483047485
+      ],
+      [
+        8,
+        22,
+        0.09810717403888702
+      ],
+      [
+        9,
+        109,
+        0.05166051536798477
+      ],
+      [
+        10,
+        66,
+        0.06007677689194679
+      ],
+      [
+        11,
+        110,
+        0.375326544046402
+      ]
+    ],
+    "part_f1_at_025": 0.062015503875969,
+    "part_precision_at_025": 0.03418803418803419,
+    "part_recall_at_025": 0.3333333333333333,
+    "matched_count_at_025": 4,
+    "part_f1_at_050": 0.01550387596899225,
+    "part_precision_at_050": 0.008547008547008548,
+    "part_recall_at_050": 0.08333333333333333,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.1450978463715351,
+    "semantic_union_recall_at_025": 0.16666666666666666,
+    "semantic_label_precision": 0.23404255319148937,
+    "annotated_semantic_class_count": 12,
+    "predicted_semantic_class_count": 47,
+    "unmatched_predicted_semantic_classes": [
+      "basket",
+      "container_body",
+      "container_bottom",
+      "container_handle",
+      "container_heel",
+      "container_inner",
+      "container_label",
+      "container_opening",
+      "container_punt",
+      "container_rim",
+      "container_wheel",
+      "daily_object_body",
+      "daily_object_bottom",
+      "daily_object_cap",
+      "daily_object_ferrule",
+      "daily_object_handle",
+      "daily_object_label",
+      "daily_object_punt",
+      "daily_object_top",
+      "device_back_panel",
+      "device_bezel",
+      "device_body",
+      "device_button",
+      "device_cable",
+      "device_inner_body",
+      "device_logo",
+      "device_lug",
+      "device_screen",
+      "furniture_seat",
+      "furniture_wheel",
+      "tool_prop_body",
+      "tool_prop_bowl",
+      "tool_prop_face",
+      "tool_prop_grip",
+      "tool_prop_handle",
+      "tool_prop_side"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "down_tube",
+        "union_iou": 0.0,
+        "truth_pixels": 7356,
+        "predicted_pixels": 1337
+      },
+      {
+        "semantic": "fork",
+        "union_iou": 0.0,
+        "truth_pixels": 4982,
+        "predicted_pixels": 106
+      },
+      {
+        "semantic": "gear",
+        "union_iou": 0.0,
+        "truth_pixels": 1330,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "handlebar",
+        "union_iou": 0.22108054358634405,
+        "truth_pixels": 5394,
+        "predicted_pixels": 1974
+      },
+      {
+        "semantic": "head_tube",
+        "union_iou": 0.0,
+        "truth_pixels": 2836,
+        "predicted_pixels": 13
+      },
+      {
+        "semantic": "pedal",
+        "union_iou": 0.049522461973823845,
+        "truth_pixels": 3690,
+        "predicted_pixels": 5211
+      },
+      {
+        "semantic": "seat",
+        "union_iou": 0.5502033156083829,
+        "truth_pixels": 2735,
+        "predicted_pixels": 2221
+      },
+      {
+        "semantic": "seat_stay",
+        "union_iou": 0.0,
+        "truth_pixels": 1728,
+        "predicted_pixels": 12
+      },
+      {
+        "semantic": "seat_tube",
+        "union_iou": 0.022031053294167015,
+        "truth_pixels": 3734,
+        "predicted_pixels": 6008
+      },
+      {
+        "semantic": "stem",
+        "union_iou": 0.0,
+        "truth_pixels": 1435,
+        "predicted_pixels": 8
+      },
+      {
+        "semantic": "tire",
+        "union_iou": 0.6745688241851925,
+        "truth_pixels": 49743,
+        "predicted_pixels": 52399
+      },
+      {
+        "semantic": "top_tube",
+        "union_iou": 0.223767957810511,
+        "truth_pixels": 3443,
+        "predicted_pixels": 10016
+      }
+    ],
+    "predicted_raw_semantic_class_count": 61,
+    "foreground_pixels": 108441,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 121.0,
+    "component_area_max": 25745,
+    "component_source_labels": [
+      7,
+      38,
+      40,
+      47,
+      48,
+      48,
+      48,
+      48,
+      51,
+      56,
+      57,
+      57,
+      59,
+      59,
+      59,
+      62,
+      62,
+      64,
+      65,
+      65,
+      73,
+      82,
+      131,
+      135,
+      135,
+      137,
+      137,
+      145,
+      145,
+      149,
+      160,
+      166,
+      166,
+      166,
+      166,
+      166,
+      170,
+      186,
+      191,
+      194,
+      199,
+      199,
+      199,
+      204,
+      216,
+      216,
+      216,
+      216,
+      217,
+      217,
+      222,
+      222,
+      226,
+      226,
+      247,
+      252,
+      270,
+      280,
+      280,
+      280,
+      286,
+      286,
+      286,
+      286,
+      286,
+      286,
+      298,
+      298,
+      298,
+      298,
+      298,
+      298,
+      307,
+      308,
+      309,
+      313,
+      317,
+      317,
+      318,
+      328,
+      341,
+      342,
+      343,
+      343,
+      343,
+      349,
+      352,
+      353,
+      353,
+      353,
+      353,
+      353,
+      353,
+      364,
+      371,
+      371,
+      385,
+      419,
+      419,
+      427,
+      432,
+      432,
+      432,
+      432,
+      445,
+      445,
+      445,
+      446,
+      446,
+      447,
+      447,
+      447,
+      448,
+      448,
+      448,
+      448,
+      453
+    ]
+  },
+  "shape_hw": [
+    511,
+    640
+  ],
+  "annotated_pixels": 88406,
+  "overlapping_annotation_pixels": 0
+}

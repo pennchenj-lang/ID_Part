@@ -1,0 +1,453 @@
+{
+  "request": {
+    "request_id": "new216__scissors__01",
+    "case_id": "scissors__01",
+    "cohort": "new216",
+    "image_id": 48601,
+    "source_image_sha256": "25a9e4ef266abbcc6fd8cf5849f2932a3781ac704ca2d03ff7f4760b28a94495",
+    "object_annotation_id": 142371,
+    "object_category": "scissors",
+    "expected_domain": "tool_prop",
+    "domain": "tool_prop",
+    "expected_profile": "scissors_pliers",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\scissors__01\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\scissors__01",
+    "target_part_name": "finger_hole",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\scissors__01\\parts_crop\\001_finger_hole.png",
+    "target_mask_sha256": "e57f98bfcbb963dceba37a5f731417e09393dec8673c0a31e04638a40057f3cb",
+    "target_area_px": 14887,
+    "target_object_fraction": 0.22942962380754234,
+    "defect_mode": "interior",
+    "defect_seed": 20260997,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 169,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__01\\groups.json",
+    "hpid_group_map_sha256": "b0df762236a1774d395085c8b96314e4337290aca3e69420d592afd7c433f303",
+    "hpid_groups_sha256": "4fad3748880c36bc88a751cac08e201f7728acdcfebb8e0400c4196980e5c4ef"
+  },
+  "summary": {
+    "request_id": "new216__scissors__01",
+    "cohort": "new216",
+    "domain": "tool_prop",
+    "object_category": "scissors",
+    "target": "finger_hole",
+    "normalized_target": "finger_hole",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 1,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.5043761579249985,
+    "accepted_best_matching_iou": 0.5043761579249985,
+    "native_part_best_matching_iou": 0,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.015661509314808968,
+    "group_best_any_semantic_iou": 0.013650374284456186,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 0,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__scissors__01",
+      "cohort": "new216",
+      "raw_identity": "proposal/0003",
+      "semantic": "tool_prop_finger_hole",
+      "target_iou": 0.5043761579249985,
+      "mask_area": 8661,
+      "raw_candidate_index_zero_based": 2,
+      "upstream_candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:tool_prop_finger_hole:03",
+      "fingerprint": "da3dd6ad377ce21fed3042400f4e3b0a8d073f1ddbb9b31f7baf3f965d5f0ac8",
+      "accepted_by_fuser": true,
+      "accepted_index": 2,
+      "native_part_pixel_destinations": [],
+      "final_group_pixel_destinations": [],
+      "unowned_part_pixels": 8661,
+      "unowned_group_pixels": 8661,
+      "grouping_verification_records": [
+        {
+          "json_path": "/profile_semantic_grouping/three_stage_verification/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:tool_prop_finger_hole:03",
+            "semantic_name": "tool_prop_finger_hole",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "scissors_pliers",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.14110687950733328,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.14110687950733328,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 8661.0,
+                  "bbox_fill_ratio": 0.7246485943775101,
+                  "aspect_ratio": 0.43373493975903615,
+                  "elongation": 2.163646734660266,
+                  "circularity": 0.6243375653104497,
+                  "centroid_x": 52.833044683062,
+                  "centroid_y": 318.27548781895854
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        },
+        {
+          "json_path": "/semantic_seeded_physical_ownership/candidates/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:tool_prop_finger_hole:03",
+            "semantic_name": "tool_prop_finger_hole",
+            "canonical_group": "tool_prop_finger_hole",
+            "maximum_instances": 2,
+            "root_containment": 0.0,
+            "root_area_fraction": 0.0,
+            "accepted_seed": false,
+            "verification": {
+              "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+              "visual_derived": false,
+              "selected_profile": "scissors_pliers",
+              "stage_1_semantic": {
+                "order": 1,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_segmenter",
+                "probability": null,
+                "margin": null,
+                "direct_semantic_source": true,
+                "inventory_supported": true
+              },
+              "stage_2_structure": {
+                "order": 2,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_mask",
+                "raw_verified": true,
+                "geometric_support": 0.0,
+                "axis_not_rejected": true,
+                "cross_source": false,
+                "closed_boundary_structure": false,
+                "root_area_fraction": 0.14110687950733328,
+                "semantic_shape_consistency": {
+                  "accepted": true,
+                  "reason": "shape_not_contradicted",
+                  "shape_family": null,
+                  "root_area_fraction": 0.14110687950733328,
+                  "outer_boundary_contact": 0.0,
+                  "descriptor": {
+                    "area_px": 8661.0,
+                    "bbox_fill_ratio": 0.7246485943775101,
+                    "aspect_ratio": 0.43373493975903615,
+                    "elongation": 2.163646734660266,
+                    "circularity": 0.6243375653104497,
+                    "centroid_x": 52.833044683062,
+                    "centroid_y": 318.27548781895854
+                  },
+                  "ground_truth_used": false
+                }
+              },
+              "stage_3_appearance": {
+                "order": 3,
+                "evaluated": true,
+                "verified": true,
+                "reason": "no_appearance_contradiction",
+                "raw_verified": true,
+                "boundary_alignment": 0.0,
+                "boundary_closure": 0.0,
+                "independent_cue_count": 0,
+                "shading_only_penalty": 0.0,
+                "can_create_id": false
+              },
+              "accepted": true,
+              "ground_truth_used": false
+            }
+          }
+        },
+        {
+          "json_path": "/three_stage_candidate_verification/candidates/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:tool_prop_finger_hole:03",
+            "semantic_name": "tool_prop_finger_hole",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "scissors_pliers",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.14110687950733328,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.14110687950733328,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 8661.0,
+                  "bbox_fill_ratio": 0.7246485943775101,
+                  "aspect_ratio": 0.43373493975903615,
+                  "elongation": 2.163646734660266,
+                  "circularity": 0.6243375653104497,
+                  "centroid_x": 52.833044683062,
+                  "centroid_y": 318.27548781895854
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "tool_prop/tool_prop/center/01",
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop",
+      "normalized_semantic": "body",
+      "target_iou": 0.015661509314808968,
+      "area_px": 1196
+    },
+    {
+      "part_id": "tool_prop/tool_prop_blade/left/01",
+      "group_id": "object_001/tool_prop_blade/002",
+      "semantic": "tool_prop_blade",
+      "normalized_semantic": "blade",
+      "target_iou": 0.002823508970070805,
+      "area_px": 8199
+    },
+    {
+      "part_id": "tool_prop/tool_prop_blade/center/01",
+      "group_id": "object_001/tool_prop_blade/003",
+      "semantic": "tool_prop_blade",
+      "normalized_semantic": "blade",
+      "target_iou": 0.0,
+      "area_px": 27602
+    },
+    {
+      "part_id": "tool_prop/tool_prop_handle/left/01",
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop_handle",
+      "normalized_semantic": "handle",
+      "target_iou": 0.0,
+      "area_px": 2509
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "tool_prop/tool_prop/center/01",
+        "tool_prop/tool_prop_handle/left/01"
+      ],
+      "target_iou": 0.013650374284456186,
+      "area_px": 3529,
+      "evidence": "three_stage_semantic_rejection_merge"
+    },
+    {
+      "group_id": "object_001/tool_prop_blade/002",
+      "semantic": "tool_prop_blade",
+      "normalized_semantic": "blade",
+      "member_part_ids": [
+        "tool_prop/tool_prop_blade/left/01"
+      ],
+      "target_iou": 0.002818611508607606,
+      "area_px": 8239,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/tool_prop_blade/003",
+      "semantic": "tool_prop_blade",
+      "normalized_semantic": "blade",
+      "member_part_ids": [
+        "tool_prop/tool_prop_blade/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 27738,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 8,
+    "accepted_candidate_count": 8,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 4,
+    "identity_hypothesis_count": 8,
+    "identity_group_count": 7,
+    "identity_hypotheses_merged": 1,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 3,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [],
+    "classes_with_multiple_sources": [
+      "tool_prop_blade"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 2,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 37951,
+    "lost_root_pixels_before_conservation": 101,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__01\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__scissors__01",
+      "cohort": "new216",
+      "domain": "tool_prop",
+      "object_category": "scissors",
+      "target": "finger_hole",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.5043761579249985,
+      "accepted_best_iou": 0.5043761579249985,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.013650374284456186,
+      "part_to_group_fates": []
+    },
+    {
+      "request_id": "new216__scissors__01",
+      "cohort": "new216",
+      "domain": "tool_prop",
+      "object_category": "scissors",
+      "target": "finger_hole",
+      "threshold": "050",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.5043761579249985,
+      "accepted_best_iou": 0.5043761579249985,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.013650374284456186,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

@@ -1,0 +1,12 @@
+﻿before,after,n_references,best_iou_decreased,best_iou_increased,threshold_support_lost,threshold_support_gained_or_recovered,reference_mean_best_iou_delta_descriptive_only
+input_pool,after_same_source_dedup,61,0,0,0,0,0.0
+after_same_source_dedup,after_instance_cap,61,0,0,0,0,0.0
+after_instance_cap,after_hierarchy_duplicate_filter,61,0,0,0,0,0.0
+after_hierarchy_duplicate_filter,actual_semantic_argmax,61,57,4,51,0,-0.4270541541853225
+actual_semantic_argmax,after_direct_detail_gate,61,9,41,2,0,0.02812376924299327
+after_direct_detail_gate,after_cleanup,61,20,17,0,1,-0.001211358966049392
+after_cleanup,after_root_restoration,61,7,0,1,0,-9.216440031456678e-05
+after_root_restoration,identity_supported_before_remainder,61,4,12,0,0,0.002983633881385844
+identity_supported_before_remainder,identity_plus_eligible_remainder,61,0,0,0,0,0.0
+identity_plus_eligible_remainder,after_remainder_attachment_before_filter,61,0,0,0,0,0.0
+after_remainder_attachment_before_filter,final_hpid,61,1,0,0,0,-0.00016191054442420561

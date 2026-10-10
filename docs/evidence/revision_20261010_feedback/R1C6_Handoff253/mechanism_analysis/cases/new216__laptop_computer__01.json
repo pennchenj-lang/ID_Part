@@ -1,0 +1,442 @@
+{
+  "request": {
+    "request_id": "new216__laptop_computer__01",
+    "case_id": "laptop_computer__01",
+    "cohort": "new216",
+    "image_id": 364485,
+    "source_image_sha256": "3c80de73c392f5ce649ebc769578bf145e592af002dc287a8595ea8d88267b99",
+    "object_annotation_id": 181657,
+    "object_category": "laptop_computer",
+    "expected_domain": "device",
+    "domain": "device",
+    "expected_profile": "laptop",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\laptop_computer__01\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\laptop_computer__01",
+    "target_part_name": "base_panel",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\laptop_computer__01\\parts_crop\\007_base_panel.png",
+    "target_mask_sha256": "c5d1a50cf609ef1534cece6e15653d4c5f6c2ecaa442318ee1ff0329f9dc90b3",
+    "target_area_px": 22610,
+    "target_object_fraction": 0.252402906931312,
+    "defect_mode": "interior",
+    "defect_seed": 20260958,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 130,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__01\\groups.json",
+    "hpid_group_map_sha256": "e6e36f42f487b9faa86fa102d7c4e8e7dbbc592c032f5b0aabe1b130aab079a6",
+    "hpid_groups_sha256": "a2078a84e7edf81210a24cce3ff386e1dcfe39700b1f09ea7aa475efd7776718"
+  },
+  "summary": {
+    "request_id": "new216__laptop_computer__01",
+    "cohort": "new216",
+    "domain": "device",
+    "object_category": "laptop_computer",
+    "target": "base_panel",
+    "normalized_target": "base_panel",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 1,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.7183669299918278,
+    "accepted_best_matching_iou": 0.7183669299918278,
+    "native_part_best_matching_iou": 0.2998453038674033,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.538151066692293,
+    "group_best_any_semantic_iou": 0.5261575466025256,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 1,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "native_part_to_group",
+    "observed_subtype_025": "dominant_pixels_assigned_to_different_semantic_group",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 1
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__laptop_computer__01",
+      "cohort": "new216",
+      "raw_identity": "proposal/0004",
+      "semantic": "device_base_panel",
+      "target_iou": 0.7183669299918278,
+      "mask_area": 27855,
+      "raw_candidate_index_zero_based": 3,
+      "upstream_candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:device_base_panel:01",
+      "fingerprint": "b56adccd9b7814ea8d355e3ba58b01dc3fc6609de65044e1b044a37379f15ffa",
+      "accepted_by_fuser": true,
+      "accepted_index": 3,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "device/device/center/01",
+          "semantic": "device",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 16352,
+          "truth_overlap_pixels": 13999,
+          "final_target_iou": 0.538151066692293
+        },
+        {
+          "identity": "device_body/device_base_panel/center/01",
+          "semantic": "device_base_panel",
+          "normalized_semantic": "base_panel",
+          "candidate_overlap_pixels": 6799,
+          "truth_overlap_pixels": 6784,
+          "final_target_iou": 0.2998453038674033
+        },
+        {
+          "identity": "device/device_keyboard/center/01",
+          "semantic": "device_keyboard",
+          "normalized_semantic": "keyboard",
+          "candidate_overlap_pixels": 3791,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        },
+        {
+          "identity": "device_screen/device_bezel/center/01",
+          "semantic": "device_bezel",
+          "normalized_semantic": "bezel",
+          "candidate_overlap_pixels": 913,
+          "truth_overlap_pixels": 314,
+          "final_target_iou": 0.034142370121609936
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/device_body",
+          "semantic": "device_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 16352,
+          "truth_overlap_pixels": 13999,
+          "final_target_iou": 0.5261575466025256
+        },
+        {
+          "identity": "object_001/device_bezel/014",
+          "semantic": "device_bezel",
+          "normalized_semantic": "bezel",
+          "candidate_overlap_pixels": 7712,
+          "truth_overlap_pixels": 7098,
+          "final_target_iou": 0.2044225302508113
+        },
+        {
+          "identity": "object_001/device_keyboard/004",
+          "semantic": "device_keyboard",
+          "normalized_semantic": "keyboard",
+          "candidate_overlap_pixels": 3791,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "device/device/center/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device",
+      "normalized_semantic": "body",
+      "target_iou": 0.538151066692293,
+      "area_px": 17405
+    },
+    {
+      "part_id": "device_body/device_base_panel/center/01",
+      "group_id": "object_001/device_bezel/014",
+      "semantic": "device_base_panel",
+      "normalized_semantic": "base_panel",
+      "target_iou": 0.2998453038674033,
+      "area_px": 6799
+    },
+    {
+      "part_id": "device/device_camera/center/01",
+      "group_id": "object_001/device_camera/003",
+      "semantic": "device_camera",
+      "normalized_semantic": "camera",
+      "target_iou": 0.0,
+      "area_px": 31
+    },
+    {
+      "part_id": "device/device_keyboard/center/01",
+      "group_id": "object_001/device_keyboard/004",
+      "semantic": "device_keyboard",
+      "normalized_semantic": "keyboard",
+      "target_iou": 0.0,
+      "area_px": 3791
+    },
+    {
+      "part_id": "device/device_logo/right/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device_logo",
+      "normalized_semantic": "logo",
+      "target_iou": 0.0,
+      "area_px": 401
+    },
+    {
+      "part_id": "device/device_port/left/01",
+      "group_id": "object_001/device_bezel/014",
+      "semantic": "device_port",
+      "normalized_semantic": "port",
+      "target_iou": 0.0,
+      "area_px": 59
+    },
+    {
+      "part_id": "device/device_port/left/02",
+      "group_id": "object_001/device_body",
+      "semantic": "device_port",
+      "normalized_semantic": "port",
+      "target_iou": 0.0,
+      "area_px": 49
+    },
+    {
+      "part_id": "device/device_port/center/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device_port",
+      "normalized_semantic": "port",
+      "target_iou": 0.0,
+      "area_px": 57
+    },
+    {
+      "part_id": "device/device_port/right/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device_port",
+      "normalized_semantic": "port",
+      "target_iou": 0.0,
+      "area_px": 100
+    },
+    {
+      "part_id": "device/device_port/right/02",
+      "group_id": "object_001/device_bezel/014",
+      "semantic": "device_port",
+      "normalized_semantic": "port",
+      "target_iou": 0.0,
+      "area_px": 73
+    },
+    {
+      "part_id": "device/device_port/right/03",
+      "group_id": "object_001/device_body",
+      "semantic": "device_port",
+      "normalized_semantic": "port",
+      "target_iou": 0.0,
+      "area_px": 284
+    },
+    {
+      "part_id": "device/device_screen/center/01",
+      "group_id": "object_001/device_screen/012",
+      "semantic": "device_screen",
+      "normalized_semantic": "screen",
+      "target_iou": 0.0,
+      "area_px": 42277
+    },
+    {
+      "part_id": "device/device_visual_strip_01/center/01",
+      "group_id": "object_001/device_screen/012",
+      "semantic": "device_visual_strip_01",
+      "normalized_semantic": "visual_strip_01",
+      "target_iou": 0.0,
+      "area_px": 460
+    },
+    {
+      "part_id": "device_screen/device_bezel/center/01",
+      "group_id": "object_001/device_bezel/014",
+      "semantic": "device_bezel",
+      "normalized_semantic": "bezel",
+      "target_iou": 0.034142370121609936,
+      "area_px": 18038
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/device_body",
+      "semantic": "device_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "device/device/center/01",
+        "device/device_logo/right/01",
+        "device/device_port/left/02",
+        "device/device_port/center/01",
+        "device/device_port/right/01",
+        "device/device_port/right/03"
+      ],
+      "target_iou": 0.5261575466025256,
+      "area_px": 17998,
+      "evidence": "three_stage_semantic_rejection_merge"
+    },
+    {
+      "group_id": "object_001/device_bezel/014",
+      "semantic": "device_bezel",
+      "normalized_semantic": "bezel",
+      "member_part_ids": [
+        "device_body/device_base_panel/center/01",
+        "device/device_port/left/01",
+        "device/device_port/right/02",
+        "device_screen/device_bezel/center/01"
+      ],
+      "target_iou": 0.2044225302508113,
+      "area_px": 25267,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_camera/003",
+      "semantic": "device_camera",
+      "normalized_semantic": "camera",
+      "member_part_ids": [
+        "device/device_camera/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 31,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_keyboard/004",
+      "semantic": "device_keyboard",
+      "normalized_semantic": "keyboard",
+      "member_part_ids": [
+        "device/device_keyboard/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 3791,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_screen/012",
+      "semantic": "device_screen",
+      "normalized_semantic": "screen",
+      "member_part_ids": [
+        "device/device_screen/center/01",
+        "device/device_visual_strip_01/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 42737,
+      "evidence": "semantic_seed_geometry_appearance_attachment"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 23,
+    "accepted_candidate_count": 23,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 14,
+    "identity_hypothesis_count": 23,
+    "identity_group_count": 20,
+    "identity_hypotheses_merged": 3,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 8,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "device_body/device_base_panel/center/01"
+    ],
+    "classes_with_multiple_sources": [
+      "device_keyboard",
+      "device_screen"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "hpid-topology-v1",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 14,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 89887,
+    "lost_root_pixels_before_conservation": 15,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__01\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__laptop_computer__01",
+      "cohort": "new216",
+      "domain": "device",
+      "object_category": "laptop_computer",
+      "target": "base_panel",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "native_part_to_group",
+      "observed_subtype": "dominant_pixels_assigned_to_different_semantic_group",
+      "raw_best_iou": 0.7183669299918278,
+      "accepted_best_iou": 0.7183669299918278,
+      "part_best_iou": 0.2998453038674033,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.5261575466025256,
+      "part_to_group_fates": [
+        {
+          "part_id": "device_body/device_base_panel/center/01",
+          "part_target_iou": 0.2998453038674033,
+          "observed_subtype": "dominant_pixels_assigned_to_different_semantic_group",
+          "destinations": [
+            {
+              "identity": "object_001/device_bezel/014",
+              "semantic": "device_bezel",
+              "normalized_semantic": "bezel",
+              "candidate_overlap_pixels": 6799,
+              "truth_overlap_pixels": 6784,
+              "final_target_iou": 0.2044225302508113
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "new216__laptop_computer__01",
+      "cohort": "new216",
+      "domain": "device",
+      "object_category": "laptop_computer",
+      "target": "base_panel",
+      "threshold": "050",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.7183669299918278,
+      "accepted_best_iou": 0.7183669299918278,
+      "part_best_iou": 0.2998453038674033,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.5261575466025256,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

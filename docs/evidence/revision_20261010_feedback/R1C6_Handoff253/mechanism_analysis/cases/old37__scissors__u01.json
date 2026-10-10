@@ -1,0 +1,518 @@
+{
+  "request": {
+    "request_id": "old37__scissors__u01",
+    "case_id": "scissors__u01",
+    "cohort": "old37",
+    "image_id": 351096,
+    "source_image_sha256": "46076e9d4dcc8560dabf0e58c59cf42a2195dd9681305b68235145270a784dcf",
+    "object_annotation_id": 759,
+    "object_category": "scissors",
+    "expected_domain": "tool_prop",
+    "domain": "tool_prop",
+    "expected_profile": "scissors_pliers",
+    "case_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\scissors__u01\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\02_blind_inference\\scissors__u01",
+    "target_part_name": "handle",
+    "target_mask_sha256": "470955ffee036a85695ae77466538e91dcc0d11f3d6ceb1485d20a24d5fa3e38",
+    "target_area_px": 6690,
+    "target_object_fraction": 0.2415336847425807,
+    "defect_mode": "interior",
+    "defect_seed": 20260866,
+    "defect_fraction": 0.18,
+    "target_mask_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\scissors__u01\\parts_crop\\002_handle.png",
+    "source_target_manifest_row_sha256": "62a81d1e062b0974ecbe72c8fe6a646ddc043cdb1ddb473bb0e33fe550df418b",
+    "historical_expected_profile": "scissors_pliers",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__scissors__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__scissors__u01\\groups.json",
+    "hpid_group_map_sha256": "a37873d5cde8dd3a228504c8ec8163aaec97ad87578fcf61e9bc28f641773baa",
+    "hpid_groups_sha256": "ed5032b93fac057d2d6a8aaa708686d4ada9b6f3b832763589a0aa18ff173ba2"
+  },
+  "summary": {
+    "request_id": "old37__scissors__u01",
+    "cohort": "old37",
+    "domain": "tool_prop",
+    "object_category": "scissors",
+    "target": "handle",
+    "normalized_target": "handle",
+    "raw_query_state": "ambiguous",
+    "hpid_query_state": "ambiguous",
+    "raw_match_count": 2,
+    "hpid_match_count": 2,
+    "raw_best_matching_iou": 0.25458986019875357,
+    "accepted_best_matching_iou": 0.25458986019875357,
+    "native_part_best_matching_iou": 0.14190620272314675,
+    "group_best_matching_iou": 0.14190620272314675,
+    "native_part_best_any_semantic_iou": 0.35512920908379014,
+    "group_best_any_semantic_iou": 0.35532398338948523,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 0,
+    "accepted_available_050": 0,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 0,
+    "first_observed_loss_stage_050": "not_a_raw_to_group_loss",
+    "observed_subtype_050": "not_applicable",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "old37__scissors__u01",
+      "cohort": "old37",
+      "raw_identity": "proposal/0007",
+      "semantic": "tool_prop_handle",
+      "target_iou": 0.25458986019875357,
+      "mask_area": 8207,
+      "raw_candidate_index_zero_based": 6,
+      "upstream_candidate_key": "root:1/visual-region:05",
+      "fingerprint": "8161d97362ff01e385bf23517195d246e43951e4afe9cef57d1d851293d560ee",
+      "accepted_by_fuser": true,
+      "accepted_index": 6,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "tool_prop/tool_prop_handle/center/01",
+          "semantic": "tool_prop_handle",
+          "normalized_semantic": "handle",
+          "candidate_overlap_pixels": 4632,
+          "truth_overlap_pixels": 1407,
+          "final_target_iou": 0.14190620272314675
+        },
+        {
+          "identity": "tool_prop/tool_prop/center/01",
+          "semantic": "tool_prop",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 3523,
+          "truth_overlap_pixels": 1588,
+          "final_target_iou": 0.35512920908379014
+        },
+        {
+          "identity": "tool_prop/tool_prop_blade/right/01",
+          "semantic": "tool_prop_blade",
+          "normalized_semantic": "blade",
+          "candidate_overlap_pixels": 52,
+          "truth_overlap_pixels": 28,
+          "final_target_iou": 0.024070371851259497
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/tool_prop_handle/004",
+          "semantic": "tool_prop_handle",
+          "normalized_semantic": "handle",
+          "candidate_overlap_pixels": 4632,
+          "truth_overlap_pixels": 1407,
+          "final_target_iou": 0.14190620272314675
+        },
+        {
+          "identity": "object_001/tool_prop_body",
+          "semantic": "tool_prop_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 3523,
+          "truth_overlap_pixels": 1588,
+          "final_target_iou": 0.35532398338948523
+        },
+        {
+          "identity": "object_001/tool_prop_blade/002",
+          "semantic": "tool_prop_blade",
+          "normalized_semantic": "blade",
+          "candidate_overlap_pixels": 52,
+          "truth_overlap_pixels": 28,
+          "final_target_iou": 0.02405690537084399
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": [
+        {
+          "json_path": "/profile_semantic_grouping/three_stage_verification/4",
+          "record": {
+            "candidate_key": "root:1/visual-region:05",
+            "semantic_name": "tool_prop_handle",
+            "source": "sam2-amg[facebook/sam2.1-hiera-tiny]/point-grid/structural-fusion",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": true,
+            "selected_profile": "scissors_pliers",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": false,
+              "reason": "inventory_and_structural_route",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": false,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": false,
+              "verified": false,
+              "reason": "not_evaluated_semantic_failed",
+              "raw_verified": false,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.384847529390568,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.384847529390568,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 8207.0,
+                  "bbox_fill_ratio": 0.2677476184262038,
+                  "aspect_ratio": 1.2278481012658229,
+                  "elongation": 2.854217341025533,
+                  "circularity": 0.20148013198286163,
+                  "centroid_x": 155.52491775313757,
+                  "centroid_y": 209.0969903740709
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": false,
+              "verified": false,
+              "reason": "not_evaluated_previous_stage_failed",
+              "raw_verified": true,
+              "boundary_alignment": 0.855490471194466,
+              "boundary_closure": 0.628632938643703,
+              "independent_cue_count": 1,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": false,
+            "ground_truth_used": false
+          }
+        },
+        {
+          "json_path": "/semantic_seeded_physical_ownership/candidates/4",
+          "record": {
+            "candidate_key": "root:1/visual-region:05",
+            "semantic_name": "tool_prop_handle",
+            "canonical_group": "tool_prop_handle",
+            "maximum_instances": 4,
+            "root_containment": 1.0,
+            "root_area_fraction": 0.3706028448859788,
+            "accepted_seed": false,
+            "verification": {
+              "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+              "visual_derived": true,
+              "selected_profile": "scissors_pliers",
+              "stage_1_semantic": {
+                "order": 1,
+                "evaluated": true,
+                "verified": false,
+                "reason": "inventory_and_structural_route",
+                "probability": null,
+                "margin": null,
+                "direct_semantic_source": false,
+                "inventory_supported": true
+              },
+              "stage_2_structure": {
+                "order": 2,
+                "evaluated": false,
+                "verified": false,
+                "reason": "not_evaluated_semantic_failed",
+                "raw_verified": false,
+                "geometric_support": 0.0,
+                "axis_not_rejected": true,
+                "cross_source": false,
+                "closed_boundary_structure": false,
+                "root_area_fraction": 0.384847529390568,
+                "semantic_shape_consistency": {
+                  "accepted": true,
+                  "reason": "shape_not_contradicted",
+                  "shape_family": null,
+                  "root_area_fraction": 0.384847529390568,
+                  "outer_boundary_contact": 0.0,
+                  "descriptor": {
+                    "area_px": 8207.0,
+                    "bbox_fill_ratio": 0.2677476184262038,
+                    "aspect_ratio": 1.2278481012658229,
+                    "elongation": 2.854217341025533,
+                    "circularity": 0.20148013198286163,
+                    "centroid_x": 155.52491775313757,
+                    "centroid_y": 209.0969903740709
+                  },
+                  "ground_truth_used": false
+                }
+              },
+              "stage_3_appearance": {
+                "order": 3,
+                "evaluated": false,
+                "verified": false,
+                "reason": "not_evaluated_previous_stage_failed",
+                "raw_verified": true,
+                "boundary_alignment": 0.855490471194466,
+                "boundary_closure": 0.628632938643703,
+                "independent_cue_count": 1,
+                "shading_only_penalty": 0.0,
+                "can_create_id": false
+              },
+              "accepted": false,
+              "ground_truth_used": false
+            }
+          }
+        },
+        {
+          "json_path": "/three_stage_candidate_verification/candidates/4",
+          "record": {
+            "candidate_key": "root:1/visual-region:05",
+            "semantic_name": "tool_prop_handle",
+            "source": "sam2-amg[facebook/sam2.1-hiera-tiny]/point-grid/structural-fusion",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": true,
+            "selected_profile": "scissors_pliers",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": false,
+              "reason": "inventory_and_structural_route",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": false,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": false,
+              "verified": false,
+              "reason": "not_evaluated_semantic_failed",
+              "raw_verified": false,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.384847529390568,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.3706028448859788,
+                "outer_boundary_contact": 0.717391304347826,
+                "descriptor": {
+                  "area_px": 8207.0,
+                  "bbox_fill_ratio": 0.2677476184262038,
+                  "aspect_ratio": 1.2278481012658229,
+                  "elongation": 2.854217341025533,
+                  "circularity": 0.20148013198286163,
+                  "centroid_x": 155.52491775313757,
+                  "centroid_y": 209.0969903740709
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": false,
+              "verified": false,
+              "reason": "not_evaluated_previous_stage_failed",
+              "raw_verified": true,
+              "boundary_alignment": 0.855490471194466,
+              "boundary_closure": 0.628632938643703,
+              "independent_cue_count": 1,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": false,
+            "ground_truth_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "tool_prop/tool_prop/center/01",
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop",
+      "normalized_semantic": "body",
+      "target_iou": 0.35512920908379014,
+      "area_px": 10615
+    },
+    {
+      "part_id": "tool_prop/tool_prop_blade/right/01",
+      "group_id": "object_001/tool_prop_blade/002",
+      "semantic": "tool_prop_blade",
+      "normalized_semantic": "blade",
+      "target_iou": 0.024070371851259497,
+      "area_px": 6116
+    },
+    {
+      "part_id": "tool_prop_body/tool_prop_handle/center/01",
+      "group_id": "object_001/tool_prop_handle/003",
+      "semantic": "tool_prop_handle",
+      "normalized_semantic": "handle",
+      "target_iou": 0.01917465610671113,
+      "area_px": 645
+    },
+    {
+      "part_id": "tool_prop/tool_prop_handle/center/01",
+      "group_id": "object_001/tool_prop_handle/004",
+      "semantic": "tool_prop_handle",
+      "normalized_semantic": "handle",
+      "target_iou": 0.14190620272314675,
+      "area_px": 4632
+    },
+    {
+      "part_id": "tool_prop_handle/tool_prop_finger_hole/right/01",
+      "group_id": "object_001/tool_prop_finger_hole/005",
+      "semantic": "tool_prop_finger_hole",
+      "normalized_semantic": "finger_hole",
+      "target_iou": 0.0036753895912966772,
+      "area_px": 137
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "tool_prop/tool_prop/center/01"
+      ],
+      "target_iou": 0.35532398338948523,
+      "area_px": 10608,
+      "evidence": "conservative_visual_merge"
+    },
+    {
+      "group_id": "object_001/tool_prop_blade/002",
+      "semantic": "tool_prop_blade",
+      "normalized_semantic": "blade",
+      "member_part_ids": [
+        "tool_prop/tool_prop_blade/right/01"
+      ],
+      "target_iou": 0.02405690537084399,
+      "area_px": 6123,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/tool_prop_handle/003",
+      "semantic": "tool_prop_handle",
+      "normalized_semantic": "handle",
+      "member_part_ids": [
+        "tool_prop_body/tool_prop_handle/center/01"
+      ],
+      "target_iou": 0.01917465610671113,
+      "area_px": 645,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/tool_prop_handle/004",
+      "semantic": "tool_prop_handle",
+      "normalized_semantic": "handle",
+      "member_part_ids": [
+        "tool_prop/tool_prop_handle/center/01"
+      ],
+      "target_iou": 0.14190620272314675,
+      "area_px": 4632,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/tool_prop_finger_hole/005",
+      "semantic": "tool_prop_finger_hole",
+      "normalized_semantic": "finger_hole",
+      "member_part_ids": [
+        "tool_prop_handle/tool_prop_finger_hole/right/01"
+      ],
+      "target_iou": 0.0036753895912966772,
+      "area_px": 137,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 7,
+    "accepted_candidate_count": 7,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 5,
+    "identity_hypothesis_count": 7,
+    "identity_group_count": 6,
+    "identity_hypotheses_merged": 1,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 4,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "tool_prop_body/tool_prop_handle/center/01"
+    ],
+    "classes_with_multiple_sources": [
+      "tool_prop_blade",
+      "tool_prop_handle"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 2,
+    "specificity_host_suppressions": 2,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 22145,
+    "lost_root_pixels_before_conservation": 7,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__scissors__u01\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "old37__scissors__u01",
+      "cohort": "old37",
+      "domain": "tool_prop",
+      "object_category": "scissors",
+      "target": "handle",
+      "threshold": "025",
+      "raw_query_state": "ambiguous",
+      "hpid_query_state": "ambiguous",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.25458986019875357,
+      "accepted_best_iou": 0.25458986019875357,
+      "part_best_iou": 0.14190620272314675,
+      "group_best_iou": 0.14190620272314675,
+      "group_any_semantic_best_iou": 0.35532398338948523,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

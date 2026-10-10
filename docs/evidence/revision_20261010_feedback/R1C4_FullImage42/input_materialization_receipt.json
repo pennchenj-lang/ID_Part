@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "case_count": 42,
+  "unique_images": 42,
+  "anonymous_inputs_identical_to_archived_full_images": 42,
+  "crop_pixels_exact": 42,
+  "inference_manifest_sha256": "bd402f8c3e70166f7bb0e6ef84801fbf30a4bec69bff6dc863eb99219a0e96c2",
+  "sealed_reference_manifest_sha256": "02747efa64ec6e5b8ce51267f834f1ca6fd12b197c4ba04e16c30502c1fecb64"
+}

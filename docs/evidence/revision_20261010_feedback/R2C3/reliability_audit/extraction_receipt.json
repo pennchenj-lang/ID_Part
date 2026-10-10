@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "a0569c54e618d8ca75b5fd9b71448d7d698cc9175ba9f7d313015a61a4f32868",
+  "script_sha256": "242443d532eaa4cc74623775f3c5fc670ce4db62b4b4c4fca18cab6a20873833",
+  "cases": 226,
+  "candidates": 1951,
+  "references": 990,
+  "evaluation_included": 1830,
+  "evaluation_excluded": 121,
+  "primary_semantic_eligible": 892,
+  "all_candidates_without_same_semantic_gt": 1059,
+  "evaluation_included_without_same_semantic_gt": 938,
+  "all_weights_equal_frozen_provenance": true,
+  "all_990_reverse_best_iou_tracks_equal_stage_input_pool": true,
+  "source_files_modified": false,
+  "GPU_used": false,
+  "model_execution": false,
+  "artifacts_sha256": {
+    "candidates_all_1951.csv": "939d2c48dfb5af400889d6d9f69fffee28b9e761ff42c64e9d5d4a3cc9753be9",
+    "candidates_evaluation_1830.csv": "7f73c18f5ee2305c34153f76b8d1316e6d9096699fa5a4ebe8d61d68f2c0f044",
+    "references_990.csv": "fa328be98328295eb98ce7759e3bbb2e137f6cea2ad159aa86cd510cabc259ac",
+    "case_input_bindings.json": "0eff045d5bdf48067f31607ae4a103892836b843c56fe21b0b595c7b5dc66c96"
+  }
+}

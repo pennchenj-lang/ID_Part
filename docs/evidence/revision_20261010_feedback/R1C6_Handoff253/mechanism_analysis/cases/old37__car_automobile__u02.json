@@ -1,0 +1,666 @@
+{
+  "request": {
+    "request_id": "old37__car_automobile__u02",
+    "case_id": "car_automobile__u02",
+    "cohort": "old37",
+    "image_id": 246750,
+    "source_image_sha256": "ab355f94f5fb0039bcdd89cf5caed8c498dd79442d5a50309c26a8fef4e6c57a",
+    "object_annotation_id": 218007,
+    "object_category": "car_(automobile)",
+    "expected_domain": "vehicle",
+    "domain": "vehicle",
+    "expected_profile": "road_vehicle",
+    "case_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\car_automobile__u02\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\02_blind_inference\\car_automobile__u02",
+    "target_part_name": "windshield",
+    "target_mask_sha256": "0346820af027aac66e5af1f11d8446d71fd57377aa8f0f86989f97c156fdb54c",
+    "target_area_px": 935,
+    "target_object_fraction": 0.12451724597150086,
+    "defect_mode": "interior",
+    "defect_seed": 20260853,
+    "defect_fraction": 0.18,
+    "target_mask_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\car_automobile__u02\\parts_crop\\009_windshield.png",
+    "source_target_manifest_row_sha256": "de7c9374fb00c30a5fb4325fb4e2de949ca80a08a5b201fe7997c4b8c84c97a6",
+    "historical_expected_profile": "road_vehicle",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__car_automobile__u02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__car_automobile__u02\\groups.json",
+    "hpid_group_map_sha256": "e4cb597cec790c6216f992f8eadd09c1c5f40ae41bd694a3f1d7c9e5fa170afb",
+    "hpid_groups_sha256": "610d956e775b4e02bc3f2babc0f49d07e8707780a3d911414d4b78b968ee8bed"
+  },
+  "summary": {
+    "request_id": "old37__car_automobile__u02",
+    "cohort": "old37",
+    "domain": "vehicle",
+    "object_category": "car_(automobile)",
+    "target": "windshield",
+    "normalized_target": "windshield",
+    "raw_query_state": "ambiguous",
+    "hpid_query_state": "unique",
+    "raw_match_count": 2,
+    "hpid_match_count": 1,
+    "raw_best_matching_iou": 0.704812834224599,
+    "accepted_best_matching_iou": 0.704812834224599,
+    "native_part_best_matching_iou": 0.22032085561497325,
+    "group_best_matching_iou": 0.21711229946524063,
+    "native_part_best_any_semantic_iou": 0.37219251336898396,
+    "group_best_any_semantic_iou": 0.37219251336898396,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 1,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_050": 1,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "old37__car_automobile__u02",
+      "cohort": "old37",
+      "raw_identity": "proposal/0002",
+      "semantic": "vehicle_windshield",
+      "target_iou": 0.704812834224599,
+      "mask_area": 659,
+      "raw_candidate_index_zero_based": 1,
+      "upstream_candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_windshield:01",
+      "fingerprint": "62107d70e963dce4fd3f967fd400cbc7862fccaadf9aa1f67fee25b43c269d51",
+      "accepted_by_fuser": true,
+      "accepted_index": 1,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "vehicle_body/vehicle_window/center/01",
+          "semantic": "vehicle_window",
+          "normalized_semantic": "window",
+          "candidate_overlap_pixels": 348,
+          "truth_overlap_pixels": 348,
+          "final_target_iou": 0.37219251336898396
+        },
+        {
+          "identity": "vehicle_body/vehicle_windshield/center/01",
+          "semantic": "vehicle_windshield",
+          "normalized_semantic": "windshield",
+          "candidate_overlap_pixels": 206,
+          "truth_overlap_pixels": 206,
+          "final_target_iou": 0.22032085561497325
+        },
+        {
+          "identity": "vehicle_body/vehicle_roof/center/01",
+          "semantic": "vehicle_roof",
+          "normalized_semantic": "roof",
+          "candidate_overlap_pixels": 80,
+          "truth_overlap_pixels": 80,
+          "final_target_iou": 0.07259380097879282
+        },
+        {
+          "identity": "vehicle/vehicle/center/01",
+          "semantic": "vehicle",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 7,
+          "truth_overlap_pixels": 7,
+          "final_target_iou": 0.031202600216684723
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/vehicle_window/009",
+          "semantic": "vehicle_window",
+          "normalized_semantic": "window",
+          "candidate_overlap_pixels": 348,
+          "truth_overlap_pixels": 348,
+          "final_target_iou": 0.37219251336898396
+        },
+        {
+          "identity": "object_001/vehicle_windshield/011",
+          "semantic": "vehicle_windshield",
+          "normalized_semantic": "windshield",
+          "candidate_overlap_pixels": 203,
+          "truth_overlap_pixels": 203,
+          "final_target_iou": 0.21711229946524063
+        },
+        {
+          "identity": "object_001/vehicle_roof/007",
+          "semantic": "vehicle_roof",
+          "normalized_semantic": "roof",
+          "candidate_overlap_pixels": 83,
+          "truth_overlap_pixels": 83,
+          "final_target_iou": 0.0749185667752443
+        },
+        {
+          "identity": "object_001/vehicle_body",
+          "semantic": "vehicle_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 7,
+          "truth_overlap_pixels": 7,
+          "final_target_iou": 0.031229668184775537
+        }
+      ],
+      "unowned_part_pixels": 18,
+      "unowned_group_pixels": 18,
+      "grouping_verification_records": [
+        {
+          "json_path": "/profile_semantic_grouping/three_stage_verification/0",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_windshield:01",
+            "semantic_name": "vehicle_windshield",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "road_vehicle",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.1193588546529723,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.1193588546529723,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 659.0,
+                  "bbox_fill_ratio": 0.7178649237472767,
+                  "aspect_ratio": 3.176470588235294,
+                  "elongation": 2.7660750685683677,
+                  "circularity": 0.483520279812873,
+                  "centroid_x": 58.9453717754173,
+                  "centroid_y": 26.421851289833082
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        },
+        {
+          "json_path": "/semantic_seeded_physical_ownership/candidates/0",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_windshield:01",
+            "semantic_name": "vehicle_windshield",
+            "canonical_group": "vehicle_windshield",
+            "maximum_instances": 2,
+            "root_containment": 0.9726858877086495,
+            "root_area_fraction": 0.09662345492915285,
+            "accepted_seed": true,
+            "verification": {
+              "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+              "visual_derived": false,
+              "selected_profile": "road_vehicle",
+              "stage_1_semantic": {
+                "order": 1,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_segmenter",
+                "probability": null,
+                "margin": null,
+                "direct_semantic_source": true,
+                "inventory_supported": true
+              },
+              "stage_2_structure": {
+                "order": 2,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_mask",
+                "raw_verified": true,
+                "geometric_support": 0.0,
+                "axis_not_rejected": true,
+                "cross_source": false,
+                "closed_boundary_structure": false,
+                "root_area_fraction": 0.1193588546529723,
+                "semantic_shape_consistency": {
+                  "accepted": true,
+                  "reason": "shape_not_contradicted",
+                  "shape_family": null,
+                  "root_area_fraction": 0.1193588546529723,
+                  "outer_boundary_contact": 0.0,
+                  "descriptor": {
+                    "area_px": 659.0,
+                    "bbox_fill_ratio": 0.7178649237472767,
+                    "aspect_ratio": 3.176470588235294,
+                    "elongation": 2.7660750685683677,
+                    "circularity": 0.483520279812873,
+                    "centroid_x": 58.9453717754173,
+                    "centroid_y": 26.421851289833082
+                  },
+                  "ground_truth_used": false
+                }
+              },
+              "stage_3_appearance": {
+                "order": 3,
+                "evaluated": true,
+                "verified": true,
+                "reason": "no_appearance_contradiction",
+                "raw_verified": true,
+                "boundary_alignment": 0.0,
+                "boundary_closure": 0.0,
+                "independent_cue_count": 0,
+                "shading_only_penalty": 0.0,
+                "can_create_id": false
+              },
+              "accepted": true,
+              "ground_truth_used": false
+            }
+          }
+        },
+        {
+          "json_path": "/three_stage_candidate_verification/candidates/0",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:vehicle_windshield:01",
+            "semantic_name": "vehicle_windshield",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "road_vehicle",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.1193588546529723,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.09662345492915285,
+                "outer_boundary_contact": 0.4175257731958763,
+                "descriptor": {
+                  "area_px": 641.0,
+                  "bbox_fill_ratio": 0.6982570806100218,
+                  "aspect_ratio": 3.176470588235294,
+                  "elongation": 2.778069756195599,
+                  "circularity": 0.47031335259491897,
+                  "centroid_x": 58.77223088923557,
+                  "centroid_y": 26.34477379095164
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "vehicle/vehicle/center/01",
+      "group_id": "object_001/vehicle_body",
+      "semantic": "vehicle",
+      "normalized_semantic": "body",
+      "target_iou": 0.031202600216684723,
+      "area_px": 3824
+    },
+    {
+      "part_id": "vehicle_body/vehicle_fender/left/01",
+      "group_id": "object_001/vehicle_fender/002",
+      "semantic": "vehicle_fender",
+      "normalized_semantic": "fender",
+      "target_iou": 0.0,
+      "area_px": 215
+    },
+    {
+      "part_id": "vehicle_body/vehicle_handle/left/01",
+      "group_id": "object_001/vehicle_handle/003",
+      "semantic": "vehicle_handle",
+      "normalized_semantic": "handle",
+      "target_iou": 0.0,
+      "area_px": 163
+    },
+    {
+      "part_id": "vehicle_body/vehicle_hood/right/01",
+      "group_id": "object_001/vehicle_hood/004",
+      "semantic": "vehicle_hood",
+      "normalized_semantic": "hood",
+      "target_iou": 0.0,
+      "area_px": 140
+    },
+    {
+      "part_id": "vehicle_body/vehicle_mirror/left/01",
+      "group_id": "object_001/vehicle_mirror/005",
+      "semantic": "vehicle_mirror",
+      "normalized_semantic": "mirror",
+      "target_iou": 0.0,
+      "area_px": 56
+    },
+    {
+      "part_id": "vehicle_wheel/vehicle_rim/left/01",
+      "group_id": "object_001/vehicle_rim/006",
+      "semantic": "vehicle_rim",
+      "normalized_semantic": "rim",
+      "target_iou": 0.0,
+      "area_px": 53
+    },
+    {
+      "part_id": "vehicle_body/vehicle_roof/center/01",
+      "group_id": "object_001/vehicle_roof/007",
+      "semantic": "vehicle_roof",
+      "normalized_semantic": "roof",
+      "target_iou": 0.07259380097879282,
+      "area_px": 380
+    },
+    {
+      "part_id": "vehicle/vehicle_visual_strip_01/center/01",
+      "group_id": "object_001/vehicle_mirror/005",
+      "semantic": "vehicle_visual_strip_01",
+      "normalized_semantic": "visual_strip_01",
+      "target_iou": 0.0,
+      "area_px": 545
+    },
+    {
+      "part_id": "vehicle_body/vehicle_window/center/01",
+      "group_id": "object_001/vehicle_window/009",
+      "semantic": "vehicle_window",
+      "normalized_semantic": "window",
+      "target_iou": 0.37219251336898396,
+      "area_px": 348
+    },
+    {
+      "part_id": "vehicle_body/vehicle_window/right/01",
+      "group_id": "object_001/vehicle_window/010",
+      "semantic": "vehicle_window",
+      "normalized_semantic": "window",
+      "target_iou": 0.0,
+      "area_px": 704
+    },
+    {
+      "part_id": "vehicle_body/vehicle_windshield/center/01",
+      "group_id": "object_001/vehicle_windshield/011",
+      "semantic": "vehicle_windshield",
+      "normalized_semantic": "windshield",
+      "target_iou": 0.22032085561497325,
+      "area_px": 206
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/vehicle_body",
+      "semantic": "vehicle_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "vehicle/vehicle/center/01"
+      ],
+      "target_iou": 0.031229668184775537,
+      "area_px": 3820,
+      "evidence": "conservative_visual_merge"
+    },
+    {
+      "group_id": "object_001/vehicle_fender/002",
+      "semantic": "vehicle_fender",
+      "normalized_semantic": "fender",
+      "member_part_ids": [
+        "vehicle_body/vehicle_fender/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 215,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_handle/003",
+      "semantic": "vehicle_handle",
+      "normalized_semantic": "handle",
+      "member_part_ids": [
+        "vehicle_body/vehicle_handle/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 163,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_hood/004",
+      "semantic": "vehicle_hood",
+      "normalized_semantic": "hood",
+      "member_part_ids": [
+        "vehicle_body/vehicle_hood/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 141,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_mirror/005",
+      "semantic": "vehicle_mirror",
+      "normalized_semantic": "mirror",
+      "member_part_ids": [
+        "vehicle_body/vehicle_mirror/left/01",
+        "vehicle/vehicle_visual_strip_01/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 601,
+      "evidence": "semantic_seed_geometry_appearance_attachment"
+    },
+    {
+      "group_id": "object_001/vehicle_rim/006",
+      "semantic": "vehicle_rim",
+      "normalized_semantic": "rim",
+      "member_part_ids": [
+        "vehicle_wheel/vehicle_rim/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 54,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_roof/007",
+      "semantic": "vehicle_roof",
+      "normalized_semantic": "roof",
+      "member_part_ids": [
+        "vehicle_body/vehicle_roof/center/01"
+      ],
+      "target_iou": 0.0749185667752443,
+      "area_px": 385,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_window/009",
+      "semantic": "vehicle_window",
+      "normalized_semantic": "window",
+      "member_part_ids": [
+        "vehicle_body/vehicle_window/center/01"
+      ],
+      "target_iou": 0.37219251336898396,
+      "area_px": 348,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_window/010",
+      "semantic": "vehicle_window",
+      "normalized_semantic": "window",
+      "member_part_ids": [
+        "vehicle_body/vehicle_window/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 704,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_windshield/011",
+      "semantic": "vehicle_windshield",
+      "normalized_semantic": "windshield",
+      "member_part_ids": [
+        "vehicle_body/vehicle_windshield/center/01"
+      ],
+      "target_iou": 0.21711229946524063,
+      "area_px": 203,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 15,
+    "accepted_candidate_count": 15,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 11,
+    "identity_hypothesis_count": 15,
+    "identity_group_count": 12,
+    "identity_hypotheses_merged": 3,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 9,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "vehicle_body/vehicle_fender/left/01",
+      "vehicle_body/vehicle_handle/left/01",
+      "vehicle_body/vehicle_hood/right/01",
+      "vehicle_body/vehicle_mirror/left/01",
+      "vehicle_wheel/vehicle_rim/left/01",
+      "vehicle_body/vehicle_roof/center/01",
+      "vehicle_body/vehicle_window/center/01",
+      "vehicle_body/vehicle_window/right/01",
+      "vehicle_body/vehicle_windshield/center/01"
+    ],
+    "classes_with_multiple_sources": [
+      "vehicle_roof",
+      "vehicle_window",
+      "vehicle_windshield"
+    ],
+    "source_families": [
+      "conditional-part[model]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 1,
+    "specificity_host_suppressions": 6,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 6652,
+    "lost_root_pixels_before_conservation": 7,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__car_automobile__u02\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "old37__car_automobile__u02",
+      "cohort": "old37",
+      "domain": "vehicle",
+      "object_category": "car_(automobile)",
+      "target": "windshield",
+      "threshold": "025",
+      "raw_query_state": "ambiguous",
+      "hpid_query_state": "unique",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.704812834224599,
+      "accepted_best_iou": 0.704812834224599,
+      "part_best_iou": 0.22032085561497325,
+      "group_best_iou": 0.21711229946524063,
+      "group_any_semantic_best_iou": 0.37219251336898396,
+      "part_to_group_fates": []
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "cohort": "old37",
+      "domain": "vehicle",
+      "object_category": "car_(automobile)",
+      "target": "windshield",
+      "threshold": "050",
+      "raw_query_state": "ambiguous",
+      "hpid_query_state": "unique",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.704812834224599,
+      "accepted_best_iou": 0.704812834224599,
+      "part_best_iou": 0.22032085561497325,
+      "group_best_iou": 0.21711229946524063,
+      "group_any_semantic_best_iou": 0.37219251336898396,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

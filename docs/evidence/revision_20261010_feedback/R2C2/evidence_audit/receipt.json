@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETE",
+  "summary_sha256": "f2c1e7bbda4ac2c9dd477f1eda1c5dd91852b57f5e4f0c9bbfdeb76f9e330554",
+  "input_sha256": {
+    "dbscan_diagnosis.json": "dbf41a4e1ef302417bd3df5bac5ba243f908c4b3bc738fbd183bf13ffc374344",
+    "stage_report.json": "2a1f255bc7a4162ed1b2419ce6f5e50ec88e3b83a3614f3054104a6dc0b43386",
+    "stage_summary.csv": "70a02ac805ff81236f599f2baa2262976f603a883937f5887dfb61d686732e55",
+    "stage_transitions.csv": "d7c54117a1cdf68e5193406ada9bb5d2b55b06ff53b1a7162d9dc107c260accb",
+    "stage_reference_tracks.csv": "00326e6283dd8f953e51684cbbbdce4450f4624963f8da306c650aeb514bef22",
+    "stage_shared_input_audit.csv": "487378c52e3c91d3430b3b4b681783b86a8fdc18babe4150c067515fee39944b",
+    "stage_validation.json": "20697fb0ac25d1ba864e91c91c5b1f943de2da44041403f8816b5de0085400d7",
+    "stage_audit_summary.json": "9b3b8f8d596ea216222adeed06f7dca27a0fd28a84ee097b414a80b76454daa0",
+    "stage_protocol.json": "b45e731ba95ac51f8cf3240e0d40ba0b817f5914302b6accc82e0c3ad6d9b7e5",
+    "stage_case_metrics.csv": "3b05c59de63e5858d9a63cc27b956aea242c5c2360c8be863ffbf93e98e900a5"
+  },
+  "artifacts_sha256": {
+    "all_990_reference_pairing.csv": "b903ee8a53ff46be20db7ed7f3cfcd92a3d29e15b7381fbcc0e09fca98edccda",
+    "audit_existing_stages.py": "f2f1728bef3ad1d551eea8a71556fbf9eb67978812c66a5c10f32aa9ccbbf320",
+    "dbscan_only_72_references.csv": "9f4d887f583657e4750bbb4c6620364d3aabbd4915ce2009f6c42fc5218d67ae",
+    "dbscan_only_hpid_no_geometry_61_actual_stage_tracks.csv": "d0e41e8ad0554f1d9b942cc1d8b52f10bf873f649fb7d420e3fb31e5fa65f4d9",
+    "dbscan_only_hpid_no_geometry_61_actual_stage_transitions.csv": "1c299cff25aefd9a9e3323d4abdf434d064c1246f80e5d4d500b920ecc22c5e8",
+    "detail_gate_195_negative_references.csv": "2530a3e5e5e0fc1dd0c829845e02e57366714dfdf7ff17bc33ca8d87f0696f1f",
+    "no_geometry_subgroup_actual_transition_summary.csv": "2040921dc8bca78fdfd28e2111cf19f9719e67b87d891044f504f74166856bf5",
+    "paired_subset_counts_by_domain_category.csv": "0e78d0c572059ba7935ac2a70b9a0fadea548adc6129dc9873a4917786e35f91",
+    "summary.json": "f2c1e7bbda4ac2c9dd477f1eda1c5dd91852b57f5e4f0c9bbfdeb76f9e330554"
+  }
+}

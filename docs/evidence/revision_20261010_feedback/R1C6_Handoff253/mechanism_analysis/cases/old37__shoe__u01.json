@@ -1,0 +1,548 @@
+{
+  "request": {
+    "request_id": "old37__shoe__u01",
+    "case_id": "shoe__u01",
+    "cohort": "old37",
+    "image_id": 35197,
+    "source_image_sha256": "b92f5dc04b3e77d12c0eac55252dcc30ff66ce1d58a8dbe3050db1f674a8f390",
+    "object_annotation_id": 30158,
+    "object_category": "shoe",
+    "expected_domain": "daily_object",
+    "domain": "daily_object",
+    "expected_profile": "footwear",
+    "case_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\shoe__u01\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\02_blind_inference\\shoe__u01",
+    "target_part_name": "vamp",
+    "target_mask_sha256": "1c80bbd3484df677159c47a49cd4cb0c09eb479b299bf7639e8834a6831e9627",
+    "target_area_px": 2178,
+    "target_object_fraction": 0.29480238224147265,
+    "defect_mode": "boundary",
+    "defect_seed": 20260860,
+    "defect_fraction": 0.18,
+    "target_mask_path": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\01_sealed_references\\shoe__u01\\parts_crop\\009_vamp.png",
+    "source_target_manifest_row_sha256": "2776b715d6cb5aaaf88b3f2a4ad674509d1d373dbf61106e2a0f0f8f16545a11",
+    "historical_expected_profile": "footwear",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__shoe__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__shoe__u01\\groups.json",
+    "hpid_group_map_sha256": "51d054b922c151a938e03c7c299a0209533344a09e5557655f0985fd619ed471",
+    "hpid_groups_sha256": "7b87147f353115dd52f46084bbdb9828923e7b1deff56cfc2188ebbabe86e976"
+  },
+  "summary": {
+    "request_id": "old37__shoe__u01",
+    "cohort": "old37",
+    "domain": "daily_object",
+    "object_category": "shoe",
+    "target": "vamp",
+    "normalized_target": "upper",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unique",
+    "raw_match_count": 1,
+    "hpid_match_count": 1,
+    "raw_best_matching_iou": 0.4349748743718593,
+    "accepted_best_matching_iou": 0.4349748743718593,
+    "native_part_best_matching_iou": 0.09341742215214821,
+    "group_best_matching_iou": 0.20691711389385808,
+    "native_part_best_any_semantic_iou": 0.2205911525490974,
+    "group_best_any_semantic_iou": 0.2205911525490974,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_025": 1,
+    "hpid_any_geometry_available_025": 0,
+    "raw_available_050": 0,
+    "accepted_available_050": 0,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 0,
+    "first_observed_loss_stage_050": "not_a_raw_to_group_loss",
+    "observed_subtype_050": "not_applicable",
+    "hpid_wrong_unique_050": 1,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "old37__shoe__u01",
+      "cohort": "old37",
+      "raw_identity": "proposal/0003",
+      "semantic": "daily_object_upper",
+      "target_iou": 0.4349748743718593,
+      "mask_area": 4961,
+      "raw_candidate_index_zero_based": 2,
+      "upstream_candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:daily_object_upper:01",
+      "fingerprint": "06865e6411fe251a496207ef4be5663274c3c4b7e9ca6450425b225f25e16379",
+      "accepted_by_fuser": true,
+      "accepted_index": 2,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "daily_object/daily_object/center/01",
+          "semantic": "daily_object",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 2437,
+          "truth_overlap_pixels": 1106,
+          "final_target_iou": 0.2205911525490974
+        },
+        {
+          "identity": "daily_object/daily_object_visual_panel_01/center/01",
+          "semantic": "daily_object_visual_panel_01",
+          "normalized_semantic": "visual_panel_01",
+          "candidate_overlap_pixels": 1569,
+          "truth_overlap_pixels": 803,
+          "final_target_iou": 0.18461538461538463
+        },
+        {
+          "identity": "daily_object_body/daily_object_upper/center/01",
+          "semantic": "daily_object_upper",
+          "normalized_semantic": "upper",
+          "candidate_overlap_pixels": 596,
+          "truth_overlap_pixels": 237,
+          "final_target_iou": 0.09341742215214821
+        },
+        {
+          "identity": "daily_object_visual_panel_01/daily_object_visual_panel_02/center/01",
+          "semantic": "daily_object_visual_panel_02",
+          "normalized_semantic": "visual_panel_02",
+          "candidate_overlap_pixels": 317,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        },
+        {
+          "identity": "daily_object_upper/daily_object_eyelet/right/01",
+          "semantic": "daily_object_eyelet",
+          "normalized_semantic": "eyelet",
+          "candidate_overlap_pixels": 22,
+          "truth_overlap_pixels": 18,
+          "final_target_iou": 0.008249312557286892
+        },
+        {
+          "identity": "daily_object_upper/daily_object_lining/left/01",
+          "semantic": "daily_object_lining",
+          "normalized_semantic": "lining",
+          "candidate_overlap_pixels": 20,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/daily_object_upper/002",
+          "semantic": "daily_object_upper",
+          "normalized_semantic": "upper",
+          "candidate_overlap_pixels": 2482,
+          "truth_overlap_pixels": 1040,
+          "final_target_iou": 0.20691711389385808
+        },
+        {
+          "identity": "object_001/daily_object_body",
+          "semantic": "daily_object_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 2437,
+          "truth_overlap_pixels": 1106,
+          "final_target_iou": 0.2205911525490974
+        },
+        {
+          "identity": "object_001/daily_object_eyelet/004",
+          "semantic": "daily_object_eyelet",
+          "normalized_semantic": "eyelet",
+          "candidate_overlap_pixels": 22,
+          "truth_overlap_pixels": 18,
+          "final_target_iou": 0.008249312557286892
+        },
+        {
+          "identity": "object_001/daily_object_lining/005",
+          "semantic": "daily_object_lining",
+          "normalized_semantic": "lining",
+          "candidate_overlap_pixels": 20,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": [
+        {
+          "json_path": "/profile_semantic_grouping/three_stage_verification/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:daily_object_upper:01",
+            "semantic_name": "daily_object_upper",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "footwear",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.6493573264781491,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.6493573264781491,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 4961.0,
+                  "bbox_fill_ratio": 0.5536830357142857,
+                  "aspect_ratio": 1.8285714285714285,
+                  "elongation": 2.7262986571411463,
+                  "circularity": 0.46342091847804223,
+                  "centroid_x": 78.85406168111268,
+                  "centroid_y": 62.06551098568837
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        },
+        {
+          "json_path": "/semantic_seeded_physical_ownership/candidates/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:daily_object_upper:01",
+            "semantic_name": "daily_object_upper",
+            "canonical_group": "daily_object_upper",
+            "maximum_instances": 1,
+            "root_containment": 1.0,
+            "root_area_fraction": 0.6271015042346101,
+            "accepted_seed": true,
+            "verification": {
+              "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+              "visual_derived": false,
+              "selected_profile": "footwear",
+              "stage_1_semantic": {
+                "order": 1,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_segmenter",
+                "probability": null,
+                "margin": null,
+                "direct_semantic_source": true,
+                "inventory_supported": true
+              },
+              "stage_2_structure": {
+                "order": 2,
+                "evaluated": true,
+                "verified": true,
+                "reason": "direct_semantic_mask",
+                "raw_verified": true,
+                "geometric_support": 0.0,
+                "axis_not_rejected": true,
+                "cross_source": false,
+                "closed_boundary_structure": false,
+                "root_area_fraction": 0.6493573264781491,
+                "semantic_shape_consistency": {
+                  "accepted": true,
+                  "reason": "shape_not_contradicted",
+                  "shape_family": null,
+                  "root_area_fraction": 0.6493573264781491,
+                  "outer_boundary_contact": 0.0,
+                  "descriptor": {
+                    "area_px": 4961.0,
+                    "bbox_fill_ratio": 0.5536830357142857,
+                    "aspect_ratio": 1.8285714285714285,
+                    "elongation": 2.7262986571411463,
+                    "circularity": 0.46342091847804223,
+                    "centroid_x": 78.85406168111268,
+                    "centroid_y": 62.06551098568837
+                  },
+                  "ground_truth_used": false
+                }
+              },
+              "stage_3_appearance": {
+                "order": 3,
+                "evaluated": true,
+                "verified": true,
+                "reason": "no_appearance_contradiction",
+                "raw_verified": true,
+                "boundary_alignment": 0.0,
+                "boundary_closure": 0.0,
+                "independent_cue_count": 0,
+                "shading_only_penalty": 0.0,
+                "can_create_id": false
+              },
+              "accepted": true,
+              "ground_truth_used": false
+            }
+          }
+        },
+        {
+          "json_path": "/three_stage_candidate_verification/candidates/1",
+          "record": {
+            "candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:daily_object_upper:01",
+            "semantic_name": "daily_object_upper",
+            "source": "grounded-sam2[IDEA-Research/grounding-dino-tiny|facebook/sam2.1-hiera-tiny]/profile-refine",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "footwear",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_segmenter",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": true,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": true,
+              "reason": "direct_semantic_mask",
+              "raw_verified": true,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.6493573264781491,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.6271015042346101,
+                "outer_boundary_contact": 0.3982102908277405,
+                "descriptor": {
+                  "area_px": 4961.0,
+                  "bbox_fill_ratio": 0.5536830357142857,
+                  "aspect_ratio": 1.8285714285714285,
+                  "elongation": 2.7262986571411463,
+                  "circularity": 0.46342091847804223,
+                  "centroid_x": 78.85406168111268,
+                  "centroid_y": 62.06551098568837
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": true,
+              "verified": true,
+              "reason": "no_appearance_contradiction",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": true,
+            "ground_truth_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "daily_object/daily_object/center/01",
+      "group_id": "object_001/daily_object_body",
+      "semantic": "daily_object",
+      "normalized_semantic": "body",
+      "target_iou": 0.2205911525490974,
+      "area_px": 3975
+    },
+    {
+      "part_id": "daily_object_body/daily_object_upper/center/01",
+      "group_id": "object_001/daily_object_upper/002",
+      "semantic": "daily_object_upper",
+      "normalized_semantic": "upper",
+      "target_iou": 0.09341742215214821,
+      "area_px": 596
+    },
+    {
+      "part_id": "daily_object/daily_object_visual_panel_01/center/01",
+      "group_id": "object_001/daily_object_upper/002",
+      "semantic": "daily_object_visual_panel_01",
+      "normalized_semantic": "visual_panel_01",
+      "target_iou": 0.18461538461538463,
+      "area_px": 2981
+    },
+    {
+      "part_id": "daily_object_upper/daily_object_eyelet/right/01",
+      "group_id": "object_001/daily_object_eyelet/004",
+      "semantic": "daily_object_eyelet",
+      "normalized_semantic": "eyelet",
+      "target_iou": 0.008249312557286892,
+      "area_px": 22
+    },
+    {
+      "part_id": "daily_object_upper/daily_object_lining/left/01",
+      "group_id": "object_001/daily_object_lining/005",
+      "semantic": "daily_object_lining",
+      "normalized_semantic": "lining",
+      "target_iou": 0.0,
+      "area_px": 20
+    },
+    {
+      "part_id": "daily_object_visual_panel_01/daily_object_visual_panel_02/center/01",
+      "group_id": "object_001/daily_object_upper/002",
+      "semantic": "daily_object_visual_panel_02",
+      "normalized_semantic": "visual_panel_02",
+      "target_iou": 0.0,
+      "area_px": 317
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/daily_object_body",
+      "semantic": "daily_object_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "daily_object/daily_object/center/01"
+      ],
+      "target_iou": 0.2205911525490974,
+      "area_px": 3975,
+      "evidence": "conservative_visual_merge"
+    },
+    {
+      "group_id": "object_001/daily_object_upper/002",
+      "semantic": "daily_object_upper",
+      "normalized_semantic": "upper",
+      "member_part_ids": [
+        "daily_object_body/daily_object_upper/center/01",
+        "daily_object/daily_object_visual_panel_01/center/01",
+        "daily_object_visual_panel_01/daily_object_visual_panel_02/center/01"
+      ],
+      "target_iou": 0.20691711389385808,
+      "area_px": 3894,
+      "evidence": "semantic_seed_geometry_appearance_attachment"
+    },
+    {
+      "group_id": "object_001/daily_object_eyelet/004",
+      "semantic": "daily_object_eyelet",
+      "normalized_semantic": "eyelet",
+      "member_part_ids": [
+        "daily_object_upper/daily_object_eyelet/right/01"
+      ],
+      "target_iou": 0.008249312557286892,
+      "area_px": 22,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/daily_object_lining/005",
+      "semantic": "daily_object_lining",
+      "normalized_semantic": "lining",
+      "member_part_ids": [
+        "daily_object_upper/daily_object_lining/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 20,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 9,
+    "accepted_candidate_count": 9,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 6,
+    "identity_hypothesis_count": 9,
+    "identity_group_count": 8,
+    "identity_hypotheses_merged": 1,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 2,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "daily_object_body/daily_object_upper/center/01"
+    ],
+    "classes_with_multiple_sources": [
+      "daily_object_eyelet"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 2,
+    "specificity_host_suppressions": 2,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 7911,
+    "lost_root_pixels_before_conservation": 0,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__shoe__u01\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "old37__shoe__u01",
+      "cohort": "old37",
+      "domain": "daily_object",
+      "object_category": "shoe",
+      "target": "upper",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unique",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.4349748743718593,
+      "accepted_best_iou": 0.4349748743718593,
+      "part_best_iou": 0.09341742215214821,
+      "group_best_iou": 0.20691711389385808,
+      "group_any_semantic_best_iou": 0.2205911525490974,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

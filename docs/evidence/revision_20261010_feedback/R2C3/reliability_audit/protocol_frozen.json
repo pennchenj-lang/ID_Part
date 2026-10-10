@@ -1,0 +1,99 @@
+{
+  "status": "FROZEN_BEFORE_EMPIRICAL_EXTRACTION_AND_STATISTICS",
+  "created_utc": "2026-10-10T01:47:23.241308+00:00",
+  "authorized_scope": "Post-review empirical diagnostic reuse of 226 frozen cases and 1951 already accepted candidates; no independent test set.",
+  "expected_counts": {
+    "cases": 226,
+    "categories": 60,
+    "accepted_candidates": 1951,
+    "reference_parts": 990,
+    "original_evaluation_included_candidates": 1830,
+    "root_body_excluded_candidates": 121
+  },
+  "candidate_definition": "One archived candidates.json record; order/key and all candidates are preserved, without additional area/confidence filtering.",
+  "s": "Final stored proposal score; heterogeneous detector/model-quality/heuristic/compound provenance, not uniformly a raw detector probability.",
+  "r": "Stored source_reliability; allowed above1; no clipping of r outside the frozen weight formula.",
+  "a": "Frozen cross-family agreement factor; verify against provenance; defaults imply a=1 on these candidates.",
+  "w_formula": "w0=clip((0.45+0.55*clip(s,0,1))*r*a,0.01,0.995); broad scene-layer w=clip(w0*0.72,0.01,0.995), otherwise w=w0.",
+  "w_interpretation": "Heuristic fusion weight, not a calibrated correctness probability. No fitting, recalibration, threshold optimization or model rerun.",
+  "normalization": "Exact frozen evaluator expected-domain prefix removal and category-dependent canonical alias mapping. No GT-driven relabeling or alternate bridge.",
+  "evaluation_included": "Exclude candidate iff semantic_name==expected_domain and normalized GT truth_names contains no body. This is the archived root-as-body evaluator convention, not an inference operation.",
+  "iou_definition": "Direct binary intersection/union; candidate masks >=128; best geometric IoU=max over all annotated reference parts in case; best semantic IoU=max over same-normalized-semantic annotated reference parts.",
+  "missing_semantic_gt": "If same_semantic_gt_count==0, best_semantic_iou and semantic_hit_025/050 are NULL. No same-class annotation does not establish a false positive. Unknown/unannotated physical parts remain unassessed.",
+  "primary_population": "evaluation_included AND same_semantic_gt_count>0",
+  "primary_targets": [
+    "best_semantic_iou>=0.25",
+    "best_semantic_iou>=0.50"
+  ],
+  "secondary_population": "All1830 evaluation_included candidates",
+  "secondary_targets": [
+    "best_geometric_iou>=0.25",
+    "best_geometric_iou>=0.50"
+  ],
+  "full_population_retention": "All1951 records retained and flagged; no GT-absence rows silently converted into semantic negatives. Full geometry and same-GT applicability counts retained as descriptive extraction fields.",
+  "statistics": {
+    "groups": "All families pooled plus each recorded frozen family, including zero-eligible family rows.",
+    "fields": [
+      "candidate_n",
+      "case_n",
+      "category_n",
+      "mean_w",
+      "matched_fraction",
+      "Brier",
+      "ECE"
+    ],
+    "unit_weighting": "Candidate-weighted ratios sum(numerator)/sum(candidate denominator). Candidate observations are clustered, not independent replicates.",
+    "bins": {
+      "edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "membership": "[left,right), except last [0.9,1.0]; empty bins retained",
+      "fields": [
+        "candidate_n",
+        "case_n",
+        "category_n",
+        "mean_w",
+        "matched_fraction"
+      ]
+    },
+    "Brier": "mean((w-binary_hit)^2), diagnostic only under the hypothetical interpretation of w as a correctness probability.",
+    "ECE": "sum_b(n_b/n)*abs(mean_w_b-matched_fraction_b), fixed10 equal-width bins, diagnostic only under hypothetical probability interpretation.",
+    "scope_limit": "Conditional annotation-supported and accepted-pool population. Brier/ECE do not establish calibration success; no tuned bins, corrected scores or deployment decisions."
+  },
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261010,
+    "generator": "numpy.default_rng/PCG64",
+    "cluster": "Original 60 object categories, sorted lexicographically; sample60 categories with replacement each draw and retain all eligible candidates of every sampled category, with multiplicity.",
+    "shared_draws": "Identical category index draws reused for every family, bin, population, and threshold.",
+    "interval": "Pointwise percentile95%, numpy.quantile(method=linear); descriptive exploratory, no multiplicity adjustment or superiority test.",
+    "ratio": "Recompute candidate-weighted numerator/denominator inside each cluster draw.",
+    "zero_denominator": "Discard only undefined empty denominator draws; report valid_draws and zero_denominator_draws; interval is conditional on nonempty draws. Original empty groups/bins have NULL estimates and CIs.",
+    "sparse_groups": "Always retain count/case/category metadata and sparse flags; no candidate-iid intervals."
+  },
+  "input_sha256": {
+    "__WORKSPACE__\\stability_work\\reviewer2_comment3\\reliability_audit\\extract_and_analyze.py": "242443d532eaa4cc74623775f3c5fc670ce4db62b4b4c4fca18cab6a20873833",
+    "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\benchmark_summary.json": "c7a9e99241b80359f40f6f309dd1aae93252e879c794c810c2a11da7e541e464",
+    "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\manifest.json": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\score_candidate_provenance.csv": "a566ae91d16fdbe25e68805f4450ca5ce91aea070246c6bcdbf8771b0ee63f36",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\score_protocol.json": "aa2e8bc35e036d23dd9282d1d61570a383c35c8e95e99b84154b823baae59874",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\stage_shared_input_audit.csv": "487378c52e3c91d3430b3b4b681783b86a8fdc18babe4150c067515fee39944b",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\stage_reference_tracks.csv": "00326e6283dd8f953e51684cbbbdce4450f4624963f8da306c650aeb514bef22",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\stage_case_metrics.csv": "3b05c59de63e5858d9a63cc27b956aea242c5c2360c8be863ffbf93e98e900a5",
+    "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\paco_eval.py": "ab28e9724c264382346e7bec4628b8355ad6f0a73bf0d9563f8585947b4fff56",
+    "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\paco_semantics.py": "9d2c54326f5fc7e0e739e0181c713e4a47c81e357827f0121ef37d5ca7401be8",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\code\\analysis\\score_provenance.py": "b28f05818230e35e5c03581e61f291c0c5bdfee0250409e205393bcb5491b61c",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\code\\analysis\\stage_diagnosis.py": "0f218feb2d785a3a3613fe20bfb90fbe7a1d492993e4b712e287f3f69a620cfc"
+  }
+}

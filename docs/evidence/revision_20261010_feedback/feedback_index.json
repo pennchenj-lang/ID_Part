@@ -1,0 +1,246 @@
+{
+  "revision_date": "2026-10-10",
+  "total_feedback_items": 14,
+  "scope": "Public topic-to-source-data index; does not reproduce private review correspondence.",
+  "source_data_files_before_publication_processing": 260,
+  "earlier_gate_archive": "../revision_20261008/evidence/gate_ablation/",
+  "feedback": [
+    {
+      "id": "R1.1",
+      "topic": {
+        "en": "Identity contract and returned option counts",
+        "zh": "身份协议与返回选项数量"
+      },
+      "evidence": [
+        "R1C6_Handoff253/statistics/paired_option_contrasts_all_four.csv",
+        "R1C6_Handoff253/statistics/paired_correctness_guardrails.csv",
+        "R2C2/evidence_audit/summary.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "253 requests support a smaller choice set under the common exposure rule; this is not segmentation superiority or measured human-time savings.",
+        "zh": "253次请求支持共同展示规则下返回更少选项；不等于分割质量领先，也未测量人工用时。"
+      }
+    },
+    {
+      "id": "R1.2",
+      "topic": {
+        "en": "Gate and ownership sensitivity",
+        "zh": "门控与像素归属敏感性"
+      },
+      "evidence": [
+        "R2C4/existing_source_tables/sensitivity_protocol.json",
+        "R2C4/existing_source_tables/sensitivity_summary.csv",
+        "../revision_20261008/evidence/gate_ablation/group_gate_summary.csv",
+        "../revision_20261008/evidence/gate_ablation/gate_report.txt"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "50 fine-ID settings on 226 cases plus the earlier eight-subset Group-gate experiment on 226 and 42 cases; local sensitivity does not establish optimality or absence of overfitting.",
+        "zh": "226例50种细粒度ID设置，加上旧归档226例及42例的八子集Group门控实验；局部敏感性分析不证明最优或排除过拟合。"
+      }
+    },
+    {
+      "id": "R1.3",
+      "topic": {
+        "en": "Scope of the controlled request-mask handoff",
+        "zh": "受控请求掩模交接的范围"
+      },
+      "evidence": [
+        "R1C6_Handoff253/protocol_frozen.json",
+        "R2C5/existing_source_tables/completion_frontend_report.json",
+        "R2C5/evidence_audit.json"
+      ],
+      "treatment": "scope clarification with supporting records",
+      "scope": {
+        "en": "Identity packages are frozen before defects. The 253-request routing extension does not add occluded-observation identity recovery or expand the original 37-case LaMa experiment.",
+        "zh": "身份包在缺损前冻结。253请求扩展评估路由，不新增从遮挡观测恢复身份的证据，也不扩大原37例LaMa实验。"
+      }
+    },
+    {
+      "id": "R1.4",
+      "topic": {
+        "en": "Full-image automatic discovery",
+        "zh": "完整图像自动发现"
+      },
+      "evidence": [
+        "R1C4_FullImage42/protocol.json",
+        "R1C4_FullImage42/full_image_cases.csv",
+        "R1C4_FullImage42/full_image_summary.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "Paired 42-target full-image versus annotation-derived crop comparison, including wrong primary-object selections; not an all-object detection-AP benchmark.",
+        "zh": "42目标完整图像与标注导出裁剪的配对比较，计入主对象选择错误；不是全对象检测AP评测。"
+      }
+    },
+    {
+      "id": "R1.5",
+      "topic": {
+        "en": "Executed learned-part baseline",
+        "zh": "已执行的学习型部件基线"
+      },
+      "evidence": [
+        "R1C5_PartCATSeg/protocol_frozen.json",
+        "R1C5_PartCATSeg/fairness_input_audit.json",
+        "R1C5_PartCATSeg/scoring/summary.json",
+        "R1C5_PartCATSeg/scoring/cases.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "42 shared crops with the official PartCATSeg VOC checkpoint and a fixed component adapter. Conclusions are specific to this VOC-to-PACO transfer protocol; HOPS and KPS remain unexecuted.",
+        "zh": "42个共同裁剪输入，使用官方PartCATSeg VOC权重及固定连通分量转换；结论限于VOC到PACO迁移协议，HOPS与KPS仍未执行。"
+      }
+    },
+    {
+      "id": "R1.6",
+      "topic": {
+        "en": "Expanded routing, intervals and pruning failures",
+        "zh": "扩展路由、置信区间与精简失败"
+      },
+      "evidence": [
+        "R1C6_Handoff253/routing_run/routing_cases.csv",
+        "R1C6_Handoff253/statistics/routing_states_with_wilson.csv",
+        "R1C6_Handoff253/statistics/domain_category_failure_summary.csv",
+        "R1C6_Handoff253/mechanism_analysis/summary.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "Original 37 plus additional 216 distinct source images; five methods and 1,265 runs. Cohort-specific results, denominators, option loss and conditional review rates are retained.",
+        "zh": "原37例加新增216个独立源图像，五种方法共1265次运行；保留分队列结果、分母、正确选项损失及条件复核率。"
+      }
+    },
+    {
+      "id": "R2.1",
+      "topic": {
+        "en": "Unknown taxonomy and hierarchy behavior",
+        "zh": "未知分类体系与层级行为"
+      },
+      "evidence": [
+        "R2C1_Taxonomy/taxonomy_behavior.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "43 deterministic API fixtures establish fallback and validation behavior, not unseen-taxonomy image accuracy.",
+        "zh": "43个确定性API测试说明回退与校验行为，不代表未知分类体系图像上的识别准确率。"
+      }
+    },
+    {
+      "id": "R2.2",
+      "topic": {
+        "en": "Same-candidate DBSCAN/HPID discrepancy",
+        "zh": "相同候选下DBSCAN与HPID差异"
+      },
+      "evidence": [
+        "R2C2/evidence_audit/summary.json",
+        "R2C2/evidence_audit/all_990_reference_pairing.csv",
+        "R2C2/evidence_audit/dbscan_only_hpid_no_geometry_61_actual_stage_transitions.csv"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "Stage and matching diagnosis for 1,951 shared candidates and 990 reference parts; stage association alone is not a causal gate ablation.",
+        "zh": "针对1951个共同候选和990个参考部件的阶段与匹配诊断；阶段关联本身不是门控因果消融。"
+      }
+    },
+    {
+      "id": "R2.3",
+      "topic": {
+        "en": "Source reliability and noisy-OR",
+        "zh": "来源可靠性与noisy-OR"
+      },
+      "evidence": [
+        "R2C3/reliability_audit/family_empirical_reliability.csv",
+        "R2C3/clean_ablation/summary.csv",
+        "R2C3/clean_ablation/paired_deltas.csv",
+        "R2C3/consensus_stress/report.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "Frozen heuristic weights, empirical diagnostics, 226-case fusion ablations and 150 controlled stress cases; duplicate suppression is not probability calibration or guaranteed rejection of strong false positives.",
+        "zh": "冻结启发式权重、经验诊断、226例融合消融及150个受控压力案例；重复抑制不等于概率校准，也不保证排除高置信假阳性。"
+      }
+    },
+    {
+      "id": "R2.4",
+      "topic": {
+        "en": "Hand-set ownership constants",
+        "zh": "手工像素归属常数"
+      },
+      "evidence": [
+        "R2C4/existing_source_tables/sensitivity_protocol.json",
+        "R2C4/existing_source_tables/sensitivity_cases.csv",
+        "R2C4/evidence_audit/summary.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "50 frozen-candidate settings include individual perturbations, 16 joint corners and module removal. Intervals are exploratory and pointwise.",
+        "zh": "50种冻结候选设置包含单参数扰动、16个联合角点与模块移除；置信区间为探索性逐点区间。"
+      }
+    },
+    {
+      "id": "R2.5",
+      "topic": {
+        "en": "Request coverage and the PSNR change",
+        "zh": "请求覆盖与PSNR变化"
+      },
+      "evidence": [
+        "R2C5/existing_source_tables/completion_frontend_paired.csv",
+        "R2C5/existing_source_tables/synthesis_diagnostics.csv",
+        "R2C5/evidence_audit.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "The original 37 paired LaMa cases diagnose coverage under a fixed backend. They do not establish damage to a generative prior; no PSNR was generated for the 253-request extension.",
+        "zh": "原37例配对LaMa数据诊断固定后端下的覆盖变化；不能证明生成先验受损，253请求扩展未新增PSNR。"
+      }
+    },
+    {
+      "id": "R2.6",
+      "topic": {
+        "en": "Wrong-unique resolver mechanism",
+        "zh": "错误唯一返回的解析机制"
+      },
+      "evidence": [
+        "R2C6/resolver_causal_audit.json",
+        "R2C6/resolver_independent_audit.json",
+        "R1C6_Handoff253/statistics/wrong_unique_diagnostics.csv",
+        "R1C6_Handoff253/mechanism_analysis/summary.json"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "60 resolver-unit scenarios, including unchanged controls, isolate the singleton-name decision without an independent quality veto; these are not upstream segmentation interventions or new population performance estimates.",
+        "zh": "含原样对照的60个解析器单元场景验证单一名称匹配且缺乏独立质量否决的决策机制；不是上游分割干预，也不是新增总体性能估计。"
+      }
+    },
+    {
+      "id": "R2.7",
+      "topic": {
+        "en": "Gate notation",
+        "zh": "门控符号"
+      },
+      "evidence": [],
+      "treatment": "text-only",
+      "scope": {
+        "en": "Manuscript-only notation correction: Eq. (1) uses v_sem, v_str and v_app; Eq. (4) retains g* for the resolved Group ID. No new experimental dataset is claimed.",
+        "zh": "仅正文符号修改：式(1)使用v_sem、v_str、v_app，式(4)保留g*表示解析后的Group ID；没有新增实验数据。"
+      }
+    },
+    {
+      "id": "R2.8",
+      "topic": {
+        "en": "Root-mask bottleneck",
+        "zh": "根掩模瓶颈"
+      },
+      "evidence": [
+        "R2C8_Root226/root_robustness_summary.csv",
+        "R2C8_Root226/root_robustness_paired.csv",
+        "R2C8_Root226/automatic_root_iou_strata.csv"
+      ],
+      "treatment": "data",
+      "scope": {
+        "en": "226-case root substitution is a diagnostic contrast, not a mathematical upper bound. It is separate from the 42-target full-image evaluation.",
+        "zh": "226例根掩模替换是诊断对照，不是数学上界；与42目标完整图像评测分开解释。"
+      }
+    }
+  ]
+}

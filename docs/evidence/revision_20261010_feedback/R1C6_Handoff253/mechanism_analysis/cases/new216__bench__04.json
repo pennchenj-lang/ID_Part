@@ -1,0 +1,581 @@
+{
+  "request": {
+    "request_id": "new216__bench__04",
+    "case_id": "bench__04",
+    "cohort": "new216",
+    "image_id": 39196,
+    "source_image_sha256": "32147c2021394fb824a8cb2b77f71a74db96327e89bb92c68ef7a6a5df407990",
+    "object_annotation_id": 97678,
+    "object_category": "bench",
+    "expected_domain": "furniture",
+    "domain": "furniture",
+    "expected_profile": "chair",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\bench__04\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\bench__04",
+    "target_part_name": "back",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\bench__04\\parts_crop\\005_back.png",
+    "target_mask_sha256": "49272d018db65733cce28f01641d8fd9ee1de645218674dd47f45d495b522106",
+    "target_area_px": 18439,
+    "target_object_fraction": 0.313322005097706,
+    "defect_mode": "interior",
+    "defect_seed": 20260840,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 12,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__04\\groups.json",
+    "hpid_group_map_sha256": "50d6a76498e34cc25db74e0d5f3430f1c5ec9a2782e3e30f47ae56592a967ebd",
+    "hpid_groups_sha256": "4c4f534cba2cda77b2420a9b3766331ec618e185052c7cf3df230c959d27dcf9"
+  },
+  "summary": {
+    "request_id": "new216__bench__04",
+    "cohort": "new216",
+    "domain": "furniture",
+    "object_category": "bench",
+    "target": "back",
+    "normalized_target": "backrest",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 1,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.5799220272904484,
+    "accepted_best_matching_iou": 0.5799220272904484,
+    "native_part_best_matching_iou": 0,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.5511486779367143,
+    "group_best_any_semantic_iou": 0.5511973128182902,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 1
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__bench__04",
+      "cohort": "new216",
+      "raw_identity": "proposal/0007",
+      "semantic": "furniture_backrest",
+      "target_iou": 0.5799220272904484,
+      "mask_area": 10739,
+      "raw_candidate_index_zero_based": 6,
+      "upstream_candidate_key": "root:1/profile-dense:furniture_backrest:01",
+      "fingerprint": "d27a34fd4a7fb4bca6a4347fc23d3eb744f12ad841eba233af7ffb71141e46c2",
+      "accepted_by_fuser": true,
+      "accepted_index": 6,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "furniture/furniture_spindle/center/01",
+          "semantic": "furniture_spindle",
+          "normalized_semantic": "spindle",
+          "candidate_overlap_pixels": 9415,
+          "truth_overlap_pixels": 9398,
+          "final_target_iou": 0.5511486779367143
+        },
+        {
+          "identity": "furniture/furniture_stile/center/01",
+          "semantic": "furniture_stile",
+          "normalized_semantic": "stile",
+          "candidate_overlap_pixels": 1117,
+          "truth_overlap_pixels": 1117,
+          "final_target_iou": 0.32172875657502303
+        },
+        {
+          "identity": "furniture/furniture_armrest/center/01",
+          "semantic": "furniture_armrest",
+          "normalized_semantic": "armrest",
+          "candidate_overlap_pixels": 1,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.002215935879302216
+        },
+        {
+          "identity": "furniture_body/furniture_leg/left/01",
+          "semantic": "furniture_leg",
+          "normalized_semantic": "leg",
+          "candidate_overlap_pixels": 1,
+          "truth_overlap_pixels": 1,
+          "final_target_iou": 0.034600389863547756
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/furniture_spindle/006",
+          "semantic": "furniture_spindle",
+          "normalized_semantic": "spindle",
+          "candidate_overlap_pixels": 9415,
+          "truth_overlap_pixels": 9398,
+          "final_target_iou": 0.5511973128182902
+        },
+        {
+          "identity": "object_001/furniture_stile/007",
+          "semantic": "furniture_stile",
+          "normalized_semantic": "stile",
+          "candidate_overlap_pixels": 1117,
+          "truth_overlap_pixels": 1117,
+          "final_target_iou": 0.3217094202505559
+        },
+        {
+          "identity": "object_001/furniture_body",
+          "semantic": "furniture_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 1,
+          "truth_overlap_pixels": 1,
+          "final_target_iou": 0.059980713596914176
+        },
+        {
+          "identity": "object_001/furniture_armrest/002",
+          "semantic": "furniture_armrest",
+          "normalized_semantic": "armrest",
+          "candidate_overlap_pixels": 1,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.013009662974310629
+        }
+      ],
+      "unowned_part_pixels": 205,
+      "unowned_group_pixels": 205,
+      "grouping_verification_records": [
+        {
+          "json_path": "/profile_semantic_grouping/three_stage_verification/5",
+          "record": {
+            "candidate_key": "root:1/profile-dense:furniture_backrest:01",
+            "semantic_name": "furniture_backrest",
+            "source": "clipseg-sam2[CIDAS/clipseg-rd64-refined|facebook/sam2.1-hiera-tiny]/profile-dense-supplement",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "chair",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "resolved_inventory_candidate",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": false,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": false,
+              "reason": "insufficient_structure",
+              "raw_verified": false,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.40536445959439454,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.40536445959439454,
+                "outer_boundary_contact": 0.0,
+                "descriptor": {
+                  "area_px": 10739.0,
+                  "bbox_fill_ratio": 0.5042731029301277,
+                  "aspect_ratio": 1.4545454545454546,
+                  "elongation": 2.3753266185462443,
+                  "circularity": 0.5681987335019865,
+                  "centroid_x": 131.40487941149084,
+                  "centroid_y": 136.06611416332993
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": false,
+              "verified": false,
+              "reason": "not_evaluated_previous_stage_failed",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": false,
+            "ground_truth_used": false
+          }
+        },
+        {
+          "json_path": "/semantic_seeded_physical_ownership/candidates/5",
+          "record": {
+            "candidate_key": "root:1/profile-dense:furniture_backrest:01",
+            "semantic_name": "furniture_backrest",
+            "canonical_group": "furniture_backrest",
+            "maximum_instances": 1,
+            "root_containment": 0.9809106993202347,
+            "root_area_fraction": 0.4045781003955909,
+            "accepted_seed": false,
+            "verification": {
+              "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+              "visual_derived": false,
+              "selected_profile": "chair",
+              "stage_1_semantic": {
+                "order": 1,
+                "evaluated": true,
+                "verified": true,
+                "reason": "resolved_inventory_candidate",
+                "probability": null,
+                "margin": null,
+                "direct_semantic_source": false,
+                "inventory_supported": true
+              },
+              "stage_2_structure": {
+                "order": 2,
+                "evaluated": true,
+                "verified": false,
+                "reason": "insufficient_structure",
+                "raw_verified": false,
+                "geometric_support": 0.0,
+                "axis_not_rejected": true,
+                "cross_source": false,
+                "closed_boundary_structure": false,
+                "root_area_fraction": 0.40536445959439454,
+                "semantic_shape_consistency": {
+                  "accepted": true,
+                  "reason": "shape_not_contradicted",
+                  "shape_family": null,
+                  "root_area_fraction": 0.40536445959439454,
+                  "outer_boundary_contact": 0.0,
+                  "descriptor": {
+                    "area_px": 10739.0,
+                    "bbox_fill_ratio": 0.5042731029301277,
+                    "aspect_ratio": 1.4545454545454546,
+                    "elongation": 2.3753266185462443,
+                    "circularity": 0.5681987335019865,
+                    "centroid_x": 131.40487941149084,
+                    "centroid_y": 136.06611416332993
+                  },
+                  "ground_truth_used": false
+                }
+              },
+              "stage_3_appearance": {
+                "order": 3,
+                "evaluated": false,
+                "verified": false,
+                "reason": "not_evaluated_previous_stage_failed",
+                "raw_verified": true,
+                "boundary_alignment": 0.0,
+                "boundary_closure": 0.0,
+                "independent_cue_count": 0,
+                "shading_only_penalty": 0.0,
+                "can_create_id": false
+              },
+              "accepted": false,
+              "ground_truth_used": false
+            }
+          }
+        },
+        {
+          "json_path": "/three_stage_candidate_verification/candidates/5",
+          "record": {
+            "candidate_key": "root:1/profile-dense:furniture_backrest:01",
+            "semantic_name": "furniture_backrest",
+            "source": "clipseg-sam2[CIDAS/clipseg-rd64-refined|facebook/sam2.1-hiera-tiny]/profile-dense-supplement",
+            "algorithm": "hpid-semantic-structure-appearance-verification-v2",
+            "visual_derived": false,
+            "selected_profile": "chair",
+            "stage_1_semantic": {
+              "order": 1,
+              "evaluated": true,
+              "verified": true,
+              "reason": "resolved_inventory_candidate",
+              "probability": null,
+              "margin": null,
+              "direct_semantic_source": false,
+              "inventory_supported": true
+            },
+            "stage_2_structure": {
+              "order": 2,
+              "evaluated": true,
+              "verified": false,
+              "reason": "insufficient_structure",
+              "raw_verified": false,
+              "geometric_support": 0.0,
+              "axis_not_rejected": true,
+              "cross_source": false,
+              "closed_boundary_structure": false,
+              "root_area_fraction": 0.40536445959439454,
+              "semantic_shape_consistency": {
+                "accepted": true,
+                "reason": "shape_not_contradicted",
+                "shape_family": null,
+                "root_area_fraction": 0.4045781003955909,
+                "outer_boundary_contact": 0.6067415730337079,
+                "descriptor": {
+                  "area_px": 10534.0,
+                  "bbox_fill_ratio": 0.49464688204357626,
+                  "aspect_ratio": 1.4545454545454546,
+                  "elongation": 2.4227823654911136,
+                  "circularity": 0.5268700875024925,
+                  "centroid_x": 131.25859122840328,
+                  "centroid_y": 135.56749572811847
+                },
+                "ground_truth_used": false
+              }
+            },
+            "stage_3_appearance": {
+              "order": 3,
+              "evaluated": false,
+              "verified": false,
+              "reason": "not_evaluated_previous_stage_failed",
+              "raw_verified": true,
+              "boundary_alignment": 0.0,
+              "boundary_closure": 0.0,
+              "independent_cue_count": 0,
+              "shading_only_penalty": 0.0,
+              "can_create_id": false
+            },
+            "accepted": false,
+            "ground_truth_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "furniture/furniture/center/01",
+      "group_id": "object_001/furniture_body",
+      "semantic": "furniture",
+      "normalized_semantic": "body",
+      "target_iou": 0.0007729842021353689,
+      "area_px": 2276
+    },
+    {
+      "part_id": "furniture/furniture_armrest/center/01",
+      "group_id": "object_001/furniture_armrest/002",
+      "semantic": "furniture_armrest",
+      "normalized_semantic": "armrest",
+      "target_iou": 0.002215935879302216,
+      "area_px": 2818
+    },
+    {
+      "part_id": "furniture/furniture_leg/left/01",
+      "group_id": "object_001/furniture_body",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.03251680034684587,
+      "area_px": 613
+    },
+    {
+      "part_id": "furniture_body/furniture_leg/left/01",
+      "group_id": "object_001/furniture_body",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.034600389863547756,
+      "area_px": 668
+    },
+    {
+      "part_id": "furniture/furniture_visual_detail_03/right/01",
+      "group_id": "object_001/furniture_armrest/002",
+      "semantic": "furniture_visual_detail_03",
+      "normalized_semantic": "visual_detail_03",
+      "target_iou": 0.01186798894488701,
+      "area_px": 233
+    },
+    {
+      "part_id": "furniture/furniture_spindle/center/01",
+      "group_id": "object_001/furniture_spindle/006",
+      "semantic": "furniture_spindle",
+      "normalized_semantic": "spindle",
+      "target_iou": 0.5511486779367143,
+      "area_px": 10189
+    },
+    {
+      "part_id": "furniture/furniture_stile/center/01",
+      "group_id": "object_001/furniture_stile/007",
+      "semantic": "furniture_stile",
+      "normalized_semantic": "stile",
+      "target_iou": 0.32172875657502303,
+      "area_px": 5935
+    },
+    {
+      "part_id": "furniture_leg/furniture_stretcher/right/01",
+      "group_id": "object_001/furniture_stretcher/008",
+      "semantic": "furniture_stretcher",
+      "normalized_semantic": "stretcher",
+      "target_iou": 0.0,
+      "area_px": 3305
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/furniture_body",
+      "semantic": "furniture_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "furniture/furniture/center/01",
+        "furniture/furniture_leg/left/01",
+        "furniture_body/furniture_leg/left/01"
+      ],
+      "target_iou": 0.059980713596914176,
+      "area_px": 3545,
+      "evidence": "three_stage_semantic_rejection_merge"
+    },
+    {
+      "group_id": "object_001/furniture_armrest/002",
+      "semantic": "furniture_armrest",
+      "normalized_semantic": "armrest",
+      "member_part_ids": [
+        "furniture/furniture_armrest/center/01",
+        "furniture/furniture_visual_detail_03/right/01"
+      ],
+      "target_iou": 0.013009662974310629,
+      "area_px": 3052,
+      "evidence": "semantic_seed_geometry_appearance_attachment"
+    },
+    {
+      "group_id": "object_001/furniture_spindle/006",
+      "semantic": "furniture_spindle",
+      "normalized_semantic": "spindle",
+      "member_part_ids": [
+        "furniture/furniture_spindle/center/01"
+      ],
+      "target_iou": 0.5511973128182902,
+      "area_px": 10193,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_stile/007",
+      "semantic": "furniture_stile",
+      "normalized_semantic": "stile",
+      "member_part_ids": [
+        "furniture/furniture_stile/center/01"
+      ],
+      "target_iou": 0.3217094202505559,
+      "area_px": 5932,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_stretcher/008",
+      "semantic": "furniture_stretcher",
+      "normalized_semantic": "stretcher",
+      "member_part_ids": [
+        "furniture_leg/furniture_stretcher/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 3315,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 17,
+    "accepted_candidate_count": 17,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 8,
+    "identity_hypothesis_count": 17,
+    "identity_group_count": 14,
+    "identity_hypotheses_merged": 3,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 8,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 3,
+    "unresolved_assembly_parent_ids": [
+      "furniture_body/furniture_leg/left/01"
+    ],
+    "classes_with_multiple_sources": [
+      "furniture_armrest",
+      "furniture_leg",
+      "furniture_spindle",
+      "furniture_stile"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-dense",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 2,
+    "specificity_host_suppressions": 8,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 26291,
+    "lost_root_pixels_before_conservation": 41,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__04\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__bench__04",
+      "cohort": "new216",
+      "domain": "furniture",
+      "object_category": "bench",
+      "target": "backrest",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.5799220272904484,
+      "accepted_best_iou": 0.5799220272904484,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.5511973128182902,
+      "part_to_group_fates": []
+    },
+    {
+      "request_id": "new216__bench__04",
+      "cohort": "new216",
+      "domain": "furniture",
+      "object_category": "bench",
+      "target": "backrest",
+      "threshold": "050",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.5799220272904484,
+      "accepted_best_iou": 0.5799220272904484,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.5511973128182902,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

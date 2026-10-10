@@ -1,0 +1,354 @@
+{
+  "anonymous_id": "img_032",
+  "case_id": "shoe__u01",
+  "image_id": 35197,
+  "object_category": "shoe",
+  "expected_domain": "daily_object",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 9,
+    "predicted_part_count": 5,
+    "assignments": [
+      [
+        1,
+        0,
+        0.0852648988366127
+      ],
+      [
+        2,
+        3,
+        0.0
+      ],
+      [
+        3,
+        2,
+        0.0
+      ],
+      [
+        7,
+        4,
+        0.24588879942893982
+      ],
+      [
+        8,
+        1,
+        0.1846153885126114
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.016605494779603037,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.4,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 5,
+    "unmatched_predicted_semantic_classes": [
+      "lining",
+      "visual_panel_01",
+      "visual_panel_02"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "eyelet",
+        "union_iou": 0.0,
+        "truth_pixels": 58,
+        "predicted_pixels": 22
+      },
+      {
+        "semantic": "heel",
+        "union_iou": 0.0,
+        "truth_pixels": 405,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "lace",
+        "union_iou": 0.0,
+        "truth_pixels": 715,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "sole",
+        "union_iou": 0.0,
+        "truth_pixels": 997,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "toe",
+        "union_iou": 0.0,
+        "truth_pixels": 373,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "tongue",
+        "union_iou": 0.0,
+        "truth_pixels": 708,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "upper",
+        "union_iou": 0.11623846345722125,
+        "truth_pixels": 3879,
+        "predicted_pixels": 596
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 9,
+    "predicted_part_count": 96,
+    "assignments": [
+      [
+        0,
+        37,
+        0.08695652335882187
+      ],
+      [
+        1,
+        84,
+        0.2915254235267639
+      ],
+      [
+        2,
+        48,
+        0.24497991800308228
+      ],
+      [
+        3,
+        60,
+        0.2253829389810562
+      ],
+      [
+        4,
+        40,
+        0.4903640151023865
+      ],
+      [
+        5,
+        70,
+        0.14929328858852386
+      ],
+      [
+        6,
+        15,
+        0.24871794879436493
+      ],
+      [
+        7,
+        2,
+        0.26059654355049133
+      ],
+      [
+        8,
+        68,
+        0.15542522072792053
+      ]
+    ],
+    "part_f1_at_025": 0.05714285714285714,
+    "part_precision_at_025": 0.03125,
+    "part_recall_at_025": 0.3333333333333333,
+    "matched_count_at_025": 3,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.027187223664209777,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.15384615384615385,
+    "annotated_semantic_class_count": 7,
+    "predicted_semantic_class_count": 26,
+    "unmatched_predicted_semantic_classes": [
+      "body",
+      "bottom",
+      "capsule",
+      "container_body",
+      "container_bottom",
+      "container_heel",
+      "container_inner",
+      "container_outer_side",
+      "container_rim",
+      "device_body",
+      "device_button",
+      "end_tip",
+      "frame",
+      "furniture_leg",
+      "insole",
+      "label",
+      "lining",
+      "tool_prop_body",
+      "tool_prop_foot",
+      "tool_prop_grip",
+      "tool_prop_side",
+      "top"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "eyelet",
+        "union_iou": 0.0,
+        "truth_pixels": 58,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "heel",
+        "union_iou": 0.0,
+        "truth_pixels": 405,
+        "predicted_pixels": 59
+      },
+      {
+        "semantic": "lace",
+        "union_iou": 0.0,
+        "truth_pixels": 715,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "sole",
+        "union_iou": 0.11143062544931703,
+        "truth_pixels": 997,
+        "predicted_pixels": 549
+      },
+      {
+        "semantic": "toe",
+        "union_iou": 0.017931858936043037,
+        "truth_pixels": 373,
+        "predicted_pixels": 1330
+      },
+      {
+        "semantic": "tongue",
+        "union_iou": 0.0,
+        "truth_pixels": 708,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "upper",
+        "union_iou": 0.060948081264108354,
+        "truth_pixels": 3879,
+        "predicted_pixels": 351
+      }
+    ],
+    "predicted_raw_semantic_class_count": 34,
+    "foreground_pixels": 7853,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 16.5,
+    "component_area_max": 1190,
+    "component_source_labels": [
+      48,
+      48,
+      51,
+      54,
+      56,
+      57,
+      57,
+      57,
+      57,
+      57,
+      57,
+      59,
+      60,
+      60,
+      62,
+      62,
+      62,
+      64,
+      65,
+      82,
+      82,
+      82,
+      88,
+      99,
+      99,
+      114,
+      141,
+      158,
+      158,
+      158,
+      158,
+      158,
+      158,
+      161,
+      166,
+      166,
+      203,
+      203,
+      204,
+      204,
+      204,
+      204,
+      204,
+      204,
+      205,
+      205,
+      205,
+      216,
+      216,
+      216,
+      216,
+      216,
+      216,
+      216,
+      216,
+      216,
+      226,
+      241,
+      241,
+      241,
+      241,
+      241,
+      241,
+      241,
+      247,
+      253,
+      268,
+      268,
+      268,
+      268,
+      268,
+      296,
+      296,
+      296,
+      296,
+      296,
+      296,
+      364,
+      370,
+      370,
+      370,
+      370,
+      422,
+      422,
+      423,
+      423,
+      423,
+      423,
+      423,
+      423,
+      423,
+      427,
+      438,
+      438,
+      438,
+      438
+    ]
+  },
+  "shape_hw": [
+    111,
+    165
+  ],
+  "annotated_pixels": 7135,
+  "overlapping_annotation_pixels": 0
+}

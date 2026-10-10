@@ -1,0 +1,425 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-10T02:42:12.107178+00:00",
+  "scope": "Independent read-only prose/source-anchor/numeric QA of R2 Comment 4. Only this new audit JSON written. No Word editing, rendering, source modification or model execution.",
+  "bound_artifacts_sha256": {
+    "revision_payload.json": "2ada6d625bc1b2eb49011c41adab07516981b7356d40bc0bf10e1a0bb422a542",
+    "revision_text_en.txt": "5a2008ba4d25bc1655af0429a8217adbd74920ed76111dd45f22393089949804",
+    "revision_text_zh.txt": "4f5c36159403e47db4479b89bbcd39fef034be4f729f121d4b8391936a44b435",
+    "revision_qa.json": "d7390295a323c8af73b18591aed3289c0a2221939ace20c5c9fd9be1a149fa75",
+    "prepare_revision.py": "66df7ac859e624fd74122329b37ea097ada41c2aaf9a458f7696942a9f5d669e",
+    "evidence_audit/summary.json": "ad918ead9a6583485eee20a3d5bd729594060c347d6e7005d23e01b8ff85de0a",
+    "evidence_audit/receipt.json": "c3c76247222920f99864393e0646accbab18e83daf6747989b9f6a1590d1432a"
+  },
+  "patch_count": 14,
+  "patch_source_checks": [
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "index_zero_based": 44,
+      "source_sha256": "ffb0a916dd6a148a44ffb6542bbe1faab7e611506518bd0f8734330d9f6b50ff",
+      "old_text_sha256": "b4e9217c6eeecbfc5e66d5bc68b91ac4e0ae81a0e13ce57bb2700d4a6ea70d58",
+      "status": "PASS"
+    },
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "index_zero_based": 141,
+      "source_sha256": "ffb0a916dd6a148a44ffb6542bbe1faab7e611506518bd0f8734330d9f6b50ff",
+      "old_text_sha256": "8173b1a1d5de44465988cc0b423cc346f1c3a6d17614e66d2198ad3a18ede9a2",
+      "status": "PASS"
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "index_zero_based": 32,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "22796c5f3a191ba13671571d41838f0ff34ef6ab8bf7f00abcc9c99235269a61",
+      "status": "PASS"
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "index_zero_based": 33,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "b50efc7b818cc591bac01b458d187a668e2ca97988fff0c387ccce1b5e2a0f30",
+      "status": "PASS"
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "index_zero_based": 35,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "c31a0ea0d76e5f44e74b34e132c278f21a59b2137705edf832d8b5603160eb44",
+      "status": "PASS"
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "index_zero_based": 132,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "3c09f1a8b97d594005517ce55ae70f4bfeacec1fffb665fba07f9e58366a7f2c",
+      "status": "PASS"
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "index_zero_based": 134,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "e211aea0de2e04061edf2c757169b6ae23ab73f23772a937ed8dfd7723b0bcaa",
+      "status": "PASS"
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "index_zero_based": 47,
+      "source_sha256": "2ed4fd77edf17c2f47250408781405c43c5ddbab0fa9910d6aff8a008f3d4fb8",
+      "old_text_sha256": "77c62b12bc2a1dfcacae7d820af87eb95dcd65ba00985624af8f66a498c9db98",
+      "status": "PASS"
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "index_zero_based": 144,
+      "source_sha256": "2ed4fd77edf17c2f47250408781405c43c5ddbab0fa9910d6aff8a008f3d4fb8",
+      "old_text_sha256": "0a83ac2a120c0947f212e4fd46fa2059bf69785e52c11ed698d84bdb1861d139",
+      "status": "PASS"
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "index_zero_based": 32,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "c9b5458bc2810bd91133a1732536b123ae7f0d329f4236021f5050fa245b3479",
+      "status": "PASS"
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "index_zero_based": 33,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "b0d86dbd2da856a6c937a06991ff9f2b093445fb51dcc479f5790183c33e959c",
+      "status": "PASS"
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "index_zero_based": 35,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "604e985efef5605b10f5a19ae0fb192f777fbc1c0a26724b092227947b3bbf46",
+      "status": "PASS"
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "index_zero_based": 132,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "11f4af08cfbe258e7e877969d005b6e8fa0b8f11b11a0ed87b5ebeca923fb7b0",
+      "status": "PASS"
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "index_zero_based": 134,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "af2779a614cc7e2b8455f916c5be61c6a3c85705aa9bec02b361dfc5bda1bf67",
+      "status": "PASS"
+    }
+  ],
+  "source_word_hashes_unchanged": true,
+  "text_exports_match_all_replacement_paragraphs": true,
+  "section_locator_checks": {
+    "status": "PASS",
+    "IV_E": "EN heading43/paragraph44; ZH heading46/paragraph47",
+    "VI_H": "EN heading140/paragraph141; ZH heading143/paragraph144",
+    "R2_comment4": "both languages heading29, response32/33, locations35",
+    "SI": "both languages S19.1 heading131, protocol132, TableS32 caption133, interpretation134"
+  },
+  "omml_preservation": {
+    "status": "PASS",
+    "suffix_only_patches": 2,
+    "inline_omml_count": 4,
+    "all_source_math_hashes_exact": true,
+    "displayed_equation3_change": false
+  },
+  "neighboring_pending_payloads": {
+    "reviewer2_comment2": "751d37893d3893f1925f5783c2c78fe5ef76c73150eb9597f7a6f9beb2eea319",
+    "reviewer2_comment3": "58d5dea64f601bd0930dc67f13403dd52c670207452c4ff3bb2df32d73819ab9"
+  },
+  "neighboring_patch_conflicts": [],
+  "future_application_note": "Combine all pending patches against original source hashes and exact old text; use descending original paragraph indexes or stable OOXML anchors because other pending patches insert paragraphs.",
+  "independent_arithmetic_check": {
+    "case_setting_rows": 11300,
+    "settings": 50,
+    "cases_per_setting": 226,
+    "all50_primary_F1_means_and_changed_map_counts_match": true,
+    "joint_corners": 16,
+    "joint_min": 0.31274207045317387,
+    "joint_max": 0.3192423468216688,
+    "details": [
+      {
+        "variant": "conflict_penalty=0",
+        "mean_f1_025": 0.3071722971458091,
+        "changed_maps": 125
+      },
+      {
+        "variant": "conflict_penalty=0.36",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 2
+      },
+      {
+        "variant": "conflict_penalty=0.576",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "conflict_penalty=0.864",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "conflict_penalty=0.95",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "detail_bonus=0",
+        "mean_f1_025": 0.306244142911568,
+        "changed_maps": 174
+      },
+      {
+        "variant": "detail_bonus=0.04",
+        "mean_f1_025": 0.3105810395701232,
+        "changed_maps": 162
+      },
+      {
+        "variant": "detail_bonus=0.064",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "detail_bonus=0.096",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "detail_bonus=0.12",
+        "mean_f1_025": 0.32221135491088027,
+        "changed_maps": 149
+      },
+      {
+        "variant": "direct_gate_margin=0.656",
+        "mean_f1_025": 0.33109873524753036,
+        "changed_maps": 156
+      },
+      {
+        "variant": "direct_gate_margin=0.984",
+        "mean_f1_025": 0.30598862696483814,
+        "changed_maps": 175
+      },
+      {
+        "variant": "direct_gate_threshold=0.304",
+        "mean_f1_025": 0.3130831726282482,
+        "changed_maps": 164
+      },
+      {
+        "variant": "direct_gate_threshold=0.456",
+        "mean_f1_025": 0.30493446297934856,
+        "changed_maps": 175
+      },
+      {
+        "variant": "disable_use_consensus",
+        "mean_f1_025": 0.3019241830692995,
+        "changed_maps": 78
+      },
+      {
+        "variant": "disable_use_direct_gate",
+        "mean_f1_025": 0.30146663893686365,
+        "changed_maps": 178
+      },
+      {
+        "variant": "disable_use_hierarchical_duplicate_suppression",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "disable_use_parent_support",
+        "mean_f1_025": 0.3136850849248645,
+        "changed_maps": 32
+      },
+      {
+        "variant": "disable_use_remainder_attachment",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "disable_use_specificity_ownership",
+        "mean_f1_025": 0.28306500150564373,
+        "changed_maps": 163
+      },
+      {
+        "variant": "hierarchy_strength=0",
+        "mean_f1_025": 0.3136850849248645,
+        "changed_maps": 32
+      },
+      {
+        "variant": "hierarchy_strength=0.325",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 2
+      },
+      {
+        "variant": "hierarchy_strength=0.52",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "hierarchy_strength=0.78",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "hierarchy_strength=0.975",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "joint_0.8_0.8_0.8_0.8",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_0.8_0.8_0.8_1.2",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_0.8_0.8_1.2_0.8",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_0.8_0.8_1.2_1.2",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_0.8_1.2_0.8_0.8",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_0.8_1.2_0.8_1.2",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_0.8_1.2_1.2_0.8",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_0.8_1.2_1.2_1.2",
+        "mean_f1_025": 0.3127420704531738,
+        "changed_maps": 149
+      },
+      {
+        "variant": "joint_1.2_0.8_0.8_0.8",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "joint_1.2_0.8_0.8_1.2",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "joint_1.2_0.8_1.2_0.8",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "joint_1.2_0.8_1.2_1.2",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "joint_1.2_1.2_0.8_0.8",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "joint_1.2_1.2_0.8_1.2",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "joint_1.2_1.2_1.2_0.8",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "joint_1.2_1.2_1.2_1.2",
+        "mean_f1_025": 0.31924234682166874,
+        "changed_maps": 140
+      },
+      {
+        "variant": "orphan_support=0",
+        "mean_f1_025": 0.3116006943967495,
+        "changed_maps": 27
+      },
+      {
+        "variant": "orphan_support=0.06",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 1
+      },
+      {
+        "variant": "orphan_support=0.096",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "orphan_support=0.144",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "orphan_support=0.18",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "release",
+        "mean_f1_025": 0.3133108979746755,
+        "changed_maps": 0
+      },
+      {
+        "variant": "source_reliability_0.8x",
+        "mean_f1_025": 0.30974077415869705,
+        "changed_maps": 193
+      },
+      {
+        "variant": "source_reliability_1.2x",
+        "mean_f1_025": 0.32836384543999,
+        "changed_maps": 185
+      },
+      {
+        "variant": "source_reliability_uniform",
+        "mean_f1_025": 0.3320601051592356,
+        "changed_maps": 188
+      }
+    ]
+  },
+  "bootstrap_validation_scope": "Original paired case bootstrap implementation and source-bounded independent arithmetic receipt checked; original intervals compared to their archived source. No unnecessary second bootstrap run. C3 category-cluster intervals are not substituted.",
+  "scientific_and_bilingual_review": {
+    "status": "PASS",
+    "findings": [
+      "0.08 is additive only where direct support exceeds 0.38; earlier attenuation is not applied to this bonus.",
+      "Conflict penalty0.72 retains host evidence0.28; separate scene-fallback multiplier0.72 is not conflated.",
+      "Parent attenuation only applies when compatible parent support exists; factor0.12**0.65=0.2520390360; the0.12 base also participates in the later direct gate.",
+      "Host-penalty removal retains child floor; entire specificity module removal disables both; parent attenuation removal is not presented as removal of every parent mechanism.",
+      "Positive interval for the magnitude of F1 reduction in main text is the sign-reversed negative difference interval; signs agree across languages and response/SI.",
+      "Local zero changed maps for six one-at-time settings is distinguished from nonidentical maps when the detail bonus changes; map differences are not interpreted as persistent-ID loss.",
+      "49 comparisons are explicitly per endpoint, pointwise exploratory and unadjusted; 11300 repeated evaluations are not independent sample size.",
+      "Higher detail/direct-margin/uniform-r settings and scalar-removal intervals crossing zero are retained; no optimality, global robustness, untouched-validation, or absence-of-overfitting claim.",
+      "Chinese and English encode the same outcome, qualifiers and comparison directions.",
+      "Only Reviewer2 Comment4 is addressed; no disclosure of other reviewers."
+    ]
+  },
+  "evidence_source_hashes": {
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\sensitivity_cases.csv": "29aba2b8f13ba6d4cf7c7b835a547c05fa5782128d4aba6541e1bcb1521869ee",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\sensitivity_summary.csv": "1dc9f81a9ee7b604bab88272333836e9a2c6f9dded510301bf8b373200f47300",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\evidence\\sensitivity_protocol.json": "5e5c029dce51881e7340288d9e469c26f11d94577de8cd9957382e964ad9164c",
+    "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\sources\\frozen_be54300\\src\\hpid_split\\fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\code\\analysis\\analyze_revision.py": "7096fc13b27ba58f79fb983a17f7b1baa09c7de4ff86fe892da87bfd987f8192"
+  },
+  "unapplied_status": "PASS; payload and patches explicitly not applied to Word; experiments are existing evidence, no new model execution claimed.",
+  "resolved_note": "Clarified49 release contrasts per endpoint in both response and SI before final audit binding.",
+  "remaining_issues": []
+}

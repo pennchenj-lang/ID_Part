@@ -1,0 +1,189 @@
+{
+  "anonymous_id": "img_030",
+  "case_id": "hat__u01",
+  "image_id": 468519,
+  "object_category": "hat",
+  "expected_domain": "daily_object",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 2,
+    "predicted_part_count": 2,
+    "assignments": [
+      [
+        0,
+        0,
+        0.6155660152435303
+      ],
+      [
+        1,
+        1,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.5,
+    "part_precision_at_025": 0.5,
+    "part_recall_at_025": 0.5,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.5,
+    "part_precision_at_050": 0.5,
+    "part_recall_at_050": 0.5,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.30778301886792453,
+    "semantic_union_recall_at_025": 0.5,
+    "semantic_label_precision": 0.5,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 2,
+    "unmatched_predicted_semantic_classes": [
+      "visual_panel_01"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "inner_lining",
+        "union_iou": 0.0,
+        "truth_pixels": 505,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "logo",
+        "union_iou": 0.6155660377358491,
+        "truth_pixels": 392,
+        "predicted_pixels": 293
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 2,
+    "predicted_part_count": 58,
+    "assignments": [
+      [
+        0,
+        46,
+        0.10645724087953568
+      ],
+      [
+        1,
+        17,
+        0.004992867354303598
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.0,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 7,
+    "unmatched_predicted_semantic_classes": [
+      "body",
+      "container_body",
+      "container_inner",
+      "container_outer_side",
+      "device_screen",
+      "tool_prop_face",
+      "tool_prop_head"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "inner_lining",
+        "union_iou": 0.0,
+        "truth_pixels": 505,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "logo",
+        "union_iou": 0.0,
+        "truth_pixels": 392,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 17,
+    "foreground_pixels": 24780,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 58.5,
+    "component_area_max": 6822,
+    "component_source_labels": [
+      51,
+      53,
+      53,
+      54,
+      54,
+      54,
+      54,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      57,
+      57,
+      57,
+      57,
+      60,
+      60,
+      60,
+      60,
+      65,
+      65,
+      65,
+      65,
+      65,
+      65,
+      65,
+      65,
+      145,
+      196,
+      196,
+      196,
+      213,
+      213,
+      213,
+      214,
+      214,
+      214,
+      214,
+      214,
+      216,
+      216,
+      216,
+      216,
+      225,
+      226,
+      343,
+      343,
+      343,
+      343,
+      370,
+      448,
+      448,
+      448,
+      448
+    ]
+  },
+  "shape_hw": [
+    202,
+    249
+  ],
+  "annotated_pixels": 897,
+  "overlapping_annotation_pixels": 0
+}

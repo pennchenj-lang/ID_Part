@@ -1,0 +1,9 @@
+{
+  "case_count": 226,
+  "reference_count": 990,
+  "final_metrics_vs_archived_maximum_difference": 1.1102230246251565e-16,
+  "remainder_union_preserved_all_references": true,
+  "final_filter_support_is_subset_all_references": true,
+  "recorded_source_hashes_match": true,
+  "independent_validation": "Separate table/invariant check; not an independent dataset or replication."
+}

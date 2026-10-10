@@ -1,0 +1,245 @@
+{
+  "anonymous_id": "img_003",
+  "case_id": "television_set__u01",
+  "image_id": 347389,
+  "object_category": "television_set",
+  "expected_domain": "device",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 5,
+    "predicted_part_count": 5,
+    "assignments": [
+      [
+        0,
+        4,
+        0.26931947469711304
+      ],
+      [
+        1,
+        3,
+        0.10097423195838928
+      ],
+      [
+        2,
+        1,
+        0.0
+      ],
+      [
+        3,
+        2,
+        0.0
+      ],
+      [
+        4,
+        0,
+        0.51197350025177
+      ]
+    ],
+    "part_f1_at_025": 0.4000000000000001,
+    "part_precision_at_025": 0.4,
+    "part_recall_at_025": 0.4,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.20000000000000004,
+    "part_precision_at_050": 0.2,
+    "part_recall_at_050": 0.2,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.10723504070692602,
+    "semantic_union_recall_at_025": 0.2,
+    "semantic_label_precision": 0.4,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 5,
+    "unmatched_predicted_semantic_classes": [
+      "bezel",
+      "screen",
+      "visual_strip_01"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "base",
+        "union_iou": 0.0,
+        "truth_pixels": 1259,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "bottom_panel",
+        "union_iou": 0.5119734741495763,
+        "truth_pixels": 4771,
+        "predicted_pixels": 7541
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.0,
+        "truth_pixels": 613,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "side_panel",
+        "union_iou": 0.024201729385053862,
+        "truth_pixels": 20701,
+        "predicted_pixels": 501
+      },
+      {
+        "semantic": "top_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 13140,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 5,
+    "predicted_part_count": 45,
+    "assignments": [
+      [
+        0,
+        18,
+        0.017656011506915092
+      ],
+      [
+        1,
+        29,
+        0.3310248851776123
+      ],
+      [
+        2,
+        0,
+        0.0
+      ],
+      [
+        3,
+        1,
+        0.0
+      ],
+      [
+        4,
+        30,
+        0.07353248447179794
+      ]
+    ],
+    "part_f1_at_025": 0.039999999999999994,
+    "part_precision_at_025": 0.022222222222222223,
+    "part_recall_at_025": 0.2,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.002322846046099422,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.38461538461538464,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 13,
+    "unmatched_predicted_semantic_classes": [
+      "container_inner",
+      "container_rim",
+      "daily_object_body",
+      "furniture_leg",
+      "furniture_shelf",
+      "screen",
+      "unmapped_paco_2162",
+      "unmapped_paco_2337"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "base",
+        "union_iou": 0.0,
+        "truth_pixels": 1259,
+        "predicted_pixels": 337
+      },
+      {
+        "semantic": "bottom_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 4771,
+        "predicted_pixels": 84
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.0,
+        "truth_pixels": 613,
+        "predicted_pixels": 335
+      },
+      {
+        "semantic": "side_panel",
+        "union_iou": 0.009050784960053635,
+        "truth_pixels": 20701,
+        "predicted_pixels": 15421
+      },
+      {
+        "semantic": "top_panel",
+        "union_iou": 0.002563445270443476,
+        "truth_pixels": 13140,
+        "predicted_pixels": 6415
+      }
+    ],
+    "predicted_raw_semantic_class_count": 19,
+    "foreground_pixels": 42776,
+    "unmapped_prediction_pixels": 165,
+    "unmapped_predicted_components": 2,
+    "component_area_min": 1,
+    "component_area_median": 31.0,
+    "component_area_max": 17546,
+    "component_source_labels": [
+      23,
+      23,
+      23,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      65,
+      85,
+      100,
+      100,
+      100,
+      101,
+      162,
+      205,
+      215,
+      224,
+      224,
+      253,
+      257,
+      337,
+      342,
+      342,
+      342,
+      342,
+      343,
+      344,
+      344,
+      359,
+      359,
+      368,
+      368,
+      368,
+      368,
+      428,
+      428,
+      428,
+      428,
+      428,
+      428,
+      428
+    ]
+  },
+  "shape_hw": [
+    264,
+    386
+  ],
+  "annotated_pixels": 40484,
+  "overlapping_annotation_pixels": 0
+}

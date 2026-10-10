@@ -1,0 +1,805 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-10-09T15:41:48.633513+00:00",
+  "loss_cases_at_025": 25,
+  "loss_cases_at_050": 20,
+  "unique_loss_cases_checked": 30,
+  "complete_loss_coverage": true,
+  "old37_all4_checked": true,
+  "candidate_pixel_flow_partitions_checked": 64,
+  "verification_records_compared_to_original": 36,
+  "mechanism_artifacts_verified": 41,
+  "reader_facing_mechanism_counts_verified": {
+    "primary_accepted_to_part": 24,
+    "primary_accepted_to_part_with_other_part_geometry": 17,
+    "primary_final_group_with_other_geometry": 15,
+    "secondary_final_group_with_other_geometry": 7
+  },
+  "single_primary_group_loss_membership_verified": true,
+  "all_loss_cases": [
+    {
+      "request_id": "new216__bench__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5441493853805011,
+        "accepted_best_matching_iou": 0.5441493853805011,
+        "native_part_best_matching_iou": 0.1819068255687974,
+        "group_best_matching_iou": 0.1744312026002167,
+        "native_part_best_any_semantic_iou": 0.233579887635908,
+        "group_best_any_semantic_iou": 0.236885810345526
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__bench__04",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5799220272904484,
+        "accepted_best_matching_iou": 0.5799220272904484,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.5511486779367143,
+        "group_best_any_semantic_iou": 0.5511973128182902
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "new216__bicycle__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.8990849673202614,
+        "accepted_best_matching_iou": 0.8990849673202614,
+        "native_part_best_matching_iou": 0.3219087793303454,
+        "group_best_matching_iou": 0.3219087793303454,
+        "native_part_best_any_semantic_iou": 0.3219087793303454,
+        "group_best_any_semantic_iou": 0.3219087793303454
+      },
+      "stage_labels": {
+        "025": "not_a_raw_to_group_loss",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__blender__01",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.7868157177765919,
+        "accepted_best_matching_iou": 0.7868157177765919,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.9384229130190611,
+        "group_best_any_semantic_iou": 0.9466160151954414
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__bucket__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5464429947188568,
+        "accepted_best_matching_iou": 0.5464429947188568,
+        "native_part_best_matching_iou": 0.06011291929591498,
+        "group_best_matching_iou": 0.06011291929591498,
+        "native_part_best_any_semantic_iou": 0.8497409326424871,
+        "group_best_any_semantic_iou": 0.8497409326424871
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__calculator__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.26079545454545455,
+        "accepted_best_matching_iou": 0.26079545454545455,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.7230837394771821,
+        "group_best_any_semantic_iou": 0.6091109478324761
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__car_automobile__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.7987251466925577,
+        "accepted_best_matching_iou": 0.7987251466925577,
+        "native_part_best_matching_iou": 0.07951476093446429,
+        "group_best_matching_iou": 0.07951476093446429,
+        "native_part_best_any_semantic_iou": 0.3250788556250346,
+        "group_best_any_semantic_iou": 0.3280194315707186
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "new216__clock__03",
+      "cohort": "new216",
+      "candidate_correct_count": 3,
+      "stage_values": {
+        "raw_best_matching_iou": 0.8335097001763668,
+        "accepted_best_matching_iou": 0.8335097001763668,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.10817286747407859,
+        "group_best_any_semantic_iou": 0.10817286747407859
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "new216__clock__04",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5763986835919135,
+        "accepted_best_matching_iou": 0.5763986835919135,
+        "native_part_best_matching_iou": 0.33531451213472013,
+        "group_best_matching_iou": 0.33531451213472013,
+        "native_part_best_any_semantic_iou": 0.33531451213472013,
+        "group_best_any_semantic_iou": 0.33531451213472013
+      },
+      "stage_labels": {
+        "025": "not_a_raw_to_group_loss",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "new216__fan__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5682326621923938,
+        "accepted_best_matching_iou": 0.5682326621923938,
+        "native_part_best_matching_iou": 0.255079006772009,
+        "group_best_matching_iou": 0.2545045045045045,
+        "native_part_best_any_semantic_iou": 0.255079006772009,
+        "group_best_any_semantic_iou": 0.2545045045045045
+      },
+      "stage_labels": {
+        "025": "not_a_raw_to_group_loss",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__glass_drink_container__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.7570840950639853,
+        "accepted_best_matching_iou": 0.7570840950639853,
+        "native_part_best_matching_iou": 0.27092457420924576,
+        "group_best_matching_iou": 0.27092457420924576,
+        "native_part_best_any_semantic_iou": 0.27092457420924576,
+        "group_best_any_semantic_iou": 0.27092457420924576
+      },
+      "stage_labels": {
+        "025": "not_a_raw_to_group_loss",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__guitar__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.3978328173374613,
+        "accepted_best_matching_iou": 0.3978328173374613,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.2893134775686054,
+        "group_best_any_semantic_iou": 0.18925376792059798
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__hat__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.43987587276958884,
+        "accepted_best_matching_iou": 0.43987587276958884,
+        "native_part_best_matching_iou": 0.025361330788110172,
+        "group_best_matching_iou": 0.025361330788110172,
+        "native_part_best_any_semantic_iou": 0.27426670698518296,
+        "group_best_any_semantic_iou": 0.29420061395503194
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__helmet__04",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5349287348231568,
+        "accepted_best_matching_iou": 0.5349287348231568,
+        "native_part_best_matching_iou": 0.4746085484553534,
+        "group_best_matching_iou": 0.450583062511948,
+        "native_part_best_any_semantic_iou": 0.4746085484553534,
+        "group_best_any_semantic_iou": 0.450583062511948
+      },
+      "stage_labels": {
+        "025": "not_a_raw_to_group_loss",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "new216__jar__01",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.9510334304341795,
+        "accepted_best_matching_iou": 0.9510334304341795,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.9539725251380824,
+        "group_best_any_semantic_iou": 0.9485376827896513
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "new216__jar__04",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.8890864995957963,
+        "accepted_best_matching_iou": 0.8890864995957963,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.3555231821636686,
+        "group_best_any_semantic_iou": 0.3555231821636686
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__laptop_computer__01",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.7183669299918278,
+        "accepted_best_matching_iou": 0.7183669299918278,
+        "native_part_best_matching_iou": 0.2998453038674033,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.538151066692293,
+        "group_best_any_semantic_iou": 0.5261575466025256
+      },
+      "stage_labels": {
+        "025": "native_part_to_group",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__laptop_computer__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.43468761072398726,
+        "accepted_best_matching_iou": 0.43468761072398726,
+        "native_part_best_matching_iou": 0.1444206250705179,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.36744440964610087,
+        "group_best_any_semantic_iou": 0.3688015717092338
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__microwave_oven__01",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.8090921035343581,
+        "accepted_best_matching_iou": 0.8090921035343581,
+        "native_part_best_matching_iou": 0.11426726920593931,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.28541337546076884,
+        "group_best_any_semantic_iou": 0.2390064040364836
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__mug__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.8243958370082907,
+        "accepted_best_matching_iou": 0.8243958370082907,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.510537235204193,
+        "group_best_any_semantic_iou": 0.502040158917642
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__plastic_bag__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.39574360273625536,
+        "accepted_best_matching_iou": 0.39574360273625536,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.2716891797799749,
+        "group_best_any_semantic_iou": 0.1523731841839509
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__scissors__01",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5043761579249985,
+        "accepted_best_matching_iou": 0.5043761579249985,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.015661509314808968,
+        "group_best_any_semantic_iou": 0.013650374284456186
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "new216__stool__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.46811945117029863,
+        "accepted_best_matching_iou": 0.46811945117029863,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.8581730769230769,
+        "group_best_any_semantic_iou": 0.8581730769230769
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__television_set__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.2583539729587072,
+        "accepted_best_matching_iou": 0.2583539729587072,
+        "native_part_best_matching_iou": 0.014188063645240967,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.19576256647795506,
+        "group_best_any_semantic_iou": 0.2452613073357839
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__towel__02",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.3902493321460374,
+        "accepted_best_matching_iou": 0.3902493321460374,
+        "native_part_best_matching_iou": 0.23597025016903314,
+        "group_best_matching_iou": 0.23597025016903314,
+        "native_part_best_any_semantic_iou": 0.23597025016903314,
+        "group_best_any_semantic_iou": 0.23597025016903314
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 0
+    },
+    {
+      "request_id": "new216__vase__03",
+      "cohort": "new216",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.6976127320954907,
+        "accepted_best_matching_iou": 0.6976127320954907,
+        "native_part_best_matching_iou": 0.0,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.15505447175069673,
+        "group_best_any_semantic_iou": 0.09942967825244808
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "old37__box__u01",
+      "cohort": "old37",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.5414703903095559,
+        "accepted_best_matching_iou": 0.5414703903095559,
+        "native_part_best_matching_iou": 0.006989024642783185,
+        "group_best_matching_iou": 0.00694855495792264,
+        "native_part_best_any_semantic_iou": 0.5280823450436339,
+        "group_best_any_semantic_iou": 0.5314517339738778
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "cohort": "old37",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.704812834224599,
+        "accepted_best_matching_iou": 0.704812834224599,
+        "native_part_best_matching_iou": 0.22032085561497325,
+        "group_best_matching_iou": 0.21711229946524063,
+        "native_part_best_any_semantic_iou": 0.37219251336898396,
+        "group_best_any_semantic_iou": 0.37219251336898396
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "accepted_to_native_part_ownership_gate_cleanup_unresolved"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "old37__scissors__u01",
+      "cohort": "old37",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.25458986019875357,
+        "accepted_best_matching_iou": 0.25458986019875357,
+        "native_part_best_matching_iou": 0.14190620272314675,
+        "group_best_matching_iou": 0.14190620272314675,
+        "native_part_best_any_semantic_iou": 0.35512920908379014,
+        "group_best_any_semantic_iou": 0.35532398338948523
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 3
+    },
+    {
+      "request_id": "old37__shoe__u01",
+      "cohort": "old37",
+      "candidate_correct_count": 1,
+      "stage_values": {
+        "raw_best_matching_iou": 0.4349748743718593,
+        "accepted_best_matching_iou": 0.4349748743718593,
+        "native_part_best_matching_iou": 0.09341742215214821,
+        "group_best_matching_iou": 0.20691711389385808,
+        "native_part_best_any_semantic_iou": 0.2205911525490974,
+        "group_best_any_semantic_iou": 0.2205911525490974
+      },
+      "stage_labels": {
+        "025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+        "050": "not_a_raw_to_group_loss"
+      },
+      "gate_records_verified": 3
+    }
+  ],
+  "read_only_exact_replays": [
+    {
+      "request_id": "new216__bench__03",
+      "part_map_exact": true,
+      "group_map_exact": true,
+      "fused_and_group_diagnostics_exact": true,
+      "semantic_union_observations": [
+        {
+          "stage": "before_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.04593455898446049
+        },
+        {
+          "stage": "after_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.045919483645115416
+        }
+      ],
+      "instance_stage_values": {
+        "raw_best_matching_iou": 0.5441493853805011,
+        "accepted_best_matching_iou": 0.5441493853805011,
+        "native_part_best_matching_iou": 0.1819068255687974,
+        "group_best_matching_iou": 0.1744312026002167,
+        "native_part_best_any_semantic_iou": 0.233579887635908,
+        "group_best_any_semantic_iou": 0.236885810345526
+      }
+    },
+    {
+      "request_id": "new216__laptop_computer__01",
+      "part_map_exact": true,
+      "group_map_exact": true,
+      "fused_and_group_diagnostics_exact": true,
+      "semantic_union_observations": [
+        {
+          "stage": "before_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.2998453038674033
+        },
+        {
+          "stage": "after_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.2998453038674033
+        }
+      ],
+      "instance_stage_values": {
+        "raw_best_matching_iou": 0.7183669299918278,
+        "accepted_best_matching_iou": 0.7183669299918278,
+        "native_part_best_matching_iou": 0.2998453038674033,
+        "group_best_matching_iou": 0.0,
+        "native_part_best_any_semantic_iou": 0.538151066692293,
+        "group_best_any_semantic_iou": 0.5261575466025256
+      }
+    },
+    {
+      "request_id": "old37__box__u01",
+      "part_map_exact": true,
+      "group_map_exact": true,
+      "fused_and_group_diagnostics_exact": true,
+      "semantic_union_observations": [
+        {
+          "stage": "before_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.007227230338824993
+        },
+        {
+          "stage": "after_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.006988301066362977
+        }
+      ],
+      "instance_stage_values": {
+        "raw_best_matching_iou": 0.5414703903095559,
+        "accepted_best_matching_iou": 0.5414703903095559,
+        "native_part_best_matching_iou": 0.006989024642783185,
+        "group_best_matching_iou": 0.00694855495792264,
+        "native_part_best_any_semantic_iou": 0.5280823450436339,
+        "group_best_any_semantic_iou": 0.5314517339738778
+      }
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "part_map_exact": true,
+      "group_map_exact": true,
+      "fused_and_group_diagnostics_exact": true,
+      "semantic_union_observations": [
+        {
+          "stage": "before_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.24812834224598931
+        },
+        {
+          "stage": "after_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.21711229946524063
+        }
+      ],
+      "instance_stage_values": {
+        "raw_best_matching_iou": 0.704812834224599,
+        "accepted_best_matching_iou": 0.704812834224599,
+        "native_part_best_matching_iou": 0.22032085561497325,
+        "group_best_matching_iou": 0.21711229946524063,
+        "native_part_best_any_semantic_iou": 0.37219251336898396,
+        "group_best_any_semantic_iou": 0.37219251336898396
+      }
+    },
+    {
+      "request_id": "old37__scissors__u01",
+      "part_map_exact": true,
+      "group_map_exact": true,
+      "fused_and_group_diagnostics_exact": true,
+      "semantic_union_observations": [
+        {
+          "stage": "before_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.14896472392638035
+        },
+        {
+          "stage": "after_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.1482440990213011
+        }
+      ],
+      "instance_stage_values": {
+        "raw_best_matching_iou": 0.25458986019875357,
+        "accepted_best_matching_iou": 0.25458986019875357,
+        "native_part_best_matching_iou": 0.14190620272314675,
+        "group_best_matching_iou": 0.14190620272314675,
+        "native_part_best_any_semantic_iou": 0.35512920908379014,
+        "group_best_any_semantic_iou": 0.35532398338948523
+      }
+    },
+    {
+      "request_id": "old37__shoe__u01",
+      "part_map_exact": true,
+      "group_map_exact": true,
+      "fused_and_group_diagnostics_exact": true,
+      "semantic_union_observations": [
+        {
+          "stage": "before_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.09375
+        },
+        {
+          "stage": "after_semantic_cleanup",
+          "best_target_semantic_union_iou": 0.09341742215214821
+        }
+      ],
+      "instance_stage_values": {
+        "raw_best_matching_iou": 0.4349748743718593,
+        "accepted_best_matching_iou": 0.4349748743718593,
+        "native_part_best_matching_iou": 0.09341742215214821,
+        "group_best_matching_iou": 0.20691711389385808,
+        "native_part_best_any_semantic_iou": 0.2205911525490974,
+        "group_best_any_semantic_iou": 0.2205911525490974
+      }
+    }
+  ],
+  "first_observed_loss_stage_counts": [
+    {
+      "cohort": "old37",
+      "threshold": "025",
+      "stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "count": 4
+    },
+    {
+      "cohort": "old37",
+      "threshold": "050",
+      "stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "count": 2
+    },
+    {
+      "cohort": "new216",
+      "threshold": "025",
+      "stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "count": 20
+    },
+    {
+      "cohort": "new216",
+      "threshold": "025",
+      "stage": "native_part_to_group",
+      "count": 1
+    },
+    {
+      "cohort": "new216",
+      "threshold": "050",
+      "stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "count": 18
+    },
+    {
+      "cohort": "combined",
+      "threshold": "025",
+      "stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "count": 24
+    },
+    {
+      "cohort": "combined",
+      "threshold": "025",
+      "stage": "native_part_to_group",
+      "count": 1
+    },
+    {
+      "cohort": "combined",
+      "threshold": "050",
+      "stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "count": 20
+    }
+  ],
+  "interpretation": [
+    "Every reported loss is recovered directly from sealed routing and every loss-case stage boundary is confirmed from candidate, accepted metadata, native Part and final Group masks.",
+    "At IoU .25,24/25 losses first appear between accepted masks and native Part instances;1/25 appears between native Part and Group. None is first observed as candidate-list rejection.",
+    "This locates an interface boundary, not a causal contribution of a specific gate, ownership rule or cleanup step. No isolated ablation was run.",
+    "The4 old losses already fall below .25 in native Part outputs; scissors later Group rejection is not evidence it caused the earlier loss.",
+    "Verification records are read from the original grouped diagnostics at their JSON paths; pixel flows are independently recomputed, not accepted from report labels."
+  ],
+  "bindings": {
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__bench__03.json": "8af6568647965a915b0a9d4da64ac16b5eae0bb405ff1106133ebc55c03239c1",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__bench__04.json": "afd61d4cd36434ab6e3565f34ee18ce06cb54601239be5ab11b94a0274befc8d",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__bicycle__03.json": "85db2e27de1b2ec51f8026348040d5756abda026e2530aad5de7976e430aa722",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__blender__01.json": "1ab8530df1c2eebdc873b5eb877569ff16db160e1aba534db54566d7308b7adf",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__bucket__03.json": "83788208fc1b01437fdfcc3864fb710c7d3512bdd3d54d0144c65109f4a1bddd",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__calculator__03.json": "e20c43fc2f54ad1ef95a792e872831c4ea4a84c71c113a2c20c1bb0253f4550a",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__car_automobile__03.json": "b721009516e8006c5f8c2961beb0583a4ae6e48b3e179b0b74f91364bbc87cd9",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__clock__03.json": "a1d9c4059c9d5073099bb486067d6e1d9c4a352f6ade742a0bc47243b34aa258",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__clock__04.json": "264fa0aa3032750bcf253089cd27d2626b978bb7d1649de986f3a67076e015ca",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__fan__02.json": "da1b01bc3a010925a387274684b498b67baf8fcccaf4b32b04c4131b5985dac4",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__glass_drink_container__03.json": "bbde7cd93d0bd2daf4f945d34e99f8ab68bca3bbe43d66758f2c4a3f087fad8b",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__guitar__02.json": "41f20c581933565df8fe9e35e9526a33acc93f50da324b477690281209acb4de",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__hat__03.json": "eee134b145c7ef346909084cd11b5c2d3c4e2b8260ec4be7d2bff7f9a3b8699d",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__helmet__04.json": "b994d0f05f19d9eb08fdefc004de96598a9c60ab8846e8d3a2962150c4b7f2c8",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__jar__01.json": "bdfc963d45e7ae9f15cfcd7930e150491be27f5bbe51826271cd78fc0882b2a6",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__jar__04.json": "f6025a5cbd214c5c115af505e6fd2ef6736b0087deb3cf867070beb93c9614b8",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__laptop_computer__01.json": "e3501529fc9a3cb1834532256faa0115b232139a6efb5862926c36b4cda985b7",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__laptop_computer__02.json": "a403ac0d89b30d867d869001de98a27ae3857a5213a094069908bf39edc30cfa",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__microwave_oven__01.json": "1512292c295b43973d466c50797f0ace2d4828c749a1fb14abce2c2fc8b1a3bc",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__mug__02.json": "8b9cbf02352781a0d52bb92a7bab97e56c2bda271475c640e717adef50669d63",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__plastic_bag__02.json": "c6fefb519a2503c287168bb9aeecdcfaa467fc82a55f5c397777c930e885a183",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__scissors__01.json": "dd626a6989086b90372ef024378bf45c32e53c47fddc1dafa7e2c95342ddac49",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__stool__02.json": "cf64eb647f571a9fe279c34d302f076017dbcef59354a800d3ca70942b02bbfa",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__television_set__02.json": "220f7a7b12bb7336f57c68a6707c30f795b72fc3ccf8c1b395f9fb21dafb2507",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__towel__02.json": "f225ee5a7567fec5863ffb39427e940070e68e67ad4274924b6fd94cb9d176fb",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\new216__vase__03.json": "c7be5399f2a67f18c9f411faf081d0b99861f80b88bb434c0ec29f5feeaead9c",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\old37__box__u01.json": "95ec7ce9945201d0dcb665377fc50408bf3e9052478a38d7fe317e1f7f5e9922",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\old37__car_automobile__u02.json": "16a043029d18b211ded3c3750343a2562c966837d2c7b7f1123e2cc18d94da6f",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\old37__scissors__u01.json": "a0537611d6870eb969b4b16897afc05ae220b07b5c17eedd1188998febf35366",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\cases\\old37__shoe__u01.json": "b6e3900d91af8f0b6e04da3af2402883ba0571e55ff362fca0af1a81fd1be526",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\independent_mechanism_audit.py": "23f62723c10f9a04e08e2803999ac6dfb5fb6e5aa2d2a199433cf0e075121993",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\receipt.json": "80a695971cb0a72dc3155138e6e0c64a114dda5286027cc47a45c38108a8fd12",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\summary.json": "6b0eb80b3f9a722b8bf50daa5282e5b3759accaf9813b86e9514ed6b4bc85543",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\findings.md": "1dfa1e9beb54eb0764c73a6cb11ef4a2cd65faaf9c24820ff5d61037fa8c0909",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\lost_cases.csv": "c37d3681b0234480125cdc990f57cdd0610f28bd7a85e56bbf9e8e8542f9b731",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\mechanism_analysis\\all_case_stage_availability.csv": "8308bb6406beef88c88f438644c24ee3f0526db53812216a40f82559c8404083",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\request_manifest_frozen.json": "0a062ed24fe1ceb9975e9223e7b99606f75114b94cacb44f232ff2e8e2464579",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\routing_run\\receipt.json": "24dca5f6e93317f229202a0d64f96d6a5f07b2bdd34254b9401a72fe33b62af1",
+    "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\preparation_receipt.json": "38f40d2e44996acd77dd3ef733d3fa9458edfb74f1098a3d834ea2e64b17b78c"
+  }
+}

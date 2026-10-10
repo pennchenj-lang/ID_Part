@@ -1,0 +1,117 @@
+{
+  "status": "STATIC_SOURCE_AUDIT_COMPLETE_RUNTIME_UNTESTED",
+  "source_commit": "4a9a88288659f49bc39ea4ee756dd45036552638",
+  "original_source": "__RUNTIME_ROOT__/external_part_baselines_20260828/part-catseg",
+  "frozen_source": "stability_work/learned_baseline_review5/source/part-catseg",
+  "scope": "Read-only inference dependency and device audit; adapter authored separately. No package installation, download, checkpoint/model loading, GPU work, Word changes or rendering by this audit.",
+  "inference_chain": [
+    {
+      "source": "baselines/data/dataset_mappers/object_part_mapper.py:99",
+      "function": "SemanticObjPartDatasetMapper.from_config",
+      "finding": "Eval RGB ResizeShortestEdge(MIN_SIZE_TEST=640, MAX_SIZE_TEST=768, choice). Eval mapper size_divisibility=-1; no mapper padding."
+    },
+    {
+      "source": "baselines/partcatseg.py:215",
+      "function": "PartCATSeg.forward",
+      "finding": "Normalize original resized image separately for CLIP and DINO; ImageList pads both to model size_divisibility=32. CLIP input internally resized to 384x384."
+    },
+    {
+      "source": "baselines/modeling/backbone/dinov2_backbone.py:48",
+      "function": "DINOv2Backbone.forward",
+      "finding": "Bilinear resize to 448x448, actual DINOv2 ViT-S/14 forward_features, reshape 32x32 patch features, bilinear guidance maps 96/48/24."
+    },
+    {
+      "source": "baselines/modeling/heads/part_cat_seg_head.py:65",
+      "function": "PartCATSegHead.forward",
+      "finding": "Drop CLIP class token and reshape remaining tokens to 24x24; call PartCATSegPredictor."
+    },
+    {
+      "source": "baselines/modeling/transformer/part_cat_seg_predictor.py:242",
+      "function": "PartCATSegPredictor.forward",
+      "finding": "Use entire test text cache and mappings, including all ImageNet prompt templates, then actual Aggregator."
+    },
+    {
+      "source": "baselines/modeling/transformer/part_cat_seg_model.py:748",
+      "function": "Aggregator.forward",
+      "finding": "Full-vocabulary correlations and coupled class attention, then independent convolutional decoder. Four intermediate diagnostic costs are returned."
+    },
+    {
+      "source": "baselines/partcatseg.py:340",
+      "function": "PartCATSeg.forward eval branch",
+      "finding": "sem_seg_all is a separate sigmoid tensor before any object-class filtering, then CPU sem_seg_postprocess restores original image dimensions. sem_seg applies supplied object-class filtering and is discarded by image-only adapter."
+    }
+  ],
+  "dependencies": {
+    "core": [
+      "torch",
+      "torchvision",
+      "timm",
+      "einops",
+      "numpy",
+      "Pillow",
+      "fvcore",
+      "iopath",
+      "Detectron2",
+      "vendored CLIP including ftfy/regex/tqdm",
+      "actual local DINOv2 source and weights"
+    ],
+    "detectron2_role": "Configuration, registries, metadata, build_model, checkpoint handling, ImageList/Instances, image transforms and sem_seg_postprocess. No ROI/NMS/deformable-convolution call is present in the selected PartCATSeg forward.",
+    "compiled_import_boundary": "Detectron2 package imports can still require an authentic _C extension even when no compiled operation participates in selected inference. A genuine CPU-compiled Detectron2 is a reasonable path; fake _C or model stubs are not acceptable.",
+    "mmcv": "Only actual mmcv import under baselines is offline data/datasets/mask_cls_collect.py track_parallel_progress. This preprocessing file is not imported by datasets/__init__.py and is not on selected inference chain.",
+    "mmseg": "No active mmseg call in selected inference; references in Swin source are comments.",
+    "open_clip": "Unconditional predictor import; ViT-B/16 model follows vendored OpenAI CLIP branch. Keep the genuine vendored open_clip package to satisfy imports, or use a clearly recorded lazy import, never a model stand-in.",
+    "dinov2": "Official external DINO source must be pinned separately. Adapter uses actual local torch.hub source, strict pretrained state loading, XFORMERS_DISABLED=1 and standard torch path; no network access.",
+    "environment_conflict": "requirements.txt pins torch1.12.1+cu113 while README installs torch2.2.2/cu121; README mmcv wheel index targets cu110/torch1.7.0. These are not a coherent binary lock. Record actual working environment; do not install every listed compiled package blindly."
+  },
+  "cpu_findings": [
+    {
+      "source": "baselines/partcatseg.py:54",
+      "finding": "self.device='cuda' ignores cfg.MODEL.DEVICE; port to explicit selected device."
+    },
+    {
+      "source": "baselines/modeling/transformer/part_cat_seg_predictor.py:55",
+      "finding": "Predictor independently chooses CUDA availability and ignores config. Text token/stack/background .cuda() at lines300/302/311/318 prevent CPU; device-only substitutions are required."
+    },
+    {
+      "source": "baselines/modeling/transformer/part_cat_seg_predictor.py:100",
+      "finding": "Four cached text tensors and metadata mapping tensors are ordinary attributes, not registered buffers; model.to(cpu) alone does not move them. Construct them directly on selected device."
+    },
+    {
+      "source": "baselines/modeling/backbone/dinov2_backbone.py:20",
+      "finding": "Original torch.hub.load uses floating network source. Replace only asset transport with local pinned source and real weights; strict state loading preserves architecture."
+    },
+    {
+      "source": "baselines/modeling/backbone/dinov2_backbone.py:28",
+      "finding": "Torch2.6+ changed weights_only default. Hash-bound official local full checkpoint requires explicitly recorded legacy loading semantics where needed."
+    }
+  ],
+  "cpu_feasibility": "Selected network is composed of torch tensor operations with no inherent GPU-only mathematical operator found. Real CPU inference is plausible after the device-only portability changes, but has not been executed or timed by this audit. Modern torch/version-dependent behavior remains an execution check.",
+  "memory_findings": [
+    "Use batch1 and outer torch.inference_mode; upstream no_grad starts only after CLIP and DINO encoders, so calling forward alone can retain encoder graphs.",
+    "Keep official 384/448 internal image sizes, 640/768 mapper resize, complete vocabulary, 80 ImageNet prompts, model layers and original numerical precision policy.",
+    "Aggregator ClassTransformerLayer attention mixes T classes (part_cat_seg_model.py:414-467). Running vocabulary subsets or independently chunking attention changes the model and is disallowed.",
+    "QueryAttention at part_cat_seg_model.py:337-365 uses unusual softmax(dim=1) and subsequent normalization(dim=2); replacing it with standard scaled_dot_product_attention is not mathematically equivalent.",
+    "Aggregator.conv_decoder at line739 folds B*T into convolution batch. Up/DoubleConv at lines567-606 use convolutions and per-sample GroupNorm, not BatchNorm. A batch1 slice of T in this decoder alone preserves operations per class, subject to device numerical parity validation.",
+    "Release diagnostic cost tensors and filtered sem_seg after each image; do not accumulate GPU results across a cohort.",
+    "The self.sequential=False field in PartCATSeg is unused and does not provide a ready low-memory path. AMP can change results and is not silently enabled by adapter."
+  ],
+  "evidence_boundaries": [
+    "Official eval wrapper unconditionally reads obj_part_sem_seg and sem_seg but uses them only inside training. Fixed placeholder tensors satisfy interface; no part labels enter selected eval computation.",
+    "Official sem_seg is category-conditioned via instances.gt_classes[0]. Image-only adapter exports sem_seg_all only and should verify its invariance to alternative constant placeholder masks and object class.",
+    "Official evaluator masks predictions by ground-truth ignore support (partcatseg_evaluation.py:148); its masked predictions must never be used as raw image-only model output.",
+    "Background predictions retain last-channel ID (VOC116/PACO456) and must count as errors where ground truth is a valid part. Ignore65535 is only the PACO input placeholder and GT scoring sentinel.",
+    "PACO456 is a declared cross-dataset vocabulary adapter for the selected official VOC checkpoint, not a PACO-native checkpoint or a reproduced official PACO benchmark.",
+    "Predictor text/background caches are created before loading final segmentation checkpoint. Preserve official seeded order; do not silently regenerate caches from loaded non_object_embedding or fine-tuned CLIP weights.",
+    "A synthetic image validates execution, interface independence, decoder parity and resource use only; it provides no accuracy evidence."
+  ],
+  "adapter": {
+    "file": "stability_work/learned_baseline_review5/smoke_inference.py",
+    "implementation": "Four hash-checked in-memory module overlays; six exact edit targets for device routing, local DINO entry, explicit torch.load semantics and Pillow LINEAR-to-BILINEAR alias. Original D source and frozen source copy unchanged. Full source manifest integrity and raw checkpoint/model key/shape sets are audited; any mismatch fails before accepting inference.",
+    "static_validation": "AST parse and exact SHA/replacement-count checks passed for all four modules; stdlib-only inspection, no torch/model import.",
+    "runtime_validation": "NOT_RUN_BY_THIS_AUDIT",
+    "decoder_validation": "VOC original versus chunked outputs must satisfy allclose rtol1e-5/atol1e-6 and identical argmax. Receipt binds adapter/source hashes, model, torch/CUDA/cuDNN/flags/device and chunk size. Cohort also requires completed dummy-target invariance PASS. Runtime validation NOT RUN by this audit.",
+    "dummy_validation": "Implemented optional repeat inference with alternative constant dummy masks/class, allclose and identical argmax; no annotation read.",
+    "sha256": "aa4fb5757d2c7fe72608fecaddc02f541eaf7b4519e65afe33a4684ea387e078",
+    "cohort_mode": "Implemented --cohort-manifest for one model construction and 42 anonymous image-only forwards. Hash-bound frozen protocol, input manifest, registry, adapter, checkpoint, source and decoder receipt. Per-case failures retained; final predictions_manifest.json sealed and receipt.json binds its hash. No scorer or GT import/read."
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "status": "FROZEN_BEFORE_NEW_ROUTING_RESULTS",
+  "created_utc": "2026-10-09T15:14:36.379270+00:00",
+  "scope": "Reviewer 6: expanded routing evaluation, uncertainty, domain/category failure description, and audit of correct-option losses during pruning. No Word changes and no new routing results read for this plan.",
+  "design_assessment": {
+    "verdict": "Suitable with explicit unique-image deduplication, common paired denominators, retained failure states, and a separate analysis of changing ambiguity subsets.",
+    "known_prior_results": {
+      "legacy_unique_images": 37,
+      "iou_threshold": 0.25,
+      "HPID_Group": {
+        "correct_unique": 14,
+        "wrong_unique": 6,
+        "ambiguous": 6,
+        "unresolved": 11
+      },
+      "raw": {
+        "correct_unique": 9,
+        "wrong_unique": 5,
+        "ambiguous": 13,
+        "unresolved": 10
+      },
+      "legacy_correct_in_ambiguous_review": {
+        "raw": {
+          "numerator": 9,
+          "denominator": 13
+        },
+        "HPID_Group": {
+          "numerator": 1,
+          "denominator": 6
+        }
+      }
+    },
+    "prior_knowledge_disclosure": "The original 37 results and their candidate-count contrasts are already known. This is a retrospective benchmark expansion with an analysis plan frozen before computing new routing results, not preregistration before all research or a new untouched-data claim.",
+    "sampling_scope": "The 226 existing test cases and 42 holdout cases are an inventory of target records, not automatically 268 independent source images. Final n follows source-image deduplication and fixed target eligibility.",
+    "handoff_scope": "Routing plus controlled request-mask handoff only; no new image-quality or LaMA generation experiment. The original37 LaMA generation demonstrations remain separately identified."
+  },
+  "cohorts": {
+    "inventory_counts": {
+      "candidate_test_records": 226,
+      "candidate_holdout_records": 42,
+      "test_unique_source_images": 226,
+      "test_holdout_source_image_overlap": 0,
+      "new_eligible_unique_source_images": 216,
+      "new_ineligible_records": 10,
+      "legacy_requests": 37,
+      "new_unique_source_images": 216,
+      "combined_unique_source_images": 253
+    },
+    "independent_unit": "One source image with one frozen target/request. The same target, query, pixel coordinates and IoU rule are evaluated by all five methods.",
+    "deduplication": "Use canonical dataset image identity and normalized full-image pixel SHA. Maintain an alias table; the same source image under different crops, object annotations, filenames, splits or methods is one unit. Investigate duplicate IDs with different pixels before freeze.",
+    "legacy": "Preserve the exact old 37 requests and targets as their own cohort. Verify 37 distinct source images and regenerate old metrics exactly before accepting an enlarged combined report.",
+    "new": "Take all eligible distinct source images in the 226-test plus 42-holdout inventory that are absent from the legacy source-image set. Pick one target using a deterministic area rule fixed before routing outcomes; do not replace legacy targets to improve comparability or outcomes.",
+    "target_selection_to_freeze": "Reuse the original fixed area/semantic eligibility rule. The independent inventory yields 216 eligible unique-image requests from the 226-test inventory. Preserve old37 exactly; all new216 are disjoint from the r5_42 source images. Bind exact target IDs/area ranks and the selector source hash in the frozen request manifest.",
+    "request_construction": "Freeze semantic normalization, domain/category context supplied to routing, target identity, target mask, and text generation. Distinguish annotation-derived request/context from model-discovered identity; do not pass extra true category/profile to one method only.",
+    "combined": "Exact disjoint union of legacy plus new units, one source image per row. Report the legacy/new indicator and source split. If the legacy request rule differs from the new area rule, disclose the mixture and retain separate stratum results.",
+    "sample_size_justification": "Use the complete fixed eligible inventory. No outcome-driven sample-size stopping, post-hoc power calculation, or adding/removing cases until a comparator wins.",
+    "primary_reporting_cohort": "Combined unique-source cohort; freeze this choice before new results. New-only is a required separate generalization check, legacy-only is a required historical-reproduction table. Never choose whichever stratum has the favorable result.",
+    "candidate_pool_stratification": {
+      "test226_promptbank_sha_prefix": "0c90c307",
+      "r5_42_promptbank_sha_prefix": "0b27a54c",
+      "interpretation": "Two archived upstream proposal pools with different historical prompt-bank hashes, followed by one common frozen be54300 postprocessing/grouping implementation. Pairing within each request shares the same upstream candidates across methods. Combined253 remains a stratified pooled summary; old37 and new216 must be shown alongside it.",
+      "group_consistency_audit": "Historical test226 Group maps differ in48 cases from be54300 replay. Before freeze, reconstruct Groups for all253 requests from cached candidates under the common be54300 implementation; no GT enters reconstruction. Require exact old37 reproduction. Do not reuse mixed historical Group versions."
+    }
+  },
+  "methods_and_thresholds": {
+    "methods": [
+      "HPID Group IDs",
+      "raw",
+      "DBSCAN",
+      "NMS",
+      "CRF"
+    ],
+    "paired_contrasts": "HPID Group IDs minus each of raw, DBSCAN, NMS and CRF on exactly the same requests.",
+    "primary_iou": 0.25,
+    "secondary_iou": 0.5,
+    "frozen_implementation": "Freeze common be54300 postprocessing/grouping, semantic normalization, mask coordinates, candidate extraction, scoring constants and route logic; reconstruct all253 Groups from archived candidates under this single version. Retain the two historical upstream proposal-pool strata. No new hyperparameter search. Bind shared implementation and replay artifact hashes before new analysis.",
+    "legacy_option_rule": "If at least one exported identity matches the normalized semantic request, expose all matching identities; otherwise expose all exported instances. An unresolved route can therefore have a nonempty fallback review set."
+  },
+  "endpoints": {
+    "mutually_exclusive_route_states": {
+      "correct_unique": "Exactly one semantic match and its target-mask IoU is at least the specified threshold.",
+      "wrong_unique": "Exactly one semantic match and its target-mask IoU is below threshold.",
+      "ambiguous": "More than one semantic match, regardless of whether a correct match is present.",
+      "unresolved": "No semantic match; fallback exported options, if any, remain separately counted.",
+      "denominator": "All frozen requests in the named cohort, same n for all four states and methods; counts must sum to n. At IoU 0.50 only the division of unique routes into correct/wrong changes."
+    },
+    "candidate_compactness": {
+      "primary_measure": "Mean number of actually exposed review options per request under the frozen rule, over all n requests.",
+      "effect": "Mean paired count difference HPID minus comparator; negative means fewer options.",
+      "relative_reduction": "100*(comparator_mean-HPID_mean)/comparator_mean, calculated from cohort means, not the average per-case percentage. Undefined if comparator_mean is zero.",
+      "distribution": "Also retain median, quartiles, range, number of empty exposed sets and total exported counts to reveal skew and empty-output effects.",
+      "interpretation": "Counts are candidate-list compactness, not measured human time, effort, task completion, or causal review-cost reduction."
+    },
+    "correctness_guardrails": [
+      "Unique-and-correct per all n requests at each IoU threshold.",
+      "Wrong-unique per all n requests at each threshold.",
+      "Any correct semantic match per all n requests.",
+      "Any geometrically correct candidate in the actual exposed set, including fallback sets, per all n requests.",
+      "Any geometrically correct candidate among all exported instances per all n requests.",
+      "Geometric correctness in a fallback set does not establish semantic resolution."
+    ],
+    "conditional_descriptive_metrics": {
+      "correct_in_ambiguous_review": "Number with >1 semantic match AND at least one matching candidate reaches target IoU / number with >1 semantic match, separately for each method. Report numerator and denominator at both thresholds.",
+      "unique_route_precision": "correct_unique/(correct_unique+wrong_unique), with this explicit conditional denominator.",
+      "zero_denominator": "Return null/NA, never zero or 100%.",
+      "subset_warning": "These denominators depend on each method. Differences between 9/13 and 1/6 do not estimate a paired loss rate, cannot be tested as independent binomials, and do not on their own prove that pruning removed eight correct candidates.",
+      "unique_route_error_rate": "wrong_unique/(wrong_unique+correct_unique), reported at IoU0.25 and0.50 with numerator, denominator and Wilson95%. This operational risk conditional on a unique returned result is additional to wrong_unique/all frozen requests (legacy HPID6/37), never a replacement."
+    }
+  },
+  "uncertainty_and_tests": {
+    "state_proportions": {
+      "method": "Two-sided marginal Wilson score 95% confidence interval for each state and binary availability endpoint.",
+      "formula": "p=k/n, z=Phi^-1(0.975); center=(p+z^2/(2n))/(1+z^2/n); halfwidth=z*sqrt(p*(1-p)/n+z^2/(4*n^2))/(1+z^2/n). Bounds center +/- halfwidth.",
+      "boundaries": "Use the same Wilson formula at k=0 and k=n. For n=0 return NA. Never use Wald p +/- 1.96*SE.",
+      "coverage_note": "Required marginal Wilson intervals are nominal descriptive summaries of pooled fractions; they do not model between-historical-pool heterogeneity or give simultaneous multinomial coverage. Show old37/new216 separately. Paired effect intervals use the fixed-stratum bootstrap."
+    },
+    "paired_bootstrap": {
+      "replicates": 10000,
+      "seed": 20261009,
+      "generator": "NumPy default_rng/PCG64; record exact NumPy version at execution.",
+      "unit": "Resample source images with replacement WITHIN the old37 and new216 strata, retaining fixed stratum sizes 37 and216 in every combined253 draw. Preserve all methods, endpoints and transitions for each drawn image.",
+      "ordering": "Within each analysis cohort, sort source_image_id then request_id. Initialize NumPy default_rng seed20261009. Draw old37 stratum positions first, then new216; concatenate. Reuse draw matrix across methods/endpoints. For single-stratum old/new analyses only draw that stratum. Persist ordered request IDs, stratum sizes and draw-index SHA.",
+      "estimates": "For count effects bootstrap the mean within-image difference. For binary effects bootstrap the mean difference of indicator variables. Use percentage points for binary differences.",
+      "interval": "Percentile intervals with explicit NumPy quantile method=linear: [0.025,0.975] for descriptive 95%; [0.00625,0.99375] for 98.75%.",
+      "empty_or_degenerate": "No bootstrap for n=0; n=1 or constant/zero-discordance resamples may produce degenerate intervals, flag them and do not interpret zero width as equivalence or certain absence of harm."
+    },
+    "multiplicity": {
+      "primary_family": "Four HPID-minus-baseline exposed-option count contrasts on the frozen combined cohort.",
+      "correction": "Report each 98.75% two-sided Bonferroni interval alongside its descriptive 95% interval; nominal familywise level is 95% over these four comparisons, subject to bootstrap approximation.",
+      "other_cohorts": "Retain the same four adjusted intervals in legacy-only and new-only tables for transparency, but they form separate families. There is no claim of 95% simultaneous coverage across all three cohort tables or any selected favorable table.",
+      "other_endpoints": "Route states, availability, transitions, domain/category and auxiliary-subset intervals are descriptive pointwise 95%; no significance-driven superiority claims across them. If formal familywise claims are later required, freeze a expanded family before results rather than promote selected endpoints."
+    },
+    "paired_binary_crosscheck": {
+      "report": "For each binary guardrail and each comparator, report both-positive, HPID-only positive, comparator-only positive, both-negative, effect in percentage points and descriptive paired-bootstrap 95% CI.",
+      "exact_mcnemar": "Optional descriptive exact two-sided McNemar p = min(1, 2*BinomialCDF(min(b,c); b+c, 0.5)); b=HPID-only positive, c=comparator-only positive. If b+c=0, p=1. Store discordant count; do not use chi-square approximation for sparse cells.",
+      "boundary_note": "Exact discordance counts/test supplement bootstrap behavior for rare events; p=1 or matching totals do not demonstrate equivalence or noninferiority."
+    },
+    "conditional_rates": "Wilson 95% for method-specific conditional proportions, labeled descriptive. Any paired comparison uses full paired indicators or a frozen common subset with paired/cluster bootstrap, never independent-binomial tests on overlapping method-selected subsets.",
+    "generalisability": "Intervals describe uncertainty under source-image resampling of this convenience benchmark. The census of available images is not a random population sample, and bootstrap does not correct taxonomy, annotation or acquisition bias."
+  },
+  "transition_and_pruning_mechanism": {
+    "state_transition_table": "At each threshold produce a 4x4 raw-to-HPID table for all requests, plus legacy/new/combined tables. Include counts, row denominators, row-conditional Wilson 95% and all-cohort percentages. Full 4x4 tables against the other three comparators are retained as descriptive appendices.",
+    "improvement_loss_definition": "For the primary correctness indicator only, gain = comparator not correct_unique to HPID correct_unique; loss = comparator correct_unique to HPID not correct_unique. Retain all individual transition cells; do not impose a favorable rank ordering on ambiguous versus unresolved or wrong-unique.",
+    "availability_table": "Independently cross-tabulate whether the raw actual exposed set and HPID actual exposed set contain any geometrically correct target: retained/both, lost/raw-only, gained/HPID-only, neither. Repeat for correct semantic matches and for all exported masks. Use common full n.",
+    "necessary_loss_denominators": [
+      "loss/all n",
+      "loss/(retained+loss), explicitly conditioned on raw availability",
+      "gain/all n",
+      "gain/(gain+neither), explicitly conditioned on raw unavailability"
+    ],
+    "ambiguity_followthrough": "Follow the exact raw-ambiguous requests as a fixed paired subset into all four HPID states. Follow raw-ambiguous-with-correct-option requests separately into correct_unique, wrong_unique, ambiguous-with-correct, ambiguous-without-correct, unresolved-with-correct-fallback, unresolved-without-correct-fallback. Also report new HPID-ambiguous cases not in the raw-ambiguous subset.",
+    "trace_all_cases": "Save candidate lineage and stage-wise eligibility/ownership/export records for every fixed request, not only failures. Evaluate target IoU after inference/replay using evaluator-only GT; no GT influences candidate retention.",
+    "trace_fields": [
+      "request_id",
+      "source_image_id",
+      "raw_candidate_id",
+      "candidate_parent_or_group_lineage",
+      "raw_semantic_name",
+      "normalized_semantic_name",
+      "raw_target_iou",
+      "stage_name",
+      "eligibility_gate_values",
+      "gate_pass_or_fail",
+      "ownership_score_components",
+      "ownership_margin_or_winner",
+      "conflict_rule",
+      "final_export_identity",
+      "final_semantic_name",
+      "final_target_iou",
+      "present_in_actual_review_set"
+    ],
+    "distinguish_mechanisms": [
+      "Correct candidate excluded by an explicit eligibility rule.",
+      "Correct candidate removed or assigned elsewhere by ownership/conflict resolution.",
+      "Merging or other mask transformation reduces IoU below threshold.",
+      "Semantic normalization or assignment diverts an otherwise correct mask from query matches.",
+      "The correct candidate is retained but route-state conditioning changes the ambiguous denominator.",
+      "Candidate lineage or stage records are insufficient: classify as untraced rather than attribute to pruning."
+    ],
+    "attribution_rule": "Require a recorded candidate lineage and stage transition before calling a loss pruning-induced. Count cases separately from individual lost candidates. Multiple contributing mechanisms may overlap; report a mutually exclusive first-observed-loss stage plus nonexclusive supporting flags. This trace localizes deterministic execution loss, not a population causal effect.",
+    "optional_counterfactual_replay": "If a stronger causal implementation explanation is required, pre-freeze a small named set of one-stage-disabled replay variants on the same saved candidates for ALL requests, with no retraining/parameter search and all variants retained. Evaluate restoration of availability and increases in wrong-unique/option count. Final exact variants must be specified before running; this is a secondary mechanism experiment, not the comparator selected for superiority."
+  },
+  "domain_and_category_failures": {
+    "group_definitions": "Use source reference domain/object category recorded before routing. Freeze category-to-domain mapping. Keep unknown/unmapped as an explicit stratum.",
+    "outputs": [
+      "For each cohort x method x domain/category: n independent images, four state counts and marginal Wilson 95%.",
+      "wrong_unique_n/n and unresolved_n/n with Wilson intervals, plus ambiguous-without-correct count/denominator.",
+      "Correct-match availability loss/gain paired counts for raw-to-HPID and mean exposed options with descriptive paired difference CI.",
+      "Composition counts by source split and legacy/new, including categories with zero observations as n=0/NA where relevant."
+    ],
+    "sparsity": "Retain exact denominators and counts for every represented category. Flag n<10 as sparse for display only; do not drop, merge by observed performance, rank algorithms by sparse subgroup rates, or claim category-specific superiority. n=0 yields NA; zero observed failures retain a nonzero Wilson upper bound.",
+    "heterogeneity": "Do not infer domain/category interaction because one stratum CI excludes zero and another does not. Cross-stratum differences are exploratory; no formal interaction test is planned without adequate fixed samples.",
+    "avoid_posthoc_exclusions": "No domain/category removed because a method fails, a taxonomy label is absent, or pruning loses correct candidates."
+  },
+  "secondary_multiple_targets_per_image": {
+    "status": "NOT RUN: 690 all-part requests retained only in inventory; excluded from all current analyses.",
+    "n_reporting": "Report both number of independent source images G and number of requests/targets M; M is not independent n.",
+    "primary_secondary_estimand": "Average the per-target metric within each image, then average equally over images. Paired cluster bootstrap resamples G images and carries all targets/methods for each selected image.",
+    "alternative_request_weighted": "If pooled per-request rates are also reported, label them request-weighted and still use source-image cluster bootstrap, recalculating numerator/denominator for each resample.",
+    "intervals": "Do not apply simple Wilson intervals treating M as independent. Use cluster-bootstrap descriptive 95%, with sparse-cluster/degenerate warnings and full G/M disclosure."
+  },
+  "failures_and_missingness": {
+    "frozen_eligibility": "Manifest-level unusable source/GT exclusions may occur only before routing, with exact reason and counts. Target/GT cannot be changed after outputs are seen.",
+    "inference_failure": "Keep every frozen unit. Record execution_failure separately; for an all-case operational summary encode no returned matches as unresolved and no correct availability, while marking that it is an execution failure rather than an ordinary semantic miss.",
+    "option_count_failure_guard": "An empty/failed export has zero delivered options but is not a compactness success. Report valid-output/empty-output rates alongside mean counts. If any method has execution failures, the all-case mean remains descriptive and cannot alone support superiority; additionally show paired-complete cases with their reduced denominator and selection warning.",
+    "recovery": "Only infrastructure retries with identical frozen settings are allowed; record every attempt and use the first valid result under the fixed retry rule. No best-scoring retry selection.",
+    "no_imputation": "Do not invent masks, identities or semantic matches for failures."
+  },
+  "deliverables": {
+    "cohort_manifest": [
+      "source_image_id",
+      "source_full_sha256",
+      "request_id",
+      "legacy_or_new",
+      "source_split",
+      "domain",
+      "object_category",
+      "target_annotation_id",
+      "target_selection_rank_and_area",
+      "request_text",
+      "normalized_request",
+      "input_sha256",
+      "reference_mask_sha256"
+    ],
+    "case_method_table": [
+      "cohort",
+      "request_id",
+      "source_image_id",
+      "method",
+      "execution_status",
+      "query_match_count",
+      "all_exported_count",
+      "exposed_option_count",
+      "route_state_025",
+      "route_state_050",
+      "selected_target_iou",
+      "best_match_iou",
+      "best_exposed_iou",
+      "best_exported_iou",
+      "correct_in_ambiguous_review_025",
+      "correct_in_ambiguous_review_050"
+    ],
+    "summary_tables": [
+      "routing_states_with_wilson.csv",
+      "paired_option_contrasts_all_four.csv",
+      "paired_correctness_guardrails.csv",
+      "route_transition_4x4.csv",
+      "correct_option_retention_and_loss.csv",
+      "domain_category_failure_summary.csv",
+      "pruning_candidate_lineage.csv",
+      "exclusion_failure_retry_log.csv"
+    ],
+    "machine_audit": [
+      "manifest_order_and_dedup.json",
+      "protocol_and_code_hashes.json",
+      "bootstrap_seed_draws_quantile_method.json",
+      "legacy37_reproduction_assertions.json",
+      "metric_definition_and_denominator_audit.json",
+      "environment_versions.json"
+    ],
+    "retention": "All methods, thresholds, cohorts, uncertainty estimates and failed cases remain in machine-readable evidence; a concise manuscript may foreground the primary contrast while keeping complete tables available."
+  },
+  "freeze_gates": [
+    "Verified inventory fixed: old37 + new216 = 253 independent source-image requests; test226 are 226 unique images and have zero overlap with r5_42.",
+    "Exact deterministic target area/eligibility/tie rule and request context frozen.",
+    "All five methods demonstrably receive the same authorized task inputs and common coordinates.",
+    "Legacy37 exact reproduction confirmed as a validation gate; any mismatch resolved before new comparative analysis.",
+    "Primary combined cohort and four-comparison family frozen; no selection among legacy/new/combined based on results.",
+    "If optional counterfactual stages or multi-target secondary analysis are used, freeze those specifics before executing them.",
+    "Record protocol timestamp/hash, code/manifest/parameter hashes, environment versions and first new routing start time."
+  ],
+  "reviewer_risk_notes": [
+    {
+      "severity": "P0",
+      "risk": "Counting multiple targets/crops of the same image as independent n",
+      "mitigation": "Source-image deduplication in primary; source-image cluster bootstrap in optional multi-target secondary."
+    },
+    {
+      "severity": "P1",
+      "risk": "Interpreting 9/13 versus 1/6 as eight removed correct cases",
+      "mitigation": "Method-conditioned descriptive rates plus fixed paired state transitions and candidate lineage."
+    },
+    {
+      "severity": "P1",
+      "risk": "Claiming compactness improvement when candidates or successful output are lost",
+      "mitigation": "Availability/wrong-unique/failure guardrails and explicit retention/loss counts; no lossless/human-time claim."
+    },
+    {
+      "severity": "P1",
+      "risk": "Selecting favorable baselines or strata after expansion",
+      "mitigation": "All four contrasts and all three cohort tables, with a single declared primary family."
+    }
+  ],
+  "skill_basis": "__USER_HOME__/.codex/skills/nature-statistics/SKILL.md",
+  "updated_utc": "2026-10-09T15:24:46.978502+00:00",
+  "frozen_utc": "2026-10-09T15:28:04.705889+00:00"
+}

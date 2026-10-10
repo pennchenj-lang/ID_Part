@@ -1,0 +1,278 @@
+{
+  "status": "COMPLETE",
+  "started_utc": "2026-10-10T01:46:45.894813+00:00",
+  "completed_utc": "2026-10-10T01:47:09.805691+00:00",
+  "elapsed_seconds": 23.910677699997905,
+  "protocol_sha256": "06f97a5361eafbf9f471cff5d4865cdc6f191b780510e99d042a9c6706fec060",
+  "script_sha256": "de34e28e8821d8df1cc2fa1bd7085a92e68fe8a4a6d88e4aea204ef22aefbe9e",
+  "expected_cases": 226,
+  "completed_cases": 226,
+  "result_rows": 678,
+  "failures": [],
+  "frozen_files_unchanged_before_after": true,
+  "released_bitexact_maps": 226,
+  "released_endpoint_comparisons": 22600,
+  "released_maximum_endpoint_difference": 0.0,
+  "candidate_inputs_unchanged_all_cases": true,
+  "frozen_utc_precedes_first_case": true,
+  "interpretation": "uniform_r is a full-pipeline reliability substitution, affecting every downstream use of r and potentially candidate filtering/ownership; not an Eq.2-only causal isolation. no_consensus replaces cross-family noisy-OR by maximum while preserving downstream rules. Existing benchmark reuse and fixed accepted-pool scope are explicit.",
+  "summary": [
+    {
+      "variant": "released",
+      "metric": "part_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.3133108979746755,
+      "ci95_low": 0.2776135144795831,
+      "ci95_high": 0.3479716794861522
+    },
+    {
+      "variant": "uniform_r",
+      "metric": "part_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.33206010515923556,
+      "ci95_low": 0.29571312398096905,
+      "ci95_high": 0.36851289694709305
+    },
+    {
+      "variant": "no_consensus",
+      "metric": "part_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.3019241830692995,
+      "ci95_low": 0.26635960528373204,
+      "ci95_high": 0.3365891481058321
+    },
+    {
+      "variant": "released",
+      "metric": "part_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.15087917078528368,
+      "ci95_low": 0.12138082999082794,
+      "ci95_high": 0.18301819249046508
+    },
+    {
+      "variant": "uniform_r",
+      "metric": "part_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.16465962433164283,
+      "ci95_low": 0.1342088040525759,
+      "ci95_high": 0.19662866572673912
+    },
+    {
+      "variant": "no_consensus",
+      "metric": "part_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.14394068400166415,
+      "ci95_low": 0.11534394917456373,
+      "ci95_high": 0.17468077646649072
+    },
+    {
+      "variant": "released",
+      "metric": "semantic_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.13960461940550437,
+      "ci95_low": 0.11207112761869398,
+      "ci95_high": 0.1676852190197006
+    },
+    {
+      "variant": "uniform_r",
+      "metric": "semantic_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.14240805901202475,
+      "ci95_low": 0.11405327238541658,
+      "ci95_high": 0.17195753575546965
+    },
+    {
+      "variant": "no_consensus",
+      "metric": "semantic_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.13317145407853373,
+      "ci95_low": 0.10712924820202376,
+      "ci95_high": 0.15936927792624475
+    },
+    {
+      "variant": "released",
+      "metric": "semantic_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.07450848888901986,
+      "ci95_low": 0.0535036707658389,
+      "ci95_high": 0.09653131486179431
+    },
+    {
+      "variant": "uniform_r",
+      "metric": "semantic_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.07752713017244468,
+      "ci95_low": 0.05600001929013507,
+      "ci95_high": 0.10027722084228487
+    },
+    {
+      "variant": "no_consensus",
+      "metric": "semantic_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 0.07201504247964426,
+      "ci95_low": 0.051898913286403205,
+      "ci95_high": 0.09280607150777992
+    },
+    {
+      "variant": "released",
+      "metric": "predicted_part_count",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 5.650442477876106,
+      "ci95_low": 4.951959798513752,
+      "ci95_high": 6.484719465396322
+    },
+    {
+      "variant": "uniform_r",
+      "metric": "predicted_part_count",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 6.070796460176991,
+      "ci95_low": 5.324311454311455,
+      "ci95_high": 6.9511218795888405
+    },
+    {
+      "variant": "no_consensus",
+      "metric": "predicted_part_count",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean": 5.6371681415929205,
+      "ci95_low": 4.945192363742349,
+      "ci95_high": 6.457640185171358
+    }
+  ],
+  "paired_deltas": [
+    {
+      "contrast": "uniform_r_minus_released",
+      "metric": "part_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": 0.018749207184560125,
+      "ci95_low": 0.003981935325676283,
+      "ci95_high": 0.03462730345782479,
+      "cases_increased": 48,
+      "cases_decreased": 55,
+      "cases_equal": 123
+    },
+    {
+      "contrast": "no_consensus_minus_released",
+      "metric": "part_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": -0.01138671490537593,
+      "ci95_low": -0.017443383742130607,
+      "ci95_high": -0.005913095505662127,
+      "cases_increased": 7,
+      "cases_decreased": 23,
+      "cases_equal": 196
+    },
+    {
+      "contrast": "uniform_r_minus_released",
+      "metric": "part_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": 0.013780453546359152,
+      "ci95_low": 0.00035474694125740185,
+      "ci95_high": 0.027035814457314032,
+      "cases_increased": 43,
+      "cases_decreased": 40,
+      "cases_equal": 143
+    },
+    {
+      "contrast": "no_consensus_minus_released",
+      "metric": "part_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": -0.006938486783619526,
+      "ci95_low": -0.014029106993579519,
+      "ci95_high": 0.00027987911394991013,
+      "cases_increased": 9,
+      "cases_decreased": 19,
+      "cases_equal": 198
+    },
+    {
+      "contrast": "uniform_r_minus_released",
+      "metric": "semantic_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": 0.002803439606520368,
+      "ci95_low": -0.007704253569514563,
+      "ci95_high": 0.012683753799463108,
+      "cases_increased": 28,
+      "cases_decreased": 38,
+      "cases_equal": 160
+    },
+    {
+      "contrast": "no_consensus_minus_released",
+      "metric": "semantic_f1_at_025",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": -0.006433165326970637,
+      "ci95_low": -0.01268123518569743,
+      "ci95_high": -0.00055071432682544,
+      "cases_increased": 9,
+      "cases_decreased": 19,
+      "cases_equal": 198
+    },
+    {
+      "contrast": "uniform_r_minus_released",
+      "metric": "semantic_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": 0.003018641283424821,
+      "ci95_low": -0.006654320522418358,
+      "ci95_high": 0.012555460659785826,
+      "cases_increased": 24,
+      "cases_decreased": 30,
+      "cases_equal": 172
+    },
+    {
+      "contrast": "no_consensus_minus_released",
+      "metric": "semantic_f1_at_050",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": -0.0024934464093756127,
+      "ci95_low": -0.007093680183382177,
+      "ci95_high": 0.0016937052241379753,
+      "cases_increased": 10,
+      "cases_decreased": 12,
+      "cases_equal": 204
+    },
+    {
+      "contrast": "uniform_r_minus_released",
+      "metric": "predicted_part_count",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": 0.42035398230088494,
+      "ci95_low": 0.2545454545454545,
+      "ci95_high": 0.6,
+      "cases_increased": 74,
+      "cases_decreased": 15,
+      "cases_equal": 137
+    },
+    {
+      "contrast": "no_consensus_minus_released",
+      "metric": "predicted_part_count",
+      "n_cases": 226,
+      "n_categories": 60,
+      "mean_difference": -0.01327433628318584,
+      "ci95_low": -0.0881057268722467,
+      "ci95_high": 0.0611353711790393,
+      "cases_increased": 11,
+      "cases_decreased": 13,
+      "cases_equal": 202
+    }
+  ]
+}

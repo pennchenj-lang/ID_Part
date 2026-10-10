@@ -1,0 +1,267 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-10T01:34:20.022429+00:00",
+  "scope": "Independent read-only prose, source-anchor and existing-reference arithmetic QA for Reviewer 2 Comment 2; only this audit file written. No Word changes, rendering, inference, rematching or new experiments.",
+  "reviewed_artifacts_sha256": {
+    "revision_payload.json": "751d37893d3893f1925f5783c2c78fe5ef76c73150eb9597f7a6f9beb2eea319",
+    "revision_text_en.txt": "a9ee946f00be3ac3303d871370d86a9473d3c8c346a503c169ee1e3b6d6058a3",
+    "revision_text_zh.txt": "373cf6fd42887f2591573829e6a763d8ba8651e1c6bb436704522ca37c91574b",
+    "revision_qa.json": "a3ac9c26ce706dfe277c5efb99f61e1c2b8d63c493630f290bdd5aee0d030a84",
+    "prepare_revision.py": "a782306e64284894bff38fe538b8b3788e24e5b3ca6aefd741fffeb1a29385e0",
+    "evidence_audit/receipt.json": "a2af4e6547ef8d2a8c3b12e1583bf8519be47ba21444f24d59104683f1480691",
+    "evidence_audit/summary.json": "f2c1e7bbda4ac2c9dd477f1eda1c5dd91852b57f5e4f0c9bbfdeb76f9e330554"
+  },
+  "patch_count": 18,
+  "patch_anchor_checks": [
+    {
+      "file": "__WORKSPACE__\\outputs\\01_Manuscript_Revised.docx",
+      "paragraph_index_zero_based": 119,
+      "source_sha256": "ffb0a916dd6a148a44ffb6542bbe1faab7e611506518bd0f8734330d9f6b50ff",
+      "old_text_sha256": "ff159d7cc07a2ee6310e8ffd67d3c140b04921e7dd175de664b2a14ca1bf7991",
+      "location": "VI-E",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 15,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "f72827d87ebfc546dbcefd6ae4d37d04c39a88bb67574dcdb2cbce410a78d958",
+      "location": "Comment 2 response",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 16,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "5e8912eac820d30f6935179673c2d079c7d0a8e5cda7e29610b72977bf19f8ce",
+      "location": "Comment 2 response",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 17,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "bc3f12439177a1b1b1aaa7fc88b8a525c68a3c6345bc9e2aa73459d0ed786d55",
+      "location": "Comment 2 response",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 19,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "292b4fc6eb14270493040a9b139a23a5e40f7fbb6092312b5b30c687f4761f71",
+      "location": "Comment 2 locations",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 20,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "ff159d7cc07a2ee6310e8ffd67d3c140b04921e7dd175de664b2a14ca1bf7991",
+      "location": "Comment 2 exact manuscript quotation",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 170,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "de90e83bd29575a129c4e36a2a126206ebc5007cf326acb1b1fbb7be6a2b18e0",
+      "location": "S19.7 methods",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 171,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "4d00e9c4044080ae632bbc04e2868429c42f2ee91f4fd2535703e20df6c49e2b",
+      "location": "S19.7 results",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 173,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "82ce2ea3d8e1473015ced47ce6fe313ea63f9d5e3039c98e4c9bcc10fdf6b37d",
+      "location": "S19.7 interpretation",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\01_论文正文_中文.docx",
+      "paragraph_index_zero_based": 124,
+      "source_sha256": "2ed4fd77edf17c2f47250408781405c43c5ddbab0fa9910d6aff8a008f3d4fb8",
+      "old_text_sha256": "fe79632b1ab019069691c6409955c526f9f4ad0eab42eeb28507358c2a73452e",
+      "location": "VI-E",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 15,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "3df6f158e8afbcf792631ff803904dcfc22b1c5db14b8e3a2c4cb39c43d38b51",
+      "location": "Comment 2 response",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 16,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "9969d74a8e58e02b3bc4cc5cec7188406730be63551a3295948d1f43473f67a0",
+      "location": "Comment 2 response",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 17,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "3db8a82a4fbf6fd980e560f99cb27618f0bf7660fbeb8c80432f9edd1709c6c7",
+      "location": "Comment 2 response",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 19,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "41bc61a0b1e2d129075cfceec48296f710a13b2bb06d78960926179551902ef6",
+      "location": "Comment 2 locations",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 20,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "fe79632b1ab019069691c6409955c526f9f4ad0eab42eeb28507358c2a73452e",
+      "location": "Comment 2 exact manuscript quotation",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 170,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "8afde92af1380ae180c3d7fc5ace530d3278abffd515db0861c777ce89c39d8b",
+      "location": "S19.7 methods",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 171,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "a669821853105f9666eb3b8ee009f45e65e5375e9f2864d91db88a5e7575d37c",
+      "location": "S19.7 results",
+      "status": "PASS"
+    },
+    {
+      "file": "__WORKSPACE__\\outputs\\02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 173,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "beb2140212c1113f9452f9cde7a9842d95078380e66f2c93a401fdf6a83a694a",
+      "location": "S19.7 interpretation",
+      "status": "PASS"
+    }
+  ],
+  "document_section_and_table_locations": {
+    "english_main": "VI-E p119; heading p118",
+    "chinese_main": "VI-E p124; heading p123",
+    "both_responses": "Comment 2 p12; content p15-17; action p19; quote p20",
+    "both_supplements": "S19.7 p169; methods p170; results p171; table caption p172; limits p173; Table S42 tables[50]"
+  },
+  "exact_main_response_quote_sync": {
+    "en": "PASS",
+    "zh": "PASS"
+  },
+  "bilingual_semantic_consistency": "PASS; endpoint class-agnostic geometry, qualifying-mask availability versus saved assigned matches, first versus last losses and observational boundaries align.",
+  "reviewer_isolation": "PASS; only Reviewer 2 Comment 2 addressed; no disclosure of another reviewer.",
+  "unapplied_word_status": "PASS; payload and all patches explicitly unapplied; proposed location text is future reusable correspondence rather than delivery status.",
+  "experiment_status": "PASS; claims refer to existing archived replay and a new read-only arithmetic diagnosis; no newly run models, masks, matching or confidence intervals claimed.",
+  "input_and_evidence_artifact_sha_checks": {
+    "status": "PASS",
+    "inputs": 10,
+    "artifacts": 9,
+    "input_sha256": {
+      "dbscan_diagnosis.json": "dbf41a4e1ef302417bd3df5bac5ba243f908c4b3bc738fbd183bf13ffc374344",
+      "stage_report.json": "2a1f255bc7a4162ed1b2419ce6f5e50ec88e3b83a3614f3054104a6dc0b43386",
+      "stage_summary.csv": "70a02ac805ff81236f599f2baa2262976f603a883937f5887dfb61d686732e55",
+      "stage_transitions.csv": "d7c54117a1cdf68e5193406ada9bb5d2b55b06ff53b1a7162d9dc107c260accb",
+      "stage_reference_tracks.csv": "00326e6283dd8f953e51684cbbbdce4450f4624963f8da306c650aeb514bef22",
+      "stage_shared_input_audit.csv": "487378c52e3c91d3430b3b4b681783b86a8fdc18babe4150c067515fee39944b",
+      "stage_validation.json": "20697fb0ac25d1ba864e91c91c5b1f943de2da44041403f8816b5de0085400d7",
+      "stage_audit_summary.json": "9b3b8f8d596ea216222adeed06f7dca27a0fd28a84ee097b414a80b76454daa0",
+      "stage_protocol.json": "b45e731ba95ac51f8cf3240e0d40ba0b817f5914302b6accc82e0c3ad6d9b7e5",
+      "stage_case_metrics.csv": "3b05c59de63e5858d9a63cc27b956aea242c5c2360c8be863ffbf93e98e900a5"
+    }
+  },
+  "independent_raw_reference_recount": {
+    "references": 990,
+    "cases": 226,
+    "pairing": {
+      "neither": 564,
+      "dbscan_only": 72,
+      "both": 325,
+      "hpid_only": 29
+    },
+    "dbscan_only_split": {
+      "no_geometry": 61,
+      "qualifying": 11
+    },
+    "detail_negative_partition": {
+      "neither": 79,
+      "both": 98,
+      "dbscan_only": 13,
+      "hpid_only": 5
+    },
+    "input_supported": 53,
+    "never_supported": 8,
+    "first_loss": {
+      "actual_semantic_argmax": 51,
+      "never_supported": 8,
+      "after_direct_detail_gate": 2
+    },
+    "last_loss": {
+      "actual_semantic_argmax": 51,
+      "never_supported": 8,
+      "after_direct_detail_gate": 1,
+      "after_root_restoration": 1
+    },
+    "recovered_after_first_loss": [
+      {
+        "reference": [
+          "soap__02",
+          1
+        ],
+        "stage_threshold_states": {
+          "input_pool": true,
+          "after_same_source_dedup": true,
+          "after_instance_cap": true,
+          "after_hierarchy_duplicate_filter": true,
+          "actual_semantic_argmax": true,
+          "after_direct_detail_gate": false,
+          "after_cleanup": true,
+          "after_root_restoration": false,
+          "identity_supported_before_remainder": false,
+          "identity_plus_eligible_remainder": false,
+          "after_remainder_attachment_before_filter": false,
+          "final_hpid": false
+        }
+      }
+    ],
+    "final_filter_match_identity_preservation": {
+      "before": 354,
+      "after": 354,
+      "lost": 0,
+      "gained": 0,
+      "set_exact": true
+    }
+  },
+  "causal_language_review": {
+    "status": "PASS",
+    "findings": [
+      "325+72=397 and 325+29=354; 43 is net paired count difference, not 43 unilateral losses.",
+      "61/11 distinguish absence of qualifying final geometry from absent credit under saved assignment; no unsupported prediction-conflict attribution.",
+      "53/8 distinguish input support from never-supported references; 51/2 state first observed losses and SI retains one recovery plus subsequent root-restoration loss.",
+      "195 is a best-IoU decrease count; only 13 overlap the DBSCAN-only endpoint; neither is misrepresented as a causal number of lost strict true positives.",
+      "The accepted-pool-to-first-map interval includes several operations and changed representations; the text rejects additive rule-level causal claims.",
+      "Soft semantic/parent penalties, weighted voting and exclusive overlap resolution were verified against the referenced DBSCAN implementation."
+    ]
+  },
+  "resolved_editorial_note": "English response paragraph 17 revised from 61 cases to 61 reference parts before final hash binding.",
+  "remaining_issues": []
+}

@@ -1,0 +1,396 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-09T14:50:22.565717+00:00",
+  "scope": "Existing42cropped HPID inference input-information audit; no new learned predictions read",
+  "sources": {
+    "inference_manifest": "__RUNTIME_ROOT__\\experiments\\paper_v031_untouched_group_holdout_42_20260825_r5\\02_blind_inference_manifest.json",
+    "inference_manifest_sha256": "a06f40702762eef744c5e45eb1e73f5e20cd2e15c50fae8f764bd06ea7e3a572",
+    "cli": "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\cli.py",
+    "cli_sha256": "c32381baec0577a0e943f95d3384417b254efc1f7507005fbb28f5e0bc042a89",
+    "release_commit": "be543003632fa739d0b63e9acbffb8d91d99b84a"
+  },
+  "original_manifest_flags": {
+    "reference_manifest_read": false,
+    "reference_paths_passed_to_subprocess": false,
+    "reference_masks_supplied_to_inference": false,
+    "asset_prompt_from_category": false,
+    "case_count": 42
+  },
+  "same_normalized_command_templates": 1,
+  "cases": [
+    {
+      "case_id": "cellular_telephone__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "laptop_computer__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "television_set__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "remote_control__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "calculator__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "telephone__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "clock__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "watch__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "chair__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "bench__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "stool__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "table__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "bottle__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "jar__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "can__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "cup__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "mug__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "glass_drink_container__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "bowl__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "handbag__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "plastic_bag__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "box__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "car_automobile__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "bicycle__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "car_automobile__u02",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "bicycle__u02",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "book__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "pencil__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "belt__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "hat__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "helmet__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "shoe__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "slipper_footwear__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "scarf__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "screwdriver__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "wrench__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "knife__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "scissors__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "pliers__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "ladder__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "guitar__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    },
+    {
+      "case_id": "pan_for_cooking__u01",
+      "asset_prompt_flag_present": false,
+      "domain_flag_present": false,
+      "category_or_profile_or_gt_input_flags": [],
+      "mode": "automatic",
+      "root_mode": "primary"
+    }
+  ],
+  "static_auto_image_path_uses": {
+    "function": "command_auto",
+    "uses": [
+      {
+        "line": 1084,
+        "expression": "args.image"
+      }
+    ],
+    "finding": "Only Image.open(args.image).convert(RGB); downstream automatic generation consumes image pixels, not the category-bearing parent-directory name."
+  },
+  "source_evidence": [
+    {
+      "start_line": 1084,
+      "text": "    image = Image.open(args.image).convert(\"RGB\")"
+    },
+    {
+      "start_line": 1136,
+      "text": "    explicit_asset_prompt_route = None\n    if args.asset_prompt.strip() and args.asset_router_index is not None:\n        prompt_routing_index = AssetRoutingIndex.load(args.asset_router_index)\n        candidate_route = resolve_explicit_asset_prompt(\n            prompt_routing_index,\n            args.asset_prompt,\n        )"
+    },
+    {
+      "start_line": 1181,
+      "text": "            asset_prompt=args.asset_prompt,\n            asset_prompt_domain=(\n                str(explicit_asset_prompt_route.asset_domain)\n                if explicit_asset_prompt_route is not None\n                and explicit_asset_prompt_route.asset_domain is not None\n                else \"\"\n            ),\n            asset_prompt_profile=(\n                str(explicit_asset_prompt_route.asset_profile)\n                if explicit_asset_prompt_route is not None\n                and explicit_asset_prompt_route.asset_profile is not None\n                else \"\"\n            ),\n            asset_prompt_label=(\n                str(explicit_asset_prompt_route.asset_label)\n                if explicit_asset_prompt_route is not None\n                and explicit_asset_prompt_route.asset_label is not None\n                else \"\"\n            ),"
+    },
+    {
+      "start_line": 1223,
+      "text": "        raw_proposals, raw_proposal_diagnostics = proposal_first_backend.propose_global(\n            image\n        )\n        proposal_first = generate_proposal_first_roots(\n            image,\n            raw_proposals,"
+    },
+    {
+      "start_line": 1355,
+      "text": "        generated = generator.generate(image)"
+    },
+    {
+      "start_line": 3165,
+      "text": "    auto_parser.add_argument(\"--domains\", default=\"\")\n    auto_parser.add_argument(\n        \"--asset-prompt\",\n        default=\"\",\n        help=(\n            \"Optional object-level prompt selecting which asset to decompose, \"\n            \"for example 'serving tray' or 'power drill'.\""
+    }
+  ],
+  "conclusion": "Original42HPID used an annotation-derived object crop, but no supplied true object category/profile, part labels or GT masks. Automatic domain/profile/root prediction was part of HPID inference. PartCATSeg Pred-All is the input-matched primary condition. A GT-class-filtered PartCATSeg output would be a separately labeled privileged-information diagnostic, not the input-matched primary.",
+  "scoring_note": "Reference category/domain/profile are used after inference to score and normalize labels; this does not imply they were inference inputs."
+}

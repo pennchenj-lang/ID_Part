@@ -1,0 +1,1826 @@
+{
+  "status": "COPIED_AND_HASH_VERIFIED",
+  "files": [
+    {
+      "relative_target": "R2C2/completion.json",
+      "sha256": "58a01d61074e3e1d87ff78c90e50df74ab359dcec9252e8c29dd6d43a5c7489f",
+      "size_bytes": 2314,
+      "scope": "R2C2",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C2/prose_independent_audit.json",
+      "sha256": "5ee7c8eafc63b26d740584cd3be4993a104060b8f74d1335366884a79ac7f6fe",
+      "size_bytes": 13663,
+      "scope": "R2C2",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/all_990_reference_pairing.csv",
+      "sha256": "b903ee8a53ff46be20db7ed7f3cfcd92a3d29e15b7381fbcc0e09fca98edccda",
+      "size_bytes": 284642,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/audit_existing_stages.py",
+      "sha256": "f2f1728bef3ad1d551eea8a71556fbf9eb67978812c66a5c10f32aa9ccbbf320",
+      "size_bytes": 18445,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/dbscan_only_72_references.csv",
+      "sha256": "9f4d887f583657e4750bbb4c6620364d3aabbd4915ce2009f6c42fc5218d67ae",
+      "size_bytes": 23378,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/dbscan_only_hpid_no_geometry_61_actual_stage_tracks.csv",
+      "sha256": "d0e41e8ad0554f1d9b942cc1d8b52f10bf873f649fb7d420e3fb31e5fa65f4d9",
+      "size_bytes": 46718,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/dbscan_only_hpid_no_geometry_61_actual_stage_transitions.csv",
+      "sha256": "1c299cff25aefd9a9e3323d4abdf434d064c1246f80e5d4d500b920ecc22c5e8",
+      "size_bytes": 112498,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/detail_gate_195_negative_references.csv",
+      "sha256": "2530a3e5e5e0fc1dd0c829845e02e57366714dfdf7ff17bc33ca8d87f0696f1f",
+      "size_bytes": 72493,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/no_geometry_subgroup_actual_transition_summary.csv",
+      "sha256": "2040921dc8bca78fdfd28e2111cf19f9719e67b87d891044f504f74166856bf5",
+      "size_bytes": 1028,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/paired_subset_counts_by_domain_category.csv",
+      "sha256": "0e78d0c572059ba7935ac2a70b9a0fadea548adc6129dc9873a4917786e35f91",
+      "size_bytes": 2543,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/receipt.json",
+      "sha256": "a2af4e6547ef8d2a8c3b12e1583bf8519be47ba21444f24d59104683f1480691",
+      "size_bytes": 2193,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C2/evidence_audit/summary.json",
+      "sha256": "f2c1e7bbda4ac2c9dd477f1eda1c5dd91852b57f5e4f0c9bbfdeb76f9e330554",
+      "size_bytes": 7996,
+      "scope": "R2C2",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/completion.json",
+      "sha256": "9b38430c6f210318a311bff7b97e1de8f17512b37787ccb6f0c490d5dbbe79f7",
+      "size_bytes": 2382,
+      "scope": "R2C3",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C3/prose_independent_audit.json",
+      "sha256": "d5f1682b9fabe43c67b0b769a480f7d810c3c0aa4287b7171361e803d3492782",
+      "size_bytes": 4044,
+      "scope": "R2C3",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/cases.csv",
+      "sha256": "562f63c326a22d1d0cb26e1c79744dd33a8fb32dd0340b0402ccc09264535f9f",
+      "size_bytes": 77691,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/file_manifest.json",
+      "sha256": "ed4039c6a093c8f5052db956d1f9aae9a7d9a9c3fc706f739fd6fdf61a142b8e",
+      "size_bytes": 1010713,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/independent_audit.json",
+      "sha256": "6a84d50a912bd356004f659307987294e0214b376f53dc01a151b7a993039493",
+      "size_bytes": 112337,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/jobs_frozen.json",
+      "sha256": "f242b439d617c2e4118598b7c7921083e8de93ed402c3f96224244e70cf784fe",
+      "size_bytes": 1169458,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/paired_deltas.csv",
+      "sha256": "246fd749dfaaffee29e08f37035c500d854c8bc12b33be4f31ac6f5312602057",
+      "size_bytes": 1361,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/protocol_frozen.json",
+      "sha256": "06f97a5361eafbf9f471cff5d4865cdc6f191b780510e99d042a9c6706fec060",
+      "size_bytes": 4981,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/run_clean_ablation.py",
+      "sha256": "de34e28e8821d8df1cc2fa1bd7085a92e68fe8a4a6d88e4aea204ef22aefbe9e",
+      "size_bytes": 18301,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/run_receipt.json",
+      "sha256": "d3bb42aff068826a847dcdf1dcebfec572808cbcecc617e5ee29fc8d551b7334",
+      "size_bytes": 8529,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/self_qa.json",
+      "sha256": "a0362ef866e863852022ee8270470e0b9a2f7e712bf1016d28394001faabff86",
+      "size_bytes": 967,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/self_qa.py",
+      "sha256": "ce8487edde93385f8c4cfa6237f6c9cc119605f2b501eed10408619757b354b6",
+      "size_bytes": 5779,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/clean_ablation/summary.csv",
+      "sha256": "08ed6a9a1dd6038d46802d03f21f81583698f69eb9533258863ebaacd9436398",
+      "size_bytes": 1488,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/case_audit.csv",
+      "sha256": "65873a76990c1af44fe976786114fef89ab858a410118baefa27e38e1a9f6b1a",
+      "size_bytes": 149388,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/case_results.csv",
+      "sha256": "f6fc763fa76a80d47e0ed09dd45ee239dbf445a5095ad38ab5d9e4d04fda8d10",
+      "size_bytes": 1235649,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/completion_receipt.json",
+      "sha256": "36916925e130bb47c12a2f7cb9cff7d13a76aff12359011ec21f27e216e4f4d2",
+      "size_bytes": 866,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/freeze_receipt.json",
+      "sha256": "dd2b90ecc812b20a83ad866cae238098bc6a477c9ed3da632dfea263910654d0",
+      "size_bytes": 133,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/independent_audit.json",
+      "sha256": "411f52197a2147671a4719570ccefda10c371312cea7c54a2f800a88d1bc814f",
+      "size_bytes": 5673,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/independent_check.py",
+      "sha256": "5776e1e54fafbf9f0f5adc01a5fd51ab362f2cb10d2aa4eea638a80e7baa6de5",
+      "size_bytes": 20792,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/paired_comparisons.csv",
+      "sha256": "b66b119f72e1d5010fd13b60791446f9b264889113f8a40c73216391d84dafbf",
+      "size_bytes": 19853,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/post_run_receipt.json",
+      "sha256": "8a78ed7054894e21b025039a638b9a010147aeea676ce98e1c9c29a27aae206a",
+      "size_bytes": 1427,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/protocol.json",
+      "sha256": "5ff061ee0adbc793575305d28528dea99ba139902a1ab942e24d12036eafa0ae",
+      "size_bytes": 3731,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/protocol_clarification.json",
+      "sha256": "567542ba3077ea78573d51d77ad2f25cdb060f170de65e796ce83373711a525d",
+      "size_bytes": 750,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/report.json",
+      "sha256": "3858782b2acbf3ed38686047df56451311ce102d5ad35757a8b9990b62e1c91b",
+      "size_bytes": 404,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/run_stress.py",
+      "sha256": "0e589cb6f7cd113dffd9c1dea06a3b3077c857ae40257b99a3b7efb232b265f3",
+      "size_bytes": 16195,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/consensus_stress/summary.csv",
+      "sha256": "b8f02743d2bb4445fc7ebcb401ffe8d95d4ad596bfe366a976fbc037fc45ac13",
+      "size_bytes": 44855,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/analysis_receipt.json",
+      "sha256": "95a0ca4367f339a59051e5956c3308680d07fc7c56c325d863e555b0d9426b37",
+      "size_bytes": 4301,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/analysis_summary.json",
+      "sha256": "37919cc8acbd826e9ce2df4684789a54b4298c08b5431afc7ef220f79c68e47d",
+      "size_bytes": 9169,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/candidates_all_1951.csv",
+      "sha256": "939d2c48dfb5af400889d6d9f69fffee28b9e761ff42c64e9d5d4a3cc9753be9",
+      "size_bytes": 1525130,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/candidates_evaluation_1830.csv",
+      "sha256": "7f73c18f5ee2305c34153f76b8d1316e6d9096699fa5a4ebe8d61d68f2c0f044",
+      "size_bytes": 1434121,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/case_input_bindings.json",
+      "sha256": "0eff045d5bdf48067f31607ae4a103892836b843c56fe21b0b595c7b5dc66c96",
+      "size_bytes": 891238,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/extract_and_analyze.py",
+      "sha256": "242443d532eaa4cc74623775f3c5fc670ce4db62b4b4c4fca18cab6a20873833",
+      "size_bytes": 27483,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/extraction_receipt.json",
+      "sha256": "6aa118a792af712c29c5bab4a92599c70011f0bdab15c771695367bce627b737",
+      "size_bytes": 1106,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/family_empirical_reliability.csv",
+      "sha256": "7402ba5474ee28a9d84faccc70480e88b0f4a5dc8a67bd63ec6cb05b8db293f2",
+      "size_bytes": 14819,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/fixed10bin_empirical_reliability.csv",
+      "sha256": "df8e818e49e174a9f29019a82d0bc99b7d3130645f93d981ddfedbc464381d4c",
+      "size_bytes": 61344,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/protocol_frozen.json",
+      "sha256": "a0569c54e618d8ca75b5fd9b71448d7d698cc9175ba9f7d313015a61a4f32868",
+      "size_bytes": 7840,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C3/reliability_audit/references_990.csv",
+      "sha256": "fa328be98328295eb98ce7759e3bbb2e137f6cea2ad159aa86cd510cabc259ac",
+      "size_bytes": 257937,
+      "scope": "R2C3",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C4/completion.json",
+      "sha256": "894654990e324c5e2e21e7738b1adcf982610b06ab2b2e4d280f9b091e04eaea",
+      "size_bytes": 2015,
+      "scope": "R2C4",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C4/prose_independent_audit.json",
+      "sha256": "f9b9a703aadd5e40552d2437637f32a1dec8e02a5885ee3dc9c78b5fb98aca81",
+      "size_bytes": 17178,
+      "scope": "R2C4",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C4/evidence_audit/receipt.json",
+      "sha256": "c3c76247222920f99864393e0646accbab18e83daf6747989b9f6a1590d1432a",
+      "size_bytes": 1845,
+      "scope": "R2C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C4/evidence_audit/recount_sensitivity.py",
+      "sha256": "9cb0b532106be909e0fd64a9ebde2837905f378d850120bfe56df89907e9d9eb",
+      "size_bytes": 13000,
+      "scope": "R2C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C4/evidence_audit/summary.json",
+      "sha256": "ad918ead9a6583485eee20a3d5bd729594060c347d6e7005d23e01b8ff85de0a",
+      "size_bytes": 212001,
+      "scope": "R2C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C5/completion.json",
+      "sha256": "f5187c5ff129f7e1f6561e0c089c238a3085b76558b4cab7ded5bc250360e804",
+      "size_bytes": 3062,
+      "scope": "R2C5",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C5/prose_independent_audit.json",
+      "sha256": "e2382179862474b09493260fbcfa784106bc233131d7e1734432248adbcb8cb7",
+      "size_bytes": 11526,
+      "scope": "R2C5",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C5/evidence_audit.json",
+      "sha256": "4af4c16c11129f23ef2d33ba3d19b67722ddb33277a7c6d246144cea01b18f9f",
+      "size_bytes": 86284,
+      "scope": "R2C5",
+      "purpose": "Independent historical image-output verification and score/composition audit; images are not copied."
+    },
+    {
+      "relative_target": "R2C6/completion.json",
+      "sha256": "bc85bcc593824468c993069d0eab8a340166c75707dbfff4a33e2200c26ff952",
+      "size_bytes": 3618,
+      "scope": "R2C6",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C6/prose_independent_audit.json",
+      "sha256": "a285c487526b3e7285bd1930bd5effe26364d08d65159f9714113daace513198",
+      "size_bytes": 13398,
+      "scope": "R2C6",
+      "purpose": "Immutable analysis-completion or prose-to-evidence audit receipt from before final Word integration."
+    },
+    {
+      "relative_target": "R2C6/audit_resolver_causality.py",
+      "sha256": "b2654e8bf7e5deb2a68c22a875fd857b34ea213b60d9ea7f107fbd6a14a1f0ad",
+      "size_bytes": 19536,
+      "scope": "R2C6",
+      "purpose": "Resolver-unit implementation and independently verified results/provenance limitations."
+    },
+    {
+      "relative_target": "R2C6/resolver_causal_audit.json",
+      "sha256": "4daac95dffb04e77553a422ca907865f6d9bed7517109df14477491fb8e910b3",
+      "size_bytes": 105251,
+      "scope": "R2C6",
+      "purpose": "Resolver-unit implementation and independently verified results/provenance limitations."
+    },
+    {
+      "relative_target": "R2C6/resolver_independent_audit.json",
+      "sha256": "db0e7f012de52c6c483beca52a48ea5d5fa58974db0835b38e36689b7c1238d6",
+      "size_bytes": 63432,
+      "scope": "R2C6",
+      "purpose": "Resolver-unit implementation and independently verified results/provenance limitations."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/dbscan_diagnosis.json",
+      "sha256": "dbf41a4e1ef302417bd3df5bac5ba243f908c4b3bc738fbd183bf13ffc374344",
+      "size_bytes": 2444,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_report.json",
+      "sha256": "2a1f255bc7a4162ed1b2419ce6f5e50ec88e3b83a3614f3054104a6dc0b43386",
+      "size_bytes": 51808,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_summary.csv",
+      "sha256": "70a02ac805ff81236f599f2baa2262976f603a883937f5887dfb61d686732e55",
+      "size_bytes": 7126,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_transitions.csv",
+      "sha256": "d7c54117a1cdf68e5193406ada9bb5d2b55b06ff53b1a7162d9dc107c260accb",
+      "size_bytes": 6867,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_reference_tracks.csv",
+      "sha256": "00326e6283dd8f953e51684cbbbdce4450f4624963f8da306c650aeb514bef22",
+      "size_bytes": 3391300,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_shared_input_audit.csv",
+      "sha256": "487378c52e3c91d3430b3b4b681783b86a8fdc18babe4150c067515fee39944b",
+      "size_bytes": 52961,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_validation.json",
+      "sha256": "20697fb0ac25d1ba864e91c91c5b1f943de2da44041403f8816b5de0085400d7",
+      "size_bytes": 379,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_audit_summary.json",
+      "sha256": "9b3b8f8d596ea216222adeed06f7dca27a0fd28a84ee097b414a80b76454daa0",
+      "size_bytes": 379,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_protocol.json",
+      "sha256": "b45e731ba95ac51f8cf3240e0d40ba0b817f5914302b6accc82e0c3ad6d9b7e5",
+      "size_bytes": 3789,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C2/existing_source_tables/stage_case_metrics.csv",
+      "sha256": "3b05c59de63e5858d9a63cc27b956aea242c5c2360c8be863ffbf93e98e900a5",
+      "size_bytes": 591574,
+      "scope": "R2C2",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C4/existing_source_tables/sensitivity_cases.csv",
+      "sha256": "29aba2b8f13ba6d4cf7c7b835a547c05fa5782128d4aba6541e1bcb1521869ee",
+      "size_bytes": 1749016,
+      "scope": "R2C4",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C4/existing_source_tables/sensitivity_summary.csv",
+      "sha256": "1dc9f81a9ee7b604bab88272333836e9a2c6f9dded510301bf8b373200f47300",
+      "size_bytes": 45722,
+      "scope": "R2C4",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C4/existing_source_tables/sensitivity_protocol.json",
+      "sha256": "5e5c029dce51881e7340288d9e469c26f11d94577de8cd9957382e964ad9164c",
+      "size_bytes": 7736,
+      "scope": "R2C4",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C5/existing_source_tables/synthesis_diagnostics.csv",
+      "sha256": "4a9d2c12688d973a6142f23bd945171b68baac6c1db6768c5636ffecc935b411",
+      "size_bytes": 2425,
+      "scope": "R2C5",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C5/existing_source_tables/routing_audit.json",
+      "sha256": "d7d188c12c4578e3ae4589cd27a1016b22e450f0858135084fe1a2e0ae1623d7",
+      "size_bytes": 3712,
+      "scope": "R2C5",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C6/existing_source_tables/request_six_wrong_cases.csv",
+      "sha256": "822b97effaeb86c7cf9d741bd33020f7e867114b2836d5734ddb594f460b3797",
+      "size_bytes": 3832,
+      "scope": "R2C6",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C6/existing_source_tables/request_candidate_trace.csv",
+      "sha256": "0b1674f18db6a9d18888012b56efc5e76e6598d5079779a54170adc06777c6e9",
+      "size_bytes": 161083,
+      "scope": "R2C6",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C6/existing_source_tables/request_candidate_pixel_flows.csv",
+      "sha256": "42ab93a5fb13547b26beab3f3a3b4dcfe1a265f1d2901420352ff44e44a9a2e5",
+      "size_bytes": 114513,
+      "scope": "R2C6",
+      "purpose": "Previously archived source table or protocol supporting the new analysis; no source imagery or candidate mask pool."
+    },
+    {
+      "relative_target": "R2C5/existing_source_tables/completion_frontend_cases.csv",
+      "sha256": "552d43111179b0f3042e8a50c508515184aa55eccc26815ef2c838f9a3b8dff1",
+      "size_bytes": 44271,
+      "scope": "R2C5",
+      "purpose": "Original 37-case completion metrics retained with original paired confidence interval."
+    },
+    {
+      "relative_target": "R2C5/existing_source_tables/completion_frontend_summary.csv",
+      "sha256": "9bf68e7dcd27cbbd0deab8afc5a85360102f71479994392ceadd99672a3110b0",
+      "size_bytes": 5506,
+      "scope": "R2C5",
+      "purpose": "Original 37-case completion metrics retained with original paired confidence interval."
+    },
+    {
+      "relative_target": "R2C5/existing_source_tables/completion_frontend_paired.csv",
+      "sha256": "8828f1ab2940304e24dd1fd8697ee78240dd25d15a8f127f4e0c3cb6acbb078e",
+      "size_bytes": 7640,
+      "scope": "R2C5",
+      "purpose": "Original 37-case completion metrics retained with original paired confidence interval."
+    },
+    {
+      "relative_target": "R2C5/existing_source_tables/completion_frontend_report.json",
+      "sha256": "9f84304782acb7d4f9ad58e20fdcc44f2cf35fe7efb0f5990bd2b529f3a6e9eb",
+      "size_bytes": 1655,
+      "scope": "R2C5",
+      "purpose": "Original 37-case completion metrics retained with original paired confidence interval."
+    },
+    {
+      "relative_target": "shared_code/current_historical_completion_helper.py",
+      "sha256": "2895bb42c635702a3d2dfc9bdf088057203ae7b919a39e153fdb43fcadc0b240",
+      "size_bytes": 19010,
+      "scope": "R2C6",
+      "purpose": "Small relevant implementation source bound by the scientific audits. Current helper source is not asserted identical to the entire historical file."
+    },
+    {
+      "relative_target": "shared_code/current_completion_frontend.py",
+      "sha256": "c946537adc014018a20bf8293b8d610a04d5de138c38df27c7cbb4651a97b02d",
+      "size_bytes": 6851,
+      "scope": "R2C5",
+      "purpose": "Small relevant implementation source bound by the scientific audits. Current helper source is not asserted identical to the entire historical file."
+    },
+    {
+      "relative_target": "shared_code/current_restoration.py",
+      "sha256": "324dfa003581b05fbab1585975b4f5067f773a9222886bdae076aad3625896f5",
+      "size_bytes": 42832,
+      "scope": "R2C5",
+      "purpose": "Small relevant implementation source bound by the scientific audits. Current helper source is not asserted identical to the entire historical file."
+    },
+    {
+      "relative_target": "shared_code/frozen_restoration.py",
+      "sha256": "d3f1756ec0168561436ad97609d8fd3063a8516ea867bd8d209f8a31c84ad897",
+      "size_bytes": 43448,
+      "scope": "R2C5",
+      "purpose": "Small relevant implementation source bound by the scientific audits. Current helper source is not asserted identical to the entire historical file."
+    },
+    {
+      "relative_target": "shared_code/archived_audit_completion_routing.py",
+      "sha256": "a8e3b4c7750388c4d30d5b671b7d415a5704cbfb28fed081dbbe5ec5dba4e8ed",
+      "size_bytes": 7994,
+      "scope": "R2C6",
+      "purpose": "Small relevant implementation source bound by the scientific audits. Current helper source is not asserted identical to the entire historical file."
+    },
+    {
+      "relative_target": "shared_code/frozen_fusion.py",
+      "sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+      "size_bytes": 79946,
+      "scope": "R2C4",
+      "purpose": "Small relevant implementation source bound by the scientific audits. Current helper source is not asserted identical to the entire historical file."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/completion.json",
+      "sha256": "587d4f4abe6b3f4bed494c6ee72ebbbe168ab5ebe9e421c5ed1e51df0fa3d0ba",
+      "size_bytes": 3919,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/protocol_frozen.json",
+      "sha256": "fc237e550c755d65cff07658cfa392387ef30db0786e29f271dd0eb954c4538d",
+      "size_bytes": 17189,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/protocol_freeze_receipt.json",
+      "sha256": "2fc41886d8872d1e217e69b34ce22fab254e4397e659a92cf7ff52a6ab1c46a0",
+      "size_bytes": 169,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/label_registry.json",
+      "sha256": "6559d5a714b3a5a23ef6469f3e714446790d77cfd5db6a245e5c5a0b5f9411f6",
+      "size_bytes": 73016,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/inference_manifest.json",
+      "sha256": "ec52d3f9cb16ae7e8110ac5ac65bf7a016a32527939472c2eac20ff20a89c040",
+      "size_bytes": 14303,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/fairness_input_audit.json",
+      "sha256": "1f593fbecc3cf213bc0f3d47ee70abe9e847d544408380fdbe8d12a49dd71725",
+      "size_bytes": 14238,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/interface_audit.json",
+      "sha256": "e5a717490f462aa35e14d3475378d15d2db5783505b00d8e73b6b203a4632f9d",
+      "size_bytes": 10478,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/source_manifest.json",
+      "sha256": "a846757a633c191a0b4120e35846879ee607271e7bea0fb801436122bcce8c9d",
+      "size_bytes": 45255,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/score_partcatseg.py",
+      "sha256": "1db8dbce7b60e019e90cfb97c3ae63c65a83ae858a9af11e6b11f1bb1fc3a612",
+      "size_bytes": 25587,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/audit_scoring.py",
+      "sha256": "65b7f4e9be7001145ecbd0fa4c12ae16bd23228dbcc4fabda6af46ad06d579fa",
+      "size_bytes": 23433,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/audit_prediction_seal.py",
+      "sha256": "cf013d68b1158f42f9fb0b699b001ae9027dbdb77ac4b85d049857328fc03489",
+      "size_bytes": 6401,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/audit_experiment_execution.py",
+      "sha256": "ddae31ec26851407cbfa3eae893dab635647f632ea95eb654d01476359efaa96",
+      "size_bytes": 12906,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/smoke_inference.py",
+      "sha256": "4b3c93027861cf4093e7320cb1379bf0fb8e27840d064cf671f72eb0aa9cd589",
+      "size_bytes": 41202,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring_independent_audit.json",
+      "sha256": "f87ca1c6bc290b60ff7b341ee7a77d2cac0dded7dab8d1a489f6705aaa52fafe",
+      "size_bytes": 123746,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/prediction_seal_audit.json",
+      "sha256": "1147d0ac682c604b972f0ae7f0ba6b52c8958c1724a9bd4071bc995e8e3f0ac6",
+      "size_bytes": 26865,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/experiment_execution_audit.json",
+      "sha256": "b4923d1eb77b3855d38b6d9b04060e91ca8d5687c3c7c8c6303a56fe7217b6d4",
+      "size_bytes": 50981,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/cohort_process_start_audit.json",
+      "sha256": "c0f3cfaab350c1bcc78a9a2eb3a0198e30fd9a0a01ebc427852355ab48994230",
+      "size_bytes": 2164,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/preparation_receipt.json",
+      "sha256": "56205535a88ae50d746350c6e52131790e62639344eb4241af917ed20c6190f0",
+      "size_bytes": 598,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scorer_efficiency_review.json",
+      "sha256": "a04b05e39dc4635b6fdae27d377e4ceb504af2d067e7b42b96345e2d0c518b18",
+      "size_bytes": 1747,
+      "scope": "R1C5",
+      "purpose": "Frozen transfer protocol, scalar scores, public-taxonomy registry, adapter/scoring code or independent audit."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/baseline_reproduction.json",
+      "sha256": "ad3d18b322cb616df1b7735c4c7ed56a0b0359eb5f7ad1fae37036820b3e63b7",
+      "size_bytes": 20826,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases.json",
+      "sha256": "db586b684bf38426588ae9a9622dd3e8d0f1630e92945199d91fb0709c998a44",
+      "size_bytes": 261154,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/summary.json",
+      "sha256": "ef401464974fd17e5db6bb0ccaf3a962d1e815c8cb672a1a316f273386e3fc9f",
+      "size_bytes": 4232,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_001.json",
+      "sha256": "b2e0cfca7f889d31c21a74037bb7dcfddd339153b092c90f30d001aec657e00b",
+      "size_bytes": 5013,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_002.json",
+      "sha256": "c70c719738750031dfebe24cec93e347ec54c29ac469bfabc4a0ba43c35ff370",
+      "size_bytes": 5674,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_003.json",
+      "sha256": "552b61dda26bcac986f3b58cb6b20bd0794d404d5686a1b6475dac01611959c1",
+      "size_bytes": 5279,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_004.json",
+      "sha256": "1b9788c1243fab982c7782ed0bbbc1acf7312123b37f18a9fc8deadec9595732",
+      "size_bytes": 4858,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_005.json",
+      "sha256": "055cc58ea9179c6834983918c9afa34a24a92951cbd4d20fb86980f671fac7ed",
+      "size_bytes": 4812,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_006.json",
+      "sha256": "3e92862efdf68b393b8d623922e813bbc3bc28473b488e0800d22dd787e137d9",
+      "size_bytes": 5064,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_007.json",
+      "sha256": "84d4d96018a6ca31612afeb6ac85d8b997078a5489d38cfdab0a835e5dad27af",
+      "size_bytes": 4510,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_008.json",
+      "sha256": "55336ccae2f3a60ffb555d4c20edf6dbca08d6b6cd9d3ed4f51862d77a590ca0",
+      "size_bytes": 5678,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_009.json",
+      "sha256": "c8f8735e3639186a744267374b278ea17fdc79fb89e1bfc23966296ea3a69400",
+      "size_bytes": 5800,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_010.json",
+      "sha256": "64df11d99dfae9c5ec93e4bc445c8df1dd51d6fa5adbbeb95f636530bf91c55f",
+      "size_bytes": 6549,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_011.json",
+      "sha256": "d679dac6c51c8cf82811f70212b422c15df2a3f95720007e3562175a049a6d37",
+      "size_bytes": 4990,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_012.json",
+      "sha256": "fc9f7815653f8687943e8bfe024d476121d2c4ea1ca7e1c94be3ad181d4ce8e0",
+      "size_bytes": 4780,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_013.json",
+      "sha256": "d7a31fffd3424f6f6554c2562c75a856aa465547c94c9feeb296d86254c040d4",
+      "size_bytes": 7554,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_014.json",
+      "sha256": "227f5b9d143c7a92bcbf6ded306be88d2b8ebe3cbabe683be20518f3743c0e5c",
+      "size_bytes": 6302,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_015.json",
+      "sha256": "ae30b5140145866790f82d31da9412ff5c40d8cc35f072965b23247825e42fc3",
+      "size_bytes": 6160,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_016.json",
+      "sha256": "d692f8aff81cc60fb4ca7ec5fbbefac2e81d7c73aefe50432c71beb9c65ea343",
+      "size_bytes": 4915,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_017.json",
+      "sha256": "de9e05fe7394dd20f483f71a9ce519553c271cec3ec5fec1ce2859b9c6d96fc4",
+      "size_bytes": 6438,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_018.json",
+      "sha256": "4c3dec5b6279e0197682254a820a95fb891b9ae446017805c71a6394c2e06daf",
+      "size_bytes": 5090,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_019.json",
+      "sha256": "27d8d80ea9e7181dc26f3462c268cf1a0b45f6d5565df55c9f42d2af9ce0f9d6",
+      "size_bytes": 4812,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_020.json",
+      "sha256": "89eaf305567f1a7acc14743bcbe84771af2527d84ac6c7509e6be7124681862a",
+      "size_bytes": 4743,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_021.json",
+      "sha256": "6323202ee0653f65429b9bd1b85788c6e6a44a81e171fd3edd4b2e4b246c4e10",
+      "size_bytes": 5036,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_022.json",
+      "sha256": "b4a53b300272bee12966c4fb2db5b0dbd39f33538d5fd18b0748abd2bccc3b5c",
+      "size_bytes": 5665,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_023.json",
+      "sha256": "c85ef23c1777bf7b12da5d6ee5ad6bb9174e396b5a5a2767237c66aedf0afc11",
+      "size_bytes": 11584,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_024.json",
+      "sha256": "0cfa2f60c96fb34cdcb7e62e055bd45453acb0a227d02af9da26ecc5d0d1d0ae",
+      "size_bytes": 9559,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_025.json",
+      "sha256": "da6de5357143bf32c1ab16f3febeeab82408e8789be8a9c21b17dbaf5babd443",
+      "size_bytes": 9728,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_026.json",
+      "sha256": "8d19eb646046f1020b9cb8b20c333c8a638f9c911d382a9ade650c699ef733fb",
+      "size_bytes": 9325,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_027.json",
+      "sha256": "724df08b28dc4f7c49538f19aeb6718c22d6eee3bc5ed5d6a3a7422d3fec8a69",
+      "size_bytes": 3895,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_028.json",
+      "sha256": "cb663f92cc6555833cd05c541381caee1c5c14d3a39d596d0d86d90aade9d799",
+      "size_bytes": 4498,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_029.json",
+      "sha256": "f859a23cd641165cc732e34566d7d441874da73650cfd8c12feb7a5577b9a051",
+      "size_bytes": 4255,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_030.json",
+      "sha256": "9d9a98258777ffc3f01b76791b8eefae633664bcd591209b8a8399721a9c955b",
+      "size_bytes": 3930,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_031.json",
+      "sha256": "fe2c5affe58c92496d29d4a1da5278fa988cdd3ed6186d6ea9d54611b9ce6809",
+      "size_bytes": 5794,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_032.json",
+      "sha256": "f8f87e265edc10268a94d42378dad2dec63dff79e57779f533ef02d7710e0dd7",
+      "size_bytes": 6928,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_033.json",
+      "sha256": "66f4eb7404692a52f086e10e38d1ea6a8a1f65c3ce7806cfbc59d4bd731be8de",
+      "size_bytes": 3272,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_034.json",
+      "sha256": "43449757ce0efd87370c035f2a33f55baa5180368f8ebd5bb259faee2e50b95a",
+      "size_bytes": 7449,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_035.json",
+      "sha256": "420596af957d55ff18de750cdb3b2fb23d02e8f912f518d85695b3d8fdae3c16",
+      "size_bytes": 3827,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_036.json",
+      "sha256": "380c878db9c3159136fed211844025fd5b50ba6fa96c92d317fa1e925f9beee5",
+      "size_bytes": 3849,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_037.json",
+      "sha256": "6b7e7c385d1f100e1ff666f870b98ac633faf9fd8d062c79ffcf353b7b9e8fa7",
+      "size_bytes": 4245,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_038.json",
+      "sha256": "33c8466ad4b1a39cb4c83893039ef5f8cafd6b5f49a0880c4cd9edbd2f292c1e",
+      "size_bytes": 4956,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_039.json",
+      "sha256": "a3ecd2b280e792b980f9f66ae7fb4ab8b28e805b64fdc560a7c3dc56ef656b8b",
+      "size_bytes": 3936,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_040.json",
+      "sha256": "f0356fad6671d4beb138201d58c57f75a071f086794c822c4199c41bea2dfc63",
+      "size_bytes": 4786,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_041.json",
+      "sha256": "61bb86fa0b4cf9890378c05558056c14f4b204a213221880f73ef4ac75908c8d",
+      "size_bytes": 7397,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/scoring/cases/img_042.json",
+      "sha256": "1b01cf5b8cb535a0fe7ec2fbcfef9e9f40531b1476b5847973faf6e8c0096d91",
+      "size_bytes": 4978,
+      "scope": "R1C5",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/numerical_controls/smoke_voc_02_run.json",
+      "sha256": "d218e34f4106ca42c7d1fa6b02cf3288e1fb714a3996f5c2699b6e09e500e88b",
+      "size_bytes": 14949,
+      "scope": "R1C5",
+      "purpose": "Numerical parity/dummy-input validation record; no smoke image is included."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/numerical_controls/smoke_voc_02_decoder_equivalence.json",
+      "sha256": "99258a1d3907407d50ad6ed0d85965236fafc322cc3a8b0f6320dfa9d431ba4f",
+      "size_bytes": 1933,
+      "scope": "R1C5",
+      "purpose": "Numerical parity/dummy-input validation record; no smoke image is included."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/numerical_controls/smoke_paco_01_run.json",
+      "sha256": "b1cc976be6462b294901654938a426d6e3a0a8d8d2a1a489e537431569447649",
+      "size_bytes": 28844,
+      "scope": "R1C5",
+      "purpose": "Numerical parity/dummy-input validation record; no smoke image is included."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/prediction_seal/predictions_manifest.json",
+      "sha256": "ba54a450ed8c33dc5e08e1d552ee8b9febffcf7af35275fa2e6def5494a7fd7a",
+      "size_bytes": 43467,
+      "scope": "R1C5",
+      "purpose": "Prediction hash/terminal-status receipt, excluding label images and model weights."
+    },
+    {
+      "relative_target": "R1C5_PartCATSeg/prediction_seal/receipt.json",
+      "sha256": "481c4df63ecee08cea2d3eefcfb49f6697b1318cf532216e48744e32ec453919",
+      "size_bytes": 18462,
+      "scope": "R1C5",
+      "purpose": "Prediction hash/terminal-status receipt, excluding label images and model weights."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/completion.json",
+      "sha256": "4708da2035ee7fc60eab9db083321a7567d4ddd7275ebb9076aa7166f9b786b0",
+      "size_bytes": 18090,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/protocol_frozen.json",
+      "sha256": "a1621227032fa6e6950f5c4a4157de65bad8119de57f16c551e1f0d7639f7c8a",
+      "size_bytes": 959174,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/protocol_freeze_receipt.json",
+      "sha256": "c9186b152b94570d337d24fec7e86eddc7f4b536a59cd7aff69f4d9221b1e3f2",
+      "size_bytes": 234,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/request_manifest_frozen.json",
+      "sha256": "0a062ed24fe1ceb9975e9223e7b99606f75114b94cacb44f232ff2e8e2464579",
+      "size_bytes": 481845,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistical_plan_frozen.json",
+      "sha256": "40d42cc1ebc44d0f3bbcf1da4a6dea0ad2468fce5b835a13f6b81f3ba8e21ce0",
+      "size_bytes": 25253,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/run_routing.py",
+      "sha256": "054ea5db581c91131aa8745694e227359006c67e719c18dfbb18d71d78e0b6fb",
+      "size_bytes": 13579,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/analyze_routing.py",
+      "sha256": "f30e4a53b1f3634e438428f0a65dedb158575a89eb53d550ef4fc1e849957145",
+      "size_bytes": 27346,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/independent_routing_audit.py",
+      "sha256": "675e36b43e92f93f24d5dee8097f579a08c61b83a3464b879b0e7828c1e888bf",
+      "size_bytes": 25321,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/independent_routing_audit.json",
+      "sha256": "33d03b38719000aa60b1a57f2add4393a6eb3c05c4cc83916d7fb8f262666a3a",
+      "size_bytes": 23518,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/independent_mechanism_audit.py",
+      "sha256": "23f62723c10f9a04e08e2803999ac6dfb5fb6e5aa2d2a199433cf0e075121993",
+      "size_bytes": 18236,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_independent_audit.json",
+      "sha256": "0a6decb32284cf27046779969252dae760ec0ba34ab474b58b0540b0bc0ec093",
+      "size_bytes": 37744,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/audit_original37.py",
+      "sha256": "72c7e19801fb38382b59f2a0be7b6bb1021244d771a3112864479abe1ec0dffc",
+      "size_bytes": 4910,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/original37_audit.json",
+      "sha256": "d9c7b97ab31f4b3cb773de8d80bcf7e4651a7173eeaaaa3987366d27553d5ba2",
+      "size_bytes": 28840,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/package_version_audit.json",
+      "sha256": "7a8b41be31a1dbcd5b1d5e0e3642d26ee69f23c4abd12ea58241a6511d807d4c",
+      "size_bytes": 1379050,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/audit_package_versions.py",
+      "sha256": "87095a167f450202a6e5e0f15eb23d7afe15036bafd05108854b85d6a0e4ebf5",
+      "size_bytes": 7149,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/group_overrides.json",
+      "sha256": "0bcf86f83b08dc9c2c5b01615aaea5c449827793b2d3675b56360ec03839cf4a",
+      "size_bytes": 147600,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/prepare_common_groups.py",
+      "sha256": "8de07fbb0036f791cecb2c349a7ff92b41d89e2f76b4251d6bcbebda2ff8cc31",
+      "size_bytes": 16987,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistical_implementation_checks.json",
+      "sha256": "81dbe23350bea1d28747cea640bcb7525cfb519f5f460e18aae06dbb93ac1764",
+      "size_bytes": 1267,
+      "scope": "R1C6",
+      "purpose": "Frozen cohort/analysis protocol, paired routing data code or version/mechanism audit."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/routing_run/old37_reproduction.json",
+      "sha256": "cc5282741eb2bcfddd24314b842dcbe1ac4417f9d3e7cda214db0702846aac9c",
+      "size_bytes": 22252,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/routing_run/receipt.json",
+      "sha256": "24dca5f6e93317f229202a0d64f96d6a5f07b2bdd34254b9401a72fe33b62af1",
+      "size_bytes": 231372,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/routing_run/routing_cases.csv",
+      "sha256": "e4f40e35d3f6d911b55ce0d806224bca1cd05ca18b26e2d0b23ad7c097932347",
+      "size_bytes": 676489,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/routing_run/routing_instances.csv",
+      "sha256": "6b8ff49d1b1311f48b89a0b89aca57b1649a3c223a4168aca9569265e0937eb4",
+      "size_bytes": 1755681,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/analysis_summary.json",
+      "sha256": "632ad473e4cf6fb6598406dc1b61e319e3512cbfdbeb2b22c66731b4c8faf0f8",
+      "size_bytes": 23768,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/binary_guardrails_with_wilson.csv",
+      "sha256": "faa5959b4bd936c4ecef4e0dc956c2ef56d157dd9fa51e0285c589175ec3ebb3",
+      "size_bytes": 17637,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/conditional_review_rates.csv",
+      "sha256": "689b2e7010769f9d933d5262235bb0569971e4a24aa230570ef573e0afe9faf3",
+      "size_bytes": 10530,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/correct_option_retention_and_loss.csv",
+      "sha256": "91f1bf03cf8dde284c53f6003b5c4024d7bd742174e350059a15bb1cf0b3ae5a",
+      "size_bytes": 58626,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/domain_category_failure_summary.csv",
+      "sha256": "21d11cecc892b520ba034338c787bec50fcc1e002b7838f890dc8982557dfc95",
+      "size_bytes": 1929900,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/execution_failures.csv",
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+      "size_bytes": 5,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/method_option_distribution.csv",
+      "sha256": "38be4db496ca5cbea5158b989e26fdd65400c9dd9e0da5728eb133b2db49272e",
+      "size_bytes": 1454,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/paired_correctness_guardrails.csv",
+      "sha256": "14d5b8e153226d79a5d339061625515a326bb8d4b21aa991041d26a9b881fb01",
+      "size_bytes": 32178,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/paired_option_contrasts_all_four.csv",
+      "sha256": "e26b11a8b367aba3435cd737b96a224e172b7c7e442239662b6c69f0d7e44896",
+      "size_bytes": 3530,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/raw_ambiguous_fixed_subset_flow.csv",
+      "sha256": "884c62ac8dc94e59916119f76eb8ad82bad6bdb68798d1fa0d4c89930c54ac38",
+      "size_bytes": 9134,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/route_transition_4x4.csv",
+      "sha256": "fdb58cb027b2adad74275afaa66c9195bc702cdfc3cb79b771ff84aab5f59a9b",
+      "size_bytes": 48137,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/routing_states_with_wilson.csv",
+      "sha256": "5e2767d3e8882363e3b03b0f33ca4e55ac1e8592b21cd65ff8e27e4f4a0f1c4e",
+      "size_bytes": 12760,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/statistics/wrong_unique_diagnostics.csv",
+      "sha256": "714fcf1e74fd1b13262e28c4f7ad61f09890739fa1c055ce6a319e822decebbb",
+      "size_bytes": 256520,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/all_case_stage_availability.csv",
+      "sha256": "8308bb6406beef88c88f438644c24ee3f0526db53812216a40f82559c8404083",
+      "size_bytes": 70528,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/all_method_outcomes.csv",
+      "sha256": "e4f40e35d3f6d911b55ce0d806224bca1cd05ca18b26e2d0b23ad7c097932347",
+      "size_bytes": 676489,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/all_target_matching_raw_candidates.csv",
+      "sha256": "bd76888f2bd6df192789c664a15d783fadee64d2909b71d9cd9e01b1ab9d4c68",
+      "size_bytes": 62124,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/audit_mechanisms.py",
+      "sha256": "82f26d517c2e206e6d1cc1e2fae4a76a7a316ee802af5aeb0d7074118032f2cb",
+      "size_bytes": 34281,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/conditional_review_rates.csv",
+      "sha256": "933b95549cc5cd8e36b88282a340be550997816732015609ca977eb226e3589e",
+      "size_bytes": 661,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/fixed_raw_ambiguous_transitions.csv",
+      "sha256": "e0d21b00845d0732d5def6ab0775d09ace5923452d688939dad69174813dd8f3",
+      "size_bytes": 4774,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/input_case_bindings.json",
+      "sha256": "8e274736cac16000d07156539c5ec7b6dd0e92a27d76f973dafe1796c4344541",
+      "size_bytes": 85887,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/lost_cases.csv",
+      "sha256": "c37d3681b0234480125cdc990f57cdd0610f28bd7a85e56bbf9e8e8542f9b731",
+      "size_bytes": 12213,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/receipt.json",
+      "sha256": "80a695971cb0a72dc3155138e6e0c64a114dda5286027cc47a45c38108a8fd12",
+      "size_bytes": 6385,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/summary.json",
+      "sha256": "6b0eb80b3f9a722b8bf50daa5282e5b3759accaf9813b86e9514ed6b4bc85543",
+      "size_bytes": 28909,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/wrong_unique_by_domain_category.csv",
+      "sha256": "596ff94256721517280d11ac7f6e3b1e2edee2367cdfc04f8c40b2044d2b8875",
+      "size_bytes": 125982,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__bench__03.json",
+      "sha256": "8af6568647965a915b0a9d4da64ac16b5eae0bb405ff1106133ebc55c03239c1",
+      "size_bytes": 15425,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__bench__04.json",
+      "sha256": "afd61d4cd36434ab6e3565f34ee18ce06cb54601239be5ab11b94a0274befc8d",
+      "size_bytes": 23057,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__bicycle__03.json",
+      "sha256": "85db2e27de1b2ec51f8026348040d5756abda026e2530aad5de7976e430aa722",
+      "size_bytes": 12069,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__blender__01.json",
+      "sha256": "1ab8530df1c2eebdc873b5eb877569ff16db160e1aba534db54566d7308b7adf",
+      "size_bytes": 12737,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__bucket__03.json",
+      "sha256": "83788208fc1b01437fdfcc3864fb710c7d3512bdd3d54d0144c65109f4a1bddd",
+      "size_bytes": 15768,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__calculator__03.json",
+      "sha256": "e20c43fc2f54ad1ef95a792e872831c4ea4a84c71c113a2c20c1bb0253f4550a",
+      "size_bytes": 11700,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__car_automobile__03.json",
+      "sha256": "b721009516e8006c5f8c2961beb0583a4ae6e48b3e179b0b74f91364bbc87cd9",
+      "size_bytes": 27371,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__clock__03.json",
+      "sha256": "a1d9c4059c9d5073099bb486067d6e1d9c4a352f6ade742a0bc47243b34aa258",
+      "size_bytes": 23044,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__clock__04.json",
+      "sha256": "264fa0aa3032750bcf253089cd27d2626b978bb7d1649de986f3a67076e015ca",
+      "size_bytes": 24287,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__fan__02.json",
+      "sha256": "da1b01bc3a010925a387274684b498b67baf8fcccaf4b32b04c4131b5985dac4",
+      "size_bytes": 12918,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__glass_drink_container__03.json",
+      "sha256": "bbde7cd93d0bd2daf4f945d34e99f8ab68bca3bbe43d66758f2c4a3f087fad8b",
+      "size_bytes": 10750,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__guitar__02.json",
+      "sha256": "41f20c581933565df8fe9e35e9526a33acc93f50da324b477690281209acb4de",
+      "size_bytes": 9010,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__hat__03.json",
+      "sha256": "eee134b145c7ef346909084cd11b5c2d3c4e2b8260ec4be7d2bff7f9a3b8699d",
+      "size_bytes": 11578,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__helmet__04.json",
+      "sha256": "b994d0f05f19d9eb08fdefc004de96598a9c60ab8846e8d3a2962150c4b7f2c8",
+      "size_bytes": 22355,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__jar__01.json",
+      "sha256": "bdfc963d45e7ae9f15cfcd7930e150491be27f5bbe51826271cd78fc0882b2a6",
+      "size_bytes": 21091,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__jar__04.json",
+      "sha256": "f6025a5cbd214c5c115af505e6fd2ef6736b0087deb3cf867070beb93c9614b8",
+      "size_bytes": 9720,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__laptop_computer__01.json",
+      "sha256": "e3501529fc9a3cb1834532256faa0115b232139a6efb5862926c36b4cda985b7",
+      "size_bytes": 16439,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__laptop_computer__02.json",
+      "sha256": "a403ac0d89b30d867d869001de98a27ae3857a5213a094069908bf39edc30cfa",
+      "size_bytes": 13402,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__microwave_oven__01.json",
+      "sha256": "1512292c295b43973d466c50797f0ace2d4828c749a1fb14abce2c2fc8b1a3bc",
+      "size_bytes": 12869,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__mug__02.json",
+      "sha256": "8b9cbf02352781a0d52bb92a7bab97e56c2bda271475c640e717adef50669d63",
+      "size_bytes": 12586,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__plastic_bag__02.json",
+      "sha256": "c6fefb519a2503c287168bb9aeecdcfaa467fc82a55f5c397777c930e885a183",
+      "size_bytes": 9162,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__scissors__01.json",
+      "sha256": "dd626a6989086b90372ef024378bf45c32e53c47fddc1dafa7e2c95342ddac49",
+      "size_bytes": 18574,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__stool__02.json",
+      "sha256": "cf64eb647f571a9fe279c34d302f076017dbcef59354a800d3ca70942b02bbfa",
+      "size_bytes": 10234,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__television_set__02.json",
+      "sha256": "220f7a7b12bb7336f57c68a6707c30f795b72fc3ccf8c1b395f9fb21dafb2507",
+      "size_bytes": 19963,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__towel__02.json",
+      "sha256": "f225ee5a7567fec5863ffb39427e940070e68e67ad4274924b6fd94cb9d176fb",
+      "size_bytes": 13186,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/new216__vase__03.json",
+      "sha256": "c7be5399f2a67f18c9f411faf081d0b99861f80b88bb434c0ec29f5feeaead9c",
+      "size_bytes": 19561,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/old37__box__u01.json",
+      "sha256": "95ec7ce9945201d0dcb665377fc50408bf3e9052478a38d7fe317e1f7f5e9922",
+      "size_bytes": 22591,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/old37__car_automobile__u02.json",
+      "sha256": "16a043029d18b211ded3c3750343a2562c966837d2c7b7f1123e2cc18d94da6f",
+      "size_bytes": 25919,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/old37__scissors__u01.json",
+      "sha256": "a0537611d6870eb969b4b16897afc05ae220b07b5c17eedd1188998febf35366",
+      "size_bytes": 20880,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C6_Handoff253/mechanism_analysis/cases/old37__shoe__u01.json",
+      "sha256": "b6e3900d91af8f0b6e04da3af2402883ba0571e55ff362fca0af1a81fd1be526",
+      "size_bytes": 22392,
+      "scope": "R1C6",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/baseline_calibration.json",
+      "sha256": "133f39a35db310ed49866ed182aa72ad4839f69753068e20699f183cfd45c5b7",
+      "size_bytes": 1199,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/baseline_projected_cases.csv",
+      "sha256": "e7d10d00162a16cc60d51801998530d7f08b1912823fa02b95f74739b6e502b7",
+      "size_bytes": 15295,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/command_independent_audit.json",
+      "sha256": "d91b56fd0dde757e15d9aa0f6a63f35bf573c4a6fbc1041dd592fe24fd1612ac",
+      "size_bytes": 42634,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/commands_as_executed.json",
+      "sha256": "2b190decd2030dbeeb00d927ee79b3ae678fd0adac1380fcb6253cf26ad83a03",
+      "size_bytes": 88077,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/environment_control_receipt.json",
+      "sha256": "f10d09268fa1ad0de84ac7f584cea53cbfc8182af8be6ce1a8adf129a7f34651",
+      "size_bytes": 351,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/frozen_assets_audit.json",
+      "sha256": "85e1ccee1c0edb5f15b270d9c2b177b69687cbb9a3470b22ad0c1e01f5dae051",
+      "size_bytes": 12750,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/full_image_cases.csv",
+      "sha256": "f3dde252bfa9c24da3f948c39e00fbff2c7f2120c4c2a76342740e897f68af8d",
+      "size_bytes": 15357,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/full_image_summary.json",
+      "sha256": "315732caed34e453ef833750cb910d69b21fe9f09e625cc364761c2c015d3932",
+      "size_bytes": 7543,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/independent_statistics.json",
+      "sha256": "214c2880c3f32fdd7cee1dbe3dc13ccad68970c62258b14a740dac145e1ad0aa",
+      "size_bytes": 3704,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/input_materialization_receipt.json",
+      "sha256": "6a18f10a5df5fa41bfe2b715f985b8b25da211b85b73c78def5b74884694e0ea",
+      "size_bytes": 365,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/input_output_fingerprints.json",
+      "sha256": "f7fbb2c8cf6b3ef63c1c0718b8db3a9988866d2b31712588536a232a59988e29",
+      "size_bytes": 202301,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/manifest_sha256.json",
+      "sha256": "62bbc544d201b77270e03ef5cb8e6b6186b08f3cbca573684dd8da60cf763f37",
+      "size_bytes": 2688,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/overlap_evidence.json",
+      "sha256": "d14e3172c296d839fd07de8f2dd6a72737709d975843ac3f00d73f53e790ffaa",
+      "size_bytes": 282341,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/overlap_recomputation.json",
+      "sha256": "978a24b361bf9dbedca706d6f4df05bc620d6fef513bb1326cf41977f09a9efb",
+      "size_bytes": 3764,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/protocol.json",
+      "sha256": "99f79ad09cc259d33b3251d1349891997789f9dab1d82ed0639f5c1292bd72ed",
+      "size_bytes": 4590,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/recompute_results.py",
+      "sha256": "f09c3e53bfa92dba80f1163ed9532026c488537666d94808471eb835cfd9b542",
+      "size_bytes": 4477,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/scoring_clarifications.json",
+      "sha256": "5df6afefdedbf5e3d91090c29644bd107d6febf551da35b663425fe0e20a4073",
+      "size_bytes": 1410,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R1C4_FullImage42/truth_coordinate_audit.json",
+      "sha256": "c042851c824521a54b61fe29b833209043aed984b1337f034b38adeab57b3e4b",
+      "size_bytes": 61127,
+      "scope": "R1C4",
+      "purpose": "Protocol, scalar/source table, analysis script or scientific audit; no raster/mask array is copied."
+    },
+    {
+      "relative_target": "R2C8_Root226/root_robustness_cases.csv",
+      "sha256": "b5aa5b2fe8483dba72972e07786188d8f4339b1d0567d7ab80eb57f27d9e9f6e",
+      "size_bytes": 1096917,
+      "scope": "R2C8",
+      "purpose": "Original scalar root-substitution data; historical upper_bound naming is superseded by the manuscript diagnostic-only interpretation."
+    },
+    {
+      "relative_target": "R2C8_Root226/root_robustness_summary.csv",
+      "sha256": "40cf2c1045c8daa7fcf205e1bfc9df06c6e9d6c05d091b216b353fef5b4f17ec",
+      "size_bytes": 4073,
+      "scope": "R2C8",
+      "purpose": "Original scalar root-substitution data; historical upper_bound naming is superseded by the manuscript diagnostic-only interpretation."
+    },
+    {
+      "relative_target": "R2C8_Root226/root_robustness_paired.csv",
+      "sha256": "e9fd3edd655cb4237732ee4388c5fcc8ddb8c827f58099485d76eea3842c5019",
+      "size_bytes": 5655,
+      "scope": "R2C8",
+      "purpose": "Original scalar root-substitution data; historical upper_bound naming is superseded by the manuscript diagnostic-only interpretation."
+    },
+    {
+      "relative_target": "R2C8_Root226/root_robustness_report.json",
+      "sha256": "f29727201b041d14a6f9e86e108453bd23e6f7e44dca57851eb06ab012c89acf",
+      "size_bytes": 1157,
+      "scope": "R2C8",
+      "purpose": "Original scalar root-substitution data; historical upper_bound naming is superseded by the manuscript diagnostic-only interpretation."
+    },
+    {
+      "relative_target": "R2C8_Root226/root_robustness_reproduction.csv",
+      "sha256": "b59db2cc6b13ccab56c1e0254116514e1992dd01944fb216af1efdcc4dc08e5e",
+      "size_bytes": 4153,
+      "scope": "R2C8",
+      "purpose": "Original scalar root-substitution data; historical upper_bound naming is superseded by the manuscript diagnostic-only interpretation."
+    },
+    {
+      "relative_target": "R2C8_Root226/automatic_root_iou_strata.csv",
+      "sha256": "40b023087d21aff1b02525ba1037a4e0bebdc2658f2f6defee6f5d52a2af0854",
+      "size_bytes": 507,
+      "scope": "R2C8",
+      "purpose": "Original scalar root-substitution data; historical upper_bound naming is superseded by the manuscript diagnostic-only interpretation."
+    },
+    {
+      "relative_target": "R2C1_Taxonomy/taxonomy_behavior.json",
+      "sha256": "466fb92f1de37783c6adf740dc227890c62aad53bd7decc7306fa1a95007563e",
+      "size_bytes": 21447,
+      "scope": "R2C1",
+      "purpose": "The 43 deterministic interface fixtures; not real OOD-image accuracy."
+    }
+  ],
+  "scope": "Tables, protocols and audit records. Full image/mask replay requires the original licensed datasets and frozen environment. Historical completion records describe pre-integration analysis states; final Word integration is recorded separately."
+}

@@ -1,0 +1,598 @@
+{
+  "status": "PASS",
+  "scope": "Historical HPID reproducibility only; no PartCATSeg outputs read",
+  "case_count": 42,
+  "hpid_mean_part_f1_at_025": 0.33895990145444427,
+  "checks": [
+    {
+      "anonymous_id": "img_001",
+      "case_id": "cellular_telephone__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "5f2e38767cd77a3bb613b89e4903ac5406b9e38e429b20720ffba5f70bde7fb5"
+    },
+    {
+      "anonymous_id": "img_002",
+      "case_id": "laptop_computer__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "4b0a3135f9c0fec6c5be505e34efd2f0456b66511660412f589cf4a1e796306e"
+    },
+    {
+      "anonymous_id": "img_003",
+      "case_id": "television_set__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "9d1c222a6a71d1cf07f15b12a1e7dac8391c83bcdde1c87d07213d6496aab3e6"
+    },
+    {
+      "anonymous_id": "img_004",
+      "case_id": "remote_control__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "fd314091a4b7fb4b2867bac31f1dc6be24efca9c99d6cf33ebc05388c9705da4"
+    },
+    {
+      "anonymous_id": "img_005",
+      "case_id": "calculator__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "d7b8009317e3bae18539795708c2aa4962ae812e97528b731a1d6c9e328868a1"
+    },
+    {
+      "anonymous_id": "img_006",
+      "case_id": "telephone__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "ca50343654fb3a0f0cc90c51d1ff3971c2db4e30d690731b9305f13c4a80cc3c"
+    },
+    {
+      "anonymous_id": "img_007",
+      "case_id": "clock__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "6818ccae4b37afda8ae88a3490675369f3bf4e5984f0716f99f30193a80d7b09"
+    },
+    {
+      "anonymous_id": "img_008",
+      "case_id": "watch__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "68bb580d1aa2340cf770da4748366d353e732d9c96f0adb95bb214ddee508be2"
+    },
+    {
+      "anonymous_id": "img_009",
+      "case_id": "chair__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "34dfbfe0723a358f9aa4e7891842a5fc7e71a092d65767b69d6f4b3abb05146b"
+    },
+    {
+      "anonymous_id": "img_010",
+      "case_id": "bench__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "a5758f0055cf398bdb1305305cbc700eeccd20bb994bbdb204c7dc4046353938"
+    },
+    {
+      "anonymous_id": "img_011",
+      "case_id": "stool__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "5a9d1adbc121fc8b8739057595df25e9c2064fde3e9a118cdc7b2761238dd94b"
+    },
+    {
+      "anonymous_id": "img_012",
+      "case_id": "table__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "f9a485f5ff944d31d83be64fedbb5064277713f84310b6ff8c39a2356f68a144"
+    },
+    {
+      "anonymous_id": "img_013",
+      "case_id": "bottle__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "6a56c537ef45949d05833fdb122f62456013df5e7cd200cf30a6a4f713229204"
+    },
+    {
+      "anonymous_id": "img_014",
+      "case_id": "jar__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "14683ff7f09f917ae2bcb0b402b556c5c2cab82d4ee31e5d33210a9a0b1ab4e2"
+    },
+    {
+      "anonymous_id": "img_015",
+      "case_id": "can__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "33de6281460e4a09a43145930d38e0fcdde7e9f264b489f8ce2ad523e1b95477"
+    },
+    {
+      "anonymous_id": "img_016",
+      "case_id": "cup__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "408d2bf95bdc7d8f16646c190bd8275311f89479ea2be2e28c7dd312199f240c"
+    },
+    {
+      "anonymous_id": "img_017",
+      "case_id": "mug__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "1cc4a4d4c0e01e65ad441edd5f88972478449748e9bbcd45483dd1ab6a8c5349"
+    },
+    {
+      "anonymous_id": "img_018",
+      "case_id": "glass_drink_container__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "112d8635b0d86c3cb65482cf21fd781ed28b39c9cae5c32768f03ec3e5622546"
+    },
+    {
+      "anonymous_id": "img_019",
+      "case_id": "bowl__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "36e8ad7f1f6e74359d420212d1dc2e1c952ab7af959a8df63d06674c48b3f927"
+    },
+    {
+      "anonymous_id": "img_020",
+      "case_id": "handbag__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "256e25c0139dc7954471a8326d99e30765ccc869f71eed549c28b99c89c29b7c"
+    },
+    {
+      "anonymous_id": "img_021",
+      "case_id": "plastic_bag__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "b6b542b11fb7da2a3d487aa2724b1ea37b773cb2c3837ebd3f2bd1fe57229703"
+    },
+    {
+      "anonymous_id": "img_022",
+      "case_id": "box__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "ec8a5d597a6bb52e5d923a67b99d409d50151c745ca862454d1fda7900f84bf0"
+    },
+    {
+      "anonymous_id": "img_023",
+      "case_id": "car_automobile__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "5072ecec6fef844fb9df460a10d977dac0329f90b078dadbb744b1c037926ed1"
+    },
+    {
+      "anonymous_id": "img_024",
+      "case_id": "bicycle__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "1ba8e09cbd5cd312b6706fa58c07878a46fb3b413face8f06db0e219fcf6e42c"
+    },
+    {
+      "anonymous_id": "img_025",
+      "case_id": "car_automobile__u02",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "65bdd4cab371496bfbbf005eed42143352d67a9d2b4f3f6b91a5271c17e94dcd"
+    },
+    {
+      "anonymous_id": "img_026",
+      "case_id": "bicycle__u02",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "4d6266ef684ceeeba45cfd13512a947e24c4232242a5a0e0397f0279743ff81c"
+    },
+    {
+      "anonymous_id": "img_027",
+      "case_id": "book__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "3ebb21d0022b21182bdd4e4674b5783e8f62037085f8e1f0a9fd547601008501"
+    },
+    {
+      "anonymous_id": "img_028",
+      "case_id": "pencil__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "1b6a03bd3f298640f7ecbe7747018d38e8d466f3d7eb7e262a21c8f52fda8022"
+    },
+    {
+      "anonymous_id": "img_029",
+      "case_id": "belt__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "e14562e3bf141bcd831ecf4f169a3b6acef3c873f6d2fd5e5b000c62fe2a6380"
+    },
+    {
+      "anonymous_id": "img_030",
+      "case_id": "hat__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "608ae2416fa1f99a5ac32dbcd4f0047bf72b5609b9cf82769d97102bf1c30bb6"
+    },
+    {
+      "anonymous_id": "img_031",
+      "case_id": "helmet__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "1c3e8e4e305e5991c7a54d4ffca164f98e3fc4da7507b763ae632ad02fd68838"
+    },
+    {
+      "anonymous_id": "img_032",
+      "case_id": "shoe__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "6cb96fc56053d7327ddd4604dca69dc779f267b48cc15f735cd6233d5b7e7fe3"
+    },
+    {
+      "anonymous_id": "img_033",
+      "case_id": "slipper_footwear__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "ff4e3ccd418d41cd01beca9a4545e65b2e1fe2362ef6fb925dbac29528beba11"
+    },
+    {
+      "anonymous_id": "img_034",
+      "case_id": "scarf__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "8f49365147866ebe14059f2dda54a11a081f8db93759c8590e2d6f65330fa518"
+    },
+    {
+      "anonymous_id": "img_035",
+      "case_id": "screwdriver__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "f851190ecc1d43a85b407ccc552a21cba268587d5e9c07918c8dcd24311e0a99"
+    },
+    {
+      "anonymous_id": "img_036",
+      "case_id": "wrench__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "805576cf72fdc8b99f48e4f7d13a446d50843ee02f6b42b4e76069baeb895789"
+    },
+    {
+      "anonymous_id": "img_037",
+      "case_id": "knife__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "b8232d9f6b2d29a6f7f1e6bb2d9d59417ce56cc130cbb78d372133f8c46808cf"
+    },
+    {
+      "anonymous_id": "img_038",
+      "case_id": "scissors__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "2fde08863c4d296c9b3a2bf78a7e06a2acd1cf19f1213ae7e4ab61dd1e2dd832"
+    },
+    {
+      "anonymous_id": "img_039",
+      "case_id": "pliers__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "fd35b7a36f8bd2eeec2f7f9d7b7396f9ed64d2751c74b80ea9faa58d392f11d3"
+    },
+    {
+      "anonymous_id": "img_040",
+      "case_id": "ladder__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "4896c1573d5fe2d7150d7dcfa0541cb0c529e319361c9554f6f40d8389136db9"
+    },
+    {
+      "anonymous_id": "img_041",
+      "case_id": "guitar__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "b2cef88bdcd1f382ccbde7031cc7c1b1f19da826e6dab997386a46ac63c0faea"
+    },
+    {
+      "anonymous_id": "img_042",
+      "case_id": "pan_for_cooking__u01",
+      "status": "PASS",
+      "absolute_differences": {
+        "part_f1_at_025": 0.0,
+        "part_precision_at_025": 0.0,
+        "part_recall_at_025": 0.0,
+        "mean_semantic_union_iou": 0.0,
+        "semantic_label_precision": 0.0,
+        "semantic_union_recall_at_025": 0.0
+      },
+      "historical_score_sha256": "df45acee92738a882ffaab009102f25600d7014b67bd237d88291e638cb9411c"
+    }
+  ],
+  "scorer_sha256": "1db8dbce7b60e019e90cfb97c3ae63c65a83ae858a9af11e6b11f1bb1fc3a612",
+  "created_utc": "2026-10-09T15:07:41.012853+00:00"
+}

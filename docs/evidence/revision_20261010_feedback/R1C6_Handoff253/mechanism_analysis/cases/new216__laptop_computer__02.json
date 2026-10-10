@@ -1,0 +1,354 @@
+{
+  "request": {
+    "request_id": "new216__laptop_computer__02",
+    "case_id": "laptop_computer__02",
+    "cohort": "new216",
+    "image_id": 339352,
+    "source_image_sha256": "ac2bbff703997ab4a46ba76c9f4d0c4de9fa26173e69d61bb611d04ecf6b2416",
+    "object_annotation_id": 140164,
+    "object_category": "laptop_computer",
+    "expected_domain": "device",
+    "domain": "device",
+    "expected_profile": "laptop",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\laptop_computer__02\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\laptop_computer__02",
+    "target_part_name": "base_panel",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\laptop_computer__02\\parts_crop\\003_base_panel.png",
+    "target_mask_sha256": "926d83158f45da41ae995e63098a881a03c520117d1e0b879ba73f991173fa11",
+    "target_area_px": 7376,
+    "target_object_fraction": 0.1428433100296299,
+    "defect_mode": "boundary",
+    "defect_seed": 20260959,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 131,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__02\\groups.json",
+    "hpid_group_map_sha256": "43895ec1a1054ae5a487f408f91bb78c25a4b229ec0b9dacff7abaa4ac78bf10",
+    "hpid_groups_sha256": "240a044e96cf7f32df85c96d36f1c84cc7428814017348fe15799c2c668e1952"
+  },
+  "summary": {
+    "request_id": "new216__laptop_computer__02",
+    "cohort": "new216",
+    "domain": "device",
+    "object_category": "laptop_computer",
+    "target": "base_panel",
+    "normalized_target": "base_panel",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 1,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.43468761072398726,
+    "accepted_best_matching_iou": 0.43468761072398726,
+    "native_part_best_matching_iou": 0.1444206250705179,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.36744440964610087,
+    "group_best_any_semantic_iou": 0.3688015717092338,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 0,
+    "accepted_available_050": 0,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 0,
+    "first_observed_loss_stage_050": "not_a_raw_to_group_loss",
+    "observed_subtype_050": "not_applicable",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__laptop_computer__02",
+      "cohort": "new216",
+      "raw_identity": "proposal/0003",
+      "semantic": "device_base_panel",
+      "target_iou": 0.43468761072398726,
+      "mask_area": 16919,
+      "raw_candidate_index_zero_based": 2,
+      "upstream_candidate_key": "root:1/profile-refine:IDEA-Research_grounding-dino-tiny:device_base_panel:01",
+      "fingerprint": "18dd848a1095aac06890cbf5634b558a684e7e9ba3d4e983581bcf554fad488e",
+      "accepted_by_fuser": true,
+      "accepted_index": 2,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "device/device/center/01",
+          "semantic": "device",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 9875,
+          "truth_overlap_pixels": 4693,
+          "final_target_iou": 0.36744440964610087
+        },
+        {
+          "identity": "device_screen/device_bezel/center/01",
+          "semantic": "device_bezel",
+          "normalized_semantic": "bezel",
+          "candidate_overlap_pixels": 3896,
+          "truth_overlap_pixels": 1011,
+          "final_target_iou": 0.05197943444730077
+        },
+        {
+          "identity": "device_body/device_base_panel/center/01",
+          "semantic": "device_base_panel",
+          "normalized_semantic": "base_panel",
+          "candidate_overlap_pixels": 2767,
+          "truth_overlap_pixels": 1280,
+          "final_target_iou": 0.1444206250705179
+        },
+        {
+          "identity": "device/device_touchpad/left/01",
+          "semantic": "device_touchpad",
+          "normalized_semantic": "touchpad",
+          "candidate_overlap_pixels": 381,
+          "truth_overlap_pixels": 377,
+          "final_target_iou": 0.0510840108401084
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/device_body",
+          "semantic": "device_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 9875,
+          "truth_overlap_pixels": 4693,
+          "final_target_iou": 0.3688015717092338
+        },
+        {
+          "identity": "object_001/device_bezel/007",
+          "semantic": "device_bezel",
+          "normalized_semantic": "bezel",
+          "candidate_overlap_pixels": 6663,
+          "truth_overlap_pixels": 2291,
+          "final_target_iou": 0.10917842165459397
+        },
+        {
+          "identity": "object_001/device_touchpad/006",
+          "semantic": "device_touchpad",
+          "normalized_semantic": "touchpad",
+          "candidate_overlap_pixels": 381,
+          "truth_overlap_pixels": 377,
+          "final_target_iou": 0.0510840108401084
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "device/device/center/01",
+      "group_id": "object_001/device_body",
+      "semantic": "device",
+      "normalized_semantic": "body",
+      "target_iou": 0.36744440964610087,
+      "area_px": 10089
+    },
+    {
+      "part_id": "device_body/device_base_panel/center/01",
+      "group_id": "object_001/device_bezel/007",
+      "semantic": "device_base_panel",
+      "normalized_semantic": "base_panel",
+      "target_iou": 0.1444206250705179,
+      "area_px": 2767
+    },
+    {
+      "part_id": "device/device_logo/left/01",
+      "group_id": "object_001/device_logo/003",
+      "semantic": "device_logo",
+      "normalized_semantic": "logo",
+      "target_iou": 0.0,
+      "area_px": 432
+    },
+    {
+      "part_id": "device/device_logo/center/01",
+      "group_id": "object_001/device_logo/004",
+      "semantic": "device_logo",
+      "normalized_semantic": "logo",
+      "target_iou": 0.0,
+      "area_px": 337
+    },
+    {
+      "part_id": "device/device_screen/center/01",
+      "group_id": "object_001/device_screen/005",
+      "semantic": "device_screen",
+      "normalized_semantic": "screen",
+      "target_iou": 0.0,
+      "area_px": 24529
+    },
+    {
+      "part_id": "device/device_touchpad/left/01",
+      "group_id": "object_001/device_touchpad/006",
+      "semantic": "device_touchpad",
+      "normalized_semantic": "touchpad",
+      "target_iou": 0.0510840108401084,
+      "area_px": 381
+    },
+    {
+      "part_id": "device_screen/device_bezel/center/01",
+      "group_id": "object_001/device_bezel/007",
+      "semantic": "device_bezel",
+      "normalized_semantic": "bezel",
+      "target_iou": 0.05197943444730077,
+      "area_px": 13085
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/device_body",
+      "semantic": "device_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "device/device/center/01"
+      ],
+      "target_iou": 0.3688015717092338,
+      "area_px": 10042,
+      "evidence": "conservative_visual_merge"
+    },
+    {
+      "group_id": "object_001/device_bezel/007",
+      "semantic": "device_bezel",
+      "normalized_semantic": "bezel",
+      "member_part_ids": [
+        "device_body/device_base_panel/center/01",
+        "device_screen/device_bezel/center/01"
+      ],
+      "target_iou": 0.10917842165459397,
+      "area_px": 15899,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_logo/003",
+      "semantic": "device_logo",
+      "normalized_semantic": "logo",
+      "member_part_ids": [
+        "device/device_logo/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 432,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_logo/004",
+      "semantic": "device_logo",
+      "normalized_semantic": "logo",
+      "member_part_ids": [
+        "device/device_logo/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 337,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_screen/005",
+      "semantic": "device_screen",
+      "normalized_semantic": "screen",
+      "member_part_ids": [
+        "device/device_screen/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 24529,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/device_touchpad/006",
+      "semantic": "device_touchpad",
+      "normalized_semantic": "touchpad",
+      "member_part_ids": [
+        "device/device_touchpad/left/01"
+      ],
+      "target_iou": 0.0510840108401084,
+      "area_px": 381,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 12,
+    "accepted_candidate_count": 12,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 7,
+    "identity_hypothesis_count": 12,
+    "identity_group_count": 11,
+    "identity_hypotheses_merged": 1,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 5,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [
+      "device_body/device_base_panel/center/01"
+    ],
+    "classes_with_multiple_sources": [
+      "device_screen"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "hpid-topology-v1",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 7,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 51627,
+    "lost_root_pixels_before_conservation": 8,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__02\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__laptop_computer__02",
+      "cohort": "new216",
+      "domain": "device",
+      "object_category": "laptop_computer",
+      "target": "base_panel",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.43468761072398726,
+      "accepted_best_iou": 0.43468761072398726,
+      "part_best_iou": 0.1444206250705179,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.3688015717092338,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

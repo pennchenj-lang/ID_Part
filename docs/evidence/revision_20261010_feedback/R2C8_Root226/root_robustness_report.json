@@ -1,0 +1,23 @@
+{
+  "format": "HPID-Split automatic object-root robustness audit",
+  "format_version": "1.0.0",
+  "case_count": 226,
+  "conditions": [
+    "automatic_root",
+    "eroded_root",
+    "dilated_root",
+    "translated_root",
+    "reference_root_upper_bound"
+  ],
+  "automatic_root_source": "The object-root proposal stored by the original Grounded-SAM2/SAM2 inference run; no reference mask is used in this condition.",
+  "perturbation_protocol": {
+    "erosion_and_dilation_radius": "3% of square-root root area",
+    "translation": "2% of crop diagonal in a deterministic direction"
+  },
+  "upper_bound_scope": "The reference-root condition intentionally uses the PACO object mask and is reported only as an oracle upper-bound diagnostic.",
+  "remaining_oracle_scope": "All cases remain object crops produced from reference bounding boxes; this audit does not test full-image object discovery.",
+  "canonical_exact_map_cases": 226,
+  "manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+  "benchmark_summary_sha256": "c7a9e99241b80359f40f6f309dd1aae93252e879c794c810c2a11da7e541e464",
+  "seed": 20260828
+}

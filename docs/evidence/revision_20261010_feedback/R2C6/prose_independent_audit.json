@@ -1,0 +1,276 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-10T03:41:32.247849+00:00",
+  "scope": "Independent bilingual prose, original Word anchors, quote synchronization, numerical reporting and evidence-binding review. Does not repeat the separately audited resolver executions; no Word changes or model execution.",
+  "payload_sha256": "86f9fc6bd035345d8730c15c5ff453d6f8950c2501becf3543c7b69a91332c6f",
+  "patches_canonical_sha256": "d0591653efdf5286ee96a43076224cde5634ff55c1e0c17a84fbbf0eb8dc8f02",
+  "content_canonical_sha256": "ea27b489e14f7b8cd15e2ea35664dea1cda554d48047bfe36eb681d62ed95f07",
+  "bound_artifacts_sha256": {
+    "revision_payload.json": "86f9fc6bd035345d8730c15c5ff453d6f8950c2501becf3543c7b69a91332c6f",
+    "revision_text_en.txt": "567d7e84dffe9e8d45feff2f1edb63d4dc26d6ad79ecbdc4e62fcefb238482eb",
+    "revision_text_zh.txt": "d74f0308f32944dd40652dc036fc546b858abe06ff1d45501492ffce4944c917",
+    "revision_qa.json": "79a1cf2da434ae4441898c60d28857e918dcd6ec361b553e127fa6ec0a76a3e8",
+    "prepare_revision.py": "a1e33166523451d8519c92547103fd9a9285f7eb7233199985201bdb2a2a2286",
+    "resolver_causal_audit.json": "4daac95dffb04e77553a422ca907865f6d9bed7517109df14477491fb8e910b3",
+    "resolver_independent_audit.json": "db0e7f012de52c6c483beca52a48ea5d5fa58974db0835b38e36689b7c1238d6"
+  },
+  "patch_count": 18,
+  "source_anchor_checks": [
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "paragraph_index_zero_based": 48,
+      "source_sha256": "ffb0a916dd6a148a44ffb6542bbe1faab7e611506518bd0f8734330d9f6b50ff",
+      "old_text_sha256": "5a4c1fb23ee9c1ae9935689661f0bd682e863cda907760a8a112feee1c7c8fb2",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "paragraph_index_zero_based": 130,
+      "source_sha256": "ffb0a916dd6a148a44ffb6542bbe1faab7e611506518bd0f8734330d9f6b50ff",
+      "old_text_sha256": "226dcf1a5c05ad7b61f24e388c9b910fd097cf217708e0f882bfe7c00dcccec9",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 47,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "aba7aa6c9e52319e76336e39807403540e5205c303e6caec2cf25147a030b60a",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 48,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "8e035a497e66b415dd78fda54b5c0db4ba9fa853fd2f08e38209b0210f54e4ba",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 49,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "7f4e43b02e1a27915f1507b8ad49f1a3beb4f1fd2ea2185afbf5f8eebf68f3cd",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 51,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "a512e52dcfab0af0a4d8e7af197222ac825df39f2b9e887d76b0b253ba80cb99",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 52,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "5a4c1fb23ee9c1ae9935689661f0bd682e863cda907760a8a112feee1c7c8fb2",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 146,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "160fcdb65a831559cced5999541c93aa8fcad72e2d46825f37babc498ed60fcc",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 150,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "9eef1895f1ef6928d4970a7d66f9d7bbf0c21309cb7a2297da0bdef8bc5f6bfe",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "paragraph_index_zero_based": 51,
+      "source_sha256": "2ed4fd77edf17c2f47250408781405c43c5ddbab0fa9910d6aff8a008f3d4fb8",
+      "old_text_sha256": "da1d7f3793234f9696e751d8566dd26bca94ac5af6ab606655ed7b1cd7ff3ca3",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "paragraph_index_zero_based": 134,
+      "source_sha256": "2ed4fd77edf17c2f47250408781405c43c5ddbab0fa9910d6aff8a008f3d4fb8",
+      "old_text_sha256": "28aec4eae5841c2204e6612331cee0ccbdae19f5f5aecb858f64a7cf6685a452",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 47,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "cdfc6eae3082a5defa9c1603b570d8847e95f00d568d7ddc156560b78edc4e2b",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 48,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "ae406b3cafabb611954ff6a1357e993ce0360360d6f0c0c7c6bd6d60287b2666",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 49,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "3bb28d63e732f1e770dedba557dd2bee069ae9ec9deaa2940d229c02d06f64c3",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 51,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "c2a672cd8bc7e9d362eeef02b34a2bc24cc221546c204168b973458e09ab99b1",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 52,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "da1d7f3793234f9696e751d8566dd26bca94ac5af6ab606655ed7b1cd7ff3ca3",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 146,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "d97af16a02b9eef23ab252e5b318faca97b0db03b55bd16792b0977093bebd8b",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 150,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "cf83a26e6ef5108ff199153f1699e02216c46948b767b6a45c18eed872ea1564",
+      "status": "PASS",
+      "omml_in_replaced_paragraph": 0
+    }
+  ],
+  "source_documents_unchanged": true,
+  "quote_checks": [
+    {
+      "language": "en",
+      "source_section": "IV-F methods",
+      "main_original_index": 48,
+      "response_original_index": 52,
+      "verbatim_equal": true,
+      "response_italic_on_merge": true,
+      "text_sha256": "f8cbf5827148458d22e4c976ab6aa117137f63b0052ca134eab29b087ba92711"
+    },
+    {
+      "language": "zh",
+      "source_section": "IV-F methods",
+      "main_original_index": 51,
+      "response_original_index": 52,
+      "verbatim_equal": true,
+      "response_italic_on_merge": true,
+      "text_sha256": "09e446ceb67d793da04938cf74bfca4c38b1e5a61b15716217118eb57980403a"
+    }
+  ],
+  "prior_pending_patch_checks": {
+    "2": {
+      "payload_sha256": "751d37893d3893f1925f5783c2c78fe5ef76c73150eb9597f7a6f9beb2eea319",
+      "anchor_overlap": []
+    },
+    "3": {
+      "payload_sha256": "58d5dea64f601bd0930dc67f13403dd52c670207452c4ff3bb2df32d73819ab9",
+      "anchor_overlap": []
+    },
+    "4": {
+      "payload_sha256": "2ada6d625bc1b2eb49011c41adab07516981b7356d40bc0bf10e1a0bb422a542",
+      "anchor_overlap": []
+    },
+    "5": {
+      "payload_sha256": "c800cda27e5039ecd201eb9763e24b3eeb585dae1afbb698b4f5356a63b72849",
+      "anchor_overlap": []
+    }
+  },
+  "evidence_sha_bindings_all_exact": true,
+  "separate_evidence_audit": {
+    "path": "__WORKSPACE__\\stability_work\\reviewer2_comment6\\resolver_independent_audit.json",
+    "status": "PASS_WITH_HISTORICAL_HELPER_PROVENANCE_LIMITATION",
+    "sha256": "db0e7f012de52c6c483beca52a48ea5d5fa58974db0835b38e36689b7c1238d6",
+    "qualification": "The executed local historical-generation helper reproduces all archived routes and available selected-mask artifacts, but its complete historical source is not certified byte-identical to the original run. SI explicitly retains this limitation."
+  },
+  "interpretation_review": {
+    "status": "PASS",
+    "causal_scope": "Established conditional propagation at the tested benchmark interface, not creation of the original wrong mask or general behavior of all production consumers.",
+    "confidence": "Constant confidence 1.0 is not described as the cause of bad geometry or singleton selection; multiple-match ranking may use confidence without changing ambiguity.",
+    "flags": "All original six flags were false. Constructed true-flag insensitivity is not described as an ignored warning in the original cases.",
+    "mask_interventions": "Selected ID and unique branch remain unchanged; reference substitution changes external correctness to correct-unique and IoU to 1.0. The prose does not say all outcomes stay unchanged.",
+    "setting_count": "60 unit-setting observations include original-value controls; no reader-facing claim of 54 effective input changes or 60 independent images.",
+    "upstream_localization": "Box/car/shoe accepted-to-Part losses remain stage-localized; no isolated gate, ownership coefficient or cleanup cause is asserted.",
+    "subset_denominators": "Six original wrong-unique cases are distinct from the expanded 36/253 outcomes; 25 lost-correct-option cases are explicitly a different subset.",
+    "ambiguous_selection": "SI now states that the highest-ranked match still supplies the controlled request mask in ambiguous queries, avoiding diagnostic-only framing.",
+    "reference_use": "Reference masks are diagnostic resolver inputs and evaluation references; no new learned prediction or performance improvement is claimed.",
+    "bilingual_consistency": "All paired replacements have equivalent claims, numerical values, qualifications and locators.",
+    "reviewer_isolation": "Only Reviewer 2 Comment 6 is addressed in its reply; other reviewer comments or responses are not exposed."
+  },
+  "wilson_checks": [
+    {
+      "numerator": 6,
+      "denominator": 37,
+      "percentage": 16.216216216216218,
+      "wilson_95_percent": [
+        7.651207234011151,
+        31.13648370093497
+      ],
+      "reported_rounding_matches": true
+    },
+    {
+      "numerator": 36,
+      "denominator": 253,
+      "percentage": 14.229249011857709,
+      "wilson_95_percent": [
+        10.458446913935898,
+        19.07006424190537
+      ],
+      "reported_rounding_matches": true
+    },
+    {
+      "numerator": 36,
+      "denominator": 69,
+      "percentage": 52.17391304347826,
+      "wilson_95_percent": [
+        40.58725487361115,
+        63.53127878643645
+      ],
+      "reported_rounding_matches": true
+    }
+  ],
+  "main_text_counts_verified": {
+    "en": {
+      "before": 197,
+      "after": 186
+    },
+    "zh": {
+      "before": 449,
+      "after": 414
+    }
+  },
+  "reader_facing_exports_match_payload": true,
+  "equation_safety": "No OMML occurs in any replaced paragraph; existing equations and table identifiers remain outside the replacement anchors.",
+  "merge_requirement": "Apply against original hashes and exact old-text anchors or in descending original paragraph order because some replacements insert multiple paragraphs.",
+  "word_application_status": "NOT_APPLIED; all 18 patches remain staged and no source Word file was modified by this audit.",
+  "resolved_review_notes": [
+    "Replaced six controls plus 54 interventions with 60 settings including original-value controls.",
+    "Removed diagnostic-only ranking wording and explicitly retained ambiguous-query request-mask selection.",
+    "Bound separate completed independent evidence audit with historical-helper provenance qualification."
+  ],
+  "remaining_prose_issues": []
+}

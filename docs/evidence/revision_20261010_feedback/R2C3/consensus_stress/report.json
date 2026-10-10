@@ -1,0 +1,12 @@
+{
+  "case_count": 226,
+  "eligible_case_count": 150,
+  "eligible_category_count": 51,
+  "total_category_count": 60,
+  "total_candidates": 1951,
+  "rows": 6000,
+  "all_226_consensus_arrays_bit_exact": true,
+  "same_family_repetition_invariant": true,
+  "protocol_sha256": "5ff061ee0adbc793575305d28528dea99ba139902a1ab942e24d12036eafa0ae",
+  "finished_utc": "2026-10-10T01:48:37.087600+00:00"
+}

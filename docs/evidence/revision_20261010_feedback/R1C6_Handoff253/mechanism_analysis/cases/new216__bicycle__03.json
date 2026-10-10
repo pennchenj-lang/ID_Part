@@ -1,0 +1,318 @@
+{
+  "request": {
+    "request_id": "new216__bicycle__03",
+    "case_id": "bicycle__03",
+    "cohort": "new216",
+    "image_id": 174482,
+    "source_image_sha256": "3fbd217b9deb8c95fca1352ccbda11d1bfab808aa17bf442b1c54a3822d27ac7",
+    "object_annotation_id": 41591,
+    "object_category": "bicycle",
+    "expected_domain": "vehicle",
+    "domain": "vehicle",
+    "expected_profile": "two_wheeler",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\bicycle__03\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\bicycle__03",
+    "target_part_name": "saddle",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\bicycle__03\\parts_crop\\002_saddle.png",
+    "target_mask_sha256": "9f4eff5e4a7bd24c8cf4a20738d19043fb5c2f9cb65921db64721d93c269d326",
+    "target_area_px": 3793,
+    "target_object_fraction": 0.05955596030649416,
+    "defect_mode": "boundary",
+    "defect_seed": 20260843,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 15,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__03\\groups.json",
+    "hpid_group_map_sha256": "e0bdcf3eeaa10c5fa041c83df9a9d205abf5661165d706a9ac0e208deff30100",
+    "hpid_groups_sha256": "05a9eb745003b2b6b9488632ce7db8e52ca1a9bb8792197bd9cdb9a34124079f"
+  },
+  "summary": {
+    "request_id": "new216__bicycle__03",
+    "cohort": "new216",
+    "domain": "vehicle",
+    "object_category": "bicycle",
+    "target": "saddle",
+    "normalized_target": "seat",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unique",
+    "raw_match_count": 1,
+    "hpid_match_count": 1,
+    "raw_best_matching_iou": 0.8990849673202614,
+    "accepted_best_matching_iou": 0.8990849673202614,
+    "native_part_best_matching_iou": 0.3219087793303454,
+    "group_best_matching_iou": 0.3219087793303454,
+    "native_part_best_any_semantic_iou": 0.3219087793303454,
+    "group_best_any_semantic_iou": 0.3219087793303454,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 1,
+    "group_available_025": 1,
+    "raw_to_group_lost_025": 0,
+    "first_observed_loss_stage_025": "not_a_raw_to_group_loss",
+    "observed_subtype_025": "not_applicable",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_050": 1,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__bicycle__03",
+      "cohort": "new216",
+      "raw_identity": "proposal/0008",
+      "semantic": "vehicle_seat",
+      "target_iou": 0.8990849673202614,
+      "mask_area": 3471,
+      "raw_candidate_index_zero_based": 7,
+      "upstream_candidate_key": "root:1/visual-region:03",
+      "fingerprint": "e32ff3d27c467590ab796bac26dfc384dbe0673f6d614ae349dbd73dbd3c7e06",
+      "accepted_by_fuser": true,
+      "accepted_index": 7,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "vehicle/vehicle/center/01",
+          "semantic": "vehicle",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 2250,
+          "truth_overlap_pixels": 2218,
+          "final_target_iou": 0.045838823012736056
+        },
+        {
+          "identity": "vehicle/vehicle_seat/center/01",
+          "semantic": "vehicle_seat",
+          "normalized_semantic": "seat",
+          "candidate_overlap_pixels": 1221,
+          "truth_overlap_pixels": 1221,
+          "final_target_iou": 0.3219087793303454
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/vehicle_body",
+          "semantic": "vehicle_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 2250,
+          "truth_overlap_pixels": 2218,
+          "final_target_iou": 0.044963158177808854
+        },
+        {
+          "identity": "object_001/vehicle_seat/004",
+          "semantic": "vehicle_seat",
+          "normalized_semantic": "seat",
+          "candidate_overlap_pixels": 1221,
+          "truth_overlap_pixels": 1221,
+          "final_target_iou": 0.3219087793303454
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "vehicle/vehicle/center/01",
+      "group_id": "object_001/vehicle_body",
+      "semantic": "vehicle",
+      "normalized_semantic": "body",
+      "target_iou": 0.045838823012736056,
+      "area_px": 53360
+    },
+    {
+      "part_id": "vehicle/vehicle_gear/center/01",
+      "group_id": "object_001/vehicle_gear/002",
+      "semantic": "vehicle_gear",
+      "normalized_semantic": "gear",
+      "target_iou": 0.0,
+      "area_px": 801
+    },
+    {
+      "part_id": "vehicle/vehicle_handlebar/left/01",
+      "group_id": "object_001/vehicle_handlebar/003",
+      "semantic": "vehicle_handlebar",
+      "normalized_semantic": "handlebar",
+      "target_iou": 0.0,
+      "area_px": 702
+    },
+    {
+      "part_id": "vehicle/vehicle_seat/center/01",
+      "group_id": "object_001/vehicle_seat/004",
+      "semantic": "vehicle_seat",
+      "normalized_semantic": "seat",
+      "target_iou": 0.3219087793303454,
+      "area_px": 1221
+    },
+    {
+      "part_id": "vehicle/vehicle_seat_tube/left/01",
+      "group_id": "object_001/vehicle_seat_tube/005",
+      "semantic": "vehicle_seat_tube",
+      "normalized_semantic": "seat_tube",
+      "target_iou": 0.0,
+      "area_px": 466
+    },
+    {
+      "part_id": "vehicle/vehicle_stem/center/01",
+      "group_id": "object_001/vehicle_body",
+      "semantic": "vehicle_stem",
+      "normalized_semantic": "stem",
+      "target_iou": 0.0005984440454817474,
+      "area_px": 1223
+    },
+    {
+      "part_id": "vehicle/vehicle_visual_panel_02/left/01",
+      "group_id": "object_001/vehicle_seat_tube/005",
+      "semantic": "vehicle_visual_panel_02",
+      "normalized_semantic": "visual_panel_02",
+      "target_iou": 0.0,
+      "area_px": 3845
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/vehicle_body",
+      "semantic": "vehicle_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "vehicle/vehicle/center/01",
+        "vehicle/vehicle_stem/center/01"
+      ],
+      "target_iou": 0.044963158177808854,
+      "area_px": 54494,
+      "evidence": "three_stage_semantic_rejection_merge"
+    },
+    {
+      "group_id": "object_001/vehicle_gear/002",
+      "semantic": "vehicle_gear",
+      "normalized_semantic": "gear",
+      "member_part_ids": [
+        "vehicle/vehicle_gear/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 801,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_handlebar/003",
+      "semantic": "vehicle_handlebar",
+      "normalized_semantic": "handlebar",
+      "member_part_ids": [
+        "vehicle/vehicle_handlebar/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 790,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_seat/004",
+      "semantic": "vehicle_seat",
+      "normalized_semantic": "seat",
+      "member_part_ids": [
+        "vehicle/vehicle_seat/center/01"
+      ],
+      "target_iou": 0.3219087793303454,
+      "area_px": 1221,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/vehicle_seat_tube/005",
+      "semantic": "vehicle_seat_tube",
+      "normalized_semantic": "seat_tube",
+      "member_part_ids": [
+        "vehicle/vehicle_seat_tube/left/01",
+        "vehicle/vehicle_visual_panel_02/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 4312,
+      "evidence": "semantic_seed_geometry_appearance_attachment"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 12,
+    "accepted_candidate_count": 12,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 7,
+    "identity_hypothesis_count": 12,
+    "identity_group_count": 10,
+    "identity_hypotheses_merged": 2,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 6,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [],
+    "classes_with_multiple_sources": [
+      "vehicle_handlebar",
+      "vehicle_seat_tube"
+    ],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 1,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 61618,
+    "lost_root_pixels_before_conservation": 6,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__03\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__bicycle__03",
+      "cohort": "new216",
+      "domain": "vehicle",
+      "object_category": "bicycle",
+      "target": "seat",
+      "threshold": "050",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unique",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.8990849673202614,
+      "accepted_best_iou": 0.8990849673202614,
+      "part_best_iou": 0.3219087793303454,
+      "group_best_iou": 0.3219087793303454,
+      "group_any_semantic_best_iou": 0.3219087793303454,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

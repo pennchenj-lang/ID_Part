@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-10T01:28:17.918816+00:00",
+  "mode": "Read-only arithmetic audit of existing CSV/JSON; no model, masks, rematching, scoring changes or new CI.",
+  "counts": {
+    "cases": 226,
+    "categories": 60,
+    "reference_parts": 990,
+    "loaded_accepted_proposals": 1951,
+    "evaluated_input_pool_masks": 1830,
+    "root_rows_excluded_when_reference_has_no_body": 121,
+    "shared_candidates_removed_on_refilter": 0,
+    "remainder_components_attached": 0,
+    "visibility_slivers_dropped": 14,
+    "evaluated_masks_removed_at_final_filter": 23
+  },
+  "pairing_at_iou_025": {
+    "neither_matched": 564,
+    "dbscan_only": 72,
+    "both_matched": 325,
+    "hpid_only": 29
+  },
+  "dbscan_only_72_split": {
+    "hpid_no_mask_meets_iou_025": 61,
+    "hpid_mask_available_but_not_credited_by_saved_hungarian_assignment": 11
+  },
+  "no_geometry_61_dynamics": {
+    "input_pool_supported": 53,
+    "never_supported_in_any_observed_actual_stage": 8,
+    "first_observed_loss_counts": {
+      "after_hierarchy_duplicate_filter -> actual_semantic_argmax": 51,
+      "no_observed_threshold_loss_never_supported": 8,
+      "actual_semantic_argmax -> after_direct_detail_gate": 2
+    },
+    "last_observed_loss_counts": {
+      "after_hierarchy_duplicate_filter -> actual_semantic_argmax": 51,
+      "no_observed_threshold_loss_never_supported": 8,
+      "actual_semantic_argmax -> after_direct_detail_gate": 1,
+      "after_cleanup -> after_root_restoration": 1
+    },
+    "recovered_after_first_loss_count": 1
+  },
+  "detail_gate_negative_195_endpoint_partition": {
+    "neither_matched": 79,
+    "both_matched": 98,
+    "dbscan_only": 13,
+    "hpid_only": 5
+  },
+  "actual_stage_order_for_threshold_loss": [
+    "input_pool",
+    "after_same_source_dedup",
+    "after_instance_cap",
+    "after_hierarchy_duplicate_filter",
+    "actual_semantic_argmax",
+    "after_direct_detail_gate",
+    "after_cleanup",
+    "after_root_restoration",
+    "identity_supported_before_remainder",
+    "identity_plus_eligible_remainder",
+    "after_remainder_attachment_before_filter",
+    "final_hpid"
+  ],
+  "excluded_provisional_readouts": [
+    "diagnostic_consensus_argmax",
+    "diagnostic_parent_support_argmax",
+    "diagnostic_parent_residual_argmax",
+    "diagnostic_specificity_argmax"
+  ],
+  "endpoint_metrics": {
+    "final_hpid": {
+      "diagnostic_f1_at_025_mean": "0.3133108979746755",
+      "total_matches_at_025": "354",
+      "total_prediction_count": "1277",
+      "diagnostic_semantic_f1_at_025_mean": "0.13960461940550434",
+      "best_iou_mean": "0.239500639832863",
+      "best_semantic_iou_mean": "0.09893203900723793",
+      "semantic_union_recall_mean": "0.14705367222816149"
+    },
+    "final_dbscan": {
+      "diagnostic_f1_at_025_mean": "0.35502084112876514",
+      "total_matches_at_025": "397",
+      "total_prediction_count": "1277",
+      "diagnostic_semantic_f1_at_025_mean": "0.15355324658346065",
+      "best_iou_mean": "0.27348335538159546",
+      "best_semantic_iou_mean": "0.11354700399005833",
+      "semantic_union_recall_mean": "0.16274995877343368"
+    }
+  },
+  "existing_category_cluster_bootstrap_hpid_minus_dbscan": {
+    "clusters": 60,
+    "draws": 10000,
+    "seed": 20261008,
+    "delta": -0.04170994315408978,
+    "low": -0.06006806698707421,
+    "high": -0.024377107506426833,
+    "unit": "sample categories with replacement; retain all cases in each selected category"
+  },
+  "bootstrap_note": "Existing reported interval retained; no CI recomputation requested or performed.",
+  "arithmetic_checks": {
+    "all_16830_reference_rows_complete": "PASS",
+    "all_3842_case_stage_metrics_from_reference_rows": "PASS",
+    "all_stage_summary_means_totals": "PASS",
+    "all_stage_transition_means_and_reference_direction_counts": "PASS",
+    "shared_input_counts_invariants": "PASS",
+    "endpoint_diagnosis_consistency": "PASS"
+  },
+  "semantic_geometric_distinctions": [
+    "Main F1/TP are class-agnostic one-to-one Hungarian matching, with IoU>=.25 applied after saved assignment; not semantic-correct matching.",
+    "best_iou is oracle maximum over any predicted mask and permits mask reuse across references. It is not Hungarian IoU or F1.",
+    "best_semantic_iou and semantic_hungarian_iou additionally require evaluator-normalized semantic agreement.",
+    "semantic_union_recall measures reference-pixel coverage by all same-semantic masks. It is not instance recall or one-to-one match count.",
+    "The 195 gate-negative references refer to best_iou decreases, not 195 lost TPs or 195 decreases of semantic union recall (the latter is 63).",
+    "Main summary means average references within each case, then cases. Subgroup dynamics are descriptive reference counts/means; references are not independent sampling units."
+  ],
+  "limits": [
+    "Same input means the 1951 archived accepted fine-fusion candidates, not all original unfiltered proposals; original rejected proposal universe is unavailable.",
+    "Actual semantic maps, per-class supports and exclusive identity masks are different representations; changes are sequential observations, not an additive causal decomposition of the DBSCAN gap.",
+    "Four diagnostic_* argmax readouts use copied pre-argmax evidence plus a background convention. They are not emitted predictions and are excluded from first-loss classification.",
+    "A pool-to-first-actual-map loss combines scoring/evidence changes and exclusive semantic ownership; existing actual snapshots cannot isolate its internal cause.",
+    "Fine-fusion direct-detail gate is distinct from later three-stage semantic/structure/appearance verification in Groups; these traces do not analyze Groups.",
+    "Best-mask identity may switch at each stage. A support loss may later recover. First and last loss are both recorded.",
+    "The paired GT subset is directly identifiable by case_id and zero-based reference_index. Hungarian assigned prediction identity is not saved in these tracks (best_identity is a different field), so individual matching-conflict attribution needs additional pair records.",
+    "No archived DBSCAN map identity check is available; historical audit establishes numeric evaluator reproduction, whereas all226 HPID maps were compared exactly.",
+    "Historical stage_validation source-hash assertions describe execution-time sources. Packaged scripts have different paths/portability edits; this audit binds current packaged files without asserting original script-hash identity."
+  ],
+  "inputs_sha256": {
+    "dbscan_diagnosis.json": "dbf41a4e1ef302417bd3df5bac5ba243f908c4b3bc738fbd183bf13ffc374344",
+    "stage_report.json": "2a1f255bc7a4162ed1b2419ce6f5e50ec88e3b83a3614f3054104a6dc0b43386",
+    "stage_summary.csv": "70a02ac805ff81236f599f2baa2262976f603a883937f5887dfb61d686732e55",
+    "stage_transitions.csv": "d7c54117a1cdf68e5193406ada9bb5d2b55b06ff53b1a7162d9dc107c260accb",
+    "stage_reference_tracks.csv": "00326e6283dd8f953e51684cbbbdce4450f4624963f8da306c650aeb514bef22",
+    "stage_shared_input_audit.csv": "487378c52e3c91d3430b3b4b681783b86a8fdc18babe4150c067515fee39944b",
+    "stage_validation.json": "20697fb0ac25d1ba864e91c91c5b1f943de2da44041403f8816b5de0085400d7",
+    "stage_audit_summary.json": "9b3b8f8d596ea216222adeed06f7dca27a0fd28a84ee097b414a80b76454daa0",
+    "stage_protocol.json": "b45e731ba95ac51f8cf3240e0d40ba0b817f5914302b6accc82e0c3ad6d9b7e5",
+    "stage_case_metrics.csv": "3b05c59de63e5858d9a63cc27b956aea242c5c2360c8be863ffbf93e98e900a5"
+  },
+  "code_read_sha256": {
+    "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\code\\analysis\\stage_diagnosis.py": "0f218feb2d785a3a3613fe20bfb90fbe7a1d492993e4b712e287f3f69a620cfc"
+  },
+  "script_sha256": "f2f1728bef3ad1d551eea8a71556fbf9eb67978812c66a5c10f32aa9ccbbf320"
+}

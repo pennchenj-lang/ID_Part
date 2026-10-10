@@ -1,0 +1,112 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-10-09T15:07:41.768869+00:00",
+  "case_count": 42,
+  "valid_partcatseg_outputs": 42,
+  "primary_endpoint": "part_f1_at_025",
+  "comparison_direction": "HPID minus PartCATSeg",
+  "statistics": {
+    "seed": 20261009,
+    "bootstrap_draws": 10000,
+    "unit": "unique source image",
+    "CI": "paired percentile95%"
+  },
+  "metrics": {
+    "part_f1_at_025": {
+      "hpid_mean": 0.33895990145444427,
+      "partcatseg_mean": 0.031122871775407502,
+      "paired_hpid_minus_partcatseg": 0.30783702967903676,
+      "paired_percentile_95ci": [
+        0.24040787629890822,
+        0.37457822486162
+      ],
+      "n": 42
+    },
+    "part_f1_at_050": {
+      "hpid_mean": 0.1645286808662991,
+      "partcatseg_mean": 0.006586553453184033,
+      "paired_hpid_minus_partcatseg": 0.15794212741311509,
+      "paired_percentile_95ci": [
+        0.09830549843189705,
+        0.22581047025959922
+      ],
+      "n": 42
+    },
+    "part_f1_at_075": {
+      "hpid_mean": 0.07534657350446824,
+      "partcatseg_mean": 0.0,
+      "paired_hpid_minus_partcatseg": 0.07534657350446824,
+      "paired_percentile_95ci": [
+        0.030203884078884077,
+        0.13292539112933843
+      ],
+      "n": 42
+    },
+    "part_precision_at_025": {
+      "hpid_mean": 0.3164965986394558,
+      "partcatseg_mean": 0.017253456954595577,
+      "paired_hpid_minus_partcatseg": 0.2992431416848602,
+      "paired_percentile_95ci": [
+        0.23048384869637556,
+        0.36730401700650034
+      ],
+      "n": 42
+    },
+    "part_recall_at_025": {
+      "hpid_mean": 0.4084892290249432,
+      "partcatseg_mean": 0.2434948979591837,
+      "paired_hpid_minus_partcatseg": 0.16499433106575964,
+      "paired_percentile_95ci": [
+        0.05963293650793651,
+        0.2607723922902494
+      ],
+      "n": 42
+    },
+    "mean_semantic_union_iou": {
+      "hpid_mean": 0.19051361740866182,
+      "partcatseg_mean": 0.055402062949532795,
+      "paired_hpid_minus_partcatseg": 0.135111554459129,
+      "paired_percentile_95ci": [
+        0.08688488387740301,
+        0.19152974272207451
+      ],
+      "n": 42
+    },
+    "semantic_union_recall_at_025": {
+      "hpid_mean": 0.2815759637188209,
+      "partcatseg_mean": 0.06791383219954648,
+      "paired_hpid_minus_partcatseg": 0.21366213151927435,
+      "paired_percentile_95ci": [
+        0.1450099206349206,
+        0.28815476190476186
+      ],
+      "n": 42
+    },
+    "semantic_label_precision": {
+      "hpid_mean": 0.457473544973545,
+      "partcatseg_mean": 0.15108764955580997,
+      "paired_hpid_minus_partcatseg": 0.306385895417735,
+      "paired_percentile_95ci": [
+        0.2320048743902992,
+        0.381085128139741
+      ],
+      "n": 42
+    }
+  },
+  "semantic_scope": "Annotation-conditioned class-union IoU in frozen canonical ontology; not official dense benchmark mIoU. Full crop unions, no GT clipping; mean over annotated reference semantics. Semantic label precision is label-presence precision, not IoU-threshold precision.",
+  "adapter": "Each non-background raw semantic label split by8-connectivity; every component retained, no area filter. HPID native Parts/root-body rule unchanged.",
+  "limitations": "Semantic model plus deterministic component adapter; wrong target classes and unmapped classes remain primary geometric predictions. This is cross-dataset object-crop transfer with a shared annotation-derived crop, not full-image discovery.",
+  "inputs": {
+    "reference_manifest_sha256": "02747efa64ec6e5b8ce51267f834f1ca6fd12b197c4ba04e16c30502c1fecb64",
+    "predictions_manifest_sha256": "ba54a450ed8c33dc5e08e1d552ee8b9febffcf7af35275fa2e6def5494a7fd7a",
+    "label_registry_sha256": "6559d5a714b3a5a23ef6469f3e714446790d77cfd5db6a245e5c5a0b5f9411f6",
+    "receipt_sha256": "481c4df63ecee08cea2d3eefcfb49f6697b1318cf532216e48744e32ec453919",
+    "scorer_sha256": "1db8dbce7b60e019e90cfb97c3ae63c65a83ae858a9af11e6b11f1bb1fc3a612",
+    "paco_semantics_sha256": "9d2c54326f5fc7e0e739e0181c713e4a47c81e357827f0121ef37d5ca7401be8"
+  },
+  "self_check": {
+    "status": "PASS",
+    "checks": 8
+  },
+  "baseline_reproduction": "PASS"
+}

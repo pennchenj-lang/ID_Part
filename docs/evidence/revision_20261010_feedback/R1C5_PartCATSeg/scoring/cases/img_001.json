@@ -1,0 +1,224 @@
+{
+  "anonymous_id": "img_001",
+  "case_id": "cellular_telephone__u01",
+  "image_id": 444746,
+  "object_category": "cellular_telephone",
+  "expected_domain": "device",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 4,
+    "predicted_part_count": 7,
+    "assignments": [
+      [
+        0,
+        2,
+        0.14027827978134155
+      ],
+      [
+        1,
+        5,
+        0.3051007390022278
+      ],
+      [
+        2,
+        4,
+        0.7838812470436096
+      ],
+      [
+        3,
+        3,
+        0.025006283074617386
+      ]
+    ],
+    "part_f1_at_025": 0.36363636363636365,
+    "part_precision_at_025": 0.2857142857142857,
+    "part_recall_at_025": 0.5,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.18181818181818182,
+    "part_precision_at_050": 0.14285714285714285,
+    "part_recall_at_050": 0.25,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.18181818181818182,
+    "part_precision_at_075": 0.14285714285714285,
+    "part_recall_at_075": 0.25,
+    "matched_count_at_075": 1,
+    "mean_semantic_union_iou": 0.3069793381065862,
+    "semantic_union_recall_at_025": 0.5,
+    "semantic_label_precision": 0.6,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 5,
+    "unmatched_predicted_semantic_classes": [
+      "flash",
+      "port"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "back_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 7958,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "bezel",
+        "union_iou": 0.30510074081064503,
+        "truth_pixels": 13441,
+        "predicted_pixels": 14218
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.13893534002229654,
+        "truth_pixels": 14015,
+        "predicted_pixels": 2331
+      },
+      {
+        "semantic": "screen",
+        "union_iou": 0.783881271593403,
+        "truth_pixels": 40431,
+        "predicted_pixels": 41665
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 4,
+    "predicted_part_count": 48,
+    "assignments": [
+      [
+        0,
+        24,
+        0.03103817254304886
+      ],
+      [
+        1,
+        25,
+        0.14468032121658325
+      ],
+      [
+        2,
+        40,
+        0.591134250164032
+      ],
+      [
+        3,
+        33,
+        0.030246684327721596
+      ]
+    ],
+    "part_f1_at_025": 0.038461538461538464,
+    "part_precision_at_025": 0.020833333333333332,
+    "part_recall_at_025": 0.25,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.038461538461538464,
+    "part_precision_at_050": 0.020833333333333332,
+    "part_recall_at_050": 0.25,
+    "matched_count_at_050": 1,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.18220682971830687,
+    "semantic_union_recall_at_025": 0.25,
+    "semantic_label_precision": 0.3,
+    "annotated_semantic_class_count": 4,
+    "predicted_semantic_class_count": 10,
+    "unmatched_predicted_semantic_classes": [
+      "container_body",
+      "container_bottom",
+      "container_inner",
+      "container_outer_side",
+      "daily_object_body",
+      "daily_object_inner",
+      "tool_prop_handle"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "back_panel",
+        "union_iou": 0.0,
+        "truth_pixels": 7958,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "bezel",
+        "union_iou": 0.009308866863112778,
+        "truth_pixels": 13441,
+        "predicted_pixels": 1630
+      },
+      {
+        "semantic": "button",
+        "union_iou": 0.0,
+        "truth_pixels": 14015,
+        "predicted_pixels": 476
+      },
+      {
+        "semantic": "screen",
+        "union_iou": 0.7195184520101147,
+        "truth_pixels": 40431,
+        "predicted_pixels": 53410
+      }
+    ],
+    "predicted_raw_semantic_class_count": 14,
+    "foreground_pixels": 57174,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 74.5,
+    "component_area_max": 33762,
+    "component_source_labels": [
+      39,
+      40,
+      40,
+      40,
+      40,
+      40,
+      40,
+      40,
+      40,
+      55,
+      60,
+      60,
+      60,
+      60,
+      88,
+      101,
+      101,
+      101,
+      101,
+      101,
+      101,
+      216,
+      219,
+      226,
+      286,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      343,
+      343,
+      343,
+      343,
+      344,
+      344,
+      344,
+      344,
+      370
+    ]
+  },
+  "shape_hw": [
+    375,
+    401
+  ],
+  "annotated_pixels": 75845,
+  "overlapping_annotation_pixels": 0
+}

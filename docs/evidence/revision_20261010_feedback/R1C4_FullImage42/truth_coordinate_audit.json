@@ -1,0 +1,2204 @@
+[
+  {
+    "case_id": "cellular_telephone__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 76829,
+        "crop_area": 76829,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1757732",
+        "full_area": 14015,
+        "crop_area": 14015,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1757733",
+        "full_area": 13441,
+        "crop_area": 13441,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1757734",
+        "full_area": 40431,
+        "crop_area": 40431,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1757735",
+        "full_area": 7958,
+        "crop_area": 7958,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "laptop_computer__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 67902,
+        "crop_area": 67902,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1718418",
+        "full_area": 98,
+        "crop_area": 98,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1718419",
+        "full_area": 22458,
+        "crop_area": 22458,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1718420",
+        "full_area": 2478,
+        "crop_area": 2478,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1718421",
+        "full_area": 15510,
+        "crop_area": 15510,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1718422",
+        "full_area": 14719,
+        "crop_area": 14719,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1718423",
+        "full_area": 72,
+        "crop_area": 72,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1718424",
+        "full_area": 29,
+        "crop_area": 29,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "television_set__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 64629,
+        "crop_area": 64629,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769019",
+        "full_area": 13140,
+        "crop_area": 13140,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769020",
+        "full_area": 20701,
+        "crop_area": 20701,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769021",
+        "full_area": 613,
+        "crop_area": 613,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769022",
+        "full_area": 1259,
+        "crop_area": 1259,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769023",
+        "full_area": 4771,
+        "crop_area": 4771,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "remote_control__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 17063,
+        "crop_area": 17063,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1714285",
+        "full_area": 1430,
+        "crop_area": 1430,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1714286",
+        "full_area": 235,
+        "crop_area": 235,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1714287",
+        "full_area": 610,
+        "crop_area": 610,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "calculator__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 26304,
+        "crop_area": 26304,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760243",
+        "full_area": 12846,
+        "crop_area": 12846,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760244",
+        "full_area": 748,
+        "crop_area": 748,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760245",
+        "full_area": 10192,
+        "crop_area": 10192,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760246",
+        "full_area": 2065,
+        "crop_area": 2065,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "telephone__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 10969,
+        "crop_area": 10969,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1687126",
+        "full_area": 1053,
+        "crop_area": 1053,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1687127",
+        "full_area": 978,
+        "crop_area": 978,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1687128",
+        "full_area": 251,
+        "crop_area": 251,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1687129",
+        "full_area": 3723,
+        "crop_area": 3723,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "clock__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 89032,
+        "crop_area": 89032,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1754766",
+        "full_area": 767,
+        "crop_area": 767,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1754767",
+        "full_area": 34357,
+        "crop_area": 34357,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1754768",
+        "full_area": 570,
+        "crop_area": 570,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "watch__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 22937,
+        "crop_area": 22937,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704536",
+        "full_area": 343,
+        "crop_area": 343,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704537",
+        "full_area": 13472,
+        "crop_area": 13472,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704538",
+        "full_area": 5814,
+        "crop_area": 5814,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704539",
+        "full_area": 1075,
+        "crop_area": 1075,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704540",
+        "full_area": 1144,
+        "crop_area": 1144,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "chair__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 3581,
+        "crop_area": 3581,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1770313",
+        "full_area": 151,
+        "crop_area": 151,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1770314",
+        "full_area": 209,
+        "crop_area": 209,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1770315",
+        "full_area": 1087,
+        "crop_area": 1087,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1770316",
+        "full_area": 408,
+        "crop_area": 408,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1770317",
+        "full_area": 52,
+        "crop_area": 52,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1770318",
+        "full_area": 100,
+        "crop_area": 100,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1770319",
+        "full_area": 206,
+        "crop_area": 206,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "bench__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 48308,
+        "crop_area": 48308,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1703563",
+        "full_area": 15320,
+        "crop_area": 15320,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1703564",
+        "full_area": 6221,
+        "crop_area": 6221,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1703565",
+        "full_area": 10929,
+        "crop_area": 10929,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1703566",
+        "full_area": 4850,
+        "crop_area": 4850,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1703567",
+        "full_area": 580,
+        "crop_area": 580,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "stool__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 11285,
+        "crop_area": 11285,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1687705",
+        "full_area": 1031,
+        "crop_area": 1031,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1687706",
+        "full_area": 7311,
+        "crop_area": 7311,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1687707",
+        "full_area": 1148,
+        "crop_area": 1148,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "table__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 7794,
+        "crop_area": 7794,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692833",
+        "full_area": 1417,
+        "crop_area": 1417,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692834",
+        "full_area": 831,
+        "crop_area": 831,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692835",
+        "full_area": 838,
+        "crop_area": 838,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692836",
+        "full_area": 686,
+        "crop_area": 686,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692837",
+        "full_area": 649,
+        "crop_area": 649,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "bottle__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 18613,
+        "crop_area": 18613,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725988",
+        "full_area": 2509,
+        "crop_area": 2509,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725989",
+        "full_area": 13080,
+        "crop_area": 13080,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725990",
+        "full_area": 1577,
+        "crop_area": 1577,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725991",
+        "full_area": 584,
+        "crop_area": 584,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725992",
+        "full_area": 168,
+        "crop_area": 168,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725993",
+        "full_area": 205,
+        "crop_area": 205,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725994",
+        "full_area": 7117,
+        "crop_area": 7117,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "jar__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 9681,
+        "crop_area": 9681,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760636",
+        "full_area": 401,
+        "crop_area": 401,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760637",
+        "full_area": 617,
+        "crop_area": 617,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760638",
+        "full_area": 8421,
+        "crop_area": 8421,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760639",
+        "full_area": 4456,
+        "crop_area": 4456,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1760640",
+        "full_area": 491,
+        "crop_area": 491,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "can__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 8893,
+        "crop_area": 8893,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1688138",
+        "full_area": 181,
+        "crop_area": 181,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1688139",
+        "full_area": 207,
+        "crop_area": 207,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1688140",
+        "full_area": 383,
+        "crop_area": 383,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1688141",
+        "full_area": 5465,
+        "crop_area": 5465,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1688142",
+        "full_area": 2560,
+        "crop_area": 2560,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "cup__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 4948,
+        "crop_area": 4948,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1766855",
+        "full_area": 408,
+        "crop_area": 408,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1766856",
+        "full_area": 1020,
+        "crop_area": 1020,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1766857",
+        "full_area": 692,
+        "crop_area": 692,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1766858",
+        "full_area": 53,
+        "crop_area": 53,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "mug__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 31106,
+        "crop_area": 31106,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1705658",
+        "full_area": 4647,
+        "crop_area": 4647,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1705659",
+        "full_area": 510,
+        "crop_area": 510,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1705660",
+        "full_area": 2116,
+        "crop_area": 2116,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1705661",
+        "full_area": 2806,
+        "crop_area": 2806,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1705662",
+        "full_area": 11650,
+        "crop_area": 11650,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1705663",
+        "full_area": 8946,
+        "crop_area": 8946,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "glass_drink_container__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 24991,
+        "crop_area": 24991,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1747641",
+        "full_area": 698,
+        "crop_area": 698,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1747642",
+        "full_area": 2559,
+        "crop_area": 2559,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1747643",
+        "full_area": 16021,
+        "crop_area": 16021,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1747644",
+        "full_area": 4858,
+        "crop_area": 4858,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "bowl__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 10596,
+        "crop_area": 10596,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1740647",
+        "full_area": 699,
+        "crop_area": 699,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1740648",
+        "full_area": 4639,
+        "crop_area": 4639,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1740649",
+        "full_area": 442,
+        "crop_area": 442,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1740650",
+        "full_area": 4137,
+        "crop_area": 4137,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1740651",
+        "full_area": 142,
+        "crop_area": 142,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "handbag__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 10277,
+        "crop_area": 10277,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752687",
+        "full_area": 474,
+        "crop_area": 474,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752688",
+        "full_area": 1219,
+        "crop_area": 1219,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752689",
+        "full_area": 317,
+        "crop_area": 317,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752690",
+        "full_area": 7181,
+        "crop_area": 7181,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "plastic_bag__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 17220,
+        "crop_area": 17220,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769177",
+        "full_area": 2308,
+        "crop_area": 2308,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769178",
+        "full_area": 698,
+        "crop_area": 698,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1769179",
+        "full_area": 13847,
+        "crop_area": 13847,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "box__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 45195,
+        "crop_area": 45195,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1716591",
+        "full_area": 2674,
+        "crop_area": 2674,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1716592",
+        "full_area": 8252,
+        "crop_area": 8252,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1716593",
+        "full_area": 2814,
+        "crop_area": 2814,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1716594",
+        "full_area": 29665,
+        "crop_area": 29665,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "car_automobile__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 11815,
+        "crop_area": 11815,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750017",
+        "full_area": 713,
+        "crop_area": 713,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750018",
+        "full_area": 128,
+        "crop_area": 128,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750019",
+        "full_area": 160,
+        "crop_area": 160,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750020",
+        "full_area": 397,
+        "crop_area": 397,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750021",
+        "full_area": 139,
+        "crop_area": 139,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750022",
+        "full_area": 1631,
+        "crop_area": 1631,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750023",
+        "full_area": 975,
+        "crop_area": 975,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750024",
+        "full_area": 776,
+        "crop_area": 776,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750025",
+        "full_area": 420,
+        "crop_area": 420,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750026",
+        "full_area": 2256,
+        "crop_area": 2256,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750027",
+        "full_area": 18,
+        "crop_area": 18,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750028",
+        "full_area": 22,
+        "crop_area": 22,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750029",
+        "full_area": 155,
+        "crop_area": 155,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750030",
+        "full_area": 703,
+        "crop_area": 703,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750031",
+        "full_area": 219,
+        "crop_area": 219,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1750032",
+        "full_area": 1146,
+        "crop_area": 1146,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "bicycle__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 118495,
+        "crop_area": 118495,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731055",
+        "full_area": 2735,
+        "crop_area": 2735,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731056",
+        "full_area": 3734,
+        "crop_area": 3734,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731057",
+        "full_area": 7356,
+        "crop_area": 7356,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731058",
+        "full_area": 3443,
+        "crop_area": 3443,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731059",
+        "full_area": 2836,
+        "crop_area": 2836,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731060",
+        "full_area": 4982,
+        "crop_area": 4982,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731061",
+        "full_area": 1435,
+        "crop_area": 1435,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731062",
+        "full_area": 5394,
+        "crop_area": 5394,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731063",
+        "full_area": 3690,
+        "crop_area": 3690,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731064",
+        "full_area": 1330,
+        "crop_area": 1330,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731065",
+        "full_area": 1728,
+        "crop_area": 1728,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1731066",
+        "full_area": 49743,
+        "crop_area": 49743,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "car_automobile__u02",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 7509,
+        "crop_area": 7509,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729814",
+        "full_area": 198,
+        "crop_area": 198,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729815",
+        "full_area": 425,
+        "crop_area": 425,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729816",
+        "full_area": 920,
+        "crop_area": 920,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729817",
+        "full_area": 171,
+        "crop_area": 171,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729818",
+        "full_area": 854,
+        "crop_area": 854,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729819",
+        "full_area": 204,
+        "crop_area": 204,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729820",
+        "full_area": 14,
+        "crop_area": 14,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729821",
+        "full_area": 50,
+        "crop_area": 50,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729822",
+        "full_area": 935,
+        "crop_area": 935,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729823",
+        "full_area": 149,
+        "crop_area": 149,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729824",
+        "full_area": 491,
+        "crop_area": 491,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729825",
+        "full_area": 41,
+        "crop_area": 41,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729826",
+        "full_area": 17,
+        "crop_area": 17,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729827",
+        "full_area": 6,
+        "crop_area": 6,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1729828",
+        "full_area": 132,
+        "crop_area": 132,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "bicycle__u02",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 70702,
+        "crop_area": 70702,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752530",
+        "full_area": 1094,
+        "crop_area": 1094,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752531",
+        "full_area": 44319,
+        "crop_area": 44319,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752532",
+        "full_area": 2312,
+        "crop_area": 2312,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752533",
+        "full_area": 150,
+        "crop_area": 150,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752534",
+        "full_area": 1066,
+        "crop_area": 1066,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752535",
+        "full_area": 1534,
+        "crop_area": 1534,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752536",
+        "full_area": 1001,
+        "crop_area": 1001,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752537",
+        "full_area": 1690,
+        "crop_area": 1690,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752538",
+        "full_area": 1660,
+        "crop_area": 1660,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752539",
+        "full_area": 1069,
+        "crop_area": 1069,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752540",
+        "full_area": 140,
+        "crop_area": 140,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1752541",
+        "full_area": 501,
+        "crop_area": 501,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "book__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 39488,
+        "crop_area": 39488,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725970",
+        "full_area": 38613,
+        "crop_area": 38613,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1725971",
+        "full_area": 475,
+        "crop_area": 475,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "pencil__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 3132,
+        "crop_area": 3132,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1693324",
+        "full_area": 29,
+        "crop_area": 29,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1693325",
+        "full_area": 2854,
+        "crop_area": 2854,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "belt__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 1908,
+        "crop_area": 1908,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1733079",
+        "full_area": 38,
+        "crop_area": 38,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1733080",
+        "full_area": 1703,
+        "crop_area": 1703,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "hat__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 15568,
+        "crop_area": 15568,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1732708",
+        "full_area": 392,
+        "crop_area": 392,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1732709",
+        "full_area": 505,
+        "crop_area": 505,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "helmet__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 8113,
+        "crop_area": 8113,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1706459",
+        "full_area": 367,
+        "crop_area": 367,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1706460",
+        "full_area": 164,
+        "crop_area": 164,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1706461",
+        "full_area": 431,
+        "crop_area": 431,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "shoe__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 7388,
+        "crop_area": 7388,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743133",
+        "full_area": 58,
+        "crop_area": 58,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743134",
+        "full_area": 715,
+        "crop_area": 715,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743135",
+        "full_area": 708,
+        "crop_area": 708,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743136",
+        "full_area": 405,
+        "crop_area": 405,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743137",
+        "full_area": 427,
+        "crop_area": 427,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743138",
+        "full_area": 997,
+        "crop_area": 997,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743139",
+        "full_area": 373,
+        "crop_area": 373,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743140",
+        "full_area": 1274,
+        "crop_area": 1274,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1743141",
+        "full_area": 2178,
+        "crop_area": 2178,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "slipper_footwear__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 7563,
+        "crop_area": 7563,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704998",
+        "full_area": 6584,
+        "crop_area": 6584,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704999",
+        "full_area": 347,
+        "crop_area": 347,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "scarf__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 15687,
+        "crop_area": 15687,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1761601",
+        "full_area": 52,
+        "crop_area": 52,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1761602",
+        "full_area": 15056,
+        "crop_area": 15056,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "screwdriver__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 12967,
+        "crop_area": 12967,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1757258",
+        "full_area": 8449,
+        "crop_area": 8449,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1757259",
+        "full_area": 4265,
+        "crop_area": 4265,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "wrench__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 14282,
+        "crop_area": 14282,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1706095",
+        "full_area": 3797,
+        "crop_area": 3797,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1706096",
+        "full_area": 10044,
+        "crop_area": 10044,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "knife__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 24398,
+        "crop_area": 24398,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1726941",
+        "full_area": 19991,
+        "crop_area": 19991,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1726942",
+        "full_area": 3775,
+        "crop_area": 3775,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "scissors__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 27698,
+        "crop_area": 27698,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1762367",
+        "full_area": 10037,
+        "crop_area": 10037,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1762368",
+        "full_area": 6690,
+        "crop_area": 6690,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1762369",
+        "full_area": 6528,
+        "crop_area": 6528,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1762370",
+        "full_area": 332,
+        "crop_area": 332,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "pliers__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 22592,
+        "crop_area": 22592,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1709149",
+        "full_area": 1738,
+        "crop_area": 1738,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1709150",
+        "full_area": 164,
+        "crop_area": 164,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1709151",
+        "full_area": 16983,
+        "crop_area": 16983,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "ladder__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 1990,
+        "crop_area": 1990,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704364",
+        "full_area": 132,
+        "crop_area": 132,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704365",
+        "full_area": 358,
+        "crop_area": 358,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1704366",
+        "full_area": 970,
+        "crop_area": 970,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "guitar__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 10201,
+        "crop_area": 10201,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1720329",
+        "full_area": 46,
+        "crop_area": 46,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1720330",
+        "full_area": 415,
+        "crop_area": 415,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1720331",
+        "full_area": 1855,
+        "crop_area": 1855,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1720332",
+        "full_area": 189,
+        "crop_area": 189,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1720333",
+        "full_area": 3266,
+        "crop_area": 3266,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  },
+  {
+    "case_id": "pan_for_cooking__u01",
+    "masks": [
+      {
+        "mask_key": "object",
+        "full_area": 43852,
+        "crop_area": 43852,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692492",
+        "full_area": 3286,
+        "crop_area": 3286,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692493",
+        "full_area": 3737,
+        "crop_area": 3737,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692494",
+        "full_area": 2742,
+        "crop_area": 2742,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692495",
+        "full_area": 11298,
+        "crop_area": 11298,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      },
+      {
+        "mask_key": "1692496",
+        "full_area": 19939,
+        "crop_area": 19939,
+        "full_pixels_absent_in_crop": 0,
+        "crop_pixels_absent_in_full": 0,
+        "identical_after_projection": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,181 @@
+{
+  "anonymous_id": "img_027",
+  "case_id": "book__u01",
+  "image_id": 231351,
+  "object_category": "book",
+  "expected_domain": "daily_object",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 2,
+    "predicted_part_count": 4,
+    "assignments": [
+      [
+        0,
+        0,
+        0.403529554605484
+      ],
+      [
+        1,
+        1,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.3333333333333333,
+    "part_precision_at_025": 0.25,
+    "part_recall_at_025": 0.5,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.20176478165657608,
+    "semantic_union_recall_at_025": 0.5,
+    "semantic_label_precision": 0.6666666666666666,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 3,
+    "unmatched_predicted_semantic_classes": [
+      "spine"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "cover",
+        "union_iou": 0.40352956331315215,
+        "truth_pixels": 38613,
+        "predicted_pixels": 15865
+      },
+      {
+        "semantic": "page",
+        "union_iou": 0.0,
+        "truth_pixels": 475,
+        "predicted_pixels": 2933
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 2,
+    "predicted_part_count": 44,
+    "assignments": [
+      [
+        0,
+        8,
+        0.08030974119901657
+      ],
+      [
+        1,
+        0,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.0,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 13,
+    "unmatched_predicted_semantic_classes": [
+      "body",
+      "container_body",
+      "container_heel",
+      "container_inner",
+      "container_label",
+      "container_neck",
+      "container_rim",
+      "frame",
+      "furniture_inner_body",
+      "furniture_leg",
+      "inner",
+      "panel",
+      "tool_prop_body"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "cover",
+        "union_iou": 0.0,
+        "truth_pixels": 38613,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "page",
+        "union_iou": 0.0,
+        "truth_pixels": 475,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 24,
+    "foreground_pixels": 8890,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 54.5,
+    "component_area_max": 3101,
+    "component_source_labels": [
+      46,
+      46,
+      46,
+      48,
+      51,
+      53,
+      54,
+      55,
+      56,
+      56,
+      56,
+      56,
+      57,
+      57,
+      57,
+      57,
+      57,
+      57,
+      57,
+      64,
+      64,
+      64,
+      161,
+      204,
+      205,
+      214,
+      215,
+      215,
+      215,
+      216,
+      216,
+      219,
+      226,
+      226,
+      227,
+      253,
+      255,
+      257,
+      257,
+      257,
+      257,
+      285,
+      361,
+      416
+    ]
+  },
+  "shape_hw": [
+    275,
+    265
+  ],
+  "annotated_pixels": 39088,
+  "overlapping_annotation_pixels": 0
+}

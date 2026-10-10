@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "files": {
+    "case_audit.csv": "65873a76990c1af44fe976786114fef89ab858a410118baefa27e38e1a9f6b1a",
+    "case_results.csv": "f6fc763fa76a80d47e0ed09dd45ee239dbf445a5095ad38ab5d9e4d04fda8d10",
+    "freeze_receipt.json": "dd2b90ecc812b20a83ad866cae238098bc6a477c9ed3da632dfea263910654d0",
+    "paired_comparisons.csv": "b66b119f72e1d5010fd13b60791446f9b264889113f8a40c73216391d84dafbf",
+    "protocol.json": "5ff061ee0adbc793575305d28528dea99ba139902a1ab942e24d12036eafa0ae",
+    "report.json": "3858782b2acbf3ed38686047df56451311ce102d5ad35757a8b9990b62e1c91b",
+    "run.log": "b2c73e05c07e86a34c22005e0c37db347dac5b077a739adc159d63ba84c3629f",
+    "run_stress.py": "0e589cb6f7cd113dffd9c1dea06a3b3077c857ae40257b99a3b7efb232b265f3",
+    "summary.csv": "b8f02743d2bb4445fc7ebcb401ffe8d95d4ad596bfe366a976fbc037fc45ac13"
+  }
+}

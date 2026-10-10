@@ -1,0 +1,208 @@
+{
+  "anonymous_id": "img_007",
+  "case_id": "clock__u01",
+  "image_id": 72989,
+  "object_category": "clock",
+  "expected_domain": "device",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 3,
+    "predicted_part_count": 9,
+    "assignments": [
+      [
+        0,
+        7,
+        0.41818180680274963
+      ],
+      [
+        1,
+        0,
+        0.42336776852607727
+      ],
+      [
+        2,
+        3,
+        0.005965462885797024
+      ]
+    ],
+    "part_f1_at_025": 0.3333333333333333,
+    "part_precision_at_025": 0.2222222222222222,
+    "part_recall_at_025": 0.6666666666666666,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.21959777798299374,
+    "semantic_union_recall_at_025": 0.3333333333333333,
+    "semantic_label_precision": 0.42857142857142855,
+    "annotated_semantic_class_count": 3,
+    "predicted_semantic_class_count": 7,
+    "unmatched_predicted_semantic_classes": [
+      "base",
+      "dial",
+      "screen",
+      "visual_panel_01"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "body",
+        "union_iou": 0.42336777694394734,
+        "truth_pixels": 34357,
+        "predicted_pixels": 14957
+      },
+      {
+        "semantic": "clock_hand",
+        "union_iou": 0.22946009389671362,
+        "truth_pixels": 767,
+        "predicted_pixels": 1328
+      },
+      {
+        "semantic": "finial",
+        "union_iou": 0.005965463108320251,
+        "truth_pixels": 570,
+        "predicted_pixels": 2634
+      }
+    ],
+    "root_body_included": true
+  },
+  "partcatseg": {
+    "truth_part_count": 3,
+    "predicted_part_count": 46,
+    "assignments": [
+      [
+        0,
+        29,
+        0.03861895203590393
+      ],
+      [
+        1,
+        41,
+        0.11747242510318756
+      ],
+      [
+        2,
+        0,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.07142857142857142,
+    "annotated_semantic_class_count": 3,
+    "predicted_semantic_class_count": 14,
+    "unmatched_predicted_semantic_classes": [
+      "base",
+      "button",
+      "container_base",
+      "container_body",
+      "container_inner",
+      "daily_object_body",
+      "daily_object_frame",
+      "dial",
+      "furniture_wheel",
+      "inner_body",
+      "logo",
+      "screen",
+      "top_panel"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "body",
+        "union_iou": 0.0,
+        "truth_pixels": 34357,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "clock_hand",
+        "union_iou": 0.0,
+        "truth_pixels": 767,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "finial",
+        "union_iou": 0.0,
+        "truth_pixels": 570,
+        "predicted_pixels": 9218
+      }
+    ],
+    "predicted_raw_semantic_class_count": 21,
+    "foreground_pixels": 62922,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 90.0,
+    "component_area_max": 23158,
+    "component_source_labels": [
+      20,
+      23,
+      30,
+      34,
+      55,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      57,
+      57,
+      57,
+      57,
+      57,
+      60,
+      65,
+      65,
+      100,
+      100,
+      101,
+      101,
+      131,
+      131,
+      132,
+      132,
+      132,
+      153,
+      153,
+      161,
+      161,
+      161,
+      216,
+      228,
+      343,
+      428,
+      428,
+      446,
+      446,
+      446,
+      446,
+      446,
+      448,
+      448
+    ]
+  },
+  "shape_hw": [
+    439,
+    397
+  ],
+  "annotated_pixels": 35694,
+  "overlapping_annotation_pixels": 0
+}

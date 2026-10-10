@@ -1,0 +1,385 @@
+{
+  "case_count": 42,
+  "reference_paths_included": false,
+  "input_condition": "Same archived object crop as frozen HPID baseline",
+  "cases": [
+    {
+      "anonymous_id": "img_001",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_001.png",
+      "input_sha256": "3cb9d0b742c3b8bee8b433a1e2df7a5ba4e22a2e060d72e8e28bfb69a8ec5003",
+      "size_wh": [
+        401,
+        375
+      ]
+    },
+    {
+      "anonymous_id": "img_002",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_002.png",
+      "input_sha256": "265f05ff34566dcc0c6f78e5588e08266513a7b84c6c2373d39b01d95adb1f4b",
+      "size_wh": [
+        491,
+        333
+      ]
+    },
+    {
+      "anonymous_id": "img_003",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_003.png",
+      "input_sha256": "b7f6bd7cc98927a9d52a4297489de419712361eb8179b4c9b34dc2c7014b1a7f",
+      "size_wh": [
+        386,
+        264
+      ]
+    },
+    {
+      "anonymous_id": "img_004",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_004.png",
+      "input_sha256": "473d5a31138a8b2530c07730599c0fe7f26b34b138a6934b82d6c359035b2357",
+      "size_wh": [
+        109,
+        313
+      ]
+    },
+    {
+      "anonymous_id": "img_005",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_005.png",
+      "input_sha256": "8cdccabb89a5508328c197645703e6b99828f48c78624e5e32c417c6bc961496",
+      "size_wh": [
+        303,
+        196
+      ]
+    },
+    {
+      "anonymous_id": "img_006",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_006.png",
+      "input_sha256": "cdcfcc864fa8f02dce04f310a807ad794e9e7496e2f383b20a344a3e2222bd53",
+      "size_wh": [
+        137,
+        162
+      ]
+    },
+    {
+      "anonymous_id": "img_007",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_007.png",
+      "input_sha256": "56ac37f1532f1ca6c6286203ff3c10e392b741314e8f4d6e034ee2c82d364fde",
+      "size_wh": [
+        397,
+        439
+      ]
+    },
+    {
+      "anonymous_id": "img_008",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_008.png",
+      "input_sha256": "4f58f017fff37259b58c16d99ffd12fdd8f2df0522938a10a77e26f41dd96660",
+      "size_wh": [
+        200,
+        166
+      ]
+    },
+    {
+      "anonymous_id": "img_009",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_009.png",
+      "input_sha256": "78fa61c3ef0b96adc1cd7ca4d0f47bef87f78d344509505f5a0541bf1fe876bc",
+      "size_wh": [
+        83,
+        108
+      ]
+    },
+    {
+      "anonymous_id": "img_010",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_010.png",
+      "input_sha256": "f36291fd2b3f5e3c2bc4142a9acadc8ab08706a0215401c0f15e944adee631b7",
+      "size_wh": [
+        456,
+        370
+      ]
+    },
+    {
+      "anonymous_id": "img_011",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_011.png",
+      "input_sha256": "7a6f7432bf3895e0f347fa1f86f8ffdbbeca4187a91af2d87a84438210cb9f1e",
+      "size_wh": [
+        222,
+        261
+      ]
+    },
+    {
+      "anonymous_id": "img_012",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_012.png",
+      "input_sha256": "0c4376120216e2d440837197c9510bafb8fb540141bdf3eab9ac350eedc6157f",
+      "size_wh": [
+        216,
+        147
+      ]
+    },
+    {
+      "anonymous_id": "img_013",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_013.png",
+      "input_sha256": "69920d93d8bc2029ee67eb47fc99ed25b4497248e4dbf8808d4297574330e043",
+      "size_wh": [
+        283,
+        170
+      ]
+    },
+    {
+      "anonymous_id": "img_014",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_014.png",
+      "input_sha256": "36b5c765b3918d6c159b7dbf1fe37bf18f51f1e4dc921e6c96939ad6610eab6c",
+      "size_wh": [
+        94,
+        157
+      ]
+    },
+    {
+      "anonymous_id": "img_015",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_015.png",
+      "input_sha256": "cdcdd44b8d2ed7d54b09f7bc6bd1c8b3503ae78a6649ac558f88773ad1176210",
+      "size_wh": [
+        87,
+        168
+      ]
+    },
+    {
+      "anonymous_id": "img_016",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_016.png",
+      "input_sha256": "cb4bf900364ff64fe05498b34332c9b0e6fa82f6c7a9476635a6183c79e94776",
+      "size_wh": [
+        106,
+        87
+      ]
+    },
+    {
+      "anonymous_id": "img_017",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_017.png",
+      "input_sha256": "89c0dfa74d8520841fbb91e3542f2890369266804086708b1a52be7ce6273124",
+      "size_wh": [
+        252,
+        256
+      ]
+    },
+    {
+      "anonymous_id": "img_018",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_018.png",
+      "input_sha256": "ca5277058c2d48aa97993bfdbc1d9c207c6a15f890bcf448763ebe04b2d8ab52",
+      "size_wh": [
+        329,
+        330
+      ]
+    },
+    {
+      "anonymous_id": "img_019",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_019.png",
+      "input_sha256": "368c5a7fcce9a275c429e76baf870c35042a6b00f525dd24ced24d384845d1d0",
+      "size_wh": [
+        176,
+        154
+      ]
+    },
+    {
+      "anonymous_id": "img_020",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_020.png",
+      "input_sha256": "8eb89b494369f6f881028aa31e812aa67e90da0c5894ec08e5f8db83417f6cc1",
+      "size_wh": [
+        138,
+        130
+      ]
+    },
+    {
+      "anonymous_id": "img_021",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_021.png",
+      "input_sha256": "14477ee6e2670e9224acd5be258541c42c5445cae3badaa2eb4bb9ad3def71e2",
+      "size_wh": [
+        190,
+        187
+      ]
+    },
+    {
+      "anonymous_id": "img_022",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_022.png",
+      "input_sha256": "510c783495aa27ee22dbf78b630bf0c409a086da519c75c747717dd0e3ab4407",
+      "size_wh": [
+        391,
+        309
+      ]
+    },
+    {
+      "anonymous_id": "img_023",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_023.png",
+      "input_sha256": "ce4fb83f5026d6f92ffc403485260abc7aa4a59faf3b79b8e733ed89502341bb",
+      "size_wh": [
+        176,
+        126
+      ]
+    },
+    {
+      "anonymous_id": "img_024",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_024.png",
+      "input_sha256": "3e337db620bc9c6da8a90b2c43ca13c74581394b27ad01fdf2f045e552898b2b",
+      "size_wh": [
+        640,
+        511
+      ]
+    },
+    {
+      "anonymous_id": "img_025",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_025.png",
+      "input_sha256": "e5969e384b88a62e1566f6e616ea73a1de88f726a278a8b93982d46ae9288007",
+      "size_wh": [
+        161,
+        91
+      ]
+    },
+    {
+      "anonymous_id": "img_026",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_026.png",
+      "input_sha256": "853ff5ec10d67e9fa987c8028c61e45e8445a3c30607c2b88ec67db177c6a2a1",
+      "size_wh": [
+        500,
+        318
+      ]
+    },
+    {
+      "anonymous_id": "img_027",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_027.png",
+      "input_sha256": "e9b315db5a71e3e4b5a6d360b06f195e136fadc9c55e7a63572e2ff751c477f4",
+      "size_wh": [
+        265,
+        275
+      ]
+    },
+    {
+      "anonymous_id": "img_028",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_028.png",
+      "input_sha256": "c286d3e345193e3da48dc798983aa9e47a8ed7c3eb8c2c5e0145e7d3d9d057dd",
+      "size_wh": [
+        131,
+        257
+      ]
+    },
+    {
+      "anonymous_id": "img_029",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_029.png",
+      "input_sha256": "afc0fed80dd280500b52614b47ae64ca3195c07416e9c7b96c6ed7c73a8c8352",
+      "size_wh": [
+        108,
+        145
+      ]
+    },
+    {
+      "anonymous_id": "img_030",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_030.png",
+      "input_sha256": "284d06cf9d3d57661ecd19f9d13aff2161ce5fc13375287bdc2af096216f3bd3",
+      "size_wh": [
+        249,
+        202
+      ]
+    },
+    {
+      "anonymous_id": "img_031",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_031.png",
+      "input_sha256": "0092df1eff3f4c01912a5bd6d2be7007d58487068a1ceee91b14f0dac1f4bbc0",
+      "size_wh": [
+        138,
+        124
+      ]
+    },
+    {
+      "anonymous_id": "img_032",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_032.png",
+      "input_sha256": "d95e153a9ba2cc65036c8e0af4bcda3655589249f11471381b49c81b632f04d8",
+      "size_wh": [
+        165,
+        111
+      ]
+    },
+    {
+      "anonymous_id": "img_033",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_033.png",
+      "input_sha256": "7f2e690841276dcabc4aa3020cdc75dd6b2e075ad0b7f2762c400908c8381abd",
+      "size_wh": [
+        207,
+        305
+      ]
+    },
+    {
+      "anonymous_id": "img_034",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_034.png",
+      "input_sha256": "d45c072b57cf2b53312796be94f18adaff487d1331d469af0e0cb48de7622595",
+      "size_wh": [
+        152,
+        386
+      ]
+    },
+    {
+      "anonymous_id": "img_035",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_035.png",
+      "input_sha256": "fcf620bba4fe3f56d451c750428328b472c2d0edb1ace0bb3da8e4367fd304fe",
+      "size_wh": [
+        386,
+        294
+      ]
+    },
+    {
+      "anonymous_id": "img_036",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_036.png",
+      "input_sha256": "62342d3f6b29e5f448678c406586dfec6beb0d083919cc732711fdc46d50aff4",
+      "size_wh": [
+        324,
+        278
+      ]
+    },
+    {
+      "anonymous_id": "img_037",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_037.png",
+      "input_sha256": "bc31e3756a1f910402213bae5d36eaf74caa99527a08e9297c7a8c05240acaa6",
+      "size_wh": [
+        252,
+        418
+      ]
+    },
+    {
+      "anonymous_id": "img_038",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_038.png",
+      "input_sha256": "6ce9491765eb37dec4f0c62bc44d8a1ed9d50773da917b1974744cc3e4079847",
+      "size_wh": [
+        489,
+        326
+      ]
+    },
+    {
+      "anonymous_id": "img_039",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_039.png",
+      "input_sha256": "8075d4c5c099ecacdc2c40655f6e018df5e96ab3af1abb8b01dc42a44d89bc34",
+      "size_wh": [
+        169,
+        333
+      ]
+    },
+    {
+      "anonymous_id": "img_040",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_040.png",
+      "input_sha256": "6cb26f6cf4f5335363295fe80f49349b2045226297e63f63f122ecedc5da6426",
+      "size_wh": [
+        72,
+        79
+      ]
+    },
+    {
+      "anonymous_id": "img_041",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_041.png",
+      "input_sha256": "e2bdc399d9395e03af15cd4282474f77c1fed3895db22d8868f7bf9d534c610f",
+      "size_wh": [
+        268,
+        180
+      ]
+    },
+    {
+      "anonymous_id": "img_042",
+      "input_path": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\inputs\\img_042.png",
+      "input_sha256": "a382b389ea9ec68204d663af12d3102c7f868ef72affe211661553ddea2503c6",
+      "size_wh": [
+        589,
+        363
+      ]
+    }
+  ]
+}

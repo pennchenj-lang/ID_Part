@@ -1,0 +1,1773 @@
+[
+  {
+    "request_id": "old37__cellular_telephone__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__cellular_telephone__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__cellular_telephone__u01\\groups.json",
+    "hpid_group_map_sha256": "5ee0832c2f2f2e7922d0480e41a536da37c496de71b3d7fa074892edb36d2404",
+    "hpid_groups_sha256": "d6606fc2ed51677d5a6700b483ec948ca23cd884ccdcc14e3cbe9a9423320bc6"
+  },
+  {
+    "request_id": "old37__laptop_computer__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__laptop_computer__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__laptop_computer__u01\\groups.json",
+    "hpid_group_map_sha256": "f5c0a4bd7fe56b0b0cacd749c687e71e0c0764fdf2de57e8c6947360016300ab",
+    "hpid_groups_sha256": "cb99eaa1ede4aeffee1a754ff22cdeba3c640de2cabb80a43d507312f5a30d19"
+  },
+  {
+    "request_id": "old37__television_set__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__television_set__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__television_set__u01\\groups.json",
+    "hpid_group_map_sha256": "a5986b3fb836fab56a0a52d0ed456cd4d22e88b3adf7482f015505640c733c9a",
+    "hpid_groups_sha256": "29ea411fb28c6ad7ebcaa09832f4a10f7f8988685eab56a0252dda7afd486344"
+  },
+  {
+    "request_id": "old37__remote_control__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__remote_control__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__remote_control__u01\\groups.json",
+    "hpid_group_map_sha256": "80bc98cdb60cf5915747203798515eae63d9959a321c94f0267b45a9eec11fc3",
+    "hpid_groups_sha256": "754ab619f965ef1ca83f597987b365646c3de69f584f597d8e8690305ff03074"
+  },
+  {
+    "request_id": "old37__calculator__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__calculator__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__calculator__u01\\groups.json",
+    "hpid_group_map_sha256": "388375a00932ed042c22dcda6c8eff4d4e6783264a7b49f39c16a170116c861f",
+    "hpid_groups_sha256": "7c9c1dbc43d4d7fff2b63ec20d74bfe8e4c678f1415e5e7ab8419648652570da"
+  },
+  {
+    "request_id": "old37__telephone__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__telephone__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__telephone__u01\\groups.json",
+    "hpid_group_map_sha256": "85dc9785d4ed8846e2ae7e700fbda8e73a3911ef2c582af81e71f6fb5207d2cc",
+    "hpid_groups_sha256": "224a23b710136b4e3db76e3428de57680329b40c9c396185be45f5614a8b2312"
+  },
+  {
+    "request_id": "old37__clock__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__clock__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__clock__u01\\groups.json",
+    "hpid_group_map_sha256": "0a710ce7a2a2a6bfc1438ecb05e0b870a3027e03c0763add0f507d0d38a8b39d",
+    "hpid_groups_sha256": "c242de955c7f2c8a8cff0a2f21c26e380a3c82bdda203cc27cef75bd532047d2"
+  },
+  {
+    "request_id": "old37__watch__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__watch__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__watch__u01\\groups.json",
+    "hpid_group_map_sha256": "84f377604127b66d25b7f212d82345a84d231a79851a9397703b070c6ba3284c",
+    "hpid_groups_sha256": "9bd0551b4358c55d17107fcc51b53b7d2ab5d67d592fa1ce49b9e5192d8bd7cc"
+  },
+  {
+    "request_id": "old37__chair__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__chair__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__chair__u01\\groups.json",
+    "hpid_group_map_sha256": "15fd28fee73ca3633c418c79e65ad4edcf5b792e8ec10da0ec1ed06d6e9ad533",
+    "hpid_groups_sha256": "82a9c5d44f2587ddda815b6586d4aaf5156279c1cde8c424ae7d3915de758762"
+  },
+  {
+    "request_id": "old37__bench__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bench__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bench__u01\\groups.json",
+    "hpid_group_map_sha256": "8cf610074a8a4838776597f04f5004da193a6efeb92001176c84524c5266ed44",
+    "hpid_groups_sha256": "0014e19ff02eb7a8af3bf69d6258ebbe21b0038fe578de03cebe76ebfb795034"
+  },
+  {
+    "request_id": "old37__stool__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__stool__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__stool__u01\\groups.json",
+    "hpid_group_map_sha256": "bd008dd32c95688008397fb4b1c1e67eb3261885695b618100231f715de13c58",
+    "hpid_groups_sha256": "96f210b7adff9bbd4ab43e6844c030f09ddbf3e74c3b77ccb0a086c71b17c8cb"
+  },
+  {
+    "request_id": "old37__table__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__table__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__table__u01\\groups.json",
+    "hpid_group_map_sha256": "a6ea7d30c9d9ec899cfbae992cbb6ef81023c8fdb54c7951b93d591979c753d4",
+    "hpid_groups_sha256": "47605caa3a4512623a13cc966edf8f2d13ba5a8ea6018417b734a3e6fbe2b1e2"
+  },
+  {
+    "request_id": "old37__bottle__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bottle__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bottle__u01\\groups.json",
+    "hpid_group_map_sha256": "34d7572efbab6b1aeaa52f4a1539d15d6e7ec5a81c71ca8f9fe05ceb6ce5ab7e",
+    "hpid_groups_sha256": "92fac89e73ca699ccd49c1e401e7cd06b8934c07fb7a2851f831b8fcd9f8c849"
+  },
+  {
+    "request_id": "old37__jar__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__jar__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__jar__u01\\groups.json",
+    "hpid_group_map_sha256": "bcb03a0cdfb95f4070222fcb54b352a74321cd4701fa234db5a7c27060bd6695",
+    "hpid_groups_sha256": "a0bcb1710edece36cdc13bf3009d6cbc742b639220d2dfa932f04c161ba27da4"
+  },
+  {
+    "request_id": "old37__can__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__can__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__can__u01\\groups.json",
+    "hpid_group_map_sha256": "1b5c4045729bd478947773febdcb2708df4c0c2ef94512804fad1b4e8286d4af",
+    "hpid_groups_sha256": "2179406cf2ef9771e4747bdcd07fe4daeed189e46739361df5e203cdb63a4c10"
+  },
+  {
+    "request_id": "old37__cup__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__cup__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__cup__u01\\groups.json",
+    "hpid_group_map_sha256": "ef45e278d3534e94fb27a05694a111db1a95863f903934becc09bb6ef7271e97",
+    "hpid_groups_sha256": "03ed6285e983f2ddb38128ff0db633ce23c4c30ffb683b6190e7f291e711c156"
+  },
+  {
+    "request_id": "old37__mug__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__mug__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__mug__u01\\groups.json",
+    "hpid_group_map_sha256": "e295b3c4e8b4d6cb42562fe68308743b7f65e3d7035216e87f77041bd1a28bb8",
+    "hpid_groups_sha256": "5f49ffcea91a1dba61cdc175f010258f0733515f08b4885f3f3c179955fc3d01"
+  },
+  {
+    "request_id": "old37__glass_drink_container__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__glass_drink_container__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__glass_drink_container__u01\\groups.json",
+    "hpid_group_map_sha256": "6c191a84eb37fb55e92a7159f117373d04a8d495bb1b8998320d5450256cc4e3",
+    "hpid_groups_sha256": "677efcaa3a4f3506972973f230dd3d0955dcdf232ecce75a08ba0cf9c3693e5c"
+  },
+  {
+    "request_id": "old37__bowl__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bowl__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bowl__u01\\groups.json",
+    "hpid_group_map_sha256": "c5be61abb0ac900ba977dfa883ec719f53b93cd1396ab86a6b10efb959a9a223",
+    "hpid_groups_sha256": "f8cbafdc1849a5293884a3baef0c813e47e96afe67e9eff1072c460784970c74"
+  },
+  {
+    "request_id": "old37__handbag__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__handbag__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__handbag__u01\\groups.json",
+    "hpid_group_map_sha256": "babe8390194de3a8cb08b2496602ac60b3afa82d50f00b9401ebd24c694a0440",
+    "hpid_groups_sha256": "652b41e3030da591fcb64f35909d39ebb86163b42e1890303e2f58fa13f550a1"
+  },
+  {
+    "request_id": "old37__plastic_bag__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__plastic_bag__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__plastic_bag__u01\\groups.json",
+    "hpid_group_map_sha256": "908fa190aeebc683e279ef87a29e5d854681cef95122810d167e78c1b1490840",
+    "hpid_groups_sha256": "38e282cee1d0f825bc06b5c32d0451d4431d08320092f547e7848f8a59d5bfbf"
+  },
+  {
+    "request_id": "old37__box__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__box__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__box__u01\\groups.json",
+    "hpid_group_map_sha256": "4227724a8a25ea15852d01217268a0e4999384d6584aa585093c8f81459756c4",
+    "hpid_groups_sha256": "d79547c4e4abc8ac9732f59b0cd084fceee53b017c0c9651af9892ec15ff82f3"
+  },
+  {
+    "request_id": "old37__car_automobile__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__car_automobile__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__car_automobile__u01\\groups.json",
+    "hpid_group_map_sha256": "f9edc713050aeac7e2099493f075a458fcf6a6dc2c0d81656b985558ef6d0ce8",
+    "hpid_groups_sha256": "04fc6725efd3df984337b9f363722bc920c783db4c1f50e20e1be66867e5c780"
+  },
+  {
+    "request_id": "old37__bicycle__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bicycle__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bicycle__u01\\groups.json",
+    "hpid_group_map_sha256": "66f0b32b23ab6d71ba5ce72edf76521724eb40f2bde734500c1c1fd82778670d",
+    "hpid_groups_sha256": "4ef3bb803b56496b9a7751b0c36d8cc42582dc194f64c51b0e727263c9c114d9"
+  },
+  {
+    "request_id": "old37__car_automobile__u02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__car_automobile__u02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__car_automobile__u02\\groups.json",
+    "hpid_group_map_sha256": "e4cb597cec790c6216f992f8eadd09c1c5f40ae41bd694a3f1d7c9e5fa170afb",
+    "hpid_groups_sha256": "610d956e775b4e02bc3f2babc0f49d07e8707780a3d911414d4b78b968ee8bed"
+  },
+  {
+    "request_id": "old37__bicycle__u02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bicycle__u02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__bicycle__u02\\groups.json",
+    "hpid_group_map_sha256": "db12453d508f03ebad2be21c82d33501f68a149c8fad8c0135365abdf9e8aeaa",
+    "hpid_groups_sha256": "3314c4011ec754e52c28b3ba288958030837a560dd751f745d7f4380ed63ef6f"
+  },
+  {
+    "request_id": "old37__helmet__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__helmet__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__helmet__u01\\groups.json",
+    "hpid_group_map_sha256": "ffa218b2136a0e22602cd9cbe190d80b3db8431c33d51e5217fd9c5b0777efca",
+    "hpid_groups_sha256": "0d27a545e269286869f76f86855de766edf83003122bb09ce033691c371c4eaf"
+  },
+  {
+    "request_id": "old37__shoe__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__shoe__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__shoe__u01\\groups.json",
+    "hpid_group_map_sha256": "51d054b922c151a938e03c7c299a0209533344a09e5557655f0985fd619ed471",
+    "hpid_groups_sha256": "7b87147f353115dd52f46084bbdb9828923e7b1deff56cfc2188ebbabe86e976"
+  },
+  {
+    "request_id": "old37__slipper_footwear__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__slipper_footwear__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__slipper_footwear__u01\\groups.json",
+    "hpid_group_map_sha256": "d93064c1292beef2dd0f894bbda62dd8d35806969af9336a65417c7f58d472a7",
+    "hpid_groups_sha256": "a03c9734b5e940ca0495221f1beb7a0beb0d95a93a0fc71c97259d861c35dd05"
+  },
+  {
+    "request_id": "old37__screwdriver__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__screwdriver__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__screwdriver__u01\\groups.json",
+    "hpid_group_map_sha256": "9a9a42ad851852491c4d54d9116a959c348c8fd64e4e3e7a965bfbea2fa5272f",
+    "hpid_groups_sha256": "2e88911986ae36d24f70f051630e280bd118ec1d353e7733a6220bf0f8452685"
+  },
+  {
+    "request_id": "old37__wrench__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__wrench__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__wrench__u01\\groups.json",
+    "hpid_group_map_sha256": "2551ab9090aee21f1eb9d189aa44f2a20386ddf57bc0d9d1c86b5429f5a81353",
+    "hpid_groups_sha256": "52059203333e8c1db0d0092f7a961a3889f09e3c4b05e784b928b7bc1423b668"
+  },
+  {
+    "request_id": "old37__knife__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__knife__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__knife__u01\\groups.json",
+    "hpid_group_map_sha256": "c80645c7d78817c41b9da2a87399374d080efa88aec8840881f3d3ae7aade02e",
+    "hpid_groups_sha256": "b6d9381c8621b720377bfea6d91bbb4685101fb3db9582bc9c1949e96cc8e1d7"
+  },
+  {
+    "request_id": "old37__scissors__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__scissors__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__scissors__u01\\groups.json",
+    "hpid_group_map_sha256": "a37873d5cde8dd3a228504c8ec8163aaec97ad87578fcf61e9bc28f641773baa",
+    "hpid_groups_sha256": "ed5032b93fac057d2d6a8aaa708686d4ada9b6f3b832763589a0aa18ff173ba2"
+  },
+  {
+    "request_id": "old37__pliers__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__pliers__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__pliers__u01\\groups.json",
+    "hpid_group_map_sha256": "9fdd9d3c73b3b4746a714a9d8a7828308d232b119eae0dcf3d37b3b2139d33be",
+    "hpid_groups_sha256": "530e9fda2fbe3af548ed896906e2f4f55af4460eb2bc6032cc6436202ba68730"
+  },
+  {
+    "request_id": "old37__ladder__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__ladder__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__ladder__u01\\groups.json",
+    "hpid_group_map_sha256": "547a19f4a0cc5292f57cfe7eefdbbb0a2e83573e3a8110cb656ef5da2346fcb3",
+    "hpid_groups_sha256": "7c66928617f2a8780b7e50e058a37139a1a4245f72747114b91ab0acff0b808b"
+  },
+  {
+    "request_id": "old37__guitar__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__guitar__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__guitar__u01\\groups.json",
+    "hpid_group_map_sha256": "b58903781efb96b87054973bb39ad26e5357d821f740f4bc7ddac433e87fe1ab",
+    "hpid_groups_sha256": "d20fec408cb1ced35e568c9cf15a24f39b56223a77b300d914f5bb5edfedda48"
+  },
+  {
+    "request_id": "old37__pan_for_cooking__u01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__pan_for_cooking__u01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\old37__pan_for_cooking__u01\\groups.json",
+    "hpid_group_map_sha256": "e35034d8180c85f981c34c7da0e0706df25fdbeb79121184f044fddca001b622",
+    "hpid_groups_sha256": "7d4e8e30641ed7433d412dd495261a940cf579eca3240055234136410ee73bf0"
+  },
+  {
+    "request_id": "new216__basket__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__01\\groups.json",
+    "hpid_group_map_sha256": "53d13a63ccb023a22b15d3d78236e8f0755e7e235918931080e607258c820710",
+    "hpid_groups_sha256": "1afdd930ba21c2570ad316d3573e3edebc701b7090ccba905a7438f6eb8f281f"
+  },
+  {
+    "request_id": "new216__basket__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__02\\groups.json",
+    "hpid_group_map_sha256": "d28223a2c128c439250377a3956e55e63fca78fef8d88da807b842baa6e61998",
+    "hpid_groups_sha256": "69912e7f79f0c6e5206caa26a2b1045a293d8c8ab8537b1dad71ea7803a740df"
+  },
+  {
+    "request_id": "new216__basket__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__03\\groups.json",
+    "hpid_group_map_sha256": "7eb4043784b8db0662a6b16bfbe7e3eddc4a67ebccca15b2e69514af7e06a0f0",
+    "hpid_groups_sha256": "126ccf39eb4eaa70d65b7b8aec88275af3490b7d8e30a7d942455215017aae6d"
+  },
+  {
+    "request_id": "new216__basket__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__basket__04\\groups.json",
+    "hpid_group_map_sha256": "25c3097fe7dff50d32f6394dc4e2d3296d591f7a3decc45245b46215467a1fa8",
+    "hpid_groups_sha256": "8dcf5081b54f375ec5aff04b0cf192cef7a6f654a9c62a40a35e5393d93a734f"
+  },
+  {
+    "request_id": "new216__belt__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__01\\groups.json",
+    "hpid_group_map_sha256": "f21feebfefb5da59d60572e815116c618220d72dd4022ef2704dfb026ff8f2ab",
+    "hpid_groups_sha256": "9b295cde53f4fd043002dc99a83bc9921fbe5f919b3a4b74af52e616c23fe712"
+  },
+  {
+    "request_id": "new216__belt__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__02\\groups.json",
+    "hpid_group_map_sha256": "40ea157758425c471d9be6663ee3caf92b5f30d65f2aea3b49b9e21b02395b1b",
+    "hpid_groups_sha256": "5b9d3679515801c15435c34d9f1bab8cda2d655ec186af81cb62e44f781f0cfa"
+  },
+  {
+    "request_id": "new216__belt__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__03\\groups.json",
+    "hpid_group_map_sha256": "334b9cc87b5f6daf055d2a0af1b40925f4dcadc16b04661fb4a0f5cffc643fe5",
+    "hpid_groups_sha256": "9e348f9c390c3d9412e3b1acc11ca3c584739fa08f6810e6aece4e0b8ab04d5a"
+  },
+  {
+    "request_id": "new216__belt__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__belt__04\\groups.json",
+    "hpid_group_map_sha256": "a9821f3f109a24cad30249b48100b1403202925811b00a976efe37f4aef86757",
+    "hpid_groups_sha256": "2b8a582164b65b78f17aa65c7c7a08533e3391dec648feda6cf10b14dec9d9b4"
+  },
+  {
+    "request_id": "new216__bench__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__01\\groups.json",
+    "hpid_group_map_sha256": "95085ee7d2c85bb837b7643bef3e7ea292d5a528907c68706951d0140d29a838",
+    "hpid_groups_sha256": "114a1631c495878dc56b557f77078186bf4877848e8ae737c6c7a20bd38565e5"
+  },
+  {
+    "request_id": "new216__bench__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__02\\groups.json",
+    "hpid_group_map_sha256": "9131faffdff0579fa33d5dd50e4b1025f25877619623b990dd386bc1382bd651",
+    "hpid_groups_sha256": "1a21d49ab63b45564c9806db46b5f78cdff8be3cdc0c18c93fb411f1cb01991a"
+  },
+  {
+    "request_id": "new216__bench__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__03\\groups.json",
+    "hpid_group_map_sha256": "6eafd3d1cadd2ecabe5c782d06cfe6586e4c4c65baa12d20ad2a9bf20ff1bb09",
+    "hpid_groups_sha256": "cbe9a6f5d50b7e143dca96d90f3683988df5669fc4c89eeb507c5e6820e89da0"
+  },
+  {
+    "request_id": "new216__bench__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__04\\groups.json",
+    "hpid_group_map_sha256": "50d6a76498e34cc25db74e0d5f3430f1c5ec9a2782e3e30f47ae56592a967ebd",
+    "hpid_groups_sha256": "4c4f534cba2cda77b2420a9b3766331ec618e185052c7cf3df230c959d27dcf9"
+  },
+  {
+    "request_id": "new216__bicycle__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__01\\groups.json",
+    "hpid_group_map_sha256": "32a75d620712196951796172151c2302a38dcff84d2cbe7ac0a052acaa41db5f",
+    "hpid_groups_sha256": "7aee4faa2c5e175472586496b1bf71da3a80cb5c1289f4b2bf2ac0a0a17bc137"
+  },
+  {
+    "request_id": "new216__bicycle__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__02\\groups.json",
+    "hpid_group_map_sha256": "3c8e5f1024f25c4213b682207bf204e313e2f84f2c0f1b10305e2c98e54b5164",
+    "hpid_groups_sha256": "cffe3b5c0d0435b10e6fe29155edf7ce130173b723537778044a423082e70165"
+  },
+  {
+    "request_id": "new216__bicycle__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__03\\groups.json",
+    "hpid_group_map_sha256": "e0bdcf3eeaa10c5fa041c83df9a9d205abf5661165d706a9ac0e208deff30100",
+    "hpid_groups_sha256": "05a9eb745003b2b6b9488632ce7db8e52ca1a9bb8792197bd9cdb9a34124079f"
+  },
+  {
+    "request_id": "new216__bicycle__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bicycle__04\\groups.json",
+    "hpid_group_map_sha256": "96db7e46971ae8e5afa25a31af58ae8a7fb94f17fed761ae9aa8e1104f53240c",
+    "hpid_groups_sha256": "da5368310d0d1e3b18eed95135637f21a8966053d097d33913643e4eece27597"
+  },
+  {
+    "request_id": "new216__blender__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__01\\groups.json",
+    "hpid_group_map_sha256": "0c19d11e1328e03bf020c4d585d037eaa945c356b28f8dad8a1c3102f138e0e0",
+    "hpid_groups_sha256": "b137ca6c86283571d57d06852f321a015878e4022a503ceca69c4decef470c8f"
+  },
+  {
+    "request_id": "new216__blender__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__02\\groups.json",
+    "hpid_group_map_sha256": "32772e6cefa5150f03e991cf6ea1a4ef232a03d7e0841af053a55ce7513e3c74",
+    "hpid_groups_sha256": "ea631e6c71ede0c17ebf6044dadf2a451ed43139c101db4838f5d73f7fea6e53"
+  },
+  {
+    "request_id": "new216__blender__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__03\\groups.json",
+    "hpid_group_map_sha256": "45c760e4575018cde102505125f83b041d273e26b46508405a078e91557e3fe4",
+    "hpid_groups_sha256": "e7fcab9fb8ef70239b0b798674a97a2fa591c96a23cb8e74ec2fd0a0e7e10f2d"
+  },
+  {
+    "request_id": "new216__blender__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__blender__04\\groups.json",
+    "hpid_group_map_sha256": "bf6f35a6945a9a9d50607523e91904c3a5411b1063c5483119cf9eff66d3a12c",
+    "hpid_groups_sha256": "c6fcfafa1b1d670bf3327fca284d9247d0186eef428bec4073d59cae9fd753d9"
+  },
+  {
+    "request_id": "new216__book__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__book__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__book__02\\groups.json",
+    "hpid_group_map_sha256": "6c0187e6026a6f6ddfea36fe69f4aabb0b7c7af4485d93bf49b08784dee48d86",
+    "hpid_groups_sha256": "09627feaffcd6efd9fdf6cc3080bf7e38ef4dfc8bfec09af8fbc05dd3512436b"
+  },
+  {
+    "request_id": "new216__book__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__book__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__book__04\\groups.json",
+    "hpid_group_map_sha256": "0a990810be05b4df0435ec61ce19ba4720d3297586c46516618ddc959bf62e2d",
+    "hpid_groups_sha256": "e1a64338e42db9d47aa77028e737312dc8bd09e544899a13bcc189d162b01b12"
+  },
+  {
+    "request_id": "new216__bottle__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__01\\groups.json",
+    "hpid_group_map_sha256": "f5c9afd649a302dc4aaaad83b17d7573a77faf72179ab46a57c9d8c4c1492c42",
+    "hpid_groups_sha256": "d234a4b1e98aa8d3c3b296f6f9131dcf20ff21b930be68bbb6d7a3271c0fb9e4"
+  },
+  {
+    "request_id": "new216__bottle__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__02\\groups.json",
+    "hpid_group_map_sha256": "1bec5102e6c7f5d9f9e55591fc06e313dc71263f354c8c28a7f175cbdc6b0586",
+    "hpid_groups_sha256": "464b20881faa6cdac4105d6d9be422a3dcb938ffa6246c1c08a34765b38b9e16"
+  },
+  {
+    "request_id": "new216__bottle__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__03\\groups.json",
+    "hpid_group_map_sha256": "624a9ad95b6d8187f2af2d7ec7df1bf250c99e41a88b3fe97f2b66ab7bde4097",
+    "hpid_groups_sha256": "22874840331abcfddb6fdeab80ca71dc0822a6301d8903f53eedaff57e85ee92"
+  },
+  {
+    "request_id": "new216__bottle__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bottle__04\\groups.json",
+    "hpid_group_map_sha256": "44d9c0b571faafe4719ad034b9992b27dc4f4cfa8c24a427e128221619aedc31",
+    "hpid_groups_sha256": "4626ca71df44d32fe516868957344f968342982896441817c38ac2a4956d0686"
+  },
+  {
+    "request_id": "new216__bowl__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__01\\groups.json",
+    "hpid_group_map_sha256": "772859bcf387e7bf0ae9e48665ccbac4216e5d25ec5bfa8564d418d87cd2f65d",
+    "hpid_groups_sha256": "1e239789dd2d0ad6ade25e6b9f92c62db688e3ff7560c2b00c888630b860536f"
+  },
+  {
+    "request_id": "new216__bowl__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__02\\groups.json",
+    "hpid_group_map_sha256": "11e8f1b177d090ba2261967714c41fd3b6a0a59f6bcac65248bd123dc16fe079",
+    "hpid_groups_sha256": "210650395312a832dbd66ec269411bcc67e36468ecde482e1a31cce349d88ccf"
+  },
+  {
+    "request_id": "new216__bowl__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__03\\groups.json",
+    "hpid_group_map_sha256": "e1607892f59547e138dc278cf367ce865b74dcba906e3c24121de09eef9083a8",
+    "hpid_groups_sha256": "ad16487d3a511167840691431928bda5ef277ca728f99e30b58d81ce3f475328"
+  },
+  {
+    "request_id": "new216__bowl__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bowl__04\\groups.json",
+    "hpid_group_map_sha256": "61334c5527a0833c2690aae8d39ce38cec70897e7f37ddbd1fef2f268ddee37d",
+    "hpid_groups_sha256": "31a95062ce7f77477ba2255f399b34d1378bccd2078aec05abbfd2067310643f"
+  },
+  {
+    "request_id": "new216__box__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__01\\groups.json",
+    "hpid_group_map_sha256": "94bce65cbd83375f6ae947d441e774ccb59150352f9d4a5d3ced5b884e1026c0",
+    "hpid_groups_sha256": "ddb0d71854ea7fd15b1b34b443a45e01fb76f204dbcff8606c002e40314bb5df"
+  },
+  {
+    "request_id": "new216__box__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__02\\groups.json",
+    "hpid_group_map_sha256": "25c1a8f2d73177aeb1658131fd3be9d84ebeaf479c0ad8d5d0ec00a267fe52a4",
+    "hpid_groups_sha256": "fb096fa4be1948265289e0833cb22ccf3f5c6c609d030e1846093a544c55fb05"
+  },
+  {
+    "request_id": "new216__box__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__03\\groups.json",
+    "hpid_group_map_sha256": "80548ba18c8a7b66347cc621975edc13e352492108754ffa1eed61d98d8daf1c",
+    "hpid_groups_sha256": "25fbb58b8d2c40870d72b5be7ac36f0b355e639f343ef44e8b69ad50916dd01f"
+  },
+  {
+    "request_id": "new216__box__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__box__04\\groups.json",
+    "hpid_group_map_sha256": "f4874752398e43b02254a35773655af0c726c3bddbb6f52e57d7266852671b75",
+    "hpid_groups_sha256": "45773eea0ba96c0aa6663d44496a2df9ba696460ba9790c607e37228ba62920a"
+  },
+  {
+    "request_id": "new216__broom__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__broom__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__broom__01\\groups.json",
+    "hpid_group_map_sha256": "a9bc863d3632918af4b4437cba233da8a3b46e0e54be86529d2611925bc8063d",
+    "hpid_groups_sha256": "b2105a7d5df16787d8c106172823ef081fa94c7e6f09fdb0272a3ec2437d2d9b"
+  },
+  {
+    "request_id": "new216__broom__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__broom__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__broom__02\\groups.json",
+    "hpid_group_map_sha256": "c266e99ceb3a8e1d9ca824fd461256b988e17882bfb1bef2f92e2f8d41ac961e",
+    "hpid_groups_sha256": "abb00864658e9e6fe4d283d133051a67d267568a43d8b48ecc5ceaac4fd60acc"
+  },
+  {
+    "request_id": "new216__broom__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__broom__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__broom__03\\groups.json",
+    "hpid_group_map_sha256": "595f42e17907084565fafc7ca110f0a4ff2113bd950c6344885dfe2dc62a97e8",
+    "hpid_groups_sha256": "b5fa0dc3f4e85466f0b69d22c23a2d3a9d913f5bfa0eaa7f0384acc7e1b485b9"
+  },
+  {
+    "request_id": "new216__bucket__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__01\\groups.json",
+    "hpid_group_map_sha256": "727cb14c4502dc265f65fedb968a5389f6d8db45cd1f3491d8171996ec9da2c2",
+    "hpid_groups_sha256": "1ed95600f6c86299d1e162ef3a33a564eb5ebe3366129a59f077b30aa55ee329"
+  },
+  {
+    "request_id": "new216__bucket__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__02\\groups.json",
+    "hpid_group_map_sha256": "10369ce59d21187ac009cde363a0e0efd601d1c8956cf9a35c1fafaaccaa0f9a",
+    "hpid_groups_sha256": "30b94406cfe7d1831e1615e92989db53459146064147aafc0c4a0046a9b13380"
+  },
+  {
+    "request_id": "new216__bucket__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__03\\groups.json",
+    "hpid_group_map_sha256": "f5335bff3aa1d89c8ab0ae1b4e7431a7417b3830fd4e0d29eaf6a149263be7a2",
+    "hpid_groups_sha256": "218807dd1c8221ac34a7e454929d011225acc0a5632008b261ffe9c72ee3eafc"
+  },
+  {
+    "request_id": "new216__bucket__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bucket__04\\groups.json",
+    "hpid_group_map_sha256": "ffe7052dd0eaf45d064717c285fceb0a96cf4dde64db9f40c93f37f7fc676266",
+    "hpid_groups_sha256": "2d1461d38934b5745f45b4effc5f17ac07a974a3f3c26d58fcdcee898f0351b4"
+  },
+  {
+    "request_id": "new216__calculator__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__01\\groups.json",
+    "hpid_group_map_sha256": "74f39613884a0b8cecf6b3ba41dc3b6dc55dd1035a9db74eef01099b32e077b8",
+    "hpid_groups_sha256": "129c2ceb42876993622a3429af347175dca6d2cd02c291556d1b39a934a9914f"
+  },
+  {
+    "request_id": "new216__calculator__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__02\\groups.json",
+    "hpid_group_map_sha256": "e1ffcfe97b1e301bf083ba5b30b41e56d5bd5834efdf15754f822e109d1df700",
+    "hpid_groups_sha256": "616565ac7d9a7dfa06b16ea50a3dfe06b8bbb943c42e3d60171bd34054b0f75c"
+  },
+  {
+    "request_id": "new216__calculator__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__calculator__03\\groups.json",
+    "hpid_group_map_sha256": "3071523cae29adf2eaca39f60f271b9c175a9b36ad20f8e5ce687f224bbc10be",
+    "hpid_groups_sha256": "bacfb452d4145137bccc73ee8a1e2174d6b7fe75547f20b789d868e181da96f9"
+  },
+  {
+    "request_id": "new216__can__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__01\\groups.json",
+    "hpid_group_map_sha256": "3fc18867deadaa5aaae8eb9685b902bcd1aa8c3693f8e707dc8ca56759d83e00",
+    "hpid_groups_sha256": "149522a8f55e1d9e80061a1e5c3a0af90777b31e2c7ce095f3889606adb64e13"
+  },
+  {
+    "request_id": "new216__can__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__02\\groups.json",
+    "hpid_group_map_sha256": "0ee29cd520dfc9b294f6d73e68eb5a75f76dea923be44605d455384d30f5ea9b",
+    "hpid_groups_sha256": "1b73ab4b979b2dfd8859518a8c9310507d0a423eedf36bc4b373edc8c6be66a0"
+  },
+  {
+    "request_id": "new216__can__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__03\\groups.json",
+    "hpid_group_map_sha256": "3f3969c11260e30c2e935d3686507c71e4478226d62f888e27c1c722f2651541",
+    "hpid_groups_sha256": "5c0f40394686a952273d52dc3acfab8ce19c0bbea822003d2e33967c94f2dafd"
+  },
+  {
+    "request_id": "new216__can__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__can__04\\groups.json",
+    "hpid_group_map_sha256": "2e1e3f8fd8809e82a1552c22ae9b33c93c426b3cf7aba6a10d8dab8ec81cca3c",
+    "hpid_groups_sha256": "e9074ad6c19b866d0efb1b8dfae0152d950939eb69ccd044b02bb518e629793b"
+  },
+  {
+    "request_id": "new216__car_automobile__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__01\\groups.json",
+    "hpid_group_map_sha256": "67ee6a95d87c4fe6db4290dd0b7459c2c5e33c75c6e544675bc36b9973cd0f23",
+    "hpid_groups_sha256": "089d349edd423bd5e4809a1fcfec6e207dec6a79cc6698ae6ff56c71da56763a"
+  },
+  {
+    "request_id": "new216__car_automobile__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__02\\groups.json",
+    "hpid_group_map_sha256": "2e52e59dd7dda411f7396ba1431aae369a0134ce96418b1663ec0ae3966b2924",
+    "hpid_groups_sha256": "1fa89f34275568c2e53541daf1cf7985beea545bc8f9d535daa3321985f4971d"
+  },
+  {
+    "request_id": "new216__car_automobile__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__03\\groups.json",
+    "hpid_group_map_sha256": "fc9f51771bef9cdad6c5a8c92564640a16a28ff90bf30d7cdd6b1bbf4d29f760",
+    "hpid_groups_sha256": "9efd041babe6a8d4303b919f814c732e4c8c15d0b4799995030991990bd290a3"
+  },
+  {
+    "request_id": "new216__car_automobile__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__car_automobile__04\\groups.json",
+    "hpid_group_map_sha256": "187bdf9364acc964b96218bc337de5be434586b83a47fab47f0440f10b5edc22",
+    "hpid_groups_sha256": "26093c73c8f4424c63e58efee2e5b474938e32ec006ce33faa9e88fd434b5572"
+  },
+  {
+    "request_id": "new216__carton__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__01\\groups.json",
+    "hpid_group_map_sha256": "081c68cebc91dbcd712124939f56482d7a0364712cfaf64562070799d2a6b8d0",
+    "hpid_groups_sha256": "410f857d1289fb2c13828fd287b625c918ad035dd0de859016b791c76adada0f"
+  },
+  {
+    "request_id": "new216__carton__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__02\\groups.json",
+    "hpid_group_map_sha256": "32e6b02dbb474f642424b691c7eb293a94e0b3477a4ee17cc2203835d37e01fd",
+    "hpid_groups_sha256": "b8f2657348fd1bb7f75031b4987e70493f5506322731a23afcbafc6a10b3aa82"
+  },
+  {
+    "request_id": "new216__carton__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__03\\groups.json",
+    "hpid_group_map_sha256": "401758fc82797457b979ade567fbd2151c4187800b9d723d9eb0376486d595ba",
+    "hpid_groups_sha256": "9baf4001b4a4c908110c38fbaa1ce90893fa201aebef9a25f936b8cc1b552bf3"
+  },
+  {
+    "request_id": "new216__carton__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__carton__04\\groups.json",
+    "hpid_group_map_sha256": "6f34e581be692b2bf2700204146ff2e5d78c6bb9ce0c7b1a994a9f0a43f5b0e3",
+    "hpid_groups_sha256": "4d6b27c3cc28d262bb74396125892351b65a7c57b9ccdde3ae44b72da4619ca3"
+  },
+  {
+    "request_id": "new216__cellular_telephone__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__01\\groups.json",
+    "hpid_group_map_sha256": "9f0291038135efbff26cacffb49cadcd7bfee6e163be86e9a18b96a42d806201",
+    "hpid_groups_sha256": "936dd2fc3bf0d53493a455574319a2b11f7c986598b1f7a46fbc0c46090c4ea6"
+  },
+  {
+    "request_id": "new216__cellular_telephone__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__02\\groups.json",
+    "hpid_group_map_sha256": "0a49b75e33b2365437025dee5b26d3f3ac6c6c0bab5d88c7aec513947fc7b482",
+    "hpid_groups_sha256": "5830f8848bb3efe39cd749248434baaf182d16b94570aa48a3f5ac9840f734fe"
+  },
+  {
+    "request_id": "new216__cellular_telephone__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__03\\groups.json",
+    "hpid_group_map_sha256": "9706db3d8c7ca58536a5197907b369a4ab0cb0bd79a983d51bd92f52592912bc",
+    "hpid_groups_sha256": "1082d89d5c13095899e1fe94c76c0316a8e0d04a72f0bce5986d8fa5812db4c9"
+  },
+  {
+    "request_id": "new216__cellular_telephone__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cellular_telephone__04\\groups.json",
+    "hpid_group_map_sha256": "a632f2fb1eadd1c999903833f413397c6f903137ba7f60dd9544de9ba3d6d618",
+    "hpid_groups_sha256": "238e12306d6ad5399d56282b103e1447afc0c6b98b7cc602f6b02d7a47253dca"
+  },
+  {
+    "request_id": "new216__chair__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__01\\groups.json",
+    "hpid_group_map_sha256": "3cb4e2e8f7c86788ee3ffcde9a1f31535821f912acd036354e5df0bcc28e1023",
+    "hpid_groups_sha256": "1ec25afe9c9c343c42c9fbada59814655f80541dd8ebccfa3d9bab148dc75d04"
+  },
+  {
+    "request_id": "new216__chair__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__02\\groups.json",
+    "hpid_group_map_sha256": "34de66973ec2effa51fee7e61f3ee0bbaf34cc807194077e5dbd0f7f16c597ad",
+    "hpid_groups_sha256": "44f2ddfd34e185fa19977920be98177770e7370801295439ea9b49f8fd73d6d8"
+  },
+  {
+    "request_id": "new216__chair__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__03\\groups.json",
+    "hpid_group_map_sha256": "0060d657de274a92d000433302914a556783f9c16e9e82fc1c479db385ad93a8",
+    "hpid_groups_sha256": "845772a08077a39fe37ff7f594825f248dafec31d5d1062a8ef56ba51668e556"
+  },
+  {
+    "request_id": "new216__chair__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__chair__04\\groups.json",
+    "hpid_group_map_sha256": "eecfb31fe0701541b599b8ba2bc7dfc5d0560d6420b149ca195b034d76b2af12",
+    "hpid_groups_sha256": "9dc6dbee82249c7f4fb97f2d60204abdd335049ecba3dfd51e03d729315cb3b1"
+  },
+  {
+    "request_id": "new216__clock__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__02\\groups.json",
+    "hpid_group_map_sha256": "6537114424257b2cec9185f135fb464828ef20837be500c7009014b6a38d577d",
+    "hpid_groups_sha256": "a3233ed0e1a5829e46dce86ee4b5c33f4f8ec7a7a27ca2b309e21e6b115703df"
+  },
+  {
+    "request_id": "new216__clock__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__03\\groups.json",
+    "hpid_group_map_sha256": "0fdfb5e93baaf151d76fbb2a5141576b8da1d39b6ceebb221779d48e35a0f78c",
+    "hpid_groups_sha256": "1bdcdec3aedf83a635ca0be81bed67a9822534e2057bfd4956746ec200c1472e"
+  },
+  {
+    "request_id": "new216__clock__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__clock__04\\groups.json",
+    "hpid_group_map_sha256": "cdda43c8dbe09fbeae3c7c0d90646f2e1d3bded87e11d008b271df6746177f82",
+    "hpid_groups_sha256": "66ef129d2b08106c77ff6e12bbe3081b3f0633905937820ebcc714584bc95f15"
+  },
+  {
+    "request_id": "new216__crate__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__crate__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__crate__01\\groups.json",
+    "hpid_group_map_sha256": "1d6092c4b870f7ef3bd39b9b000ea2724b709fcdbd3552d7dc03f95b83a89073",
+    "hpid_groups_sha256": "5e8ab610440c0ddc766e2861c9f807afd183c3aaef6520f8bf22bf5281b97f0e"
+  },
+  {
+    "request_id": "new216__crate__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__crate__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__crate__02\\groups.json",
+    "hpid_group_map_sha256": "a63a68659171c2864a8d43ff7c77d9726192e0ce9df6a5adc81aa8566564290c",
+    "hpid_groups_sha256": "49847a0148c9fcb661c8511ce8a4ffa41c74fc80cb8f0d60535f7e2cadad06ea"
+  },
+  {
+    "request_id": "new216__crate__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__crate__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__crate__03\\groups.json",
+    "hpid_group_map_sha256": "f72000305aba517b656c20bb3ba47c96f40d82a7966ef3bf9cc97d48b3374d3a",
+    "hpid_groups_sha256": "7ed4f980d0dfb27090e760798f3d636f4f0b0ff817014738842745662716dfac"
+  },
+  {
+    "request_id": "new216__cup__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__01\\groups.json",
+    "hpid_group_map_sha256": "2f0bfe06cd633a0447b64e2b40bfd0e9ec0e745b131e90bd8fee4ef58a543516",
+    "hpid_groups_sha256": "32d0c312239c14bfb31a6e50c717cabb1a86c5a82693282a017a46bfb24894ff"
+  },
+  {
+    "request_id": "new216__cup__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__02\\groups.json",
+    "hpid_group_map_sha256": "f669de64b117a7a5f891d709c54b3bae99907357a10e38c9b9993e9d2bf60541",
+    "hpid_groups_sha256": "20012139a930998c0788e6cc28fdb3ec71cc9ed751c571274a027e0e61f68e34"
+  },
+  {
+    "request_id": "new216__cup__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__03\\groups.json",
+    "hpid_group_map_sha256": "f79332cc476823c5bfec76d13a6da209a41c4117bcce5668d294e3f3eded026b",
+    "hpid_groups_sha256": "7bcd225cc73ad67a284bac8c5af9d133ed7e9883acda5b9270ec6c335f438199"
+  },
+  {
+    "request_id": "new216__cup__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__cup__04\\groups.json",
+    "hpid_group_map_sha256": "51f4c9f497b623ee98c8a5344a46c83cc48dcbb9b11b15a70690aaaf64ea8938",
+    "hpid_groups_sha256": "5977ec0c41fdcc7bfd97ffc3121581e893bd5489e7138dcaa31ffce17ac4438c"
+  },
+  {
+    "request_id": "new216__earphone__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__01\\groups.json",
+    "hpid_group_map_sha256": "69bf0dff27defac52a2d46be886a34653244d582258130914e7d469ef96c1249",
+    "hpid_groups_sha256": "7b42145139e552d323eb73b5e420c99e33948f031328dc89a07a71be1d96c09e"
+  },
+  {
+    "request_id": "new216__earphone__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__02\\groups.json",
+    "hpid_group_map_sha256": "b1d7866a06d8ec56cc0a487b3e3e98c8398c2ec1c0bed225c5cf0915a72a1b95",
+    "hpid_groups_sha256": "12ae37f0c3985dcc80c3585d2e31b1c0ac78e294eeb5e7e7e916ec6e9e799ba2"
+  },
+  {
+    "request_id": "new216__earphone__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__03\\groups.json",
+    "hpid_group_map_sha256": "cbe1f3121c482dccbe68dc5b22ff0d4daa3d9129bcbca1a3739e7979bb917d04",
+    "hpid_groups_sha256": "d9d92fd5293a012f86eb328443a2ba7dacad33fabfc2414e936ef232761117f6"
+  },
+  {
+    "request_id": "new216__earphone__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__earphone__04\\groups.json",
+    "hpid_group_map_sha256": "ce10736c4aeadd906a4304e7da1e69708c633d1246afb88b1820e57151498793",
+    "hpid_groups_sha256": "ce71825c34984afda85d761c3d9c499b97c2940bfe3d099a7a8e2a5431b7b982"
+  },
+  {
+    "request_id": "new216__fan__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__01\\groups.json",
+    "hpid_group_map_sha256": "1315f29ff661d16fa9f55b9d330cd25ee5413a40a1bcc252c1aa1db1e02cfbca",
+    "hpid_groups_sha256": "fd5b3480414ed9703d57b07fb00a2097b6f2e0bc26d03d747747d327d7d7737e"
+  },
+  {
+    "request_id": "new216__fan__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__02\\groups.json",
+    "hpid_group_map_sha256": "a8f426f5d4a0f3944686fff28f7aea8b1b659fbf0624b9ea1efb6739c5d87801",
+    "hpid_groups_sha256": "c6c97c7752a7067ff1a3b546a2422841cfa1c375b91ed4c9bfce48d9be63557c"
+  },
+  {
+    "request_id": "new216__fan__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__03\\groups.json",
+    "hpid_group_map_sha256": "0f0195a1839428272c2c9d9d3c7af1965760a0d2b9d5c3e867316a42d03380cc",
+    "hpid_groups_sha256": "f49271f7ad00d958266126e922cfc62de0ad66937781b7b31949bea5d3bfb6a4"
+  },
+  {
+    "request_id": "new216__fan__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__fan__04\\groups.json",
+    "hpid_group_map_sha256": "7e85e0b546dcc59e34a11f7172cef3616b62744593199281a30de8299d005755",
+    "hpid_groups_sha256": "c1dbb69475fe15fcd8419cc850085938aea1a25d7bca39e3df6164b5aa7eb1b3"
+  },
+  {
+    "request_id": "new216__glass_drink_container__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__01\\groups.json",
+    "hpid_group_map_sha256": "1cbc20ec800e75b1e00effad0e5d9663ed1d1807c8ee5ff666d82aaba7142f56",
+    "hpid_groups_sha256": "ea9b682d9f10d85091af995817260d42d2123afbfde058730e8d3f8bef3c9ad0"
+  },
+  {
+    "request_id": "new216__glass_drink_container__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__02\\groups.json",
+    "hpid_group_map_sha256": "162e4e90a546446a4bc2600fbdceacee4e57c138f11fdf6097772bb6cd5fcc68",
+    "hpid_groups_sha256": "78ea2f8175976fd326e8b522c69b16abd4aed03f453ef5a444c1b940ac5513f8"
+  },
+  {
+    "request_id": "new216__glass_drink_container__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__03\\groups.json",
+    "hpid_group_map_sha256": "d6185a7af3ef3c61291df4d4adc384bdafa2b3d330aef6ea3715f654f3e11c58",
+    "hpid_groups_sha256": "22a5dc9ff44c7129637eca2414f8c3089d8b8eee7c5d13e957a9bf6eb8126a19"
+  },
+  {
+    "request_id": "new216__glass_drink_container__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__glass_drink_container__04\\groups.json",
+    "hpid_group_map_sha256": "eee1c0e6aff837f5b4dbd6b181a18eaca4aa05bb5215fb672928b454234416d7",
+    "hpid_groups_sha256": "40a898e36a32a3fe1ecbf840d5d03d3b3491b4d30abeb45b637b179c8a47b72e"
+  },
+  {
+    "request_id": "new216__guitar__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__01\\groups.json",
+    "hpid_group_map_sha256": "0bd7009135055eda2c79a2bd53b21062a4b95479cd16783fbbaa7b300b7706d9",
+    "hpid_groups_sha256": "6839ac910554873ed121c641707293722f09ac6395254525dd0909d3a3ebbe91"
+  },
+  {
+    "request_id": "new216__guitar__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__02\\groups.json",
+    "hpid_group_map_sha256": "95fed5788a9948ac15ea61521c70c882e18041168dbf655f604f909ab565929d",
+    "hpid_groups_sha256": "342270bda276c31fccfb15dab3aca198283e4c432965aaf597d20eba7333438e"
+  },
+  {
+    "request_id": "new216__guitar__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__03\\groups.json",
+    "hpid_group_map_sha256": "8a8ef4a1f5df592d0c31ae423edf6f15b8916fb00f85a2f76cb298f03999614e",
+    "hpid_groups_sha256": "da8c6b8e97b0cdd1b27d12b0903c8655de791498194d2e2d58515df19e887d9f"
+  },
+  {
+    "request_id": "new216__hammer__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hammer__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hammer__01\\groups.json",
+    "hpid_group_map_sha256": "0cd346c970384ae0c0a157ff8bb2f54ee11b530b33dfe760ab3777aa664ffd20",
+    "hpid_groups_sha256": "5ca7377a7bbf2d6fcc2a9979d54be7cee57bb1f670984d45726f6342e880e012"
+  },
+  {
+    "request_id": "new216__hammer__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hammer__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hammer__02\\groups.json",
+    "hpid_group_map_sha256": "292cccf7ba404037048881d4e4f887df4192e444be968720e6036120bc47b26d",
+    "hpid_groups_sha256": "9dd0f2f4df237a9dedffe5a3d13b44a9e0477bf27a9560b0d69860272570b835"
+  },
+  {
+    "request_id": "new216__hammer__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hammer__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hammer__03\\groups.json",
+    "hpid_group_map_sha256": "5b5757d8ff817cdd4d789e9c0b0b2533531c3d7f241f1104b95055798809b5eb",
+    "hpid_groups_sha256": "c5e45649fd900b6682fd4f29f2db5963031400ac69aee68657c8c34442befb71"
+  },
+  {
+    "request_id": "new216__handbag__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__01\\groups.json",
+    "hpid_group_map_sha256": "52fc19634007d664a3b6198bd6f59aa0ddfd4a6f4f4f1e75e5623ca6f96161e6",
+    "hpid_groups_sha256": "c5961b6d3ab7fa4991400e71e882056f985d7a38b9c9352b729f544179627e9b"
+  },
+  {
+    "request_id": "new216__handbag__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__02\\groups.json",
+    "hpid_group_map_sha256": "b6db21c1a6a595302db4ec2690c6c46c1a90a019fa606e6a58b817b112d5b71d",
+    "hpid_groups_sha256": "fdd932979733c12061f4b750371bdd4e6f976096a65e1d723d5c33e68f75bf4a"
+  },
+  {
+    "request_id": "new216__handbag__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__03\\groups.json",
+    "hpid_group_map_sha256": "a23a8b273cc3c79742b6106c8726f986f5e27c0b0e58c2708e2be4da0173b02d",
+    "hpid_groups_sha256": "875268b0900cc791d9074b3d50002c1d87a86fcac736db6835117561ce6e2df9"
+  },
+  {
+    "request_id": "new216__handbag__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__handbag__04\\groups.json",
+    "hpid_group_map_sha256": "9fdac202945fab5b167e1ffb9cf808f3eb2330bb483ba2d2613c51b4a5f48711",
+    "hpid_groups_sha256": "cb6e351e51084215d4f144eb8653453d5c3eeb7f0605c888783ea0e5bbcc4a38"
+  },
+  {
+    "request_id": "new216__hat__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__01\\groups.json",
+    "hpid_group_map_sha256": "b6278d28921b3f2f68842b1e5a5d6e2da01988a1d50f9372c7deb18a17302c8a",
+    "hpid_groups_sha256": "778a3b7f3daf67e7029827cbf8b4f76ae6c733f724e008ac363a9e6792a01a9c"
+  },
+  {
+    "request_id": "new216__hat__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__02\\groups.json",
+    "hpid_group_map_sha256": "5ba81ee1f7d28b81764938de91944fd84f08be2dd4a677f261b34c02c828e423",
+    "hpid_groups_sha256": "14742f9d8c9e783c967023ab416a133ecaa2326e84e6426d1e395d2858cc234e"
+  },
+  {
+    "request_id": "new216__hat__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__03\\groups.json",
+    "hpid_group_map_sha256": "166fe377668c6a69e45feb07c2c3f92b2a2da96539a499d6146f7bbf26fa7c44",
+    "hpid_groups_sha256": "5d1898df79a10896c8f8a25e6f962dd7a9f08488b484ff5a30a2f55278ba3313"
+  },
+  {
+    "request_id": "new216__hat__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__04\\groups.json",
+    "hpid_group_map_sha256": "11ba4ea586824bd1a28648aac153716716e9aca47d826d6f7c8430c96d343899",
+    "hpid_groups_sha256": "88dda69bbb9df1870d0d34dbaefe6853e51227c7cca5e1421a17a8d75e286200"
+  },
+  {
+    "request_id": "new216__helmet__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__helmet__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__helmet__01\\groups.json",
+    "hpid_group_map_sha256": "fb5ff47e8d7ea8e96621e3bb834c3fe29a404c0945846ffb8fcbd940b9733fea",
+    "hpid_groups_sha256": "2cd94c7548f683864498db73ddd6472e49d819fbb57e1dd3f5afa163cc3d32f6"
+  },
+  {
+    "request_id": "new216__helmet__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__helmet__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__helmet__03\\groups.json",
+    "hpid_group_map_sha256": "d89c3f5049c9f8c87abe8933a644a6d68be213822d737b4a33e91fe29489c436",
+    "hpid_groups_sha256": "2eded15e15288bd84365c5ed2fc745d75366660ad0d59b186bcb10de8ede37cb"
+  },
+  {
+    "request_id": "new216__helmet__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__helmet__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__helmet__04\\groups.json",
+    "hpid_group_map_sha256": "3238680352dddd944f50a24c29f2b8338fe8276dd0e960a36f038652b3f6f6d7",
+    "hpid_groups_sha256": "cbaba45bb595d9302ee40ebecdc8b0312f9be5232c837f8e4540aa6004544a26"
+  },
+  {
+    "request_id": "new216__jar__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__01\\groups.json",
+    "hpid_group_map_sha256": "a67fa2346121553a0b1eecb141fd4c5e4cdeb9656cdb446d02a90e92586b1f14",
+    "hpid_groups_sha256": "2c9fbcd450c0385658d5a82d5b5ca5ca92e7dbec9303cdc40cb681cab1a784e1"
+  },
+  {
+    "request_id": "new216__jar__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__02\\groups.json",
+    "hpid_group_map_sha256": "7f15d82425fdc71aef2bef0e528cc5831ec758f23e8004c15521d506236f0f91",
+    "hpid_groups_sha256": "870c7953d125432e7514068c59adcd9441c9c3c4da729d46714f259df08c3b7c"
+  },
+  {
+    "request_id": "new216__jar__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__03\\groups.json",
+    "hpid_group_map_sha256": "ee07c0b6533056aabce15c65a266009a08ec4ff10977b468204023102ba4a179",
+    "hpid_groups_sha256": "586b3f89a7211876671b5c43255a0fcfbe55c0ac2db08ad71f072b8e077c9c82"
+  },
+  {
+    "request_id": "new216__jar__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__jar__04\\groups.json",
+    "hpid_group_map_sha256": "061a9f10dcd50bf284c881dd199d52e45851ac50f6cf19b1a8eb1d8c0e374a53",
+    "hpid_groups_sha256": "5cb7e19619281de09a7da2ccb3b0857bbd6a43022e0188faf30da37a236cda46"
+  },
+  {
+    "request_id": "new216__kettle__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__01\\groups.json",
+    "hpid_group_map_sha256": "7ecf4e63a7e27eed0aff80a28bf6a90dcb4bf14ed84c8ffdce735677756610d1",
+    "hpid_groups_sha256": "4076ab64a8078a81d513b65327422085f6fd8cf2ffb14800789fc0f8b087e7e6"
+  },
+  {
+    "request_id": "new216__kettle__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__02\\groups.json",
+    "hpid_group_map_sha256": "10ca6c8084a3594e2fa1e6140f5c9a01ec3ccc3dfe25d8fc6444f7864314c13c",
+    "hpid_groups_sha256": "aa68a93c5d46a40f5ff39ddad9de723726dabfe0d418a8b94575b229f7f99e6b"
+  },
+  {
+    "request_id": "new216__kettle__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__03\\groups.json",
+    "hpid_group_map_sha256": "f65fe2145547cb4cc95b0e08e785615ecca794c6da5f594c042d8b9096488f3f",
+    "hpid_groups_sha256": "ca7d2fd93f786050633d8e8f3433e0cde8a6e2a96d480ae971290e630cfc78ad"
+  },
+  {
+    "request_id": "new216__kettle__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__kettle__04\\groups.json",
+    "hpid_group_map_sha256": "0b883bf0933bd0757eab38c40649157489b0f5bc79af2cd1328808d8517c264d",
+    "hpid_groups_sha256": "11960bf5fdd481794415caf6cc9e3e737f773661fa41a4a067440a2b4807c7b5"
+  },
+  {
+    "request_id": "new216__knife__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__01\\groups.json",
+    "hpid_group_map_sha256": "8470cce217db3715831362281a10a8b6bfc6df0bf8df1c3cfb51d18b997b638c",
+    "hpid_groups_sha256": "06a3c4c645237fa41a75267bc726df00a84fa72ef3912b6e10597fcaf3dc17c2"
+  },
+  {
+    "request_id": "new216__knife__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__02\\groups.json",
+    "hpid_group_map_sha256": "892c85802792190b936ce3d1cf0b2142c248a433d892d1441ea37fddcf536ae3",
+    "hpid_groups_sha256": "3888bbf3e2089574b0735ed55ca5fbd790867d94c6d3a7436edf8064cf91b156"
+  },
+  {
+    "request_id": "new216__knife__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__03\\groups.json",
+    "hpid_group_map_sha256": "58684aab54bdf7dfdd1d205c116a39a63189ba5227ccf90a8d1db8c328773eef",
+    "hpid_groups_sha256": "1460d4a9b315f1ccc99f0ff94c0304e0b9b3c40c97e1fe77891037cf009dabea"
+  },
+  {
+    "request_id": "new216__knife__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__knife__04\\groups.json",
+    "hpid_group_map_sha256": "c5dd4761ad39d1a0e9a7ec71ab2c4443bc0f1d1ff4aca34a97825079af86b69a",
+    "hpid_groups_sha256": "e100382300f469ff5bc5812c73c609627fa7f138a739598a8202531110fb5d70"
+  },
+  {
+    "request_id": "new216__ladder__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__01\\groups.json",
+    "hpid_group_map_sha256": "1255f26aa1700fbf5f0fa42eb795dffd3e1dfe43036f6a45f2c9ea0429d88141",
+    "hpid_groups_sha256": "c42a5456a19c383ce349be94c810b65ad255613281da69745f13b6f9f1ad8651"
+  },
+  {
+    "request_id": "new216__ladder__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__02\\groups.json",
+    "hpid_group_map_sha256": "b9b3a68f844da43bdf4e544d478f9995fe75b2cdab450e8ab37aa586da03810f",
+    "hpid_groups_sha256": "6ce2801e6ee4ee6a21320c44cbd87c1a0bd3e62b7ed9ec4272a89883e5302bfd"
+  },
+  {
+    "request_id": "new216__ladder__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__03\\groups.json",
+    "hpid_group_map_sha256": "cc6b7d616f46667e663cbeab0f25ac9b35b228b40d434dabf521fdc6b11c7765",
+    "hpid_groups_sha256": "27b375a129b65bcc8a887079acbe53733f026c2704ea148a0b0163c6ca7abe66"
+  },
+  {
+    "request_id": "new216__ladder__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__ladder__04\\groups.json",
+    "hpid_group_map_sha256": "de910c32c9f7aea09b77e3a4053f2c9072c7b13ded2ff566f009279eaa3f45e5",
+    "hpid_groups_sha256": "838b44f818b5f7b5041f5d2f0ddede80d623646523d98d736112f239c990517a"
+  },
+  {
+    "request_id": "new216__lamp__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__01\\groups.json",
+    "hpid_group_map_sha256": "fc5a80c89826b653dc52fcb1fd77bc1f54371a15958437f849413ff2a5d1ef2e",
+    "hpid_groups_sha256": "a20259005c6dcc894d56abc81124766515061ea54491839364c94c9f4c8a19d9"
+  },
+  {
+    "request_id": "new216__lamp__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__02\\groups.json",
+    "hpid_group_map_sha256": "09ad7ac3081ee0cdabeefb458e05872515ce18dea49ba7b69b66718351446d3f",
+    "hpid_groups_sha256": "dcbe2ac10f1ebd2c5323df424c0b365adbed599fcb382ae4e391f2c8734fb6e5"
+  },
+  {
+    "request_id": "new216__lamp__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__03\\groups.json",
+    "hpid_group_map_sha256": "2ff1497cfc4b33ee7b58c72db66818943f29fdd11396e6f35c0dd8d612a75eda",
+    "hpid_groups_sha256": "afc9025403b7ac070d818f1c8df56d81a0c83c143fb53028159c750b91113839"
+  },
+  {
+    "request_id": "new216__lamp__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__lamp__04\\groups.json",
+    "hpid_group_map_sha256": "71f9e1e88c0689eea598e9f7b4d25d2992e199396ebc8e2038c54a726e3310a7",
+    "hpid_groups_sha256": "f0815e4b4109ce5e00e479f0c66c6c99fff4a95f93f50c6432962664da2b4028"
+  },
+  {
+    "request_id": "new216__laptop_computer__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__01\\groups.json",
+    "hpid_group_map_sha256": "e6e36f42f487b9faa86fa102d7c4e8e7dbbc592c032f5b0aabe1b130aab079a6",
+    "hpid_groups_sha256": "a2078a84e7edf81210a24cce3ff386e1dcfe39700b1f09ea7aa475efd7776718"
+  },
+  {
+    "request_id": "new216__laptop_computer__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__02\\groups.json",
+    "hpid_group_map_sha256": "43895ec1a1054ae5a487f408f91bb78c25a4b229ec0b9dacff7abaa4ac78bf10",
+    "hpid_groups_sha256": "240a044e96cf7f32df85c96d36f1c84cc7428814017348fe15799c2c668e1952"
+  },
+  {
+    "request_id": "new216__laptop_computer__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__03\\groups.json",
+    "hpid_group_map_sha256": "0d536ae42a490b935af3f84ed7714acc7b9323e48e0645bb0a21caad83aa0ede",
+    "hpid_groups_sha256": "f5c4c0e4f9c3160e54152c25c8af21c062410a86002441a471bcb3aad65258d8"
+  },
+  {
+    "request_id": "new216__laptop_computer__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__laptop_computer__04\\groups.json",
+    "hpid_group_map_sha256": "b1e51ece1a8f775c5afcc19a1dd5469929dbd6d03c825cf1cf9c6b094b5ada8a",
+    "hpid_groups_sha256": "2d81d3a5e862e93e9ff380cbf908945e93a4b149bbaefb303494139f992f9524"
+  },
+  {
+    "request_id": "new216__microwave_oven__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__01\\groups.json",
+    "hpid_group_map_sha256": "815c240a0cb5656331adc351cc9b637624bc33c6ea13ad280f03e389e2d22c6a",
+    "hpid_groups_sha256": "4a8447944141c2cd96ab26e59b7ef764c9e5d8cd610202d7bf6096d17269cc9b"
+  },
+  {
+    "request_id": "new216__microwave_oven__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__02\\groups.json",
+    "hpid_group_map_sha256": "d32979a1801bca9f6790ab8ee64d8bc9735795d9876d34003f6587913727ccce",
+    "hpid_groups_sha256": "361f8cc63723fe0e6e949a61d753b615a4485b3f82c1ee156ff36b6c6feed545"
+  },
+  {
+    "request_id": "new216__microwave_oven__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__03\\groups.json",
+    "hpid_group_map_sha256": "f2931420011bb02b1d12c76bc16252a58eab200f97544a442ed8b5de55154432",
+    "hpid_groups_sha256": "82909d44c5d9d28f935cda11a6c303071bec0f461a552bf2143479e29f43d582"
+  },
+  {
+    "request_id": "new216__microwave_oven__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__microwave_oven__04\\groups.json",
+    "hpid_group_map_sha256": "ec3dfb1a11cd493159d9baa61d115749a7f9afb56b74c6f32073c26faa657cad",
+    "hpid_groups_sha256": "b13bf1e25100de8d39d1a5d03d3a94d79a76a5150a28067bbb81da9d2dd044bc"
+  },
+  {
+    "request_id": "new216__mouse_computer_equipment__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__01\\groups.json",
+    "hpid_group_map_sha256": "a2d18aa7d66fce48190a3a90e6af833ca0dcdc5f63d773656cce9c40ba7df1c3",
+    "hpid_groups_sha256": "d7e9730a9713fc8acb1c7a7fe138b12e54fe14db3f50b6350b863a079ccaa2b0"
+  },
+  {
+    "request_id": "new216__mouse_computer_equipment__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__02\\groups.json",
+    "hpid_group_map_sha256": "48d2cab2a4e1be5de04f445076a4c1ccca11df2b67b4a6615dd12420904b22bb",
+    "hpid_groups_sha256": "e350ea20301b8bed3c6fac9457ca95372e102a9b33b0fe413a1116aef1078f31"
+  },
+  {
+    "request_id": "new216__mouse_computer_equipment__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__03\\groups.json",
+    "hpid_group_map_sha256": "f734fba30987943fb873538f78f98717dd34e6dbaa27af4d465b73216d654de7",
+    "hpid_groups_sha256": "6b948f7823c5e0b9f29c1ebab24ee8d9785b94052a2499b61620c00cc37fce94"
+  },
+  {
+    "request_id": "new216__mouse_computer_equipment__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mouse_computer_equipment__04\\groups.json",
+    "hpid_group_map_sha256": "ac632248bc15c881eba90486db0f1ce8a35999f4d41c6c152def51dca5369432",
+    "hpid_groups_sha256": "454082e3c29c8b189fccbda1a8bfdb4626cfcc5a58ae2c80095c01c3794c3309"
+  },
+  {
+    "request_id": "new216__mug__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__01\\groups.json",
+    "hpid_group_map_sha256": "55476f9c665c2fb2de052528295b4378c6ca8e9af65b9fd994a6f839a2a15a4f",
+    "hpid_groups_sha256": "e15f360f2c36fa33d9137908b8840c76abad59ad9ae7ca2fef930a23bb1b3c61"
+  },
+  {
+    "request_id": "new216__mug__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__02\\groups.json",
+    "hpid_group_map_sha256": "50c1e426d4f1d70118781e4292a34f0c504c65d391081ff7e1044fd525b23f1f",
+    "hpid_groups_sha256": "511814c954263922fe7d45e5d8a501e10f2ae4384a12a58a9b6a1ce4b378ebcd"
+  },
+  {
+    "request_id": "new216__mug__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__03\\groups.json",
+    "hpid_group_map_sha256": "095b1f7bd4c38fdfbe167d1ed181da80d13f34da522f43ec29c12eacfa6c8edb",
+    "hpid_groups_sha256": "2439203de59fa9f32ac1fe09772cf4c139093c5781718f089d13a7f9b3346d70"
+  },
+  {
+    "request_id": "new216__mug__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__mug__04\\groups.json",
+    "hpid_group_map_sha256": "d1d1c9b46c3ed3e4411be180c4fa1f0b4b0b31d6293650e3df59b60551b73347",
+    "hpid_groups_sha256": "fd80bdbcacc5e8a2b43da0306a8c1fd352259ef85da0ac631091e29b222b03b2"
+  },
+  {
+    "request_id": "new216__pan_for_cooking__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__01\\groups.json",
+    "hpid_group_map_sha256": "15f539588681d527a6b7acd97debb0239118109aceefe16b529ce44b0c79344e",
+    "hpid_groups_sha256": "d344fe6d07f61d70213817fd86734e755d4d6454a63d8d07e06547a596b37141"
+  },
+  {
+    "request_id": "new216__pan_for_cooking__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__02\\groups.json",
+    "hpid_group_map_sha256": "d8d3279bd6155cf4e393a4d80b858c17369f109f44751a7efbb7914ff10edc95",
+    "hpid_groups_sha256": "64b240337fd98bb5dea3a05e00a6f17c8485317fd45308b1f2b78d070193cca9"
+  },
+  {
+    "request_id": "new216__pan_for_cooking__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__03\\groups.json",
+    "hpid_group_map_sha256": "711d4fd408cc4dbe0edb755422c795472506decaa6bb053e5cd8bfefac72cb5a",
+    "hpid_groups_sha256": "1bbfe88a4f7cf3dd3b87bc130577f0b12ac52e6f73c5fab2d9093e5e27693061"
+  },
+  {
+    "request_id": "new216__pan_for_cooking__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pan_for_cooking__04\\groups.json",
+    "hpid_group_map_sha256": "75406c13df14f737b1485756ab060c761e6839793c8039c2d33ae5b0ee4bf538",
+    "hpid_groups_sha256": "7be5e3e5712ffbbe15900d9d4ecb8135e8598c925849a372ca1a301d9c2a3458"
+  },
+  {
+    "request_id": "new216__pen__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pen__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pen__01\\groups.json",
+    "hpid_group_map_sha256": "8a1121ba03d0412e4fd22c16046af146a588306fbdf93f2d14533b1dfb033715",
+    "hpid_groups_sha256": "6ab52e471573b2ada2edcef54adbf03cb946f5be4a46198cbd32e11ff326da25"
+  },
+  {
+    "request_id": "new216__pen__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pen__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__pen__02\\groups.json",
+    "hpid_group_map_sha256": "3a4a78944f959c5505261148aedfa3a33bfd528904393319192c3dfdf7edf31d",
+    "hpid_groups_sha256": "771e2ea6cfb5a7b41db663ad651691052b3ab8a2a86add727956f4714b0b89c3"
+  },
+  {
+    "request_id": "new216__plastic_bag__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__01\\groups.json",
+    "hpid_group_map_sha256": "38557452fc0f73f41140df043742665653c6a60d69433784c673a2d626f8f2f1",
+    "hpid_groups_sha256": "440967d4465a81a0481d729973c19cf71efa61d414e4aba4dabb9b7e469724b8"
+  },
+  {
+    "request_id": "new216__plastic_bag__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__02\\groups.json",
+    "hpid_group_map_sha256": "dd82a0fc7b6a985c5711dab86d0f1a5720441bcfb1a46dc91cdc90e8e87b3001",
+    "hpid_groups_sha256": "c15840fd461258c824145300b4844714a098145971280debef1d4772f566a941"
+  },
+  {
+    "request_id": "new216__plastic_bag__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__03\\groups.json",
+    "hpid_group_map_sha256": "df1685949d9ea8a3e6059a54e8e4d517a8531aa4d28f54f0fdbf5a21dd144ef2",
+    "hpid_groups_sha256": "f4757932f0d691d888698548f17254015db8d774729d394edcdded7f06ecea25"
+  },
+  {
+    "request_id": "new216__plastic_bag__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plastic_bag__04\\groups.json",
+    "hpid_group_map_sha256": "c5f33e9ec3f3e64abdd0edbc22e2fda9230ade29eeeea6b7158926417b9d2ef3",
+    "hpid_groups_sha256": "2e4891aee464bc77fdad36380d447dec3fc8285bb95f50bb984834e49b3bab8f"
+  },
+  {
+    "request_id": "new216__plate__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__01\\groups.json",
+    "hpid_group_map_sha256": "dfbc474f17fa94405e7c0dfec86ad2803e1fc3430949deda08e3cdbbfc48f05e",
+    "hpid_groups_sha256": "b7135fb2cdf8ccc7bf03046721f344447a8e07d89b70b0dfa03d3c58b469a9d4"
+  },
+  {
+    "request_id": "new216__plate__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__02\\groups.json",
+    "hpid_group_map_sha256": "3a420af20ad64ae4e393e29f87fefed1d90cadef5c0b1f2e64fb558512def764",
+    "hpid_groups_sha256": "ae2c292a0d00740434b1604da6906b4decdfb96edf57c0ebfb79ab3d4d4e05de"
+  },
+  {
+    "request_id": "new216__plate__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__03\\groups.json",
+    "hpid_group_map_sha256": "b027bf0f8e8e1316d2b318410d78530aa322f624c1bdda683672f0cf43c7c3ea",
+    "hpid_groups_sha256": "07b07e4cbefa44f427ed14cf5cea3aba8cb118182c0b69d650788e0cf3809ba7"
+  },
+  {
+    "request_id": "new216__plate__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__plate__04\\groups.json",
+    "hpid_group_map_sha256": "35d92ef281bdf27397df7534e0ddbef5b4c368c4ee2682154a793a4b348d0efd",
+    "hpid_groups_sha256": "01baff1ee99177a0e134c186afc4c9e46543b0685b1c2d5f53534fe0b6ad6565"
+  },
+  {
+    "request_id": "new216__remote_control__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__01\\groups.json",
+    "hpid_group_map_sha256": "e19636db384980dc842db21fdb2a5971d3db684d67c912cad3b30db0649bdf01",
+    "hpid_groups_sha256": "440f39a326d1f341bb3eb8ebb41b3749ffb930cb5d9b73a88875cc26b3440d1b"
+  },
+  {
+    "request_id": "new216__remote_control__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__02\\groups.json",
+    "hpid_group_map_sha256": "4d4f3e63570da9b3eb941a1689224fb6bdeee7130ff43d2bcc870fb0344be160",
+    "hpid_groups_sha256": "267a0d7ce67ee58c92a0eac0dc313d9d983d6b6f4f45ecc468f0d662de53239c"
+  },
+  {
+    "request_id": "new216__remote_control__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__03\\groups.json",
+    "hpid_group_map_sha256": "28b65b782918b5bbe95985f838c24db0168364b32510bac3c454d5be4a2e9a82",
+    "hpid_groups_sha256": "f085c5000ceb01b1e98489f36abedff37b4877491dc1aed79ff69b4a33609f0f"
+  },
+  {
+    "request_id": "new216__remote_control__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__remote_control__04\\groups.json",
+    "hpid_group_map_sha256": "819c8d41e5bdbaf59b66cc57e119f353aa22e400fbc98563d1f425b027dbb54c",
+    "hpid_groups_sha256": "625979efd31bd0d4424dbc0c3bf6e667465abb801516af4e381bdaed6007d788"
+  },
+  {
+    "request_id": "new216__scarf__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scarf__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scarf__01\\groups.json",
+    "hpid_group_map_sha256": "16dec9c6c6cb566ea6fa054252e425cbd63c5ddd53ff2e11ab9ff9d6fb4a3e56",
+    "hpid_groups_sha256": "058dde69bfb6c61841253fde2af70e7bce36e9a378e3423d5a5422a6a995511e"
+  },
+  {
+    "request_id": "new216__scarf__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scarf__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scarf__03\\groups.json",
+    "hpid_group_map_sha256": "441d900a8c85b5ee372a8ed3f3c2a3290f76407a77a1f94a25a33b1c562e8b33",
+    "hpid_groups_sha256": "c47b3195b540ef39ff5e70a8a3151f8c0a4d9279c8eb93695c3827a6007f11f6"
+  },
+  {
+    "request_id": "new216__scarf__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scarf__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scarf__04\\groups.json",
+    "hpid_group_map_sha256": "d0e752bc95cee3cfb9dfc9ba7d394d350605b51f2750b139cff1e3b6e1ee08d0",
+    "hpid_groups_sha256": "0a3220ecdcbcf86bc7f7c50c9b97b2d8cbdda480ec35f17409a92d3ef23608d7"
+  },
+  {
+    "request_id": "new216__scissors__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__01\\groups.json",
+    "hpid_group_map_sha256": "b0df762236a1774d395085c8b96314e4337290aca3e69420d592afd7c433f303",
+    "hpid_groups_sha256": "4fad3748880c36bc88a751cac08e201f7728acdcfebb8e0400c4196980e5c4ef"
+  },
+  {
+    "request_id": "new216__scissors__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__02\\groups.json",
+    "hpid_group_map_sha256": "56b24d2c02763d5f2f818f5d769576ce7ffe990ea4142a2d3f61ac286a450cd6",
+    "hpid_groups_sha256": "c0d00baa795c34f46866cd0626ae4169565b9a396d2e7fd25344bcbf6478da77"
+  },
+  {
+    "request_id": "new216__scissors__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__03\\groups.json",
+    "hpid_group_map_sha256": "15fd99415dd2bab4a0db41ad98afd6b40b136b4e0516fffc757813aea05e25fb",
+    "hpid_groups_sha256": "2ad70b592e0ed2cea166c6fe49d67a01347d4fa2c1ba9120e99d0ffbaf1e961f"
+  },
+  {
+    "request_id": "new216__scissors__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__scissors__04\\groups.json",
+    "hpid_group_map_sha256": "c2f723e99111cb1b1bee81009a775c41cb7a4ca5ceb958ba715f775ab9110c93",
+    "hpid_groups_sha256": "800fa5f79b8ac6941cea7d657d7210d6592200abc291d2c585ba2f222b5b824d"
+  },
+  {
+    "request_id": "new216__screwdriver__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__screwdriver__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__screwdriver__01\\groups.json",
+    "hpid_group_map_sha256": "be8400299b8151c24b397791064fa96814b68e76e555cdaede4eaf49dbd18dc5",
+    "hpid_groups_sha256": "862fe192f98eca8f7da6c9d5a3a2515426009781f8a664f11d10274ecf88f9d5"
+  },
+  {
+    "request_id": "new216__shoe__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__01\\groups.json",
+    "hpid_group_map_sha256": "84c7a5eb7e2075d10d64539df992aac486eea0bdaa462c7a62aee35e26fb1bed",
+    "hpid_groups_sha256": "e4705ff2cb59ffa03d5c7e7cf69276385d8bb92db8a4d609d43e0f61a9fe0491"
+  },
+  {
+    "request_id": "new216__shoe__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__02\\groups.json",
+    "hpid_group_map_sha256": "206cf54e78fdd6d29f60ea7dc122723cf354b0e243df25e00e846ea1c6ee757a",
+    "hpid_groups_sha256": "988720f40b9b7334c75710a20c80aabd151ad3209f27e791b7d7e621cd01d4ca"
+  },
+  {
+    "request_id": "new216__shoe__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__03\\groups.json",
+    "hpid_group_map_sha256": "652b6eb97900fc41ece9a31f97d176022bf9b5686987e4632ecf5b01f4204cd7",
+    "hpid_groups_sha256": "48d4063f1b9fe7570b371d690b58376ae4a90ca406a535263818cee69bd58f3b"
+  },
+  {
+    "request_id": "new216__shoe__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__shoe__04\\groups.json",
+    "hpid_group_map_sha256": "e42e2bd967b013438f3500251aefb72821eff9025cb37f2ec4313802177c7823",
+    "hpid_groups_sha256": "036ed9777fc5c5e3f1a5f60e2606db507b77a680376e104e9e2ef4cbd8b7ae01"
+  },
+  {
+    "request_id": "new216__slipper_footwear__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__slipper_footwear__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__slipper_footwear__01\\groups.json",
+    "hpid_group_map_sha256": "08897322791b3145df0907a65201015bf9c389743491120d5515ce8c3965e469",
+    "hpid_groups_sha256": "eb7b5feed421b681c39f9df4e701b9e1e088618c3af10e39d09a08876fde3eba"
+  },
+  {
+    "request_id": "new216__soap__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__soap__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__soap__01\\groups.json",
+    "hpid_group_map_sha256": "e48a9b8a89e1c9788d1465c4baba2b88c0ca3b2409c4ce1856bc4c0771cac3f4",
+    "hpid_groups_sha256": "8d95fb3b562d602fe88d4aea62ffb2f3dd0b7be8e2161c56fe50cde6b58105df"
+  },
+  {
+    "request_id": "new216__soap__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__soap__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__soap__02\\groups.json",
+    "hpid_group_map_sha256": "5a9f1267ac39860a1fe468814a8fabbd28a3dcf7f73f92036f57dc8b04eed726",
+    "hpid_groups_sha256": "60d55e066cbe5b6606a35bc92017b255720c89e8ecd616d3e28fc00abef09720"
+  },
+  {
+    "request_id": "new216__spoon__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__01\\groups.json",
+    "hpid_group_map_sha256": "9d75388bf9f25cc688a463585a9f3370bc396edd234a56ee60c0fde63fced1c5",
+    "hpid_groups_sha256": "923de2f6e3f616ab39ff1c4c262aaea957418e8bce05468a4ce73a432971e075"
+  },
+  {
+    "request_id": "new216__spoon__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__02\\groups.json",
+    "hpid_group_map_sha256": "5c674beb4c2a65fa396b74690634b48a0cdb855351aeb55efe6f68bfa6966688",
+    "hpid_groups_sha256": "90d045357e33d5780173f748487961d6729e5eadefc6899abe3a6010c33a915d"
+  },
+  {
+    "request_id": "new216__spoon__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__03\\groups.json",
+    "hpid_group_map_sha256": "b599e034ed64416ca9fbe2f9e709e22d4e753d4aed5b266bf60cc35b0fafeed1",
+    "hpid_groups_sha256": "fb1cabf728203802843b391e97b3c1ac3e294ea712ffb4ac1bd6afb49978973f"
+  },
+  {
+    "request_id": "new216__spoon__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__spoon__04\\groups.json",
+    "hpid_group_map_sha256": "63a9690751110da6669f7bd08b7b1683fd1422a5e5464bdef031e54548af2342",
+    "hpid_groups_sha256": "ad3c2e8f6a1904333c20581a8a1479f1a358dbda23593c552f06094dbf905816"
+  },
+  {
+    "request_id": "new216__stool__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__01\\groups.json",
+    "hpid_group_map_sha256": "c41ab30a040475c2ed384af198ca3d1c8f329130f30b5d1312772273407e5d66",
+    "hpid_groups_sha256": "ca2a93c30ba08fd3764e8313dfa4041a09c730744f416ff572fdcbd41e69e47d"
+  },
+  {
+    "request_id": "new216__stool__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__02\\groups.json",
+    "hpid_group_map_sha256": "2721b8f9e9cbdaf5c7e3827f2efadd6827c6aef0ff92fa03ad5d3d69973b580f",
+    "hpid_groups_sha256": "1d84f115a39cc1646aedc1d174beb7c89d0b4d5270d3a32728081718ed7708e9"
+  },
+  {
+    "request_id": "new216__stool__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__03\\groups.json",
+    "hpid_group_map_sha256": "7564a74e320ebc0a620b9643e09a534e6c3649912a615bb77b11338ea3e94a4e",
+    "hpid_groups_sha256": "3e93f0beae463735bdd88423d7cde512c98fcb80ecf8ba3250217277ff4c801a"
+  },
+  {
+    "request_id": "new216__stool__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__stool__04\\groups.json",
+    "hpid_group_map_sha256": "336562b81041ba61adf301e8226bf5d02d6f86d30491b8f07660c2db6e8cead4",
+    "hpid_groups_sha256": "7eafb5a26a91f4bd1441537e7828dc5fc5b2e9270dbde7619b68af7c82c1db34"
+  },
+  {
+    "request_id": "new216__sweater__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__01\\groups.json",
+    "hpid_group_map_sha256": "e788be79e4a61e3dc5e8a838e9b4281db071f0865559b85387c0d667a4857aec",
+    "hpid_groups_sha256": "46fc1fdd2718255ea15b9dfd367a94fee81311346a085b2b110231c79a50a866"
+  },
+  {
+    "request_id": "new216__sweater__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__02\\groups.json",
+    "hpid_group_map_sha256": "602457631a316d997218660e7d5420ee1243a2a80d17280ff34cb09d97680cc2",
+    "hpid_groups_sha256": "b3bedddbd329d6ce7a88dbda40e85dde42bdd9ee66a2aca0c6d02dfa6dbe5705"
+  },
+  {
+    "request_id": "new216__sweater__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__03\\groups.json",
+    "hpid_group_map_sha256": "938308efcfcdf7234e58733803c883759014d40374e83db790478be9cb74d692",
+    "hpid_groups_sha256": "be6d0206174416d491f7dd2a581da6d98fc0783f5d4c4eb3e5ee5965f659dbb4"
+  },
+  {
+    "request_id": "new216__sweater__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__sweater__04\\groups.json",
+    "hpid_group_map_sha256": "d584cd538621ca9dd0846d1a56539c03a7b2fa650c73f68b401c3616640b14cd",
+    "hpid_groups_sha256": "66b7e1b3253e3bd3c1c64cab237b26f057eee11ef1169e2503ab282756863fd8"
+  },
+  {
+    "request_id": "new216__table__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__01\\groups.json",
+    "hpid_group_map_sha256": "9cb0ae46ab41c30346543bb9e8f045258ad2d027187b4053849e0e391217c769",
+    "hpid_groups_sha256": "13d471b3adb4aa3af056c4e0b14db0df288f3d2b819f9a33e73e8f2c35241822"
+  },
+  {
+    "request_id": "new216__table__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__02\\groups.json",
+    "hpid_group_map_sha256": "04df066250fd91c02b35efd3c1b9e9f4d2b72ad00447989c8f763c5d22c5b112",
+    "hpid_groups_sha256": "663527d7c70477bd93121f144a888a312f4ed16842be118087819e68cdf06398"
+  },
+  {
+    "request_id": "new216__table__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__03\\groups.json",
+    "hpid_group_map_sha256": "03f13cd1ea4cd73dd8ff356cb8a8ad97aca186574070dbb5d848c461f783911f",
+    "hpid_groups_sha256": "dd58e1fe463fd491fedfce0ad19d03c15ebdfbd1085bb5a86017c1f4ecf85eab"
+  },
+  {
+    "request_id": "new216__table__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__table__04\\groups.json",
+    "hpid_group_map_sha256": "c36c3d96a0c9049ba1824966fca14760c499fea28c277192d90a7a7dbe123535",
+    "hpid_groups_sha256": "bdaa7c8aeaefa04ce1e75175a9deb7e7f4849d7ed00a33e5282a95a69410bb54"
+  },
+  {
+    "request_id": "new216__telephone__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__01\\groups.json",
+    "hpid_group_map_sha256": "5c149282a443707c72dc3e86f98a1ba1ee42b4cd0000058fff274ff4d259de36",
+    "hpid_groups_sha256": "4cea2b6fab9e0f2fdce35a5738ace717c5b467c5bab2e3592969f1583cdf78e9"
+  },
+  {
+    "request_id": "new216__telephone__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__02\\groups.json",
+    "hpid_group_map_sha256": "a936b58a420c746e5d9985f92b85341b957f665866c4b40c52eb46f57fd030a4",
+    "hpid_groups_sha256": "41dca5e2b0935b09a6bef012ad0a3ca4790be957a61d15824f30c051b9570ad4"
+  },
+  {
+    "request_id": "new216__telephone__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__03\\groups.json",
+    "hpid_group_map_sha256": "82d1d8022bcd2778d13c94d81857acabfa8ca942650b22c41e5968872a390c78",
+    "hpid_groups_sha256": "5966e43db6541909818bc4db92f17d42400e9e571aba6e7edd136fa83a1ba498"
+  },
+  {
+    "request_id": "new216__telephone__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__telephone__04\\groups.json",
+    "hpid_group_map_sha256": "b3ddac261effebf4ba099d4fd52f213145b048210928c8157876cf966270d067",
+    "hpid_groups_sha256": "9d9550096e4d9c60d6de9a9533350754d5834834f0a5fbeb0a7c57227b2f0209"
+  },
+  {
+    "request_id": "new216__television_set__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__01\\groups.json",
+    "hpid_group_map_sha256": "04a262185aff6ee476a71fd098bdb8a6b31550f31745ae2aee42e12531aed0d7",
+    "hpid_groups_sha256": "39e15d023e771302af2fd5b95223321267839bd403e1007c99f45bd801e79958"
+  },
+  {
+    "request_id": "new216__television_set__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__02\\groups.json",
+    "hpid_group_map_sha256": "293f70ceb92654abd6decb19f823aa6efd45107048de567bc28c523c979fae81",
+    "hpid_groups_sha256": "38b2e19f5320189447354c113e6442d3dac10859820c1592d807535f59e41476"
+  },
+  {
+    "request_id": "new216__television_set__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__03\\groups.json",
+    "hpid_group_map_sha256": "2b8e641bd69f7e7cfef3b1d4b96b42ba0c8acedecb0dff583a0987b6e843cee3",
+    "hpid_groups_sha256": "cf6c5b5e7fcc12fe06ec74a8f501c850fa67984d37211a41d2d349dc850161c1"
+  },
+  {
+    "request_id": "new216__television_set__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__television_set__04\\groups.json",
+    "hpid_group_map_sha256": "820a86cdd7e290582cc4e6efe8ab31808463a5e0babea29e356d2e7f27b661a3",
+    "hpid_groups_sha256": "adcb44b4d2e2e6e27311466962732ee7f024182fc976588cb5d6f698a3e97c05"
+  },
+  {
+    "request_id": "new216__towel__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__towel__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__towel__01\\groups.json",
+    "hpid_group_map_sha256": "79e038192ebbac326a7cb0958e98f3aecf6ccfc1d06fa6fabc96286c96e092b8",
+    "hpid_groups_sha256": "a7dee65d85495e673a0356b4ca64d0d6da0c8fd6c0ce89043cbce8855908d4c5"
+  },
+  {
+    "request_id": "new216__towel__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__towel__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__towel__02\\groups.json",
+    "hpid_group_map_sha256": "102be3f6aeefcb54402dc6bdc4e3457de6847fc5d644023eb81fd44bde27b4a7",
+    "hpid_groups_sha256": "12b49fcffbe9ca7adca27bb40e8035be8ee5426cb9f2ede5577a805c04dccbd8"
+  },
+  {
+    "request_id": "new216__towel__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__towel__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__towel__03\\groups.json",
+    "hpid_group_map_sha256": "f6b72c10f4b6b0a49c1cfd9f41b2daccfbfaee68a0f74c0ca24e2cb9b2f95468",
+    "hpid_groups_sha256": "a908d360bc61b2711e5ccb623fd6d8843e59a0ccc1f9c83884be7435432cac97"
+  },
+  {
+    "request_id": "new216__trash_can__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__trash_can__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__trash_can__01\\groups.json",
+    "hpid_group_map_sha256": "82bb9fd92055a6d9d278078538c996c3bb241f81fa123161e0ad1e29bdfd3050",
+    "hpid_groups_sha256": "499781d1e144b6c88181c882ceb9bd649b3f69cc59fd9220aa997903b39ac4ab"
+  },
+  {
+    "request_id": "new216__trash_can__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__trash_can__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__trash_can__02\\groups.json",
+    "hpid_group_map_sha256": "61c5a9b91cd569c089f0ba0a02f7580ddd433c00b874ca461e67920c72cfc651",
+    "hpid_groups_sha256": "98a270b6f184ad68ff5d629ac02213afc2a65b63d4c946130d387e11cce8f057"
+  },
+  {
+    "request_id": "new216__trash_can__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__trash_can__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__trash_can__04\\groups.json",
+    "hpid_group_map_sha256": "b43f7e56d6c2ebc674b7659fc52f7f6e026bd1df826fb33201be6046ae72a6d3",
+    "hpid_groups_sha256": "e87d49e999a7d83d03b54fd9e03964d053b16aca59018ab99e1e820917888c3e"
+  },
+  {
+    "request_id": "new216__tray__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__01\\groups.json",
+    "hpid_group_map_sha256": "976f2af873d023a90b2e7b744d09bbee8275f24c05eb691240b069e26149ed53",
+    "hpid_groups_sha256": "5b1864e13e41695fe3697fa1830eef2985733d5928445f1efa79c5c4bdc8f355"
+  },
+  {
+    "request_id": "new216__tray__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__02\\groups.json",
+    "hpid_group_map_sha256": "3c4cb97e4cd602e44ec665dda5f53bf3ee0ffe84dfb329aae51315316c163919",
+    "hpid_groups_sha256": "68a801fc07459a8bdf66b0b5e4f07bb58f43fb34ef1f978abff7d7598938f70a"
+  },
+  {
+    "request_id": "new216__tray__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__03\\groups.json",
+    "hpid_group_map_sha256": "6ae8c18bbb69916115ba1c6fd9398b34993208f95be3dd7c24ca9273f9763695",
+    "hpid_groups_sha256": "ed60856a1ff6b455baa145a82d496c3abab8c69b0eba745069d191c20a384db4"
+  },
+  {
+    "request_id": "new216__tray__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__tray__04\\groups.json",
+    "hpid_group_map_sha256": "80e478b72578db8024c00bea836b2a4c4a46c08a80408b82598fcffee95a9eba",
+    "hpid_groups_sha256": "5fe7ac6d3369cbabf2a36a48e4cc6231b31d5626abf49fd64ae6f1132e4c84b3"
+  },
+  {
+    "request_id": "new216__vase__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__01\\groups.json",
+    "hpid_group_map_sha256": "7c1008cf1608afcc8d7888b16881f7043db86fb78720cb41a63309234d1d54e0",
+    "hpid_groups_sha256": "40407671af23182d31eb02ac4bdcad6e2e84343a2c837ee1a834b2f337d1dc5b"
+  },
+  {
+    "request_id": "new216__vase__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__02\\groups.json",
+    "hpid_group_map_sha256": "66c34a9d5477517e969c10cb425a5502f848af773f71d48fa3e639338dd7f479",
+    "hpid_groups_sha256": "35b4bb8d90adf05af86e081f1df17fa435a3c1ca9fc2f2a747b8df1194ba0a54"
+  },
+  {
+    "request_id": "new216__vase__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__03\\groups.json",
+    "hpid_group_map_sha256": "82b3bf3233aaf6531c80557a321b560c3bd137451a8977624593a9852eee784f",
+    "hpid_groups_sha256": "7ac49a6a22e526e4a84b98912a843fa25a073748a5e6189bab24e222627408ad"
+  },
+  {
+    "request_id": "new216__vase__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__vase__04\\groups.json",
+    "hpid_group_map_sha256": "7736579f9329bc45d3322e93f6efcc8ed090aa3a0d16101870cba890dddf8ebb",
+    "hpid_groups_sha256": "37e904e08f7171f0dc91af29a93889f37a120d2272f61e77db63db456248abde"
+  },
+  {
+    "request_id": "new216__wallet__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__wallet__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__wallet__01\\groups.json",
+    "hpid_group_map_sha256": "dfb70c2d9fccf99a564cbefe245f3b9c7910be6162facc08efa2815c023d7304",
+    "hpid_groups_sha256": "b68427ab821eeab570b1515c01e1150a2c8c6c077c9a91f51cf8cbe07593b663"
+  },
+  {
+    "request_id": "new216__wallet__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__wallet__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__wallet__02\\groups.json",
+    "hpid_group_map_sha256": "7e94cf13a8aec44861e5942bd8cac8d27861eb1149938ada4e6e07fbeb45c1c8",
+    "hpid_groups_sha256": "36372010a04eb5807e8e8775b256e42bfebe68937facb88c141a858dc32dc37b"
+  },
+  {
+    "request_id": "new216__watch__01",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__01\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__01\\groups.json",
+    "hpid_group_map_sha256": "4d99eff6f3215083ef0fcd026e486aaf5c991e34257c1bbcbbad54ae883f9f13",
+    "hpid_groups_sha256": "b5394b815fe0c2e4d49bac8b8b9a29f19e0a7a6b5017ee97ed42772eada77322"
+  },
+  {
+    "request_id": "new216__watch__02",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__02\\groups.json",
+    "hpid_group_map_sha256": "a72b16cde57e9ec710411338295be027aee12f4d4f8072818485384f1a6e2785",
+    "hpid_groups_sha256": "60219d6f93a0b0c1cda39c25a0074a4c2300fe30958d25138a5a9760db04f617"
+  },
+  {
+    "request_id": "new216__watch__03",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__03\\groups.json",
+    "hpid_group_map_sha256": "4d9b2f11b13f52335caa2da114896a2f9747f45300602cdc58a41eaf3888ace9",
+    "hpid_groups_sha256": "67666cc9db1a9a9d3160059cdd566c60d79a67fa522dec7d0800983f09d8cf71"
+  },
+  {
+    "request_id": "new216__watch__04",
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__04\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__watch__04\\groups.json",
+    "hpid_group_map_sha256": "5c3b170375d1ecc30e49341595b49294b4c3ca97f81b163c19ce72dc9bc4e754",
+    "hpid_groups_sha256": "3a7676438b2f1634d117797a78778deb26e7839685dce88d86c650a349413e69"
+  }
+]

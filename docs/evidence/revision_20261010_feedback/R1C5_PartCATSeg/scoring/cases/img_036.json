@@ -1,0 +1,162 @@
+{
+  "anonymous_id": "img_036",
+  "case_id": "wrench__u01",
+  "image_id": 68344,
+  "object_category": "knife",
+  "expected_domain": "tool_prop",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 2,
+    "predicted_part_count": 4,
+    "assignments": [
+      [
+        0,
+        1,
+        0.8859091997146606
+      ],
+      [
+        1,
+        0,
+        0.9585687518119812
+      ]
+    ],
+    "part_f1_at_025": 0.6666666666666666,
+    "part_precision_at_025": 0.5,
+    "part_recall_at_025": 1.0,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.6666666666666666,
+    "part_precision_at_050": 0.5,
+    "part_recall_at_050": 1.0,
+    "matched_count_at_050": 2,
+    "part_f1_at_075": 0.6666666666666666,
+    "part_precision_at_075": 0.5,
+    "part_recall_at_075": 1.0,
+    "matched_count_at_075": 2,
+    "mean_semantic_union_iou": 0.9222389680327793,
+    "semantic_union_recall_at_025": 1.0,
+    "semantic_label_precision": 0.5,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 4,
+    "unmatched_predicted_semantic_classes": [
+      "visual_strip_01",
+      "visual_strip_02"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "blade",
+        "union_iou": 0.9585687382297552,
+        "truth_pixels": 10044,
+        "predicted_pixels": 9716
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.8859091978358034,
+        "truth_pixels": 3797,
+        "predicted_pixels": 4220
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 2,
+    "predicted_part_count": 26,
+    "assignments": [
+      [
+        0,
+        2,
+        0.2554636001586914
+      ],
+      [
+        1,
+        0,
+        0.03026682510972023
+      ]
+    ],
+    "part_f1_at_025": 0.07142857142857144,
+    "part_precision_at_025": 0.038461538461538464,
+    "part_recall_at_025": 0.5,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0639025445668367,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.15384615384615385,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 13,
+    "unmatched_predicted_semantic_classes": [
+      "container_body",
+      "container_inner",
+      "container_outer_side",
+      "daily_object_body",
+      "device_finial",
+      "furniture_shelf",
+      "furniture_top",
+      "furniture_wheel",
+      "grip",
+      "head",
+      "jaw"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "blade",
+        "union_iou": 0.11913229018492176,
+        "truth_pixels": 10044,
+        "predicted_pixels": 2544
+      },
+      {
+        "semantic": "handle",
+        "union_iou": 0.008672798948751642,
+        "truth_pixels": 3797,
+        "predicted_pixels": 41
+      }
+    ],
+    "predicted_raw_semantic_class_count": 17,
+    "foreground_pixels": 8383,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 2,
+    "component_area_median": 85.0,
+    "component_area_max": 2120,
+    "component_source_labels": [
+      41,
+      41,
+      41,
+      44,
+      44,
+      56,
+      56,
+      62,
+      62,
+      65,
+      65,
+      153,
+      166,
+      189,
+      189,
+      196,
+      197,
+      213,
+      213,
+      215,
+      226,
+      226,
+      359,
+      370,
+      429,
+      446
+    ]
+  },
+  "shape_hw": [
+    278,
+    324
+  ],
+  "annotated_pixels": 13841,
+  "overlapping_annotation_pixels": 0
+}

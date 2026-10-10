@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "frozen_utc": "2026-10-10T01:48:24.689178+00:00",
+  "cohort": "All 226 existing cases; 1951 archived accepted candidates; diagnostic reuse, not untouched validation.",
+  "intervention_boundary": "After candidate eligibility filtering and soft membership, at Eq.2 consensus before parent support. No downstream inference or final masks are claimed.",
+  "capture": "Temporarily intercept frozen _parent_support, copy evidence and accepted inputs, abort before downstream operations; no production source edits. Reconstruct entire released consensus array and assert bit equality in every case.",
+  "selection": "One target per eligible case, first reference in stored order with >=20 pixels outside all differently named non-body annotations and represented by a nonroot normalized class; injected class lexicographically first existing nonroot class with different normalized name excluding body. Root/background excluded. No prediction used in selection.",
+  "injection": "Synthetic semantic conflict with perfect support on selected annotated ROI; s=1, a=1, r in [0.5,0.75,1] (w capped .995). The same soft membership and taxonomy are fixed for all conditions. These are controlled stress strengths, not fitted family estimates.",
+  "families": "Base family is lexicographically first recorded family already producing injected class. Single is one copy; same_family_5 is identical single plus four exact copies; cross_family_5 is identical single plus four copies under first four other recorded global family keys. Group labels do not imply statistically independent producers.",
+  "modes": [
+    "family_max_noisy_or",
+    "candidate_noisy_or",
+    "all_max",
+    "family_max_uniform_r"
+  ],
+  "conditions": [
+    "clean",
+    "single",
+    "same_family_5",
+    "cross_family_5"
+  ],
+  "r_levels": [
+    0.5,
+    0.75,
+    1.0
+  ],
+  "family_keys": [
+    "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+    "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-dense",
+    "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+    "hpid-appearance-contour",
+    "hpid-repetitive-physical-detail-v1",
+    "hpid-structural-fusion-v1",
+    "hpid-structural-fusion-v2",
+    "hpid-topology-v1",
+    "sam2-amg[facebook/sam2.1-hiera-tiny]"
+  ],
+  "uniform_r": "All natural and injected candidates have r=1 in this mode, other score transformation fixed. Consequently its injected weight is .995 at all stress levels.",
+  "endpoints": "For each ROI compute wrong-vs-correct evidence dominance (> tie loses); wrong and correct top among existing nonroot classes (argmax lowest taxonomy class id tie); mean wrong/correct evidence. Correct/wrong normalized aliases pooled by max. These are Eq.2 readouts, not final semantic predictions or real false-positive prevalence.",
+  "statistics": "Case-macro absolute and paired changes vs clean, 10000 category-cluster percentile bootstrap draws sampling all 60 original categories with replacement, seed 20261010; only eligible cases contribute. Repeated scenarios/pixels are not independent samples. Pointwise exploratory 95% CIs, no multiplicity-adjusted superiority hypothesis tests.",
+  "exclusions": "Ineligible cases retained with explicit reason. No outcome-driven exclusions.",
+  "input_manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+  "fusion_sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5",
+  "helper_sha256": "0f218feb2d785a3a3613fe20bfb90fbe7a1d492993e4b712e287f3f69a620cfc",
+  "script_sha256": "0e589cb6f7cd113dffd9c1dea06a3b3077c857ae40257b99a3b7efb232b265f3"
+}

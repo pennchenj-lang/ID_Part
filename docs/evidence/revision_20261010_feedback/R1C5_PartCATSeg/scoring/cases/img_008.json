@@ -1,0 +1,279 @@
+{
+  "anonymous_id": "img_008",
+  "case_id": "watch__u01",
+  "image_id": 195188,
+  "object_category": "watch",
+  "expected_domain": "device",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 5,
+    "predicted_part_count": 9,
+    "assignments": [
+      [
+        0,
+        1,
+        0.3494318127632141
+      ],
+      [
+        1,
+        2,
+        0.2857820987701416
+      ],
+      [
+        2,
+        0,
+        0.26863446831703186
+      ],
+      [
+        3,
+        3,
+        0.0
+      ],
+      [
+        4,
+        4,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.42857142857142855,
+    "part_precision_at_025": 0.3333333333333333,
+    "part_recall_at_025": 0.6,
+    "matched_count_at_025": 3,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.1936967273492581,
+    "semantic_union_recall_at_025": 0.4,
+    "semantic_label_precision": 0.6666666666666666,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 6,
+    "unmatched_predicted_semantic_classes": [
+      "logo",
+      "screen"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "band",
+        "union_iou": 0.0,
+        "truth_pixels": 1144,
+        "predicted_pixels": 132
+      },
+      {
+        "semantic": "body",
+        "union_iou": 0.26863446630888493,
+        "truth_pixels": 5814,
+        "predicted_pixels": 2696
+      },
+      {
+        "semantic": "clock_hand",
+        "union_iou": 0.0,
+        "truth_pixels": 343,
+        "predicted_pixels": 75
+      },
+      {
+        "semantic": "dial",
+        "union_iou": 0.6998491704374057,
+        "truth_pixels": 13472,
+        "predicted_pixels": 15830
+      },
+      {
+        "semantic": "lug",
+        "union_iou": 0.0,
+        "truth_pixels": 1075,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": true
+  },
+  "partcatseg": {
+    "truth_part_count": 5,
+    "predicted_part_count": 73,
+    "assignments": [
+      [
+        0,
+        48,
+        0.11968085169792175
+      ],
+      [
+        1,
+        47,
+        0.17906416952610016
+      ],
+      [
+        2,
+        70,
+        0.15394474565982819
+      ],
+      [
+        3,
+        69,
+        0.05939901992678642
+      ],
+      [
+        4,
+        60,
+        0.05104602500796318
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.004564904350161916,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.11764705882352941,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 17,
+    "unmatched_predicted_semantic_classes": [
+      "base",
+      "button",
+      "container_body",
+      "container_inner",
+      "container_label",
+      "container_lid",
+      "container_outer_side",
+      "container_side",
+      "daily_object_body",
+      "finial",
+      "furniture_top",
+      "logo",
+      "pediment",
+      "screen",
+      "side_panel"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "band",
+        "union_iou": 0.0,
+        "truth_pixels": 1144,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "body",
+        "union_iou": 0.0,
+        "truth_pixels": 5814,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "clock_hand",
+        "union_iou": 0.0,
+        "truth_pixels": 343,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "dial",
+        "union_iou": 0.009509875640087784,
+        "truth_pixels": 13472,
+        "predicted_pixels": 328
+      },
+      {
+        "semantic": "lug",
+        "union_iou": 0.013314646110721794,
+        "truth_pixels": 1075,
+        "predicted_pixels": 371
+      }
+    ],
+    "predicted_raw_semantic_class_count": 23,
+    "foreground_pixels": 19407,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 53.0,
+    "component_area_max": 2680,
+    "component_source_labels": [
+      17,
+      17,
+      49,
+      55,
+      60,
+      101,
+      101,
+      131,
+      131,
+      131,
+      131,
+      132,
+      132,
+      132,
+      132,
+      132,
+      153,
+      153,
+      153,
+      153,
+      153,
+      153,
+      153,
+      214,
+      260,
+      263,
+      263,
+      263,
+      280,
+      280,
+      280,
+      301,
+      301,
+      301,
+      301,
+      301,
+      301,
+      301,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      342,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      343,
+      363,
+      365,
+      368,
+      369,
+      369,
+      369,
+      369,
+      369,
+      370,
+      370,
+      370,
+      370,
+      370,
+      370,
+      370,
+      411,
+      429,
+      448,
+      448,
+      448,
+      448
+    ]
+  },
+  "shape_hw": [
+    166,
+    200
+  ],
+  "annotated_pixels": 21848,
+  "overlapping_annotation_pixels": 0
+}

@@ -1,0 +1,308 @@
+{
+  "status": "PASS",
+  "archived_preregistration_sha256": "3d9d0191646fc2724f47976513a1c4f6a229c9f87866e3edc09527efd7205d33",
+  "frozen_artifacts": [
+    {
+      "path": "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\configs\\general_asset_prompts.json",
+      "expected_sha256": "0b27a54cb564bfc6599b4204fdf6817acbc75c03e262266739f88eac66279098",
+      "actual_sha256": "0b27a54cb564bfc6599b4204fdf6817acbc75c03e262266739f88eac66279098",
+      "unchanged": true
+    },
+    {
+      "path": "__RUNTIME_ROOT__\\models\\hpid_paco_prototypes_v2\\index.json",
+      "expected_sha256": "1638f56e2b46d6be8df5cd3fe134327e7aa773e90e72d47a900af35092c876a9",
+      "actual_sha256": "1638f56e2b46d6be8df5cd3fe134327e7aa773e90e72d47a900af35092c876a9",
+      "unchanged": true
+    },
+    {
+      "path": "__RUNTIME_ROOT__\\models\\hpid_siglip2_asset_router_v1\\index.json",
+      "expected_sha256": "1cef095933a312f09a7990296cebf59de44ed4750ca2d796070c24f4f73f8c81",
+      "actual_sha256": "1cef095933a312f09a7990296cebf59de44ed4750ca2d796070c24f4f73f8c81",
+      "unchanged": true
+    },
+    {
+      "path": "__RUNTIME_ROOT__\\models\\hpid_conditional_parts_v1\\model\\config.json",
+      "expected_sha256": "546df5b5dcfa8b0f1907a4615677a6b77859f2bd4a30d051a97135f097cefcc6",
+      "actual_sha256": "546df5b5dcfa8b0f1907a4615677a6b77859f2bd4a30d051a97135f097cefcc6",
+      "unchanged": true
+    },
+    {
+      "path": "__RUNTIME_ROOT__\\models\\hpid_conditional_parts_v1\\model\\model.safetensors",
+      "expected_sha256": "05f2be0173484a0891e69c65e9d8e54d7bf8b90f488fa0ecf49dc375f80168ab",
+      "actual_sha256": "05f2be0173484a0891e69c65e9d8e54d7bf8b90f488fa0ecf49dc375f80168ab",
+      "unchanged": true
+    },
+    {
+      "path": "__RUNTIME_ROOT__\\models\\siglip2-base-patch16-224\\config.json",
+      "expected_sha256": "fe8b5fe6d5734360678fd71c11c21e1ea3364bd8598d34295d9206335973ffd7",
+      "actual_sha256": "fe8b5fe6d5734360678fd71c11c21e1ea3364bd8598d34295d9206335973ffd7",
+      "unchanged": true
+    },
+    {
+      "path": "__RUNTIME_ROOT__\\models\\siglip2-base-patch16-224\\model.safetensors",
+      "expected_sha256": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b",
+      "actual_sha256": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b",
+      "unchanged": true
+    }
+  ],
+  "current_snapshot_python_files": [
+    {
+      "relative_path": "src/hpid_split/__init__.py",
+      "sha256": "8e83902a6feec463c99f74bdb41eafb222e848b6f73ba7e325326695adf14ab7"
+    },
+    {
+      "relative_path": "src/hpid_split/adapters.py",
+      "sha256": "b5d0c4f4ed67f21094b2f883a2cc8d7282668eabd3e7eda799a51466dc3e1ad0"
+    },
+    {
+      "relative_path": "src/hpid_split/amodal.py",
+      "sha256": "5ecf301e8b3f8e6cfefdefe5b13c7a9c1d58de19505b9b78c5263678d72c0779"
+    },
+    {
+      "relative_path": "src/hpid_split/appearance_graph.py",
+      "sha256": "c54aefb95f08d53d882d3c2a3d468ea5c380adc08cab9bac0a30640c00ac66e6"
+    },
+    {
+      "relative_path": "src/hpid_split/appearance_proposals.py",
+      "sha256": "8d0ec63abd3cb3bd7483a5fd0a62ea71e4d16d8819bd2a5190f793a25a319115"
+    },
+    {
+      "relative_path": "src/hpid_split/asset_routing.py",
+      "sha256": "0d811693be7cf85edb8cf2b316b78137f91dd7016eb7c6365db3ae950819cc08"
+    },
+    {
+      "relative_path": "src/hpid_split/benchmarking.py",
+      "sha256": "b9599be5dbe19eeae0d28f57016f0766ab3f573f3837878e6b98758b6ddbf01c"
+    },
+    {
+      "relative_path": "src/hpid_split/candidate_backends.py",
+      "sha256": "e7f25107f68c659d09f725ae8c4d9c1f5894eaedb8817863f9ee104afac7da07"
+    },
+    {
+      "relative_path": "src/hpid_split/cli.py",
+      "sha256": "c32381baec0577a0e943f95d3384417b254efc1f7507005fbb28f5e0bc042a89"
+    },
+    {
+      "relative_path": "src/hpid_split/conditional_parts.py",
+      "sha256": "60d9ea8d4d0fd41029a4f44a89221fb61a8ccb2a4fdbb1844b1e3a47d70200e0"
+    },
+    {
+      "relative_path": "src/hpid_split/data.py",
+      "sha256": "e5c780439a857e506a5bf56fb7f1da307584b14987216e8fbd0566b912d2f477"
+    },
+    {
+      "relative_path": "src/hpid_split/dense_semantic.py",
+      "sha256": "40c97172951c16b107b2bb2a136cd9141f0ce92f522046beee236934d14580e1"
+    },
+    {
+      "relative_path": "src/hpid_split/embedding_ranker.py",
+      "sha256": "2934eaddf6c29bcd4e49e4af143fd1e2c109e892961df06ad9f0f1c435ff6057"
+    },
+    {
+      "relative_path": "src/hpid_split/ensemble_gate.py",
+      "sha256": "3bc5087a3fba94f0f9d16bdcb7b08fe61f934d4272d48810d4c3cbeb1c947ad7"
+    },
+    {
+      "relative_path": "src/hpid_split/export.py",
+      "sha256": "e4a3e72c8b394fdfb371bbfe96a1461f13537b9105f3b481034d530e0fa8ad54"
+    },
+    {
+      "relative_path": "src/hpid_split/florence_parts.py",
+      "sha256": "617471c93a150ae7599cfc0d4e31a6c76780d586ab8084e04557f1e64ef96d01"
+    },
+    {
+      "relative_path": "src/hpid_split/foundation.py",
+      "sha256": "d35542d37618f81014ffadc55b7cb36d11a0fcff21a975c79097f556c3975442"
+    },
+    {
+      "relative_path": "src/hpid_split/fusion.py",
+      "sha256": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5"
+    },
+    {
+      "relative_path": "src/hpid_split/guided_prompts.py",
+      "sha256": "9a04417f92d9e50271c0ab037a6916c1c986328aec88b66855cc78cabcb58797"
+    },
+    {
+      "relative_path": "src/hpid_split/inference.py",
+      "sha256": "8afeb83aa46d2bcbf566c50d93ff4a9f26ee54e5d6aa2b14f4f26df3e9cfc3e1"
+    },
+    {
+      "relative_path": "src/hpid_split/instances.py",
+      "sha256": "fb7c023b8cdf039d523d2841c5b9a3c5e45e3824b5da9ccdd29ca17140ff8c83"
+    },
+    {
+      "relative_path": "src/hpid_split/losses.py",
+      "sha256": "7eb16f7e1034ce8581e51751f433493b3442e430f7f2965d78f5f8ae9c6317d3"
+    },
+    {
+      "relative_path": "src/hpid_split/mask_refinement.py",
+      "sha256": "eb45ecb04d03bc1e005768e55feacf4324e9b4ffdab17e8dc5ebf314c772ec78"
+    },
+    {
+      "relative_path": "src/hpid_split/metrics.py",
+      "sha256": "24451bc60484a6a90582859e91a2efc82b10290f8cfb3284749a7cf4a09effe4"
+    },
+    {
+      "relative_path": "src/hpid_split/model.py",
+      "sha256": "e8f66a460239b09172825353d7b1f7f40d61d4a32074569b14b9009718a6db62"
+    },
+    {
+      "relative_path": "src/hpid_split/occlusion.py",
+      "sha256": "4c8b0d679710a67459df7f1fd50834944cbc371785917107661bc28e39d46b9e"
+    },
+    {
+      "relative_path": "src/hpid_split/ontology_routing.py",
+      "sha256": "c1f75c906f447079798f5cf1f86c452088539e7206dbb7bcf99d7329625ae34e"
+    },
+    {
+      "relative_path": "src/hpid_split/paco.py",
+      "sha256": "4610ecad58defce2719fb4981eaef0aaf4f56e1c0c05efa740f5ae3d396c3fc5"
+    },
+    {
+      "relative_path": "src/hpid_split/paco_eval.py",
+      "sha256": "ab28e9724c264382346e7bec4628b8355ad6f0a73bf0d9563f8585947b4fff56"
+    },
+    {
+      "relative_path": "src/hpid_split/paco_semantics.py",
+      "sha256": "9d2c54326f5fc7e0e739e0181c713e4a47c81e357827f0121ef37d5ca7401be8"
+    },
+    {
+      "relative_path": "src/hpid_split/paper_audit.py",
+      "sha256": "ab35179b6a0580b15e213a8cf4d4e4f36570b68caa1198f162cf83672941b3b1"
+    },
+    {
+      "relative_path": "src/hpid_split/paper_eval.py",
+      "sha256": "be23216eb8844bb47af51553b054c51ddb5b1e4a26598dc29ab8c0491d64b958"
+    },
+    {
+      "relative_path": "src/hpid_split/physical_groups.py",
+      "sha256": "12753c082b9abc8f61ddfd63456d1a7f210da1e58d2b59d93081a46dcbc3afd7"
+    },
+    {
+      "relative_path": "src/hpid_split/physical_region_audit.py",
+      "sha256": "19b14831ccd7a9cae8e7e513f99c16ff233eb9869bbb812f7bb15dbf6e835fb2"
+    },
+    {
+      "relative_path": "src/hpid_split/profile_resolution.py",
+      "sha256": "3ccaca7c143a08c11872d861cf585d2684dfe051290ea5994bf1a949fb1d28b8"
+    },
+    {
+      "relative_path": "src/hpid_split/prompt_bank.py",
+      "sha256": "d0a4fd7527bb5a548b2e3151bcace803f95c180da181b585e4feb38b7f2fe508"
+    },
+    {
+      "relative_path": "src/hpid_split/proposal_first.py",
+      "sha256": "675e408d03034e0bcdcf81b9dea808f4672e856f6dc79481f83d9bd0efc7b4b8"
+    },
+    {
+      "relative_path": "src/hpid_split/quality.py",
+      "sha256": "a7ba1b99ea692cf929d8cb5c1db85d26a0545b560d84843a0bfd7e409ea3b808"
+    },
+    {
+      "relative_path": "src/hpid_split/registry.py",
+      "sha256": "9dfb1725983509c727934e9501a7a2ac9313e55480669e8061bbaaacd283a51d"
+    },
+    {
+      "relative_path": "src/hpid_split/relational.py",
+      "sha256": "f4c6f03d9d6c5ad4eb894c369b5a628d496189e736f73be509aa7f03190f2ca1"
+    },
+    {
+      "relative_path": "src/hpid_split/resource_paths.py",
+      "sha256": "5e96667ae23a446527a34d99ee661e34e4a711f3fcadd7c1cad66500e32678b5"
+    },
+    {
+      "relative_path": "src/hpid_split/resources/__init__.py",
+      "sha256": "a2a913a5bb6956d7c8c4a29ca5a16de76a8fa2748f4d0369045a8a66d45db3e0"
+    },
+    {
+      "relative_path": "src/hpid_split/restoration.py",
+      "sha256": "d3f1756ec0168561436ad97609d8fd3063a8516ea867bd8d209f8a31c84ad897"
+    },
+    {
+      "relative_path": "src/hpid_split/retrieval.py",
+      "sha256": "26918e36bc8ebb741e15e1d025ef3cba3ca414cd0e7284c76dba10216057537f"
+    },
+    {
+      "relative_path": "src/hpid_split/root_cleanup.py",
+      "sha256": "cde8314b12db7b7ec8c784326ce02834e2a693d28272d592ace364a066b698f3"
+    },
+    {
+      "relative_path": "src/hpid_split/root_geometry.py",
+      "sha256": "ca661d61eecf25d1d44568ef4a44021c061f669a71b14c0a24503509c6fe938b"
+    },
+    {
+      "relative_path": "src/hpid_split/root_routing.py",
+      "sha256": "fe1eca656ca8765867d63a76e0f0cecaa6f1d6692ef04d74de323e4abf995aa6"
+    },
+    {
+      "relative_path": "src/hpid_split/scene_instances.py",
+      "sha256": "cfdf237789ab439a30a2d8c06ae99732d27f6cb480bfd13da9058d14f94a2159"
+    },
+    {
+      "relative_path": "src/hpid_split/scene_root_audit.py",
+      "sha256": "45b0008b3a5f61133805ba3593def6256d10192c30c065b0c9fdcde61c5fc3b9"
+    },
+    {
+      "relative_path": "src/hpid_split/scope_routing.py",
+      "sha256": "4d77cad2075fe687b0bd14089c2ea72b32d6c1bf77afa48df00d41ddb186d769"
+    },
+    {
+      "relative_path": "src/hpid_split/semantic_candidate_audit.py",
+      "sha256": "3fc13feb38d749d319ede62179ee1328f2c7af4b2cdabb829ea95b10484cbb00"
+    },
+    {
+      "relative_path": "src/hpid_split/semantic_refinement.py",
+      "sha256": "bf50ee3af2404941563a6b44ca619b84a725bd4245a884fd35bdad192a8c9a69"
+    },
+    {
+      "relative_path": "src/hpid_split/setup_completion.py",
+      "sha256": "8048294d73a4d404d23210908177028e8fe9dbef4843a721614549e31819a605"
+    },
+    {
+      "relative_path": "src/hpid_split/shape_proposals.py",
+      "sha256": "8f0267d2343ba3fd5f766a3ee6dc609f7503976c3c76652eca656d4e38ef2605"
+    },
+    {
+      "relative_path": "src/hpid_split/structural_fusion.py",
+      "sha256": "19ceab84e64725ec50b8f9f4dc2a042a8fd8112e8d3fea8cb49c23f7e286f7f1"
+    },
+    {
+      "relative_path": "src/hpid_split/taxonomy.py",
+      "sha256": "a7ae7377b94928b73f8314c30d1bb3144999c66f32474fb546a9a525d7a20eba"
+    },
+    {
+      "relative_path": "src/hpid_split/text_segmentation.py",
+      "sha256": "87077c7b2e952e072796aefbf797163c8011c15de2a9e103083267f64c1e8c70"
+    },
+    {
+      "relative_path": "src/hpid_split/training.py",
+      "sha256": "9f8ce9c58c3aa555a91c5eb28aea6dd757327bfcb6d5cd878ee02ff420343dee"
+    },
+    {
+      "relative_path": "src/hpid_split/validation.py",
+      "sha256": "a39a12e526058ec46f964b883767a528b911992c5110d64787d612dc7e1ec117"
+    },
+    {
+      "relative_path": "src/hpid_split/visual_regions.py",
+      "sha256": "ae6221b7915d5da98d6db814ed06e57ba04494b252144f49aaa4c7b3017aeabb"
+    },
+    {
+      "relative_path": "src/hpid_split/visual_semantics.py",
+      "sha256": "a5e935b2e4b4224215f9ca5e055e5538dfe77e1cb2193cd7fc52d6bafbce1f9d"
+    },
+    {
+      "relative_path": "src/hpid_split/vlm_parts.py",
+      "sha256": "b22be8ee0c89d9e563b791522ead84b894821163889599c19575cf3ccd3a80f3"
+    },
+    {
+      "relative_path": "src/hpid_split/vlm_roots.py",
+      "sha256": "797e86d80858e7891a0917b25eca45f8e77af18b404399f6cf0231b7280e4654"
+    },
+    {
+      "relative_path": "src/hpid_split/webapp.py",
+      "sha256": "2dc13824d935c3fc8cc495c7db3c87c4557d9f3c12cb1eec4454bf139098b6f1"
+    }
+  ],
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0"
+}

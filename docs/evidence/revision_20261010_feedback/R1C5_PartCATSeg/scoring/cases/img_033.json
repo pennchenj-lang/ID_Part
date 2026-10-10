@@ -1,0 +1,137 @@
+{
+  "anonymous_id": "img_033",
+  "case_id": "slipper_footwear__u01",
+  "image_id": 281774,
+  "object_category": "book",
+  "expected_domain": "daily_object",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 2,
+    "predicted_part_count": 1,
+    "assignments": [
+      [
+        0,
+        0,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.0,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 1,
+    "unmatched_predicted_semantic_classes": [
+      "body"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "cover",
+        "union_iou": 0.0,
+        "truth_pixels": 6584,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "page",
+        "union_iou": 0.0,
+        "truth_pixels": 347,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 2,
+    "predicted_part_count": 11,
+    "assignments": [
+      [
+        0,
+        6,
+        0.004708384163677692
+      ],
+      [
+        1,
+        0,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.125,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 8,
+    "unmatched_predicted_semantic_classes": [
+      "container_bottom",
+      "container_label",
+      "container_top",
+      "device_base",
+      "device_logo",
+      "unmapped_paco_2162",
+      "unmapped_paco_2336"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "cover",
+        "union_iou": 0.0,
+        "truth_pixels": 6584,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "page",
+        "union_iou": 0.0,
+        "truth_pixels": 347,
+        "predicted_pixels": 138
+      }
+    ],
+    "predicted_raw_semantic_class_count": 8,
+    "foreground_pixels": 825,
+    "unmapped_prediction_pixels": 50,
+    "unmapped_predicted_components": 2,
+    "component_area_min": 3,
+    "component_area_median": 19.0,
+    "component_area_max": 386,
+    "component_source_labels": [
+      17,
+      71,
+      71,
+      71,
+      131,
+      131,
+      162,
+      297,
+      336,
+      411,
+      430
+    ]
+  },
+  "shape_hw": [
+    305,
+    207
+  ],
+  "annotated_pixels": 6931,
+  "overlapping_annotation_pixels": 0
+}

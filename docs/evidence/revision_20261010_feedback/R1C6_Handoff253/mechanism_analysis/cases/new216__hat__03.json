@@ -1,0 +1,295 @@
+{
+  "request": {
+    "request_id": "new216__hat__03",
+    "case_id": "hat__03",
+    "cohort": "new216",
+    "image_id": 185989,
+    "source_image_sha256": "2bf00809d80f7bf89994e62ffd2432372968e6541e175581b6961d8be5dda722",
+    "object_annotation_id": 68245,
+    "object_category": "hat",
+    "expected_domain": "daily_object",
+    "domain": "daily_object",
+    "expected_profile": "headwear",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\hat__03\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\hat__03",
+    "target_part_name": "visor",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\hat__03\\parts_crop\\002_visor.png",
+    "target_mask_sha256": "710e9131e1345c2e4584e67ae507932a5eeaa273c08595b30408341eb6a3b10d",
+    "target_area_px": 3659,
+    "target_object_fraction": 0.3035758732265826,
+    "defect_mode": "interior",
+    "defect_seed": 20260932,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 104,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__03\\groups.json",
+    "hpid_group_map_sha256": "166fe377668c6a69e45feb07c2c3f92b2a2da96539a499d6146f7bbf26fa7c44",
+    "hpid_groups_sha256": "5d1898df79a10896c8f8a25e6f962dd7a9f08488b484ff5a30a2f55278ba3313"
+  },
+  "summary": {
+    "request_id": "new216__hat__03",
+    "cohort": "new216",
+    "domain": "daily_object",
+    "object_category": "hat",
+    "target": "visor",
+    "normalized_target": "visor",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unique",
+    "raw_match_count": 1,
+    "hpid_match_count": 1,
+    "raw_best_matching_iou": 0.43987587276958884,
+    "accepted_best_matching_iou": 0.43987587276958884,
+    "native_part_best_matching_iou": 0.025361330788110172,
+    "group_best_matching_iou": 0.025361330788110172,
+    "native_part_best_any_semantic_iou": 0.27426670698518296,
+    "group_best_any_semantic_iou": 0.29420061395503194,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 1,
+    "hpid_any_geometry_available_025": 1,
+    "raw_available_050": 0,
+    "accepted_available_050": 0,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 0,
+    "first_observed_loss_stage_050": "not_a_raw_to_group_loss",
+    "observed_subtype_050": "not_applicable",
+    "hpid_wrong_unique_050": 1,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__hat__03",
+      "cohort": "new216",
+      "raw_identity": "proposal/0004",
+      "semantic": "daily_object_visor",
+      "target_iou": 0.43987587276958884,
+      "mask_area": 1909,
+      "raw_candidate_index_zero_based": 3,
+      "upstream_candidate_key": "root:1/visual-region:04",
+      "fingerprint": "6cd679439a72b560b2866908daca4023fe3703bd1d49bac5fc6d92c0d3ac0170",
+      "accepted_by_fuser": true,
+      "accepted_index": 3,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "daily_object/daily_object/center/01",
+          "semantic": "daily_object",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 1182,
+          "truth_overlap_pixels": 1035,
+          "final_target_iou": 0.1903715102220268
+        },
+        {
+          "identity": "daily_object/daily_object_brim/center/01",
+          "semantic": "daily_object_brim",
+          "normalized_semantic": "brim",
+          "candidate_overlap_pixels": 626,
+          "truth_overlap_pixels": 573,
+          "final_target_iou": 0.27426670698518296
+        },
+        {
+          "identity": "daily_object/daily_object_visor/center/01",
+          "semantic": "daily_object_visor",
+          "normalized_semantic": "visor",
+          "candidate_overlap_pixels": 101,
+          "truth_overlap_pixels": 93,
+          "final_target_iou": 0.025361330788110172
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/daily_object_body",
+          "semantic": "daily_object_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 1808,
+          "truth_overlap_pixels": 1608,
+          "final_target_iou": 0.29420061395503194
+        },
+        {
+          "identity": "object_001/daily_object_visor/005",
+          "semantic": "daily_object_visor",
+          "normalized_semantic": "visor",
+          "candidate_overlap_pixels": 101,
+          "truth_overlap_pixels": 93,
+          "final_target_iou": 0.025361330788110172
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "daily_object/daily_object/center/01",
+      "group_id": "object_001/daily_object_body",
+      "semantic": "daily_object",
+      "normalized_semantic": "body",
+      "target_iou": 0.1903715102220268,
+      "area_px": 7171
+    },
+    {
+      "part_id": "daily_object/daily_object_band/center/01",
+      "group_id": "object_001/daily_object_band/002",
+      "semantic": "daily_object_band",
+      "normalized_semantic": "band",
+      "target_iou": 0.0,
+      "area_px": 275
+    },
+    {
+      "part_id": "daily_object/daily_object_brim/center/01",
+      "group_id": "object_001/daily_object_body",
+      "semantic": "daily_object_brim",
+      "normalized_semantic": "brim",
+      "target_iou": 0.27426670698518296,
+      "area_px": 4769
+    },
+    {
+      "part_id": "daily_object/daily_object_logo/left/01",
+      "group_id": "object_001/daily_object_logo/004",
+      "semantic": "daily_object_logo",
+      "normalized_semantic": "logo",
+      "target_iou": 0.0,
+      "area_px": 88
+    },
+    {
+      "part_id": "daily_object/daily_object_visor/center/01",
+      "group_id": "object_001/daily_object_visor/005",
+      "semantic": "daily_object_visor",
+      "normalized_semantic": "visor",
+      "target_iou": 0.025361330788110172,
+      "area_px": 101
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/daily_object_body",
+      "semantic": "daily_object_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "daily_object/daily_object/center/01",
+        "daily_object/daily_object_brim/center/01"
+      ],
+      "target_iou": 0.29420061395503194,
+      "area_px": 11940,
+      "evidence": "three_stage_semantic_rejection_merge"
+    },
+    {
+      "group_id": "object_001/daily_object_band/002",
+      "semantic": "daily_object_band",
+      "normalized_semantic": "band",
+      "member_part_ids": [
+        "daily_object/daily_object_band/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 275,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/daily_object_logo/004",
+      "semantic": "daily_object_logo",
+      "normalized_semantic": "logo",
+      "member_part_ids": [
+        "daily_object/daily_object_logo/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 88,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/daily_object_visor/005",
+      "semantic": "daily_object_visor",
+      "normalized_semantic": "visor",
+      "member_part_ids": [
+        "daily_object/daily_object_visor/center/01"
+      ],
+      "target_iou": 0.025361330788110172,
+      "area_px": 101,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 6,
+    "accepted_candidate_count": 6,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 5,
+    "identity_hypothesis_count": 6,
+    "identity_group_count": 6,
+    "identity_hypotheses_merged": 0,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 3,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [],
+    "classes_with_multiple_sources": [],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 2,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 12421,
+    "lost_root_pixels_before_conservation": 22,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__hat__03\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__hat__03",
+      "cohort": "new216",
+      "domain": "daily_object",
+      "object_category": "hat",
+      "target": "visor",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unique",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.43987587276958884,
+      "accepted_best_iou": 0.43987587276958884,
+      "part_best_iou": 0.025361330788110172,
+      "group_best_iou": 0.025361330788110172,
+      "group_any_semantic_best_iou": 0.29420061395503194,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

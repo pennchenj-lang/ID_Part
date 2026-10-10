@@ -1,0 +1,222 @@
+{
+  "request": {
+    "request_id": "new216__guitar__02",
+    "case_id": "guitar__02",
+    "cohort": "new216",
+    "image_id": 498997,
+    "source_image_sha256": "6d1ab1e92a014ce14ca538135b848914d6eb3da686379355f4b51ef4df90f681",
+    "object_annotation_id": 89894,
+    "object_category": "guitar",
+    "expected_domain": "tool_prop",
+    "domain": "tool_prop",
+    "expected_profile": "guitar",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\guitar__02\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\guitar__02",
+    "target_part_name": "fingerboard",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\guitar__02\\parts_crop\\006_fingerboard.png",
+    "target_mask_sha256": "8de961ee9c7c70e85c044263947d4f651bf5e3df76e27a89ecc98a68dad7ef12",
+    "target_area_px": 3226,
+    "target_object_fraction": 0.17055247158339942,
+    "defect_mode": "boundary",
+    "defect_seed": 20260920,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 92,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__02\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__02\\groups.json",
+    "hpid_group_map_sha256": "95fed5788a9948ac15ea61521c70c882e18041168dbf655f604f909ab565929d",
+    "hpid_groups_sha256": "342270bda276c31fccfb15dab3aca198283e4c432965aaf597d20eba7333438e"
+  },
+  "summary": {
+    "request_id": "new216__guitar__02",
+    "cohort": "new216",
+    "domain": "tool_prop",
+    "object_category": "guitar",
+    "target": "fingerboard",
+    "normalized_target": "fingerboard",
+    "raw_query_state": "unique",
+    "hpid_query_state": "unresolved",
+    "raw_match_count": 1,
+    "hpid_match_count": 0,
+    "raw_best_matching_iou": 0.3978328173374613,
+    "accepted_best_matching_iou": 0.3978328173374613,
+    "native_part_best_matching_iou": 0,
+    "group_best_matching_iou": 0.0,
+    "native_part_best_any_semantic_iou": 0.2893134775686054,
+    "group_best_any_semantic_iou": 0.18925376792059798,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "correct_geometry_exists_under_other_native_part_semantic",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 0,
+    "raw_available_050": 0,
+    "accepted_available_050": 0,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 0,
+    "first_observed_loss_stage_050": "not_a_raw_to_group_loss",
+    "observed_subtype_050": "not_applicable",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__guitar__02",
+      "cohort": "new216",
+      "raw_identity": "proposal/0003",
+      "semantic": "tool_prop_fingerboard",
+      "target_iou": 0.3978328173374613,
+      "mask_area": 1289,
+      "raw_candidate_index_zero_based": 2,
+      "upstream_candidate_key": "root:1/visual-region:02",
+      "fingerprint": "84714cb17f99d91def865f0455e80720d748a7f1fb27e4ef3e726150ec43eba2",
+      "accepted_by_fuser": true,
+      "accepted_index": 2,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "tool_prop/tool_prop/center/01",
+          "semantic": "tool_prop",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 1289,
+          "truth_overlap_pixels": 1285,
+          "final_target_iou": 0.2893134775686054
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/tool_prop_body",
+          "semantic": "tool_prop_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 1289,
+          "truth_overlap_pixels": 1285,
+          "final_target_iou": 0.18925376792059798
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "tool_prop/tool_prop/center/01",
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop",
+      "normalized_semantic": "body",
+      "target_iou": 0.2893134775686054,
+      "area_px": 10540
+    },
+    {
+      "part_id": "tool_prop/tool_prop_neck/right/01",
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop_neck",
+      "normalized_semantic": "neck",
+      "target_iou": 0.0,
+      "area_px": 1825
+    },
+    {
+      "part_id": "tool_prop/tool_prop_visual_panel_01/left/01",
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop_visual_panel_01",
+      "normalized_semantic": "visual_panel_01",
+      "target_iou": 0.0,
+      "area_px": 3820
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/tool_prop_body",
+      "semantic": "tool_prop_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "tool_prop/tool_prop/center/01",
+        "tool_prop/tool_prop_neck/right/01",
+        "tool_prop/tool_prop_visual_panel_01/left/01"
+      ],
+      "target_iou": 0.18925376792059798,
+      "area_px": 16185,
+      "evidence": "conservative_visual_merge"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 5,
+    "accepted_candidate_count": 5,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 3,
+    "identity_hypothesis_count": 5,
+    "identity_group_count": 5,
+    "identity_hypotheses_merged": 0,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 1,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [],
+    "classes_with_multiple_sources": [],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 1,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 16185,
+    "lost_root_pixels_before_conservation": 9,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__guitar__02\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__guitar__02",
+      "cohort": "new216",
+      "domain": "tool_prop",
+      "object_category": "guitar",
+      "target": "fingerboard",
+      "threshold": "025",
+      "raw_query_state": "unique",
+      "hpid_query_state": "unresolved",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "correct_geometry_exists_under_other_native_part_semantic",
+      "raw_best_iou": 0.3978328173374613,
+      "accepted_best_iou": 0.3978328173374613,
+      "part_best_iou": 0,
+      "group_best_iou": 0.0,
+      "group_any_semantic_best_iou": 0.18925376792059798,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

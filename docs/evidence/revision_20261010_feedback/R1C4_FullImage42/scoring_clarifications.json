@@ -1,0 +1,11 @@
+{
+  "fixed_utc": "2026-10-09T13:09:33Z",
+  "status": "Implementation clarification fixed before consuming new full-image outputs",
+  "full_image_predictions_consumed_at_fixation": false,
+  "root_mask": "Use the union of every exported top-level root candidate in candidates.json (semantic_name equals semantic_parent, no parent_candidate_key). No root is chosen using a reference. Report root_count and root_keys, including anomalous multi-root exports. Historical 42 packages each have one root.",
+  "foreground_mask": "Separately union every exported fine Part visible mask, before evaluation-only body exclusion. This is distinct from the root candidate union.",
+  "bbox_iou": "Axis-aligned half-open tight bounding boxes of the predicted root mask union and reference full object mask; empty boxes score zero. This is not raw detector-box AP.",
+  "expected_metadata": "Use actual materialized object category with the frozen paco_broad_categories.json mapping, cross-check historical per-case evaluator expectations. Four stale expected profiles in the blind-input manifest are not carried into scoring.",
+  "statistics_order": "Sort by case_id. Use numpy default_rng(20261009).integers(0,42,size=(10000,42)) once and reuse identical draw indices for every paired endpoint.",
+  "output_names": ["full_image_cases.csv", "full_image_cases.json", "full_image_summary.json", "full_image_source_hashes.json"]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "Wording clarification after execution began; no change to frozen code, selection, outcomes, or analysis",
+  "original_phrase": "No prediction used in selection.",
+  "correct_scope": "Eligibility is conditioned on the archived candidate-derived taxonomy. No candidate score, predicted mask overlap, endpoint correctness, or stress outcome is used to select the target ROI or injected semantic label. The base source family is also read from archived candidates.",
+  "reason": "Independent static review identified that the original wording was broader than the actual predefined rule. The preceding detailed selection rule already specified existing nonroot classes.",
+  "original_protocol_preserved": true,
+  "analysis_changed": false
+}

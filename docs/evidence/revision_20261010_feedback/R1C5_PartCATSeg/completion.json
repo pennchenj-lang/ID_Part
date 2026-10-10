@@ -1,0 +1,102 @@
+{
+  "status": "EXPERIMENT_AND_INDEPENDENT_AUDITS_COMPLETE",
+  "completed_utc": "2026-10-09T15:23:38.470754+00:00",
+  "case_count": 42,
+  "valid_outputs": 42,
+  "metrics": {
+    "part_f1_at_025": {
+      "hpid_mean": 0.33895990145444427,
+      "partcatseg_mean": 0.031122871775407502,
+      "paired_hpid_minus_partcatseg": 0.30783702967903676,
+      "paired_percentile_95ci": [
+        0.24040787629890822,
+        0.37457822486162
+      ],
+      "n": 42
+    },
+    "part_f1_at_050": {
+      "hpid_mean": 0.1645286808662991,
+      "partcatseg_mean": 0.006586553453184033,
+      "paired_hpid_minus_partcatseg": 0.15794212741311509,
+      "paired_percentile_95ci": [
+        0.09830549843189705,
+        0.22581047025959922
+      ],
+      "n": 42
+    },
+    "part_f1_at_075": {
+      "hpid_mean": 0.07534657350446824,
+      "partcatseg_mean": 0.0,
+      "paired_hpid_minus_partcatseg": 0.07534657350446824,
+      "paired_percentile_95ci": [
+        0.030203884078884077,
+        0.13292539112933843
+      ],
+      "n": 42
+    },
+    "part_precision_at_025": {
+      "hpid_mean": 0.3164965986394558,
+      "partcatseg_mean": 0.017253456954595577,
+      "paired_hpid_minus_partcatseg": 0.2992431416848602,
+      "paired_percentile_95ci": [
+        0.23048384869637556,
+        0.36730401700650034
+      ],
+      "n": 42
+    },
+    "part_recall_at_025": {
+      "hpid_mean": 0.4084892290249432,
+      "partcatseg_mean": 0.2434948979591837,
+      "paired_hpid_minus_partcatseg": 0.16499433106575964,
+      "paired_percentile_95ci": [
+        0.05963293650793651,
+        0.2607723922902494
+      ],
+      "n": 42
+    },
+    "mean_semantic_union_iou": {
+      "hpid_mean": 0.19051361740866182,
+      "partcatseg_mean": 0.055402062949532795,
+      "paired_hpid_minus_partcatseg": 0.135111554459129,
+      "paired_percentile_95ci": [
+        0.08688488387740301,
+        0.19152974272207451
+      ],
+      "n": 42
+    },
+    "semantic_union_recall_at_025": {
+      "hpid_mean": 0.2815759637188209,
+      "partcatseg_mean": 0.06791383219954648,
+      "paired_hpid_minus_partcatseg": 0.21366213151927435,
+      "paired_percentile_95ci": [
+        0.1450099206349206,
+        0.28815476190476186
+      ],
+      "n": 42
+    },
+    "semantic_label_precision": {
+      "hpid_mean": 0.457473544973545,
+      "partcatseg_mean": 0.15108764955580997,
+      "paired_hpid_minus_partcatseg": 0.306385895417735,
+      "paired_percentile_95ci": [
+        0.2320048743902992,
+        0.381085128139741
+      ],
+      "n": 42
+    }
+  },
+  "bindings": {
+    "scoring/summary.json": "ef401464974fd17e5db6bb0ccaf3a962d1e815c8cb672a1a316f273386e3fc9f",
+    "scoring_independent_audit.json": "f87ca1c6bc290b60ff7b341ee7a77d2cac0dded7dab8d1a489f6705aaa52fafe",
+    "prediction_seal_audit.json": "1147d0ac682c604b972f0ae7f0ba6b52c8958c1724a9bd4071bc995e8e3f0ac6",
+    "experiment_execution_audit.json": "b4923d1eb77b3855d38b6d9b04060e91ca8d5687c3c7c8c6303a56fe7217b6d4",
+    "protocol_frozen.json": "fc237e550c755d65cff07658cfa392387ef30db0786e29f271dd0eb954c4538d"
+  },
+  "interpretation": "Direct evaluation of official VOC-trained PartCATSeg on fixed PACO456 vocabulary and archived target crops; semantic output is converted to connected components for Part F1. This is a cross-dataset adapted comparison, not an official PartCATSeg benchmark reproduction or universal superiority claim.",
+  "material_limits": [
+    "CCL fragmentation affects geometric F1; 1328 of 3095 predicted components have at most16 pixels.",
+    "HPID uses historical root-body scoring inclusion rule; PartCATSeg has explicit semantic channels and no separate root.",
+    "Original37 routing and candidate reduction evidence are separate endpoints, not measures assigned zero to unsupported learned IDs."
+  ],
+  "word_status": "NOT_MODIFIED_WAITING_FOR_USER_BATCH_UPDATE"
+}

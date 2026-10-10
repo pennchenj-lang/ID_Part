@@ -1,0 +1,57 @@
+{
+  "decoder_version": "official-conv-decoder-class-batch-v1",
+  "checkpoint_sha256": "51a0cb99254f3778a0d629e0053af937807e55b266ae0071438c141566a36766",
+  "source_commit": "4a9a88288659f49bc39ea4ee756dd45036552638",
+  "config_sha256": "f5c15705c05844cfee509634fa0b850d715d3d0599362f60271e6cb871001fa5",
+  "source_manifest_sha256": "a846757a633c191a0b4120e35846879ee607271e7bea0fb801436122bcce8c9d",
+  "adapter_sha256": "4b3c93027861cf4093e7320cb1379bf0fb8e27840d064cf671f72eb0aa9cd589",
+  "torch": "2.11.0+cu128",
+  "device": "cuda",
+  "runtime_fingerprint": {
+    "cuda_build": "12.8",
+    "cudnn_version": 91900,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_allow_tf32": false,
+    "matmul_allow_tf32": false,
+    "float32_matmul_precision": "highest",
+    "deterministic_algorithms": false,
+    "xformers_disabled": true,
+    "autocast": false,
+    "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpu_capability": [
+      8,
+      6
+    ]
+  },
+  "chunk_size": 16,
+  "autocast": false,
+  "status": "PASS",
+  "validation_run_complete": true,
+  "verification_vocabulary": "official VOC-116",
+  "class_count": 116,
+  "image_sha256": "f4ce0481475cfb4b1cfeb2c09dc17f7fa3be4b57e03291cc3b3ad0cc733305e2",
+  "max_abs_score_error": 1.1026859283447266e-06,
+  "scores_allclose_rtol": 1e-05,
+  "scores_allclose_atol": 1e-06,
+  "argmax_identical": true,
+  "scope": "One VOC smoke image on the recorded device; not a universal proof",
+  "dummy_target_invariance": {
+    "status": "PASS",
+    "original": {
+      "sem_seg": 255,
+      "obj_part_sem_seg": 255,
+      "gt_classes": 0
+    },
+    "changed": {
+      "sem_seg": 0,
+      "obj_part_sem_seg": 1,
+      "gt_classes": 1
+    },
+    "max_abs_score_error": 0.0,
+    "scores_allclose_rtol": 1e-05,
+    "scores_allclose_atol": 1e-06,
+    "argmax_identical": true,
+    "annotations_read": false
+  }
+}

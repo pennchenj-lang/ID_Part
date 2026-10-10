@@ -1,0 +1,930 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "request_id": "old37__cellular_telephone__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cellular_telephone__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cellular_telephone__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cellular_telephone__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cellular_telephone__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__laptop_computer__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__laptop_computer__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__laptop_computer__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__laptop_computer__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__laptop_computer__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__television_set__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__television_set__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__television_set__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__television_set__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__television_set__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__remote_control__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__remote_control__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__remote_control__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__remote_control__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__remote_control__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__calculator__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__calculator__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__calculator__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__calculator__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__calculator__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__telephone__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__telephone__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__telephone__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__telephone__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__telephone__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__clock__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__clock__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__clock__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__clock__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__clock__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__watch__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__watch__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__watch__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__watch__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__watch__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__chair__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__chair__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__chair__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__chair__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__chair__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bench__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bench__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bench__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bench__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bench__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__stool__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__stool__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__stool__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__stool__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__stool__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__table__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__table__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__table__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__table__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__table__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bottle__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bottle__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bottle__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bottle__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bottle__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__jar__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__jar__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__jar__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__jar__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__jar__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__can__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__can__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__can__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__can__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__can__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cup__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cup__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cup__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cup__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__cup__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__mug__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__mug__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__mug__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__mug__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__mug__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__glass_drink_container__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__glass_drink_container__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__glass_drink_container__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__glass_drink_container__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__glass_drink_container__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bowl__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bowl__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bowl__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bowl__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bowl__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__handbag__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__handbag__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__handbag__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__handbag__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__handbag__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__plastic_bag__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__plastic_bag__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__plastic_bag__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__plastic_bag__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__plastic_bag__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__box__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__box__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__box__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__box__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__box__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__car_automobile__u02",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u02",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u02",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u02",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u02",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__bicycle__u02",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__helmet__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__helmet__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__helmet__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__helmet__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__helmet__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__shoe__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__shoe__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__shoe__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__shoe__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__shoe__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__slipper_footwear__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__slipper_footwear__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__slipper_footwear__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__slipper_footwear__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__slipper_footwear__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__screwdriver__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__screwdriver__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__screwdriver__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__screwdriver__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__screwdriver__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__wrench__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__wrench__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__wrench__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__wrench__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__wrench__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__knife__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__knife__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__knife__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__knife__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__knife__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__scissors__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__scissors__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__scissors__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__scissors__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__scissors__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pliers__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pliers__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pliers__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pliers__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pliers__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__ladder__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__ladder__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__ladder__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__ladder__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__ladder__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__guitar__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__guitar__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__guitar__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__guitar__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__guitar__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pan_for_cooking__u01",
+      "method": "raw_proposals",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pan_for_cooking__u01",
+      "method": "greedy_nms",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pan_for_cooking__u01",
+      "method": "dbscan_fusion",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pan_for_cooking__u01",
+      "method": "local_pairwise_crf",
+      "status": "PASS"
+    },
+    {
+      "request_id": "old37__pan_for_cooking__u01",
+      "method": "hpid_split_group_ids",
+      "status": "PASS"
+    }
+  ]
+}

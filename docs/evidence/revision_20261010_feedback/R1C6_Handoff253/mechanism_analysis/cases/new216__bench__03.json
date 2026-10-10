@@ -1,0 +1,426 @@
+{
+  "request": {
+    "request_id": "new216__bench__03",
+    "case_id": "bench__03",
+    "cohort": "new216",
+    "image_id": 349184,
+    "source_image_sha256": "7a0a18d27afea56932340f51de698f4118b5d154c73aa75eff0706d7e6539866",
+    "object_annotation_id": 13860,
+    "object_category": "bench",
+    "expected_domain": "furniture",
+    "domain": "furniture",
+    "expected_profile": "chair",
+    "case_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\bench__03\\case.json",
+    "package_path": "__RUNTIME_ROOT__\\experiments\\paper_v031\\test226_hpid\\bench__03",
+    "target_part_name": "leg",
+    "target_mask_path": "__RUNTIME_ROOT__\\datasets\\paco\\broad_objects_test_holdout_v3_4percat\\bench__03\\parts_crop\\004_leg.png",
+    "target_mask_sha256": "48a0ce99992b9a397a36f68e1bd422d1e4ba671ca615eafca4ff207955570e93",
+    "target_area_px": 7782,
+    "target_object_fraction": 0.09467383634638313,
+    "defect_mode": "interior",
+    "defect_seed": 20260839,
+    "defect_fraction": 0.18,
+    "sorted_source_case_index": 11,
+    "hpid_group_map_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__03\\group_id_map.tiff",
+    "hpid_groups_path": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__03\\groups.json",
+    "hpid_group_map_sha256": "6eafd3d1cadd2ecabe5c782d06cfe6586e4c4c65baa12d20ad2a9bf20ff1bb09",
+    "hpid_groups_sha256": "cbe9a6f5d50b7e143dca96d90f3683988df5669fc4c89eeb507c5e6820e89da0"
+  },
+  "summary": {
+    "request_id": "new216__bench__03",
+    "cohort": "new216",
+    "domain": "furniture",
+    "object_category": "bench",
+    "target": "leg",
+    "normalized_target": "leg",
+    "raw_query_state": "ambiguous",
+    "hpid_query_state": "ambiguous",
+    "raw_match_count": 7,
+    "hpid_match_count": 7,
+    "raw_best_matching_iou": 0.5441493853805011,
+    "accepted_best_matching_iou": 0.5441493853805011,
+    "native_part_best_matching_iou": 0.1819068255687974,
+    "group_best_matching_iou": 0.1744312026002167,
+    "native_part_best_any_semantic_iou": 0.233579887635908,
+    "group_best_any_semantic_iou": 0.236885810345526,
+    "raw_available_025": 1,
+    "accepted_available_025": 1,
+    "native_part_available_025": 0,
+    "group_available_025": 0,
+    "raw_to_group_lost_025": 1,
+    "first_observed_loss_stage_025": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_025": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_025": 0,
+    "hpid_any_geometry_available_025": 0,
+    "raw_available_050": 1,
+    "accepted_available_050": 1,
+    "native_part_available_050": 0,
+    "group_available_050": 0,
+    "raw_to_group_lost_050": 1,
+    "first_observed_loss_stage_050": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+    "observed_subtype_050": "no_individual_native_part_meets_geometry_threshold",
+    "hpid_wrong_unique_050": 0,
+    "hpid_any_geometry_available_050": 0
+  },
+  "correct_raw_candidates_at_either_threshold": [
+    {
+      "request_id": "new216__bench__03",
+      "cohort": "new216",
+      "raw_identity": "proposal/0009",
+      "semantic": "furniture_leg",
+      "target_iou": 0.5441493853805011,
+      "mask_area": 8674,
+      "raw_candidate_index_zero_based": 8,
+      "upstream_candidate_key": "root:1/visual-region:14",
+      "fingerprint": "e25e81215bceb77c31e166c136ff862e154d3019d59e50ad88a19b469afe536c",
+      "accepted_by_fuser": true,
+      "accepted_index": 8,
+      "native_part_pixel_destinations": [
+        {
+          "identity": "furniture/furniture/center/01",
+          "semantic": "furniture",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 4615,
+          "truth_overlap_pixels": 4120,
+          "final_target_iou": 0.233579887635908
+        },
+        {
+          "identity": "furniture/furniture_leg/right/03",
+          "semantic": "furniture_leg",
+          "normalized_semantic": "leg",
+          "candidate_overlap_pixels": 3127,
+          "truth_overlap_pixels": 1679,
+          "final_target_iou": 0.1819068255687974
+        },
+        {
+          "identity": "furniture/furniture_leg/right/02",
+          "semantic": "furniture_leg",
+          "normalized_semantic": "leg",
+          "candidate_overlap_pixels": 932,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        }
+      ],
+      "final_group_pixel_destinations": [
+        {
+          "identity": "object_001/furniture_body",
+          "semantic": "furniture_body",
+          "normalized_semantic": "body",
+          "candidate_overlap_pixels": 4684,
+          "truth_overlap_pixels": 4189,
+          "final_target_iou": 0.236885810345526
+        },
+        {
+          "identity": "object_001/furniture_leg/009",
+          "semantic": "furniture_leg",
+          "normalized_semantic": "leg",
+          "candidate_overlap_pixels": 3058,
+          "truth_overlap_pixels": 1610,
+          "final_target_iou": 0.1744312026002167
+        },
+        {
+          "identity": "object_001/furniture_leg/008",
+          "semantic": "furniture_leg",
+          "normalized_semantic": "leg",
+          "candidate_overlap_pixels": 932,
+          "truth_overlap_pixels": 0,
+          "final_target_iou": 0.0
+        }
+      ],
+      "unowned_part_pixels": 0,
+      "unowned_group_pixels": 0,
+      "grouping_verification_records": []
+    }
+  ],
+  "native_parts": [
+    {
+      "part_id": "furniture/furniture/center/01",
+      "group_id": "object_001/furniture_body",
+      "semantic": "furniture",
+      "normalized_semantic": "body",
+      "target_iou": 0.233579887635908,
+      "area_px": 22738
+    },
+    {
+      "part_id": "furniture/furniture_armrest/center/01",
+      "group_id": "object_001/furniture_armrest/002",
+      "semantic": "furniture_armrest",
+      "normalized_semantic": "armrest",
+      "target_iou": 0.0,
+      "area_px": 2446
+    },
+    {
+      "part_id": "furniture/furniture_leg/left/01",
+      "group_id": "object_001/furniture_leg/003",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.0,
+      "area_px": 4093
+    },
+    {
+      "part_id": "furniture/furniture_leg/left/02",
+      "group_id": "object_001/furniture_leg/004",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.0,
+      "area_px": 4117
+    },
+    {
+      "part_id": "furniture/furniture_leg/left/03",
+      "group_id": "object_001/furniture_leg/005",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.0,
+      "area_px": 4170
+    },
+    {
+      "part_id": "furniture/furniture_leg/center/01",
+      "group_id": "object_001/furniture_leg/006",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.0,
+      "area_px": 4398
+    },
+    {
+      "part_id": "furniture/furniture_leg/right/01",
+      "group_id": "object_001/furniture_leg/007",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.0,
+      "area_px": 4485
+    },
+    {
+      "part_id": "furniture/furniture_leg/right/02",
+      "group_id": "object_001/furniture_leg/008",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.0,
+      "area_px": 6069
+    },
+    {
+      "part_id": "furniture/furniture_leg/right/03",
+      "group_id": "object_001/furniture_leg/009",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "target_iou": 0.1819068255687974,
+      "area_px": 3127
+    },
+    {
+      "part_id": "furniture/furniture_seat/center/01",
+      "group_id": "object_001/furniture_seat/010",
+      "semantic": "furniture_seat",
+      "normalized_semantic": "seat",
+      "target_iou": 0.0,
+      "area_px": 3478
+    }
+  ],
+  "final_groups": [
+    {
+      "group_id": "object_001/furniture_body",
+      "semantic": "furniture_body",
+      "normalized_semantic": "body",
+      "member_part_ids": [
+        "furniture/furniture/center/01"
+      ],
+      "target_iou": 0.236885810345526,
+      "area_px": 22753,
+      "evidence": "conservative_visual_merge"
+    },
+    {
+      "group_id": "object_001/furniture_armrest/002",
+      "semantic": "furniture_armrest",
+      "normalized_semantic": "armrest",
+      "member_part_ids": [
+        "furniture/furniture_armrest/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 2446,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_leg/003",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "member_part_ids": [
+        "furniture/furniture_leg/left/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 4104,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_leg/004",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "member_part_ids": [
+        "furniture/furniture_leg/left/02"
+      ],
+      "target_iou": 0.0,
+      "area_px": 4133,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_leg/005",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "member_part_ids": [
+        "furniture/furniture_leg/left/03"
+      ],
+      "target_iou": 0.0,
+      "area_px": 4177,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_leg/006",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "member_part_ids": [
+        "furniture/furniture_leg/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 4418,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_leg/007",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "member_part_ids": [
+        "furniture/furniture_leg/right/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 4501,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_leg/008",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "member_part_ids": [
+        "furniture/furniture_leg/right/02"
+      ],
+      "target_iou": 0.0,
+      "area_px": 6074,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_leg/009",
+      "semantic": "furniture_leg",
+      "normalized_semantic": "leg",
+      "member_part_ids": [
+        "furniture/furniture_leg/right/03"
+      ],
+      "target_iou": 0.1744312026002167,
+      "area_px": 3058,
+      "evidence": "semantic_part"
+    },
+    {
+      "group_id": "object_001/furniture_seat/010",
+      "semantic": "furniture_seat",
+      "normalized_semantic": "seat",
+      "member_part_ids": [
+        "furniture/furniture_seat/center/01"
+      ],
+      "target_iou": 0.0,
+      "area_px": 3457,
+      "evidence": "semantic_part"
+    }
+  ],
+  "fused_diagnostics": {
+    "input_candidate_count": 12,
+    "accepted_candidate_count": 12,
+    "same_source_duplicates_removed": 0,
+    "output_part_count": 10,
+    "identity_hypothesis_count": 12,
+    "identity_group_count": 12,
+    "identity_hypotheses_merged": 0,
+    "identity_groups_dropped_by_instance_cap": 0,
+    "identity_groups_merged_by_instance_cap": 0,
+    "identity_instance_cap_scope_count": 3,
+    "remainder_components_attached": 0,
+    "identity_visibility_slivers_dropped": 0,
+    "unresolved_assembly_parent_ids": [],
+    "classes_with_multiple_sources": [],
+    "source_families": [
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]",
+      "grounded-sam2[IDEA-Research/grounding-dino|facebook/sam2.1-hiera-tiny]/profile-refine",
+      "sam2-amg[facebook/sam2.1-hiera-tiny]"
+    ],
+    "uncorroborated_cross_source_candidates": 0,
+    "specificity_host_suppressions": 6,
+    "hierarchical_duplicates_suppressed": 0,
+    "mean_source_agreement_factor": 1.0,
+    "root_union_area_px": 59123,
+    "lost_root_pixels_before_conservation": 75,
+    "lost_root_pixels_after_conservation": 0,
+    "ground_truth_used": false,
+    "ablation": {
+      "consensus": true,
+      "parent_support": true,
+      "parent_envelope": true,
+      "parent_residual": true,
+      "root_coverage_conservation": true,
+      "transitive_residual": true,
+      "transitive_residual_dense_only": true,
+      "direct_gate": true,
+      "specificity_ownership": true,
+      "hierarchical_duplicate_suppression": true,
+      "specificity_minimum_containment": 0.8,
+      "semantic_detail_minimum_host_fraction": 0.0002,
+      "specificity_host_suppression": 0.28,
+      "specificity_root_minimum_candidate_score": 0.36,
+      "specificity_child_evidence_floor_ratio": 0.9,
+      "scene_layer_fallback_weight": 0.72,
+      "boundary_ownership": false,
+      "standard_component_fraction": 5e-05,
+      "detail_component_fraction": 1e-05,
+      "cleanup_passes": 3,
+      "uncorroborated_source_penalty": 1.0,
+      "full_agreement_overlap": 0.55,
+      "remainder_attachment": true,
+      "remainder_merge_distance_ratio": 0.025,
+      "identity_strong_containment": 0.9,
+      "identity_strong_containment_coherence": 0.86
+    }
+  },
+  "grouping_diagnostics_file": "__WORKSPACE__\\stability_work\\handoff_review6\\common_groups\\new216__bench__03\\grouping_diagnostics.json",
+  "group_stage_losses": [
+    {
+      "request_id": "new216__bench__03",
+      "cohort": "new216",
+      "domain": "furniture",
+      "object_category": "bench",
+      "target": "leg",
+      "threshold": "025",
+      "raw_query_state": "ambiguous",
+      "hpid_query_state": "ambiguous",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.5441493853805011,
+      "accepted_best_iou": 0.5441493853805011,
+      "part_best_iou": 0.1819068255687974,
+      "group_best_iou": 0.1744312026002167,
+      "group_any_semantic_best_iou": 0.236885810345526,
+      "part_to_group_fates": []
+    },
+    {
+      "request_id": "new216__bench__03",
+      "cohort": "new216",
+      "domain": "furniture",
+      "object_category": "bench",
+      "target": "leg",
+      "threshold": "050",
+      "raw_query_state": "ambiguous",
+      "hpid_query_state": "ambiguous",
+      "first_observed_loss_stage": "accepted_to_native_part_ownership_gate_cleanup_unresolved",
+      "observed_subtype": "no_individual_native_part_meets_geometry_threshold",
+      "raw_best_iou": 0.5441493853805011,
+      "accepted_best_iou": 0.5441493853805011,
+      "part_best_iou": 0.1819068255687974,
+      "group_best_iou": 0.1744312026002167,
+      "group_any_semantic_best_iou": 0.236885810345526,
+      "part_to_group_fates": []
+    }
+  ],
+  "interpretation_limit": "Observed stage masks and logged decisions. No per-pixel pre/post gate or cleanup maps; no isolated causal ablation."
+}

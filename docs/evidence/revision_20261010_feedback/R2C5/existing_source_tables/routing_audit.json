@@ -1,0 +1,123 @@
+{
+  "n": 37,
+  "interval_method": "95% Wilson score, pointwise, no multiplicity-adjusted superiority claims",
+  "routing_source_sha256": "e72947b537c94b2bababa74a08c01182d1ecdc9522d8a80724b1d2238b41b672",
+  "wrong_unique": [
+    {
+      "case_id": "telephone__u01",
+      "domain": "device",
+      "category": "telephone",
+      "target": "bezel",
+      "raw_state": "wrong_unique_025",
+      "hpid_state": "wrong_unique_025",
+      "raw_review_correct": "0.0",
+      "hpid_review_correct": "0.0",
+      "raw_best_iou": "0.1219901132195822",
+      "hpid_best_iou": "0.04061291282356441",
+      "raw_selected_iou": "0.1219901132195822",
+      "hpid_selected_iou": "0.04061291282356441"
+    },
+    {
+      "case_id": "bottle__u01",
+      "domain": "container",
+      "category": "bottle",
+      "target": "base",
+      "raw_state": "wrong_unique_025",
+      "hpid_state": "wrong_unique_025",
+      "raw_review_correct": "0.0",
+      "hpid_review_correct": "0.0",
+      "raw_best_iou": "0.0",
+      "hpid_best_iou": "0.0",
+      "raw_selected_iou": "0.0",
+      "hpid_selected_iou": "0.0"
+    },
+    {
+      "case_id": "box__u01",
+      "domain": "container",
+      "category": "box",
+      "target": "side",
+      "raw_state": "query_ambiguous",
+      "hpid_state": "wrong_unique_025",
+      "raw_review_correct": "1.0",
+      "hpid_review_correct": "0.0",
+      "raw_best_iou": "0.5414703903095559",
+      "hpid_best_iou": "0.00694855495792264",
+      "raw_selected_iou": "0.16838552852052013",
+      "hpid_selected_iou": "0.00694855495792264"
+    },
+    {
+      "case_id": "car_automobile__u02",
+      "domain": "vehicle",
+      "category": "car_(automobile)",
+      "target": "windshield",
+      "raw_state": "query_ambiguous",
+      "hpid_state": "wrong_unique_025",
+      "raw_review_correct": "1.0",
+      "hpid_review_correct": "0.0",
+      "raw_best_iou": "0.704812834224599",
+      "hpid_best_iou": "0.21711229946524063",
+      "raw_selected_iou": "0.07700534759358289",
+      "hpid_selected_iou": "0.21711229946524063"
+    },
+    {
+      "case_id": "shoe__u01",
+      "domain": "daily_object",
+      "category": "shoe",
+      "target": "vamp",
+      "raw_state": "unique_and_correct_025",
+      "hpid_state": "wrong_unique_025",
+      "raw_review_correct": "0.0",
+      "hpid_review_correct": "0.0",
+      "raw_best_iou": "0.4349748743718593",
+      "hpid_best_iou": "0.20691711389385808",
+      "raw_selected_iou": "0.4349748743718593",
+      "hpid_selected_iou": "0.20691711389385808"
+    },
+    {
+      "case_id": "screwdriver__u01",
+      "domain": "tool_prop",
+      "category": "knife",
+      "target": "blade",
+      "raw_state": "wrong_unique_025",
+      "hpid_state": "wrong_unique_025",
+      "raw_review_correct": "0.0",
+      "hpid_review_correct": "0.0",
+      "raw_best_iou": "0.0053810239772097805",
+      "hpid_best_iou": "0.012989057702904826",
+      "raw_selected_iou": "0.0053810239772097805",
+      "hpid_selected_iou": "0.012989057702904826"
+    }
+  ],
+  "raw_correct_ambiguous_transitions": {
+    "unique_and_correct_025": 5,
+    "wrong_unique_025": 2,
+    "query_ambiguous": 2
+  },
+  "synthesis_by_recall_change": [
+    {
+      "recall_change_sign": -1,
+      "n": 10,
+      "mean_psnr_change": -3.142343783267375
+    },
+    {
+      "recall_change_sign": 0,
+      "n": 22,
+      "mean_psnr_change": 0.0
+    },
+    {
+      "recall_change_sign": 1,
+      "n": 5,
+      "mean_psnr_change": 0.7859913031479373
+    }
+  ],
+  "mean_psnr_delta": {
+    "mean": -0.7430670626198395,
+    "low": -1.6786964546679275,
+    "high": 0.02055014905794956
+  },
+  "mean_request_recall_delta": {
+    "mean": -0.08541843547570305,
+    "low": -0.19871509722515193,
+    "high": 0.023651580526762306
+  }
+}

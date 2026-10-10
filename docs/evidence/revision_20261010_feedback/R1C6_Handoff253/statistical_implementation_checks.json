@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "Pure statistical helper tests only; no empirical routing CSV loaded or analysis run before freeze",
+  "created_utc": "2026-10-09T15:20:38.091512+00:00",
+  "tests": [
+    "Python syntax",
+    "Wilson zero/all-success boundaries and empty denominator",
+    "Exact McNemar 0/0,0/5,1/4 discordance counts",
+    "10000 combined bootstrap draws each contain exactly37 old+216 new",
+    "Seed reproducibility",
+    "Constant paired contrast remains constant",
+    "Conditional wrong-unique risk denominator 6/(6+14)=6/20 distinct from all-request6/37; Wilson95 remains nondegenerate"
+  ],
+  "analysis_script_sha256": "f30e4a53b1f3634e438428f0a65dedb158575a89eb53d550ef4fc1e849957145",
+  "plan_sha256": "5d28bdafd2b6105b1e407460bb694432a0ac626b3ec6b7669bdfdc9b0129470b",
+  "updated_utc": "2026-10-09T15:24:47.570835+00:00",
+  "conditional_denominator_example": {
+    "wrong_among_unique": {
+      "n": 20,
+      "k": 6,
+      "proportion": 0.3,
+      "ci95_low": 0.1454772448676043,
+      "ci95_high": 0.5189728183535234
+    },
+    "wrong_per_all": {
+      "n": 37,
+      "k": 6,
+      "proportion": 0.16216216216216217,
+      "ci95_low": 0.07651207234011151,
+      "ci95_high": 0.3113648370093497
+    }
+  }
+}

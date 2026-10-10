@@ -1,0 +1,322 @@
+{
+  "anonymous_id": "img_010",
+  "case_id": "bench__u01",
+  "image_id": 545181,
+  "object_category": "bench",
+  "expected_domain": "furniture",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 5,
+    "predicted_part_count": 16,
+    "assignments": [
+      [
+        0,
+        2,
+        0.22507178783416748
+      ],
+      [
+        1,
+        1,
+        0.5469169020652771
+      ],
+      [
+        2,
+        8,
+        0.7459009289741516
+      ],
+      [
+        3,
+        6,
+        0.2474624514579773
+      ],
+      [
+        4,
+        3,
+        0.006205250509083271
+      ]
+    ],
+    "part_f1_at_025": 0.19047619047619047,
+    "part_precision_at_025": 0.125,
+    "part_recall_at_025": 0.4,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.19047619047619047,
+    "part_precision_at_050": 0.125,
+    "part_recall_at_050": 0.4,
+    "matched_count_at_050": 2,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.37251852824783593,
+    "semantic_union_recall_at_025": 0.4,
+    "semantic_label_precision": 0.4,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 10,
+    "unmatched_predicted_semantic_classes": [
+      "foot",
+      "visual_panel_01",
+      "visual_panel_03",
+      "visual_strip_02",
+      "visual_strip_04",
+      "visual_strip_05"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "armrest",
+        "union_iou": 0.8143778511876671,
+        "truth_pixels": 6221,
+        "predicted_pixels": 5313
+      },
+      {
+        "semantic": "backrest",
+        "union_iou": 0.22507178282432785,
+        "truth_pixels": 15320,
+        "predicted_pixels": 3453
+      },
+      {
+        "semantic": "leg",
+        "union_iou": 0.07724209434940384,
+        "truth_pixels": 4850,
+        "predicted_pixels": 24242
+      },
+      {
+        "semantic": "seat",
+        "union_iou": 0.7459009128777807,
+        "truth_pixels": 10929,
+        "predicted_pixels": 8770
+      },
+      {
+        "semantic": "stretcher",
+        "union_iou": 0.0,
+        "truth_pixels": 580,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 5,
+    "predicted_part_count": 96,
+    "assignments": [
+      [
+        0,
+        1,
+        0.022389033809304237
+      ],
+      [
+        1,
+        0,
+        0.0
+      ],
+      [
+        2,
+        70,
+        0.017012372612953186
+      ],
+      [
+        3,
+        68,
+        0.011258956044912338
+      ],
+      [
+        4,
+        2,
+        0.0
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.007448668955243215,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.11428571428571428,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 35,
+    "unmatched_predicted_semantic_classes": [
+      "container_base",
+      "container_body",
+      "container_bottom",
+      "container_cover",
+      "container_heel",
+      "container_inner",
+      "container_label",
+      "container_rim",
+      "container_top",
+      "daily_object_band",
+      "daily_object_body",
+      "daily_object_bottom",
+      "daily_object_end_tip",
+      "daily_object_frame",
+      "daily_object_lining",
+      "daily_object_neck",
+      "daily_object_panel",
+      "daily_object_shoulder",
+      "daily_object_throat",
+      "daily_object_toe",
+      "daily_object_upper",
+      "device_clock_hand",
+      "device_screen",
+      "device_top_panel",
+      "inner_body",
+      "skirt",
+      "table_top",
+      "tool_prop_handle",
+      "tool_prop_head",
+      "tool_prop_step",
+      "unmapped_paco_2162"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "armrest",
+        "union_iou": 0.0,
+        "truth_pixels": 6221,
+        "predicted_pixels": 6
+      },
+      {
+        "semantic": "backrest",
+        "union_iou": 0.037243344776216075,
+        "truth_pixels": 15320,
+        "predicted_pixels": 694
+      },
+      {
+        "semantic": "leg",
+        "union_iou": 0.0,
+        "truth_pixels": 4850,
+        "predicted_pixels": 869
+      },
+      {
+        "semantic": "seat",
+        "union_iou": 0.0,
+        "truth_pixels": 10929,
+        "predicted_pixels": 269
+      },
+      {
+        "semantic": "stretcher",
+        "union_iou": 0.0,
+        "truth_pixels": 580,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 55,
+    "foreground_pixels": 31280,
+    "unmapped_prediction_pixels": 677,
+    "unmapped_predicted_components": 2,
+    "component_area_min": 1,
+    "component_area_median": 76.5,
+    "component_area_max": 3021,
+    "component_source_labels": [
+      4,
+      9,
+      9,
+      9,
+      19,
+      20,
+      20,
+      20,
+      29,
+      29,
+      29,
+      46,
+      46,
+      51,
+      51,
+      53,
+      53,
+      53,
+      54,
+      54,
+      54,
+      55,
+      56,
+      56,
+      56,
+      57,
+      57,
+      57,
+      57,
+      60,
+      60,
+      63,
+      64,
+      64,
+      64,
+      64,
+      65,
+      78,
+      78,
+      78,
+      82,
+      82,
+      123,
+      141,
+      141,
+      161,
+      161,
+      161,
+      161,
+      162,
+      162,
+      169,
+      196,
+      197,
+      204,
+      205,
+      205,
+      205,
+      205,
+      205,
+      215,
+      216,
+      216,
+      225,
+      225,
+      226,
+      226,
+      226,
+      227,
+      253,
+      254,
+      254,
+      257,
+      268,
+      268,
+      286,
+      288,
+      321,
+      343,
+      349,
+      360,
+      361,
+      375,
+      387,
+      394,
+      404,
+      412,
+      415,
+      417,
+      423,
+      426,
+      430,
+      430,
+      438,
+      438,
+      448
+    ]
+  },
+  "shape_hw": [
+    370,
+    456
+  ],
+  "annotated_pixels": 37900,
+  "overlapping_annotation_pixels": 0
+}

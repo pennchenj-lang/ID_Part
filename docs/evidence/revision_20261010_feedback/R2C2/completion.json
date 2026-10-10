@@ -1,0 +1,41 @@
+{
+  "status": "R2_COMMENT2_CONTENT_AND_PAIRED_DIAGNOSIS_COMPLETE_WORD_DEFERRED",
+  "completed_utc": "2026-10-10T01:34:51.383584+00:00",
+  "content_locations": [
+    "Main VI-E",
+    "Reviewer 2 Comment 2",
+    "Supplement S19.7; existing Table S42 retained"
+  ],
+  "counts": {
+    "original_cases": 226,
+    "reference_parts": 990,
+    "shared_matches": 325,
+    "dbscan_only_matches": 72,
+    "hpid_only_matches": 29,
+    "neither_matched": 564,
+    "dbscan_only_without_hpid_geometry": 61,
+    "dbscan_only_with_hpid_geometry_but_no_credited_assignment": 11
+  },
+  "new_model_execution": false,
+  "new_independent_samples": 0,
+  "patches_ready": 18,
+  "word_applied": false,
+  "word_hashes_unchanged": true,
+  "independent_prose_and_arithmetic_qa": "PASS",
+  "independent_code_mechanism_review": "PASS",
+  "code_bindings": {
+    "__USER_HOME__/Documents/Codex/2026-06-28/new-chat/hpid_split/src/hpid_split/postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
+    "__RUNTIME_ROOT__/code_snapshots/hpid_split_be54300_holdout/src/hpid_split/fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5"
+  },
+  "bindings": {
+    "revision_payload.json": "751d37893d3893f1925f5783c2c78fe5ef76c73150eb9597f7a6f9beb2eea319",
+    "revision_text_zh.txt": "373cf6fd42887f2591573829e6a763d8ba8651e1c6bb436704522ca37c91574b",
+    "revision_text_en.txt": "a9ee946f00be3ac3303d871370d86a9473d3c8c346a503c169ee1e3b6d6058a3",
+    "revision_qa.json": "a3ac9c26ce706dfe277c5efb99f61e1c2b8d63c493630f290bdd5aee0d030a84",
+    "prose_independent_audit.json": "5ee7c8eafc63b26d740584cd3be4993a104060b8f74d1335366884a79ac7f6fe",
+    "prepare_revision.py": "a782306e64284894bff38fe538b8b3788e24e5b3ca6aefd741fffeb1a29385e0",
+    "evidence_audit/receipt.json": "a2af4e6547ef8d2a8c3b12e1583bf8519be47ba21444f24d59104683f1480691",
+    "evidence_audit/summary.json": "f2c1e7bbda4ac2c9dd477f1eda1c5dd91852b57f5e4f0c9bbfdeb76f9e330554"
+  },
+  "downstream_instruction": "Apply this localized payload with the other agreed revisions only when the user requests the unified Word update; source anchors must be revalidated then. Highlight manuscript replacements in yellow and italicize the exact response quotation."
+}

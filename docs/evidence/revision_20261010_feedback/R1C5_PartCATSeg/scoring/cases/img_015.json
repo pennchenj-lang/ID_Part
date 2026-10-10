@@ -1,0 +1,318 @@
+{
+  "anonymous_id": "img_015",
+  "case_id": "can__u01",
+  "image_id": 172012,
+  "object_category": "can",
+  "expected_domain": "container",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 5,
+    "predicted_part_count": 6,
+    "assignments": [
+      [
+        0,
+        5,
+        0.8163265585899353
+      ],
+      [
+        1,
+        1,
+        0.0
+      ],
+      [
+        2,
+        3,
+        0.4455445408821106
+      ],
+      [
+        3,
+        2,
+        0.7007638812065125
+      ],
+      [
+        4,
+        0,
+        0.32803234457969666
+      ]
+    ],
+    "part_f1_at_025": 0.7272727272727272,
+    "part_precision_at_025": 0.6666666666666666,
+    "part_recall_at_025": 0.8,
+    "matched_count_at_025": 4,
+    "part_f1_at_050": 0.3636363636363636,
+    "part_precision_at_050": 0.3333333333333333,
+    "part_recall_at_050": 0.4,
+    "matched_count_at_050": 2,
+    "part_f1_at_075": 0.1818181818181818,
+    "part_precision_at_075": 0.16666666666666666,
+    "part_recall_at_075": 0.2,
+    "matched_count_at_075": 1,
+    "mean_semantic_union_iou": 0.43981758504068946,
+    "semantic_union_recall_at_025": 0.8,
+    "semantic_label_precision": 0.6666666666666666,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 6,
+    "unmatched_predicted_semantic_classes": [
+      "base",
+      "spout"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "body",
+        "union_iou": 0.3280323450134771,
+        "truth_pixels": 2560,
+        "predicted_pixels": 2367
+      },
+      {
+        "semantic": "label",
+        "union_iou": 0.7007638658253073,
+        "truth_pixels": 5465,
+        "predicted_pixels": 4777
+      },
+      {
+        "semantic": "lid",
+        "union_iou": 0.3539651837524178,
+        "truth_pixels": 207,
+        "predicted_pixels": 493
+      },
+      {
+        "semantic": "pull_tab",
+        "union_iou": 0.8163265306122449,
+        "truth_pixels": 181,
+        "predicted_pixels": 175
+      },
+      {
+        "semantic": "rim",
+        "union_iou": 0.0,
+        "truth_pixels": 383,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": true
+  },
+  "partcatseg": {
+    "truth_part_count": 5,
+    "predicted_part_count": 112,
+    "assignments": [
+      [
+        0,
+        106,
+        0.14917127788066864
+      ],
+      [
+        1,
+        101,
+        0.20895522832870483
+      ],
+      [
+        2,
+        13,
+        0.0963541641831398
+      ],
+      [
+        3,
+        47,
+        0.27755308151245117
+      ],
+      [
+        4,
+        40,
+        0.123046875
+      ]
+    ],
+    "part_f1_at_025": 0.017094017094017092,
+    "part_precision_at_025": 0.008928571428571428,
+    "part_recall_at_025": 0.2,
+    "matched_count_at_025": 1,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.08820092950527733,
+    "semantic_union_recall_at_025": 0.2,
+    "semantic_label_precision": 0.16666666666666666,
+    "annotated_semantic_class_count": 5,
+    "predicted_semantic_class_count": 18,
+    "unmatched_predicted_semantic_classes": [
+      "base",
+      "bottom",
+      "capsule",
+      "closure",
+      "cover",
+      "daily_object_body",
+      "device_base",
+      "device_screen",
+      "furniture_top",
+      "heel",
+      "inner",
+      "punt",
+      "shoulder",
+      "sipper",
+      "tool_prop_lid"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "body",
+        "union_iou": 0.263986013986014,
+        "truth_pixels": 2560,
+        "predicted_pixels": 3947
+      },
+      {
+        "semantic": "label",
+        "union_iou": 0.0,
+        "truth_pixels": 5465,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "lid",
+        "union_iou": 0.17701863354037267,
+        "truth_pixels": 207,
+        "predicted_pixels": 551
+      },
+      {
+        "semantic": "pull_tab",
+        "union_iou": 0.0,
+        "truth_pixels": 181,
+        "predicted_pixels": 0
+      },
+      {
+        "semantic": "rim",
+        "union_iou": 0.0,
+        "truth_pixels": 383,
+        "predicted_pixels": 27
+      }
+    ],
+    "predicted_raw_semantic_class_count": 36,
+    "foreground_pixels": 8017,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 9.0,
+    "component_area_max": 2116,
+    "component_source_labels": [
+      15,
+      19,
+      19,
+      19,
+      19,
+      25,
+      26,
+      26,
+      26,
+      29,
+      29,
+      34,
+      35,
+      35,
+      35,
+      46,
+      46,
+      46,
+      46,
+      46,
+      47,
+      47,
+      54,
+      54,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      57,
+      57,
+      60,
+      60,
+      60,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      62,
+      65,
+      65,
+      65,
+      75,
+      75,
+      75,
+      115,
+      115,
+      115,
+      115,
+      120,
+      120,
+      124,
+      204,
+      204,
+      213,
+      213,
+      213,
+      213,
+      214,
+      216,
+      217,
+      217,
+      217,
+      217,
+      217,
+      217,
+      217,
+      217,
+      217,
+      226,
+      226,
+      226,
+      258,
+      258,
+      258,
+      258,
+      261,
+      261,
+      261,
+      261,
+      261,
+      261,
+      262,
+      263,
+      263,
+      263,
+      308,
+      308,
+      318,
+      362,
+      362,
+      374,
+      429,
+      448
+    ]
+  },
+  "shape_hw": [
+    168,
+    87
+  ],
+  "annotated_pixels": 8796,
+  "overlapping_annotation_pixels": 0
+}

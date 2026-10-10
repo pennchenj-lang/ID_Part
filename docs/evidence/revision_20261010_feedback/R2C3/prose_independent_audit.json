@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-10T01:58:52.552093+00:00",
+  "scope": "Independent root review of staged bilingual prose against frozen evidence, after subagent drafting; no Word application.",
+  "payload_sha256": "58d5dea64f601bd0930dc67f13403dd52c670207452c4ff3bb2df32d73819ab9",
+  "patches": [
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "paragraph": 39,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "paragraph": 40,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph": 24,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph": 25,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph": 26,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph": 28,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph": 33,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph": 179,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph": 183,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "paragraph": 42,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "paragraph": 43,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph": 24,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph": 25,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph": 26,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph": 28,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph": 33,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph": 179,
+      "anchor_match": true,
+      "source_unchanged": true
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph": 183,
+      "anchor_match": true,
+      "source_unchanged": true
+    }
+  ],
+  "bilingual_numeric_multiset_checks": {
+    "main": 14,
+    "response": 59,
+    "supplement_methods": 13,
+    "supplement_results": 65
+  },
+  "preserved_omml_count": 8,
+  "claim_review": {
+    "candidate_level_not_family_constant": true,
+    "calibration_diagnostic_not_probability_fit": true,
+    "mask_match_not_pixel_calibration": true,
+    "150_eligible_not_226_stress_claim": true,
+    "synthetic_eq2_not_final_prediction": true,
+    "single_and_cross_family_failure_disclosed": true,
+    "uniform_r_higher_geometry_disclosed": true,
+    "source_family_independence_not_claimed": true,
+    "candidate_missing_semantic_gt_not_false_positive": true,
+    "existing_cohort_and_exploratory_CI_disclosed": true,
+    "no_other_reviewer_disclosure": true
+  },
+  "main_text_allocation": "Two existing IV-C paragraphs replaced. English grows 158 to 210 words to retain two new empirical observations and a necessary strong-error boundary; experimental details remain in S19.9 and response, not appended elsewhere.",
+  "issues": [],
+  "word_modified": false
+}

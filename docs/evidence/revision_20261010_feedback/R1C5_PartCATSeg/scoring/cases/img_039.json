@@ -1,0 +1,179 @@
+{
+  "anonymous_id": "img_039",
+  "case_id": "pliers__u01",
+  "image_id": 528119,
+  "object_category": "pliers",
+  "expected_domain": "tool_prop",
+  "status": "complete",
+  "error": null,
+  "hpid": {
+    "truth_part_count": 3,
+    "predicted_part_count": 4,
+    "assignments": [
+      [
+        0,
+        2,
+        0.0
+      ],
+      [
+        1,
+        1,
+        0.0
+      ],
+      [
+        2,
+        0,
+        0.2353312373161316
+      ]
+    ],
+    "part_f1_at_025": 0.0,
+    "part_precision_at_025": 0.0,
+    "part_recall_at_025": 0.0,
+    "matched_count_at_025": 0,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.3333333333333333,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 3,
+    "unmatched_predicted_semantic_classes": [
+      "handle",
+      "visual_strip_06"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "jaw",
+        "union_iou": 0.0,
+        "truth_pixels": 18721,
+        "predicted_pixels": 6136
+      },
+      {
+        "semantic": "pivot",
+        "union_iou": 0.0,
+        "truth_pixels": 164,
+        "predicted_pixels": 0
+      }
+    ],
+    "root_body_included": false
+  },
+  "partcatseg": {
+    "truth_part_count": 3,
+    "predicted_part_count": 32,
+    "assignments": [
+      [
+        0,
+        8,
+        0.19148936867713928
+      ],
+      [
+        1,
+        14,
+        0.3333333432674408
+      ],
+      [
+        2,
+        0,
+        0.31600868701934814
+      ]
+    ],
+    "part_f1_at_025": 0.11428571428571428,
+    "part_precision_at_025": 0.0625,
+    "part_recall_at_025": 0.6666666666666666,
+    "matched_count_at_025": 2,
+    "part_f1_at_050": 0.0,
+    "part_precision_at_050": 0.0,
+    "part_recall_at_050": 0.0,
+    "matched_count_at_050": 0,
+    "part_f1_at_075": 0.0,
+    "part_precision_at_075": 0.0,
+    "part_recall_at_075": 0.0,
+    "matched_count_at_075": 0,
+    "mean_semantic_union_iou": 0.0020565140751028256,
+    "semantic_union_recall_at_025": 0.0,
+    "semantic_label_precision": 0.07692307692307693,
+    "annotated_semantic_class_count": 2,
+    "predicted_semantic_class_count": 13,
+    "unmatched_predicted_semantic_classes": [
+      "blade",
+      "body",
+      "container_body",
+      "container_side",
+      "daily_object_body",
+      "daily_object_clip",
+      "daily_object_tip",
+      "device_finial",
+      "device_lug",
+      "device_screen",
+      "handle",
+      "head"
+    ],
+    "semantic_union_rows": [
+      {
+        "semantic": "jaw",
+        "union_iou": 0.004113028150205651,
+        "truth_pixels": 18721,
+        "predicted_pixels": 77
+      },
+      {
+        "semantic": "pivot",
+        "union_iou": 0.0,
+        "truth_pixels": 164,
+        "predicted_pixels": 0
+      }
+    ],
+    "predicted_raw_semantic_class_count": 16,
+    "foreground_pixels": 22271,
+    "unmapped_prediction_pixels": 0,
+    "unmapped_predicted_components": 0,
+    "component_area_min": 1,
+    "component_area_median": 41.0,
+    "component_area_max": 19985,
+    "component_source_labels": [
+      41,
+      41,
+      41,
+      44,
+      45,
+      45,
+      45,
+      45,
+      45,
+      45,
+      48,
+      51,
+      53,
+      54,
+      56,
+      118,
+      118,
+      118,
+      118,
+      118,
+      118,
+      153,
+      189,
+      189,
+      189,
+      197,
+      197,
+      280,
+      280,
+      365,
+      420,
+      448
+    ]
+  },
+  "shape_hw": [
+    333,
+    169
+  ],
+  "annotated_pixels": 18885,
+  "overlapping_annotation_pixels": 0
+}

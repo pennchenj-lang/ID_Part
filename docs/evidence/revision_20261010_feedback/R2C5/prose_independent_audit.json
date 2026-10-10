@@ -1,0 +1,207 @@
+{
+  "status": "PASS",
+  "audit_scope": "Independent localized bilingual prose and Word-source-anchor review. Evidence-code and raw-statistical audit is conducted separately; this audit does not replace it. Only this audit file was written, with no Word edits, rendering or inference.",
+  "created_utc": "2026-10-10T03:21:34.265284+00:00",
+  "payload_sha256": "c800cda27e5039ecd201eb9763e24b3eeb585dae1afbb698b4f5356a63b72849",
+  "patches_canonical_sha256": "544cb12c0ec84d9d5a151c10656ff7a071b2c32af1e4693a48f067c64dd9731e",
+  "content_canonical_sha256": "35b65bb92f177639daa7cce1adedca16645dade21d319094cb6956bf514ce75d",
+  "canonical_hash_encoding": "JSON ensure_ascii=False, sort_keys=True, separators=(comma,colon), UTF-8",
+  "bound_artifacts_sha256": {
+    "revision_payload.json": "c800cda27e5039ecd201eb9763e24b3eeb585dae1afbb698b4f5356a63b72849",
+    "revision_text_en.txt": "fcb8505e275fcb8f492c68b19e024478d9637af4ae2c6555e054fd0b889f8387",
+    "revision_text_zh.txt": "9e9f39baa9aaae41e46c1646f41faf9924be3d20e55f4ec2b8a7ca8daab24c76",
+    "revision_qa.json": "9e373aa26b36bfd829d05140c44e454e75a425061520761cc3e2828efc291711",
+    "prepare_revision.py": "a068f50500490790d16647eefe251e81bb19cf1aa0f8f49bb3827ab79f332134",
+    "evidence_audit.json": "4af4c16c11129f23ef2d33ba3d19b67722ddb33277a7c6d246144cea01b18f9f"
+  },
+  "patch_count": 18,
+  "source_word_checks": [
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "paragraph_index_zero_based": 52,
+      "source_sha256": "ffb0a916dd6a148a44ffb6542bbe1faab7e611506518bd0f8734330d9f6b50ff",
+      "old_text_sha256": "f052eb65e76796f83cc821f9a97bb62d2898c1c973948ccbb3043a7d1500ca71",
+      "status": "PASS"
+    },
+    {
+      "file": "01_Manuscript_Revised.docx",
+      "paragraph_index_zero_based": 128,
+      "source_sha256": "ffb0a916dd6a148a44ffb6542bbe1faab7e611506518bd0f8734330d9f6b50ff",
+      "old_text_sha256": "96693cf0bd2b94651999e757b40c779fc7dad9eead4138b88106f1c597407e2a",
+      "status": "PASS"
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 39,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "9400b73aae0dfa4976bf093de24d1d8d1f84a9c77d6ce665fd8ddfa3b26e50bd",
+      "status": "PASS"
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 40,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "95fd09defe5d5f4d43758a87f67710fc8654b2d1688ef80a70347dcb503b6f6c",
+      "status": "PASS"
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 42,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "73c78b0bd90d17c5895a704219d6e598fcac5fbab4c7d00bdb02b8fa8ea9c23b",
+      "status": "PASS"
+    },
+    {
+      "file": "06_Response_Reviewer_2.docx",
+      "paragraph_index_zero_based": 43,
+      "source_sha256": "ca3524cd3d4b23d38615e6a63e96f1c94333bea87500dfeef4dab39904518d17",
+      "old_text_sha256": "96693cf0bd2b94651999e757b40c779fc7dad9eead4138b88106f1c597407e2a",
+      "status": "PASS"
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 152,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "0a5fab1f25b5bc475300b380f58987b4b867d8462ec2886c6e15839920257d40",
+      "status": "PASS"
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 153,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "e0ed181a62a7f4c3190407e148fb8bca687a397aeb53b25c8dc8bf7e47e1720e",
+      "status": "PASS"
+    },
+    {
+      "file": "04_Supplement_Revised.docx",
+      "paragraph_index_zero_based": 154,
+      "source_sha256": "78071ba71084d404b176bd357f5b7c0e5386660c5d6c32ce109eff840e4f449f",
+      "old_text_sha256": "d500e3cd24500dae92fe0aafceb1b940546851a5357ea64e9a0fd6f19f5cd8f5",
+      "status": "PASS"
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "paragraph_index_zero_based": 55,
+      "source_sha256": "2ed4fd77edf17c2f47250408781405c43c5ddbab0fa9910d6aff8a008f3d4fb8",
+      "old_text_sha256": "46ab9f278fd040b1f03c87f48850865916331a5f074e58c3a6ee74210cc75334",
+      "status": "PASS"
+    },
+    {
+      "file": "01_论文正文_中文.docx",
+      "paragraph_index_zero_based": 132,
+      "source_sha256": "2ed4fd77edf17c2f47250408781405c43c5ddbab0fa9910d6aff8a008f3d4fb8",
+      "old_text_sha256": "3e33e7c15c260cbbd8668b6ec200cbc2d1e471ca8af6ec551b1fd17717d9e7cb",
+      "status": "PASS"
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 39,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "f9dc795e53e5d7f0afab002006222a843e1eff23dae03135b315f7d0db4c6454",
+      "status": "PASS"
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 40,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "ce357fc1fb9a94161d55d35ee5144f8ef3685ab0f0b04744593b0785af8c6d56",
+      "status": "PASS"
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 42,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "df7ac176dc512a5369c89f4f3f140f489b53bcd8c1f941dd1600251d70aa6129",
+      "status": "PASS"
+    },
+    {
+      "file": "04_审稿人2回复_中文.docx",
+      "paragraph_index_zero_based": 43,
+      "source_sha256": "ff37c109d5c156f67f66732a9dec62c4248a63c901ded54addd014b1e4b0c21f",
+      "old_text_sha256": "3e33e7c15c260cbbd8668b6ec200cbc2d1e471ca8af6ec551b1fd17717d9e7cb",
+      "status": "PASS"
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 152,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "5b752ec0996daf706b777543cb6f53b149caac61c5cc021134493097a4e2713f",
+      "status": "PASS"
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 153,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "692d3ed2075cf2e9e8261026ded981d2e9cd2050f4fa8b8477f15ccc0f07517d",
+      "status": "PASS"
+    },
+    {
+      "file": "02_补充材料_中文.docx",
+      "paragraph_index_zero_based": 154,
+      "source_sha256": "65ef009ffdff8d2a5ac5051e74ef06b1ea7e7fb65afbdbfa8dce2f5dbb74bb86",
+      "old_text_sha256": "ac9ed063abe6170af124f93622ea267a97ce23b1308a863d6b4b7b4cfc1511e4",
+      "status": "PASS"
+    }
+  ],
+  "source_word_unchanged": true,
+  "replacement_paragraphs_match_bilingual_text_exports": true,
+  "verbatim_main_response_quote_checks": {
+    "en": {
+      "status": "PASS",
+      "identical_text_sha256": "87bc490a02d347008f821bef5ba852b48475eb4c77b330b9a26d086433793551",
+      "quote_future_italic": true
+    },
+    "zh": {
+      "status": "PASS",
+      "identical_text_sha256": "34d67449f8f1718c92d22b860d04550ff430cf7a1628ddee3c62e75ed316c00e",
+      "quote_future_italic": true
+    }
+  },
+  "math_safety": "PASS: no edited source paragraph contains inline OMML; Eq.4/Eq.5 are outside the patches.",
+  "prior_pending_payloads": {
+    "reviewer2_comment2": "751d37893d3893f1925f5783c2c78fe5ef76c73150eb9597f7a6f9beb2eea319",
+    "reviewer2_comment3": "58d5dea64f601bd0930dc67f13403dd52c670207452c4ff3bb2df32d73819ab9",
+    "reviewer2_comment4": "2ada6d625bc1b2eb49011c41adab07516981b7356d40bc0bf10e1a0bb422a542"
+  },
+  "anchor_conflicts_with_comments_2_3_4": [],
+  "future_merge_note": "Apply all deferred patches against original source hashes and old-text anchors, or combined descending original indices; inserted paragraphs can shift later indices.",
+  "reader_facing_revision_locations": "PASS; internal staged-manuscript/待合并 wording removed from Comment5 location paragraphs before this binding.",
+  "interpretation_review": {
+    "status": "PASS",
+    "findings": [
+      "Both languages retain the adverse observed mean PSNR difference -0.7431 dB and original paired interval [-1.6322,0.0153].",
+      "The source Word S14/TableS27 and S19.4/TableS38 retain those original values and 10/22/5 strata with -3.1423/0.0000/+0.7860 dB; patched TableS38 caption preserves the data table.",
+      "The unchanged SI paragraph155 retains original seed20261839 and explicitly distinguishes its interval from the existing seed20261008 recheck; neither is silently substituted.",
+      "Precision1 is explicitly relative to imposed O for nonempty U=O intersect selected support, not part-semantic precision or a complete-support guarantee.",
+      "Leaving O outside U corrupted follows the composition rule; this is distinguished from a causal decomposition of the overall PSNR difference.",
+      "Mask-dependent crops and conditional generation can change despite frozen network weights; neither prior damage nor prior unaffectedness is asserted.",
+      "All recall/PSNR strata are descriptive and the nonmonotone laptop example is retained; no monotonic causal claim.",
+      "The restoration cohort is37; the253-image expansion is explicitly routing/request-mask only, with no additional LaMa completions or PSNR claim.",
+      "A confidence interval containing zero is explicitly not evidence of equivalence; no restoration-quality improvement or significant-damage claim.",
+      "English and Chinese give the same measures, direction, denominators, mechanisms and qualifications; reviewer-facing text discloses no other reviewer."
+    ]
+  },
+  "main_text_length": {
+    "en": {
+      "before": 150,
+      "after": 150,
+      "unit": "words"
+    },
+    "zh": {
+      "before": 350,
+      "after": 372,
+      "unit": "nonwhitespace characters"
+    }
+  },
+  "word_application_status": "NOT_APPLIED; staging state remains explicit without claiming Word revisions completed.",
+  "evidence_audit_binding": {
+    "path": "__WORKSPACE__\\stability_work\\reviewer2_comment5\\evidence_audit.json",
+    "sha256_at_review": "4af4c16c11129f23ef2d33ba3d19b67722ddb33277a7c6d246144cea01b18f9f",
+    "status": "Bound to separate completed evidence audit; independent prose review does not replace its source-provenance qualification.",
+    "evidence_audit_status": "PASS_WITH_SOURCE_PROVENANCE_LIMITATION",
+    "source_provenance_qualification": "Saved masks and completions support the stated mechanism. The available archived mask-crop and inpaint functions match the current implementations, but the complete historical generation program is not established as byte-identical to the frozen snapshot. The reviewed prose does not assert that stronger claim."
+  },
+  "permitted_binding_refresh": "When only payload evidence binding or created_utc changes, verify identical canonical patches and content hashes above and refresh payload/artifact SHA fields; substantive changes require review.",
+  "remaining_prose_issues": [],
+  "final_binding_utc": "2026-10-10T03:24:18.105741+00:00"
+}

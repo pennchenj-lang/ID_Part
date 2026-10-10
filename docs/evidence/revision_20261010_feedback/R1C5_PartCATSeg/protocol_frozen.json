@@ -1,0 +1,251 @@
+{
+  "status": "FROZEN_BEFORE_COHORT_INFERENCE",
+  "created_utc": "2026-10-09T14:43:29.788750+00:00",
+  "title": "R1-5 PartCATSeg cross-dataset reproduction protocol draft",
+  "source": {
+    "repository": "https://github.com/kaist-cvml/part-catseg",
+    "commit": "4a9a88288659f49bc39ea4ee756dd45036552638",
+    "source_path": "__RUNTIME_ROOT__\\external_part_baselines_20260828\\part-catseg",
+    "file_sha256": {
+      "README.md": "118667128753417cde368498627518d3fdc7ab7df5af8e367c247a9dc510c8fa",
+      "baselines/partcatseg.py": "defeea5005ee04fd18a0c84cf84933f581c34ab5d5256a01eacb4e523f837a8c",
+      "baselines/modeling/transformer/part_cat_seg_predictor.py": "f744a1d9373741515c11754622ba4e6a87d14fc1c91046606fef4c9f694cfec7",
+      "baselines/modeling/transformer/part_cat_seg_model.py": "1f4559c2dc95941d455c4bab1c7d605771f17904803af2ca2abc584702570be6",
+      "baselines/data/dataset_mappers/object_part_mapper.py": "5587fc263308d11d0ebcf5b984df1247df0e819dc47f6a06644ef027ebe22dd1",
+      "baselines/evaluation/partcatseg_evaluation.py": "28aa3e014985fa462aa1d8428c714b79090de6e2b0259a28f06b17a676ae7ab5",
+      "configs/zero_shot/partcatseg_voc.yaml": "f5c15705c05844cfee509634fa0b850d715d3d0599362f60271e6cb871001fa5"
+    }
+  },
+  "references": [
+    {
+      "url": "https://arxiv.org/html/2501.09688v2#S4.SS1",
+      "supports": "Pred-All uses no object masks or object class labels; Oracle-Obj does."
+    },
+    {
+      "url": "https://arxiv.org/html/2501.09688v2#A1",
+      "supports": "Native output is semantic segmentation and does not distinguish repeated same-part instances."
+    },
+    {
+      "url": "https://github.com/kaist-cvml/part-catseg/blob/4a9a88288659f49bc39ea4ee756dd45036552638/README.md",
+      "supports": "Official VOC, ADE, PartImageNet checkpoint links; canonical evaluation example uses VOC."
+    }
+  ],
+  "cohort": {
+    "count": 42,
+    "manifest": "stability_work/full_image_review4/sealed_reference_manifest.json",
+    "input": "All 42 archived r5 source_crop.png inputs. Anonymous paths and SHA256 supplied to inference; case/category/reference mapping retained only by evaluator. Identical annotation-derived crop context to historical HPID baseline.",
+    "scope": "Retrospective comparison on existing holdout; no fresh untouched-cohort claim. Object crops are a shared localization aid, not full-image discovery. No exclusion based on outputs, native-vocabulary coverage, object category, success or score.",
+    "category_information": "Historical42CLI and source audit confirmed no true object category/profile was passed to HPID. Both primary methods receive the same already-localized image pixels; both must infer category/part class.",
+    "fairness_input_audit": "fairness_input_audit.json"
+  },
+  "checkpoint": {
+    "primary": "partcatseg_voc.pth",
+    "config": "configs/zero_shot/partcatseg_voc.yaml",
+    "rationale": "Canonical released README evaluation recipe, chosen before target inference or scoring, not a claim that VOC is optimal for PACO. ADE and PartImageNet are alternative released trained models, not to be tried and selected by target outcome.",
+    "other_models": "Only if prospectively added, report all variants as secondary. CAT-Seg model_final_base.pth is a training initializer, not the trained PartCATSeg comparator.",
+    "receipt": "Record actual checkpoint SHA256 and any missing/unexpected state_dict keys before starting the cohort."
+  },
+  "vocabulary": {
+    "source": "__RUNTIME_ROOT__/datasets/paco/annotations/paco_lvis_v1_train.json, categories field only",
+    "selection": "All public object-part categories containing colon, sorted by numeric PACO category id. No annotation rows or current 42-case present-part lists are used.",
+    "public_object_categories": 75,
+    "object_part_pairs": 456,
+    "generalized_part_names": 200,
+    "labels": "0..455 correspond registry order; background=456. Store uint16 PNG/TIFF or integer NPY; ignore=65535 is distinct.",
+    "object_names": "All 75 public object names, global for every input.",
+    "text_rule": "Convert object:part to object-with-underscores-as-spaces + apostrophe-s + part-with-underscores-as-spaces. Preserve remaining spelling, including parenthetical qualifiers; no outcome-dependent synonyms or prompt selection. Record raw and rendered names in registry.",
+    "metadata": "Register test stuff_classes/object classes before building model, set test metadata ignore_label=65535. Retain original VOC training metadata/config and learned parameters. Official ImageNet prompt templates unchanged.",
+    "technical_reason_ignore": "Both model and predictor allocate text_to_part_map of length ignore_label+1; 255 cannot accommodate 456 indexed classes. ADE already uses 65535.",
+    "alternative_preexisting_scope": "Released HPID broad 67-object catalog still has 432 PACO object-part pairs; not a useful memory reduction and unnecessarily narrows candidate vocabulary."
+  },
+  "inference_interface": {
+    "official_behavior": "baselines/partcatseg.py lines216-217 reads obj_part_sem_seg and sem_seg even during eval. Inference lines344-356 uses instances.gt_classes solely to filter the sem_seg output. sem_seg_all is generated before that filtering, includes background and does not depend on the supplied GT labels.",
+    "primary_output": "Only official sem_seg_all, argmax across all 456 part channels and background after official sem_seg_postprocess at original crop size. No category restriction, GT object-mask gating, target-conditioned candidate list, confidence threshold, morphology or pixel cleanup.",
+    "allowed_api_scaffolding": "Constant data-independent dummy object/part tensors and a constant dummy gt_classes value solely to satisfy forward API. Do not read real annotations in model process. Use eval and inference_mode.",
+    "preprocessing": "Original deterministic test ResizeShortestEdge/min-size 640/max-size 768, RGB, original normalization and CLIP/DINO sizes; original ImageList and postprocess. Verify actual inherited config before freeze.",
+    "controls": [
+      "Smoke on official VOC116 metadata without evaluating PACO results.",
+      "For the same non-scoring image, change dummy GT maps and dummy object class; sem_seg_all must remain identical.",
+      "Validate image dimensions, all logits finite, registry order, background handling and output bounds.",
+      "Freeze runner/source/environment/checkpoint/registry/input hashes before all42 inference."
+    ],
+    "execution": "One successful attempt per image; infrastructure recovery recorded with same frozen settings, never choose a better-scoring retry. No labels/cases omitted after results."
+  },
+  "resource_policy": {
+    "memory": "Full456 vocabulary and official decoder can exceed 6GB in float32. A 457-channel float32 CPU score map at768x768 alone occupies 1,078,198,272 bytes. Check resource feasibility without scoring before final freeze.",
+    "forbidden": "Do not split full model into separate label-vocabulary forward passes and concatenate: aggregation includes cross-class attention. Do not shrink vocabulary after inspecting accuracy.",
+    "allowed_if_documented": "CPU execution or exact device offload. Independent decoder-class batching may be considered only after numerical parity verification on VOC full decoding, without changing cross-class aggregation. Mixed precision changes arithmetic and must be recorded and frozen, never selected by score."
+  },
+  "primary_endpoint": {
+    "name": "Macro geometric Part F1 at IoU0.25 across all42",
+    "conversion": "For each non-background raw semantic label independently, find every 8-connected component at native output resolution. Each nonempty component is one predicted part; no area filtering. Use canonical row-major component order only for reproducibility.",
+    "matching": "Same frozen HPID evaluator Hungarian maximum total mask-IoU, then threshold, same archived cropped references and root-body inclusion rule. All predicted components enter counts, including wrong-object classes and unmapped semantics. No GT-based clipping/reselection.",
+    "interpretation": "PartCATSeg plus deterministic instance adapter versus native HPID Parts. This is not native PartCATSeg instance segmentation or a claim of universal algorithm superiority."
+  },
+  "secondary_endpoints": {
+    "geometry": [
+      "Part F1 atIoU0.50 and0.75",
+      "Part precision and recall at0.25",
+      "prediction count and valid output rate"
+    ],
+    "semantic": "Use union of all pixels of each predicted semantic (without connected-component conversion), the frozen PACO-to-HPID canonical alias bridge, and union of corresponding reference masks. Score both methods by the same fixed mapping and full crop coordinates. Report annotation-conditioned semantic-union IoU and semantic precision/recall; explicitly not official Pascal/ADE/PartImageNet mIoU. Preserve raw native PartCATSeg label maps for audit.",
+    "mapping_caution": "HPID domain-level names cannot be inverted uniquely to all456 object-specific PACO labels. Do not invent an inverse using GT. For PartCATSeg derive mapping from its predicted category name and public catalog domain; a wrong object/domain must not be repaired with target GT. Unmapped predictions still count in geometric primary and are separately reported.",
+    "partial_annotations": "Before freezing exact semantic formula, audit overlapping/unknown reference regions. Unannotated target pixels cannot silently become dense background; avoid forcing overlapping part masks into a single arbitrary semantic label. The existing semantic-union metric can handle overlapping reference masks. Report eligible reference-class coverage.",
+    "non_endpoints": [
+      "Persistent-ID export should be reported as a contract/capability distinction, not an accuracy score assigning unsupported methods zero.",
+      "Do not create HPID-like Groups for PartCATSeg with GT-aware grouping.",
+      "Do not claim official base/novel hIoU on PACO without a valid prospectively fixed split."
+    ]
+  },
+  "statistics": {
+    "unit": "Paired source image/target,42 unique source images verified in existing manifest",
+    "draws": 10000,
+    "seed": 20261009,
+    "primary_CI": "Paired percentile95% CI for mean per-case HPID minus PartCATSeg PartF1@0.25; report both means and difference.",
+    "secondary_CI": "Descriptive pointwise only unless multiplicity scheme predeclared. For pooled confusion-based mIoU resample images and sum confusion before computing, do not confuse it with mean per-case IoU.",
+    "failures": "Keep all42. Missing/invalid output has zero primary and comparative semantic success. Report failure flags/counts and all-case denominators.",
+    "reporting": "Report observed result in either direction. Do not select cohort, checkpoint, threshold, component rule, ontology or endpoint based on which method wins."
+  },
+  "pending_before_freeze": [],
+  "frozen_utc": "2026-10-09T15:01:02.606547+00:00",
+  "hash_bindings": {
+    "inference_manifest_sha256": "ec52d3f9cb16ae7e8110ac5ac65bf7a016a32527939472c2eac20ff20a89c040",
+    "label_registry_sha256": "6559d5a714b3a5a23ef6469f3e714446790d77cfd5db6a245e5c5a0b5f9411f6",
+    "checkpoint_sha256": "51a0cb99254f3778a0d629e0053af937807e55b266ae0071438c141566a36766",
+    "adapter_sha256": "4b3c93027861cf4093e7320cb1379bf0fb8e27840d064cf671f72eb0aa9cd589",
+    "source_manifest_sha256": "a846757a633c191a0b4120e35846879ee607271e7bea0fb801436122bcce8c9d",
+    "scorer_sha256": "1db8dbce7b60e019e90cfb97c3ae63c65a83ae858a9af11e6b11f1bb1fc3a612",
+    "decoder_equivalence_sha256": "99258a1d3907407d50ad6ed0d85965236fafc322cc3a8b0f6320dfa9d431ba4f",
+    "full_vocabulary_resource_control_sha256": "b1cc976be6462b294901654938a426d6e3a0a8d8d2a1a489e537431569447649",
+    "package_versions_sha256": "180d02bff2bf6cb1d2e1a926022570c0898d5ecef47ec5f68ad4616b059f5d61",
+    "reference_manifest_sha256": "02747efa64ec6e5b8ce51267f834f1ca6fd12b197c4ba04e16c30502c1fecb64",
+    "fairness_audit_sha256": "1f593fbecc3cf213bc0f3d47ee70abe9e847d544408380fdbe8d12a49dd71725",
+    "detectron_build_summary_sha256": "84464d2639d784b9b1c6551f893c46ffd8d6a52ddfe3c950763f3883b35d6a11"
+  },
+  "executed_numerical_controls": {
+    "voc": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\smoke_voc_02\\run.json",
+    "paco": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\smoke_paco_01\\run.json",
+    "decoder_equivalence": {
+      "decoder_version": "official-conv-decoder-class-batch-v1",
+      "checkpoint_sha256": "51a0cb99254f3778a0d629e0053af937807e55b266ae0071438c141566a36766",
+      "source_commit": "4a9a88288659f49bc39ea4ee756dd45036552638",
+      "config_sha256": "f5c15705c05844cfee509634fa0b850d715d3d0599362f60271e6cb871001fa5",
+      "source_manifest_sha256": "a846757a633c191a0b4120e35846879ee607271e7bea0fb801436122bcce8c9d",
+      "adapter_sha256": "4b3c93027861cf4093e7320cb1379bf0fb8e27840d064cf671f72eb0aa9cd589",
+      "torch": "2.11.0+cu128",
+      "device": "cuda",
+      "runtime_fingerprint": {
+        "cuda_build": "12.8",
+        "cudnn_version": 91900,
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": false,
+        "matmul_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "deterministic_algorithms": false,
+        "xformers_disabled": true,
+        "autocast": false,
+        "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "gpu_capability": [
+          8,
+          6
+        ]
+      },
+      "chunk_size": 16,
+      "autocast": false,
+      "status": "PASS",
+      "validation_run_complete": true,
+      "verification_vocabulary": "official VOC-116",
+      "class_count": 116,
+      "image_sha256": "f4ce0481475cfb4b1cfeb2c09dc17f7fa3be4b57e03291cc3b3ad0cc733305e2",
+      "max_abs_score_error": 1.1026859283447266e-06,
+      "scores_allclose_rtol": 1e-05,
+      "scores_allclose_atol": 1e-06,
+      "argmax_identical": true,
+      "scope": "One VOC smoke image on the recorded device; not a universal proof",
+      "dummy_target_invariance": {
+        "status": "PASS",
+        "original": {
+          "sem_seg": 255,
+          "obj_part_sem_seg": 255,
+          "gt_classes": 0
+        },
+        "changed": {
+          "sem_seg": 0,
+          "obj_part_sem_seg": 1,
+          "gt_classes": 1
+        },
+        "max_abs_score_error": 0.0,
+        "scores_allclose_rtol": 1e-05,
+        "scores_allclose_atol": 1e-06,
+        "argmax_identical": true,
+        "annotations_read": false
+      }
+    },
+    "paco_dummy_invariance": {
+      "status": "PASS",
+      "original": {
+        "sem_seg": 65535,
+        "obj_part_sem_seg": 65535,
+        "gt_classes": 0
+      },
+      "changed": {
+        "sem_seg": 0,
+        "obj_part_sem_seg": 1,
+        "gt_classes": 1
+      },
+      "max_abs_score_error": 0.0,
+      "scores_allclose_rtol": 1e-05,
+      "scores_allclose_atol": 1e-06,
+      "argmax_identical": true,
+      "annotations_read": false
+    },
+    "runtime": {
+      "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+      "torch": "2.11.0+cu128",
+      "cuda_build": "12.8",
+      "device": "cuda",
+      "xformers_disabled": true,
+      "autocast": false,
+      "outer_torch_inference_mode": true,
+      "numerical_settings": {
+        "cuda_build": "12.8",
+        "cudnn_version": 91900,
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": false,
+        "matmul_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "deterministic_algorithms": false,
+        "xformers_disabled": true,
+        "autocast": false,
+        "gpu_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "gpu_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    "numeric_execution_policy": {
+      "float32_convolution": true,
+      "tf32": false,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "reason": "Validate decoder batching under fixed full-float32 arithmetic",
+      "upstream_cudnn_benchmark": true
+    },
+    "limits": "Synthetic fixture controls execution, memory and numerical consistency only; no accuracy data."
+  },
+  "final_execution": {
+    "device": "cuda",
+    "image_batch_size": 1,
+    "decoder_class_batch_size": 16,
+    "vocabulary_count": 456,
+    "arithmetic": "float32 learned layers; TF32/autocast disabled; fixed cuDNN policy",
+    "precision_note": "Vendored official CLIP text encoder construction retains its official pretrained dtype.",
+    "no_accuracy_tuning": true,
+    "output_background_index": 456,
+    "input_placeholder_ignore_index": 65535,
+    "cohort_output_directory": "__WORKSPACE__\\stability_work\\learned_baseline_review5\\cohort_predictions"
+  }
+}
