@@ -31,7 +31,7 @@ HERE = Path(__file__).resolve().parent
 RUN = HERE / 'routing_run'
 STATS = HERE / 'statistics'
 SNAP = Path('__RUNTIME_ROOT__/code_snapshots/hpid_split_be54300_holdout/src')
-PROJECT = Path('__USER_HOME__/Documents/Codex/2026-06-28/new-chat/hpid_split')
+PROJECT = Path('__PROJECT_ROOT__')
 sys.path.insert(0, str(SNAP))
 import hpid_split
 hpid_split.__path__.append(str(PROJECT / 'src/hpid_split'))

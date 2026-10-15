@@ -1,21 +1,25 @@
 {
   "version": "2026-10-10",
   "source_files": 260,
-  "processing": "Machine-path prefix substitutions only; numerical and scientific values unchanged; embedded historical hashes remain original-evidence hashes.",
+  "processing": "Machine paths generalized and one non-experimental environment-documentation field omitted; numerical and scientific values unchanged; embedded historical hashes remain original-evidence hashes.",
   "path_tokens": [
     "__WORKSPACE__",
     "__RUNTIME_ROOT__",
-    "__USER_HOME__"
+    "__USER_HOME__",
+    "__PROJECT_ROOT__"
   ],
   "source_manifest_sha256": "0632a9b05796d9cb783a1893969dcb0f056504c02cd43f420ea51be6b1b1e366",
   "files": [
     {
       "path": "R2C2/completion.json",
       "source_sha256": "58a01d61074e3e1d87ff78c90e50df74ab359dcec9252e8c29dd6d43a5c7489f",
-      "public_sha256": "500d481ab066b1b963fb7527ef545b8b2e024b46f6f4d71ef3b6800ae0538d12",
+      "public_sha256": "9f3237b3b3d7ed40ebb7748b3d5f0a9824eaedd13330ba8b3967d7383f40fee3",
       "source_bytes": 2314,
-      "public_bytes": 2286,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 2242,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "500d481ab066b1b963fb7527ef545b8b2e024b46f6f4d71ef3b6800ae0538d12",
+      "previous_public_bytes": 2286,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R2C2/prose_independent_audit.json",
@@ -132,10 +136,13 @@
     {
       "path": "R2C3/clean_ablation/file_manifest.json",
       "source_sha256": "ed4039c6a093c8f5052db956d1f9aae9a7d9a9c3fc706f739fd6fdf61a142b8e",
-      "public_sha256": "eaba024119082f47f10b1780675a0b01e1cb78aa23bcc36627122143cfa03916",
+      "public_sha256": "434d78caac41465b087a48c9af8cb607a9bc4f9aee44c8075439d3abed68663b",
       "source_bytes": 1010713,
-      "public_bytes": 927891,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 927793,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "eaba024119082f47f10b1780675a0b01e1cb78aa23bcc36627122143cfa03916",
+      "previous_public_bytes": 927891,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R2C3/clean_ablation/independent_audit.json",
@@ -172,10 +179,13 @@
     {
       "path": "R2C3/clean_ablation/run_clean_ablation.py",
       "source_sha256": "de34e28e8821d8df1cc2fa1bd7085a92e68fe8a4a6d88e4aea204ef22aefbe9e",
-      "public_sha256": "a2e9cef2bd4e34210bbe8472fdffdc75a8a7783a51b5c0b79f7b670610287763",
+      "public_sha256": "2e4625e48864c00c7b7968180723df2b59cc3ab8740e8ba7ab83cd3548c6a8fa",
       "source_bytes": 18301,
-      "public_bytes": 18273,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 18229,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "a2e9cef2bd4e34210bbe8472fdffdc75a8a7783a51b5c0b79f7b670610287763",
+      "previous_public_bytes": 18273,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R2C3/clean_ablation/run_receipt.json",
@@ -460,10 +470,13 @@
     {
       "path": "R2C5/evidence_audit.json",
       "source_sha256": "4af4c16c11129f23ef2d33ba3d19b67722ddb33277a7c6d246144cea01b18f9f",
-      "public_sha256": "8fe09d04b6afd251f6f6f81f5e3b3fb3bcbf40579950c0a31829d9e258bcfa86",
+      "public_sha256": "4dd37edd0e7b0d0ff20e89aef771cfd93a7bb2d4d250c47f4017f46c17c1b7b4",
       "source_bytes": 86284,
-      "public_bytes": 85931,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 85784,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "8fe09d04b6afd251f6f6f81f5e3b3fb3bcbf40579950c0a31829d9e258bcfa86",
+      "previous_public_bytes": 85931,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R2C6/completion.json",
@@ -492,18 +505,24 @@
     {
       "path": "R2C6/resolver_causal_audit.json",
       "source_sha256": "4daac95dffb04e77553a422ca907865f6d9bed7517109df14477491fb8e910b3",
-      "public_sha256": "c2e34e555c560ed079b5f9b7f5543b1b5fe334e3cb93dc973661d64af798d3b8",
+      "public_sha256": "640ea7e5af7536a2611b3b18bbdab761682e22b08c7c551afb82705067db85bb",
       "source_bytes": 105251,
-      "public_bytes": 102365,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 102071,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "c2e34e555c560ed079b5f9b7f5543b1b5fe334e3cb93dc973661d64af798d3b8",
+      "previous_public_bytes": 102365,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R2C6/resolver_independent_audit.json",
       "source_sha256": "db0e7f012de52c6c483beca52a48ea5d5fa58974db0835b38e36689b7c1238d6",
-      "public_sha256": "0eba42785aef80ed1313d65aa9e22e8d55bf4eeec7cc11ff1a1775f00070597c",
+      "public_sha256": "a4268d8c20e477c9f246deba95c9196ffb7223dde402c6ac25f375d6ac8208a7",
       "source_bytes": 63432,
-      "public_bytes": 60319,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 60172,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "0eba42785aef80ed1313d65aa9e22e8d55bf4eeec7cc11ff1a1775f00070597c",
+      "previous_public_bytes": 60319,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R2C2/existing_source_tables/dbscan_diagnosis.json",
@@ -1292,10 +1311,13 @@
     {
       "path": "R1C6_Handoff253/protocol_frozen.json",
       "source_sha256": "a1621227032fa6e6950f5c4a4157de65bad8119de57f16c551e1f0d7639f7c8a",
-      "public_sha256": "1092caf044e6fa13722b60ba54456e3baa0a89efbb4660f7b00a497fbc5578fe",
+      "public_sha256": "266ae885df9538fc99f84619228927925846bcef89ee811dda5f9b9c05ee52d8",
       "source_bytes": 959174,
-      "public_bytes": 857101,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 856954,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "1092caf044e6fa13722b60ba54456e3baa0a89efbb4660f7b00a497fbc5578fe",
+      "previous_public_bytes": 857101,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R1C6_Handoff253/protocol_freeze_receipt.json",
@@ -1316,18 +1338,24 @@
     {
       "path": "R1C6_Handoff253/statistical_plan_frozen.json",
       "source_sha256": "40d42cc1ebc44d0f3bbcf1da4a6dea0ad2468fce5b835a13f6b81f3ba8e21ce0",
-      "public_sha256": "f71e651440c77e794f4118353aaa9f668d42a6c352704190e9664edb754dac9c",
+      "public_sha256": "70b4353893337b09b2feb6860a6a824f88e35db2e3853eb7c03527e5b3e65683",
       "source_bytes": 25253,
-      "public_bytes": 25244,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 25168,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "f71e651440c77e794f4118353aaa9f668d42a6c352704190e9664edb754dac9c",
+      "previous_public_bytes": 25244,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R1C6_Handoff253/run_routing.py",
       "source_sha256": "054ea5db581c91131aa8745694e227359006c67e719c18dfbb18d71d78e0b6fb",
-      "public_sha256": "d25205ce270180a0e8dd79073a2180d165093f64b54922f7332ade57c4706569",
+      "public_sha256": "9d444ad353b23bdac0df4efa2068aa44074c5cd4aeda0a3a601cda24f55fa58f",
       "source_bytes": 13579,
-      "public_bytes": 13551,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 13507,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "d25205ce270180a0e8dd79073a2180d165093f64b54922f7332ade57c4706569",
+      "previous_public_bytes": 13551,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R1C6_Handoff253/analyze_routing.py",
@@ -1340,10 +1368,13 @@
     {
       "path": "R1C6_Handoff253/independent_routing_audit.py",
       "source_sha256": "675e36b43e92f93f24d5dee8097f579a08c61b83a3464b879b0e7828c1e888bf",
-      "public_sha256": "4f411540d798a1827c18e8cd67af9f25615dd00f4dbdaf8261a882100e0a23e5",
+      "public_sha256": "f938d8304132d6e6e0ac04c330220cd10e7e8a9661f319910166c2b80d3d8343",
       "source_bytes": 25321,
-      "public_bytes": 25293,
-      "machine_path_prefixes_replaced": true
+      "public_bytes": 25249,
+      "machine_path_prefixes_replaced": true,
+      "previous_public_sha256": "4f411540d798a1827c18e8cd67af9f25615dd00f4dbdaf8261a882100e0a23e5",
+      "previous_public_bytes": 25293,
+      "public_metadata_cleanup": "Path prefix normalization and/or omission of non-experimental environment documentation; scientific values retained."
     },
     {
       "path": "R1C6_Handoff253/independent_routing_audit.json",

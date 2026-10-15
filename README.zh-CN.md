@@ -1,5 +1,9 @@
 # HPID-Split 中文说明
 
+**Revision evidence / 修回证据：** [All 14 feedback topics / 14项反馈证据索引](docs/evidence/revision_20261010_feedback/README.md) · [中文索引](docs/evidence/revision_20261010_feedback/README.zh-CN.md)
+
+Per-case results, frozen protocols and analysis records for the revised manuscript are organized by feedback topic. 逐例结果、冻结协议与分析记录已按审稿反馈逐项整理。
+
 HPID-Split 接收一张资产图片，输出互不重叠、具有父子关系且可审计的
 Part ID。它面向角色、道具、物品、设备、家具、车辆、自然物和场景资产，
 核心不是重新包装基础模型，而是融合候选、处理冲突、确定像素所有权并生成

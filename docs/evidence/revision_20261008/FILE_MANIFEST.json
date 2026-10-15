@@ -716,8 +716,8 @@
   },
   {
     "path": "SOURCE_COPY_AUDIT.json",
-    "bytes": 103401,
-    "sha256": "b7f5e06e492cb72beeb5ee1ead625f49503394c4b4cfbff6421f728c551db78d"
+    "bytes": 103713,
+    "sha256": "4497ff52265c7e624471b7ef60bf060582db8f09d0832bf8b9a8fce74f2b50fc"
   },
   {
     "path": "sources/frozen_be54300/configs/character_model_to_general.json",
@@ -1406,8 +1406,8 @@
   },
   {
     "path": "tools/verify_public_metrics.py",
-    "bytes": 41526,
-    "sha256": "6f740bd9630352a05b7951a8cb0b5aef350217e18fa2c9b5f0b608d25fa3e873"
+    "bytes": 41550,
+    "sha256": "2b8cab1015583a05d5aa59b6c78cb29ac8b04694f5291dc84929f9207d2f20f1"
   },
   {
     "path": "verification/lint_integration.json",

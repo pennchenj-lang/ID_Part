@@ -17,7 +17,7 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parent
 RUNTIME = Path('__RUNTIME_ROOT__')
 SNAPSHOT = RUNTIME / 'code_snapshots/hpid_split_be54300_holdout'
-PROJECT = Path('__USER_HOME__/Documents/Codex/2026-06-28/new-chat/hpid_split')
+PROJECT = Path('__PROJECT_ROOT__')
 BENCH = RUNTIME / 'experiments/paper_v031/test226_hpid'
 ARCHIVED = RUNTIME / 'experiments/paper_v031_identity_frontend_20260828/01_same_candidate/same_candidate_postprocessing_cases.csv'
 BASELINE = PROJECT / 'src/hpid_split/postprocess_baselines.py'

@@ -493,9 +493,9 @@ def privacy_audit(bundle):
     from PIL import Image
     findings = []
     counts = Counter()
-    hard_names = re.compile(r"(?:LOCAL_ONLY|qa_content_|ASTRA_HANDOFF|reviewer_tracker|author.?portrait|decision.?letter|submitted_baseline|(?:^|/)\.env(?:$|[./]))",re.IGNORECASE)
+    hard_names = re.compile(r"(?:LOCAL_ONLY|qa_content_|HANDOFF|reviewer_tracker|author.?portrait|decision.?letter|submitted_baseline|(?:^|/)\.env(?:$|[./]))",re.IGNORECASE)
     forbidden_image = re.compile(r"(?:^|/)(?:source|source_overlay|truth_part|controlled_defect|corrupted|completed|object_mask_crop|reference[^/]*|portrait)[^/]*\.(?:png|jpe?g|tiff?|webp)$",re.IGNORECASE)
-    raw_path = re.compile(r"(?:[A-Z]:(?:\\+|/)(?:Users|HPID_Gaussian|Codex)|/\x55sers/[^/]+/)",re.IGNORECASE)
+    raw_path = re.compile(r"(?:[A-Z]:(?:\\+|/)(?:Users|HPID_Gaussian|[^\\/]+(?:\\+|/)20\d{2}-\d{2}-\d{2})|/\x55sers/[^/]+/)",re.IGNORECASE)
     secret = re.compile(r"(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)")
     allowed_image = re.compile(r"(?:candidate_masks/[^/]+\.png|(?:part|group)_id_map\.tiff?|masks_visible/[^/]+\.png|/(?:raw_proposals|dbscan_fusion|hpid_split_group_ids)/selected_part\.png)$",re.IGNORECASE)
     images = re.compile(r"\.(?:png|jpe?g|tiff?|webp|gif)$",re.IGNORECASE)

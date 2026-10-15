@@ -639,7 +639,7 @@
   "execution_integrity": {
     "archived_main_path": "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\sources\\project\\scripts\\audit_completion_routing.py",
     "archived_main_sha256": "a8e3b4c7750388c4d30d5b671b7d415a5704cbfb28fed081dbbe5ec5dba4e8ed",
-    "actual_helper_path": "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\scripts\\run_semantic_completion_frontend_benchmark.py",
+    "actual_helper_path": "__PROJECT_ROOT__\\scripts\\run_semantic_completion_frontend_benchmark.py",
     "actual_helper_sha256": "2895bb42c635702a3d2dfc9bdf088057203ae7b919a39e153fdb43fcadc0b240",
     "decision_function_substitution": false,
     "patched_objects": [
@@ -676,8 +676,8 @@
     "upstream_mechanism_independent_audit": "0a6decb32284cf27046779969252dae760ec0ba34ab474b58b0540b0bc0ec093"
   },
   "input_sha256_before_and_after_identical": {
-    "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\scripts\\run_semantic_completion_frontend_benchmark.py": "2895bb42c635702a3d2dfc9bdf088057203ae7b919a39e153fdb43fcadc0b240",
-    "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\src\\hpid_split\\postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
+    "__PROJECT_ROOT__\\scripts\\run_semantic_completion_frontend_benchmark.py": "2895bb42c635702a3d2dfc9bdf088057203ae7b919a39e153fdb43fcadc0b240",
+    "__PROJECT_ROOT__\\src\\hpid_split\\postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
     "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\paco_eval.py": "ab28e9724c264382346e7bec4628b8355ad6f0a73bf0d9563f8585947b4fff56",
     "__RUNTIME_ROOT__\\code_snapshots\\hpid_split_be54300_holdout\\src\\hpid_split\\paco_semantics.py": "9d2c54326f5fc7e0e739e0181c713e4a47c81e357827f0121ef37d5ca7401be8",
     "__RUNTIME_ROOT__\\experiments\\paper_v031_identity_frontend_20260828\\02_completion_frontend\\completion_target_manifest.json": "451f33618a7a8863347ae60429b8c083014c63a07a911423f3d7db5b9311ea35",

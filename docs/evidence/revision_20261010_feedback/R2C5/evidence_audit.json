@@ -8,15 +8,15 @@
       "sha256": "d3f1756ec0168561436ad97609d8fd3063a8516ea867bd8d209f8a31c84ad897"
     },
     "current_restoration": {
-      "path": "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\src\\hpid_split\\restoration.py",
+      "path": "__PROJECT_ROOT__\\src\\hpid_split\\restoration.py",
       "sha256": "324dfa003581b05fbab1585975b4f5067f773a9222886bdae076aad3625896f5"
     },
     "current_completion_frontend": {
-      "path": "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\src\\hpid_split\\completion_frontend.py",
+      "path": "__PROJECT_ROOT__\\src\\hpid_split\\completion_frontend.py",
       "sha256": "c946537adc014018a20bf8293b8d610a04d5de138c38df27c7cbb4651a97b02d"
     },
     "current_original_runner": {
-      "path": "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\scripts\\run_semantic_completion_frontend_benchmark.py",
+      "path": "__PROJECT_ROOT__\\scripts\\run_semantic_completion_frontend_benchmark.py",
       "sha256": "2895bb42c635702a3d2dfc9bdf088057203ae7b919a39e153fdb43fcadc0b240"
     },
     "original_cases_csv": {

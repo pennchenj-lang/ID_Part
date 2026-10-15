@@ -24,7 +24,7 @@
   "independent_prose_and_arithmetic_qa": "PASS",
   "independent_code_mechanism_review": "PASS",
   "code_bindings": {
-    "__USER_HOME__/Documents/Codex/2026-06-28/new-chat/hpid_split/src/hpid_split/postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
+    "__PROJECT_ROOT__/src/hpid_split/postprocess_baselines.py": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930",
     "__RUNTIME_ROOT__/code_snapshots/hpid_split_be54300_holdout/src/hpid_split/fusion.py": "d9bb3f738b262109d88587dae5b71796d312a461790d66fe7dfb689f1c372bb5"
   },
   "bindings": {

@@ -6,8 +6,10 @@
   "json_numeric_values_unchanged": true,
   "csv_structure_preserved": true,
   "python_syntax_checked": 28,
-  "machine_path_prefix_replacement_only": true,
+  "machine_path_prefix_replacement_only": false,
   "remaining_machine_path_matches": 0,
   "credential_private_correspondence_binary_scan": "No matches in original inventory; only reviewed text metadata added.",
-  "reexecution_scope": "Archived records and source tables; external licensed images, masks, weights and dependencies are not included."
+  "reexecution_scope": "Archived records and source tables; external licensed images, masks, weights and dependencies are not included.",
+  "metadata_processing": "Path prefix normalization and omission of one non-experimental environment-documentation field; scientific values and historical hashes retained.",
+  "non_experimental_environment_fields_omitted": 1
 }

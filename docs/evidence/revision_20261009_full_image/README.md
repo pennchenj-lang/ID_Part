@@ -25,7 +25,7 @@ python recompute_results.py --evidence . --output recomputed.json
 
 This rebuilds Hungarian matches and F1 scores from the included float32 pairwise IoU matrices, root/foreground IoUs from integer pixel counts, and all paired intervals. It performs 1,246 per-case and statistical comparisons with the reported files. The recorded run passed with maximum per-case numerical difference 1.11e-16.
 
-This portable check reproduces scoring from saved overlaps; it does not rerun neural inference. Raw RGB images are not redistributed here. Image/object identifiers, original image URLs, crop coordinates and image hashes are included in `overlap_evidence.json`. Neural replay requires separately obtaining the original images and frozen model assets. Historical local paths in the execution/audit records document the run and must be adapted for another installation.
+This portable check reproduces scoring from saved overlaps; it does not rerun neural inference. Raw RGB images are not redistributed here. Image/object identifiers, original image URLs, crop coordinates and image hashes are included in `overlap_evidence.json`. Neural replay requires separately obtaining the original images and frozen model assets. Workspace paths in the public execution/audit records use __WORKSPACE__ and can be rebound for another installation. This path normalization preserves the command options, experimental values and embedded historical hashes.
 
 ## Controls and provenance
 
@@ -34,6 +34,6 @@ This portable check reproduces scoring from saved overlaps; it does not rerun ne
 - One original crop was rerun as an environment control, with identical Part/Group pixel maps and ordered identity/semantic records. The other 41 crops were not rerun on GPU.
 - CPU replay of all 42 archived cropped predictions reproduced the historical Group F1 at IoU 0.25, 0.395109915134312. All full/crop object and part reference masks agreed pixel-for-pixel after translation; there was no reference truncation.
 - Four historical cross-category replacement slots retain their actual materialized categories when scoring domain/profile accuracy. Stale slot labels were never inference inputs.
-- `input_output_fingerprints.json` records anonymous input hashes and all output hashes. `commands_as_executed.json` retains the actual invocation records. `manifest_sha256.json` covers the files in this evidence release.
+- `input_output_fingerprints.json` records anonymous input hashes and all output hashes. `commands_as_executed.json` retains the invocation records with a generalized workspace prefix. `manifest_sha256.json` covers the current public files and retains previous checksums for normalized records.
 
 The revised manuscript reports the primary result in Section VI-G and the full protocol and secondary results in Supplementary Section S19.12, Tables S47–S48.

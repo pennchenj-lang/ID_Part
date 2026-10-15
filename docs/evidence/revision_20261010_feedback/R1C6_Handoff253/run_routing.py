@@ -12,7 +12,7 @@ for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):
 sys.dont_write_bytecode=True
 R=Path(__file__).resolve().parent
 SNAPSHOT=Path('__RUNTIME_ROOT__/code_snapshots/hpid_split_be54300_holdout')
-PROJECT=Path('__USER_HOME__/Documents/Codex/2026-06-28/new-chat/hpid_split')
+PROJECT=Path('__PROJECT_ROOT__')
 sys.path.insert(0,str(SNAPSHOT/'src'))
 sys.path.insert(0,str(PROJECT))
 import hpid_split

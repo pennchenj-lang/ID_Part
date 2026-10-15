@@ -1,5 +1,9 @@
 # HPID-Split
 
+**Revision evidence / 修回证据：** [All 14 feedback topics / 14项反馈证据索引](docs/evidence/revision_20261010_feedback/README.md) · [中文索引](docs/evidence/revision_20261010_feedback/README.zh-CN.md)
+
+Per-case results, frozen protocols and analysis records for the revised manuscript are organized by feedback topic. 逐例结果、冻结协议与分析记录已按审稿反馈逐项整理。
+
 HPID-Split decomposes one asset image into hierarchy-constrained, auditable
 Part IDs. Its core contribution is the fusion and identity-assignment layer:
 open-vocabulary models propose regions, while HPID-Split decides which

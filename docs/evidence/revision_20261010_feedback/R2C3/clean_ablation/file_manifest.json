@@ -16555,11 +16555,11 @@
       "sha256": "2dc13824d935c3fc8cc495c7db3c87c4557d9f3c12cb1eec4454bf139098b6f1"
     },
     {
-      "path": "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\src\\hpid_split\\postprocess_baselines.py",
+      "path": "__PROJECT_ROOT__\\src\\hpid_split\\postprocess_baselines.py",
       "sha256": "84ffb6fac9e39ec6e1da6ac1a9216e9d80bcd50ad68113180bb04d7175bb6930"
     },
     {
-      "path": "__USER_HOME__\\Documents\\Codex\\2026-06-28\\new-chat\\hpid_split\\scripts\\evaluate_same_candidate_postprocessing.py",
+      "path": "__PROJECT_ROOT__\\scripts\\evaluate_same_candidate_postprocessing.py",
       "sha256": "7f2b86ec580093478d97b18a27eafb6167e508d00dd6ea08c06ec2eb30bf519b"
     },
     {
