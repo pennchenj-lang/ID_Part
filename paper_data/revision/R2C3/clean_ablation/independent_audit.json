@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "created_utc": "2026-10-10T01:52:19.190358+00:00",
-  "auditor_role": "Independent agent; not author of clean ablation implementation or author self-QA.",
+  "validation_method": "Separate numerical cross-check of clean-ablation outputs, distinct from implementation self-checks.",
   "scope": "Input/source/receipt integrity, direct archive-map fingerprint verification, independent released endpoint recomputation, and independent descriptive bootstrap arithmetic. No fusion/model rerun.",
   "checks": {
     "frozen_sources_verified": 67,

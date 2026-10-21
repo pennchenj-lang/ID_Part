@@ -73,7 +73,7 @@
     "what_common_wrapper_tests": "Applying one visible-mask semantic/rank wrapper to all outputs removes a naming-rule advantage and estimates the comparative continuity of correct output instances under that fixed wrapper.",
     "what_common_wrapper_does_not_test": "It removes HPID's candidate-identity and parent-relative ID naming rules, so it does not isolate the potential value of HPID's full native identity contract, provenance, hierarchy or software package semantics.",
     "what_native_comparison_tests": "It compares each method together with its own ID rule: HPID's native hierarchical IDs versus deterministic baseline semantic/side/rank IDs. This is a complete-package diagnostic, not a causal estimate of the fusion algorithm alone.",
-    "combined_boundary": "The common-wrapper result cannot by itself establish that the whole identity-contract contribution is valueless. However, neither this comparison nor the native-ID diagnostic provides evidence that HPID correctly preserves identities better than the tested baselines. No stability-superiority claim should be inserted."
+    "combined_boundary": "The common-wrapper result cannot by itself establish that the whole identity-contract contribution is valueless. However, neither this comparison nor the native-ID diagnostic provides evidence that HPID correctly preserves identities better than the tested baselines."
   },
   "perturbation_effectiveness": {
     "dropout_zero_change_cases": 94,
@@ -83,7 +83,7 @@
       0,
       5
     ],
-    "note": "Predeclared round(0.10*N) removes zero proposals in small candidate sets. Retain these cases but disclose the dose discretization; their unchanged outputs do not independently demonstrate robustness. No outcome-driven change to perturbation dose is justified."
+    "note": "Predeclared round(0.10*N) removes zero proposals in small candidate sets. These cases are retained; their unchanged outputs do not independently demonstrate robustness. No outcome-driven change to perturbation dose is justified."
   },
   "document_boundaries": [
     "These are post-hoc controlled perturbations of a previously analyzed 226-image cohort, not a fresh independent validation set.",
@@ -92,21 +92,5 @@
     "The original protocol limitations field retained root-only wording despite correctly listing all three families elsewhere. Disclose this as a documentation omission; do not silently revise or hash-replace the frozen protocol.",
     "Main and secondary comparison families are explicitly separated. Individual descriptive 95% intervals across all exploratory metrics do not support a familywise-controlled superiority claim.",
     "The original conclusion about an exported, inspectable identity contract remains an architectural claim. Comparative task benefits require additional successful evidence rather than a wording change."
-  ],
-  "public_evidence_recommendation": {
-    "publishable": [
-      "Frozen protocol with hash and a separate documentation erratum",
-      "Exact original runner plus a path-portable derivative and a transformation record",
-      "All per-case metrics and all 59400 per-GT method-condition-threshold records",
-      "Common-wrapper and native full summaries, adjusted paired intervals and prespecified sensitivity analyses",
-      "Case IDs, domains, categories and source-image identifiers sufficient to establish the 226-image sampling unit",
-      "Original-result reproduction report, source hashes and independent audit certificates"
-    ],
-    "local_or_restricted": [
-      "Raw source images",
-      "Ground-truth or prediction mask caches when redistribution rights have not been established",
-      "Absolute local filesystem paths and user-specific environment information"
-    ],
-    "reproducibility_limit": "Summary statistics can be independently regenerated from public CSVs without masks. Full inference and mask-assignment replay requires obtaining the licensed original dataset/candidate files; do not describe the CSV-only release as a complete public inference replay."
-  }
+  ]
 }

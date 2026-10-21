@@ -1,7 +1,7 @@
 {
   "status": "PASS_WITH_HISTORICAL_HELPER_PROVENANCE_LIMITATION",
   "created_utc": "2026-10-10T03:34:49.093300+00:00",
-  "scope": "Resolver-unit causal interventions on the controlled benchmark interface only. No model inference, no upstream fusion counterfactual, no new population performance claims, no Word edits.",
+  "scope": "Resolver-unit causal interventions on the controlled benchmark interface only. No model inference, no upstream fusion counterfactual, no new population performance claims.",
   "execution": {
     "archived_main_called": true,
     "current_resolve_target_called_directly": true,

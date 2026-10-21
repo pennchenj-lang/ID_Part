@@ -93,7 +93,7 @@ def main():
                                             'case_count': read(reproduction_path)['case_count'],
                                             'all_hpid_maps_exact': read(reproduction_path)['all_hpid_maps_exact'],
                                             'limit': 'Given cached candidate masks; does not establish identical candidate generation.'},
-                   group_reproduction='Assigned to independent full_image_doc_audit agent; not run by this script.',
+                   group_reproduction='Not evaluated by this script; see the separate full-image evaluation records.',
                    rows=rows, script_sha256=sha(__file__))
     out = HERE / 'package_version_audit.json'
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')

@@ -1,5 +1,5 @@
 {
-  "source": "Independent CSV recomputation from runner, separate from audit agent statistics",
+  "source": "Independent CSV recomputation from runner, separate from audit/statistics results",
   "thresholds": {
     "0.25": {
       "eligible_cases": 90,

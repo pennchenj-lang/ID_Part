@@ -934,7 +934,7 @@
     "all_hpid_maps_exact": true,
     "limit": "Given cached candidate masks; does not establish identical candidate generation."
   },
-  "group_reproduction": "Assigned to independent full_image_doc_audit agent; not run by this script.",
+  "group_reproduction": "Not evaluated by this script; see the separate full-image evaluation records.",
   "rows": [
     {
       "cohort": "original42",

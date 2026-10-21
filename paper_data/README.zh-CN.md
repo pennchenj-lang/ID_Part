@@ -6,6 +6,8 @@
 
 本目录按当前英文正文及补充材料整理，涵盖原始实验、本轮补充实验和失败诊断。各实验与论文位置的对应关系见[数据索引](DATA_INDEX.md)。
 
+[补充材料 PDF](Supplementary_Material_for_Review.pdf) 包含本稿的补充方法、表格和图。
+
 - `original/`：开发集与测试集清单、226例基础实验、身份审计、参数分析、Group回归、42例holdout、37例修复实验及相关诊断。
 - `revision/`：全图评估、PartCATSeg、253请求路由、分类体系、可靠性、权重、根掩码与解析器实验。
 - `review_burden37/`：原37请求的待复核选项分析。

@@ -3,7 +3,7 @@
   "source_commit": "4a9a88288659f49bc39ea4ee756dd45036552638",
   "original_source": "__RUNTIME_ROOT__/external_part_baselines_20260828/part-catseg",
   "frozen_source": "stability_work/learned_baseline_review5/source/part-catseg",
-  "scope": "Read-only inference dependency and device audit; adapter authored separately. No package installation, download, checkpoint/model loading, GPU work, Word changes or rendering by this audit.",
+  "scope": "Read-only inference dependency and device audit; adapter authored separately. No package installation, download, checkpoint/model loading, GPU work or rendering by this audit.",
   "inference_chain": [
     {
       "source": "baselines/data/dataset_mappers/object_part_mapper.py:99",

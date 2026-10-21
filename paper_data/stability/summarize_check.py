@@ -12,7 +12,7 @@ def ci(a,q=(.025,.975)):return [float(x) for x in np.quantile(a,q)]
 def b(x):return x=='True'
 def selected(condition,scope):
     return condition!='automatic_root' if scope=='overall' else condition.startswith('score_') if scope=='score_jitter' else condition.startswith('candidate_') if scope=='candidate_dropout' else condition in ['eroded_root','dilated_root','translated_root']
-out={'source':'Independent CSV recomputation from runner, separate from audit agent statistics','thresholds':{}}
+out={'source':'Independent CSV recomputation from runner, separate from audit/statistics results','thresholds':{}}
 for threshold in ['0.25','0.5']:
     rr=[r for r in rows if r['threshold']==threshold]
     categories={r['case_id']:r['object_category'] for r in rr}

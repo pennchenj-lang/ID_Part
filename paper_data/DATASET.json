@@ -236,5 +236,11 @@
     "analysis code",
     "integrity and execution audits"
   ],
-  "third_party_inputs": "Original photographs, third-party annotations, complete candidate-mask pools and checkpoints are not redistributed in this numerical deposit."
+  "third_party_inputs": "Original photographs, third-party annotations, complete candidate-mask pools and checkpoints are not redistributed in this numerical deposit.",
+  "supplementary_material": {
+    "path": "Supplementary_Material_for_Review.pdf",
+    "sha256": "c26af2263dbc322511abd352279e7766a6aaf0e3fa6bfdb50abd1de5c9cb862f",
+    "source_filename": "Supplementary Material for Review.pdf",
+    "copy": "Unmodified author-supplied PDF."
+  }
 }

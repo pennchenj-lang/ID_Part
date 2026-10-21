@@ -1,9 +1,15 @@
 {
   "date": "2026-10-21",
   "file_count": 473,
-  "total_bytes": 96755189,
+  "total_bytes": 100099291,
   "hash_algorithm": "SHA-256",
   "files": [
+    {
+      "path": "Supplementary_Material_for_Review.pdf",
+      "bytes": 3352964,
+      "sha256": "c26af2263dbc322511abd352279e7766a6aaf0e3fa6bfdb50abd1de5c9cb862f",
+      "file_role": "supplementary_material"
+    },
     {
       "path": "auxiliary/character_gaussian/asset_summary.csv",
       "bytes": 1164,
@@ -840,11 +846,6 @@
       "sha256": "29bdb89e370d2c7eb29cd4aa94227b34c193d2a3565f8eb2f298b2cfdca41d4a"
     },
     {
-      "path": "review_burden37/audit/audit_findings.txt",
-      "bytes": 7145,
-      "sha256": "6c890d7323c78432095bb3030f1f16524cac02d442337decf4ae0f315c5bc36e"
-    },
-    {
       "path": "review_burden37/audit/independent_assertions.csv",
       "bytes": 6698,
       "sha256": "62d2dc12b829f92431b9781387f5a93ebf32431934099515e4b346d1fc8434e8"
@@ -936,8 +937,8 @@
     },
     {
       "path": "review_burden37/provenance.json",
-      "bytes": 3202,
-      "sha256": "7c15f67ed7f2e1cad02b30d95fc38544b8684067116442b34fd3a02e5215f82a"
+      "bytes": 2960,
+      "sha256": "1d8f0a4f9c662128a5e211493ad19633334ec0ba3b9477d557b87a1272c069b9"
     },
     {
       "path": "review_burden37/recompute.py",
@@ -1111,8 +1112,8 @@
     },
     {
       "path": "revision/R1C5_PartCATSeg/interface_audit.json",
-      "bytes": 10459,
-      "sha256": "56f91a2e41fbb6c78928b0168196065052382b44a49b9eb0b50c1adbd7d75886"
+      "bytes": 10445,
+      "sha256": "2b1952517fff96995e4bb1475180c9e94800988ca98b07df9355453c9ae7ca3b"
     },
     {
       "path": "revision/R1C5_PartCATSeg/label_registry.json",
@@ -1416,8 +1417,8 @@
     },
     {
       "path": "revision/R1C6_Handoff253/audit_package_versions.py",
-      "bytes": 7149,
-      "sha256": "87095a167f450202a6e5e0f15eb23d7afe15036bafd05108854b85d6a0e4ebf5"
+      "bytes": 7151,
+      "sha256": "72dfae7159e4f499bde8b5948abc51ab7a043c07b6cf2943eb86772a7df8c262"
     },
     {
       "path": "revision/R1C6_Handoff253/group_overrides.json",
@@ -1456,8 +1457,8 @@
     },
     {
       "path": "revision/R1C6_Handoff253/mechanism_analysis/audit_mechanisms.py",
-      "bytes": 34262,
-      "sha256": "bc25d4e2d57df3e5b2851f6647cd31d62a61b7321abe7915faa1ffba59230705"
+      "bytes": 34256,
+      "sha256": "1f6830bd3e647acb93163038e2ebe0bc28fc8267e8a4f33084cd0226830cca83"
     },
     {
       "path": "revision/R1C6_Handoff253/mechanism_analysis/cases/new216__bench__03.json",
@@ -1636,8 +1637,8 @@
     },
     {
       "path": "revision/R1C6_Handoff253/mechanism_analysis/summary.json",
-      "bytes": 28589,
-      "sha256": "782b0cd2139981f3afca9b500c51f8d746cc065b7f0a573f7ab6fadaf84cdcc9"
+      "bytes": 28583,
+      "sha256": "fa5efff983798359c0e61aa2e91d6e59daabe1b946679503d10be83297d71ca4"
     },
     {
       "path": "revision/R1C6_Handoff253/mechanism_analysis/wrong_unique_by_domain_category.csv",
@@ -1656,8 +1657,8 @@
     },
     {
       "path": "revision/R1C6_Handoff253/package_version_audit.json",
-      "bytes": 1373650,
-      "sha256": "12b0e10205a31eaa40139e0b38e0bdd90e729e3f67bc5a3dc3dcdb9b5dddabe6"
+      "bytes": 1373652,
+      "sha256": "3a44ad831d016535e1df779672624b69e83e0cad3b782a05119696e110ec0b04"
     },
     {
       "path": "revision/R1C6_Handoff253/prepare_common_groups.py",
@@ -1701,8 +1702,8 @@
     },
     {
       "path": "revision/R1C6_Handoff253/run_routing.py",
-      "bytes": 13507,
-      "sha256": "9d444ad353b23bdac0df4efa2068aa44074c5cd4aeda0a3a601cda24f55fa58f"
+      "bytes": 13488,
+      "sha256": "2a71131454fc428fdb85534f59bcc04ca9007518c6f1ab75d3214bc87fdec0f0"
     },
     {
       "path": "revision/R1C6_Handoff253/statistical_implementation_checks.json",
@@ -1711,8 +1712,8 @@
     },
     {
       "path": "revision/R1C6_Handoff253/statistical_plan_frozen.json",
-      "bytes": 25168,
-      "sha256": "70b4353893337b09b2feb6860a6a824f88e35db2e3853eb7c03527e5b3e65683"
+      "bytes": 25148,
+      "sha256": "ef0f376f0378e5a933e22c1969e1e193df043c49e0de89fd6adadd06917412b5"
     },
     {
       "path": "revision/R1C6_Handoff253/statistics/analysis_summary.json",
@@ -1891,8 +1892,8 @@
     },
     {
       "path": "revision/R2C3/clean_ablation/independent_audit.json",
-      "bytes": 112337,
-      "sha256": "6a84d50a912bd356004f659307987294e0214b376f53dc01a151b7a993039493"
+      "bytes": 112360,
+      "sha256": "3b0dd1e6b84368a7c5bb0b3ad06ed498157c39a1e1adfd780516c37a4f8a50ef"
     },
     {
       "path": "revision/R2C3/clean_ablation/jobs_frozen.json",
@@ -1991,8 +1992,8 @@
     },
     {
       "path": "revision/R2C3/consensus_stress/run_stress.py",
-      "bytes": 16176,
-      "sha256": "7b612aa2ef14b1c1f3ae5c4731ff982522d5516cec56d3c24b3412ae112774ed"
+      "bytes": 16168,
+      "sha256": "777f77ab8adc8dcc816c3c215b73b8d98fc4d258241531161bade445d8db8ff4"
     },
     {
       "path": "revision/R2C3/consensus_stress/summary.csv",
@@ -2056,13 +2057,13 @@
     },
     {
       "path": "revision/R2C4/evidence_audit/receipt.json",
-      "bytes": 1625,
-      "sha256": "7078c956933c9934f46d3c5c86943069ef4e4a8233903a3d61bd7cf1e72f88cd"
+      "bytes": 1596,
+      "sha256": "f6106c64acb4f72772cdb3d494d109632570228f7b813b7379a16990d8ffe5ba"
     },
     {
       "path": "revision/R2C4/evidence_audit/recount_sensitivity.py",
-      "bytes": 12981,
-      "sha256": "b419a22f765a0261373cd8fc8b3340f8ee83c6cad55b2993843a189648af1b83"
+      "bytes": 12955,
+      "sha256": "3a77114aadf23d9bd6565e1276f35e8556a291e924be35c547bfed3e59d74f3d"
     },
     {
       "path": "revision/R2C4/evidence_audit/summary.json",
@@ -2086,8 +2087,8 @@
     },
     {
       "path": "revision/R2C5/evidence_audit.json",
-      "bytes": 85784,
-      "sha256": "4dd37edd0e7b0d0ff20e89aef771cfd93a7bb2d4d250c47f4017f46c17c1b7b4"
+      "bytes": 85737,
+      "sha256": "abec720fddf042e0741380fa6ebba6f8367a8a1a7cf789b9dabdffeb92684627"
     },
     {
       "path": "revision/R2C5/existing_source_tables/completion_frontend_cases.csv",
@@ -2121,8 +2122,8 @@
     },
     {
       "path": "revision/R2C6/audit_resolver_causality.py",
-      "bytes": 19517,
-      "sha256": "e5b9bd2263bbd89a4165cf5462faa83c119b4f88f5eb3a612e9db1942dcb5c30"
+      "bytes": 19502,
+      "sha256": "71bc698c6d31791e837cd079b6510758b9e927e7c581cc300be20f5a87a7514e"
     },
     {
       "path": "revision/R2C6/existing_source_tables/request_candidate_pixel_flows.csv",
@@ -2141,13 +2142,13 @@
     },
     {
       "path": "revision/R2C6/resolver_causal_audit.json",
-      "bytes": 102071,
-      "sha256": "640ea7e5af7536a2611b3b18bbdab761682e22b08c7c551afb82705067db85bb"
+      "bytes": 102056,
+      "sha256": "6345c22208a0b4d2ca53e9681566ac0abe081e088d9bc44ecc1ba5f339b25d7a"
     },
     {
       "path": "revision/R2C6/resolver_independent_audit.json",
-      "bytes": 60172,
-      "sha256": "a4268d8c20e477c9f246deba95c9196ffb7223dde402c6ac25f375d6ac8208a7"
+      "bytes": 60161,
+      "sha256": "40ce96af32f5420bb84399031ef010fac6df091ec17d77c4ce0183b828f031a9"
     },
     {
       "path": "revision/R2C8_Root226/automatic_root_iou_strata.csv",
@@ -2221,8 +2222,8 @@
     },
     {
       "path": "stability/audit/final_scientific_audit.json",
-      "bytes": 7438,
-      "sha256": "ec54591276e45091f0fcd13763f2dc3d04bc12a7801f31b8592df14bf839822d"
+      "bytes": 6148,
+      "sha256": "a9b0fcfb67fd93d49318f39160ce1ff4feca809c48f95f98a6b8b3a1a8c27458"
     },
     {
       "path": "stability/audit/independent_f1_summary.py",
@@ -2351,8 +2352,8 @@
     },
     {
       "path": "stability/summarize_check.py",
-      "bytes": 3900,
-      "sha256": "be4e93c59f9ab06384f822c102d7dd511f01c6c09f4e4645123545c84c78ad73"
+      "bytes": 3902,
+      "sha256": "733e3c999caf6772477d1d8bf171ec6a86216b883bae6ae8f6593e5f406fb0c6"
     },
     {
       "path": "stability/summarize_native_check.py",
@@ -2361,8 +2362,8 @@
     },
     {
       "path": "stability/summary_crosscheck.json",
-      "bytes": 24910,
-      "sha256": "11e34fce910ab00ed0907ac8e25d5611c4438d7c6e7a288c9e313c9820fa0942"
+      "bytes": 24912,
+      "sha256": "1066c85cefba5b4b5feac6aa5497aa61739411061361c66babca704226ee798f"
     },
     {
       "path": "stability/target_retention.csv",

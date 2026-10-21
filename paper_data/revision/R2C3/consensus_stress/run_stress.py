@@ -1,4 +1,4 @@
-"""Frozen Eq.2 boundary stress test; never changes production sources or Word."""
+"""Frozen Eq.2 boundary stress test; never changes production sources."""
 from __future__ import annotations
 import argparse, csv, hashlib, json, os, sys
 from pathlib import Path

@@ -1,6 +1,6 @@
 """Frozen same-candidate routing and controlled request-mask handoff replay.
 
-No foundation model, inpainting model, parameter search or Word generation.
+No foundation model, inpainting model, parameter search.
 Predictions are constructed before reading each evaluation target mask.
 """
 from __future__ import annotations

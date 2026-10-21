@@ -6,6 +6,8 @@
 
 **[Current paper data — updated 21 October 2026](paper_data/README.md)** · [Study-to-manuscript index](paper_data/DATA_INDEX.md) · [中文说明](paper_data/README.zh-CN.md)
 
+[Supplementary Material for Review (PDF)](paper_data/Supplementary_Material_for_Review.pdf)
+
 The data directory contains the numerical source records used in the current manuscript and supplement, covering the original evaluations and the revision experiments. Older unreported development datasets and superseded publishing records have been removed from the current tree. Historical experiments still cited in the paper remain clearly identified by cohort and implementation version.
 
 ## Implementation

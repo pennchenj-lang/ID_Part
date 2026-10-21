@@ -236,7 +236,7 @@ def main():
     assert all(v["bytes_identical"] for v in frozen_checks.values())
     report = {
         "status":"PASS_WITH_HISTORICAL_HELPER_PROVENANCE_LIMITATION", "created_utc":datetime.now(timezone.utc).isoformat(),
-        "scope":"Resolver-unit causal interventions on the controlled benchmark interface only. No model inference, no upstream fusion counterfactual, no new population performance claims, no Word edits.",
+        "scope":"Resolver-unit causal interventions on the controlled benchmark interface only. No model inference, no upstream fusion counterfactual, no new population performance claims.",
         "execution":{"archived_main_called":True,"current_resolve_target_called_directly":True,
                      "archived_main_baseline_requests_exact":37,"original_wrong_unique_cases_exact":6,
                      "unit_case_scenarios_including_unchanged_control":len(observations),

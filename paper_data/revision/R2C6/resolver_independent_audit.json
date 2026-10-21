@@ -1,7 +1,7 @@
 {
   "status": "PASS_WITH_HISTORICAL_HELPER_PROVENANCE_LIMITATION",
   "created_utc": "2026-10-10T03:37:47.730408+00:00",
-  "audit_scope": "Independent execution of the actual archived benchmark main and actual local helper, using separately constructed fixed unit inputs. No foundation model, fusion rerun, production change or Word edit.",
+  "audit_scope": "Independent execution of the actual archived benchmark main and actual local helper, using separately constructed fixed unit inputs. No foundation model, fusion rerun or production change.",
   "checks": {
     "input_source_artifacts_sha_verified_and_unchanged": 149,
     "archived_37_HPID_rows_reproduced": 37,

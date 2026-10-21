@@ -866,7 +866,7 @@
     "Semantic nonmatch may retain correct geometry under another label and is not equivalent to deleting pixels.",
     "Correct-in-review denominators are method-specific ambiguous subsets; fixed-raw-subset transitions explain their changes.",
     "Domain/category risk aggregates are descriptive with sparse categories; no significance claims or threshold tuning.",
-    "GT used only for this sealed post-inference audit; no prediction, strategy, threshold, model, Word, frozen input or sealed output modified."
+    "GT used only for this sealed post-inference audit; no prediction, strategy, threshold, model, frozen input or sealed output modified."
   ],
   "GPU_used": false,
   "model_execution": false,

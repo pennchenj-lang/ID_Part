@@ -460,7 +460,7 @@ The audit checks every common-Group artifact against the preparation receipt, th
                    'Semantic nonmatch may retain correct geometry under another label and is not equivalent to deleting pixels.',
                    'Correct-in-review denominators are method-specific ambiguous subsets; fixed-raw-subset transitions explain their changes.',
                    'Domain/category risk aggregates are descriptive with sparse categories; no significance claims or threshold tuning.',
-                   'GT used only for this sealed post-inference audit; no prediction, strategy, threshold, model, Word, frozen input or sealed output modified.'],
+                   'GT used only for this sealed post-inference audit; no prediction, strategy, threshold, model, frozen input or sealed output modified.'],
                'GPU_used': False, 'model_execution': False,
                'output_sha256': {str(p.relative_to(OUT)): sha(p) for p in sorted(OUT.rglob('*')) if p.is_file() and p.name not in ('summary.json', 'receipt.json')}}
     write(OUT/'summary.json', summary)

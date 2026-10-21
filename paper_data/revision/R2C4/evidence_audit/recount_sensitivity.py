@@ -158,7 +158,7 @@ result = {'status': 'PASS', 'analysis_type': 'Independent arithmetic and static 
 receipt = {'status': 'PASS', 'created_utc': datetime.now(timezone.utc).isoformat(), 'audit_script_sha256': sha(__file__),
            'summary_sha256': sha(OUT / 'summary.json'), 'source_files_unchanged': True, 'source_sha256': before,
            'existing_output_rows': 11300, 'recomputed_statistics': comparisons, 'maximum_absolute_error': maximum_error,
-           'new_model_experiments': 0, 'Word_files_modified': 0}
+           'new_model_experiments': 0}
 (OUT / 'receipt.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(json.dumps({'status': 'PASS', 'rows': len(rows), 'variants': len(variants), 'recomputed_statistics': comparisons,
                   'maximum_error': maximum_error, 'joint_f1_range': [min(joint_f1), max(joint_f1)],

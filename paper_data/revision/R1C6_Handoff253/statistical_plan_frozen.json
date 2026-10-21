@@ -1,7 +1,7 @@
 {
   "status": "FROZEN_BEFORE_NEW_ROUTING_RESULTS",
   "created_utc": "2026-10-09T15:14:36.379270+00:00",
-  "scope": "Reviewer 6: expanded routing evaluation, uncertainty, domain/category failure description, and audit of correct-option losses during pruning. No Word changes and no new routing results read for this plan.",
+  "scope": "Reviewer 6: expanded routing evaluation, uncertainty, domain/category failure description, and audit of correct-option losses during pruning. No new routing results read for this plan.",
   "design_assessment": {
     "verdict": "Suitable with explicit unique-image deduplication, common paired denominators, retained failure states, and a separate analysis of changing ambiguity subsets.",
     "known_prior_results": {

@@ -30,6 +30,5 @@
   },
   "original_target_manifest_sha256": "451f33618a7a8863347ae60429b8c083014c63a07a911423f3d7db5b9311ea35",
   "target_manifest_redaction": "Only input_manifest machine-specific root replaced with relative source role; target entries, counts, masks and hashes unchanged. JSON serialized as UTF-8.",
-  "scope": "Statistics fully recomputable from included per-request records. Inference replay requires external frozen masks/images/code; these inputs are fingerprinted but not redistributed.",
-  "independent_findings_public_edit": "Removed duplicate draft manuscript wording and unresolved location placeholder; retained all scientific findings, limitations, guardrails and result values. Artifact names reflect the portable package."
+  "scope": "Statistics fully recomputable from included per-request records. Inference replay requires external frozen masks/images/code; these inputs are fingerprinted but not redistributed."
 }

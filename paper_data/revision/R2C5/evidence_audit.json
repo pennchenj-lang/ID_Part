@@ -1,7 +1,7 @@
 {
   "status": "PASS_WITH_SOURCE_PROVENANCE_LIMITATION",
   "audit_utc": "2026-10-10T03:21:25.267803+00:00",
-  "scope": "Independent read-only code/statistical/persisted-pixel audit. No new model execution, no Word changes. Only this audit file written.",
+  "scope": "Independent read-only code/statistical/persisted-pixel audit. No new model execution.",
   "sources": {
     "archived_restoration": {
       "path": "__WORKSPACE__\\hpid-publication-20261009\\docs\\evidence\\revision_20261008\\sources\\frozen_be54300\\src\\hpid_split\\restoration.py",
