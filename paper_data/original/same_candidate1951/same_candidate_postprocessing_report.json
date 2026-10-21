@@ -1,0 +1,25 @@
+{
+  "format": "HPID-Split same-candidate simple postprocessing comparison",
+  "format_version": "1.0.0",
+  "case_count": 226,
+  "methods": [
+    "raw_proposals",
+    "greedy_nms",
+    "dbscan_fusion",
+    "local_pairwise_crf",
+    "hpid_split_a3"
+  ],
+  "candidate_scope": "The same frozen heterogeneous candidate masks are supplied to every method; proposal generation is not rerun.",
+  "method_scope": {
+    "raw_proposals": "all frozen proposals without ownership resolution",
+    "greedy_nms": "score-ordered NMS followed by maximum-score ownership",
+    "dbscan_fusion": "DBSCAN-style connected components in a fixed mask/semantic/geometry distance, followed by weighted voting and exclusive ownership",
+    "local_pairwise_crf": "local four-neighbour Potts CRF over semantic unary evidence; this is not DenseCRF",
+    "hpid_split_a3": "full hierarchy-constrained, source-aware HPID fusion"
+  },
+  "identity_scope": "Order consistency tests one fixed candidate-list permutation. Only HPID-Split natively exports the persistent hierarchy and package contract; baseline identifiers are evaluation adapters.",
+  "ground_truth_used_in_prediction": false,
+  "manifest_sha256": "633076503641e81bbc49e796146ff49de637212e9eb1bdc253b547f204f3f548",
+  "benchmark_summary_sha256": "c7a9e99241b80359f40f6f309dd1aae93252e879c794c810c2a11da7e541e464",
+  "seed": 20260828
+}

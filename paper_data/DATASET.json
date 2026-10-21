@@ -1,0 +1,240 @@
+{
+  "title": "Data supporting Object-Conditioned HPID-Split: Deterministic Part-Identity Fusion for Editable Assets",
+  "authors": [
+    "Jianpeng Chen",
+    "Yu Huang"
+  ],
+  "date": "2026-10-21",
+  "repository": "https://github.com/pennchenj-lang/ID_Part",
+  "path": "paper_data",
+  "documents_used_for_scope": [
+    {
+      "file": "HPID_Manuscript_Revised.docx",
+      "sha256": "19b815c23dc89db1d1149baab913159ff45ae96a7e4b00fb7897ac76ba652d65"
+    },
+    {
+      "file": "Supplementary Material for Review.docx",
+      "sha256": "2f39a84cdf43aa38d9b7f279fdc9a54c95baadf934261a19afc26eaff8cc5fe4"
+    }
+  ],
+  "studies": [
+    {
+      "name": "Development cohort",
+      "units": "65 development cases",
+      "manuscript_location": "Main V-A, Table III; Supplement S1/S7, Tables S10–S11",
+      "paths": [
+        "original/cohorts/development_65_manifest.json",
+        "original/development65"
+      ]
+    },
+    {
+      "name": "Fine segmentation and external baselines",
+      "units": "226 cases, earlier 1,951-candidate pool",
+      "manuscript_location": "Main Tables IV/VI; Supplement S4–S5",
+      "paths": [
+        "original/fine226/external_baselines",
+        "original/fine226/clipseg",
+        "original/fine226/paired_baselines",
+        "original/fine226/fusion_a0_a3"
+      ]
+    },
+    {
+      "name": "Identity export audit",
+      "units": "226 packages; 678 candidate-order trials",
+      "manuscript_location": "Main Table V; Supplement S12",
+      "paths": [
+        "original/fine226/identity_audit"
+      ]
+    },
+    {
+      "name": "Quality exit",
+      "units": "226 cases",
+      "manuscript_location": "Supplement S8",
+      "paths": [
+        "original/fine226/quality_exit"
+      ]
+    },
+    {
+      "name": "Initial sensitivity and parameter inventory",
+      "units": "25 conditions; global and inventory registries",
+      "manuscript_location": "Supplement S9",
+      "paths": [
+        "original/fine226/original_sensitivity",
+        "original/parameter_registry"
+      ]
+    },
+    {
+      "name": "Runtime",
+      "units": "Stage and environment records",
+      "manuscript_location": "Supplement S10",
+      "paths": [
+        "original/runtime"
+      ]
+    },
+    {
+      "name": "Group regression",
+      "units": "Two version-matched results on the same 226 images; later pool of 2,188 candidates",
+      "manuscript_location": "Main Table VII; Supplement S6/S10",
+      "paths": [
+        "original/group_regression226_prior2188",
+        "original/group_regression226_later2188"
+      ]
+    },
+    {
+      "name": "Original Group holdout",
+      "units": "42 objects",
+      "manuscript_location": "Main Table VII; Supplement S2",
+      "paths": [
+        "original/group_holdout42"
+      ]
+    },
+    {
+      "name": "Character localization and Gaussian/PAGA auxiliary studies",
+      "units": "10 characters; 182 localization parts; 153 Gaussian/selection parts; 200 transform cases",
+      "manuscript_location": "Supplement S11",
+      "paths": [
+        "auxiliary/character_gaussian"
+      ]
+    },
+    {
+      "name": "Post-freeze engineering audit",
+      "units": "v0.3.8: 226 packages and 1,356 core files",
+      "manuscript_location": "Main Fig. 6; Supplement S12.1, Table S22A",
+      "paths": [
+        "auxiliary/engineering_v038"
+      ]
+    },
+    {
+      "name": "Same-candidate post-processing",
+      "units": "226 cases; 1,951 accepted proposals; five methods",
+      "manuscript_location": "Main Table VIII; Supplement S13",
+      "paths": [
+        "original/same_candidate1951"
+      ]
+    },
+    {
+      "name": "Original restoration and routing",
+      "units": "37 paired requests",
+      "manuscript_location": "Main V-E/Fig. 8; Supplement S14/S19.3–S19.4",
+      "paths": [
+        "original/handoff37",
+        "revision/R2C5",
+        "revision/R2C6"
+      ]
+    },
+    {
+      "name": "Automatic and reference roots",
+      "units": "226 cases",
+      "manuscript_location": "Main Fig. 9; Supplement S15",
+      "paths": [
+        "revision/R2C8_Root226"
+      ]
+    },
+    {
+      "name": "Historical learned-method execution probes",
+      "units": "Execution provenance",
+      "manuscript_location": "Supplement S16",
+      "paths": [
+        "original/post_review_diagnostics_20261008/external_entrypoint_probes.json"
+      ]
+    },
+    {
+      "name": "Expanded ownership sensitivity",
+      "units": "226 cases × 50 settings; 16 joint corners",
+      "manuscript_location": "Supplement S19.1, Tables S32–S33",
+      "paths": [
+        "revision/R2C4"
+      ]
+    },
+    {
+      "name": "Group-gate ablation",
+      "units": "226 earlier-pool cases + 42 holdout cases; eight subsets",
+      "manuscript_location": "Supplement S19.6, Tables S40–S41",
+      "paths": [
+        "original/post_review_diagnostics_20261008/gate_ablation"
+      ]
+    },
+    {
+      "name": "Holdout fine-ID root replacement",
+      "units": "42 cases",
+      "manuscript_location": "Supplement S19.5, Table S39",
+      "paths": [
+        "original/post_review_diagnostics_20261008/holdout_root_cases.csv",
+        "original/post_review_diagnostics_20261008/holdout_root_summary.json"
+      ]
+    },
+    {
+      "name": "Stagewise spatial-support diagnosis",
+      "units": "226 cases; 990 reference parts",
+      "manuscript_location": "Supplement S19.2/S19.7",
+      "paths": [
+        "revision/R2C2"
+      ]
+    },
+    {
+      "name": "Unknown taxonomy behavior",
+      "units": "43 deterministic interface fixtures",
+      "manuscript_location": "Supplement S19.8",
+      "paths": [
+        "revision/R2C1_Taxonomy"
+      ]
+    },
+    {
+      "name": "Source reliability and noisy-OR",
+      "units": "Candidate audit, 226 clean cases and 150 stress cases",
+      "manuscript_location": "Main Eq. 2; Supplement S19.9",
+      "paths": [
+        "revision/R2C3"
+      ]
+    },
+    {
+      "name": "Original review-option burden",
+      "units": "37 requests; five methods",
+      "manuscript_location": "Supplement S19.10, Table S45",
+      "paths": [
+        "review_burden37"
+      ]
+    },
+    {
+      "name": "Input perturbation stability",
+      "units": "226 cases; 990 targets; primary common-target subset reported separately",
+      "manuscript_location": "Supplement S19.11, Table S46",
+      "paths": [
+        "stability"
+      ]
+    },
+    {
+      "name": "Full-image discovery",
+      "units": "42 full images paired with the holdout crops",
+      "manuscript_location": "Supplement S19.12, Tables S47–S48",
+      "paths": [
+        "revision/R1C4_FullImage42"
+      ]
+    },
+    {
+      "name": "Expanded routing",
+      "units": "253 requests = 37 original + 216 additional; five methods",
+      "manuscript_location": "Main Table IX; Supplement S19.13",
+      "paths": [
+        "revision/R1C6_Handoff253"
+      ]
+    },
+    {
+      "name": "Learned PartCATSeg comparison",
+      "units": "42 crops; frozen 456-label interface",
+      "manuscript_location": "Supplement S19.14, Table S53",
+      "paths": [
+        "revision/R1C5_PartCATSeg"
+      ]
+    }
+  ],
+  "data_types": [
+    "cohort manifests",
+    "case-level numerical results",
+    "aggregate statistics",
+    "frozen protocols",
+    "analysis code",
+    "integrity and execution audits"
+  ],
+  "third_party_inputs": "Original photographs, third-party annotations, complete candidate-mask pools and checkpoints are not redistributed in this numerical deposit."
+}

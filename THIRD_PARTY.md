@@ -14,6 +14,6 @@ that apply to their use and redistribution.
 | [simple-lama-inpainting](https://github.com/enesmsahin/simple-lama-inpainting) | Isolated LaMa wrapper | Wrapper repository is Apache-2.0; its release downloads `big-lama.pt`, whose checkpoint terms must also be checked |
 | [Transformers](https://github.com/huggingface/transformers) | Model loading and inference API | Apache-2.0 library; model-card terms remain separate |
 
-The repository-level license for HPID-Split itself is intentionally pending the
-copyright owner's choice. Adding a license here does not override any model,
-checkpoint, dataset, or image-asset terms.
+HPID-Split code is provided under the repository's existing Apache-2.0
+license. This license does not override any model, checkpoint, dataset,
+or image-asset terms.

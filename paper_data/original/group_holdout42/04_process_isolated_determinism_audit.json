@@ -1,0 +1,24 @@
+{
+  "format": "HPID-Split process-isolated holdout determinism audit",
+  "format_version": "0.1.0",
+  "release_commit": "be543003632fa739d0b63e9acbffb8d91d99b84a",
+  "runs": 2,
+  "python_hash_seeds": [
+    20260825,
+    20260826
+  ],
+  "case_count": 42,
+  "core_files_per_case": [
+    "part_id_map.tiff",
+    "parts.json",
+    "group_id_map.tiff",
+    "groups.json",
+    "semantic_ids.png",
+    "taxonomy.json"
+  ],
+  "byte_identical_core_file_count": 252,
+  "expected_core_file_count": 252,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "all_pass": true
+}

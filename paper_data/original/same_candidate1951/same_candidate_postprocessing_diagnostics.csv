@@ -1,0 +1,1131 @@
+case_id,cluster_count,color_sigma,containment_threshold,eps,input_candidate_count,iou_threshold,iterations,kept_non_root_count,label_count,method,min_samples,pairwise_weight,scope,source,vote_threshold
+cellular_telephone__01,,,,,11,,,,,raw_proposals,,,,,
+cellular_telephone__01,,,0.92,,11,0.8,,5,,greedy_nms,,,,,
+cellular_telephone__01,9,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+cellular_telephone__01,,0.12,,,11,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cellular_telephone__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+cellular_telephone__02,,,,,17,,,,,raw_proposals,,,,,
+cellular_telephone__02,,,0.92,,17,0.8,,9,,greedy_nms,,,,,
+cellular_telephone__02,13,,,0.43,17,,,,,dbscan_fusion,1,,,,0.5
+cellular_telephone__02,,0.12,,,17,,4,,12,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cellular_telephone__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+cellular_telephone__03,,,,,16,,,,,raw_proposals,,,,,
+cellular_telephone__03,,,0.92,,16,0.8,,6,,greedy_nms,,,,,
+cellular_telephone__03,14,,,0.43,16,,,,,dbscan_fusion,1,,,,0.5
+cellular_telephone__03,,0.12,,,16,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cellular_telephone__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+cellular_telephone__04,,,,,11,,,,,raw_proposals,,,,,
+cellular_telephone__04,,,0.92,,11,0.8,,6,,greedy_nms,,,,,
+cellular_telephone__04,9,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+cellular_telephone__04,,0.12,,,11,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cellular_telephone__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+laptop_computer__01,,,,,23,,,,,raw_proposals,,,,,
+laptop_computer__01,,,0.92,,23,0.8,,15,,greedy_nms,,,,,
+laptop_computer__01,19,,,0.43,23,,,,,dbscan_fusion,1,,,,0.5
+laptop_computer__01,,0.12,,,23,,4,,14,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+laptop_computer__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+laptop_computer__02,,,,,12,,,,,raw_proposals,,,,,
+laptop_computer__02,,,0.92,,12,0.8,,6,,greedy_nms,,,,,
+laptop_computer__02,9,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+laptop_computer__02,,0.12,,,12,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+laptop_computer__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+laptop_computer__03,,,,,15,,,,,raw_proposals,,,,,
+laptop_computer__03,,,0.92,,15,0.8,,7,,greedy_nms,,,,,
+laptop_computer__03,12,,,0.43,15,,,,,dbscan_fusion,1,,,,0.5
+laptop_computer__03,,0.12,,,15,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+laptop_computer__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+laptop_computer__04,,,,,11,,,,,raw_proposals,,,,,
+laptop_computer__04,,,0.92,,11,0.8,,8,,greedy_nms,,,,,
+laptop_computer__04,7,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+laptop_computer__04,,0.12,,,11,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+laptop_computer__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+television_set__01,,,,,5,,,,,raw_proposals,,,,,
+television_set__01,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+television_set__01,2,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+television_set__01,,0.12,,,5,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+television_set__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+television_set__02,,,,,19,,,,,raw_proposals,,,,,
+television_set__02,,,0.92,,19,0.8,,13,,greedy_nms,,,,,
+television_set__02,16,,,0.43,19,,,,,dbscan_fusion,1,,,,0.5
+television_set__02,,0.12,,,19,,4,,11,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+television_set__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+television_set__03,,,,,5,,,,,raw_proposals,,,,,
+television_set__03,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+television_set__03,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+television_set__03,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+television_set__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+television_set__04,,,,,8,,,,,raw_proposals,,,,,
+television_set__04,,,0.92,,8,0.8,,6,,greedy_nms,,,,,
+television_set__04,7,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+television_set__04,,0.12,,,8,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+television_set__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+remote_control__01,,,,,51,,,,,raw_proposals,,,,,
+remote_control__01,,,0.92,,51,0.8,,46,,greedy_nms,,,,,
+remote_control__01,44,,,0.43,51,,,,,dbscan_fusion,1,,,,0.5
+remote_control__01,,0.12,,,51,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+remote_control__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+remote_control__02,,,,,32,,,,,raw_proposals,,,,,
+remote_control__02,,,0.92,,32,0.8,,24,,greedy_nms,,,,,
+remote_control__02,29,,,0.43,32,,,,,dbscan_fusion,1,,,,0.5
+remote_control__02,,0.12,,,32,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+remote_control__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+remote_control__03,,,,,19,,,,,raw_proposals,,,,,
+remote_control__03,,,0.92,,19,0.8,,17,,greedy_nms,,,,,
+remote_control__03,18,,,0.43,19,,,,,dbscan_fusion,1,,,,0.5
+remote_control__03,,0.12,,,19,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+remote_control__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+remote_control__04,,,,,10,,,,,raw_proposals,,,,,
+remote_control__04,,,0.92,,10,0.8,,5,,greedy_nms,,,,,
+remote_control__04,7,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+remote_control__04,,0.12,,,10,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+remote_control__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+calculator__01,,,,,9,,,,,raw_proposals,,,,,
+calculator__01,,,0.92,,9,0.8,,5,,greedy_nms,,,,,
+calculator__01,8,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+calculator__01,,0.12,,,9,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+calculator__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+calculator__02,,,,,17,,,,,raw_proposals,,,,,
+calculator__02,,,0.92,,17,0.8,,10,,greedy_nms,,,,,
+calculator__02,16,,,0.43,17,,,,,dbscan_fusion,1,,,,0.5
+calculator__02,,0.12,,,17,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+calculator__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+calculator__03,,,,,13,,,,,raw_proposals,,,,,
+calculator__03,,,0.92,,13,0.8,,6,,greedy_nms,,,,,
+calculator__03,9,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+calculator__03,,0.12,,,13,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+calculator__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+telephone__01,,,,,19,,,,,raw_proposals,,,,,
+telephone__01,,,0.92,,19,0.8,,3,,greedy_nms,,,,,
+telephone__01,17,,,0.43,19,,,,,dbscan_fusion,1,,,,0.5
+telephone__01,,0.12,,,19,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+telephone__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+telephone__02,,,,,6,,,,,raw_proposals,,,,,
+telephone__02,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+telephone__02,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+telephone__02,,0.12,,,6,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+telephone__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+telephone__03,,,,,20,,,,,raw_proposals,,,,,
+telephone__03,,,0.92,,20,0.8,,6,,greedy_nms,,,,,
+telephone__03,13,,,0.43,20,,,,,dbscan_fusion,1,,,,0.5
+telephone__03,,0.12,,,20,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+telephone__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+telephone__04,,,,,14,,,,,raw_proposals,,,,,
+telephone__04,,,0.92,,14,0.8,,13,,greedy_nms,,,,,
+telephone__04,13,,,0.43,14,,,,,dbscan_fusion,1,,,,0.5
+telephone__04,,0.12,,,14,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+telephone__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+clock__01,,,,,8,,,,,raw_proposals,,,,,
+clock__01,,,0.92,,8,0.8,,3,,greedy_nms,,,,,
+clock__01,4,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+clock__01,,0.12,,,8,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+clock__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+clock__02,,,,,21,,,,,raw_proposals,,,,,
+clock__02,,,0.92,,21,0.8,,7,,greedy_nms,,,,,
+clock__02,14,,,0.43,21,,,,,dbscan_fusion,1,,,,0.5
+clock__02,,0.12,,,21,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+clock__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+clock__03,,,,,11,,,,,raw_proposals,,,,,
+clock__03,,,0.92,,11,0.8,,6,,greedy_nms,,,,,
+clock__03,7,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+clock__03,,0.12,,,11,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+clock__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+clock__04,,,,,17,,,,,raw_proposals,,,,,
+clock__04,,,0.92,,17,0.8,,12,,greedy_nms,,,,,
+clock__04,15,,,0.43,17,,,,,dbscan_fusion,1,,,,0.5
+clock__04,,0.12,,,17,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+clock__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+watch__01,,,,,11,,,,,raw_proposals,,,,,
+watch__01,,,0.92,,11,0.8,,2,,greedy_nms,,,,,
+watch__01,5,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+watch__01,,0.12,,,11,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+watch__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+watch__02,,,,,4,,,,,raw_proposals,,,,,
+watch__02,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+watch__02,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+watch__02,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+watch__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+watch__03,,,,,10,,,,,raw_proposals,,,,,
+watch__03,,,0.92,,10,0.8,,3,,greedy_nms,,,,,
+watch__03,9,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+watch__03,,0.12,,,10,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+watch__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+watch__04,,,,,1,,,,,raw_proposals,,,,,
+watch__04,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+watch__04,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+watch__04,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+watch__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+earphone__01,,,,,3,,,,,raw_proposals,,,,,
+earphone__01,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+earphone__01,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+earphone__01,,0.12,,,3,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+earphone__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+earphone__02,,,,,6,,,,,raw_proposals,,,,,
+earphone__02,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+earphone__02,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+earphone__02,,0.12,,,6,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+earphone__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+earphone__03,,,,,9,,,,,raw_proposals,,,,,
+earphone__03,,,0.92,,9,0.8,,7,,greedy_nms,,,,,
+earphone__03,8,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+earphone__03,,0.12,,,9,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+earphone__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+earphone__04,,,,,5,,,,,raw_proposals,,,,,
+earphone__04,,,0.92,,5,0.8,,4,,greedy_nms,,,,,
+earphone__04,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+earphone__04,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+earphone__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+fan__01,,,,,13,,,,,raw_proposals,,,,,
+fan__01,,,0.92,,13,0.8,,6,,greedy_nms,,,,,
+fan__01,7,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+fan__01,,0.12,,,13,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+fan__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+fan__02,,,,,11,,,,,raw_proposals,,,,,
+fan__02,,,0.92,,11,0.8,,6,,greedy_nms,,,,,
+fan__02,7,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+fan__02,,0.12,,,11,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+fan__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+fan__03,,,,,10,,,,,raw_proposals,,,,,
+fan__03,,,0.92,,10,0.8,,6,,greedy_nms,,,,,
+fan__03,5,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+fan__03,,0.12,,,10,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+fan__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+fan__04,,,,,5,,,,,raw_proposals,,,,,
+fan__04,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+fan__04,3,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+fan__04,,0.12,,,5,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+fan__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+lamp__01,,,,,7,,,,,raw_proposals,,,,,
+lamp__01,,,0.92,,7,0.8,,2,,greedy_nms,,,,,
+lamp__01,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+lamp__01,,0.12,,,7,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+lamp__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+lamp__02,,,,,3,,,,,raw_proposals,,,,,
+lamp__02,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+lamp__02,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+lamp__02,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+lamp__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+lamp__03,,,,,8,,,,,raw_proposals,,,,,
+lamp__03,,,0.92,,8,0.8,,5,,greedy_nms,,,,,
+lamp__03,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+lamp__03,,0.12,,,8,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+lamp__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+lamp__04,,,,,7,,,,,raw_proposals,,,,,
+lamp__04,,,0.92,,7,0.8,,1,,greedy_nms,,,,,
+lamp__04,1,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+lamp__04,,0.12,,,7,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+lamp__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+blender__01,,,,,8,,,,,raw_proposals,,,,,
+blender__01,,,0.92,,8,0.8,,3,,greedy_nms,,,,,
+blender__01,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+blender__01,,0.12,,,8,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+blender__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+blender__02,,,,,9,,,,,raw_proposals,,,,,
+blender__02,,,0.92,,9,0.8,,5,,greedy_nms,,,,,
+blender__02,4,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+blender__02,,0.12,,,9,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+blender__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+blender__03,,,,,13,,,,,raw_proposals,,,,,
+blender__03,,,0.92,,13,0.8,,3,,greedy_nms,,,,,
+blender__03,7,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+blender__03,,0.12,,,13,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+blender__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+blender__04,,,,,10,,,,,raw_proposals,,,,,
+blender__04,,,0.92,,10,0.8,,5,,greedy_nms,,,,,
+blender__04,4,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+blender__04,,0.12,,,10,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+blender__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+microwave_oven__01,,,,,11,,,,,raw_proposals,,,,,
+microwave_oven__01,,,0.92,,11,0.8,,5,,greedy_nms,,,,,
+microwave_oven__01,7,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+microwave_oven__01,,0.12,,,11,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+microwave_oven__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+microwave_oven__02,,,,,5,,,,,raw_proposals,,,,,
+microwave_oven__02,,,0.92,,5,0.8,,2,,greedy_nms,,,,,
+microwave_oven__02,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+microwave_oven__02,,0.12,,,5,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+microwave_oven__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+microwave_oven__03,,,,,11,,,,,raw_proposals,,,,,
+microwave_oven__03,,,0.92,,11,0.8,,4,,greedy_nms,,,,,
+microwave_oven__03,4,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+microwave_oven__03,,0.12,,,11,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+microwave_oven__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+microwave_oven__04,,,,,20,,,,,raw_proposals,,,,,
+microwave_oven__04,,,0.92,,20,0.8,,12,,greedy_nms,,,,,
+microwave_oven__04,14,,,0.43,20,,,,,dbscan_fusion,1,,,,0.5
+microwave_oven__04,,0.12,,,20,,4,,13,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+microwave_oven__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+kettle__01,,,,,4,,,,,raw_proposals,,,,,
+kettle__01,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+kettle__01,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+kettle__01,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+kettle__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+kettle__02,,,,,6,,,,,raw_proposals,,,,,
+kettle__02,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+kettle__02,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+kettle__02,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+kettle__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+kettle__03,,,,,9,,,,,raw_proposals,,,,,
+kettle__03,,,0.92,,9,0.8,,6,,greedy_nms,,,,,
+kettle__03,8,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+kettle__03,,0.12,,,9,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+kettle__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+kettle__04,,,,,10,,,,,raw_proposals,,,,,
+kettle__04,,,0.92,,10,0.8,,8,,greedy_nms,,,,,
+kettle__04,9,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+kettle__04,,0.12,,,10,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+kettle__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mouse_computer_equipment__01,,,,,7,,,,,raw_proposals,,,,,
+mouse_computer_equipment__01,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+mouse_computer_equipment__01,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+mouse_computer_equipment__01,,0.12,,,7,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mouse_computer_equipment__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mouse_computer_equipment__02,,,,,8,,,,,raw_proposals,,,,,
+mouse_computer_equipment__02,,,0.92,,8,0.8,,5,,greedy_nms,,,,,
+mouse_computer_equipment__02,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+mouse_computer_equipment__02,,0.12,,,8,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mouse_computer_equipment__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mouse_computer_equipment__03,,,,,6,,,,,raw_proposals,,,,,
+mouse_computer_equipment__03,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+mouse_computer_equipment__03,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+mouse_computer_equipment__03,,0.12,,,6,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mouse_computer_equipment__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mouse_computer_equipment__04,,,,,6,,,,,raw_proposals,,,,,
+mouse_computer_equipment__04,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+mouse_computer_equipment__04,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+mouse_computer_equipment__04,,0.12,,,6,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mouse_computer_equipment__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+chair__01,,,,,14,,,,,raw_proposals,,,,,
+chair__01,,,0.92,,14,0.8,,9,,greedy_nms,,,,,
+chair__01,10,,,0.43,14,,,,,dbscan_fusion,1,,,,0.5
+chair__01,,0.12,,,14,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+chair__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+chair__02,,,,,6,,,,,raw_proposals,,,,,
+chair__02,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+chair__02,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+chair__02,,0.12,,,6,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+chair__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+chair__03,,,,,20,,,,,raw_proposals,,,,,
+chair__03,,,0.92,,20,0.8,,12,,greedy_nms,,,,,
+chair__03,17,,,0.43,20,,,,,dbscan_fusion,1,,,,0.5
+chair__03,,0.12,,,20,,4,,12,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+chair__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+chair__04,,,,,13,,,,,raw_proposals,,,,,
+chair__04,,,0.92,,13,0.8,,9,,greedy_nms,,,,,
+chair__04,9,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+chair__04,,0.12,,,13,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+chair__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bench__01,,,,,6,,,,,raw_proposals,,,,,
+bench__01,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+bench__01,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+bench__01,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bench__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bench__02,,,,,8,,,,,raw_proposals,,,,,
+bench__02,,,0.92,,8,0.8,,3,,greedy_nms,,,,,
+bench__02,4,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+bench__02,,0.12,,,8,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bench__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bench__03,,,,,12,,,,,raw_proposals,,,,,
+bench__03,,,0.92,,12,0.8,,9,,greedy_nms,,,,,
+bench__03,9,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+bench__03,,0.12,,,12,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bench__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bench__04,,,,,17,,,,,raw_proposals,,,,,
+bench__04,,,0.92,,17,0.8,,8,,greedy_nms,,,,,
+bench__04,8,,,0.43,17,,,,,dbscan_fusion,1,,,,0.5
+bench__04,,0.12,,,17,,4,,11,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bench__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+stool__01,,,,,18,,,,,raw_proposals,,,,,
+stool__01,,,0.92,,18,0.8,,12,,greedy_nms,,,,,
+stool__01,11,,,0.43,18,,,,,dbscan_fusion,1,,,,0.5
+stool__01,,0.12,,,18,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+stool__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+stool__02,,,,,13,,,,,raw_proposals,,,,,
+stool__02,,,0.92,,13,0.8,,5,,greedy_nms,,,,,
+stool__02,7,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+stool__02,,0.12,,,13,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+stool__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+stool__03,,,,,12,,,,,raw_proposals,,,,,
+stool__03,,,0.92,,12,0.8,,5,,greedy_nms,,,,,
+stool__03,5,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+stool__03,,0.12,,,12,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+stool__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+stool__04,,,,,2,,,,,raw_proposals,,,,,
+stool__04,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+stool__04,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+stool__04,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+stool__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+table__01,,,,,14,,,,,raw_proposals,,,,,
+table__01,,,0.92,,14,0.8,,8,,greedy_nms,,,,,
+table__01,10,,,0.43,14,,,,,dbscan_fusion,1,,,,0.5
+table__01,,0.12,,,14,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+table__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+table__02,,,,,11,,,,,raw_proposals,,,,,
+table__02,,,0.92,,11,0.8,,7,,greedy_nms,,,,,
+table__02,8,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+table__02,,0.12,,,11,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+table__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+table__03,,,,,1,,,,,raw_proposals,,,,,
+table__03,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+table__03,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+table__03,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+table__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+table__04,,,,,10,,,,,raw_proposals,,,,,
+table__04,,,0.92,,10,0.8,,7,,greedy_nms,,,,,
+table__04,7,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+table__04,,0.12,,,10,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+table__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bottle__01,,,,,7,,,,,raw_proposals,,,,,
+bottle__01,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+bottle__01,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+bottle__01,,0.12,,,7,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bottle__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bottle__02,,,,,8,,,,,raw_proposals,,,,,
+bottle__02,,,0.92,,8,0.8,,4,,greedy_nms,,,,,
+bottle__02,4,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+bottle__02,,0.12,,,8,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bottle__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bottle__03,,,,,12,,,,,raw_proposals,,,,,
+bottle__03,,,0.92,,12,0.8,,8,,greedy_nms,,,,,
+bottle__03,9,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+bottle__03,,0.12,,,12,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bottle__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bottle__04,,,,,10,,,,,raw_proposals,,,,,
+bottle__04,,,0.92,,10,0.8,,6,,greedy_nms,,,,,
+bottle__04,6,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+bottle__04,,0.12,,,10,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bottle__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+jar__01,,,,,10,,,,,raw_proposals,,,,,
+jar__01,,,0.92,,10,0.8,,4,,greedy_nms,,,,,
+jar__01,8,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+jar__01,,0.12,,,10,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+jar__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+jar__02,,,,,11,,,,,raw_proposals,,,,,
+jar__02,,,0.92,,11,0.8,,5,,greedy_nms,,,,,
+jar__02,4,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+jar__02,,0.12,,,11,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+jar__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+jar__03,,,,,7,,,,,raw_proposals,,,,,
+jar__03,,,0.92,,7,0.8,,3,,greedy_nms,,,,,
+jar__03,4,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+jar__03,,0.12,,,7,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+jar__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+jar__04,,,,,6,,,,,raw_proposals,,,,,
+jar__04,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+jar__04,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+jar__04,,0.12,,,6,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+jar__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+can__01,,,,,11,,,,,raw_proposals,,,,,
+can__01,,,0.92,,11,0.8,,6,,greedy_nms,,,,,
+can__01,7,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+can__01,,0.12,,,11,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+can__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+can__02,,,,,11,,,,,raw_proposals,,,,,
+can__02,,,0.92,,11,0.8,,6,,greedy_nms,,,,,
+can__02,8,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+can__02,,0.12,,,11,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+can__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+can__03,,,,,7,,,,,raw_proposals,,,,,
+can__03,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+can__03,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+can__03,,0.12,,,7,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+can__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+can__04,,,,,13,,,,,raw_proposals,,,,,
+can__04,,,0.92,,13,0.8,,5,,greedy_nms,,,,,
+can__04,9,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+can__04,,0.12,,,13,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+can__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+cup__01,,,,,4,,,,,raw_proposals,,,,,
+cup__01,,,0.92,,4,0.8,,2,,greedy_nms,,,,,
+cup__01,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+cup__01,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cup__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+cup__02,,,,,3,,,,,raw_proposals,,,,,
+cup__02,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+cup__02,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+cup__02,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cup__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+cup__03,,,,,6,,,,,raw_proposals,,,,,
+cup__03,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+cup__03,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+cup__03,,0.12,,,6,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cup__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+cup__04,,,,,3,,,,,raw_proposals,,,,,
+cup__04,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+cup__04,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+cup__04,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+cup__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mug__01,,,,,6,,,,,raw_proposals,,,,,
+mug__01,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+mug__01,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+mug__01,,0.12,,,6,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mug__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mug__02,,,,,13,,,,,raw_proposals,,,,,
+mug__02,,,0.92,,13,0.8,,6,,greedy_nms,,,,,
+mug__02,10,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+mug__02,,0.12,,,13,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mug__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mug__03,,,,,9,,,,,raw_proposals,,,,,
+mug__03,,,0.92,,9,0.8,,5,,greedy_nms,,,,,
+mug__03,6,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+mug__03,,0.12,,,9,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mug__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+mug__04,,,,,5,,,,,raw_proposals,,,,,
+mug__04,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+mug__04,3,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+mug__04,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+mug__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+glass_drink_container__01,,,,,5,,,,,raw_proposals,,,,,
+glass_drink_container__01,,,0.92,,5,0.8,,2,,greedy_nms,,,,,
+glass_drink_container__01,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+glass_drink_container__01,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+glass_drink_container__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+glass_drink_container__02,,,,,4,,,,,raw_proposals,,,,,
+glass_drink_container__02,,,0.92,,4,0.8,,2,,greedy_nms,,,,,
+glass_drink_container__02,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+glass_drink_container__02,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+glass_drink_container__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+glass_drink_container__03,,,,,4,,,,,raw_proposals,,,,,
+glass_drink_container__03,,,0.92,,4,0.8,,2,,greedy_nms,,,,,
+glass_drink_container__03,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+glass_drink_container__03,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+glass_drink_container__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+glass_drink_container__04,,,,,7,,,,,raw_proposals,,,,,
+glass_drink_container__04,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+glass_drink_container__04,4,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+glass_drink_container__04,,0.12,,,7,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+glass_drink_container__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bowl__01,,,,,1,,,,,raw_proposals,,,,,
+bowl__01,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+bowl__01,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+bowl__01,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bowl__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bowl__02,,,,,1,,,,,raw_proposals,,,,,
+bowl__02,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+bowl__02,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+bowl__02,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bowl__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bowl__03,,,,,2,,,,,raw_proposals,,,,,
+bowl__03,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+bowl__03,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+bowl__03,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bowl__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bowl__04,,,,,5,,,,,raw_proposals,,,,,
+bowl__04,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+bowl__04,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+bowl__04,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bowl__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+handbag__01,,,,,7,,,,,raw_proposals,,,,,
+handbag__01,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+handbag__01,4,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+handbag__01,,0.12,,,7,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+handbag__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+handbag__02,,,,,20,,,,,raw_proposals,,,,,
+handbag__02,,,0.92,,20,0.8,,10,,greedy_nms,,,,,
+handbag__02,13,,,0.43,20,,,,,dbscan_fusion,1,,,,0.5
+handbag__02,,0.12,,,20,,4,,13,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+handbag__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+handbag__03,,,,,16,,,,,raw_proposals,,,,,
+handbag__03,,,0.92,,16,0.8,,10,,greedy_nms,,,,,
+handbag__03,11,,,0.43,16,,,,,dbscan_fusion,1,,,,0.5
+handbag__03,,0.12,,,16,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+handbag__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+handbag__04,,,,,11,,,,,raw_proposals,,,,,
+handbag__04,,,0.92,,11,0.8,,9,,greedy_nms,,,,,
+handbag__04,10,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+handbag__04,,0.12,,,11,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+handbag__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plastic_bag__01,,,,,4,,,,,raw_proposals,,,,,
+plastic_bag__01,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+plastic_bag__01,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+plastic_bag__01,,0.12,,,4,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plastic_bag__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plastic_bag__02,,,,,5,,,,,raw_proposals,,,,,
+plastic_bag__02,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+plastic_bag__02,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+plastic_bag__02,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plastic_bag__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plastic_bag__03,,,,,7,,,,,raw_proposals,,,,,
+plastic_bag__03,,,0.92,,7,0.8,,5,,greedy_nms,,,,,
+plastic_bag__03,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+plastic_bag__03,,0.12,,,7,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plastic_bag__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plastic_bag__04,,,,,10,,,,,raw_proposals,,,,,
+plastic_bag__04,,,0.92,,10,0.8,,4,,greedy_nms,,,,,
+plastic_bag__04,8,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+plastic_bag__04,,0.12,,,10,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plastic_bag__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+box__01,,,,,11,,,,,raw_proposals,,,,,
+box__01,,,0.92,,11,0.8,,6,,greedy_nms,,,,,
+box__01,8,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+box__01,,0.12,,,11,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+box__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+box__02,,,,,8,,,,,raw_proposals,,,,,
+box__02,,,0.92,,8,0.8,,6,,greedy_nms,,,,,
+box__02,7,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+box__02,,0.12,,,8,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+box__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+box__03,,,,,2,,,,,raw_proposals,,,,,
+box__03,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+box__03,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+box__03,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+box__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+box__04,,,,,1,,,,,raw_proposals,,,,,
+box__04,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+box__04,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+box__04,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+box__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+carton__01,,,,,13,,,,,raw_proposals,,,,,
+carton__01,,,0.92,,13,0.8,,7,,greedy_nms,,,,,
+carton__01,9,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+carton__01,,0.12,,,13,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+carton__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+carton__02,,,,,1,,,,,raw_proposals,,,,,
+carton__02,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+carton__02,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+carton__02,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+carton__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+carton__03,,,,,11,,,,,raw_proposals,,,,,
+carton__03,,,0.92,,11,0.8,,8,,greedy_nms,,,,,
+carton__03,9,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+carton__03,,0.12,,,11,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+carton__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+carton__04,,,,,17,,,,,raw_proposals,,,,,
+carton__04,,,0.92,,17,0.8,,10,,greedy_nms,,,,,
+carton__04,13,,,0.43,17,,,,,dbscan_fusion,1,,,,0.5
+carton__04,,0.12,,,17,,4,,14,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+carton__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+crate__01,,,,,6,,,,,raw_proposals,,,,,
+crate__01,,,0.92,,6,0.8,,5,,greedy_nms,,,,,
+crate__01,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+crate__01,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+crate__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+crate__02,,,,,12,,,,,raw_proposals,,,,,
+crate__02,,,0.92,,12,0.8,,8,,greedy_nms,,,,,
+crate__02,10,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+crate__02,,0.12,,,12,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+crate__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+crate__03,,,,,16,,,,,raw_proposals,,,,,
+crate__03,,,0.92,,16,0.8,,15,,greedy_nms,,,,,
+crate__03,15,,,0.43,16,,,,,dbscan_fusion,1,,,,0.5
+crate__03,,0.12,,,16,,4,,12,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+crate__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+crate__04,,,,,14,,,,,raw_proposals,,,,,
+crate__04,,,0.92,,14,0.8,,10,,greedy_nms,,,,,
+crate__04,12,,,0.43,14,,,,,dbscan_fusion,1,,,,0.5
+crate__04,,0.12,,,14,,4,,11,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+crate__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+basket__01,,,,,3,,,,,raw_proposals,,,,,
+basket__01,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+basket__01,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+basket__01,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+basket__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+basket__02,,,,,9,,,,,raw_proposals,,,,,
+basket__02,,,0.92,,9,0.8,,3,,greedy_nms,,,,,
+basket__02,7,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+basket__02,,0.12,,,9,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+basket__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+basket__03,,,,,9,,,,,raw_proposals,,,,,
+basket__03,,,0.92,,9,0.8,,5,,greedy_nms,,,,,
+basket__03,6,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+basket__03,,0.12,,,9,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+basket__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+basket__04,,,,,8,,,,,raw_proposals,,,,,
+basket__04,,,0.92,,8,0.8,,4,,greedy_nms,,,,,
+basket__04,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+basket__04,,0.12,,,8,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+basket__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bucket__01,,,,,9,,,,,raw_proposals,,,,,
+bucket__01,,,0.92,,9,0.8,,5,,greedy_nms,,,,,
+bucket__01,4,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+bucket__01,,0.12,,,9,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bucket__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bucket__02,,,,,1,,,,,raw_proposals,,,,,
+bucket__02,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+bucket__02,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+bucket__02,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bucket__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bucket__03,,,,,10,,,,,raw_proposals,,,,,
+bucket__03,,,0.92,,10,0.8,,6,,greedy_nms,,,,,
+bucket__03,7,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+bucket__03,,0.12,,,10,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bucket__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bucket__04,,,,,3,,,,,raw_proposals,,,,,
+bucket__04,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+bucket__04,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+bucket__04,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bucket__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+trash_can__01,,,,,15,,,,,raw_proposals,,,,,
+trash_can__01,,,0.92,,15,0.8,,9,,greedy_nms,,,,,
+trash_can__01,11,,,0.43,15,,,,,dbscan_fusion,1,,,,0.5
+trash_can__01,,0.12,,,15,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+trash_can__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+trash_can__02,,,,,6,,,,,raw_proposals,,,,,
+trash_can__02,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+trash_can__02,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+trash_can__02,,0.12,,,6,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+trash_can__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+trash_can__03,,,,,13,,,,,raw_proposals,,,,,
+trash_can__03,,,0.92,,13,0.8,,7,,greedy_nms,,,,,
+trash_can__03,12,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+trash_can__03,,0.12,,,13,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+trash_can__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+trash_can__04,,,,,7,,,,,raw_proposals,,,,,
+trash_can__04,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+trash_can__04,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+trash_can__04,,0.12,,,7,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+trash_can__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plate__01,,,,,3,,,,,raw_proposals,,,,,
+plate__01,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+plate__01,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+plate__01,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plate__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plate__02,,,,,4,,,,,raw_proposals,,,,,
+plate__02,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+plate__02,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+plate__02,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plate__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plate__03,,,,,3,,,,,raw_proposals,,,,,
+plate__03,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+plate__03,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+plate__03,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plate__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+plate__04,,,,,2,,,,,raw_proposals,,,,,
+plate__04,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+plate__04,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+plate__04,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+plate__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+tray__01,,,,,11,,,,,raw_proposals,,,,,
+tray__01,,,0.92,,11,0.8,,4,,greedy_nms,,,,,
+tray__01,10,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+tray__01,,0.12,,,11,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+tray__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+tray__02,,,,,1,,,,,raw_proposals,,,,,
+tray__02,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+tray__02,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+tray__02,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+tray__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+tray__03,,,,,1,,,,,raw_proposals,,,,,
+tray__03,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+tray__03,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+tray__03,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+tray__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+tray__04,,,,,5,,,,,raw_proposals,,,,,
+tray__04,,,0.92,,5,0.8,,2,,greedy_nms,,,,,
+tray__04,3,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+tray__04,,0.12,,,5,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+tray__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+vase__01,,,,,9,,,,,raw_proposals,,,,,
+vase__01,,,0.92,,9,0.8,,6,,greedy_nms,,,,,
+vase__01,6,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+vase__01,,0.12,,,9,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+vase__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+vase__02,,,,,6,,,,,raw_proposals,,,,,
+vase__02,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+vase__02,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+vase__02,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+vase__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+vase__03,,,,,6,,,,,raw_proposals,,,,,
+vase__03,,,0.92,,6,0.8,,5,,greedy_nms,,,,,
+vase__03,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+vase__03,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+vase__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+vase__04,,,,,7,,,,,raw_proposals,,,,,
+vase__04,,,0.92,,7,0.8,,2,,greedy_nms,,,,,
+vase__04,4,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+vase__04,,0.12,,,7,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+vase__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+car_automobile__01,,,,,19,,,,,raw_proposals,,,,,
+car_automobile__01,,,0.92,,19,0.8,,6,,greedy_nms,,,,,
+car_automobile__01,11,,,0.43,19,,,,,dbscan_fusion,1,,,,0.5
+car_automobile__01,,0.12,,,19,,4,,15,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+car_automobile__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+car_automobile__02,,,,,19,,,,,raw_proposals,,,,,
+car_automobile__02,,,0.92,,19,0.8,,11,,greedy_nms,,,,,
+car_automobile__02,15,,,0.43,19,,,,,dbscan_fusion,1,,,,0.5
+car_automobile__02,,0.12,,,19,,4,,16,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+car_automobile__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+car_automobile__03,,,,,26,,,,,raw_proposals,,,,,
+car_automobile__03,,,0.92,,26,0.8,,9,,greedy_nms,,,,,
+car_automobile__03,18,,,0.43,26,,,,,dbscan_fusion,1,,,,0.5
+car_automobile__03,,0.12,,,26,,4,,17,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+car_automobile__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+car_automobile__04,,,,,17,,,,,raw_proposals,,,,,
+car_automobile__04,,,0.92,,17,0.8,,10,,greedy_nms,,,,,
+car_automobile__04,12,,,0.43,17,,,,,dbscan_fusion,1,,,,0.5
+car_automobile__04,,0.12,,,17,,4,,14,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+car_automobile__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bicycle__01,,,,,11,,,,,raw_proposals,,,,,
+bicycle__01,,,0.92,,11,0.8,,5,,greedy_nms,,,,,
+bicycle__01,5,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+bicycle__01,,0.12,,,11,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bicycle__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bicycle__02,,,,,13,,,,,raw_proposals,,,,,
+bicycle__02,,,0.92,,13,0.8,,9,,greedy_nms,,,,,
+bicycle__02,10,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+bicycle__02,,0.12,,,13,,4,,12,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bicycle__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bicycle__03,,,,,12,,,,,raw_proposals,,,,,
+bicycle__03,,,0.92,,12,0.8,,7,,greedy_nms,,,,,
+bicycle__03,8,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+bicycle__03,,0.12,,,12,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bicycle__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+bicycle__04,,,,,12,,,,,raw_proposals,,,,,
+bicycle__04,,,0.92,,12,0.8,,9,,greedy_nms,,,,,
+bicycle__04,10,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+bicycle__04,,0.12,,,12,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+bicycle__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+book__01,,,,,4,,,,,raw_proposals,,,,,
+book__01,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+book__01,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+book__01,,0.12,,,4,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+book__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+book__02,,,,,2,,,,,raw_proposals,,,,,
+book__02,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+book__02,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+book__02,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+book__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+book__03,,,,,7,,,,,raw_proposals,,,,,
+book__03,,,0.92,,7,0.8,,3,,greedy_nms,,,,,
+book__03,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+book__03,,0.12,,,7,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+book__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+book__04,,,,,5,,,,,raw_proposals,,,,,
+book__04,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+book__04,3,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+book__04,,0.12,,,5,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+book__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+pen__01,,,,,6,,,,,raw_proposals,,,,,
+pen__01,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+pen__01,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+pen__01,,0.12,,,6,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+pen__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+pen__02,,,,,4,,,,,raw_proposals,,,,,
+pen__02,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+pen__02,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+pen__02,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+pen__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+pen__03,,,,,1,,,,,raw_proposals,,,,,
+pen__03,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+pen__03,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+pen__03,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+pen__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+wallet__01,,,,,4,,,,,raw_proposals,,,,,
+wallet__01,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+wallet__01,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+wallet__01,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+wallet__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+wallet__02,,,,,5,,,,,raw_proposals,,,,,
+wallet__02,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+wallet__02,2,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+wallet__02,,0.12,,,5,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+wallet__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+belt__01,,,,,4,,,,,raw_proposals,,,,,
+belt__01,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+belt__01,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+belt__01,,0.12,,,4,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+belt__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+belt__02,,,,,4,,,,,raw_proposals,,,,,
+belt__02,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+belt__02,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+belt__02,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+belt__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+belt__03,,,,,6,,,,,raw_proposals,,,,,
+belt__03,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+belt__03,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+belt__03,,0.12,,,6,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+belt__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+belt__04,,,,,17,,,,,raw_proposals,,,,,
+belt__04,,,0.92,,17,0.8,,9,,greedy_nms,,,,,
+belt__04,11,,,0.43,17,,,,,dbscan_fusion,1,,,,0.5
+belt__04,,0.12,,,17,,4,,12,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+belt__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+hat__01,,,,,8,,,,,raw_proposals,,,,,
+hat__01,,,0.92,,8,0.8,,4,,greedy_nms,,,,,
+hat__01,7,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+hat__01,,0.12,,,8,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+hat__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+hat__02,,,,,6,,,,,raw_proposals,,,,,
+hat__02,,,0.92,,6,0.8,,5,,greedy_nms,,,,,
+hat__02,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+hat__02,,0.12,,,6,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+hat__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+hat__03,,,,,6,,,,,raw_proposals,,,,,
+hat__03,,,0.92,,6,0.8,,4,,greedy_nms,,,,,
+hat__03,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+hat__03,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+hat__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+hat__04,,,,,6,,,,,raw_proposals,,,,,
+hat__04,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+hat__04,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+hat__04,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+hat__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+helmet__01,,,,,8,,,,,raw_proposals,,,,,
+helmet__01,,,0.92,,8,0.8,,5,,greedy_nms,,,,,
+helmet__01,5,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+helmet__01,,0.12,,,8,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+helmet__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+helmet__02,,,,,11,,,,,raw_proposals,,,,,
+helmet__02,,,0.92,,11,0.8,,8,,greedy_nms,,,,,
+helmet__02,10,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+helmet__02,,0.12,,,11,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+helmet__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+helmet__03,,,,,4,,,,,raw_proposals,,,,,
+helmet__03,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+helmet__03,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+helmet__03,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+helmet__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+helmet__04,,,,,11,,,,,raw_proposals,,,,,
+helmet__04,,,0.92,,11,0.8,,9,,greedy_nms,,,,,
+helmet__04,10,,,0.43,11,,,,,dbscan_fusion,1,,,,0.5
+helmet__04,,0.12,,,11,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+helmet__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+shoe__01,,,,,5,,,,,raw_proposals,,,,,
+shoe__01,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+shoe__01,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+shoe__01,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+shoe__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+shoe__02,,,,,10,,,,,raw_proposals,,,,,
+shoe__02,,,0.92,,10,0.8,,7,,greedy_nms,,,,,
+shoe__02,8,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+shoe__02,,0.12,,,10,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+shoe__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+shoe__03,,,,,2,,,,,raw_proposals,,,,,
+shoe__03,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+shoe__03,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+shoe__03,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+shoe__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+shoe__04,,,,,7,,,,,raw_proposals,,,,,
+shoe__04,,,0.92,,7,0.8,,5,,greedy_nms,,,,,
+shoe__04,6,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+shoe__04,,0.12,,,7,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+shoe__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+slipper_footwear__01,,,,,3,,,,,raw_proposals,,,,,
+slipper_footwear__01,,,0.92,,3,0.8,,1,,greedy_nms,,,,,
+slipper_footwear__01,1,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+slipper_footwear__01,,0.12,,,3,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+slipper_footwear__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scarf__01,,,,,9,,,,,raw_proposals,,,,,
+scarf__01,,,0.92,,9,0.8,,4,,greedy_nms,,,,,
+scarf__01,6,,,0.43,9,,,,,dbscan_fusion,1,,,,0.5
+scarf__01,,0.12,,,9,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scarf__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scarf__02,,,,,10,,,,,raw_proposals,,,,,
+scarf__02,,,0.92,,10,0.8,,7,,greedy_nms,,,,,
+scarf__02,9,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+scarf__02,,0.12,,,10,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scarf__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scarf__03,,,,,22,,,,,raw_proposals,,,,,
+scarf__03,,,0.92,,22,0.8,,11,,greedy_nms,,,,,
+scarf__03,14,,,0.43,22,,,,,dbscan_fusion,1,,,,0.5
+scarf__03,,0.12,,,22,,4,,12,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scarf__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scarf__04,,,,,2,,,,,raw_proposals,,,,,
+scarf__04,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+scarf__04,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+scarf__04,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scarf__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+sweater__01,,,,,15,,,,,raw_proposals,,,,,
+sweater__01,,,0.92,,15,0.8,,9,,greedy_nms,,,,,
+sweater__01,11,,,0.43,15,,,,,dbscan_fusion,1,,,,0.5
+sweater__01,,0.12,,,15,,4,,10,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+sweater__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+sweater__02,,,,,10,,,,,raw_proposals,,,,,
+sweater__02,,,0.92,,10,0.8,,5,,greedy_nms,,,,,
+sweater__02,6,,,0.43,10,,,,,dbscan_fusion,1,,,,0.5
+sweater__02,,0.12,,,10,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+sweater__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+sweater__03,,,,,2,,,,,raw_proposals,,,,,
+sweater__03,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+sweater__03,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+sweater__03,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+sweater__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+sweater__04,,,,,6,,,,,raw_proposals,,,,,
+sweater__04,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+sweater__04,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+sweater__04,,0.12,,,6,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+sweater__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+towel__01,,,,,5,,,,,raw_proposals,,,,,
+towel__01,,,0.92,,5,0.8,,4,,greedy_nms,,,,,
+towel__01,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+towel__01,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+towel__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+towel__02,,,,,8,,,,,raw_proposals,,,,,
+towel__02,,,0.92,,8,0.8,,4,,greedy_nms,,,,,
+towel__02,7,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+towel__02,,0.12,,,8,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+towel__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+towel__03,,,,,4,,,,,raw_proposals,,,,,
+towel__03,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+towel__03,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+towel__03,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+towel__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+towel__04,,,,,2,,,,,raw_proposals,,,,,
+towel__04,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+towel__04,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+towel__04,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+towel__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+soap__01,,,,,8,,,,,raw_proposals,,,,,
+soap__01,,,0.92,,8,0.8,,5,,greedy_nms,,,,,
+soap__01,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+soap__01,,0.12,,,8,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+soap__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+soap__02,,,,,3,,,,,raw_proposals,,,,,
+soap__02,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+soap__02,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+soap__02,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+soap__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+screwdriver__01,,,,,2,,,,,raw_proposals,,,,,
+screwdriver__01,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+screwdriver__01,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+screwdriver__01,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+screwdriver__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+broom__01,,,,,5,,,,,raw_proposals,,,,,
+broom__01,,,0.92,,5,0.8,,2,,greedy_nms,,,,,
+broom__01,3,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+broom__01,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+broom__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+broom__02,,,,,2,,,,,raw_proposals,,,,,
+broom__02,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+broom__02,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+broom__02,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+broom__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+broom__03,,,,,8,,,,,raw_proposals,,,,,
+broom__03,,,0.92,,8,0.8,,3,,greedy_nms,,,,,
+broom__03,3,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+broom__03,,0.12,,,8,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+broom__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+hammer__01,,,,,12,,,,,raw_proposals,,,,,
+hammer__01,,,0.92,,12,0.8,,8,,greedy_nms,,,,,
+hammer__01,10,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+hammer__01,,0.12,,,12,,4,,9,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+hammer__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+hammer__02,,,,,1,,,,,raw_proposals,,,,,
+hammer__02,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+hammer__02,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+hammer__02,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+hammer__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+hammer__03,,,,,8,,,,,raw_proposals,,,,,
+hammer__03,,,0.92,,8,0.8,,4,,greedy_nms,,,,,
+hammer__03,5,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+hammer__03,,0.12,,,8,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+hammer__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+knife__01,,,,,2,,,,,raw_proposals,,,,,
+knife__01,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+knife__01,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+knife__01,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+knife__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+knife__02,,,,,6,,,,,raw_proposals,,,,,
+knife__02,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+knife__02,5,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+knife__02,,0.12,,,6,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+knife__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+knife__03,,,,,1,,,,,raw_proposals,,,,,
+knife__03,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+knife__03,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+knife__03,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+knife__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+knife__04,,,,,3,,,,,raw_proposals,,,,,
+knife__04,,,0.92,,3,0.8,,2,,greedy_nms,,,,,
+knife__04,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+knife__04,,0.12,,,3,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+knife__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scissors__01,,,,,8,,,,,raw_proposals,,,,,
+scissors__01,,,0.92,,8,0.8,,4,,greedy_nms,,,,,
+scissors__01,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+scissors__01,,0.12,,,8,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scissors__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scissors__02,,,,,7,,,,,raw_proposals,,,,,
+scissors__02,,,0.92,,7,0.8,,3,,greedy_nms,,,,,
+scissors__02,4,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+scissors__02,,0.12,,,7,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scissors__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scissors__03,,,,,8,,,,,raw_proposals,,,,,
+scissors__03,,,0.92,,8,0.8,,3,,greedy_nms,,,,,
+scissors__03,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+scissors__03,,0.12,,,8,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scissors__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+scissors__04,,,,,13,,,,,raw_proposals,,,,,
+scissors__04,,,0.92,,13,0.8,,5,,greedy_nms,,,,,
+scissors__04,9,,,0.43,13,,,,,dbscan_fusion,1,,,,0.5
+scissors__04,,0.12,,,13,,4,,8,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+scissors__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+ladder__01,,,,,7,,,,,raw_proposals,,,,,
+ladder__01,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+ladder__01,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+ladder__01,,0.12,,,7,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+ladder__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+ladder__02,,,,,12,,,,,raw_proposals,,,,,
+ladder__02,,,0.92,,12,0.8,,8,,greedy_nms,,,,,
+ladder__02,8,,,0.43,12,,,,,dbscan_fusion,1,,,,0.5
+ladder__02,,0.12,,,12,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+ladder__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+ladder__03,,,,,4,,,,,raw_proposals,,,,,
+ladder__03,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+ladder__03,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+ladder__03,,0.12,,,4,,4,,3,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+ladder__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+ladder__04,,,,,2,,,,,raw_proposals,,,,,
+ladder__04,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+ladder__04,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+ladder__04,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+ladder__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+guitar__01,,,,,7,,,,,raw_proposals,,,,,
+guitar__01,,,0.92,,7,0.8,,5,,greedy_nms,,,,,
+guitar__01,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+guitar__01,,0.12,,,7,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+guitar__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+guitar__02,,,,,5,,,,,raw_proposals,,,,,
+guitar__02,,,0.92,,5,0.8,,3,,greedy_nms,,,,,
+guitar__02,4,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+guitar__02,,0.12,,,5,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+guitar__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+guitar__03,,,,,4,,,,,raw_proposals,,,,,
+guitar__03,,,0.92,,4,0.8,,3,,greedy_nms,,,,,
+guitar__03,3,,,0.43,4,,,,,dbscan_fusion,1,,,,0.5
+guitar__03,,0.12,,,4,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+guitar__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+guitar__04,,,,,2,,,,,raw_proposals,,,,,
+guitar__04,,,0.92,,2,0.8,,1,,greedy_nms,,,,,
+guitar__04,1,,,0.43,2,,,,,dbscan_fusion,1,,,,0.5
+guitar__04,,0.12,,,2,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+guitar__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+pan_for_cooking__01,,,,,1,,,,,raw_proposals,,,,,
+pan_for_cooking__01,,,0.92,,1,0.8,,0,,greedy_nms,,,,,
+pan_for_cooking__01,0,,,0.43,1,,,,,dbscan_fusion,1,,,,0.5
+pan_for_cooking__01,,0.12,,,1,,4,,1,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+pan_for_cooking__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+pan_for_cooking__02,,,,,7,,,,,raw_proposals,,,,,
+pan_for_cooking__02,,,0.92,,7,0.8,,2,,greedy_nms,,,,,
+pan_for_cooking__02,3,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+pan_for_cooking__02,,0.12,,,7,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+pan_for_cooking__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+pan_for_cooking__03,,,,,7,,,,,raw_proposals,,,,,
+pan_for_cooking__03,,,0.92,,7,0.8,,4,,greedy_nms,,,,,
+pan_for_cooking__03,6,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+pan_for_cooking__03,,0.12,,,7,,4,,5,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+pan_for_cooking__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+pan_for_cooking__04,,,,,3,,,,,raw_proposals,,,,,
+pan_for_cooking__04,,,0.92,,3,0.8,,1,,greedy_nms,,,,,
+pan_for_cooking__04,2,,,0.43,3,,,,,dbscan_fusion,1,,,,0.5
+pan_for_cooking__04,,0.12,,,3,,4,,2,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+pan_for_cooking__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+spoon__01,,,,,8,,,,,raw_proposals,,,,,
+spoon__01,,,0.92,,8,0.8,,3,,greedy_nms,,,,,
+spoon__01,6,,,0.43,8,,,,,dbscan_fusion,1,,,,0.5
+spoon__01,,0.12,,,8,,4,,7,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+spoon__01,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+spoon__02,,,,,5,,,,,raw_proposals,,,,,
+spoon__02,,,0.92,,5,0.8,,2,,greedy_nms,,,,,
+spoon__02,3,,,0.43,5,,,,,dbscan_fusion,1,,,,0.5
+spoon__02,,0.12,,,5,,4,,4,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+spoon__02,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+spoon__03,,,,,6,,,,,raw_proposals,,,,,
+spoon__03,,,0.92,,6,0.8,,3,,greedy_nms,,,,,
+spoon__03,4,,,0.43,6,,,,,dbscan_fusion,1,,,,0.5
+spoon__03,,0.12,,,6,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+spoon__03,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,
+spoon__04,,,,,7,,,,,raw_proposals,,,,,
+spoon__04,,,0.92,,7,0.8,,3,,greedy_nms,,,,,
+spoon__04,5,,,0.43,7,,,,,dbscan_fusion,1,,,,0.5
+spoon__04,,0.12,,,7,,4,,6,local_pairwise_crf,,1.1,local four-neighbour Potts CRF; not DenseCRF,,
+spoon__04,,,,,,,,,,hpid_split_a3,,,,stored frozen v0.3.1 public Part-ID map,

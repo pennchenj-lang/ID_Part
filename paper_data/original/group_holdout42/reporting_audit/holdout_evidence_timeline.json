@@ -1,0 +1,45 @@
+{
+  "format": "HPID-Split v0.3.1 holdout evidence timeline",
+  "format_version": "0.1.0",
+  "registration_status": "The protocol and slots were frozen locally before materialization and inference, but they were not deposited in an independent public registry before execution.",
+  "permitted_manuscript_term": "prespecified single-pass blind holdout",
+  "prohibited_manuscript_term": "externally preregistered holdout",
+  "events": [
+    {
+      "event": "algorithm release freeze",
+      "commit": "be543003632fa739d0b63e9acbffb8d91d99b84a",
+      "tree": "7eb0d8cc4b1c08f0a88beaeb26d15980288a0a12"
+    },
+    {
+      "event": "local protocol and 42 slots frozen",
+      "time": "2026-08-24T17:35:42.153037+00:00",
+      "artifact": "00_preregistration.json",
+      "sha256": "3d9d0191646fc2724f47976513a1c4f6a229c9f87866e3edc09527efd7205d33"
+    },
+    {
+      "event": "inputs and sealed references materialized",
+      "time": "2026-08-24T17:37:31.146693+00:00",
+      "input_manifest_sha256": "0ad203424f5548677511a2689f1df42ba53aaf7d74509cafbddd2b5130565d7e",
+      "sealed_reference_manifest_sha256": "067d529a2ccb0b956cbcab40d93bdde8434ff62023ddfc0b349d60ac6b3f3cf0"
+    },
+    {
+      "event": "all blind inference completed",
+      "time": "2026-08-24T18:00:57.773909+00:00",
+      "manifest_sha256": "a06f40702762eef744c5e45eb1e73f5e20cd2e15c50fae8f764bd06ea7e3a572",
+      "attempts_per_case": 1
+    },
+    {
+      "event": "sealed references opened for scoring",
+      "time": "2026-08-24T18:02:11.654456+00:00",
+      "summary_sha256": "20063a3a1a6c09e1e0ef84e8d6fd48ed0175a1b8c46c4094b720cbe597014b49"
+    },
+    {
+      "event": "submission reporting audit derived without rerunning predictions",
+      "time": "post-score; archived by the evidence commit",
+      "strict_summary_sha256": "f4b270dc8aead7603c44a76649eef2a8aa6d10db355926c4d568defc046dd399",
+      "materialization_audit_sha256": "a09d282f02a9328497b1d34e45fe2ea49d909bc9fe20c46d292049422c4dd0ec"
+    }
+  ],
+  "reference_unseal_check": true,
+  "evidence_archive_note": "The Git evidence commit archives these records after execution. Its commit time must not be presented as proof of independent preregistration."
+}

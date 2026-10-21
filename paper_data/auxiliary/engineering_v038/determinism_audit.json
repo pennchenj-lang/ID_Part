@@ -1,0 +1,17 @@
+{
+  "format": "HPID-Split v0.3.8 full-regroup determinism audit",
+  "case_count": 226,
+  "core_files_per_case": [
+    "part_id_map.tiff",
+    "parts.json",
+    "group_id_map.tiff",
+    "groups.json",
+    "semantic_ids.png",
+    "taxonomy.json"
+  ],
+  "byte_identical_core_file_count": 1356,
+  "expected_core_file_count": 1356,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "all_pass": true
+}

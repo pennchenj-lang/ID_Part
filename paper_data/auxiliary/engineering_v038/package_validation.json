@@ -1,0 +1,1365 @@
+{
+  "format": "HPID-Split v0.3.8 frozen-package validation",
+  "case_count": 226,
+  "valid_count": 226,
+  "invalid_count": 0,
+  "regroup_summary_version": "0.3.8",
+  "rows": [
+    {
+      "case_id": "basket__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "basket__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "basket__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "basket__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "belt__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "belt__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "belt__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "belt__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bench__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bench__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bench__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bench__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bicycle__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bicycle__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bicycle__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bicycle__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "blender__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "blender__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "blender__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "blender__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "book__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "book__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "book__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "book__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bottle__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bottle__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bottle__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bottle__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bowl__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bowl__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bowl__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bowl__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "box__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "box__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "box__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "box__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "broom__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "broom__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "broom__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bucket__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bucket__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bucket__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "bucket__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "calculator__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "calculator__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "calculator__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "can__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "can__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "can__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "can__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "car_automobile__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "car_automobile__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "car_automobile__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "car_automobile__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "carton__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "carton__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "carton__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "carton__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cellular_telephone__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cellular_telephone__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cellular_telephone__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cellular_telephone__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "chair__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "chair__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "chair__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "chair__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "clock__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "clock__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "clock__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "clock__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "crate__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "crate__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "crate__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "crate__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cup__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cup__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cup__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "cup__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "earphone__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "earphone__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "earphone__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "earphone__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "fan__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "fan__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "fan__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "fan__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "glass_drink_container__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "glass_drink_container__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "glass_drink_container__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "glass_drink_container__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "guitar__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "guitar__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "guitar__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "guitar__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "hammer__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "hammer__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "hammer__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "handbag__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "handbag__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "handbag__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "handbag__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "hat__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "hat__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "hat__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "hat__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "helmet__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "helmet__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "helmet__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "helmet__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "jar__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "jar__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "jar__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "jar__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "kettle__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "kettle__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "kettle__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "kettle__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "knife__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "knife__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "knife__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "knife__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "ladder__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "ladder__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "ladder__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "ladder__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "lamp__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "lamp__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "lamp__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "lamp__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "laptop_computer__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "laptop_computer__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "laptop_computer__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "laptop_computer__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "microwave_oven__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "microwave_oven__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "microwave_oven__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "microwave_oven__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mouse_computer_equipment__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mouse_computer_equipment__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mouse_computer_equipment__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mouse_computer_equipment__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mug__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mug__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mug__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "mug__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "pan_for_cooking__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "pan_for_cooking__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "pan_for_cooking__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "pan_for_cooking__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "pen__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "pen__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "pen__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plastic_bag__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plastic_bag__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plastic_bag__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plastic_bag__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plate__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plate__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plate__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "plate__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "remote_control__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "remote_control__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "remote_control__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "remote_control__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scarf__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scarf__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scarf__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scarf__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scissors__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scissors__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scissors__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "scissors__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "screwdriver__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "shoe__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "shoe__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "shoe__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "shoe__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "slipper_footwear__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "soap__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "soap__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "spoon__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "spoon__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "spoon__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "spoon__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "stool__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "stool__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "stool__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "stool__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "sweater__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "sweater__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "sweater__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "sweater__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "table__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "table__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "table__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "table__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "telephone__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "telephone__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "telephone__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "telephone__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "television_set__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "television_set__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "television_set__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "television_set__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "towel__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "towel__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "towel__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "towel__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "trash_can__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "trash_can__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "trash_can__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "trash_can__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "tray__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "tray__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "tray__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "tray__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "vase__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "vase__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "vase__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "vase__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "wallet__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "wallet__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "watch__01",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "watch__02",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "watch__03",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    },
+    {
+      "case_id": "watch__04",
+      "valid": true,
+      "algorithm_version": "0.3.8",
+      "errors": []
+    }
+  ]
+}

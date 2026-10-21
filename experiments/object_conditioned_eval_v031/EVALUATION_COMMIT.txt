@@ -1,4 +1,0 @@
-algorithm_release_tag: v0.3.0
-algorithm_release_commit: c0f15f72842d7b9239f39c7dcac2f08c95d4923f
-evaluation_evidence_commit: 77be4ec0e9ab26f44c55cba29b136ccf99a0662c
-note: The release tag was not moved. The later commit freezes evaluation scripts, paired baseline uncertainty, identity-layer audits, and compact paper evidence.

@@ -1,0 +1,14 @@
+{
+  "all_inference_completed_before_scoring": true,
+  "release_commit_matches": true,
+  "preregistered_case_count_matches": true,
+  "successful_case_count": 42,
+  "valid_blind_packages": 42,
+  "attempts_per_case": 1,
+  "prior_manifest_hashes_unchanged": true,
+  "object_overlap_count": 0,
+  "source_image_overlap_count": 0,
+  "reference_paths_absent_from_inference": true,
+  "summary_sha256": "20063a3a1a6c09e1e0ef84e8d6fd48ed0175a1b8c46c4094b720cbe597014b49",
+  "all_pass": true
+}

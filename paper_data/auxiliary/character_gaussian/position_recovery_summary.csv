@@ -1,0 +1,2 @@
+﻿role_count,part_count,semantic_reference_count,fallback_reference_count,crop_overlap_fraction_mean,reference_mask_iou_mean,reference_mask_recall_mean,masked_template_score_mean
+10,182,175,7,0.8646297594434393,0.8368167168053832,0.967753395110194,0.15986417346762938

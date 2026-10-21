@@ -1,0 +1,23 @@
+{
+  "format": "HPID-Split frozen routing-correctness audit",
+  "format_version": "1.0.0",
+  "case_count": 37,
+  "methods": [
+    "raw_proposals",
+    "greedy_nms",
+    "dbscan_fusion",
+    "local_pairwise_crf",
+    "hpid_split_group_ids"
+  ],
+  "thresholds": [
+    0.25,
+    0.5
+  ],
+  "definitions": {
+    "unique_and_correct": "Exactly one semantic match and its mask reaches the IoU threshold.",
+    "wrong_unique": "Exactly one semantic match but its mask is below the IoU threshold.",
+    "correct_in_review_set_given_ambiguous": "Among queries with multiple semantic matches, at least one match reaches the IoU threshold.",
+    "unresolved": "No exported identity matches the semantic query."
+  },
+  "reference_usage": "Reference part masks are used only for this post-hoc routing audit and were not supplied to proposal generation, HPID fusion, or semantic query resolution."
+}

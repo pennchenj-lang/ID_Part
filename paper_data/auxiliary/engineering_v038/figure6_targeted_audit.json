@@ -1,0 +1,188 @@
+{
+  "figure": "Fig6_v038_cross_category_physical_groups.png",
+  "selection_role": "qualitative_legibility_audit",
+  "selection_is_statistical_evidence": false,
+  "quantitative_metrics_reused_from_frozen_outputs": false,
+  "manual_mask_retouching": false,
+  "colors_are_case_local_ids": true,
+  "illumination_regions_are_evidence_only": true,
+  "forbidden_photometric_public_id_terms": [
+    "highlight",
+    "shadow",
+    "shading",
+    "specular",
+    "illumination",
+    "gradient",
+    "visual_panel",
+    "color_patch",
+    "texture_patch"
+  ],
+  "forbidden_photometric_public_ids_detected": [],
+  "photometric_public_id_check_pass": true,
+  "expected_physical_inventory_failures": [],
+  "expected_physical_inventory_check_pass": true,
+  "complete_root_ownership_failures": [],
+  "complete_root_ownership_check_pass": true,
+  "cases": [
+    {
+      "domain": "Container",
+      "case_id": "bottle__04",
+      "group_count": 3,
+      "groups": [
+        "container_body",
+        "container_label",
+        "container_lid"
+      ],
+      "expected_groups": [
+        "container_body",
+        "container_label",
+        "container_lid"
+      ],
+      "expected_group_check_pass": true,
+      "complete_root_ownership": true,
+      "files": {
+        "source_sha256": "1dbf90aced3adf1ffc3af1cda2c439f6f2ae6e8e5ddadf8b6357e38967610790",
+        "group_map_sha256": "d03c94cb32e41acc219910b43ae92b0a57f3d7d5889e2e5c9d464aa065d8bddf",
+        "group_id_map_sha256": "64317fab450c6d7ef8c37fb4ee60ce643d1827fc4630dc2c63b6e25cea4d863a",
+        "part_id_map_sha256": "703d61be16f8264724dd9ba98b7872e431680a812c53fbd66ea73ea4eb9535c6",
+        "groups_sha256": "5db5b1bfcca6ebf6ae05904e01cdc4165fcccd56389f2afba1e79d37c5a529ab"
+      }
+    },
+    {
+      "domain": "Daily object",
+      "case_id": "soap__01",
+      "group_count": 4,
+      "groups": [
+        "daily_object_body",
+        "daily_object_cap",
+        "daily_object_label",
+        "daily_object_neck"
+      ],
+      "expected_groups": [
+        "daily_object_body",
+        "daily_object_cap",
+        "daily_object_label",
+        "daily_object_neck"
+      ],
+      "expected_group_check_pass": true,
+      "complete_root_ownership": true,
+      "files": {
+        "source_sha256": "e62474a1713870094492b9c29ebaf832404af776a96d172aa0eb3b0d203f1ea1",
+        "group_map_sha256": "7a6bb144720ae71bb71657fffea482057945e4102575cf92c6a7b343040ad01e",
+        "group_id_map_sha256": "26fb80b2000e9ed60aac2304f4b8fea522997234bb8ef2afe3c133d4a52472be",
+        "part_id_map_sha256": "32e2b7abb5a9f0874aeeaf78534d7734d7a43de1e21c17a4ebe64bf1c5403f24",
+        "groups_sha256": "26833764d92fc82e1a785976d240e7f33ae52ee4a11684afc33447651cededde"
+      }
+    },
+    {
+      "domain": "Device",
+      "case_id": "kettle__03",
+      "group_count": 3,
+      "groups": [
+        "device_body",
+        "device_base",
+        "device_handle"
+      ],
+      "expected_groups": [
+        "device_base",
+        "device_body",
+        "device_handle"
+      ],
+      "expected_group_check_pass": true,
+      "complete_root_ownership": true,
+      "files": {
+        "source_sha256": "3f2b5cfb2a3f7d6ee0da09dfb312a0dd71237b2c9b04419a3988aed8fe3a0bc6",
+        "group_map_sha256": "57c0e2640db2e70b7bab9db23dceb98abbafe6ee9796af656e9f36ec20f754c8",
+        "group_id_map_sha256": "80cc9dacdb789ea2f24b3991218a934f3de005cd6421ba445c0bdd8719aea627",
+        "part_id_map_sha256": "c3a777db9322cd7656ab39a7fca0a8d352aa63937a014b5220aaff2d05332f3b",
+        "groups_sha256": "c3aba8fa71af3e29091d0cb9c6789c119aac8f45e89ee8dc35269b1f05855c86"
+      }
+    },
+    {
+      "domain": "Furniture",
+      "case_id": "chair__04",
+      "group_count": 3,
+      "groups": [
+        "furniture_frame",
+        "furniture_backrest",
+        "furniture_seat"
+      ],
+      "expected_groups": [
+        "furniture_backrest",
+        "furniture_frame",
+        "furniture_seat"
+      ],
+      "expected_group_check_pass": true,
+      "complete_root_ownership": true,
+      "files": {
+        "source_sha256": "c168cf4ce53bb2bba4f3f597e78506065874427d769a759e36ca8117e1b82c42",
+        "group_map_sha256": "a4a3b5646e14d6d212a6eb8531b38cc091b58a17f51d8b206aae598ed87e6712",
+        "group_id_map_sha256": "bc8cc80d28e51d6e3169aafa6633764be56fbfc60def718f8f336090992dfcf6",
+        "part_id_map_sha256": "e8ba7145a0efbb2c99d64809e8a5d211e4ef50d8f3d2deba0157428697c177fd",
+        "groups_sha256": "6de582ea9e0105e7d1775db9a52ad01022eb52cb51145e44c8b7b46e23bf301f"
+      }
+    },
+    {
+      "domain": "Tool / prop",
+      "case_id": "scissors__04",
+      "group_count": 3,
+      "groups": [
+        "tool_prop_handle",
+        "tool_prop_blade",
+        "tool_prop_pivot"
+      ],
+      "expected_groups": [
+        "tool_prop_blade",
+        "tool_prop_handle",
+        "tool_prop_pivot"
+      ],
+      "expected_group_check_pass": true,
+      "complete_root_ownership": true,
+      "files": {
+        "source_sha256": "29e9358e2afda59455ef4ed74db3d818c393215c54f0d44090b45999a4ebab9f",
+        "group_map_sha256": "199475816cb03bc1fc42a9c0fe287de3c9d91343e989f6c1121e2d4bc32ceb51",
+        "group_id_map_sha256": "f8b0158b6d8586156a971dadada96a58f02bcfa2a58d28ebeb23da50f3755c0d",
+        "part_id_map_sha256": "e2a0cdaa9cbfdef47a1bbd05efa62439e62c7f4084a4648937a0d7cce17f0f05",
+        "groups_sha256": "0b5ae14bcf1898c001d71c8ccf82badce22da4b4109bd89ebbd0188846ceded0"
+      }
+    },
+    {
+      "domain": "Vehicle",
+      "case_id": "car_automobile__02",
+      "group_count": 11,
+      "groups": [
+        "vehicle_body",
+        "vehicle_bumper",
+        "vehicle_grille",
+        "vehicle_headlight",
+        "vehicle_headlight",
+        "vehicle_hood",
+        "vehicle_mirror",
+        "vehicle_roof",
+        "vehicle_wheel",
+        "vehicle_wheel",
+        "vehicle_windshield"
+      ],
+      "expected_groups": [
+        "vehicle_body",
+        "vehicle_bumper",
+        "vehicle_grille",
+        "vehicle_headlight",
+        "vehicle_hood",
+        "vehicle_mirror",
+        "vehicle_roof",
+        "vehicle_wheel",
+        "vehicle_windshield"
+      ],
+      "expected_group_check_pass": true,
+      "complete_root_ownership": true,
+      "files": {
+        "source_sha256": "580c658594865ef3968fb615dabdcbc1dec5ec5c27a9fd2d753b0fc99b3d42fd",
+        "group_map_sha256": "f968d8cc1ae7c059bf9ae189fcc7c01e943614202dd7c23f2364d36e9d6a0618",
+        "group_id_map_sha256": "f37390ce80a51ecbf17b58144942f71fde407542027e55a7ecc89a1c5bac7105",
+        "part_id_map_sha256": "98f844eee669e7c901692e1cfc6f032825b0ac296d3835d7607feff4df928c7a",
+        "groups_sha256": "2a87f9a52f837a76d2964d2a5ba45837966d91969e71f1701b4ebc37c129abef"
+      }
+    }
+  ]
+}

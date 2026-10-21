@@ -1,0 +1,715 @@
+{
+  "materialized_utc": "2026-08-24T17:37:31.146693+00:00",
+  "case_count": 42,
+  "input_manifest_sha256": "0ad203424f5548677511a2689f1df42ba53aaf7d74509cafbddd2b5130565d7e",
+  "sealed_reference_manifest_sha256": "067d529a2ccb0b956cbcab40d93bdde8434ff62023ddfc0b349d60ac6b3f3cf0",
+  "preregistration_sha256": "3d9d0191646fc2724f47976513a1c4f6a229c9f87866e3edc09527efd7205d33",
+  "fallback_count": 15,
+  "fallbacks": [
+    {
+      "case_id": "calculator__u01",
+      "preregistered_object_category": "calculator",
+      "actual_object_category": "cellular_telephone",
+      "preregistered_object_annotation_id": 38531,
+      "actual_object_annotation_id": 70677,
+      "preregistered_image_id": 561366,
+      "actual_image_id": 104982,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 38531,
+          "image_id": 561366,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        },
+        {
+          "object_annotation_id": 214082,
+          "image_id": 387748,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-domain frozen-category-order integrity fallback"
+    },
+    {
+      "case_id": "telephone__u01",
+      "preregistered_object_category": "telephone",
+      "actual_object_category": "telephone",
+      "preregistered_object_annotation_id": 98939,
+      "actual_object_annotation_id": 102790,
+      "preregistered_image_id": 70809,
+      "actual_image_id": 523919,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 98939,
+          "image_id": 70809,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "chair__u01",
+      "preregistered_object_category": "chair",
+      "actual_object_category": "chair",
+      "preregistered_object_annotation_id": 238100,
+      "actual_object_annotation_id": 95920,
+      "preregistered_image_id": 129407,
+      "actual_image_id": 73549,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 238100,
+          "image_id": 129407,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "mug__u01",
+      "preregistered_object_category": "mug",
+      "actual_object_category": "mug",
+      "preregistered_object_annotation_id": 150618,
+      "actual_object_annotation_id": 15210,
+      "preregistered_image_id": 249130,
+      "actual_image_id": 2592,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 150618,
+          "image_id": 249130,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "handbag__u01",
+      "preregistered_object_category": "handbag",
+      "actual_object_category": "handbag",
+      "preregistered_object_annotation_id": 51856,
+      "actual_object_annotation_id": 53054,
+      "preregistered_image_id": 467742,
+      "actual_image_id": 475995,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 51856,
+          "image_id": 467742,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        },
+        {
+          "object_annotation_id": 213187,
+          "image_id": 184550,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "box__u01",
+      "preregistered_object_category": "box",
+      "actual_object_category": "box",
+      "preregistered_object_annotation_id": 77503,
+      "actual_object_annotation_id": 182311,
+      "preregistered_image_id": 5754,
+      "actual_image_id": 291898,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 77503,
+          "image_id": 5754,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        },
+        {
+          "object_annotation_id": 231545,
+          "image_id": 134233,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "bicycle__u02",
+      "preregistered_object_category": "bicycle",
+      "actual_object_category": "bicycle",
+      "preregistered_object_annotation_id": 133274,
+      "actual_object_annotation_id": 52568,
+      "preregistered_image_id": 187509,
+      "actual_image_id": 453138,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 133274,
+          "image_id": 187509,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        },
+        {
+          "object_annotation_id": 6931,
+          "image_id": 274687,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "book__u01",
+      "preregistered_object_category": "book",
+      "actual_object_category": "book",
+      "preregistered_object_annotation_id": 76306,
+      "actual_object_annotation_id": 208173,
+      "preregistered_image_id": 159561,
+      "actual_image_id": 231351,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 76306,
+          "image_id": 159561,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "pencil__u01",
+      "preregistered_object_category": "pencil",
+      "actual_object_category": "pencil",
+      "preregistered_object_annotation_id": 190713,
+      "actual_object_annotation_id": 118123,
+      "preregistered_image_id": 310463,
+      "actual_image_id": 287285,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 190713,
+          "image_id": 310463,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "hat__u01",
+      "preregistered_object_category": "hat",
+      "actual_object_category": "hat",
+      "preregistered_object_annotation_id": 8203,
+      "actual_object_annotation_id": 224917,
+      "preregistered_image_id": 19924,
+      "actual_image_id": 468519,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 8203,
+          "image_id": 19924,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "slipper_footwear__u01",
+      "preregistered_object_category": "slipper_(footwear)",
+      "actual_object_category": "book",
+      "preregistered_object_annotation_id": 9366,
+      "actual_object_annotation_id": 150053,
+      "preregistered_image_id": 18150,
+      "actual_image_id": 281774,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 9366,
+          "image_id": 18150,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        },
+        {
+          "object_annotation_id": 17124,
+          "image_id": 42528,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        },
+        {
+          "object_annotation_id": 17123,
+          "image_id": 42528,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-domain frozen-category-order integrity fallback"
+    },
+    {
+      "case_id": "scarf__u01",
+      "preregistered_object_category": "scarf",
+      "actual_object_category": "scarf",
+      "preregistered_object_annotation_id": 63479,
+      "actual_object_annotation_id": 73790,
+      "preregistered_image_id": 539259,
+      "actual_image_id": 434689,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 63479,
+          "image_id": 539259,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        },
+        {
+          "object_annotation_id": 81503,
+          "image_id": 7873,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    },
+    {
+      "case_id": "screwdriver__u01",
+      "preregistered_object_category": "screwdriver",
+      "actual_object_category": "knife",
+      "preregistered_object_annotation_id": 232603,
+      "actual_object_annotation_id": 64448,
+      "preregistered_image_id": 195288,
+      "actual_image_id": 537081,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 232603,
+          "image_id": 195288,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-domain frozen-category-order integrity fallback"
+    },
+    {
+      "case_id": "wrench__u01",
+      "preregistered_object_category": "wrench",
+      "actual_object_category": "knife",
+      "preregistered_object_annotation_id": 105318,
+      "actual_object_annotation_id": 153190,
+      "preregistered_image_id": 24136,
+      "actual_image_id": 68344,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 105318,
+          "image_id": 24136,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 410: Gone'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-domain frozen-category-order integrity fallback"
+    },
+    {
+      "case_id": "guitar__u01",
+      "preregistered_object_category": "guitar",
+      "actual_object_category": "guitar",
+      "preregistered_object_annotation_id": 225848,
+      "actual_object_annotation_id": 192151,
+      "preregistered_image_id": 302715,
+      "actual_image_id": 92041,
+      "failed_candidates": [
+        {
+          "object_annotation_id": 225848,
+          "image_id": 302715,
+          "error_type": "ValueError",
+          "error": "all declared image sources failed integrity checks: [{'source_field': 'flickr_url', 'error_type': 'HTTPError', 'error': 'HTTP Error 404: Not Found'}, {'source_field': 'coco_url', 'error_type': 'URLError', 'error': \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'images.cocodataset.org'. (_ssl.c:1000)>\"}]"
+        }
+      ],
+      "selection_basis": "same-category frozen-order integrity fallback"
+    }
+  ],
+  "source_fallback_count": 30,
+  "source_fallbacks": [
+    {
+      "case_id": "cellular_telephone__u01",
+      "object_annotation_id": 65705,
+      "image_id": 444746,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "laptop_computer__u01",
+      "object_annotation_id": 187692,
+      "image_id": 578775,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 359) -> (640, 359)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "television_set__u01",
+      "object_annotation_id": 92753,
+      "image_id": 347389,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "remote_control__u01",
+      "object_annotation_id": 17499,
+      "image_id": 229111,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(480, 640) -> (375, 500)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "calculator__u01",
+      "object_annotation_id": 70677,
+      "image_id": 104982,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 359) -> (500, 281)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "clock__u01",
+      "object_annotation_id": 57760,
+      "image_id": 72989,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(445, 639) -> (446, 640)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "watch__u01",
+      "object_annotation_id": 148791,
+      "image_id": 195188,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 213) -> (500, 166)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "bench__u01",
+      "object_annotation_id": 146291,
+      "image_id": 545181,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "stool__u01",
+      "object_annotation_id": 104289,
+      "image_id": 441411,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 428) -> (640, 428)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "table__u01",
+      "object_annotation_id": 116675,
+      "image_id": 68162,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 426) -> (640, 426)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "bottle__u01",
+      "object_annotation_id": 20822,
+      "image_id": 460841,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "jar__u01",
+      "object_annotation_id": 71734,
+      "image_id": 223444,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 368) -> (500, 288)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "can__u01",
+      "object_annotation_id": 105328,
+      "image_id": 172012,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "cup__u01",
+      "object_annotation_id": 87909,
+      "image_id": 163138,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "mug__u01",
+      "object_annotation_id": 15210,
+      "image_id": 2592,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 365) -> (640, 366)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "glass_drink_container__u01",
+      "object_annotation_id": 40606,
+      "image_id": 85089,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 428) -> (640, 428)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "bowl__u01",
+      "object_annotation_id": 244436,
+      "image_id": 319996,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(532, 639) -> (416, 500)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "plastic_bag__u01",
+      "object_annotation_id": 93155,
+      "image_id": 283131,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "bicycle__u01",
+      "object_annotation_id": 220953,
+      "image_id": 358242,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 511) -> (640, 511)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "bicycle__u02",
+      "object_annotation_id": 52568,
+      "image_id": 453138,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "book__u01",
+      "object_annotation_id": 208173,
+      "image_id": 231351,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(432, 576) -> (375, 500)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "pencil__u01",
+      "object_annotation_id": 118123,
+      "image_id": 287285,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 426) -> (500, 333)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "hat__u01",
+      "object_annotation_id": 224917,
+      "image_id": 468519,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "helmet__u01",
+      "object_annotation_id": 154250,
+      "image_id": 221343,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 427) -> (640, 426)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "shoe__u01",
+      "object_annotation_id": 30158,
+      "image_id": 35197,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(428, 639) -> (429, 640)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "slipper_footwear__u01",
+      "object_annotation_id": 150053,
+      "image_id": 281774,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "scarf__u01",
+      "object_annotation_id": 73790,
+      "image_id": 434689,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(469, 639) -> (367, 500)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "scissors__u01",
+      "object_annotation_id": 759,
+      "image_id": 351096,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(640, 480) -> (500, 375)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "pliers__u01",
+      "object_annotation_id": 161597,
+      "image_id": 528119,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(427, 639) -> (428, 640)"
+        }
+      ],
+      "accepted_source": null
+    },
+    {
+      "case_id": "pan_for_cooking__u01",
+      "object_annotation_id": 115950,
+      "image_id": 143510,
+      "failed_source_attempts": [
+        {
+          "source_field": "flickr_url",
+          "error_type": "dimension_normalized",
+          "error": "(639, 425) -> (640, 425)"
+        }
+      ],
+      "accepted_source": null
+    }
+  ]
+}

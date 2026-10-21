@@ -1,0 +1,9 @@
+﻿comparison,metric,role_count,mean_signed_improvement,wilcoxon_statistic,p_value_two_sided
+paga_2d vs identity_merge,clean_projection_iou,10,0.2721897482505419,0.0,0.001953125
+paga_2d vs identity_merge,scale_relative_error,10,0.040618049147888094,0.0,0.001953125
+paga_2d vs identity_merge,rotation_error_deg,10,11.087330040307716,0.0,0.001953125
+paga_2d vs identity_merge,translation_error_px,10,3.1933171308692545,0.0,0.001953125
+paga_2d vs bbox_init,clean_projection_iou,10,0.22851362735473488,0.0,0.001953125
+paga_2d vs bbox_init,scale_relative_error,10,0.08189503495348618,0.0,0.001953125
+paga_2d vs bbox_init,rotation_error_deg,10,11.087330040307716,0.0,0.001953125
+paga_2d vs bbox_init,translation_error_px,10,1.4543665883596988,0.0,0.001953125
